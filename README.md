@@ -4,7 +4,7 @@ In this repository I collect all published versions of
 the shareware DOS utilities developed by Vernon Duncan
 Buerg from the 1980s until the mid 2000s. At the time
 he was renowned for developing the small and fast
-file viewing and browsing utility LIST.
+file viewing and browsing utility [LIST](list/VERSIONS.md).
 
 Together with his wife Julie Buerg he ran his
 computer software company from Petaluma, CA.
@@ -50,7 +50,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 | [DRLIST](drlist/VERSIONS.md) | K | 03/06/93 | Special version of LIST for use with CTTY/ANSI |
 | [FBR](fbr/VERSIONS.md) | 1.82 | 07/04/92 | File backup/restore utilities. Alternative to BACKUP and RESTORE commands |
 | [LDIR](ldir/VERSIONS.md) | 4.4 | 03/25/91 | Display directories in selected file order. Alternative to the DIR command |
-| LIST | 9.6y1 | 06/20/05 | Full screen viewing of files, see LIST.DOC Alternative to the TYPE and MORE commands. Run ARCE MORELIST for rest of LIST files |
+| [LIST](list/VERSIONS.md) | 9.6y1 | 06/20/05 | Full screen viewing of files, see LIST.DOC Alternative to the TYPE and MORE commands. Run ARCE MORELIST for rest of LIST files |
 | QDR | 4.0c | 07/11/91 | Quick Diskette Reformatter deletes all files. Clean off a disk for re-use |
 | SORTF | 2.38 | 10/09/91 | Fast file sorter handles large files. Alternative to the SORT filter |
 | SQPC | 1.31 | 03/02/86 | Fast file squeezer. Creates a compressed copy of a file to save disk space |

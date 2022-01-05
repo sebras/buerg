@@ -5,7 +5,7 @@
   - correction for zero-byte files, again
 - 1.28 10/4/87
   - correction for zero-byte files
-- 1.27 05/30/87
+- [1.27](1.27) 05/30/87
   - correct problem reverting to pack method (file size wrong)
   - revert to copying if packing results in a larger file
 - 1.23 02/24/87

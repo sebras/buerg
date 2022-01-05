@@ -47,7 +47,7 @@
   - internal version
 - 1.10
   - internal version
-- 1.09
+- [1.09](1.09)
   - internal version
 - 1.08
   - internal version

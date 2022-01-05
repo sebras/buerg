@@ -13,7 +13,7 @@
   - Correction for files without extensions
 - 1.04 10/23/86
   - Add more binary extensions.
-- 1.03 10/16/87
+- [1.03](1.03) 10/16/87
   - Improve display when control characters are involved
   - Allow use of ? as wildcard in search text
 - [1.00](1.00) 10/8/87

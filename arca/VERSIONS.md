@@ -3,7 +3,7 @@
 - 1.29 12/09/87
   - add /M option to add modified files only
   - correction for zero-byte files, again
-- 1.28 10/4/87
+- [1.28](1.28) 10/4/87
   - correction for zero-byte files
 - [1.27](1.27) 05/30/87
   - correct problem reverting to pack method (file size wrong)

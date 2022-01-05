@@ -1,0 +1,230 @@
+
+ARCA Command                                            Version 1.28
+------------                                            Oct 4,  1987
+
+Purpose:  To create or add files to an ARC archive file.
+
+Format:   ARCA  [drive:][path]arcname.ext  [filespecs...]  [/d]
+
+Remarks:  The drive and path names are optional. If omitted, the
+        current drive and path name are used.
+
+        The 'arcname' file name must be supplied.  The extension
+        defaults to ARC.  All files matching the supplied filespecs are
+        processed.  The input 'filespecs' may contain the * and ?
+        wildcard characters.
+
+        If an existing archive file is used, the specified input
+        files are added to the end of it. There is no checking
+        for duplicate filenames and existing archive member files
+        are not replaced.  ARCA is best used when creating a brand-new
+        archive.
+
+        The /D option specifies that all input files be deleted.  The
+        files are deleted after successful processing of all of the
+        input files.
+
+        Invoking ARCA with no arguments yields a terse summary of
+        the needed parameters, along with a version header.
+
+        ARCA uses only 2 compression techniques: a modified LZW
+        compression algorithm and repeated-string compression
+        ("packing").  The LZW algorithm is the same as the one used by
+        ARC, but modifications have been made to improve its compression
+        performance, especially when dealing with files containing
+        more "random" data such as executable files, though compression
+        performance for files containing less random data such as
+        textual files suffers a bit, but not much.  ARCA generally
+        performs better than ARC does -- it's significantly faster than
+        ARC while yielding smaller archives (hard to imagine getting
+        the best of two worlds!)
+
+        Experiments have shown that the modified LZW compression algorithm
+        generally compresses binary files better than the Huffman algorithm
+        ("squeezing") can, Huffman compression is not used at all. If the
+        LZW compression fails to yield a smaller file, then packing is used
+        instead.  There are cases where a packed file is larger than the
+        original file, but these cases don't happen often enough for ARCA to
+        handle, for example, by copying the unchanged file to the archive.
+
+        Though ARCA uses an improved LZW algorithm, its output is TOTALLY
+        compatible with the one used by System Enhancements Associates'
+        (21 New Street, Wayne NJ 07470) ARC program, which means that ARCs
+        created by ARCA can be processed by ARC, or by ARCE and ARCV
+        (companion extraction & table-of-contents lister programs also
+        written by Vernon Buerg and Wayne Chin).
+
+
+        ARCA 1.28, Copyright (c) 1986,1987, Wayne Chin and Vernon D. Buerg.
+        ALL RIGHTS RESERVED.
+
+
+ARCA Command                                            Version 1.28
+------------                                            Oct 4,  1987
+
+
+                        Examples
+                        --------
+
+        o  Create an archive file called TEST.ARC, and place all
+           files from the current directory into it:
+
+              ARCA TEST *.*
+
+        o  Create an archive called SOURCE.ARC in the subdirectory
+           \SAVE on drive B, and place all files with an extension
+           of ASM into to:
+
+              ARCA B:\SAVE\SOURCE *.ASM
+
+
+        o  Add files to the archive on drive A called PROGA.ARC all
+           files in subdirectory \TEST on drive C, all files with a
+           filename beginning with NE, and all file from the subdirectory
+           \OLD on drive B:
+
+              ARCA A:PROGA.ARC C:\TEST\*.* NE*.* B:\OLD\*.*
+
+
+
+ARCA Command                                            Version 1.28
+------------                                            Oct 4,  1987
+
+                        Error Messages
+                        --------------
+
+    ARCA: filename, analyzing, compressed.
+        This message is issued for each 'filename' added to
+        the archive file using LZW data compression. The program
+        continues.
+
+    ARCA: filename, analyzing, packed.
+        This message is issued for each 'filename' added to
+        the archive file using repeated-string compression.  The
+        program continues.
+
+    ARCA: No matching files!
+        No files were found that matched one of the 'filespecs'
+        in the command line. The program terminates.
+
+    ARCA: You must use DOS version 2.0 or higher.
+        DOS version 2.0 or higher is required. The program terminates.
+
+    ARCA: Insufficient memory.
+        A minimum of 34k is required. The program terminates.
+
+    ARCA: Shrink failed.
+        This error should not occur. If it does, there is a problem
+        with DOS. The program terminates.
+
+
+    ARCA: Can't create archive file.
+        There is no room in the target directory to create the
+        specified archive file, or the target disk has become full.
+
+    ARCA: Write error -- no more disk space? Don't trust this archive!
+        ARCA has encountered a problem writing to the target disk.  Check
+        if there's sufficient room on the target disk to contain the full
+        archive or delete unneeded files to free up some space.  ARCA
+        terminates leaving behind an archive that may not be usable --
+        check it carefully if you still want to use it (check the archive
+        by using ARCV or ARCE).
+
+
+
+ARCA Command                                            Version 1.28
+------------                                            Oct 4,  1987
+
+                        Version history
+                        ---------------
+
+        1.07 - 4/21/86, initial release
+        1.08 to 1.13,   internal versions
+        1.14 - 08/07/86
+                add logic to sort input files using binary tree;
+                modify filtering of ARC name when adding to ARC;
+                modify processing of "/D" switch;
+                do packing of file if LZW compression does no good;
+                add optional code for 286 processor
+        1.15, August 08, 1986
+                more 286-specific instructions
+        1.16, August 09, 1986
+                more 286-specific instructions in compression code
+        1.17, August 10, 1986
+                speed improvements in compression code
+        1.17a, August 10, 1986
+                bug fix for the case of "arca x d:*.*", where d is not
+                the current drive
+        1.18, August 11, 1986
+                further speed tweaking in compression code; save a few
+                more nanoseconds
+        1.19 to 1.21
+                internal versions not released for general consumption
+        1.22, Sept 13, 1986
+                improve error handling
+                improve speed performance roughly 9%
+                very modest compression perfomance improvement
+                modify this document accordingly
+
+        1.23, Feb 24, 1987
+                add start-up banner
+                omit "deleted" messages
+                add 'copying' method
+
+        1.27, May 30, 1987
+                correct problem reverting to pack method (file size wrong)
+                revert to copying if packing results in a larger file
+
+|       1.28, Oct 4, 1987
+|               correction for zero-byte files
+
+
+
+ARCA Command                                            Version 1.28
+------------                                            Oct 4,  1987
+
+
+        As mentioned, ARCA is intended to be used to create a NEW archive,
+        not for appending or updating an existing archive, though ARCA does
+        not prevent you from doing so -- ARCA simply appends new files to the
+        named archive without deleting existing entries.  To properly append
+        or to update, you should use ARC instead.
+
+        There may be two COM files. The ARCA286.COM file is for 80286 based
+        systems only.
+
+
+
+                        License
+                        -------
+
+        ARCA 1.28, Copyright (c) Wayne Chin and Vernon Buerg 1986,1987.
+        ALL RIGHTS RESERVED.
+
+        ARCA is free, but it is a copyrighted work and may be distributed only
+        pursuant to this license.
+
+        Permission is hereby granted to reproduce and disseminate ARCA so long
+        as:
+
+           (1)  No remuneration of any kind is received in exchange; and
+
+           (2)  Distribution is without ANY modification to the contents of
+                ARCA.COM and all accompanying documentation and/or support
+                files, including the copyright notice and this license.
+
+        No copy of ARCA may be distributed without including a copy of this
+        license.
+
+        Any other use is prohibited without express, written permission in
+        advance.
+
+                Vernon D. Buerg
+                456 Lakeshire Drive
+                Daly City, CA  94015
+                CompuServe: 70007,1212
+                Data/BBS:   415-994-2944
+
+
+
+

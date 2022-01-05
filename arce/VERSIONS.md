@@ -1,6 +1,6 @@
 # ARCE version history
 
-- 4.1a 04/12/92
+- [4.1a](4.1a) 04/12/92
   - process ARC entries after ARC EOF (h1A00)
 - [4.0g](4.0g) 04/13/91
   - add handling of ARC v7 information records

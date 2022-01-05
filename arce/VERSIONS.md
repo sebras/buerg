@@ -62,6 +62,7 @@
 - 1.23 03/28/86
   - corrects problem with 0-byte files
   - adds outspec operand
+- [1.22d](1.22d) 03/25/86
 - 1.22 03/25/86
 - 1.22 03/25/86
   - improves UnCrunch performance

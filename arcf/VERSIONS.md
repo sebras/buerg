@@ -7,7 +7,7 @@
 - 1.07 10/05/90
   - Correct find when first char is duplicated
   - Revise error level return codes
-- 1.06 02/17/88
+- [1.06](1.06) 02/17/88
   - Corrections for finding text at end of lines
 - 1.05 11/09/87
   - Correction for files without extensions

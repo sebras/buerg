@@ -11,7 +11,7 @@
   - Corrections for finding text at end of lines
 - 1.05 11/09/87
   - Correction for files without extensions
-- 1.04 10/23/86
+- [1.04](1.04) 10/23/86
   - Add more binary extensions.
 - [1.03](1.03) 10/16/87
   - Improve display when control characters are involved

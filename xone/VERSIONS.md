@@ -1,6 +1,6 @@
 # XONE version history
 
-- 2.3 10/12/87
+- [2.3](2.3) 10/12/87
   - correct garbage in usage message
 - 2.2 10/09/87
   - add code to allow copying "squashed" files

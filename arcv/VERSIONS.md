@@ -14,7 +14,7 @@
 - 1.17 01/27/87
   - add DOS 3.x file sharing
   - get size under 2k, improve speed
-- 1.16 12/31/86
+- [1.16](1.16) 12/31/86
   - add entry for type 9 format, squashing
 - [1.15](1.15) 06/14/86
   - for DPATH, etc, use 'filename' if no files found

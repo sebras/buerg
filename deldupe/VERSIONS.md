@@ -1,6 +1,6 @@
 # DELDUPE version history
 
-- 2.3 03/01/89
+- [2.3](2.3) 03/01/89
   - changed /N to display both directory's data
   - making /N with /T more informative
 - [2.2](2.2) 07/21/87

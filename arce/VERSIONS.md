@@ -50,7 +50,7 @@
   - added /P, /Q; fixed /R with redirection
 - 2.07 from 09/19/86
   - not released
-- 2.06 09/17/86
+- [2.06](2.06) 09/17/86
   - release from testing
 - 2.01-2.05, 4-20 thru 09/09/86
   - improve unsq, correct disk full message

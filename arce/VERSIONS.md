@@ -33,7 +33,7 @@
 - 3.0c 03/23/87
   - improve extracting with file selection
   - minor fixes and cosmetic changes
-- 3.0a 03/16/87
+- [3.0a](3.0a) 03/16/87
   - added /G for password encryption
   - added /T for integrity checking only
   - correct loop in command line parsing

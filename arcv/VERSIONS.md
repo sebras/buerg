@@ -11,7 +11,7 @@
 - 1.18 01/11/89
   - add /p parameter to pause at screen full
   - add entries for other styles, e.g. crushing
-- 1.17 01/27/87
+- [1.17](1.17) 01/27/87
   - add DOS 3.x file sharing
   - get size under 2k, improve speed
 - [1.16](1.16) 12/31/86

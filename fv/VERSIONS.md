@@ -41,7 +41,7 @@
   - changed lf-lf output to cr-lf-cr-lf; removed nulls
 - 1.28 03/25/90
   - correct detection of some self extracting EXE files
-- 1.27 03/22/90
+- [1.27](1.27) 03/22/90
   - add PKZIP 1.10 sfx format
 - [1.26](1.26) 11/23/89
   - correct LZH displays with long filenames

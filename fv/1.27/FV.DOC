@@ -1,0 +1,132 @@
+                                                                         Page 1
+                     FV - Verbose Archive Directory Lister
+                         Version 1.27 - March 22, 1990
+
+
+Purpose:  To display the names and attributes of files contained
+          within archive files with extensions of ARC, ZIP, PAK,
+          DWC, LZH, ZOO, LBR and most self-extracting .COM and .EXE
+          files created by ARC, ZIP, PAK, LZH.
+
+Format:   FV  [d:][path]filespec[.ext]  [/p] [/b] [/w] [/r] [/x] [>outfile]
+
+Notes:    If no operands are entered, a display of the program's
+          command format is displayed.
+
+          The drive and path are optional. The filespec may contain
+          the wildcard characters * and ?.  All files matching the
+          file specification are processed.
+
+          If the filespec extension is omitted, all known archive
+          extensions are checked.
+
+          Use the /p parameter to pause the display when the screen
+          fills.
+
+          Use the /b parameter to suppress the d:\path information
+          in the display.
+
+          Use the /w parameter to display member names only in a 5-up
+          display.
+
+          The /r redate option changes the archive file date to be the
+          lastest date of the files within the archive.
+
+          The /x option converts a self-extracting (.EXE) file to a new
+          archive file with the proper extension and format in the current
+          directory.
+
+Examples:
+
+        o  Display the directory of the TEST.ARC file, in the current
+           directory:
+
+                FV TEST
+
+        o  Display the directories of all archive files, but redirect
+           the information to the file FV.DIR:
+
+                FV * >FV.DIR
+
+        o  Print the directory of the file NUBIES.LZH in directory RTEST
+           on drive A:
+
+                FV A:\RTEST\NUBIESLZH >LPT1:
+
+
+        (c) Copyright by Vernon D. Buerg  1989-90. ALL RIGHTS RESERVED.
+                                                                        Page 2
+
+                     FV - Verbose Archive Directory Lister
+                         Version 1.27 - March 22, 1990
+
+
+                                Version history
+                                ---------------
+
+        1.00 - 4/21/89  initial program
+        1.08 - 4/28/89  initial release
+        1.09 - 5/06/89  add LHARC 1.12b sfx checks
+        1.10 - 5/09/89  correct crc display for LZH
+                        add ZOO format
+        1.11 - 5/13/89  correct display of ZIP crc
+        1.12 - 5/23/89  add LHARC 1.13l sfx checks
+                        add 'who made it' note
+        1.13 - 5/25/89  add ARC 6 subdir checking
+                        add /W wide display option
+        1.14 - 7/22/89  add ZIP 1.0 imploding method
+        1.15 - 7/24/89  corrects premature eof problem with short LZH filenames
+        1.16 - 8/01/89  add PAK 2.0 Distilling; add seconds to time display
+        1.17 - 8/16/89  correct time value, correct some sfx checks
+        1.19 - 8/24/89  add ZIP 1.01 sfx
+        1.20 - 8/26/89  add /R redate option
+        1.21 - 8/30/89  correct for long (path) names in ZIP, etc
+        1.22 - 9/09/89  add LBR library processing
+                        if archive type does not match the extension, check
+                        other formats
+        1.23 - 10/04/89 correct inputting prompting for files not opened
+        1.24 - 11/16/89 add /X option to convert self-extracting archives
+        1.25 - 11/17/89 corrections for converting ZIP sfx
+        1.26 - 11/23/89 correct LZH displays with long filenames
+        1.27 - 03/22/90 add PKZIP 1.10 sfx format
+
+                                                                        Page 3
+
+                     FV - Verbose Archive Directory Lister
+                         Version 1.27 - March 22, 1990
+
+
+        Written for the IBM PC using DOS 2.0, or later.
+
+        FV was written using the SLR Systems OPTASM assembler. The
+        source, if included, may not compile using other assemblers.
+        If you make changes to the source, please do not distribute
+        it without express written permission from me.
+
+        FV is  supplied  for  personal,  private  use. Feel free to
+        distribute FV given these restrictions:
+
+          o  the program  shall be supplied in its original,  unmodified
+             form, which includes this documentation;
+
+          o  no fee is charged;
+
+          o  "commmercial" use without a license is prohibited;
+
+          o  the program may not be included -  or bundled - with  other
+             goods or services.  Exceptions may be granted upon  written
+             request only.  This also applies to clubs and distributors.
+
+        If you find FV useful, your monetary support would be appreciated.
+        Please direct your inquiries, complaints, suggestions, etc., to:
+
+              Vernon D. Buerg
+              139 White Oak Circle
+              Petaluma, CA  94952
+
+        Data: (707) 778-8944, 24 hr BBS; 300-2400  VOR
+              (415) 994-2944, 24 hr BBS; 300-2400  VOR South
+        -or-  (707) 778-8841, 24 hr BBS; 300-9600, Motherboard, 9600 Hayes VSM
+        -or-  (707) 778-8743, 24 hr BBS; 300-9600, Motherboard, 9600 USR HST
+              Compuserve:  70007,1212 (Go IBMSYS)
+

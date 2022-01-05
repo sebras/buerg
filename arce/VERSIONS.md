@@ -46,7 +46,7 @@
 - 2.09 01/05/87
   - correct closing of output if /P used; require return (enter key) for over-write prompt
   - add more validity checking of member headers
-- 2.08 12/31/86
+- [2.08](2.08) 12/31/86
   - added /P, /Q; fixed /R with redirection
 - 2.07 from 09/19/86
   - not released

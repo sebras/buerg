@@ -34,7 +34,7 @@
 - 1.31 07/18/90
   - change processing of ZIP extra comments field
   - add 'filespecs' file selection criteria
-- 1.30 07/16/90
+- [1.30](1.30) 07/16/90
   - correct wide listing /W option
 - [1.29](1.29) 06/29/90
   - add /C option to display ZIP file comments

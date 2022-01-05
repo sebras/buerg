@@ -2,7 +2,7 @@
 
 - 1.10 03/10/92
   - Cosmetic changes
-- 1.08 10/19/80
+- [1.08](1.08) 10/19/80
   - Remove leading cr/lf displayed in found lines as spaces
 - 1.07 10/05/90
   - Correct find when first char is duplicated

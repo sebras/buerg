@@ -71,7 +71,7 @@
   - minor changes
 - 1.19 03/15/86
   - modifies CRC computation for more speed
-- 1.1h 03/11/86
+- [1.1h](1.1h) 03/11/86
 - 1.18 03/04/86
   - optimizes performance
   - adds stack checking for munged LZ files

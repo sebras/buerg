@@ -6,13 +6,13 @@
   - add more sfx formats
 - 1.44 3/07/93
   - correct loop with ARC-like files
-- 1.43 2/14/93
+- [1.43](1.43) 2/14/93
   - add madeby and sfx for ZIP 2.04g
 - [1.42](1.42) 10/09/92
   - add /C comment option to ARJ
 - [1.41](1.41) 10/09/92
   - add ARJ sfx
-- 1.40 3/10/92
+- [1.40](1.40) 3/10/92
   - add licensed version
 - 1.39 10/27/91
   - add PKZIP v1.93a SFX

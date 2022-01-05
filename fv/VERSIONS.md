@@ -43,7 +43,7 @@
   - correct detection of some self extracting EXE files
 - 1.27 03/22/90
   - add PKZIP 1.10 sfx format
-- 1.26 11/23/89
+- [1.26](1.26) 11/23/89
   - correct LZH displays with long filenames
 - 1.25 11/17/89
   - corrections for converting ZIP sfx

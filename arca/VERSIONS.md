@@ -12,7 +12,7 @@
   - add start-up banner
   - omit "deleted" messages
   - add 'copying' method
-- 1.22 09/13/86
+- [1.22](1.22) 09/13/86
   - improve error handling
   - improve speed performance roughly 9%
   - very modest compression perfomance improvement

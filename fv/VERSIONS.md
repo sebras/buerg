@@ -61,7 +61,7 @@
   - add /R redate option
 - 1.19 08/24/89
   - add ZIP 1.01 sfx
-- 1.17 08/16/89
+- [1.17](1.17) 08/16/89
   - correct time value, correct some sfx checks
 - [1.16](1.16) 08/01/89
   - add PAK 2.0 Distilling; add seconds to time display

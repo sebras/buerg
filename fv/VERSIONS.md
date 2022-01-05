@@ -51,7 +51,7 @@
   - add /X option to convert self-extracting archives
 - 1.23 10/04/89
   - correct inputting prompting for files not opened
-- 1.22 09/09/89
+- [1.22](1.22) 09/09/89
   - add LBR library processing
   - if archive type does not match the extension, check
   - other formats

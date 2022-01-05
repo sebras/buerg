@@ -16,7 +16,7 @@
   - add licensed version
 - 1.39 10/27/91
   - add PKZIP v1.93a SFX
-- 1.38 08/26/91
+- [1.38](1.38) 08/26/91
   - add checking of dates before changing them for /r option
   - allow numbers over 8 digits
 - [1.37](1.37) 05/07/91

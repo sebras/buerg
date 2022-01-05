@@ -77,7 +77,7 @@
   - add 'who made it' note
 - 1.11 05/13/89
   - correct display of ZIP crc
-- 1.10 05/09/89
+- [1.10](1.10) 05/09/89
   - correct crc display for LZH
   - add ZOO format
 - 1.09 05/06/89

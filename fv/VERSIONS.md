@@ -27,7 +27,7 @@
   - add more LHA sfx formats
 - 1.34 02/06/91
   - add PAK 2.5 sfx and LHA 2.05 sfx formats
-- 1.33 09/03/90
+- [1.33](1.33) 09/03/90
   - display path names separately from file names
 - [1.32](1.32) 08/30/90
   - improve wide display of long file names

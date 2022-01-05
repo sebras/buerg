@@ -39,7 +39,7 @@
 - 1.29 06/29/90
   - add /C option to display ZIP file comments
   - changed lf-lf output to cr-lf-cr-lf; removed nulls
-- 1.28 03/25/90
+- [1.28](1.28) 03/25/90
   - correct detection of some self extracting EXE files
 - [1.27](1.27) 03/22/90
   - add PKZIP 1.10 sfx format

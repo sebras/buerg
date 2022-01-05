@@ -39,7 +39,7 @@
   - correct loop in command line parsing
   - internal optimization
   - make integrity checking more robust
-- 2.11 01/24/87
+- [2.11](2.11) 01/24/87
   - some cosmetics, wrong banner version and date
 - [2.10](2.10) 01/6/87 
   - correct use out output file specification

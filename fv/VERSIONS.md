@@ -19,7 +19,7 @@
 - 1.38 08/26/91
   - add checking of dates before changing them for /r option
   - allow numbers over 8 digits
-- 1.37 05/07/91
+- [1.37](1.37) 05/07/91
   - add support for ARJ archive files
 - 1.36 04/12/91
   - add ARC v7 information records

@@ -56,7 +56,7 @@
   - improve unsq, correct disk full message
 - 2.00 04/08/86
   - fine tuning of I/O buffering
-- 1.24d 04/01/86
+- [1.24d](1.24d) 04/01/86
 - [1.24](1.24) 04/01/86
   - increases stack size for 'crunched' files
 - 1.23 03/28/86

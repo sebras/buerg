@@ -69,7 +69,7 @@
   - corrects premature eof problem with short LZH filenames
 - 1.14 07/22/89
   - add ZIP 1.0 imploding method
-- 1.13 05/25/89
+- [1.13](1.13) 05/25/89
   - add ARC 6 subdir checking
   - add /W wide display option
 - 1.12 05/23/89

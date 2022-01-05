@@ -2,7 +2,7 @@
 
 - 1.22 04/13/91
   - add handling of ARC v7 information records
-- 1.21 03/06/89
+- [1.21](1.21) 03/06/89
   - add /b option to suppress d:\path for BBS use
 - 1.20 02/10/89
   - fix-up JMPs for assembly by MASM

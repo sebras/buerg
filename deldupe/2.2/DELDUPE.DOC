@@ -1,0 +1,90 @@
+
+DELDUPE 2.2, Copyright (c) Vernon D. Buerg 1987. ALL RIGHTS RESERVED.
+
+
+
+Purpose:
+        Delete duplicate or older files in one directory that already
+        exist in another disk directory.
+
+Syntax:
+        DELDUPE  directory-to-delete  [master-directory]
+                 [/O] [/T] [/S] [/V] [/P] [/N]
+
+        The 'directory-to-delete' specifies the drive and path name of
+        the 'old' directory containing old or duplicate files.
+
+        The 'master-directory' specifies the drive and path name of the
+        'new' directory containing current or original files.  If
+        omitted, the current drive and directory is used.
+
+        If files in the 'old' directory are the same date/time, or
+        older, than files of the same name in the 'new' directory, they
+        are deleted.
+
+        Specify /O to delete older files:  same name but of different
+        size.  If omitted, only files with the same name, datestamp, and
+        size will be deleted.
+
+        Specify /S to delete similar files:  the same name and date/time
+        but the size is different.
+
+|       Specify /N to delete files of the same name regardless of the
+|       date, time, or file size.
+
+        Specify /T to display filenames only, but do not delete them.
+        Use this option to determine which files are duplicates or older
+        copies.
+
+        Specify /V to confirm deletion of each eligible file.
+
+        Specify /P to pause when the screen fills.  You may enter a ^C
+        (break) at this point but the current directory will not be
+        properly restored.
+
+Examples:
+        - Delete duplicate files in 'C:\TEMP' which already exist
+          in the root directory of drive B:
+
+          deldupe c:\temp b:
+
+        - Display the names of duplicate or older files in the directory
+          called \PROJECTS which already exist in the directory \TEST
+
+          deldupe \projects \test /o/t
+
+History:
+        Written for the IBM PC using PC DOS version 2.0 or later.
+
+        Version 1.1, 3/07/87 - initial version
+|       Version 2.2, 7/21/87 - added /N to delete files of same name
+
+License:
+
+        DELDUPE is free, but it is a copyrighted work and may be distributed
+        only pursuant to this license.
+
+        Permission is hereby granted to reproduce and disseminate DELDUPE so
+        long as:
+
+           (1)  No remuneration of any kind is received in exchange; and
+
+           (2)  Distribution is without ANY modification to the contents
+                of DELDUPE.COM, DELDUPE.ASM and all accompanying
+                documentation and/or support files, including the
+                copyright notice and this license.
+
+        No copy of DELDUPE may be distributed without including a copy
+        of this license.
+
+        Any other use is prohibited without express, written permission in
+        advance.
+
+                Vernon D. Buerg
+                456 Lakeshire Drive
+                Daly City, CA  94015-4223
+
+                CompuServe: 70007,1212
+                Data/BBS:   415-994-2944
+                Work:       415-991-0644, 10am-6pm Pacific
+

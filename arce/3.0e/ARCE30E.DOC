@@ -1,0 +1,421 @@
+
+ARCE Command						Version 3.0e
+------------						Apr  2, 1987
+
+
+Purpose:
+	To extract files from an ARC archive file.
+
+Format:
+
+	ARCE  [d:][path]filename.ext  [filespecs...] [d:outpath]
+				      [/R]
+				      [/Q]
+				      [/P]
+				      [/T]
+				      [/Gpassword]
+
+Remarks:
+
+	The drive and path names are optional.	If omitted, the  current
+	drive and path name is used.
+
+	The filename must be  supplied.  The extension defaults  to ARC.
+	All files matching the supplied filename are processed.  The ARC
+	filename may contain the * and ? wildcard characters.
+
+	If  no	filespecs  are	 supplied,  all  files	are   extracted.
+	Otherwise, only those ARC members  which match one of the  up to
+	16 filespecs are extracted.
+
+	The extracted files  may be placed  on another drive,  and/or in
+	another subdirectory by following the optional filespecs with  a
+	drive designator and/or path name.
+
+	If  the  file  being  extracted  already  exists,  you are asked
+	whether or not you want to over-write it.  You may use the |  /R
+	option to bypass this prompt.  Use a Y followed by the |  return
+	key to over-write the file.
+
+	Use the /Q option to suppress alarm sounds, beeps, and bells.
+
+	Use  the  /P  option  to  write  the  extracted files to the DOS
+	standard output  file.	With  /P, you  may pipe  or redirect the
+	output.  An initial line feed  is added to the beginning  of the
+	output file.
+
+|	Use the /T option to test the archive's integrity. No files will
+|	be extracted.
+
+|	If the file was encrypted, use the /G option to supply the  same
+|	password as was used to create the file, e.g. /GSECRET.
+
+
+
+
+
+
+
+
+
+
+ARCE Command						Version 3.0e
+------------						Apr  2, 1987
+
+
+
+			Examples
+			--------
+
+	o  Extract all file from TEST.ARC onto the current drive:
+
+	      ARCE TEST
+
+	o  Extract only file with  an extension of .ASM from the archive
+	   SOURCE.ARC on drive B and in subdirectory SAVE:
+
+	      ARCE B:\SAVE\SOURCE *.ASM
+
+	o  Extract  all  files	from  all  ARC files in the subdirectory
+	   called TEST on drive C:
+
+	      ARCE C:\TEST\*
+
+	o  Extract  all  files	from  PROGA.ARC  and  place the files in
+	   subdirectory OLD on drive B:
+
+	      ARCE PROGA.ARC B:\OLD
+
+	o  Extract all files with an extension of .COM and .EXE from the
+	   archive PROGS.ARC in directory NEW\WORK on drive B, and place
+	   the	them  in  subdirectory	SAVE\TEST  on  drive  A; replace
+	   existing file:
+
+	      ARCE B:\NEW\WORK\PROGS *.COM *.EXE A:\SAVE\TEST /R
+
+	o  Extract  the  file  READ.ME	from  the  archive GIZMO.ARC and
+	   display it on the console instead of writing it to a file:
+
+	      ARCE GIZMO READ.ME /P
+
+	o  Same as above, except  pass the extracted READ.ME file to the
+	   LIST file viewer:
+
+	      ARCE GIZMO READ.ME /P | LIST /S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ARCE Command						Version 3.0e
+------------						Apr  2, 1987
+
+			Error Messages
+			--------------
+
+      'filename - premature EOF reading '
+
+	Data  is  missing  from  the  archive  file.   The  program   is
+	terminated.
+
+
+      'filename - unable to set file datestamp'
+
+	The file datestamp is set to the current date and time, and  the
+	next archive member is processed.
+
+
+      'filename - WARNING: file CRC does not match!'
+
+	The extracted member  is left on  the output disk,  and the next
+	archive member is processed.   The file is probably  invalid but
+	is left on the disk for your examination.
+
+
+      'Invalid filespec(s)'
+
+	The filespec syntax is incorrect.  The filename part may be from
+	1  to  eight  characters,  and	may  include the ? or * wildcard
+	characters.  The extension may be none to three characters,  and
+	may  include  wildcards.   There  is  a  maximum of 16 filespecs
+	allowed.  The program terminates.
+
+
+      'filename - file already exists. Overwrite it? (y/N) '
+
+	The member being extracted already  exists.  If you are using  a
+	data  path  utility,  the  file  may  not  actually  be  in  the
+	subdirectory be used for output.   Respond with the letter Y  to
+	over-write the existing  file, or respond  with the letter  N to
+	skip this member and continue to the next.
+
+
+      'Abort: Stack overflow'
+
+	The member  being extracted  has invalid  data.  The  program is
+	terminated.
+
+
+      'filename - invalid decode tree count'
+
+	The member  being extracted  has invalid  data.  The  program is
+	terminated.
+
+
+
+
+
+
+
+ARCE Command						Version 3.0e
+------------						Apr  2, 1987
+
+			Error Messages (cont'd)
+			--------------
+
+
+      'filename - new archive format 7 not yet supported'
+
+	Format 7 is a special file compression method used internally by
+	SEA,  the  authors  of	ARC.  Processing continues with the next
+	archive member.
+
+
+      'Unable to open archive > arcname'
+
+	The  specified	ARC   archive  file  was   not	found,	or   was
+	inaccessible.  The program terminates.
+
+
+      'CREATE failed > filename'
+
+	There was insufficient directory  space, or a failure  accessing
+	the output disk.  The program terminates.
+
+
+	'Invalid archive format!'
+
+	The archive file data is invalid.  The program terminates.
+
+
+      'Incorrect DOS version'
+
+	Version  2.0  or  later  of  PC  DOS  must be used.  The program
+	terminates
+
+
+      'Not enough memory.'
+
+	A minimum  of 112k  bytes of  memory is  required.  The  program
+	terminates.
+
+
+      'I/O error reading from arcname'
+
+	An incorrectable error occurred attempting to read data from the
+	archive file.  The program terminates.
+
+
+      'I/O error writing or disk full > filename'
+
+	There was not  enough disk space  to write the	complete archive
+	member.   The  partially  extracted  file  is  scratched and the
+	program terminates.
+
+
+
+
+
+
+ARCE Command						Version 3.0e
+------------						Apr  2, 1987
+
+			Error Messages (cont'd)
+			--------------
+
+
+      'No matching file(s) found'
+
+	No archive files were  found that matched the  supplied filename
+	specifications.  The program terminates.
+
+
+
+      'WARNING: Skipping Squashed File!'
+
+	A variant compression method has been used and the file can  not
+	be properly extracted.
+
+
+
+|     'filename - ERROR: invalid file codes'
+|
+|	An error was detected while attempting to decode a crunched
+|	file. Either some data bytes are invalid, there are extra
+|	bytes, or there are bytes missing. The archive is invalid.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ARCE Command						Version 3.0e
+------------						Apr  2, 1987
+
+			Version history
+			---------------
+
+	1.1 - 1/13/86	-initial release
+	1.2 - 1/14/86	- correct 'Not enough memory' checking
+	1.3 - 1/19/86	- make displays MS-DOS compatible
+	1.4 - 1/24/86	- add error messages for new ARC 5.0 formats
+	1.5 - 2/24/86	- adds adaptive LZW decompression for code 8
+	1.6 - 3/02/86	- adds file selection operands
+	1.7 - 3/04/86	- optimizes performance
+			- adds stack checking for munged LZ files
+	1.8 - 3/15/86	- modifies CRC computation for more speed
+	1.9 - 3/16/85	- minor changes
+	1.10 - 3/24/86	- adds wildcards for ARC file name
+	1.11 - 3/25/86	- improves UnCrunch performance
+	1.12 - 3/28/86	- corrects problem with 0-byte files
+			- adds outspec operand
+	1.13 - 4/01/86	- increases stack size for 'crunched' files
+			- correct 'Not enough memory' checking
+	1.14 - make displays MS-DOS compatible
+	1.15 - add error messages for new ARC 5.0 formats
+	1.16 - add stack checking for munged LZ files
+	     - added adaptive LZW deompression for code 8
+	1.17 - added file selection
+	1.18 - cosmetic changes
+
+	1.19, 3/15/86	- improved CRC calculation speed
+	1.20, 3/16/85	- changed test for file already exists
+	1.21, 3/24/86	- added wildcard for ARC file name
+	1.22, 3/25/86	- cosmetic changes
+	1.23, 3/28/86	- correct short and empty file problems
+	2.00, 04/08/86	- fine tuning of I/O buffering
+
+	2.01-2.05, 4-20 thru 9/9/86
+			- improve unsq, correct disk full message
+	2.06, 9/17/86	- release from testing
+	2.07, from 9/19 - not released
+	2.08, 12/31/86 - added /P, /Q; fixed /R with redirection
+	2.09, 1/5/87   - correct closing of output if /P used; require return
+			 (enter key) for over-write prompt
+		       - add more validity checking of member headers
+	2.10, 1/6/87   - correct use out output file specification
+	2.11, 1/24/87  - some cosmetics, wrong banner version and date
+
+	3.0a, 3/16/87  - added /G for password encryption
+		       - added /T for integrity checking only
+		       - correct loop in command line parsing
+		       - internal optimization
+		       - make intergity checking more robust
+	3.0c, 3/23/87  - improve extracting with file selection
+		       - minor fixes and cosmetic changes
+	3.0d, 3/29/87  - correction to unsqueeze
+	3.0e, 4/02/87  - correct loop with invalid archives
+		       - insure errorlevel non-zero if any errors
+		       - correct loop in command line processing
+
+
+ARCE Command						Version 3.0e
+------------						Apr  2, 1987
+
+
+
+			Notices
+			-------
+
+	ARCE (c) Copyright 1986,1987 by Vernon D. Buerg and  Wayne Chin.
+	All rights reserved.
+
+	ARCE is for use with the IBM  PC using DOS 2.0 or later, and  is
+	for personal,  private use  only.  You	may copy  and distribute
+	this program freely,  provided that no	fee is charged	for such
+	copying  and  distribution,  and  it  is distributed only in its
+	original,  unmodified  state.	No  exceptions	will  be granted
+	without written permission.
+
+		Vernon D. Buerg
+		456 Lakeshire Drive
+		Daly City, CA  94015
+
+		CompuServe: 70007,1212
+		Data/RBBS:  415-994-2944
+
+
+
+
+
+
+	For use by corporations,  institutions, and for profit,  contact
+	System Enhancement Associates for licensing information.
+
+		   System Enhancement Associates
+		   21 New Street, Wayne NJ 07470
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

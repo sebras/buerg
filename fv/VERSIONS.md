@@ -2,7 +2,7 @@
 
 - 2.00 1/11/00
   - correct year display for y2k
-- 1.45 6/23/93
+- [1.45](1.45) 6/23/93
   - add more sfx formats
 - 1.44 3/07/93
   - correct loop with ARC-like files

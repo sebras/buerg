@@ -17,7 +17,7 @@
   - add subdirectory support via /Z option
 - 3.1c 02/06/88
   - lessen memory requirement to 50k
-- 3.1b 09/16/87
+- [3.1b](3.1b) 09/16/87
   - unsquashing version released
 - 3.1a 09/10/87
   - cosmetic changes

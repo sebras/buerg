@@ -1,0 +1,51 @@
+
+ XONE Command                                           Version 2.1
+ ------------                                           Nov 12, 1986
+
+ Function
+ --------
+        To create an ARC file from one or more files that are
+        contained within an ARC file.
+
+ Syntax
+ ------
+            XONE  inputname[.ARC]  [filename]  [outputname]  [/R]
+
+ Remarks
+ -------
+        The 'inputname' is required. It defines the ARC archive file
+        which contains the member files that you want to extract. The
+        extension defaults to .ARC.
+
+        The 'filename' is optional. If omitted, all files in the
+        archive are extracted. If supplied, only that file in the
+        archive that matches the 'filename' is extracted.  Each
+        extracted file is created in the ARC format using the the
+        original file name.
+
+        The 'outputname' is optional. If supplied, it defines the name
+        to be used for the extracted file. To use this operand, you must
+        also supply the 'filename' operand to extract a single file.
+
+ Example:
+ -------
+        Extract the file TEST.DAT from the archive called DATA.ARC
+        and name it TEST.ARC:
+
+                XONE DATA TEST.DAT TEST.ARC
+
+        The file TEST.ARC is created as a valid archive file, and it
+        contains the same data as the original member file TEST.DAT.
+
+ Restrictions
+ ------------
+        XONE was written by Vernon Buerg and may be used without
+        restrictions. Please try to distribute this program as-is,
+        and without modification.
+
+ History
+ -------
+        Version 2.1, 11/12/86.
+          - correct problem extracting files larger than 18k bytes
+
+

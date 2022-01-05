@@ -1,0 +1,44 @@
+
+
+FC Command                                              Version 1.3
+----------                                              Aug 17, 1985
+
+Purpose:  FC compares two versions of an interpreted BASIC program
+          to produce a MRG (merge) file. The MRG file can then be
+          merged into the original BASIC program to yield the new
+          version of the program.
+
+Syntax:   FC
+
+Remarks:  The BASIC programs must first be saved with the ,A (ASCII)
+          option. You are prompted to enter the "original" file name,
+          the "modified" file name, and the name of the file to
+          contain the changes.  For example,
+
+          FC
+          Enter original file name-myprog1.bas
+          Enter modified file name-myprog2.bas
+          Enter   change file name-myprog1.mrg
+
+          The file 'myprog1.mrg' will contain the statements that
+          are different. You can then re-create 'myprog2.bas' by
+          applying the changes to 'myprog1.bas'. For example,
+
+          BASICA
+          load"myprog1
+          merge"myprog1.mrg
+          save"myprog2
+          system
+
+Note:     Each file must contain an end-of-file character. If not,
+          an Error 62 message will be issued.
+
+          FC was written in assembler for speed and small size. It
+          is based on the public domain FC.BAS program which is used
+          as an aid to maintaining version levels.
+
+          Written by Vernon D. Buerg for the IBM PC, and compatibles,
+          using DOS 2.0 or later. For private, personal use only.
+          Not for sale or higher.
+
+

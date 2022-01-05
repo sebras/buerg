@@ -63,7 +63,7 @@
   - add ZIP 1.01 sfx
 - 1.17 08/16/89
   - correct time value, correct some sfx checks
-- 1.16 08/01/89
+- [1.16](1.16) 08/01/89
   - add PAK 2.0 Distilling; add seconds to time display
 - 1.15 07/24/89
   - corrects premature eof problem with short LZH filenames

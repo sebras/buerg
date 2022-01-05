@@ -1,0 +1,94 @@
+-                                                                        Page 1
+                ARCV - Verbose ARC Directory Lister
+                    Version 1.17 - Jan 27, 1987
+
+
+
+Purpose:  To display the names and attributes of files contained
+          within an ARC archive file. This is identical to the
+          V function of the ARC program which produces a verbose
+          directory listing.
+
+
+Format:   ARCV  [d:][path]filespec[.ARC]  [>outfile]
+
+
+Notes:    If no operands are entered, a display of the program's
+          command format is displayed.
+
+          The drive and path are optional. The filespec may contain
+          the wildcard cahracters * and ?. All files matching the
+          file specification are processed.
+
+          If the filespec extension is omitted, the extension .ARC
+          is used.
+
+Examples:
+
+        o  Display the directory of the TEST.ARC file, in the current
+           directory:
+
+                ARCV TEST
+
+        o  Display the directories of all ARC files, but redirect the
+           information to the file ARC.DIR:
+
+                ARCV * >ARC.DIR
+
+        o  Print the directory of the file NUBIES.ARC in directory RTEST
+           on drive A:
+
+                ARCV A:\RTEST\NUBIES >LPT1:
+
+
+Notes:
+        Written for the IBM PC using DOS 2.0, or later,
+        Copyright by by Vernon D. Buerg, 1986,87. All rights reserved.
+        For private, personal use only.
+
+                456 Lakeshire Drive
+                Daly City, CA  94015
+                CompuServe: 70007,1212
+                Data/BBS:   415-994-2944
+                Fidonet:    125/4
+-                                                                       Page 2
+                ARCV - Verbose ARC Directory Lister
+                    Version 1.17 - Jan 31, 1986
+
+
+Version history:
+        1.00 - 1/5/86
+        1.03 - 1/10/86
+                released for general use
+        1.04 - 1/19/86
+                make displays MS-DOS compatible
+        1.05 - 1/23/86
+                supports ARC 5.0 new formats
+        1.06 - 1/26/86
+                correct total SF
+        1.07 - 3/22/86
+                change open for input only
+        1.08 - 3/28/86
+                correct zero divide problem
+        1.09 - 4/08/86
+                check SF for funny archives
+        1.10 - 4/18/86
+                correct divide overflow problem
+        1.11 - 4/23/86
+                correct stowage factor
+        1.12 - 4/26/86
+                correct sending totals for no files
+        1.13 - 5/11/86
+                expand search for header arcmark
+        1.14 - 5/21/86
+                change for 'No files found' error on clones
+        1.15 - 6/14/86
+                for DPATH, etc, use 'filename' if no files found
+        1.16 - 12/31/86
+                add entry for type 9 format, squashing
+        1.17 - 1/27/87
+                add DOS 3.x file sharing
+                get size under 2k, improve speed
+
+-
+

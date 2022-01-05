@@ -4,7 +4,7 @@
   - process ARC entries after ARC EOF (h1A00)
 - 4.0g 04/13/91
   - add handling of ARC v7 information records
-- 4.0f 05/15/90
+- [4.0f](4.0f) 05/15/90
   - performance improvements
 - [4.0e](4.0e) 03/17/89
   - performance improvements

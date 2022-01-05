@@ -21,7 +21,7 @@
   - unsquashing version released
 - 3.1a 09/10/87
   - cosmetic changes
-- 3.0f 05/31/87
+- [3.0f](3.0f) 05/31/87
   - correct false 'disk full' error message when using /p (piping) option
   - correct failure to extract all files from a garbled (/g) archive
 - [3.0e](3.0e) 04/02/87

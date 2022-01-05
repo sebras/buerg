@@ -25,7 +25,7 @@
   - add ARC v7 information records
 - 1.35 03/12/91
   - add more LHA sfx formats
-- 1.34 02/06/91
+- [1.34](1.34) 02/06/91
   - add PAK 2.5 sfx and LHA 2.05 sfx formats
 - [1.33](1.33) 09/03/90
   - display path names separately from file names

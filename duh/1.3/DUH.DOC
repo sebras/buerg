@@ -1,0 +1,42 @@
+DUH Command							 Version 1.3
+-----------							 May 1, 1989
+
+Function:  DUH deletes files that also exist in  ARC,  ZIP,
+	   PAK,  LZH  and  most self-extracting EXE archive
+	   files.  It is a common practice to extract files
+	   in the same directory and end up with two copies
+	   of things.  By using DUH, you can get rid of the
+	   extracted files.
+
+
+Usage:	   DUH	[d:\path\filespec]  [/O]  [/N]
+
+
+Remarks:   The program uses  FV  to get a directory listing of
+	   all archive files in the current directory. It then
+	   compares the file names and datestamps to the files
+	   in  the  directory specified  by  d:\path\filespec.
+	   The default is all files, include archive files.
+
+	   When the program finishes,  you have  a file called
+	   DELINF.BAT.	It contains one ERASE command for each
+	   duplicate  file;  followed  by  a  'del delinf.bat'
+	   command to get rid of the  BAT  file.  You can edit
+	   the	BAT  file to be more selective about the files
+	   that are deleted.  Then, run DELINF to delete those
+	   files.
+
+	   Specify /O to delete older files.
+
+	   Specify /N to delete files of the same name regardless
+	   of the date stamps.
+
+Notes:	   DUH was written in Quick Basic 3 (I was in a hurry) and
+	   should run on all MS DOS version 2, or later, systems.
+
+
+
+
+
+	   DUH Copyright (c) Vernon D. Buerg 1988-89. ALL  RIGHTS RESERVED.
+

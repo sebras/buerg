@@ -6,7 +6,7 @@
   - add handling of ARC v7 information records
 - 4.0f 05/15/90
   - performance improvements
-- 4.0e 03/17/89
+- [4.0e](4.0e) 03/17/89
   - performance improvements
 - [4.0c](4.0c) 03/03/89
   - correct mkdir error without /5

@@ -1,0 +1,12 @@
+
+FV  Version 1.08  Copyright (c) 1989 Vernon D. Buerg
+View directories of ARC, DWC, LZH, PAK, ZIP files.
+For personal use only. May not be sold.
+
+  Usage:  FV [d:][\path\]filespec.ext]  [/p] [/b] [/c]
+
+  Where:  /P pauses after each screenful
+          /B suppresses display of d:\path
+          /C displays comments
+
+

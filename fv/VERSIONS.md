@@ -82,7 +82,7 @@
   - add ZOO format
 - 1.09 05/06/89
   - add LHARC 1.12b sfx checks
-- 1.08 04/28/89
+- [1.08](1.08) 04/28/89
   - initial release
 - 1.00 04/21/89
   - initial program

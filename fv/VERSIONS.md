@@ -31,7 +31,7 @@
   - display path names separately from file names
 - 1.32 08/30/90
   - improve wide display of long file names
-- 1.31 07/18/90
+- [1.31](1.31) 07/18/90
   - change processing of ZIP extra comments field
   - add 'filespecs' file selection criteria
 - [1.30](1.30) 07/16/90

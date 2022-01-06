@@ -5,7 +5,7 @@
   - Add /H option to process LHARC (.LZH) files
 - 2.3 9/05/89
   - Changes to info screen.
-- 2.2 03/08/89
+- [2.2](2.2) 03/08/89
   - corrects a problem deleting original ARC files
 - 2.1 02/24/89
   - adds internal tables for specifying the various programs to be used. The defaults include ARCA, ARC, PAK, PKARC, PKPAK, and PKZIP.

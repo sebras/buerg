@@ -1,7 +1,7 @@
 # LARC version history
 
 - 2.6 05/23/90
-- 2.4 3/17/90
+- [2.4](2.4) 3/17/90
   - Add /H option to process LHARC (.LZH) files
 - 2.3 9/05/89
   - Changes to info screen.

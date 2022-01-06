@@ -13,7 +13,7 @@
 - 1.8 11/02/88
 - 1.6 04/15/87
   - adds more checks to insure that the temporary directory is empty. Also, you may now press ESCape while LARC is running to cancel it. A check was added to stop processing if an error occurred creating a new ARC file
-- 1.5 03/15/87
+- [1.5](1.5) 03/15/87
   - corrects an overflow (error 6) problem, and adds another check to be sure that the temporary directory is different from the input and output directories. Remember, all files in the temporary directory are deleted.
 - 1.4 03/01/87
 - 1.3 02/28/87

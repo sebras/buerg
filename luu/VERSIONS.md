@@ -35,5 +35,5 @@
 - 1.3 08/06/84
     -  Ignore CRC bytes in directory.
     -  Update in place if replacement member is same size or smaller, of is last member in directory.
-- 1.2 07/30/84
+- [1.2](1.2) 07/30/84
     -  recognize new CPM date/time stamp format

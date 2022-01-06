@@ -1,0 +1,73 @@
+
+
+LUU Command
+-----------
+
+Purpose:   Add or replace members in an LU or LAR type library.
+
+Format:    LUU  [d:][path]filename[.ext] filename[.ext]
+
+Remarks:   The library name and at input member file name must
+           be supplied. Only one member name is allowed, so far.
+
+Notes:     Written for the IBM PC using DOS 2.0 or later.
+           Copyright (c) 1984 by Vernon Buerg, for public domain use.
+           Version 1.2, August 1, 1984.
+
+           LUU duplicates the A(dd) and U(pdate) functions of LU.
+           When used with LUT and LUE, original file dates are
+           preserved and recorded.
+
+           The advantages of LUU are:
+
+                - smaller, so a copy can be kept on the "system" disk
+                - faster, mucho
+                - handles paths and wildcards
+                - retains input file (or member) date/time
+                - replaces in place (later)
+
+Examples:
+           LUU  a:AQM.LBR  b:*.AQM
+           LUU PCT366.LBR b:PCT366.*
+           LUU c:\test\source.lbr  b:ab??xx.*
+
+
+
+
+
+
+
+
+
+
+File Formats:
+
+               An LBR file consists of a directory and one or more
+           "members". The directory contains from 4 to 256 entries.
+           Each entry is 32 bytes long and describes a member, if
+           one exists.
+
+                The first directory entry describes the directory
+           itself. Thus, the number of entries allocated is increased
+           by one.
+
+                All space allocation is in terms of sectors. Each
+           sector is 128 bytes long. Four directory entries fit
+           in one sector, so the directory is allocated in multiples
+           of four.
+
+                        Directory format
+                        ----------------
+                0 - File status; 0=active, 254=deleted, 255=free
+                1 - Member name; filename in FCB format
+               12 - Offset to data in sectors of 128 bytes
+               14 - Length of member in sectors.
+               16 - Original member file creation date, MM/DD/YY
+               24 - Original member file creation time, HH:MM:SS
+
+
+Press ENTER to continue: r file creation date, MM/DD/YY
+               24 - Original member file creation time, HH:MM:SS
+
+
+Press ENTER to c

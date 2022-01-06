@@ -1,0 +1,189 @@
+
+  LARC Utility                                            Version 2.2
+  ------------                                           Mar 8,  1989
+
+  Purpose:
+
+        To create the smallest possible archive files.
+
+  Usage:
+        LARC d:[\inpath\]filespec  [d:\outpath]
+|                                  [/A] [/C] [/G] [/K] [/P] [/Z]
+                                   [/L] [/R]
+
+        The input drive and/or path is required and specifies the
+        location of file(s) to be processed.  The inpath name is
+        optional.  You may include wildcards.  The extension defaults
+        to ARC.
+
+        The output drive and path are optional. If omitted, the
+        original ARC files are replaced with any smaller versions
+        created by the LARC process. If supplied, all archive files
+        are newly created in the output directory. This is handy
+        for insuring that you get the archive file in the format
+        that you want, e.g. in SEA ARC format only.
+
+        At least two disk directories are required.  The first (from
+        d:\inpath) contains the original files.  The second (the
+        current drive and path) is used for temporary storage where
+        all  files are extracted and re-created.  A large RAM disk
+        is recommended.  Optionally, a third directory (from
+        d:\outpath) is used as the destination for all new files.
+
+        You MUST not have the d:\inpath the same as the current drive
+        and path.  The current drive (and directory) is used for
+        temporary work space. You can have the inpath and outpath the
+        same to force replacement of all existing ARC files. The smallest
+        files - in terms of bytes,  not clusters - is used.
+
+        Use one or more of the option switches to specify the program(s)
+        to be used for creating archive files:
+
+          /A for ARCA
+          /C for SEA's ARC
+          /G for GSARC or PAK
+          /K for PKARC
+          /P for PKPAK
+          /Z for PKZIP
+
+        If none is supplied, the default is to use ARCA only.
+ LARC Utility                                                       Page 2
+
+
+        If an LBR library file is encountered, it is converted to
+        an ARC file. You must have LUE.COM available in the DOS path.
+        If you plan to just convert LBR files, use an input file
+        specification of "*.LBR" to avoid unnecessary processing.
+        The LBR file is not deleted unless the /L option is supplied.
+        This gives you complete control of the process.
+
+        A summary report is produced at the end of the program. It
+        is normally displayed on the screen, but you can have a
+        duplicate written to the file LARC.RPT by supplying the /R
+        option on the command line.
+
+        You should have ARCA, PKXARC, PKARC, PKPAK, PKZIP, PAK, LUE
+        and ARC.EXE accessible from the DOS path, preferably in a RAM
+        disk, depending on the options supplied pn the command line. Of
+        course, you may substitute BAT files for any of those programs.
+
+
+                        Operation
+                        ---------
+
+        Each ARC file is individually unpacked by PKXARC (so that
+        squashed files can be processed), and then ARCed using ARC,
+        PKARC, PKPAK and/or ARCA. If any of the resulting ARC files is
+        smaller than the original, the original is immediately
+        replaced. The original ARC file's date and time are preserved.
+
+        Each PAK file is unpacked by the GSARC/PAK program. If /G is
+        specified, a PAK file is created in place of the original
+        ARC file.
+
+        Each ZIP file is unpacked with PKUNZIP. If /Z is specified,
+        a new ZIP file is created in place of the original ARC, LBR,
+        or PAK file if the ZIP file is smaller.
+
+        It takes a long time to process several archive files. Figure
+        an hour for 10 megs of files on an AT.  LARC beeps when
+        it is finished, and displays a summary of the files processed.
+
+        You can eliminate squashed files by using an early version
+        of PKARC, or by patching PKARC to disable squashing.
+
+        I use LARC to process newly uploaded files. It is a brute
+        force method of testing the integrity of the files, and
+        results in saving disk space.
+
+
+ LARC Utility                                                          Page 3
+
+
+                        Examples
+                        --------
+
+     o  There are several ARC files in the directory C:\TEST; drive
+        D: is an 800K RAM disk. Any smaller ARC files replace the
+        existing files. Only ARC is used.
+
+             d:|cd \
+             larc c:\test\*
+
+     o  All ARC files in the directory C:\UPLOADS are copied to a
+        new directory, C:\TEST, in their smallest versions. The disk
+        directory C:\WORK is the current directory and is used for
+        temporarily extracting ARC files. All files in C:\WORK are
+        deleted. Both ARCA and PKARC are used.
+
+             c:|cd \work
+             larc c:\uploads\* c:\test /A/P
+
+     o  Convert all library LBR files on C:\TEST to ARC files, and
+        delete the original library files. Drive d: is used for
+        temporary storage.
+
+             d:
+             larc c:\test\*.lbr /l
+
+     o  Replace existing ARC file on B:\ with the smallest ARC
+        files. Drive C: is used for temporary storage.
+
+             c:
+             larc b:\* b:\ /a/p/c
+
+
+ LARC Utility                                                          Page 4
+
+                        Version History
+                        ---------------
+
+   3/15/87
+        Version 1.5 corrects an overflow (error 6) problem, and adds
+        another check to be sure that the temporary directory is
+        different from the input and output directories. Remember,
+        all files in the temporary directory are deleted.
+
+        Also, DOS 3.1 or later is required for proper operation.
+        There's no guarentee of anything, anyway.
+
+
+   4/15/87
+        Version 1.6 adds more checks to insure that the temporary
+        directory is empty. Also, you may now press ESCape while
+        LARC is running to cancel it. A check was added to stop
+        processing if an error occurred creating a new ARC file
+
+|  2/24/89
+|       Version 2.1 adds internal tables for specifying the various
+|       programs to be used. The defaults include ARCA, ARC, PAK,
+|       PKARC, PKPAK, and PKZIP.
+|  3/08/89
+|       Version 2.2 corrects a problem deleting original ARC files
+
+|       Approximately 256k of memory is required.
+
+        Use LARC at your own risk. There is no warranty or guarentee
+        that the program will work as expected.
+
+
+                        Notes
+                        -----
+
+        (c) Copyright Vernon D. Buerg 1987-89. All rights reserved.
+                      139 White Oak Circle
+                      Petaluma, CA  94952
+                      VOR BBS: (707) 778-8944
+                      Compuserve: 70007,1212 (Go IBMSYS)
+
+        Written in MS Quick Basic, version 2.01, using the ADVBAS
+        object library by Thomas Hanlin III, 6812 Sydenstricker
+        Rd., Springfield, VA 22152.
+
+        The LARC program and materials may be distributed and copied
+        with these restrictions:
+
+                - no fee is charged,
+                - the material is not modified.
+
+

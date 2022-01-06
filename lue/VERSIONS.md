@@ -5,7 +5,7 @@
 - 2.1 06/05/85
   - Adds /X option to skip unsqueezing files
   - Accepts the strange SQ2 squeezed format
-- 2.02 05/21/85
+- [2.02](2.02) 05/21/85
   - Correct messages for file that can't be unsqueezed
 - [2.01](2.01) 05/17/85
   - Expand (unsqueeze) SQ-squeezed files

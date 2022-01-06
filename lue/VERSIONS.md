@@ -21,7 +21,7 @@
   - Allows multiple member files to be selected.
 - 1.8 09/25/84
   - Extracts members from LU86 format libraries.
-- 1.7 08/08/84
+- [1.7](1.7) 08/08/84
   - Corrects problem extracting large files.
   - Checks for new CRC codes in directory.
 - 1.6 06/26/84

@@ -1,0 +1,60 @@
+
+LUE Command
+-----------
+
+Purpose:   Extract one or more files (members) from an LU or LAR type library.
+
+Format:    LUE  [d:][path]filename[.ext] [mbrname[.ext]]
+
+Remarks:   The library name must be supplied. It may contain a drive
+	   and/or path names, but may not contain wildcards.
+
+	   If the member name is omitted, all files are extracted.
+
+	   Wildcards may be used in the member name.
+
+	   The output file names are taken from the member names.
+
+	   The date and time of the output file(s) are set to the same
+	   date and time as the input library file, unless they are
+	   stored in the directory entry.
+
+	   Directory entry format:
+		0 - status flag
+		1 - filename in FCB format
+	       12 - offset to data
+	       14 - length of data, 128-byte sectors
+	       16 - creation date, MM-DD-YY
+	       24 - creation time, HH:MM:SS
+
+Examples:
+	   - Extract all members from file TEST.LBR
+
+		LUE B:TEST.LBR
+
+	   - Extract all COM files from file PGM.LBR
+
+		LUE PGM.LBR *.COM
+
+	   - Extract member PROG.BAK from file SOURCE.LBR
+
+		LUE C:\STUFF\SOURCE.LBR PROG.BAK
+
+
+Notes:	   Written for the IBM PC using DOS 2.0 or later,
+	   by Vernon Buerg. For public domain use.
+
+	   LUE duplicates the A and E function of LU. The advantages
+	   of LUE are:
+
+	   - smaller, so a copy can be kept on the "system" disk
+	   - faster, mucho
+	   - handles paths and wildcards.
+	   - retains input file or member date/time
+
+	   Version 1.6, June 26, 1984
+	   Version 1.7, August 8, 1984.
+		Corrects problem extracting large files.
+		Checks for new CRC codes in directory.
+
+

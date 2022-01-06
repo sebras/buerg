@@ -1,6 +1,6 @@
 # LUU version history
 
-- 2.13 04/28/86
+- [2.13](2.13) 04/28/86
     - correct replacement of members that were automatically squeezed
 - 2.09 01/27/86
     - correct losing directory if run out of directory entries, or any other error

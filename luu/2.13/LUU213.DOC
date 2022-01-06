@@ -1,0 +1,252 @@
+-                                                                      Page 1
+                        LUU - Library Update Utility
+                       Version 2.13 - April 28, 1986
+                          (c) Vernon D. Buerg 1986
+
+
+LUU Command
+-----------
+
+Purpose:   To place one or more files into a single library (LBR)
+           file for archiving, data transmission or back-up.
+
+Format:    LUU   [d:][path]filename[.LBR]  filespec(s) /N /Q /D /nnn
+
+Remarks:   The library name and at least one input member file name
+           must be supplied. The library name may contain a drive,
+           path names, and a filename with an extension. If the
+           library extension is omitted, .LBR is assumed.
+
+           There may be one or more member file names. Separate each
+           member name by one blank. Each member name may include a
+           drive, path names, and wildcard characters in the file
+           name and extension.
+
+           Files larger than 1024 bytes are automatically sQueezed
+           using the Greenlaw/Huffman algorithm. You may use the /N
+           option to negate sQueezing. If the squeezed file is larger
+           than the original file, an extra step is taken to place
+           the smaller original file into the library. You may use
+           the /Q option to bypass this step and put the squeezed
+           version of the file into the library.
+
+           The input files may be deleted (after being placed into
+           the library file) by using the /D option.
+
+           If the LBR file does not exist, you are prompted to enter
+           a number for the size of the library directory. You may
+           use the /nnn option to supply this number and avoid the
+           prompt.
+
+           The DOS error level is set to 1 if LUU terminates with an
+           error.
+
+Notes:     Written for the IBM PC using DOS 2.0 through DOS 3.1.
+           For private, personal use. Commercial use prohibited.
+
+           Copyright (c) 1985 by Vernon Buerg. All rights reserved.
+                456 Lakeshire Drive
+                Daly City, CA 94015
+                RBBS: 415-994-2944
+                CompuServe: 70007,1212
+
+           LUU duplicates the A(dd) and U(pdate) functions of LU.
+           When used with LUT and LUE, original file dates are
+           preserved and recorded.
+
+           The advantages of LUU are:
+             o  smaller, so a copy can be kept on the "system" disk
+             o  faster, mucho
+             o  handles paths and wildcards
+             o  retains input file (or member) date/time
+             o  replaces in-place to save disk space
+             o  automatically squeezes files to save disk space
+-
+                        LUU - Library Update Utility
+
+Command Options
+---------------
+
+        /N    indicates do Not squeeze the files, place the original
+              files, as-is, into the library
+
+        /Q    indicates that the sQueezed version of the files be
+              placed into the library whether they are larger than
+              the original version or not
+
+        /D    indicates that the original files be deleted after
+              being added to the library
+
+        /nnn  supplies the number of directory to allocate to a
+              new library, thus bypassing the prompt. A value of
+              1 to 255 may be used.
+
+        All command options must be entered after any filename
+        parameters. That is, at the end of the command line.
+
+        The defaults result in squeezing any file that is larger than
+        1024 bytes, and placing the squeezed version of the file into
+        the library only if it is smaller than the original file.
+
+
+Examples
+--------
+
+        o  Place all files on drive B which have an extension
+           of "AQM" into the file called "AQM.LBR":
+
+                LUU a:AQM.LBR  b:*.AQM
+
+
+        o  Place all files on drive B which have a filename
+           of PCT366 into the file PCT366.LBR and do not sQueeze
+           them:
+
+                LUU PCT366 b:PCT366.* /N
+
+
+        o  Place all files from drive B which match the file
+           specification "AB??XX.???", and all files from the
+           the directory "PROD" on drive A which have an extension
+           of "ASC" into the file "SOURCE.LBR" in the directory
+           called "TEST" on drive C:
+
+                LUU c:\test\source.lbr  b:ab??xx.*  a:\prod\*.asc
+
+
+        o  Place all files from the current drive into a new
+           library called "TEST.LBR", and allocate 32 directory
+           entries if the library does not exist:
+
+                LUU test *.* /32
+
+-
+                        LUU - Library Update Utility
+
+File Formats
+------------
+
+               An LBR file consists of a directory and one or more
+           "members". The directory contains from 4 to 256 entries.
+           Each entry is 32 bytes long and describes a member, if
+           one exists.
+
+                The first directory entry describes the directory
+           itself. Thus, the number of entries allocated is increased
+           by one.
+
+                All space allocation is in terms of sectors. Each
+           sector is 128 bytes long. Four directory entries fit
+           in one sector, so the directory is allocated in multiples
+           of four.
+
+                There are three directory formats recognized by LUU.
+           They are: 1) old LU, 2) LUPC, and 3) new LU86. When a new
+           library is created, LUU uses the new LU86 directory format.
+           If LUU is updating an existing LBR file, it uses the same
+           format that the file was created with.
+
+                        Directory format
+                        ----------------
+                0 - File status; 0=active, 254=deleted, 255=free
+                1 - Member name; filename in FCB format, dir name is blanks
+               12 - Offset to data in sectors of 128 bytes
+               14 - Length of member in sectors.
+               16 - all zero for 'old LU' format
+
+                        LUPC format extension
+                        ---------------------
+                1 - master directory name is ********DIR
+               16 - Original member file creation date, MM/DD/YY
+               24 - Original member file creation time, HH:MM:SS
+
+                        LU86 Directory Format
+                        ---------------------
+
+                0 - File status; 0=active, 254=deleted, 255=free
+                1 - Member name; filename in FCB format, dir name is blanks
+               12 - Offset to data in sectors of 128 bytes
+               14 - Length of member in sectors.
+               16 - CRC word, or zero if Cyclic Redundancy Checking not used
+               18 - File create date, CP/M format
+               20 - File create time, DOS format
+               22 - Date file last updated (replaced), CP/M format
+               24 - Time file last updated, DOS format
+               26 - Number of bytes in last sector
+               27 - reserved/unused/zero
+
+
+           The date and time stamp fields vary in format. LUU uses
+           the LU86 format when it creates a library. Otherwise, the
+           format used when the library was created is used.
+
+           The member name for the directory entry is all blanks.
+           This allows for compatibility checking between versions
+           of LU and LUU.
+-
+                                                                        Page 4
+                        LUU - Library Update Utility
+
+
+
+Version History
+---------------
+
+           1.2, July 30, 1984.
+           1.3, August 6, 1984.
+             -  Ignore CRC bytes in directory.
+             -  Update in place if replacement member is same size
+                or smaller, of is last member in directory.
+
+           1.4, August 13, 1984.
+             -  recognize new CPM date/time stamp format
+
+           1.5, December 21, 1984,
+             -  allow multiple member names to be specified
+
+           1.6, January 23, 1984,
+             -  default to LU86 directory format
+
+           1.65, April 13, 1985,
+             - set ERRORLEVEL to 1 if any errors
+             - use DOS functions for displaying messages to allow
+               for redirection, etc.
+
+           1.66, May 14, 1985,
+             - correct CP/M dates from LU86 formats
+
+           1.67, June 17, 1985,
+             - correct MAJOR problem "Updating" the last file,
+               would result in damage to other files.
+
+           2.00, June 26, 1985
+             - add CRC for LBR files
+             - add CRC for directory
+             - re-use deleted entries
+
+           2.05, July 13, 1985
+             - automatically sQueeze files larger than 1024 bytes
+             - add /N option to suppress sQueezing
+
+           2.08, December 29, 1985
+             - add the /nnn option to supply the number of directory
+               entries for new library files
+             - add /D option to delete input files
+
+             - use smaller of original file or squeezed file
+             - add /Q option to use sQueezed file regardless of size
+
+             - correct directory update problem if "File not found"
+               error occurs
+             - implement CRC for squeezed files
+
+           2.09, January 27, 1986
+             - correct losing directory if run out of directory entries,
+               or any other error
+
+           2.13, April 28, 1986
+             - correct replacement of members that were automatically
+               squeezed
+
+
+

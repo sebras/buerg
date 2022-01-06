@@ -1,6 +1,6 @@
 # LUT version history
 
-- 1.93 05/27/85
+- [1.93](1.93) 05/27/85
   - Performance improvements.
 - 1.92 04/12/85
   - The output format has changed to include the volume

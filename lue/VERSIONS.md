@@ -14,7 +14,7 @@
 - 1.93 03/24/85
   - Adds message when out of disk space.
   - Sends message when member not found using wildcards.
-- 1.92
+- [1.92](1.92)
 - 1.9 02/08/85
   - Assumes a library file extension of LBR.
   - Allows wildcards in the library file name.

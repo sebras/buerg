@@ -1,0 +1,57 @@
+
+LUD Command
+-----------
+
+Purpose:   To delete one or more files from a library (LBR file).
+           Optionally, the library may be reorganized to recover
+           the space lost due to deleting members.
+
+Format:    LUD  [d:][path]filename[.LBR] filename ... [/R]
+
+Remarks:   The library name must be supplied. If a member file
+           name is supplied, it is deleted from the library.
+
+           To reorganize the library, supply the /R operand.
+
+           The library filename may contain a drive, path names,
+           and wildcard characters. The first file matching the
+           library filename is processed.
+
+           Each member filename may contain wildcard characters.
+
+           For LU86 format libraries the date/time stamps are
+           not changed, but the directory CRC is updated.
+
+Examples:
+        o  Delete member file 'TEST.DTA' from library 'STUFF.LBR'
+
+                LUD STUFF TEST.DTA
+
+        o  Delete all member files with and extension of 'ASM'
+
+                LUD A:\SAVE.DIR\STUFF *.ASM
+
+        o  Recover lost space in library 'ARLO.LBR'
+
+                LUD ARLO /R
+
+        o  Delete several members and reorganize library 'MONDO.LBR'
+
+                LUD MONDO FOO.TXT *.DOC /R
+
+
+Notes:     Written for the IBM PC using DOS 2.0 or later.
+           (c) Copyright 1985 Vernon Buerg.
+               456 Lakeshire Drive
+               Daly City, CA 94015
+               RBBS: 415-994-2944
+               CompuServe: 70007,1212
+
+           For public domain use. Not for sale or hire.
+
+           LUD duplicates the D and R functions of LU.
+
+           Version 1.0 - April 11, 1985
+|          Version 1.06 - July 8, 1985; correct memory >512K problem
+
+

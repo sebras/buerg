@@ -1,6 +1,6 @@
 # LUE version history
 
-- 2.2 04/28/86
+- [2.2](2.2) 04/28/86
   - Adds output file specification parameter
 - [2.1](2.1) 06/05/85
   - Adds /X option to skip unsqueezing files

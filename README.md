@@ -69,7 +69,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 | [FV](fv/VERSIONS.md) | [2.00](fv/2.00) | 01/11/00 | Display directories of archive files including ARC, PAK, ZIP, LZH and self extracting files |
 | [LARC](larc/VERSIONS.md) | 2.6 | 05/23/90 | Create the Littlest ARChive file, w/BAS |
 | [LUD](lud/VERSIONS.md) | [1.06](lud/1.06) | 07/08/85 | Delete one or more files from a library (LBR file) |
-| [LUE](lue/VERSIONS.md) | 2.2 | 04/28/86 | Extract one or more files (members) from an LBR type library |
+| [LUE](lue/VERSIONS.md) | [2.2](lue/2.2) | 04/28/86 | Extract one or more files (members) from an LBR type library |
 | [LUT](lut/VERSIONS.md) | 1.93 | 05/27/85 | Displays the directory of library (LBR) files |
 | [LUU](luu/VERSIONS.md) | 2.13 | 04/28/86 | Add or replace members in an LU or LAR type library |
 | [LUX](lux/VERSIONS.md) | 1.2 | 11/12/84 | Execute a COM or EXE program directly from a LBR type file |

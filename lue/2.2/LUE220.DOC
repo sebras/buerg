@@ -1,0 +1,120 @@
+
+LUE Command
+-----------
+
+Purpose:   Extract one or more files (members) from an LU or LAR type library.
+
+Format:    LUE  [d:][path]filename[.LBR]  [mbrnames[.ext]]  [outfile]  [/X]
+
+Remarks:   The library name must be supplied. It may contain a drive
+           and/or path names, and may contain wildcards. Only the first
+           matching library file is processed. If the extension is
+           omitted, then an extension of .LBR is assumed.
+
+           If the member name is omitted, all files are extracted. There
+           may be as many member file names specified as will fit on a
+           128-byte command line. Member filenames may contain wildcard
+           characters (* and ?).
+
+|          Files are extracted to the current drive and directory, unless
+|          the 'outfile' operand is supplied. The 'outfile' operand may
+|          contain a drive and/or path name.
+
+           Files with an extension that has a middle letter Q are
+           considered "squeezed" files and they are expanded. Some
+           squeeze programs create files which are not in the original
+           Greenlaw (SQ, SQPC, and NSQ), or the SQ2 format. These files
+           are extracted without expansion.
+
+|          To extract squeezed files without expanding them, use
+|          the /X option.
+
+           The output file names are taken from the member names and
+           the extracted files are placed on the current drive and in
+           the current directory.
+
+           The date and time of the output file(s) are set to the same
+           date and time as the input library file, unless the dates are
+           stored in the LBR directory. If the file was originally
+           sQueezed by SQPC or NSQ, the date is contained in the file
+           and is not taken from the directory.
+
+           Directory entry format:
+                0 - status flag
+                1 - filename in FCB format
+               12 - offset to data
+               14 - length of data, 128-byte sectors
+
+             LUPC extension:
+
+               16 - creation date, MM-DD-YY
+               24 - creation time, HH:MM:SS
+
+             LU86 extension:
+               16 - see source for field definitions
+
+Examples:
+           - Extract all members from file TEST.LBR
+
+                LUE B:TEST.LBR
+
+           - Extract all COM files from file PGM.LBR and place
+             them in the directory called SAVE on drive B:
+
+                LUE PGM.LBR *.COM B:\SAVE
+
+           - Extract member PROG.BAK from file SOURCE.LBR
+
+                LUE C:\STUFF\SOURCE.LBR PROG.BAK
+
+           - Extract all COM files from file TEST.LBR
+
+                LUE B:\BACKUP.DSK\TEST *.COM
+
+Notes:     Written for the IBM PC using DOS 2.0 or later,
+           Copyright 1985 by Vernon D. Buerg.
+             456 Lakeshire Drive
+             Daly City, CA 94015
+             RBBS: (415) 994-2944, 2am to 10am PDT daily.
+             CompuServe: 70007,1212
+
+           For public domain use. Not for sale or hire.
+           Commercial use prohibited.
+
+           LUE duplicates the A and E function of LU. The advantages
+           of LUE are:
+
+           - smaller, so a copy can be kept on the "system" disk
+           - faster, mucho
+           - handles paths and wildcards.
+           - retains input file or member date/time
+           - compatible with most forms of LBR files: LU, LU86, LAR, LUPC
+           - expands sQueezed files in the SQ, SQPC, NSQ and SQ2 formats
+
+           Version 1.6, June 26, 1984
+           Version 1.7, August 8, 1984.
+                Corrects problem extracting large files.
+                Checks for new CRC codes in directory.
+           Version 1.8, September 25, 1984
+                Extracts members from LU86 format libraries.
+           Version 1.9, February 8, 1985
+                Assumes a library file extension of LBR.
+                Allows wildcards in the library file name.
+                Allows multiple member files to be selected.
+           Version 1.93, March 24, 1985
+                Adds message when out of disk space.
+                Sends message when member not found using wildcards.
+           Version 1.94, April 13, 1985
+                Sets the ERRORLEVEL variable to 1 if any errors.
+           Version 2.01, May 17, 1985
+                Expand (unsqueeze) SQ-squeezed files
+           Version 2.02, May 21, 1985
+                Correct messages for file that can't be unsqueezed
+           Version 2.10, June 5, 1985
+                Adds /X option to skip unsqueezing files
+                Accepts the strange SQ2 squeezed format
+
+|          Version 2.2, April 28, 1986
+|               Adds output file specification parameter
+
+

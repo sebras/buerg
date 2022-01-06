@@ -1,0 +1,66 @@
+
+LUT Command
+-----------
+
+Purpose:   Displays the directory of one or more library (LBR) files
+           which were created by the LU or LAR utility.
+
+Format:    LUT  [d:][path]filename[.ext]
+
+Remarks:   The single operand names a library file. Global filename
+           characters * and ? are  allowed in  the filename and  the
+           extension. If the extension is omitted, LBR is assumed.
+
+           If the filename is omitted, all LBR files on the current
+           drive and in the current directory are listed.
+
+Examples:
+        1) List directories of all LBR files on current drive
+                LUT
+
+        2) List directory of all LBR files on drive B
+                LUT B:
+
+        3) List all LBR directories of filenames beginning with XYZ
+                LUT XYZ*
+
+        4) List all LBR directories for files in the path \TEST
+                LUT \TEST
+
+        5) List all LBR directories in path \TEST beginning with XYZ
+                LUT \TEST\XYZ*
+
+
+Notes:     Written by Vernon Buerg for public domain use.
+           For DOS 2.0 or later. Not for sale or hire.
+                456 Lakeshire Drive
+                Daly City, CA 94015
+                Work: (415) 991-0644
+                Data: (415) 994-2944, 2am to 10am PDT
+                CompuServe: 70007,1212
+
+History:
+           Version 1.6, July 11, 1984.
+
+           Version 1.7, August 8, 1984.
+                Ignore CRC bytes in directory.
+                Use memory allocation functions.
+                Checks for DOS 2.
+
+           Version 1.83, September 25, 1984.
+                Sort directory by name.
+                Check and display CRC values.
+                Format LU86 format date/time.
+
+           Version 1.9, November 9, 1984.
+                Assume LBR extension.
+                Default to all LBR files if only a path is supplied
+
+           Version 1.92, April 12, 1985.
+                The output format has changed to include the volume
+                name. Also, if any errors are encountered, the DOS
+                ERRORLEVEL variable is set to a 1.
+|          Version 1.93, May 27, 1985.
+|               Performance improvements.
+----------
+

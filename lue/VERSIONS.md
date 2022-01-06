@@ -11,7 +11,7 @@
   - Expand (unsqueeze) SQ-squeezed files
 - 1.94 04/13/85
   - Sets the ERRORLEVEL variable to 1 if any errors.
-- 1.93 03/24/85
+- [1.93](1.93) 03/24/85
   - Adds message when out of disk space.
   - Sends message when member not found using wildcards.
 - [1.92](1.92)

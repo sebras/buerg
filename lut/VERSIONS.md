@@ -19,7 +19,7 @@
   - remove CRC display, use `D_Pad`
 - 1.81 08/29/84
   - added CP/M LU86 date/time formatting
-- 1.8 01/20/85
+- [1.8](1.8) 01/20/85
 - 1.7 08/08/84
   - Ignore CRC bytes in directory.
   - Use memory allocation functions.

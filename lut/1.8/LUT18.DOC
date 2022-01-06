@@ -1,0 +1,36 @@
+
+LUT Command
+-----------
+
+Purpose:   Displays the directory of one or more library (LBR)
+	   files which were created by the  LU or LAR utility.
+
+Format:    LUT  [d:][path]filename[.ext]
+
+Remarks:   If no operands are supplied, all files with an
+	   extension of LBR in the current path are listed.
+	   Global filename characters * and ? are allowed in
+	   the filename and extension.
+
+Examples:
+	1) List directory of all LBR files on drive B
+		LUT B:
+
+	2) List directories of all LBR files on current drive
+		LUT
+
+	3) List all LBR directories of filenames beginning with XYZ
+		LUT XYZ?????.LBR
+
+
+Notes:	   Written by Vernon Buerg for public domain use.
+	    For DOS 2.0 or later.
+
+	   Version 1.6, July 11, 1984.
+	   Version 1.7, August 8, 1984.
+		Ignore CRC bytes in directory.
+	        Use memory allocation functions.
+		Checks for DOS 2.
+
+----------
+

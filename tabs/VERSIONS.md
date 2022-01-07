@@ -8,7 +8,7 @@
 - 2.0 03/05/86
   - Add EOF to end of file for programs that need it.
   - Improve performance about 10%.
-- 1.9 06/05/85
+- [1.9](1.9) 06/05/85
   - The output file specification is required unless the input file specification has a drive. This prevents over-writing the input file.
 - [1.8](1.82) 04/13/85
   - The input file specification is now required,

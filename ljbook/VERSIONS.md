@@ -62,7 +62,7 @@
   - leave empty pages blank
 - 1.01 11/22/87
   - play with line length and margins
-- 1.0 10/05/87
+- [1.0](1.00) 10/05/87
   - first public release
 - 0.99 08/10/87
   - correction for files over 256 pages

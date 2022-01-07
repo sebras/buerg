@@ -17,7 +17,7 @@
   - add /B switch for Basic programs with line numbers
   - add QBXREF environment variable support for default switches
   - fix problem in line 2190 if line started with a colon
-- 4.00g 10/09/88
+- [4.00g](4.00g) 10/09/88
    - correct overwrite of output file if /f(filename) is used
    - correct "ERROR: Include file 'filename' is missing" message
 - 4.00d-[4.00f](4.00f) 07/15/88

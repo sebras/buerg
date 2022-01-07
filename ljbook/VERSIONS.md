@@ -20,7 +20,7 @@
   - set PC10 symbol set
 - 3.00 12/10/90
   - add duplex printing mods from Alain Caillard
-- 2.90 10/23/90
+- [2.90](2.90) 10/23/90
   - mods from Robert W. King for DeskJet printing
   - change internal font to print linedraw characters
 - 2.80 09/18/90

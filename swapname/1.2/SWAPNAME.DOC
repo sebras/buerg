@@ -1,0 +1,39 @@
+
+SWAPNAME Command
+----------------
+
+Purpose:  To change the names of two disk files to that
+          of the other file.
+
+Format:   SWAPNAME  [d:][path]filename.ext  [d:][path][filename.ext
+
+Remarks:  The drive and path names are optional. If omitted, the
+          current drive and path name is used.
+
+          File names must be supplied for both files. The files
+          may be on different drives and/or in different paths.
+
+          If any errors are encountered, such as invalid file names,
+          both files are restored to their original names, and an
+          error message is issued. The message contains a return
+          code from the RENAME function. Refer to the DOS manual
+          for its meaning.
+
+          Copyright Vernon D. Buerg, Feb 20, 1986. For the IBM PC
+          using DOS 2.0 or later. Public domain. All rights reserved.
+
+Examples:
+          o  Swap the names for the files TEST.NEW and TEST.OLD:
+
+                SWAPNAME TEST.NEW TEST.OLD
+
+          o  Swap the names for the file OLD.DAT in subdirectory
+             SAVE on drive A: to NEW.DAT in subdirectory WORK on
+             drive B:
+
+                SWAPNAME A:\SAVE\OLD.DAT  B:\WORK\NEW.DAT
+
+             There is now a file called NEW.DAT in directory SAVE on
+             drive A, and one called OLD.DAT in directory WORK on drive B.
+
+

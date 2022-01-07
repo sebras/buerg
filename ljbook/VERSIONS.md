@@ -14,7 +14,7 @@
 - 3.20 01/08/91
   - remove setting of PC10 symbol set
   - correct some margins
-- 3.10 12/20/90
+- [3.10](3.10) 12/20/90
   - correct A4 margins
   - add /N command line parameter to skip first prompt
   - set PC10 symbol set

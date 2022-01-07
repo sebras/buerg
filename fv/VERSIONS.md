@@ -23,7 +23,7 @@
   - add support for ARJ archive files
 - 1.36 04/12/91
   - add ARC v7 information records
-- 1.35 03/12/91
+- [1.35](1.35) 03/12/91
   - add more LHA sfx formats
 - [1.34](1.34) 02/06/91
   - add PAK 2.5 sfx and LHA 2.05 sfx formats

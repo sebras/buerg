@@ -9,7 +9,7 @@
   - replace /B internal font with a much crisper one that includes the linedraw characters; font designed and supplied by George Havach
 - 3.40 04/18/91
   - add /I hole punch margins  mods by Graham Ullrich
-- 3.30 01/21/91
+- [3.30](3.30) 01/21/91
   - add /C continuous printing option, mods suggested by Rob Greenbank
 - [3.20](3.20) 01/08/91
   - remove setting of PC10 symbol set

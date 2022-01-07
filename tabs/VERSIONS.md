@@ -3,7 +3,7 @@
 - 2.2 08/09/88
   - MJK Mods
   - EOF mods
-- 2.1 10/14/86
+- [2.1](2.1) 10/14/86
   - ignore EOF (1Ah) in input files.
 - [2.0](2.0) 03/05/86
   - Add EOF to end of file for programs that need it.

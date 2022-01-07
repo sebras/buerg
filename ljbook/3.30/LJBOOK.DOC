@@ -1,0 +1,214 @@
+LJBOOK Command                                                     Version 3.30
+--------------                                                     Jan 21, 1991
+
+
+Purpose:
+
+    LJBOOK prints  text documents  in a  book format.   There are four pages
+    printed on each sheet of paper; two pages on each side of the paper.  An
+    HP LaserJet is required.  The  Y cartridge font is recommended,  but any
+    font capable of line printer, landscape, 8.5 point print may be used. An
+    internal landscape font is available.
+
+Syntax:
+
+    LJBOOK  filename  [output1 [output2] ]
+                      [/F] [/P] [/D] [/A] [/B] [/R] [/U] [/M] [/N]
+                      [/2] [/X] [/C]
+                      [/T...]
+
+Remarks:
+
+    The 'filename' is  required.  It specifies  the name of  the file to  be
+    printed.  A drive and/or path name may be used.
+
+    The 'output1' and 'output2' file names are optional.  If omitted, the
+    standard output printer device is used, i.e. LPT1: or PRN: devices.
+    If supplied, the output is written to the specfied file(s) instead
+    of to the printer.  Use two output names when printing to a network
+    spooler or printer server. The file 'output1' contains the first side
+    and the second side unless 'output2' is specified. The file 'output2'
+    contains the second side.
+
+    There are two pages printed on each of the two sides of the paper.  Each
+    side consists of a title line and up to 66 lines of 80 characters each.
+
+    Eighty characters are printed on each line.  If the file's lines  exceed
+    80 characters, the lines are  wrapped so that 80 characters  are printed
+    on each line until the entire file's line has been processed.
+
+    TAB control characters are expanded and effect line length.
+
+    A new page  is started after  66 lines have  been printed, or  if a form
+    feed (hex 0C) is encounterd.  DO NOT END THE FILE WITH A FORM FEED!
+
+    After the first side has been printed, remove the printed paper from the
+    stacker and place it into the paper tray.  The orientation of the  paper
+    in the tray depends on the printer model and method of stacking used.
+
+    On a LaserJet Plus with the  standard paper stacker, the paper is  moved
+    from the stacker to the tray without rotating or turning.   The  printer
+    is reset after the file has been printed if /R is used.
+
+    On a LaserJet IIP with multipurpose (MP)tray, change the output tray
+    selector to the down position (so that paper goes to the face up output
+    tray).  After the first side is printed, change the output tray selector
+    back to the up position and move the paper from the output tray to the MP
+    tray without rotating or turning.
+
+    LJBOOK (c) Copyright 1987-91 by Vernon D. Buerg.  ALL RIGHTS RESERVED.
+LJBOOK Command                  OPTIONS                            Version 3.30
+--------------                                                     Jan 21, 1991
+
+
+    /A  -  set margins for use with A4 size paper
+
+    /B  -  use downloaded font with ID of 1 (see below)
+
+    /C  -  continuous printing: do not pause between the printing of side 1
+           and side 2, but set manual feed on the printer so that the operator
+           must change paper after printing 1. This option is intended for use
+           with networked printers.
+
+    /D  -  add the current date and time to the top of each page
+
+    /F  -  place the file's name at the top of each page
+
+    /M  -  print to a DeskJet printer (vmi=5.2, typeface 3)
+
+    /N  -  skip prompt to press enter before beginning to print
+
+    /P  -  generate page numbering  and to place the page numbers  at
+           the top of each page
+
+    /R  -  RESET the printer before and after printing the file
+
+    /T  -  print supplied text on top title line of each page (see below)
+
+    /U  -  underline the top title line
+
+    /X  -  use duplex mode on an HP LJ II-D or III-D
+
+    /2  -  print on one side only, two pages on each sheet
+
+
+    Specify /B to tell LJBOOK that you wish to use the internal LJBOOK font
+    which prints 18 pitch, 7.68 point, bold, in landscape orientation.  If
+    you specify /B, LJBOOK downloads its own font and assigns a font ID of
+    1 to it.  Otherwise, it is assumed that the current primary font is
+    capable of 16.66 pitch, 8.5 point, landscape orientation as supplied
+|   with the Y font cartridge.  The /B option need be specified only for
+|   the first file to be printed as long as the printer is not reset.
+
+
+    Specify /T followed by up to  40 characters of text, to supply  your own
+    title for the  top of each  page.  You can  not use both  the /f and  /t
+    options together.  If supplied, the /T parameter must be the last one.
+
+
+
+    After printing the first side, the paper should be loaded back into  the
+    printer such that the last page printed  is on top and the LAST edge  of
+    the paper that came out of the printer is the FIRST edge of the paper to
+    go back in.
+
+    If you're spooling LJBOOK to a network printer, try using this statement:
+
+        NET USE LPT1 \\[network-printer-name]
+
+
+LJBOOK Command                  HISTORY                            Version 3.20
+--------------                                                     Jan  8, 1991
+
+        v0.90 7/02/87  - first flyer
+        v0.97 7/05/87  - add option switches
+        v0.98 7/19/87  - correction for multiples of 4 pages
+        v0.99 8/10/87  - correction for files over 256 pages
+        v1.0 10/05/87  - first public release
+        v1.01 11/22/87 - play with line length and margins
+        v1.02 1/14/88  - some suggestions from Guy Gallo
+                       - print only one sheet if 1 or 2 pages
+                       - leave empty pages blank
+        v1.03 1/15/88  - process tabs
+        v1.04, 1/26/88 - add /T title option
+        v1.05, 1/26/88 - add /2 option
+        v1.06, 2/05/88 - correct tab spacing
+
+        v2.00, 2/10/88 - make MS-MASM v5 compatible
+        v2.10, 4/04/88 - incorporate RWS mods for BOLD18.USL downloadable font
+                         by R. W. Smetana
+        v2.20,10/28/88 - change symbol set for use with Laserjet series II
+        v2.30,07/01/89 - reset ljp when finished
+                       - add DOS file sharing
+        v2.31,11/26/89 - control code corrections from Lee Buck
+        v2.40, 2/18/90 - fix linecount with long lines & reset prob.
+                       - add /A option for printing on A4 size paper
+                         from changes by Paul Messchaert and Volker Blasius
+        v2.50, 2/19/90 - suggested changes and corrections from David Bryant
+        v2.60, 6/17/90 - add /R option to reset printer
+        v2.70, 6/30/90 - made BOLD18 font internal for use with /B option
+        v2.80, 9/18/90 - enable linewrap; entire lines are printed
+                       - add prompt after reporting number of pages to print
+        v2.90,10/23/90 - mods from Robert W. King for DeskJet printing
+                       - change internal font to print linedraw characters
+
+        v3.00,12/10/90 - add duplex printing mods from Alain Caillard
+        v3.10,12/20/90 - correct A4 margins
+                       - add /N command line parameter to skip first prompt
+                       - set PC10 symbol set
+        v3.20, 1/08/91 - remove setting of PC10 symbol set
+                       - correct some margins
+|       v3.30, 1/21/91 - add /C continuous printing option, mods suggested
+|                        by Rob Greenbank
+
+LJBOOK Command                  NOTICES                            Version 3.30
+--------------                                                     Jan 21, 1991
+
+    LJBOOK (c) Copyright 1987-1991 by Vernon D. Buerg. ALL RIGHTS RESERVED.
+
+    PC DOS version 2.0 or later is required.  About 64k of memory is needed.
+
+    The internal font and the modifications to LJBOOK for its use were
+    supplied by R.W. Smetana.  The mods for printing on a DeskJet printer
+    were supplied by Robert W. King.  The duplex mods were supplied by Alain
+    Caillard.
+
+    Please submit your modifications to me.  You may not distribute a modified
+    version of LJBOOK without my permission.
+
+    LJBOOK is free, but it is a copyrighted work and may be distributed only
+    pursuant to this license.
+
+    Permission is hereby granted to reproduce and disseminate LJBOOK so long
+    as:
+
+       (1)  No remuneration of any kind is received in exchange; and
+
+       (2)  Distribution is without ANY modification to the contents of
+            LJBOOK.COM and all accompanying documentation and/or support
+            files, including the copyright notice and this license.
+
+    No copy of LJBOOK  may be distributed without  including a copy of  this
+    license.
+
+    Any  other  use  is  prohibited  without  express, written permission in
+    advance.  Licensing  is  available  for  corporations and  institutions.
+
+    Assembler source is available upon request.  If you  have enhancements,
+    or ideas for improvements,  please send them to the author.
+
+    If you are using LJBOOK and  find it of value,  your gift in any  amount
+    ($20 suggested) will be greatly appreciated.
+
+
+
+            Vernon D. Buerg
+            139 White Oak Circle
+            Petaluma, CA  94952
+
+            CompuServe: 70007,1212    Go IBMHW
+            Data/BBS:   707-778-8944, VOR BBS, USR 2400
+                        707-778-8841, MB BBS, USR 9600
+                        415-994-2944, VOR South BBS, USR 9600
+            FAX:        707-778-8728
+

@@ -5,7 +5,7 @@
 - 3.60 09/20/91
   - correct A4 margins
   - add /W command line option to enable line wrap
-- 3.50 04/25/91
+- [3.50](3.50) 04/25/91
   - replace /B internal font with a much crisper one that includes the linedraw characters; font designed and supplied by George Havach
 - 3.40 04/18/91
   - add /I hole punch margins  mods by Graham Ullrich

@@ -11,7 +11,7 @@
 - 1.9 11/09/84
   - Assume LBR extension.
   - Default to all LBR files if only a path is supplied
-- 1.83 09/25/84
+- [1.83](1.83) 09/25/84
   - Sort directory by name.
   - Check and display CRC values.
   - Format LU86 format date/time.

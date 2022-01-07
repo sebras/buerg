@@ -1,0 +1,41 @@
+
+	      ***   The LUX program is NOT public domain.   ***
+
+	   This program may be copied for backup purposes only. It
+	   may not be distributed without permission of the author.
+
+LUX Command
+-----------
+
+Purpose:   To execute a COM or EXE program directly from a LBR type
+	   file which was created by the LU or LAR utility.
+
+Format:    LUX	[d:][path]library[.LBR]  program[.COM]	[program parameters]
+
+Remarks:   The first command parameter defines the library file which
+	   contains the program to be executed. If the extension is
+	   omitted, LBR is assumed.
+
+	   The second command parameter supplies the file name of the
+	   program to be executed. If the extension is omitted, COM is
+	   assumed. Only extensions of COM and EXE are valid.
+
+	   The third, and subsequent, command parameters are passed to
+	   the program.
+
+Examples:
+	   Execute the LUE.COM program in LUBUERG.LBR to extract
+	   all DOC files from the file TEST.LBR.
+
+		LUE TEST *.DOC
+		    - or -
+		LUX LUBUERG LUE TEST *.DOC
+
+
+Notes:	   Copyright (c) Vernon Buerg 1985. For private use only.
+
+	     For DOS 2.0 or later. Not for sale or hire.
+	     Version 1.2, November 12, 1984.
+
+----------
+

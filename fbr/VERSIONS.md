@@ -32,7 +32,7 @@
 - 1.55 04/07/87
   - correct problem with cross-linked clusters using /D
   - correct problems supplying filespecs to FB
-- 1.54 06/14/86
+- [1.54](1.54) 06/14/86
   - add /V, /R and /U options to FR
   - display file names 5-up in FR
   - make FB smaller

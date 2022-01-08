@@ -85,7 +85,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 | [FC](fc/VERSIONS.md) | [1.3](fc/1.3) | 08/17/85 | Produce .MRG file of differences for BASIC files |
 | [QBX](qbx/VERSIONS.md) | [5.5](qbx/5.5) | 02/22/90 | Quick Basic program lister, label/symbol cross referencer |
 | [RB](rb/VERSIONS.md) | [1.58](rb/1.58) | 08/20/85 | Convert token BASIC file to ASCII file |
-| [SQUISH](squish/VERSIONS.md) | 3.3 | 08/20/85 | Compress and unnumber BASIC source programs |
+| [SQUISH](squish/VERSIONS.md) | [3.3](squish/3.3) | 08/20/85 | Compress and unnumber BASIC source programs |
 
 ### Communications utilities
 

@@ -52,5 +52,5 @@
   - Corrects CR/LF problem.
 - 1.9 05/27/85
   - Corrects CR/LF problem.
-- 1.43 06/06/84
+- [1.43](1.43) 06/06/84
 - [1.4](1.4) 06/06/84

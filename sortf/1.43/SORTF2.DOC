@@ -1,0 +1,49 @@
+
+
+SORTF Command
+-------------
+
+Purpose:   This command reads data from an ASCII file, sorts the
+	   records, and writes the data to another file.
+
+Format:    SORTF [d:][path]fname[.ext] [d:][path]fname[.ext] [/R][/+nnn]
+
+Remarks:   Records read from the input file ending with a carriage
+	   return and line feed are considered logical records and may
+	   be up to 255 characters in length.
+
+	   The records are sorted into ascending ASCII character order
+	   unless /R is supplied to reverse the order.
+
+	   The key is taken from the first character position, unless
+	   the /+ operand is used to specify the location of the key
+	   within the records. The position may be a value from one
+	   to 255. The first 12 characters at that position are used
+	   as the record key.
+
+	   For example, to sort a file in descending order with the
+	   keys in position 10:
+
+		SORTF TEST.DAT TEST.SRT /R/+10
+
+	   Depending on the amount of memory available, up to 40000
+	   records, or a file of 16-Mb, may be sorted.
+
+	   The advantages of using SORTF instead of the SORT filter are:
+		- files larger than 63K may be sorted
+		- less time is required
+
+	   For best results, place the input file on the fastest
+	   available drive, e.g. RAM disk.
+
+Notes:	   Written for the IBM PC using DOS 2.0 or later,
+	   by Vernon Buerg. For public domain use.
+
+	   Version 1.4, June 6, 1984.
+
+
+
+ the IBM PC using DOS 2.0 or later,
+	   by Vernon Buerg. For public domain use.
+
+	   Version 1.4, June 6, 1984

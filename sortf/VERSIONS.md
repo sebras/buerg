@@ -7,7 +7,7 @@
 - 2.36 09/18/91
   - Correct problem with files over 16k records.
   - Add small (SORTFS.COM) version for keys of 12 bytes or less which allows sorting of twice as many records
-- 2.35 02/15/90
+- [2.35](2.35) 02/15/90
   - Correct use of /K with record lengths over 255 bytes
   - Allow records to be terminated by CR-LF, just CR, or just LF line feed.
 - 2.34 02/08/90

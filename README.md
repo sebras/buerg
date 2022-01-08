@@ -115,7 +115,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 | [LP-HP](lp-hp/VERSIONS.md) | [1.8](lp-hp/1.8) | 11/13/88 | Print files to HP LaserJet with headings, etc |
 | [E2O](e2o/VERSIONS.md) | [1.2](e2o/1.2) | ??/??/?? | Convert Epson print files to Oki files, w/ASM |
 | [LP-OKI](lp-oki/VERSIONS.md) | [1.4](lp-oki/1.4) | 08/14/85 | Print files on Okidata ML92, includes ASM |
-| [OKI](oki/VERSIONS.md) | 2.0 | ??/??/84 | Okidata ML92 printer setup, includes ASM |
+| [OKI](oki/VERSIONS.md) | [2.0](oki/2.0) | ??/??/84 | Okidata ML92 printer setup, includes ASM |
 
 ### Amateur Radio
 

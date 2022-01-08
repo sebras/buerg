@@ -1,0 +1,44 @@
+
+OKISET Command
+--------------
+
+Purpose:  This program sends control characters	to an OkiData Microline	92
+	  printer connected as LPT1.
+
+Syntax:	  OKISET
+
+Remarks:  The user is presented	with a menu of 20 items. Any number of
+	  control functions may	be performed.
+
+	  Menu selections:
+
+		1 = Pica 10 cpi
+		2 = Elite 12 cpi
+		3 = Condensed 17 cpi
+		4 = Data processing quality
+		5 = Emphasized Print
+		6 = Enhanced print
+		7 = Underlined
+		8 = Form feed
+		9 = Line feed
+		A = Eight (8) lpi
+		B = Double Pica, 5 cpi
+		C = Double Elite, 6 cpi
+		D = Double Condensed, 8.5cpi
+		E = Correspondence quality
+		F = Stop Emphasized print
+		G = Stop Enhanced print
+		H = Stop Underlining
+		I = ITALIC characters
+		J = SCRIPT characters
+
+
+Notes:	  Written for the IBM PC using DOS 2.0 or later,
+	  by Vernon D. Buerg. For public domain use.
+
+	  DOS 2.00 or later with ANSI.SYS is required.
+
+	  Version 1.0, April 12, 1984.
+
+--------------
+

@@ -1,0 +1,52 @@
+
+LP Command
+________________
+
+Purpose:  To print an  ASCII  file on a standard printer device
+          at either 66 or 88 lines per page. A title is printed
+          at the top of each page which contains the file name,
+          creation date, and page number. Control codes are set
+          for an HP LaserJet printer.
+
+Syntax:   LP  [d][path]filename[.ext]   [/6][/8]
+                                        [/L1][/L2]
+                                        [/10][/12][/17]
+
+Remarks:
+	The default is 66 lines per page which results in
+	an actual page text length of 60 lines. For 88 lines
+	per page,
+       	per page, specify the /8 option. This results in
+	a page text length of 80 lines.
+
+	The default printer is LPT1.  For LPT2, specify /L2.
+
+	The default is 10 characters per inch.  For 12 cpi,
+	specify /12; for 17 cpi, specify /17.  An appropriate
+	font must be available.
+
+	If the input filename is omitted, you are asked for it.
+
+	Each page is numbered and contains a title consisting of
+	the file name and creation date.  If a bold font is
+	available, this top heading line has a weight of 3.
+
+	The control codes can be changed for use with other
+        printers.
+
+        If a print spooler is used, DO NOT use LP while using the
+        DOS PRINT command.
+
+Notes:
+       Written by Vernon Buerg for the IBM PC using DOS 2.0 or
+       later.  For public domain use.  Not for sale or hire.
+
+          Version 1.1, April 27, 1984.
+          Version 1.2, Sept 12, 1984.
+          Version 1.4, Aug 14, 1985.
+              Because some print spoolers do not handle Int 17h
+              this version uses function 21 to write to the printer.
+              It is slower than 1.2.
+          Version 1.6l, June 19, 1986.
+              Modified for use with HP LaserJet printer
+

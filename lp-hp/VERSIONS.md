@@ -1,7 +1,7 @@
 # LP-HP version history
 
 - 1.8 11/23/88
-- 1.6l 06/19/86
+- [1.6l](1.6l) 06/19/86
   - expand tabs and use HP LJ printer codes
   - fine tune cpi and lpi
   - use Int 17h for quicker printing

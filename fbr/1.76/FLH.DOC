@@ -1,0 +1,20 @@
+
+ Purpose:
+       FLH invokes the FB file backup utility for each subdirectory
+       on the drive specified, starting with the specified path.
+
+       The options supplied on the command line are passed to the FB
+       program.
+
+ Format:
+               FLH  s:[\path]  [t:]  [options]
+
+ Notes:
+       Written for the IBM PC using PC DOS 2.0 or later.
+       For public, personal use. By Vernon D. Buerg.
+
+       Version 1, Feb 17, 1989
+        - release unused memory from 64k COM segment
+        - allow ESCape from console to cancel
+
+

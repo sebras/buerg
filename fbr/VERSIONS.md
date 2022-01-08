@@ -7,7 +7,7 @@
 - 1.80 07/09/91
   - FR: add /N and /T options
   - FB: improve compress algorithm
-- 1.76 10/10/89
+- [1.76](1.76) 10/10/89
   - corrections to compression routines
 - 1.74 04/07/89
   - FB: added SHARE capabilty which allows you to back up open files that are SHARED

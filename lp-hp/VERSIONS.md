@@ -14,7 +14,7 @@
   - use Int 17h for quicker printing
 - 1.5 06/13/86
   - minimal changes for HP LaserJet
-- 1.4 08/14/85
+- [1.4](../lp-oki/1.4) 08/14/85
   - account for TABs and long lines
   - remove Int 17h due to bad spoolers
 - [1.2](../lp-oki/1.2) 09/12/84

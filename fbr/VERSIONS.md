@@ -4,7 +4,7 @@
   - FB: correct file position for multi volumes
 - 1.81 06/01/92
   - FR: correct selective restore
-- 1.80 07/09/91
+- [1.80](1.80) 07/09/91
   - FR: add /N and /T options
   - FB: improve compress algorithm
 - [1.76](1.76) 10/10/89

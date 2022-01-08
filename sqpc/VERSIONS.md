@@ -1,6 +1,6 @@
 # SQPC version history
 
-- 1.31 03/02/86
+- [1.31](1.31) 03/02/86
   - added /D option.
 - [1.2a](1.2a) 05/20/85
   - minor change for DOS 3.

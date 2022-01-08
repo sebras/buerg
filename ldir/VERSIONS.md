@@ -8,7 +8,7 @@
   - Correct handling of /N no sort option when /A or /H is also specified.
 - 4.3 12/14/89
   - Change display of bytes used and free to allow values over 100 million; add commas. Also correct failure to clear the screen if the /C option is set by DEBUG.
-- 4.1 01/25/89
+- [4.1](4.1) 01/25/89
   - Expands the number of file names from 1000 to an amount determined by available memory. Approximately 64 bytes per file name is required. In other words, 64K bytes of memory is required for each 1000 files.
 - 3.2 06/12/87
   - Corrects problem specifying a filespec when in a subdirectory, e.g. LDIR `*.ASM` failed.

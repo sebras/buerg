@@ -21,7 +21,7 @@
   - A special request version that does NO sorting of the directory entries. The directory is displayed in its original order. This is now the /N option.
 - 2.7 02/15/86
   - Minor corrections to command line syntax checking
-- 2.6 01/04/86
+- [2.6](2.6) 01/04/86
   - By popular demand, ability for redirection and use of PrtSc restored at the price of slower displays.
   - Problem changing current directory fixed.
 - 2.5 11/05/85

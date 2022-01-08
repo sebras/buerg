@@ -1,0 +1,90 @@
+
+LDIR Command
+-----------
+
+Purpose:   To display the files in one or all directories of a disk.
+
+Format:    LDIR  [d:][\path]filespec]  [/?... /?]
+
+Remarks:   If no operands are supplied, the files in the current path
+           and in the current directory are displayed. You may specify
+           another drive using the d: operand, and/or a path name,
+           and/or a file specification. Wildcard characters * and ? are
+           permitted in the filespec operand.
+
+           All available memory is used. As many files as fit in memory
+           are sorted and displayed.
+
+           The /? refers to optional processing switches. You may use
+           one or more of the following:
+
+Sort options:
+
+          /D   sort by file Date
+          /F   sort by Filename, this is the default
+          /S   sort by file Size
+          /X   sort by eXtension
+
+File criteria:
+
+          /A   include Attributes, e.g. S=system, R=readonly, H=hidden
+          /H   include files with the Hidden attribute
+          /M   display only Modified files, i.e with Archive bit off
+          /P   include all Paths starting with the current directory
+
+Display options:
+
+          /C   Clear screen first, and after any "... more" prompts
+          /W   Wait after screen full, ask for any key after 20 lines displayed
+          /?   display usage syntax
+
+
+
+Examples:
+           - Display all files, in filename order, on the current drive:
+
+                LDIR
+
+           - Display all files in the subdirectory \TEST\PGMS on drive B:
+
+                LDIR B:\TEST\PGMS
+
+           - Display only those files with an extension of .COM
+
+                LDIR *.COM
+
+           - Display all modified files in all subdirectories on current drive
+
+                LDIR /M/P
+
+-
+Notes:     Written for the IBM PC using DOS 2.0 or later, including DOS 3.1.
+
+           For public domain use. Not for sale or hire.
+
+           Copyright 1985 by Vernon D. Buerg. All rights reserved.
+
+             456 Lakeshire Drive
+             Daly City, CA 94015
+             RBBS: (415) 994-2944
+             CompuServe: 70007,1212
+
+
+
+Version history:
+
+           Version 2.3, August 10, 1985
+                Correct some problems with path\filespec syntax
+                Adds /M option to list modified files only
+
+           Version 2.4, October 28, 1985
+                Adds /W option to pause after 20 lines are displayed
+                Speeds up screen displays but defeats redirection
+           Version 2.5, November 5, 1985
+                Minor changes for color displays
+|          Version 2.6, January 4, 1986
+|               By popular demand, ability for redirection and
+|               use of PrtSc restored at the price of slower displays.
+|               Problem changing current directory fixed.
+
+

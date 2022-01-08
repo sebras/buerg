@@ -13,7 +13,7 @@
 - 3.2 06/12/87
   - Corrects problem specifying a filespec when in a subdirectory, e.g. LDIR `*.ASM` failed.
 - 3.1 12/28/86
-- 3.0 06/04/86
+- [3.0](3.0) 06/04/86
   - Corrects a problem when DEBUG is used to change the default option switches. The attribute mask used to read directories was not being updated.
 - 2.9 05/12/86
   - Corrects problem changing the current directory of the current drive when LDIR is used for a subdir on another drive.

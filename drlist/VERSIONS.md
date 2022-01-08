@@ -1,6 +1,6 @@
 # DRLIST version history
 
-- K 03/06/93
+- [K](k) 03/06/93
    - minor corrections and cosmetic changes
 - [J](j) 09/17/89
    - correct prompt for filename

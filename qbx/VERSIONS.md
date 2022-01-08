@@ -20,7 +20,7 @@
 - 4.00g 10/09/88
    - correct overwrite of output file if /f(filename) is used
    - correct "ERROR: Include file 'filename' is missing" message
-- 4.00d-4.00f 07/15/88
+- 4.00d-[4.00f](4.00f) 07/15/88
    - increase capacity, allow up to 2500 symbols
    - add cross reference of SUBs and DEF FN routines
    - add /R option to use record (line) instead of statement numbers

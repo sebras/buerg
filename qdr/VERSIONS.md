@@ -23,7 +23,7 @@
   - allow formatting of drives under DOS 3.2 (and later?), and new formats 3.5/720kb and 3.5/1440kb.
 - 2.9 03/20/87
   -  minor correction for /3 (dsqd) formatting
-- 2.8 02/05/87
+- [2.8](2.8) 02/05/87
   - correct marking of fat for side 2
   - improve format verification, set retries to 2
   - add operator action request for drive not ready or if disk is write protected

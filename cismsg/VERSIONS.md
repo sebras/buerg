@@ -1,7 +1,7 @@
 # CISMSG version history
 
 - 3.0 09/04/94
-- 2.7 12/21/88
+- [2.7](2.7) 12/21/88
   - correct sorting by message number (/M option)
 - 2.6 10/02/88
   - added /X option to reverse output filename and ext

@@ -11,7 +11,7 @@
     - add /Q option to use sQueezed file regardless of size
     - correct directory update problem if "File not found" error occurs
     - implement CRC for squeezed files
-- 2.05b 07/18/85
+- [2.05b](2.05b) 07/18/85
 - 2.05 07/13/85
     - automatically sQueeze files larger than 1024 bytes
     - add /N option to suppress sQueezing

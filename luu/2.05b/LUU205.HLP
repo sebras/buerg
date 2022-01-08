@@ -1,0 +1,132 @@
+        
+
+
+        
+        
+        
+        LUU - Version 2.05b - 7/18/85
+        (c) Copyright Vernon D. Buerg 1985
+        
+        Usage:  LUU library[.LBR] filename(s) [/N]
+        
+        Public domain. For personal use only.
+        Commercial use prohibited.
+        
+        AAI Systems, Inc
+        456 Lakeshire Drive
+        Daly City, CA 94015
+        
+        
+        I  downloaded  this  program this morning  directly  from  Vernon 
+        Buerg's system.   It is so new that he has not written a doc file 
+        for it yet, so I am writing a few notes on its usage.
+        
+        This version of LUU combines library and squeeze functions in one 
+        program,  and  is a great time and disk space saver.   It is  the 
+        perfect companion to Buerg's LUE program -- current version 2.10.  
+        LUE  extracts and unsqueezes files in a library;  LUU builds  the 
+        library in the first place, squeezing all files larger than 1K in 
+        the process.
+        
+             Examples of the program's syntax follow:
+        
+             LUU libname example.doc test.doc example.exe
+                   (creates  libname.lbr  with the 3  files  example.dqc, 
+                   test.dqc and example.eqe)
+        
+             LUU libname *.*  (creates library with squeezed versions
+                   of all files in the current directory)
+        
+             LUU  libname  example.* test.doc  (same  as  first  command, 
+             assuming the same files are in the current directory)
+        
+        If  you use the /N switch,  the files inside the library will not 
+        be squeezed.
+        
+           PROS and CONS of a Library File with Squeezed Files Rather
+                             than a Squeezed Library
+        
+        A  squeezed library (.lqr) may be a little smaller,  but that  is 
+        its  only  advantage.   A  .lqr file is a  pain  -- you  need  to 
+        unsqueeze  the  whole  thing just to get at one  file  inside.  A 
+        library  of squeezed files can be manipulated with the  wonderful 
+        lqtype  program  to view files inside of it.   It can  also  more 
+        readily be updated with new files,  without needing to  unsqueeze 
+        the whole thing first.  In the event of a transmission error, you 
+        may  be  able to salvage part of a library of squeezed  files;  a 
+        squeezed library is a total loss.
+
+
+
+                                        1
+
+
+
+
+
+        LUU - Version 2.05b - 7/18/85  Help File
+
+
+                                   LUU vs ARC
+        
+        No comparision in speed -- LUU is MUCH faster.   ARC may  produce 
+        smaller  files because it uses a different compression algorithm, 
+        but  the  difference  usually will not  be  too  substantial  and 
+        depends greatly on the type of files in the library.  In light of 
+        the  fact that LUU uses the LU standard that is also supported by 
+        CP/M and Unix, which is not true of ARC, I prefer it.
+        
+                                  CRC Checking
+        
+        Earlier  versions of Vernon Buerg's LUU did not store CRC  values 
+        for  library  members and,  for that reason,  I did not  use  the 
+        program.   This  version makes use of CRC in a limited way  -- it 
+        stores  a CRC value for the library directory and for  any  files 
+        that it does not squeeze, but not for files that it does squeeze.  
+        I assume the logic of this is that for squeezed files, a checksum 
+        value  is stored inside the file itself,  and is verified as  the 
+        file is unsqueezed.   I have no major quarrel with that, though I 
+        would  like to be able to verify the integrity of a library  file 
+        without  having to extract and unsqueeze it.   If a CRC is stored 
+        for the file,  I can use the -c option of the LUPower program  to 
+        verify  it;  I can't do that if the library was created with LUU.  
+        All in all, not a major drawback but one I hope Buerg will fix in 
+        later versions.
+        
+        
+        I  encourage you to use this program for files you upload  to  my 
+        system  and  would  like to thank Vernon Buerg  for  making  this 
+        wonderful program available to us all.
+        
+        
+        Robert Blacher
+        Sysop, Computer Connections
+        Washington, D.C.
+        (202) 547-2008
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        2
+
+
+
+
+

@@ -2,7 +2,7 @@
 
 - 1.82 07/07/92
   - FB: correct file position for multi volumes
-- 1.81 06/01/92
+- [1.81](1.81) 06/01/92
   - FR: correct selective restore
 - [1.80](1.80) 07/09/91
   - FR: add /N and /T options

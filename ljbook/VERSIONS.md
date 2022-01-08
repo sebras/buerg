@@ -48,7 +48,7 @@
   - incorporate RWS mods for BOLD18.USL downloadable font by R. W. Smetana
 - 2.00 02/10/88
   - make MS-MASM v5 compatible
-- 1.06 02/05/88
+- [1.06](1.06) 02/05/88
   - correct tab spacing
 - [1.05](1.05) 01/26/88
   - add /2 option

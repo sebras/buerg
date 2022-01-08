@@ -1,0 +1,49 @@
+
+JLH Command
+-----------
+
+Function:  To invoke Tall Tree's JET utility to copy files from
+	   every directory on one drive to another drive.
+
+Usage:	   JLH	s:[\path]  [t:]  [options]
+
+Remarks:   The s: parameter specifies the source drive. The t: parameter
+	 specifies the target drive and defaults to drive A.
+
+	   The 'path' operand is optional. If omitted, all directories
+	 on the source drive, beginning with the root directory, are
+	 copied to the target drive. If 'path' is supplied, directories
+	 beginning with the specified path are copied.
+
+	   The 'options' are passed to the JET utility. None are
+	 required.
+
+	   As each directory is processed, the JET command is displayed.
+	 You may terminate JLH by pressing the ESCape key at any time.
+
+Examples:
+
+	o  Copy all from all directories on drive C to floppy drive A,
+	   on to as many diskettes as needed:
+
+		JLH  C: A: /D
+
+	o  Restore all files from the diskettes in drive A: to drive C:
+	   for the subdirectory called TEST
+
+		JLH  A:\TEST C: /R
+
+	o  Copy all files in all subdirectories from drive C to drive D
+	   with the mandatory option:
+
+		JLH  C: D: /M
+
+Notes:
+	Written for the IBM PC using DOS 2.0 or later.
+
+	Requires at most 64k plus JET's requirements.
+
+	Copyright Vernon D. Buerg, 1986. For personal use.
+	Version 1.07, Aug 1, 1986.
+
+

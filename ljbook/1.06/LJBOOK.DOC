@@ -1,0 +1,61 @@
+LJBOOK Command                                                     Version 1.06
+--------------                                                 February 5, 1988
+
+
+Purpose:
+
+    LJBOOK prints  text documents  in a  book format.   There are four pages
+    printed on each sheet of paper; two pages on each side of the paper.  An
+    HP LaserJet is required.  The  Y cartridge font is recommended,  but any
+    font capable of line printer, landscape, 8.5 point print may be used.
+
+Syntax:
+
+    LJBOOK  filename  [output]  [/f]  [/p]  [/d]  [/2]  [/t...]
+
+Remarks:
+
+    The 'filename' is  required.  It specifies  the name of  the file to  be
+    printed.  A drive and/or path name may be used.
+
+    The 'output'  file name  is optional.   If omitted,  the standard output
+    printer device is used, i.e.   LPT1: or PRN: devices.  If  supplied, the
+    output is written to the specfied file instead of to the printer.
+
+    There are two pages printed on each of the two sides of the paper.  Each
+    side consists of a title line and up to 66 lines of 80 characters  each.
+
+    Eighty characters are printed on  each line.  If the file's lines exceed
+    80 characters, the lines are  wrapped so that 80 characters  are printed
+    on each line until the entire file's line has been processed.
+
+|   TAB characters are expanded and effect line length.
+
+    A new page  is started after  66 lines have  been printed, or  if a form
+    feed (hex 0C) is encounterd.
+
+    After the first side has been printed, remove the printed paper from the
+    stacker and place it into the paper tray.  The orientation of the  paper
+    in the tray depends  on the printer model  and method of stacking  used.
+
+    On a LaserJet Plus with the  standard paper stacker, the paper is  moved
+    from the stacker to the tray without rotating or turning.
+
+    Specify /p to generate page numbering  and to place the page numbers  at
+    the top of each page.
+
+    Specify /d to add the current date and time to the top of each page.
+
+    Specify /f to place the file's name at the top of each page.
+
+|   Specify /2 to print on one side only, two pages on each sheet.
+
+|   Specify /t followed by up to  40  characters of text, to supply your own
+|   title for the top of  each page.  You can not  use both  the  /f and  /t
+|   options together. If supplied, the /t parameter must be the last one.
+
+    PC DOS version 2.0 or later is required.  About 64k of memory is needed.
+    For personal use only. May not be sold.
+
+    LJBOOK (c) Copyright 1987-88 by Vernon D. Buerg.  ALL RIGHTS RESERVED.
+

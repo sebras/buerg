@@ -2,7 +2,7 @@
 
 - K 03/06/93
    - minor corrections and cosmetic changes
-- J 09/17/89
+- [J](j) 09/17/89
    - correct prompt for filename
 - [I](i) 06/17/89
    - correct console input problem using CTTY under OmniView

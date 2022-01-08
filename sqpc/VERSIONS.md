@@ -6,5 +6,5 @@
   - minor change for DOS 3.
 - 1.29 04/13/85
   - add ERRORLEVEL settings.
-- 1.28 01/10/85
+- [1.28](1.28) 01/10/85
 - [1.27](1.27) 12/17/84

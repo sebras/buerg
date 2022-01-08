@@ -1,0 +1,169 @@
+
+ Command QDR                                                Version 3.2b
+ -----------                                                Oct 24, 1987
+
+
+ Purpose
+ -------
+        Re-format a floppy  disk quickly,  optionally  with a new  volume
+        label, thus deleting all files and sub-directories on a diskette.
+
+ Format
+ ------
+                QDR [d:][label]  [/F] [/N] [/V] [/B] [/Q]
+                                 [/1] [/2] [/3] [/4] [/8]
+
+ Remarks
+ -------
+        The d: parameter is required and it  supplies  the drive letter.
+        A fixed disk  can not  be re-formatted.
+
+        You may supply a volume label (up to 11 characters)  immediately
+        following the drive letter.  For example:
+
+                QDR b:scratch
+
+        Use the /F option to force a full format of all tracks.  The /1,
+|       /2, /3, /4, and /8 options apply to a full format,  and  specify
+|       the disk type.
+
+        Bad clusters remain marked as bad unless a full format is
+        used, then clusters are marked as unusable if they can not be
+        formatted.  Use the /V (verbose) option to receive a display of
+        the cluster numbers that are marked as not usable.
+
+        The /N option suppresses  the "press ENTER to  continue" prompt.
+        Otherwise, press  the enter  key to  reformat the  disk, or  the
+        ESCape key to cancel.
+
+        The DOS error level is set to 0 for successful completion, or to
+        1 if any errors occur.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        QDR (c) Copyright Vernon D. Buerg 1986,87. All rights reserved.
+
+
+ Command QDR                                                Version 3.2b
+ -----------                                                Oct 24, 1987
+
+                        Options
+                        -------
+
+        /F - forced format; uses DOS to format and verify each track
+
+        /1 - forces single sided format, SSSD/8 or SSSD/9, on 360 kb drives
+|       /2 - forces DSHD format on 1440 kb capacity drives
+        /3 - forces DSQD format on 720 kb capacity drives
+|       /4 - forces DSDD format on 1.2 mb capacity drives
+        /8 - forces 8-sector format, SSSD/8 or DSDD/8, on 360 kb drives
+
+        /N - no prompt; skips the "Press ENTER" message and reply
+
+        /V - verbose messages; displays a message for each cluster
+             that is marked as unusable
+
+|       /B - use disk BIOS routines only for formatting; if omitted,
+|            the DOS routines used for formatting are determined by the
+|            version of DOS in use. This option is supplied as an
+|            alternative to the default because QDR may not be able
+|            to format a new diskette when certain device drivers or
+|            versions of DOS are installed.
+
+|       /Q - quick format without verification or bad track marking.
+|            If the target disk has bad spots, write errors may result.
+|            This option is NOT recommended for formatting new
+|            diskettes.
+
+
+
+                         Formatting
+                         ----------
+
+        To perform a full format of a disk sectors, use the /F  options.
+        It is recommended that you use DOS FORMAT since QDR is not  much
+        faster when doing a full format.  Both mark bad clusters.
+
+        You may suppy /1 to force  SSSD format, /4 for DSQD (1.2mb),  or
+        /3 for DSQD (720kb), or /8 for eight-sectors (SSSD or DSDD).
+
+        Unless /F is used, the diskette must have been previously
+        formatted.  The allowable diskette formats are:  DSQD (1.2mb or
+        720kb), SSSD/8, SSSD/9, DSDD/8, DSDD/9, and DSHD (1.44 mb).
+        When information is available for other drive types, they will
+        be added to the data in the internal device table.  Your system
+        hardware and software must support the device type.
+
+ Command QDR                                                Version 3.2b
+ -----------                                                Oct 24, 1987
+
+                         Examples
+                         --------
+
+     o  Reformat a previously formatted and used diskette. Write a
+        volume label of SCRATCH:
+
+                QDR A:scratch
+
+     o  Alternately format new diskettes in drives A and B.
+        First, create a BAT file called TWOFOR.BAT with these commands:
+
+                QDR A: /F/N
+                QDR B: /F/N
+                TWOFOR
+
+        Then, issue the command TWOFOR. When the last diskette has been
+        formatted, press ctrl-C to abort the program.
+
+
+                         Version history
+                         ---------------
+
+        Version 1.0, 2/28/86
+          -  initial release
+
+        Version 2.7, 2/4/87
+          -  update boot sector with device  constant when  using /f  to
+             format, should correct problems  with 3.5  inch dsqd  drive
+          -  correct  initialization of  fat (not marking  bad clusters)
+             when using /f
+
+        Version 2.8, 2/5/87
+          -  correct marking of fat for side 2
+          -  improve format verification, set retries to 2
+          -  add operator action request for drive not ready  or if disk
+             is write protected
+
+        Version 2.9, 3/20/87
+          -  minor correction for /3 (dsqd) formatting
+
+|       Version 3.2, 10/24/87
+|         - change meaning of /4; the default format is now the
+|           highest density for the drive.
+|         - allow formatting of drives under DOS 3.2 (and later?),
+|           and new formats 3.5/720kb and 3.5/1440kb.
+
+
+                         Restrictions
+                         ------------
+
+        QDR (c) Copyright Vernon D. Buerg 1986,87. All rights reserved.
+
+        May be copied  and distributed in  its original form  only.  For
+        private, personal use.  May  not  be  sold  or rented.  Use this
+        program at your own risk. No warranty is given and no  liability
+        is assumed.
+
+

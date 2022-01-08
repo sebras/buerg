@@ -1,0 +1,169 @@
+ 
+ Command CISMSG                                             Version 2.4
+ --------------                                             Dec 30, 1987
+ 
+Purpose:
+ 
+        CISMSG copies a file which contains CompuServe (CIS) messages to
+        a new file with the messages in subject or number order.
+ 
+Format:
+ 
+        CISMSG  [d:][path]infile[.ext]  [d:][path]outfile[.ext]
+                [/nn]  [/M]  [/S]
+ 
+Remarks:
+ 
+        Records are read from the  file named by 'infile' and  copied to
+        the file  named by  'outfile'.  Records  must end  in a carriage
+        return or  linefeed, and  must be  less than  255 characters  in
+        length.  The 'infile'  file name is  required.  If omitted,  the
+        'outfile' name  defaults to  'MESSAGES.ALL', or  to the 'infile'
+        name if just a drive for the output is supplied.
+ 
+        Tab characters should not be present in the input file.
+ 
+        Messages from a single section may be selected by using the  /nn
+        option.  Specify a one or  two digit section number in  place of
+        the nn.
+ 
+|       By using  /S, a  separate output  file may  be created  for each
+|       section which contains messages.  The output file name extension
+|       becomes the section number, e.g.  MESSAGES.01 for all section  1
+|       messages. This requires "files=25" in your CONFIG.SYS file.
+|                                ========
+ 
+ 
+        The records are  sorted into section  and subject order,  unless
+        the /M option is used to specify that the messages be sorted  in
+        message number order.
+ 
+        Any  superfluous  data,  such  as  bulletins, become part of the
+        preceding message.  Duplicate messages are skipped only if  they
+        are identical.
+ 
+        All available memory is used.  A maximum of 64K is used for  I/O
+        buffers.  Half of  the available memory  is used for  containing
+        message data.  Each message requires 32 bytes.
+ 
+        Depending on the amount of memory available, up to 10000 records
+        may be ordered.  Neither the  size of the file, nor  the lengths
+        of messages, affects the maximum number of messages that can  be
+        processed.
+ 
+        For  best  performance,  place  the  input  message  file on the
+        fastest disk drive, e.g.  RAM disk.
+ 
+
+ 
+ Command CISMSG                                             Version 2.4
+ --------------                                             Dec 30, 1987
+ 
+                        Examples
+                        --------
+ 
+        o Sort the  messages from file  IBMSW.719 on drive  A, to a  new
+          file called IBMSW.XXX on drive B
+ 
+                CISMSG A:IBMSW.719 B:IBMSW.XXX
+ 
+ 
+        o Sort messages in file IBMSW.MON which is on the current drive,
+          and copy to a new files called IBMSW.MON on drive B
+ 
+                CISMSG IBMSW.MON B:
+ 
+ 
+        o Select section 8 messages from file IBMNEW.MSG
+ 
+                CISMSG IBMNEW.MSG IBMNEW.8 /8
+ 
+ 
+        o Sort the messages in the file IBMSWM.ATO by message number:
+ 
+                CISMSG IBMSWM.ATO IBMSW.MSG /M
+ 
+ 
+        o Sort the messages in the file IBMCOMM.ATO into separate  files
+          for each section.  The output files are named IBMCOM.nn where
+          'nn' is the section number.
+ 
+                CISMSG IBMCOMM.ATO IBMCOM /S
+ 
+
+ 
+ Command CISMSG                                             Version 2.4
+ --------------                                             Dec 30, 1987
+ 
+                        Version History
+                        ---------------
+ 
+           Written using MS-MASM for the IBM PC and DOS 2.0
+           through DOS 3.2.
+ 
+        Version 1.7, Sig version 3B(24), March 26, 1985.
+ 
+        Version 1.8, Sig versions 3B35,37, April 28, 1985.
+ 
+        Version 1.9, Correct "Sb:" incorrect sort order. June 10,1985.
+        -  Corrected by short patch on 8/19/85 to allow processing
+           more than 2047 messages. Sig version 4A(45).
+ 
+        Version 2.0, Sept 15, 1985,
+        -  Adds the /n command line option to select messages
+           for a single section only.
+ 
+        Version 2.1, July 1, 1986, through Sig version 4A(70).
+        -  Corrections for large files (over 1 Mb).
+ 
+        Version 2.2, August 20, 1986.
+        -  Add /M option to sort messages by number only.
+        -  Correct problem when there are no valid messages found
+ 
+|       Version 2.4, December 30, 1987
+|       - add /S option for separate output files by section
+|       - allow output filename to default to MESSAGES.ALL
+ 
+
+ 
+ Command CISMSG                                             Version 2.4
+ --------------                                             Dec 30, 1987
+ 
+ 
+                        Notices
+                        -------
+ 
+        This  document  and  the  CISMSG.COM  file  comprise  the CISMSG
+        program ("software").  This software is copyrighted material and
+        is subject to limitations by the copyright holder ("author")  as
+        to its use and distribution.
+ 
+        You may  use the  software; make  copies of  the software;  give
+        copies to anyone; and distribute it via electronic means.  There
+        is no charge for this software,  but you must include a copy  of
+        this document with any copies that you make.
+ 
+        You  are  specifically  prohibited  from  charging or requesting
+        donations  for  any  copies;  from  modifying the software; from
+        distributing the software with commercial products without prior
+        written permission; and from distributing this software,  either
+        alone or with other material,  and charging any fee.  There  are
+        no exceptions.
+ 
+        There  is  no  warranty  of  any  kind given.  The author is not
+        liable for damages  of any kind.   By using this  free software,
+        you agree to this.
+ 
+        The software and documentation are:
+ 
+                Copyright (C) 1986, 1987 by Vernon D. Buerg
+ 
+                456 Lakeshire Drive
+                Daly City, CA  94015-4223
+ 
+                (415) 991-0644, 10 am to 6 pm Pacific time
+                (415) 994-2944, 24-hour BBS
+ 
+                Compuserve 70007,1212
+
+

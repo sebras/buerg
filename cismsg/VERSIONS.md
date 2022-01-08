@@ -8,7 +8,7 @@
 - 2.5 09/01/88
   - improve creation of files when /S is used
   - removed requirement for "files=25"
-- 2.4 12/30/87
+- [2.4](2.4) 12/30/87
   - add /S option for separate output files by section
   - allow output filename to default to MESSAGES.ALL
 - [2.2](2.2) 08/20/86

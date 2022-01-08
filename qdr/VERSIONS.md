@@ -30,5 +30,9 @@
 - 2.7 02/04/87
   - update boot sector with device constant when using /f to format, should correct problems with 3.5 inch dsqd drive
   - correct initialization of fat (not marking bad clusters) when using /f
+- 2.6 11/09/86
+- 2.5 11/02/86
+- 2.2 10/21/86
+- [2.0](2.0) 10/17/86
 - 1.0 02/28/86
   - initial release

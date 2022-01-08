@@ -2,7 +2,7 @@
 
 - 2.38 10/09/91
   - improve output phase time
-- 2.37 09/20/91
+- [2.37](2.37) 09/20/91
   - Improve speed for ascending sorts
 - 2.36 09/18/91
   - Correct problem with files over 16k records.

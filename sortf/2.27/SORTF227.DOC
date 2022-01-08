@@ -1,0 +1,301 @@
+
+                                 SORTF Command
+
+                     Copyright (c) Vernon D. Buerg 1985-88
+                        Version 2.27 - February 1, 1988
+
+
+Purpose:   The SORTF command reads data from a file, sorts the
+           records, and writes the data to another file.
+
+Format:
+           SORTF [d:][path]fname[.ext] [d:][path]fname[.ext]
+                 [/+nnn[,len]] -or- [/-nnn,[len]]
+                 [/Lnnn]
+                 [/R] [/C] [/Q] [/K]
+
+Remarks:   Records are read from the input file,  sorted,  and written
+           to the output file.
+
+           Two types of records may be sorted:
+
+           1)  logical  records.   Each  record  ends  with a carriage
+               return and line feed, and  may be up to 255  characters
+               in length.
+
+           2)  fixed length  records.  Each record  is of length  L as
+               defined  by  the  '/Lnnn'  parameter.   The records may
+               contain any  kind of  data, including  carriage return,
+               line feed, and end-of-file without effecting the record
+               length.
+
+
+           The sort  order is  in ascending  ASCII character sequence.
+           You may supply the /R  parameter to reverse the sort  order
+           for all fields, or supply /- parameters for each key  field
+           to  be  sorted  in  reverse  order.   The  key  fields  are
+           processed from  left to  right as  supplied in  the command
+           line.
+
+           The /C option may be added to cause SORTF to treat the  key
+           fields  as  case  insensitive  data.   That  is, lower case
+           letters in the key field are treated as upper case letters.
+
+           You may  supply up  to sixteen  key offsets  and lengths by
+           using the /+ or /- parameter, one for each key position and
+           its length.   If /+  and /-  are omitted,  the key is taken
+           from the first character position for a length of 12.
+
+           The position 'nnn' may be a value from one to 255.
+
+           The key length 'len' may be  a value from 1 to 99.   The /+
+           operand  specifies  that  the  specified  key  is sorted in
+           ascending order.  The /- specifies desending sort order for
+           that key.
+
+           Use the /Q option to suppress the display of  informational
+           messages.  Error messages can not be suppressed.
+
+
+
+
+SORTF Command                                             Version 2.27
+-------------                                             Feb 1,  1988
+
+                        Options Summary
+                        ---------------
+
+
+           /C  specifies  that  the  keys  are  case  insensitive;  if
+               supplied, all lower case  characters in the key  fields
+               are  converted  to  upper  case  for  the  purposes  of
+               sorting.
+
+           /R  sort in  reverse order;  over-rides any  /- options and
+               treats them all as /+ options.
+
+           /Q  suppress informational messages.
+
+           /K  creates an output file that consists of sorted key data
+               only.
+
+           /L  specifies the sorting of fixed length records
+
+           /+  defines the location  and length of  a key field  to be
+               sorted in ascending order
+
+           /-  defines the location  and length of  a key field  to be
+               sorted in descending order
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SORTF Command                                             Version 2.27
+-------------                                             Feb 1,  1988
+
+                        Examples
+                        --------
+
+           o  to  sort  a  file  in  descending order with the keys in
+              position 10:
+
+                SORTF TEST.DAT TEST.SRT /R/+10
+
+
+           o to sort the same file using keys with 24 characters:
+
+                SORTF TEST.DAT TEST.SRT /R/+10,24
+
+           o to sort a file of fixed length, binary records; the input
+             file contains records of 18 bytes each,  the  key is  two
+             bytes  at  position  17  in  each  record  in  descending
+             order, and 12 bytes at postion 1 in ascending order:
+
+                SORTF SRTCATS.RND SRTCATS.IND /L18 /-17,2 /+1,12
+
+
+           o to sort on different keys, but creating an an output file
+             with the keys only:
+
+                SORTF TEST.DAT TEST.KEYS /-10,2 /+20,4 /-16,3 /K
+
+           Note the use of /-.  It specifies that the first and  third
+           keys  are  sorted  in  descending  order, the second key is
+           sorted in ascending order.
+
+           The format of the keys-only file is:
+
+           Offset  Length   Contents
+           ------  ------   ------------------------------------------
+             0       1      Length of data record excluding CR and LF
+             1       3      Offset to record in input file
+                             +0  hi-byte of 3-byte address offset
+                             +1  low word of address offset
+             4       n      Variable key data, depends on key definitions
+
+           In the example above, the variable key data format is:
+
+             4       2      Data in records at offset 10
+             6       4      Data in records at offset 20
+            10       3      Data in records at offset 16
+            13       0      End of key record.
+
+
+
+           The length of  each keys-only record  is 4 plus  the sum of
+           the individual key lengths.  The default, if no /+ or /- is
+           specified, is 16 bytes each.
+
+
+
+
+
+SORTF Command                                             Version 2.27
+-------------                                             Feb 1,  1988
+
+                        Version History
+                        ---------------
+
+        2.0, July 11, 1985.
+           o  Corrects CR/LF problem. Remember, it is assumed that
+              all "records" end in a carriage return (CR). Those
+              that do not may appear as part of other records to
+              a text editor.
+
+        2.1, August 3, 1985
+           o  Corrects a problem sorting files larger than 64K.
+
+        2.15, December 27, 1985
+           o  Corrects problems with first record of file.
+           o  Adds /C option to treat keys as case insensitive data
+           o  The key length may be specified on the command line
+
+        2.17, February 25, 1987
+           o  Correct problem when maximum records exceeded
+           o  Convert to COM program
+
+        2.20, June 28, 1987
+           o  Add /Q option to suppress informational messages
+           o  Change to allow up to 16 key field specifications
+
+        2.23, August 6, 1987
+           o  Add "-" option to sort individual fields in reverse order
+           o  Add /K option to produce output file with keys only
+
+        2.24, September 15, 1987
+           o  Add /Lnnn option for sorting fixed length records
+
+        2.25, September 19, 1987
+           o  Correction for /L dropping last char of file and fouling
+              records.
+
+        2.26, December 16, 1987
+           o  Cosmetic changes
+
+|       2.27, February 1, 1988
+|          o  Fix divide overflow on large files; terminate with
+|             message "Maximum records exceeded"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SORTF Command                                             Version 2.27
+-------------                                             Feb 1,  1988
+
+                        Restrictions
+                        ------------
+
+           Depending on the amount of  memory available,  up to  40000
+|          records may be sorted.  The maximum file  size that  can be
+|          sorted depends  on the  maximum number  of records  and the
+|          average record  length.  For  example,  the  file  size  is
+|          limited to 3.2 mb for a file consisting of 80-byte records.
+
+
+
+           The advantages of using  SORTF  instead of the SORT filter:
+                - files larger than 63K may be sorted
+                - less time is required
+                - sort order can be based on up to 16 fields
+                - fixed length files can be sorted
+
+           For  best  results,  place the  input file  on the  fastest
+           available drive, e.g. RAM disk.
+
+
+
+           Written by  Vernon Buerg  for the  IBM PC  using DOS 2.0 or
+           later.  You may distribute SORTF given these restrictions:
+
+           o the program shall be supplied in its original, unmodified
+             form, which includes this documentation;
+
+           o no fee is charged;
+
+           o for-profit use without a license is prohibited;
+
+           o the program may not  be included, or bundled, with  other
+             goods  or  services.   Exceptions  may  be  granted  upon
+             written  request  only.    This  applies  to   clubs  and
+             distributors.
+
+           For use by corporations and other institutions, contact  me
+           for a licensing agreement.
+
+                Vernon D. Buerg
+                456 Lakeshire Drive
+                Daly City, CA 94015
+
+                Data: (415) 994-2944, VOR 24-hour BBS
+                CompuServe: 70007,1212
+
+
+
+
+
+
+
+
+
+
+

@@ -64,7 +64,7 @@
    - supply documentation
 - 2.01 09/27/86
   - correct not finding labels with leading blanks
-- 2.00 07/18/86
+- [2.00](2.00) 07/18/86
   - add QB 2.00 keywords
 - 1.34 06/23/86
   - increase maximum FIELDS to 200

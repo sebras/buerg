@@ -27,7 +27,7 @@
   - Add SORTF entry point for CALL from Quick Basic
 - 2.27 02/01/88
   - Fix divide overflow on large files; terminate with message "Maximum records exceeded"
-- 2.26 12/16/87
+- [2.26](2.26) 12/16/87
   - Cosmetic changes
 - [2.25](2.25) 09/19/87
   - Correction for /L dropping last char of file and fouling records.

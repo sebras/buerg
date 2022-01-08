@@ -1,6 +1,6 @@
 # FBR version history
 
-- 1.82 07/07/92
+- [1.82](1.82) 07/07/92
   - FB: correct file position for multi volumes
 - [1.81](1.81) 06/01/92
   - FR: correct selective restore

@@ -16,9 +16,10 @@
   - display error messages, e.g. "write protected disk", even when /V option is not used
 - 3.3c 01/16/88
   - correct /4 (DSDD 360 kb) formatting on 1.2 mb AT drives
+- [3.3b](3.3b) 12/28/87
 - 3.3 12/29/87
   - correct /F formatting of DSQD/AT under DOS 3.1 without drivers
-- 3.2 10/24/87
+- [3.2b](3.2b) 10/24/87
   - change meaning of /4; the default format is now the highest density for the drive.
   - allow formatting of drives under DOS 3.2 (and later?), and new formats 3.5/720kb and 3.5/1440kb.
 - [2.9](2.9) 03/20/87

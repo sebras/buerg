@@ -19,7 +19,7 @@
 - 1.62 11/11/87
   - FR: correct drive letter in mount message
   - FR: correct problem using 'd:\path' in command not using correct fbr filename
-- 1.61 08/04/87
+- [1.61](1.61) 08/04/87
   - FS: add filespec command line option
   - FR: replace file selection routines
   - FR: correct abort if wrong disk mounted

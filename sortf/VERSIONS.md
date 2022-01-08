@@ -39,7 +39,7 @@
 - 2.20 06/28/87
   - Add /Q option to suppress informational messages
   - Change to allow up to 16 key field specifications
-- 2.17 02/25/87
+- [2.17](2.17) 02/25/87
   - Correct problem when maximum records exceeded
   - Convert to COM program
 - [2.15](2.15) 12/27/85

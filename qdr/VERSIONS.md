@@ -12,7 +12,7 @@
   - expand usage message
 - 3.3g 05/06/90
   - corrections for full format of high density diskettes
-- 3.3d 01/27/88
+- [3.3d](3.3d) 01/27/88
   - display error messages, e.g. "write protected disk", even when /V option is not used
 - [3.3c](3.3c) 01/16/88
   - correct /4 (DSDD 360 kb) formatting on 1.2 mb AT drives

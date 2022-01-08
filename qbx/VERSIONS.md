@@ -34,7 +34,7 @@
    - expand xref table to include reference type
 - 4.00a 04/03/88
    - add QB 4 keywords
-- 3.00a 06/21/87
+- [3.00a](3.00a) 06/21/87
    - added keywords for QB version 3
    - more work needs to be done.
 - 2.07b 03/04/87 by David W. Campbell

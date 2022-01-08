@@ -100,7 +100,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 
 | Program | Latest version | Date | Description |
 | --- | --- | --- | --- |
-| BBSEXTRA | 2.0 | 09/18/91 | Determine missing and extra DIR files |
+| [BBSEXTRA](bbsextra/VERSIONS.md) | 2.0 | 09/18/91 | Determine missing and extra DIR files |
 | DIRAGE | 2.6 | 01/15/90 | Determine age of files for purging |
 | DIRSRT | 1.4 | 08/10/92 | Sort a PCBoard DIRectory file |
 | P2PDLTXT | 1.1 | 08/09/88 | Create DOWNLOAD.TXT file from PCB CALLERS file |

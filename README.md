@@ -94,7 +94,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 | [AUTOSIG](autosig/VERSIONS.md) | 7.0b | 06/25/95 | Automates access to CompuServe forums |
 | [AUTODOC](autosig/VERSIONS.md) | 7.0b | 06/25/95 | Documentation for AUTOSIG |
 | [AUTOBRO](autobro/VERSIONS.md) | 3.8 | 03/31/95 | Browse CIS file libraries offline |
-| CISMSG | 3.0 | 09/04/94 | Sort a file of captured CIS messages |
+| [CISMSG](cismsg/VERSIONS.md) | 3.0 | 09/04/94 | Sort a file of captured CIS messages |
 
 ### PC Board 14.5 utilities
 

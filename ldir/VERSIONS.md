@@ -4,7 +4,7 @@
   - Correct zero divide with large hard drives
 - 4.5 02/02/00
   - Correct display of year for y2k
-- 4.4 03/25/91
+- [4.4](4.4) 03/25/91
   - Correct handling of /N no sort option when /A or /H is also specified.
 - 4.3 12/14/89
   - Change display of bytes used and free to allow values over 100 million; add commas. Also correct failure to clear the screen if the /C option is set by DEBUG.

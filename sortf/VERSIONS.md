@@ -25,7 +25,7 @@
 - 2.29 03/05/88
   - Release gotten memory
   - Add SORTF entry point for CALL from Quick Basic
-- 2.27 02/01/88
+- [2.27](2.27) 02/01/88
   - Fix divide overflow on large files; terminate with message "Maximum records exceeded"
 - [2.26](2.26) 12/16/87
   - Cosmetic changes

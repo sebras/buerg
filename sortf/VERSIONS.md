@@ -42,7 +42,7 @@
 - 2.17 02/25/87
   - Correct problem when maximum records exceeded
   - Convert to COM program
-- 2.15 12/27/85
+- [2.15](2.15) 12/27/85
   - Corrects problems with first record of file.
   - Adds /C option to treat keys as case insensitive data
   - The key length may be specified on the command line

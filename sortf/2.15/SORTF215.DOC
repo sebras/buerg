@@ -1,0 +1,100 @@
+
+                              SORTF Command
+
+                    (c) Copyright Vernon D. Buerg 1985
+                      Version 2.15 - December 27, 1985
+
+
+Purpose:   The SORTF command reads data from an ASCII file, sorts the
+           records, and writes the data to another file.
+
+Format:
+           SORTF [d:][path]fname[.ext] [d:][path]fname[.ext]
+                 [/+nnn[,len]]
+                 [/R]
+                 [/C]
+
+Remarks:   Records read from the input file ending with a carriage
+           return and line feed are considered logical records and may
+           be up to 256 characters in length.
+
+           The records are sorted into ascending ASCII character order
+           unless /R is supplied to reverse the order.
+
+|          The /C option may be added to cause SORTF to treat the key
+|          fields as case insensitive data. That is, lower case letters
+|          in the key field are treated as upper case letters.
+
+           The key is taken from the first character position, unless
+           the /+ operand is used to specify the location of the key
+           within the records. The position may be a value from one
+           to 255. The first 12 characters at that position are used
+|          as the record key unless the 'len' operand is used to
+|          specify the key length. The key length may be a value from
+|          1 to 99.
+
+           For example, to sort a file in descending order with the
+           keys in position 10:
+
+                SORTF TEST.DAT TEST.SRT /R/+10
+
+           Or, to sort the same file using keys with 24 characters:
+
+                SORTF TEST.DAT TEST.SRT /R/+10,24
+
+           Depending on the amount of memory available, up to 40000
+           records, or a file up to 16-Mb, may be sorted.
+
+           The advantages of using SORTF instead of the SORT filter are:
+                - files larger than 63K may be sorted
+                - less time is required
+
+           For best results, place the input file on the fastest
+           available drive, e.g. RAM disk.
+
+
+
+
+
+
+Notes:
+        Written by Vernon Buerg for the  IBM PC using DOS 2.0 and is
+        supplied for personal use. All rights reserved.
+
+        Not for sale or hire. Commercial use is prohibited. This means
+        that no fee may be charged for any copies.  Nor may SORTF be
+        included (or bundled) with other goods or services. Exceptions
+        may be granted upon written request only.
+
+        If you find SORTF useful, you are encouraged to make a contribution
+        to defray development costs ($10 suggested).
+
+        For use by corporations and other institutions, contact me or
+        AAI Systems for a licensing agreement.
+
+                Vernon D. Buerg
+                c/o AAI Systems, Inc.
+                456 Lakeshire Drive
+                Daly City, CA 94015
+
+                RBBS: (415) 994-2944
+                CompuServe: 70007,1212
+
+
+Version History:
+
+        2.0, July 11, 1985.
+           o  Corrects CR/LF problem. Remember, it is assumed that
+              all "records" end in a carriage return (CR). Those
+              that do not may appear as part of other records to
+              a text editor.
+
+        2.1, August 3, 1985
+           o  Corrects a problem sorting files larger than 64K.
+
+        2.15, December 27, 1985
+|          o  Corrects problems with first record of file.
+|          o  Adds /C option to treat keys as case insensitive data
+|          o  The key length may be specified on the command line
+
+

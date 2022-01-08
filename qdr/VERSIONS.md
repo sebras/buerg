@@ -2,7 +2,7 @@
 
 - 4.0c 07/11/91
   - correct error not restoring system diskette parameters after /F forced format
-- 4.0b 07/04/91
+- [4.0b](4.0b) 07/04/91
   - corrections for DOS 5.0 and detection of 3.5"/720k drives for full format
 - [4.0a](4.0a) 05/06/91
   - corrections for recognition and proper formatting of 1.44/720k drives and drives resulting from the use of device drivers, e.g. DRIVER.SYS

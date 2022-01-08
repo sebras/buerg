@@ -1,0 +1,46 @@
+
+LP Command
+________________
+
+Purpose:  To print an  ASCII  file on a standard printer device
+	  at either 66 or 88 lines per page. A title is printed
+	  at the top of each page which contains the file name,
+	  creation date, and page number.
+
+Syntax:	  LP  [d][path]filename[.ext]	[/6][/8]
+					[/L1][/L2]
+					[/10][/12][/17]
+
+Remarks:  The default is 88 lines per page. For	66 lines per
+	  page,	specify	the /6 option.
+
+	  The default printer is LPT1. For LPT2, specify /L2.
+
+	  The default is 12 CPI. For 10, specify /10; for 17,
+	  specify /17.
+
+	  If the input filename	is omitted, you	are asked for it.
+
+	  Each page is numbered	and contains a title consisting
+	  of the file name and creation	date.
+
+	  Control characters sent to the OKI printer include
+	  TAB settings.	The control codes can be changed for
+	  use with other printers.
+
+	  If a print spooler is	used, DO NOT use LP while using
+	  the DOS PRINT	command.
+
+Notes:
+	  Written by Vernon Buerg for the IBM PC using DOS 2.0
+	  or later. For	public domain use. Not for sale or hire.
+
+	  Version 1.1, April 27, 1984.
+	  Version 1.2, Sept 12, 1984.
+          Version 1.4, Aug 14, 1985.
+              Because some print spoolers do not handle Int 17h
+              this version uses function 21 to write to the printer.
+              It is slower than 1.2.
+
+________________							|
+

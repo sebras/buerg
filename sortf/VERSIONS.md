@@ -36,7 +36,7 @@
 - 2.23 08/06/87
   -  Add "-" option to sort individual fields in reverse order
   - Add /K option to produce output file with keys only
-- 2.20 06/28/87
+- [2.20](2.20) 06/28/87
   - Add /Q option to suppress informational messages
   - Change to allow up to 16 key field specifications
 - [2.17](2.17) 02/25/87

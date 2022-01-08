@@ -131,7 +131,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 | --- | --- | --- | --- |
 | [AUTODATE](autodate/VERSIONS.md) | [1.1](autodate/1.1) | 04/28/84 | Simplifies setting date/time without clock, w/ASM |
 | COLORS | 1.0 | 06/24/85 | Experimental program to change DOS colors, w/ASM |
-| [JLH](jlh/VERSIONS.md) | 1.07 | 08/01/86 | JET's Little Helper (for Tall Tree's JET utility) |
+| [JLH](jlh/VERSIONS.md) | [1.07](jlh/1.07) | 08/01/86 | JET's Little Helper (for Tall Tree's JET utility) |
 | LIST569C | 5.69c | 01/24/87 | Old version of LIST is smaller and simpler |
 | LISTOS2 | 6.2a | 04/23/88 | Special version 6.2a of LIST for use with OS/2 |
 | LISTOSII | 7.5i2 | 06/09/93 | Special version of LIST Plus v7.5 for OS/2 for registered and licensed users only |

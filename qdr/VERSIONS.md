@@ -1,6 +1,6 @@
 # QDR version history
 
-- 4.0c 07/11/91
+- [4.0c](4.0c) 07/11/91
   - correct error not restoring system diskette parameters after /F forced format
 - [4.0b](4.0b) 07/04/91
   - corrections for DOS 5.0 and detection of 3.5"/720k drives for full format

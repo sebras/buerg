@@ -1,0 +1,95 @@
+
+CISMSG Command
+--------------
+
+Purpose:   This program copies a file containing CIS messages into
+           a new file with the messages in subject or number order.
+
+Format:
+|          CISMSG  [d:][path]fname[.ext]  [d:][path]fname[.ext]
+|                  [/n]  [/M]
+
+Remarks:   Records read from the input file ending with a carriage
+           return and line feed are considered logical records and
+           may be up to 255 characters in length.
+
+           Tab characters should not be present in the input file.
+
+           Messages from a single section may be selected by using
+           the /n option. Specify a one or two digit section number
+           in place of the n.
+
+           The  records are sorted into section and subject order,
+|          unless  the  /M  option  is  used  to  specify that the
+|          messages be sorted in message number order.
+
+           Any superfluous data, such as bulletins, become part of
+           the preceding message.  Duplicate  messages are skipped
+           only if they are identical.
+
+           All available memory is used. A maximum of 64K is  used
+           for I/O buffers.  Half of the available memory  is used
+           for containing message data. Each message  requires  32
+           bytes.
+
+           Depending  on the  amount of  memory  available,  up to
+           10000 records may be ordered.  Neither the  size of the
+           file, nor the lengths of messages,  affects the maximum
+           number of messages that can be processed.
+
+           For best performance, place the input message  file  on
+           the fastest disk drive, e.g. RAM disk.
+
+Examples:
+           - Sort the messages from file IBMSW.719 on drive A,  to
+             a new file called IBMSW.XXX on drive B
+
+                CISMSG A:IBMSW.719 B:IBMSW.XXX
+
+           - Sort messages in file IBMSW.MON which is on the current
+             drive, and copy to a new files called IBMSW.MON on drive B
+
+                CISMSG IBMSW.MON B:
+
+           - Supply the file names by using prompts
+
+                CISMSG
+                Enter INPUT file name-  A:IBMSW.719
+                Enter OUTPUT file name- C:
+
+           - Select section 8 messages from file IBMNEW.MSG
+
+                CISMSG IBMNEW.MSG IBMNEW.8 /8
+
+|          - Sort the messages in the file IBMSWM.ATO by message number:
+|
+|               CISMSG IBMSWM.ATO IBMSW.MSG /M
+
+
+Notes:     (c) Copyright Vernon D. Buerg 1985, 1986
+               456 Lakeshire Drive
+               Daly City, CA 94015
+               CompuServe: 70007,1212
+               Fidonet:  125/4
+               BBS: (415)-994-2944
+
+           Written using MS-MASM for the IBM PC and DOS 2.0
+           through DOS 3.1.
+
+           For private, personal use only. Not for sale or hire.
+
+           Version 1.7, Sig version 3B(24), March 26, 1985.
+           Version 1.8, Sig versions 3B35,37, April 28, 1985.
+           Version 1.9, Correct "Sb:" incorrect sort order. June 10,1985.
+             Corrected by short patch on 8/19/85 to allow processing
+             more than 2047 messages. Sig version 4A(45).
+           Version 2.0, Sept 15, 1985,
+             Adds the /n command line option to select messages
+             for a single section only.
+           Version 2.1, July 1, 1986, through Sig version 4A(70).
+             Corrections for large files (over 1 Mb).
+|          Version 2.2, August 20, 1986.
+|            Add /M option to sort messages by number only.
+|            Correct problem when there are no valid messages found
+
+

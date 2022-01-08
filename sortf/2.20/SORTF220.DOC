@@ -1,0 +1,121 @@
+
+                              SORTF Command
+
+                Copyright (c) Vernon D. Buerg 1985,,1986,1987
+                        Version 2.20 - June 28, 1987
+
+
+Purpose:   The SORTF command reads data from an ASCII file,  sorts the
+           records, and writes the data to another file.
+
+Format:
+           SORTF [d:][path]fname[.ext] [d:][path]fname[.ext]
+                 [/+nnn[,len]]
+                 [/R] [/C] [/Q]
+
+Remarks:   Records read from  the input  file ending  with a  carriage
+           return and  line feed  are considered  logical records  and
+           may be up to 256 characters in length.
+
+           The records  are  sorted  into  ascending  ASCII  character
+           order unless /R is supplied to reverse the order.
+
+|          Use the  /Q option to suppress the display of informational
+|          messages. Error messages can not be suppressed.
+
+           The  /C option may be added to cause  SORTF  to  treat  the
+           key fields as case  insensitive data.  That is,  lower case
+           letters  in  the  key  field  are  treated  as  upper  case
+           letters.
+
+|          You may supply up to sixteen  key offsets  and  lengths  by
+|          using the /+ parameter for each key position and length.
+
+           The key is taken from the first character position,  unless
+           the  /+  operand is used to specify the location of the key
+           within the records.  The position 'nnn' may be a value from
+           one to 255.  The first  12 characters at  that position are
+           used as the record key unless the  'len' operand is used to
+           specify the key length.  The key length may be a value from
+           1 to 99.
+
+           For example, to sort a file in  descending  order with  the
+           keys in position 10:
+
+                SORTF TEST.DAT TEST.SRT /R/+10
+
+           Or, to sort the same file using keys with 24 characters:
+
+                SORTF TEST.DAT TEST.SRT /R/+10,24
+
+           Depending on the amount of  memory available,  up to  40000
+           records, or a file up to 16-Mb, may be sorted.
+
+           The advantages of using  SORTF  instead of the SORT filter:
+                - files larger than 63K may be sorted
+                - less time is required
+
+           For  best  results,  place the  input file  on the  fastest
+           available drive, e.g. RAM disk.
+
+
+
+
+Notes:
+        Written by  Vernon Buerg  for the  IBM PC  using  DOS  2.0  or
+        later.  You may distribute SORTF given these restrictions:
+
+          o  the program shall be supplied in its original, unmodified
+             form, which includes this documentation;
+
+          o  no fee is charged;
+
+          o  for-profit use without a license is prohibited;
+
+          o  the program may not be included,  or bundled, with  other
+             goods or services. Exceptions may be granted upon written
+             request only. This applies to clubs and distributors.
+
+        If  you  find  SORTF  useful,  you  are  encouraged to  make a
+        contribution to defray development costs ($10 suggested).
+
+        For use by corporations and other institutions, contact me for
+        a licensing agreement.
+
+                Vernon D. Buerg
+                456 Lakeshire Drive
+                Daly City, CA 94015
+
+                Data: (415) 994-2944, VOR 24-hour BBS
+                CompuServe: 70007,1212
+
+
+Version History:
+
+        2.0, July 11, 1985.
+           o  Corrects CR/LF problem. Remember, it is assumed that
+              all "records" end in a carriage return (CR). Those
+              that do not may appear as part of other records to
+              a text editor.
+
+        2.1, August 3, 1985
+           o  Corrects a problem sorting files larger than 64K.
+
+        2.15, December 27, 1985
+           o  Corrects problems with first record of file.
+           o  Adds /C option to treat keys as case insensitive data
+           o  The key length may be specified on the command line
+
+        2.17, February 25, 1987
+           o  Correct problem when maximum records exceeded
+           o  Convert to COM program
+
+|       2.20, June 28, 1987
+|          o  Add /Q option to suppress informational messages
+|          o  Change to allow up to 16 key field specifications
+
+
+
+
+
+

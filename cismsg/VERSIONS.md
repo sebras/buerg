@@ -1,0 +1,28 @@
+# CISMSG version history
+
+- 3.0 09/04/94
+- 2.7 12/21/88
+  - correct sorting by message number (/M option)
+- 2.6 10/02/88
+  - added /X option to reverse output filename and ext
+- 2.5 09/01/88
+  - improve creation of files when /S is used
+  - removed requirement for "files=25"
+- 2.4 12/30/87
+  - add /S option for separate output files by section
+  - allow output filename to default to MESSAGES.ALL
+- 2.2 08/20/86
+  - Add /M option to sort messages by number only.
+  - Correct problem when there are no valid messages found
+- 2.1 07/01/86
+  - through Sig version 4A(70).
+  - Corrections for large files (over 1 Mb).
+- 2.0 09/15/85
+  - Adds the /n command line option to select messages for a single section only.
+- 1.9 06/10/85
+  - Correct "Sb:" incorrect sort order.
+  - Corrected by short patch on 8/19/85 to allow processing more than 2047 messages. Sig version 4A(45).
+- 1.8 04/28/85
+  - Sig versions 3B35,37
+- 1.7 03/26/85
+  - Sig version 3B(24)

@@ -15,7 +15,7 @@
   - Correct collation of multiple keys.
 - 2.33 03/16/89
   - Expand record size limit from 1024 to 8192 bytes.
-- 2.32 02/18/89
+- [2.32](2.32) 02/18/89
   - Correct problem LINKing with QB 4.5
 - [2.31](2.31) 02/16/89
   - Add /X option like /K to write file with keys only, and a cr/lf at the end of each record.

@@ -25,7 +25,7 @@
    - add cross reference of SUBs and DEF FN routines
    - add /R option to use record (line) instead of statement numbers
    - correct missing numeric labels in label listing
-- 4.00c 05/28/88
+- [4.00c](4.00c) 05/28/88
    - correct Goosen's problem with open (double quote) comments
    - change default filename for xref from .REF to .LST
 - 4.00b 04/03/88

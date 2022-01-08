@@ -11,7 +11,7 @@
 - 2.4 12/30/87
   - add /S option for separate output files by section
   - allow output filename to default to MESSAGES.ALL
-- 2.2 08/20/86
+- [2.2](2.2) 08/20/86
   - Add /M option to sort messages by number only.
   - Correct problem when there are no valid messages found
 - 2.1 07/01/86

@@ -14,7 +14,7 @@
 - 1.73 03/31/89
   - FB: added /Z option to compress files
   - *version 1.7 is not compatible with earlier versions*
-- 1.63 03/20/88
+- [1.63](1.63) 03/20/88
   - FR: correct problem restoring from multiple disks
 - [1.62](1.62) 11/11/87
   - FR: correct drive letter in mount message

@@ -1,0 +1,105 @@
+-
+SQPC Command
+-----------------
+
+Purpose:   Create a compressed - SQueezed - copy of a file.
+
+Format:    SQPC  [d:]input[.ext] [d:[\outpath]]  [/D]
+
+Syntax:
+
+           The input  file name  is required.   It may  contain a  drive
+        letter, a path name, and wildcard characters.
+
+           The output file specification  is optional.  If omitted,  the
+        squeezed  output  file  is  placed  in  the  current path on the
+        current  drive.   If  supplied,  the  output  specification  may
+        contain a drive letter and path names.  The output filename  and
+        extension  are  taken  from  the  input  filename and extension,
+        except that the extension for the output extension is changed to
+        contain the letter  "Q" as the  middle letter.  This  identifies
+        the file as a "squeezed" file.
+
+           If the  input file  name does  not include  an extension, the
+        output file name is assigned an extension of "QQQ".
+
+           The output file replaces any existing file of the same name.
+
+|          The /D option specifies the the input files be deleted after
+|       they have been squeezed.
+
+Remarks:
+
+           SQPC is derived from the SQ File Squeezer written by  Richard
+        Greenlaw.  SQPC was written using assembly language to achieve a
+        smaller program file  and to improve  performance.  It uses  the
+        same Huffman  encoding algorithm  for creating  a squeezed  file
+        from any input file.  Additionally, SQPC allows the use of  path
+        names  and  wildcards,  and  it  incorporates the file date/time
+        stamp feature employed in the newer version of SQ known as NSQ.
+
+           The squeezed file created by SQPC can be unsqueezed back into
+        the original file form by  using the USQ or NUSQ  programs.  The
+        original file date and time are preserved by SQPC and NUSQ.
+
+           Compression rates are dependent on the content of the file to
+        be squeezed.  For  a typical ASCII  text file, a  compression to
+        60% of the original file is common.  For more complex data, such
+        as in an EXE file, much smaller compression rates are  expected.
+        For small  files, the  rate may  be over  100% because  decoding
+        information is included in the squeezed file.
+
+|          If any errors are encountered,  the DOS  ERRORLEVEL  variable
+|       is set to a value of 1 (one).
+-
+Examples:
+
+        1)  Squeeze  the  file  "PGM.ASM1"  which  is  contained  in   a
+           subdirectory call "SOURCE" on drive "A".  Place the  squeezed
+           file  in  a  subdirectory  call  "TEST"  on  drive  "B".  The
+           squeezed file is called PGM1.AQM.
+
+                A>SQPC A:\SOURCE\PGM1.ASM B:\TEST
+
+        2) Create a squeezed file  for the file called "MEMO.TXT"  which
+           is contained in the  current directory in the  current drive.
+           Place the squeezed file in the same directory on the  current
+           drive.  The squeezed file is called MEMO.TQT.
+
+                A>SQPC MEMO.TXT
+
+
+
+        3)  Squeeze  all  files  with  an  extension  of "DOC" which are
+           contained in the current  directory on drive "B".   Place the
+           output in the current path for drive "A".  The squeezed files
+           have an extension of "DQC".
+
+                A>SQPC B:*.DOC A:
+-
+Notes:
+
+           Written by Vernon  D. Buerg for  the IBM PC  using PC DOS  2.
+        Although this program has been extensively tested, the following
+        disclaimer is included:
+
+           No warranty is given, either expressed or implied, as to  the
+        fitness or usability of  this program.  No liability  is assumed
+        for  any  loss  or  damage  claimed  as  a  result of using this
+        program.
+
+           For public  domain use.   Not for  sale or  hire.  Direct any
+        comments to:
+
+                Vernon D. Buerg
+                456 Lakeshire Drive
+                Daly City, CA 94015
+                BBS: (415) 994-2944
+                Compuserve: 70007,1212
+
+
+        Version 1.29, April 13, 1985; add ERRORLEVEL settings.
+        Version 1.2A, May 20, 1985; minor change for DOS 3.
+|       Version 1.31, Mar 2, 1986; added /D option.
+
+

@@ -8,7 +8,7 @@
 - 1.7 10/05/87
   - added options for orientation, margins, and tabs
   - changed title format
-- 1.6l 06/19/86
+- [1.6l](1.6l) 06/19/86
   - expand tabs and use HP LJ printer codes
   - fine tune cpi and lpi
   - use Int 17h for quicker printing

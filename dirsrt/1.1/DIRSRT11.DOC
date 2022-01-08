@@ -1,0 +1,39 @@
+
+Command DIRSORT
+---------------
+
+Purpose:  To sort the directory (DIR) file used by BBSWES.
+
+Usage:	  DIRSRT  dir-name  output-filename  [/D]
+		  [DIR]     [DIRSRT]	     [/C]
+					     [/ca]
+
+	The 'dir-name' is optional. It may include drive and
+	path. The default is DIR.
+
+	The 'output-filename' is optional. It may include a
+	drive, path, and filename. If omitted, a file name
+	of DIRSRT is used.
+
+	The /D option specifies that the directory be sorted
+	in descending order by date.
+
+	The /C option specifies that the directory be sorted
+	by the two character category field. The default sort
+	order is by filename. You may use only one of the /C
+	and /D options.
+
+	To select only those file entries belonging to a
+	category, supply the '/ca' switch with the two letter
+	category, e.g. /GA to select all GA files. Be sure the
+	letters are upper case if they are upper case in the
+	directory file.
+
+	Approximately 128K is required. At least 32 bytes per
+	file entry is needed, plus 32k for file buffers.
+
+	Written by V. Buerg, April 6, 1987. For private use
+	by users of BBSWES.
+
+
+

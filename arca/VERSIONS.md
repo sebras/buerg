@@ -1,0 +1,55 @@
+# ARCA version history
+
+- 1.29 12/09/87
+  - add /M option to add modified files only
+  - correction for zero-byte files, again
+- 1.28 10/4/87
+  - correction for zero-byte files
+- 1.27 05/30/87
+  - correct problem reverting to pack method (file size wrong)
+  - revert to copying if packing results in a larger file
+- 1.23 02/24/87
+  - add start-up banner
+  - omit "deleted" messages
+  - add 'copying' method
+- 1.22 09/13/86
+  - improve error handling
+  - improve speed performance roughly 9%
+  - very modest compression perfomance improvement
+  - modify this document accordingly
+- 1.21
+  - internal version
+- 1.20
+  - internal version
+- 1.19
+  - internal version
+- 1.18 08/11/86
+  - further speed tweaking in compression code; save a few more nanoseconds
+- 1.17a 08/10/86
+  - bug fix for the case of "arca x d:*.*", where d is not the current drive
+- 1.17 08/10/86
+  - speed improvements in compression code
+- 1.16 08/09/86
+  - more 286-specific instructions in compression code
+- 1.15 08/08/86
+  - more 286-specific instructions
+- 1.14 08/07/86
+  - add logic to sort input files using binary tree;
+  - modify filtering of ARC name when adding to ARC;
+  - modify processing of "/D" switch;
+  - do packing of file if LZW compression does no good;
+  - add optional code for 286 processor
+- 1.13
+  - internal version
+- 1.12
+  - internal version
+- 1.11
+  - internal version
+- 1.10
+  - internal version
+- 1.09
+  - internal version
+- 1.08
+  - internal version
+- 1.07 04/21/86
+  - initial release

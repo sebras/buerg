@@ -1,7 +1,7 @@
 # PCBCS version history
 
 - 1.43 09/15/91
-- 1.41 05/19/91
+- [1.41](1.41) 05/19/91
   - correct user report for single node systems
 - 1.40 05/16/91
   - add /HS option

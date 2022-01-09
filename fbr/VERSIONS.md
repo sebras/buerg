@@ -1,0 +1,70 @@
+# FBR version history
+
+- 1.82 07/07/92
+  - FB: correct file position for multi volumes
+- 1.81 06/01/92
+  - FR: correct selective restore
+- 1.80 07/09/91
+  - FR: add /N and /T options
+  - FB: improve compress algorithm
+- 1.76 10/10/89
+  - corrections to compression routines
+- 1.74 04/07/89
+  - FB: added SHARE capabilty which allows you to back up open files that are SHARED
+- 1.73 03/31/89
+  - FB: added /Z option to compress files
+  - *version 1.7 is not compatible with earlier versions*
+- 1.63 03/20/88
+  - FR: correct problem restoring from multiple disks
+- 1.62 11/11/87
+  - FR: correct drive letter in mount message
+  - FR: correct problem using 'd:\path' in command not using correct fbr filename
+- 1.61 08/04/87
+  - FS: add filespec command line option
+  - FR: replace file selection routines
+  - FR: correct abort if wrong disk mounted
+  - FR: correct restore of file after replying Y to "already exitts" message
+- 1.60 08/01/87
+  - FB: add display of file count, total bytes, and count of disks required
+  - FB: improve file selection routines
+- 1.58 07/30/87
+  - FB: improve performance writing to target drive
+- 1.55 04/07/87
+  - correct problem with cross-linked clusters using /D
+  - correct problems supplying filespecs to FB
+- 1.54 06/14/86
+  - add /V, /R and /U options to FR
+  - display file names 5-up in FR
+  - make FB smaller
+- 1.53 05/21/86
+  - add /D option to FB to delete files on target disks
+  - exclude MSDOS.SYS and IO.SYS
+  - change FB to process files in ascending size order
+- 1.50 03/13/86
+  - corrections to FR for selective file restore
+  - add display options to FS
+- 1.49 02/16/86
+  - corrections to FR for large files spanning two disks
+  - add path operand to FS
+  - remove BIOS specific display routines from FS
+- 1.47 02/02/86
+  - corrections to FR for multiple volumes
+- 1.45 01/25/86
+  - correct path syntax for FR
+- 1.4 12/07/85
+  - FB may selectively back up files
+  - FR may selectively restore files
+  - FS processes all FBR files on the specified drive
+  - the ESCape and control-C keys may be used at any time to abort an FBR program; control-break is not accepted
+- 1.3 11/12/85
+  - the table at the beginning of each FBR file now contains the actual diskette number for each file, this makes this version incompatibile with previous versions, so it's a good idea to place FR.COM on each FBR disk.
+  - FS now lists the file alphabetically, and if the last disk is used, the diskette numbers are accurate; otherwise the diskette number is calculated and may not be correct.
+  - the FBR file name was changed to allow multiple directories to be backed up onto one disk; this also provides more information about what the FBR file contains.
+  - the ESCape key can be used at any time during FB to abort the backup.
+- 1.1 10/30/85
+  - added /C and /V options to FB
+  - subdirectory and IBMxxx.COM entries are excluded from the FBR files to save some space
+  - fixed the ESCape (or ctrl-C) response to abort FB
+- 1.2 10/31/85
+- 1.0 10/28/85
+  - changed FS to show two disk numbers for files which span volumes

@@ -1,0 +1,34 @@
+# QDR version history
+
+- 4.0c 07/11/91
+  - correct error not restoring system diskette parameters after /F forced format
+- 4.0b 07/04/91
+  - corrections for DOS 5.0 and detection of 3.5"/720k drives for full format
+- 4.0a 05/06/91
+  - corrections for recognition and proper formatting of 1.44/720k drives and drives resulting from the use of device drivers, e.g. DRIVER.SYS
+- 3.3i 04/21/91
+  - add DesqView awareness
+- 3.3h 09/26/90
+  - expand usage message
+- 3.3g 05/06/90
+  - corrections for full format of high density diskettes
+- 3.3d 01/27/88
+  - display error messages, e.g. "write protected disk", even when /V option is not used
+- 3.3c 01/16/88
+  - correct /4 (DSDD 360 kb) formatting on 1.2 mb AT drives
+- 3.3 12/29/87
+  - correct /F formatting of DSQD/AT under DOS 3.1 without drivers
+- 3.2 10/24/87
+  - change meaning of /4; the default format is now the highest density for the drive.
+  - allow formatting of drives under DOS 3.2 (and later?), and new formats 3.5/720kb and 3.5/1440kb.
+- 2.9 03/20/87
+  -  minor correction for /3 (dsqd) formatting
+- 2.8 02/05/87
+  - correct marking of fat for side 2
+  - improve format verification, set retries to 2
+  - add operator action request for drive not ready or if disk is write protected
+- 2.7 02/04/87
+  - update boot sector with device constant when using /f to format, should correct problems with 3.5 inch dsqd drive
+  - correct initialization of fat (not marking bad clusters) when using /f
+- 1.0 02/28/86
+  - initial release

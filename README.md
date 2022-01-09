@@ -51,7 +51,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 | [FBR](fbr/VERSIONS.md) | 1.82 | 07/04/92 | File backup/restore utilities. Alternative to BACKUP and RESTORE commands |
 | [LDIR](ldir/VERSIONS.md) | 4.4 | 03/25/91 | Display directories in selected file order. Alternative to the DIR command |
 | [LIST](list/VERSIONS.md) | 9.6y1 | 06/20/05 | Full screen viewing of files, see LIST.DOC Alternative to the TYPE and MORE commands. Run ARCE MORELIST for rest of LIST files |
-| QDR | 4.0c | 07/11/91 | Quick Diskette Reformatter deletes all files. Clean off a disk for re-use |
+| [QDR](qdr/VERSIONS.md) | 4.0c | 07/11/91 | Quick Diskette Reformatter deletes all files. Clean off a disk for re-use |
 | SORTF | 2.38 | 10/09/91 | Fast file sorter handles large files. Alternative to the SORT filter |
 | SQPC | 1.31 | 03/02/86 | Fast file squeezer. Creates a compressed copy of a file to save disk space |
 | SWAPNAME | 1.2 | 02/20/86 | Switch names of two files, like CONFIG.xxx |

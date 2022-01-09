@@ -1,0 +1,188 @@
+
+LDIR Command							   Version 4.6
+-----------							   Feb 03, 2000
+
+Purpose:   To display the files in one or all directories of a disk.
+
+Format:    LDIR  [d:][\path]filespec]  [/?... /?]
+
+Remarks:   If no operands are supplied, the files in the current path
+	   and in the current directory are displayed. You may specify
+	   another drive using the d: operand, and/or a path name,
+	   and/or a file specification. Wildcard characters * and ? are
+	   permitted in the filespec operand.
+
+	   All available memory is used. As many files as fit in memory
+	   are sorted and displayed.
+
+	   The /? refers to optional processing switches. You may use
+	   one or more of the following:
+
+
+Sort options:
+
+	  /D   sort by file Date
+	  /F   sort by File name
+	  /N   no sorting of DIR entries
+	  /S   sort by file Size
+	  /X   sort by eXtension
+
+File criteria:
+
+	  /A   include Attributes, e.g. S=system, R=readonly, H=hidden
+	  /H   include files with the Hidden attribute
+	  /M   display only Modified files, i.e with Archive bit off
+	  /P   include all Paths starting with the current directory
+
+Display options:
+
+	  /C   Clear screen first, and after any "... more" prompts
+	  /W   Wait after screen full, ask for any key after 20 lines displayed
+	  /?   display usage syntax
+
+
+LDIR Command							   Version 4.6
+-----------							   Feb 03, 2000
+
+				    Examples
+				    --------
+
+
+	  o  Display all files, in filename order, on the current drive:
+
+		LDIR
+
+
+	  o  Display all files in the subdirectory \TEST\PGMS on drive B:
+
+		LDIR B:\TEST\PGMS
+
+	  o  Display only those files with an extension of .COM in the
+	     current directory which is not a root directory:
+
+		LDIR *.COM
+
+
+	  o  Display all modified files in all subdirectories on current drive
+	     and place the output in the file called DIRLIST on drive C:
+
+		LDIR /M/P >C:DIRLIST
+
+LDIR Command							   Version 4.6
+-----------							   Feb 03, 2000
+
+			       Changing defaults
+			       -----------------
+
+	The default option is to sort by file name. You may use DEBUG
+	to permanently change this default. The bytes called FLAG1
+	and FLAG2 contain the option indicators.
+
+	Field	Offset	Option	Hex and bit values
+	-----	------	------	-----------------------------------
+	FLAG1	0111	  A	01  .... ...1
+			  H	02  .... ..1.
+			  C	04  .... .1..
+			  D	08  .... 1...
+			  X	10  ...1 ....
+			  F	40  .1.. ....
+			  S	80  1... ....
+
+	FLAG2	0112	  M	01  .... ...1
+			  W	02  .... ..1.
+			  P	20  ..1. ....
+
+	For example, to change to defaults to /A/P/D/F/W:
+	FLAG1 becomes 01 + 08 + 40,  (A and D and F),
+	FLAG2 becomes 02 + 20 = 22,  (W and P).
+
+		DEBUG LDIR.COM
+		-e 10d 49	     (should originally be 40)
+		-e 10e 22	     (should originally be 00)
+		-w
+		-q
+
+
+
+				     Notes
+				     -----
+
+	Written for the IBM PC using DOS 2.0 or later, including DOS 3.3.
+
+	For private use only. May not be sold.
+
+	Copyright 1986-91,2000 by Vernon D. Buerg. All rights reserved.
+
+	     139 White Oak Circle
+	     Petaluma, CA  94952
+	     BBS: (707) 778-8944
+	     CompuServe: 74375,500
+	     Email: vern@buerg.com
+
+LDIR Command							   Version 4.6
+-----------							   Feb 03, 2000
+
+				Version History
+				---------------
+
+	   Version 2.3, August 10, 1985
+		Correct some problems with path\filespec syntax
+		Adds /M option to list modified files only
+
+	   Version 2.4, October 28, 1985
+		Adds /W option to pause after 20 lines are displayed
+		Speeds up screen displays but defeats redirection
+
+	   Version 2.5, November 5, 1985
+		Minor changes for color displays
+
+	   Version 2.6, January 4, 1986
+		By popular demand, ability for redirection and
+		use of PrtSc restored at the price of slower displays.
+		Problem changing current directory fixed.
+
+	   Version 2.7, February 15, 1986
+		Minor corrections to command line syntax checking
+
+	   Version 2.8, April 22, 1986
+		A special request version that does NO sorting of
+		the directory entries. The directory is displayed
+		in its original order. This is now the /N option.
+
+	   Version 2.9, May 12, 1986
+		Corrects problem changing the current directory of
+		the current drive when LDIR is used for a subdir on
+		another drive.
+
+	   Version 3.0, June 4, 1986
+		Corrects a problem when DEBUG is used to change
+		the default option switches. The attribute mask
+		used to read directories was not being updated.
+
+	   Version 3.1, Dec 28, 1986
+	   Version 3.2, June 12, 1987
+		Corrects problem specifying a filespec when in a
+		subdirectory, e.g. LDIR *.ASM failed.
+
+	   Version 4.1, Jan 25, 1989
+		Expands the number of file names from 1000 to an amount
+		determined by available memory. Approximately 64 bytes
+		per file name is required. In other words, 64K bytes of
+		memory is required for each 1000 files.
+
+	   Version 4.3, Dec 14, 1989
+		Change display of bytes used and free to allow values
+		over 100 million; add commas. Also correct failure to
+		clear the screen if the /C option is set by DEBUG.
+
+	   Version 4.4, Mar 25, 1991
+		Correct handling of /N no sort option when /A or /H
+		is also specified.
+
+
+	   Version 4.5, Feb 2, 2000
+		Correct display of year for y2k
+
+	   Version 4.6, Feb 3, 2000
+		Correct zero divide with large hard drives
+

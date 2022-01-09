@@ -1,0 +1,39 @@
+# LUU version history
+
+- 2.13 04/28/86
+    - correct replacement of members that were automatically squeezed
+- 2.09 01/27/86
+    - correct losing directory if run out of directory entries, or any other error
+- 2.08 12/29/85
+    - add the /nnn option to supply the number of directory entries for new library files
+    - add /D option to delete input files
+    - use smaller of original file or squeezed file
+    - add /Q option to use sQueezed file regardless of size
+    - correct directory update problem if "File not found" error occurs
+    - implement CRC for squeezed files
+- 2.05b 07/18/85
+- 2.05 07/13/85
+    - automatically sQueeze files larger than 1024 bytes
+    - add /N option to suppress sQueezing
+- 2.00 06/26/85
+    - add CRC for LBR files
+    - add CRC for directory
+    - re-use deleted entries
+- 1.67 06/17/85
+    - correct MAJOR problem "Updating" the last file, would result in damage to other files.
+- 1.66 05/14/85
+    - correct CP/M dates from LU86 formats
+- 1.65 04/13/85
+    - set ERRORLEVEL to 1 if any errors
+    - use DOS functions for displaying messages to allow for redirection, etc.
+- 1.64 03/03/85
+- 1.6 01/23/84
+    -  default to LU86 directory format
+- 1.5 12/21/84
+    -  allow multiple member names to be specified
+- 1.4 08/13/84
+- 1.3 08/06/84
+    -  Ignore CRC bytes in directory.
+    -  Update in place if replacement member is same size or smaller, of is last member in directory.
+- 1.2 07/30/84
+    -  recognize new CPM date/time stamp format

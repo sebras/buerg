@@ -1,6 +1,6 @@
 # FV version history
 
-- 2.00 1/11/00
+- [2.00](2.00) 1/11/00
   - correct year display for y2k
 - [1.45](1.45) 6/23/93
   - add more sfx formats

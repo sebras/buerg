@@ -1,0 +1,65 @@
+# ARCE version history
+
+- 4.1a 04/12/92
+  - process ARC entries after ARC EOF (h1A00)
+- 4.0g 04/13/91
+  - add handling of ARC v7 information records
+- 4.0f 05/15/90
+  - performance improvements
+- 4.0e 03/17/89
+  - performance improvements
+- 4.0c 03/03/89
+  - correct mkdir error without /5
+- 4.0b 02/28/89
+  - change meaning of /Z to /5;
+  - correct name used for /Z output directories
+- 4.0a 02/06/89
+  - add subdirectory support via /Z option
+- 3.1c 02/06/88
+  - lessen memory requirement to 50k
+- 3.1b 09/16/87
+  - unsquashing version released
+- 3.1a 09/10/87
+  - cosmetic changes
+- 3.0f 05/31/87
+  - correct false 'disk full' error message when using /p (piping) option
+  - correct failure to extract all files from a garbled (/g) archive
+- 3.0e 04/02/87
+  - correct loop with invalid archives
+  - insure errorlevel non-zero if any errors
+  - correct loop in command line processing
+- 3.0d 03/29/87
+  - correction to unsqueeze
+- 3.0c 03/23/87
+  - improve extracting with file selection
+  - minor fixes and cosmetic changes
+- 3.0a 03/16/87
+  - added /G for password encryption
+  - added /T for integrity checking only
+  - correct loop in command line parsing
+  - internal optimization
+  - make integrity checking more robust
+- 2.11 01/24/87
+  - some cosmetics, wrong banner version and date
+- 2.10 01/6/87 
+  - correct use out output file specification
+- 2.09 01/05/87
+  - correct closing of output if /P used; require return (enter key) for over-write prompt
+  - add more validity checking of member headers
+- 2.08 12/31/86
+  - added /P, /Q; fixed /R with redirection
+- 2.07 from 09/19/86
+  - not released
+- 2.06 09/17/86
+  - release from testing
+- 2.01-2.05, 4-20 thru 09/09/86
+  - improve unsq, correct disk full message
+- 2.00 04/08/86
+  - fine tuning of I/O buffering
+- 1.24d 04/01/86
+- 1.24 04/01/86
+- 1.22d 03/25/86
+- 1.1h 03/11/86
+- 1.1 01/13/86
+  - initial release
+

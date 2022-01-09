@@ -1,6 +1,6 @@
 # TABS version history
 
-- 2.2 08/09/88
+- [2.2](2.2) 08/09/88
   - MJK Mods
   - EOF mods
 - [2.1](2.1) 10/14/86

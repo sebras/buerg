@@ -1,0 +1,34 @@
+# LDIR version history
+
+- 4.6 02/03/00
+  - Correct zero divide with large hard drives
+- 4.5 02/02/00
+  - Correct display of year for y2k
+- 4.4 03/25/91
+  - Correct handling of /N no sort option when /A or /H is also specified.
+- 4.3 12/14/89
+  - Change display of bytes used and free to allow values over 100 million; add commas. Also correct failure to clear the screen if the /C option is set by DEBUG.
+- 4.1 01/25/89
+  - Expands the number of file names from 1000 to an amount determined by available memory. Approximately 64 bytes per file name is required. In other words, 64K bytes of memory is required for each 1000 files.
+- 3.2 06/12/87
+  - Corrects problem specifying a filespec when in a subdirectory, e.g. LDIR `*.ASM` failed.
+- 3.1 12/28/86
+- 3.0 06/04/86
+  - Corrects a problem when DEBUG is used to change the default option switches. The attribute mask used to read directories was not being updated.
+- 2.9 05/12/86
+  - Corrects problem changing the current directory of the current drive when LDIR is used for a subdir on another drive.
+- 2.8 04/22/86
+  - A special request version that does NO sorting of the directory entries. The directory is displayed in its original order. This is now the /N option.
+- 2.7 02/15/86
+  - Minor corrections to command line syntax checking
+- 2.6 01/04/86
+  - By popular demand, ability for redirection and use of PrtSc restored at the price of slower displays.
+  - Problem changing current directory fixed.
+- 2.5 11/05/85
+  - Minor changes for color displays
+- 2.4 10/28/85
+  - Adds /W option to pause after 20 lines are displayed
+  - Speeds up screen displays but defeats redirection
+- 2.3 08/10/85
+  - Correct some problems with path\filespec syntax
+  - Adds /M option to list modified files only

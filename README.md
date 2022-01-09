@@ -55,7 +55,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 | [SORTF](sortf/VERSIONS.md) | 2.38 | 10/09/91 | Fast file sorter handles large files. Alternative to the SORT filter |
 | [SQPC](sqpc/VERSIONS.md) | 1.31 | 03/02/86 | Fast file squeezer. Creates a compressed copy of a file to save disk space |
 | [SWAPNAME](swapname/VERSIONS.md) | 1.2 | 02/20/86 | Switch names of two files, like CONFIG.xxx |
-| TABS | 2.1 | 10/14/86 | Replace spaces with TABs and vice versa, in ASCII text files |
+| [TABS](tabs/VERSIONS.md) | 2.1 | 10/14/86 | Replace spaces with TABs and vice versa, in ASCII text files |
 
 ### Archiving utilites
 

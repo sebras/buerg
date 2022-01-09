@@ -1,0 +1,88 @@
+# FV version history
+
+- 2.00 1/11/00
+  - correct year display for y2k
+- 1.45 6/23/93
+  - add more sfx formats
+- 1.44 3/07/93
+  - correct loop with ARC-like files
+- 1.43 2/14/93
+  - add madeby and sfx for ZIP 2.04g
+- 1.42 10/09/92
+  - add /C comment option to ARJ
+- 1.41 10/09/92
+  - add ARJ sfx
+- 1.40 3/10/92
+  - add licensed version
+- 1.39 10/27/91
+  - add PKZIP v1.93a SFX
+- 1.38 08/26/91
+  - add checking of dates before changing them for /r option
+  - allow numbers over 8 digits
+- 1.37 05/07/91
+  - add support for ARJ archive files
+- 1.36 04/12/91
+  - add ARC v7 information records
+- 1.35 03/12/91
+  - add more LHA sfx formats
+- 1.34 02/06/91
+  - add PAK 2.5 sfx and LHA 2.05 sfx formats
+- 1.33 09/03/90
+  - display path names separately from file names
+- 1.32 08/30/90
+  - improve wide display of long file names
+- 1.31 07/18/90
+  - change processing of ZIP extra comments field
+  - add 'filespecs' file selection criteria
+- 1.30 07/16/90
+  - correct wide listing /W option
+- 1.29 06/29/90
+  - add /C option to display ZIP file comments
+  - changed lf-lf output to cr-lf-cr-lf; removed nulls
+- 1.28 03/25/90
+  - correct detection of some self extracting EXE files
+- 1.27 03/22/90
+  - add PKZIP 1.10 sfx format
+- 1.26 11/23/89
+  - correct LZH displays with long filenames
+- 1.25 11/17/89
+  - corrections for converting ZIP sfx
+- 1.24 11/16/89
+  - add /X option to convert self-extracting archives
+- 1.23 10/04/89
+  - correct inputting prompting for files not opened
+- 1.22 09/09/89
+  - add LBR library processing
+  - if archive type does not match the extension, check
+  - other formats
+- 1.21 08/30/89
+  - correct for long (path) names in ZIP, etc
+- 1.20 08/26/89
+  - add /R redate option
+- 1.19 08/24/89
+  - add ZIP 1.01 sfx
+- 1.17 08/16/89
+  - correct time value, correct some sfx checks
+- 1.16 08/01/89
+  - add PAK 2.0 Distilling; add seconds to time display
+- 1.15 07/24/89
+  - corrects premature eof problem with short LZH filenames
+- 1.14 07/22/89
+  - add ZIP 1.0 imploding method
+- 1.13 05/25/89
+  - add ARC 6 subdir checking
+  - add /W wide display option
+- 1.12 05/23/89
+  - add LHARC 1.13l sfx checks
+  - add 'who made it' note
+- 1.11 05/13/89
+  - correct display of ZIP crc
+- 1.10 05/09/89
+  - correct crc display for LZH
+  - add ZOO format
+- 1.09 05/06/89
+  - add LHARC 1.12b sfx checks
+- 1.08 04/28/89
+  - initial release
+- 1.00 04/21/89
+  - initial program

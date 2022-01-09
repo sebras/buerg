@@ -1,0 +1,113 @@
+# QBX version history
+
+- 5.5 02/22/90
+- 5.00 02/22/90
+  - add BC7 key words
+  - put xrefs back into basic ram, bc7 won't free up memory
+  - add 3 quick-sort routines
+  - remove option base 1, caused a bug on first pass at line 4100
+  - add /E option for BC7 extended functions to be key words
+  - add /? option for help screen
+  - make UPC a Basic SUb program
+  - allow wild cards in file name
+  - allow full path also
+  - add support for INCLUDE environment variable
+  - add /K option to print out Basic keywords found
+  - fix problem in line 1760 if NONE selected for output
+  - add /B switch for Basic programs with line numbers
+  - add QBXREF environment variable support for default switches
+  - fix problem in line 2190 if line started with a colon
+- 4.00g 10/09/88
+   - correct overwrite of output file if /f(filename) is used
+   - correct "ERROR: Include file 'filename' is missing" message
+- 4.00d-4.00f 07/15/88
+   - increase capacity, allow up to 2500 symbols
+   - add cross reference of SUBs and DEF FN routines
+   - add /R option to use record (line) instead of statement numbers
+   - correct missing numeric labels in label listing
+- 4.00c 05/28/88
+   - correct Goosen's problem with open (double quote) comments
+   - change default filename for xref from .REF to .LST
+- 4.00b 04/03/88
+   - expand maximum fields to 600
+   - expand symbol table to include symbol type
+   - expand xref table to include reference type
+- 4.00a 04/03/88
+   - add QB 4 keywords
+- 3.00a 06/21/87
+   - added keywords for QB version 3
+   - more work needs to be done.
+- 2.07b 03/04/87 by David W. Campbell
+   - add distinction between dimensioned and undimensioned variables
+- 2.07 03/03/87 by David W. Campbell
+   - acknowledge missing trailing double quotes
+   - don't number blank or null lines
+   - don't print page eject or blank line at top of first page
+   - correct meta pagesize
+   - correct default pagesize
+- 2.06 12/06/86
+   - fix incorrect statment numbers in xref after labels
+   - remove duplicate references
+- 2.05 11/28/86
+   - add command line options for destination, lines per page, and columns per line
+   - improve detection of label versus symbol references for numbers
+   - note assignment to symbols by an asterisk in cross reference
+- 2.03 11/17/86
+   - correct handling of continued lines (using underscore) which are followed by comments
+   - correct handling of $TITLE; default title is now program name
+   - correct handling of lower case meta commands
+   - show name(s) of included files during first phase
+- 2.02 11/12/86
+   - Correct problem with $INCLUDE
+   - Correct error 52 at 3350 if don't want xref output
+   - expand label tables from 2000 to 2500
+   - supply documentation
+- 2.01 09/27/86
+  - correct not finding labels with leading blanks
+- 2.00 07/18/86
+  - add QB 2.00 keywords
+- 1.34 06/23/86
+  - increase maximum FIELDS to 200
+- 1.33 04/22/86
+  - correct page title positioning
+- 1.32 04/08.86
+  - correct label case, correct tabs
+- 1.31 04/02/86
+  - print after parsing record
+- 1.30 03/11/86
+  - correct Print function
+- 1.29 03/09/86
+  - correct EXEPATCH problem
+- 1.27-1.28 02/13/86
+  - remove UPC due to fouling meta commands
+  - clean up headings and titles
+- 1.24-1.26 02/08/86
+  - correct Error 6 at line 3900
+- 1.21-1.23 02/07/86
+  - add hash table for symbol look-up
+  - use binary search for keyword look-up
+- 1.20 02/04/86
+  - add external UPC subroutine
+- 1.19 02/03/86
+  - optimize xref listing and external xref subroutines
+- 1.18 02/01/86
+  - externalize XREFS table to improve housekeeping time
+  - requires LINK QBX+XREF; followed by EXEPATCH to set x1800 max paras
+- 1.16-1.17 01/28/86
+  - improve analysis routines
+- 1.15 01/27/86
+  - correct FIELD as labels
+- 1.14 01/24/86
+  - implement meta commands
+- 1.12-1.13 01/22/86
+  - revise symbol table lookup
+- 1.11 01/22/86
+  - correction for comments
+- 1.10 01/19/86
+  - speed up analysis phase
+- 1.09 01/19/86
+  - fix Error6 in line 3440
+  - correct listing of long program lines
+  - add missing 30 keywords (oops)
+- 1.01-1.08 01/17/86
+  - the hack begins

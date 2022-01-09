@@ -1,0 +1,22 @@
+                                                        8/5/86
+
+      The QBARCV program is a routine that is CALLed from
+a Quick Basic program. It creates a file called TEMPARC.DIR
+which contains a verbose directory listing. If no drive and
+path is specified, QBARCV will take advantage of an FilePath
+utility.
+
+Installation:
+        QB yourprog/...;
+        MASM QBARCV;
+        LINK yourprog+QBARCV;
+
+Usage:
+        ARCNAME$="name of file"   'the extension defaults to .ARC
+        RETCD%=0                  'a return code is placed here
+                                  ' - zero if all okay
+                                  ' - nonzero if any problems
+        CALL ARCV (ARCNAME$,RETCD%)
+        IF RETCD=0 THEN ...       'process TEMPARC.DIR now
+
+

@@ -82,7 +82,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 | Program | Latest version | Date | Description |
 | --- | --- | --- | --- |
 | [CCIT](ccit/VERSIONS.md) | 1.0 | 09/22/86 | QB subroutine to calculate CCIT CRC for XMODEM includes assembler source |
-| FC | 1.3 | 08/17/85 | Produce .MRG file of differences for BASIC files |
+| [FC](fc/VERSIONS.md) | 1.3 | 08/17/85 | Produce .MRG file of differences for BASIC files |
 | QBX | 4.00g | 10/09/88 | Quick Basic program lister, label/symbol cross referencer |
 | RB | 1.58 | 08/20/85 | Convert token BASIC file to ASCII file |
 | SQUISH | 3.3 | 08/20/85 | Compress and unnumber BASIC source programs |

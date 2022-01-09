@@ -14,7 +14,7 @@ has been archived by archive.org
 
 Besides being active on Compuserve
 as [CIS:70007,1212](70007.1212@compuserve.com)
-and developing AUTOSIG,
+and developing [AUTOSIG](autosig/VERSIONS.md),
 Buerg also ran
 [VOR BBS](http://bbslist.textfiles.com/707/707.txt)
 during the late 1990s for customer
@@ -91,8 +91,8 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 
 | Program | Latest version | Date | Description |
 | --- | --- | --- | --- |
-| ATOSIG | 7.0b | 06/25/95 | Automates access to CompuServe forums |
-| ATODOC | 7.0b | 06/25/95 | Documentation for AUTOSIG |
+| [AUTOSIG](autosig/VERSIONS.md) | 7.0b | 06/25/95 | Automates access to CompuServe forums |
+| [AUTODOC](autosig/VERSIONS.md) | 7.0b | 06/25/95 | Documentation for AUTOSIG |
 | ATOBRO | 3.8 | 03/31/95 | Browse CIS file libraries offline |
 | CISMSG | 3.0 | 09/04/94 | Sort a file of captured CIS messages |
 

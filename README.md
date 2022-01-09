@@ -104,7 +104,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 | [DIRAGE](dirage/VERSIONS.md) | 2.6 | 01/15/90 | Determine age of files for purging |
 | [DIRSRT](dirsrt/VERSIONS.md) | 1.4 | 08/10/92 | Sort a PCBoard DIRectory file |
 | [P2PDLTXT](p2pdltxt/VERSIONS.md) | 1.1 | 08/09/88 | Create DOWNLOAD.TXT file from PCB CALLERS file |
-| PCBCS | 1.43 | 09/15/91 | Analyzes and reports usage from PCB CALLERS file |
+| [PCBCS](pcbcs/VERSIONS.md) | 1.43 | 09/15/91 | Analyzes and reports usage from PCB CALLERS file |
 | SORTDL | 1.1 | 08/09/88 | Sort PCB DOWNLOAD.TXT files |
 
 ### Printer utilities

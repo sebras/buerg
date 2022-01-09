@@ -1,6 +1,6 @@
 # LJBOOK version history
 
-- 3.70 02/02/00
+- [3.70](3.70) 02/02/00
   - expand date in heading to four digits
 - 3.60 09/20/91
   - correct A4 margins

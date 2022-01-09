@@ -50,7 +50,7 @@
   - make MS-MASM v5 compatible
 - 1.06 02/05/88
   - correct tab spacing
-- 1.05 01/26/88
+- [1.05](1.05) 01/26/88
   - add /2 option
 - 1.04 01/26/88
   - add /T title option

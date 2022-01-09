@@ -44,7 +44,7 @@
   - changed for A4 paper in UK by M. F. Winiberg
 - 2.20 10/28/88
   - change symbol set for use with Laserjet series II
-- 2.10 04/04/88
+- [2.10](2.10) 04/04/88
   - incorporate RWS mods for BOLD18.USL downloadable font by R. W. Smetana
 - [2.00](2.00) 02/10/88
   - make MS-MASM v5 compatible

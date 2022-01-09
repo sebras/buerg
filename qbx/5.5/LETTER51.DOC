@@ -1,0 +1,31 @@
+Dear Vernon,
+
+Here is my first cut at the BC7 version of QBX.  I have had to make some
+changes do to the nature of BC7 and the way it allocates memory.
+
+I have placed the "xrefs" back in basic memory, in a far numeric array.  BC7
+would not work with your xref121 file. The program would not allocate any
+memory for the array.
+
+I have also replaced the 3 sort routines with QuickSorts.  I think this is a
+faster way to handle the sorting.
+
+You will notice a list of words in the bottom of the file.  These are the
+keywords for the BC7 librarys.  Please let me know if you think they should
+go in the Keyword list, or just let them be found as a subroutine call.
+
+I have commented some of the changes I made with either "5.00" or "DME".
+
+I hope to hear from you soon.  I will continue to refine the program as I
+have time and if I find any bugs.
+
+Thank you for this chance to help you for a change, as you have helped me
+many times without even knowing it.
+
+David
+
+
+P.S. The NO*.obj files in the GO.BAT file are provided with the BC7 compiler.
+They help to reduce the EXE size by removing un-wanted code.
+
+

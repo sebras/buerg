@@ -1,0 +1,85 @@
+AUTOSIG Updates                                                    Version 6.9a
+---------------                                               September 7, 1992
+
+
+ 6.9a   - September 7, 1992
+ _______________________
+ - public release
+
+ 6.93   - September 4, 1992
+ _______________________
+ - fix lack of wait for entry to Mail when logon mail is used as first script
+   command.
+ - change test for forum temporarily unavailable.
+
+ 6.92   - July   4, 1992
+ _______________________
+ - fix Mark to recognize (H)eld headers.
+ - suppress REA WAI start when leaving Basic Services.
+ - be more specific in checking to make sure that Mail is reached
+ - allow TO: to be used in the first line of the body of a Mail message and
+   have ATO send the subject properly.  The user still must enter * in the To:
+   field of the send box, but will then be able to stick multiple or long
+   addresses in the body of the message.  (Check Help Mult in Mail for info
+   on this process.)
+ - update some REA and SCA commands to new format (still can't use proper new
+   command for QS because of need to get highest message # covered).
+ - fix F so it reads in # order when HMN is N.
+ - have 0 for HMN be treated as 0 rather than N.
+ - abort Mark when too many headers to process all of them (now 520)
+ - Alt-F in Read (or View) sends Form-Feed character to eject printer page
+ - K>ill function on forum menu has D>ownload option to remove pending Download
+   function
+ - Adjust for new CIS looseness in handling INTERNET return addresses.
+   "INTERNET:" will be accepted if that is exact beginning of From: line of
+   incoming message.
+ - Fix addressing problem with Mail messages without names
+ - add Alt-S to save to arbitrary file (defaults to standard *S file, then
+   holds whatever was used for last Alt-S in a given R or V operation).
+ - set Sysop command uploads so they work properly in forum which does not have
+   private messages enabled.
+ - fix screen problem for sending C>opy and accessing PPN (done in 6.91j)
+ - make Read Wait (U function) less vulnerable to CIS errors.
+ - allow "Post action !" to be included in message uploads.
+ - require non-blank char following > for gateway addresses in Mail.
+ - fix multiple appearances of "capacity" line in incoming message display.
+ - change /F so that it will send FF to printer after each message if set.
+ - change all setup and autojoin routines so that Replies option is not changed.
+ - switch I with A and ? with E between forum menu and forum help screen.  Make
+   U caption more descriptive.
+ - add checking for LIB:ALL in DOW script commands
+
+ 6.91   - May   25, 1992
+ _______________________
+ - REMOVED LINE NUMBERS in message editor.  Cursor line position is now shown
+   before the colon in the lower right.  For example, 32:1985 means the
+   cursor is on line 32 and the message has 1,985 characters.
+ - Outgoing message files open in one window (of a multi-tasking or
+   task-switching program) will not be wiped out by start of autopass or
+   entry to the forum.  (Open outgoing message files *will* be wiped out if
+   another window does R, V, S, or P functions in the same forum.)
+ - corrections for script DOW checks for existing files
+ - Change DEL again to accomodate another change in new forum software.
+ - Add M to end of Sysop sequence to accomodate new forum software.
+ - Made wait for ^P in Sysop commands smarter.
+ - Added Hold command to Sysop set.  The actual Hold command (ON or OFF) must
+   be entered in the field.
+ - change CIS commands to work under new (and hopefully old) forumware
+ - L (for Leave) becomes Compose
+ - Change becomes CHA (new forumware should accept Change but doesn't now)
+ - Different way of deleting messages (DEL and extra prompt <ugggh>)
+ - Abort sysop commands more cleanly when message not found
+ - SB becomes SN to gather section names
+ - Change hh:mm,dd-yy to hh:mm,MM-DD on autopass start screen
+ - Refresh $ in upper right on editor screen (if online)
+ - Increase array limits (won't help much)
+
+ 6.90   - March 26, 1992
+ _______________________
+ - add RUN verb to script processor: the last statement in a script may
+   be a RUN statement; it results in executing the name of the specified
+   script, e.g. RUN NEXTPASS.
+
+ 6.8c   - March 18, 1992
+ _______________________
+ - public release

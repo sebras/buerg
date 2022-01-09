@@ -7,7 +7,7 @@
   - correct c-E (Extract archive) check for program type was not detecting non-ZIP files correctly
   - add ctrl-Q command while viewing to display unicode UCS2-like files using first character of each two
   - allow command line lfn to be in double quotes
-- 9.6x 06/17/04
+- [9.6x](9.6x) 06/17/04
   - correct leaving file open upon exit (NT/XP)
 - 9.6w 06/09/04
   - correct skipping of leading blanks in command line

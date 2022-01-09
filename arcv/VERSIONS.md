@@ -1,6 +1,6 @@
 # ARCV version history
 
-- 1.22 04/13/91
+- [1.22](1.22) 04/13/91
   - add handling of ARC v7 information records
 - [1.21](1.21) 03/06/89
   - add /b option to suppress d:\path for BBS use

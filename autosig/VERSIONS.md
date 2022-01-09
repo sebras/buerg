@@ -487,6 +487,6 @@
   - greatly enhanced message editor now has word wrap and several new formatting commands.
   - improved CIS B protocol file transfer includes support for new Quick B implementation.
   - new Script command processor allows automation of other tasks, automatic logon via non-CIS nodes, and unattended downloading of files.
-- 5.26 04/26/87
+- [5.26](5.26) 04/26/87
 - [5.0](5.0) 09/03/86
 - [1.0](1.0) 03/03/84

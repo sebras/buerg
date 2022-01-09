@@ -1,0 +1,481 @@
+# AUTOSIG version history
+
+- 7.0b 06/25/95
+  - New send box for Mail forum to allow Normal text messages (sent without B+ transfer) and Latin-1 messages (sent with B+ transfer).  Also Binary and Text files can be Mailed.  Text file mailing is particularly useful to send files to Internet addresses.  New send box also allows any Mail subject to be used, even when sending files.
+  - A logoff script can be specified after a slash in the host setup "LogOn/Off SCRipt file" field.  E.g., L1.SCR/O1.SCR means L1.SCR is used for logon and O1.SCR is used for logoff.  This should help users who need special action to logoff from supplemental networks.
+  - Mouse implemented as in 6.9a with one intended change: clicking on forum goes to that forum (as if letter key pressed) instead of just selecting that forum and requiring separate click or CR to go to forum.  Right button works for <Esc> on main menu.  Mouse can be placed on left/right arrows on forum menus to move to adjacent forums.
+  - /T commandline switch implemented for BIOS writes.
+  - Accept up to 14 characters of filename for <PgDn> at Disposition ! prompt. This allows for CompuServe's new 8-character (plus extension) filenames.
+  - Adjust for new SprintNet logoff sequence.  (SprintNet no longer always says 202 DISCONNECTED.)
+  - Change default hosts to run from 2400 to 28800 bps
+  - Adjust for space after > in Mail address.  First > in any address with no PPN is assumed to be the delimiter.
+  - Allow Join in Mail.
+  - Make Mail not give error if user name not set in Mail addressbook.  It will read incoming Mail fine, but outgoing Mail will hang because waiting for sender name.
+  - Only search for "Date: " for start of CompuServe Mail (will help with some of the screwy things CIS does to Mail header format).
+  - Save/restore foreground/background colors.
+  - Remove write to log for forums not visited in auto 1 pass.  (This was slowing down the passes on machines with slow disks.)
+  - Set SEND OFF on forum entry to avoid problems with SENDs.
+  - Make PgUp/PgDn/Alt-N in PC Options box simply beep instead of exit.
+  - Trap error 24 on comm port reset or close, hopefully eliminating hangs at that point, like when modem is turned off.
+  - Retain default forum mode settings
+  - Remove TIME command when logging off from forum if logoff script specified.
+  - Change B+ transfer so abort requires 5 NAKs on same block instead of 10 NAKs over length of file.  Change wording in B+ routine: "Timeout" to "Transmission delay" to be more descriptive.
+  - Trap comm port device timeout and give informative message.
+  - Allow program exit if modem off.
+  - Set time after logout before hangup to 20 seconds.
+  - Drop DTR when exiting terminal mode if not connected.
+  - Port reset when opening the comm port.
+  - Increase checksum speed (factor of five) for resume of B+ downloads (will help resume larger files on slow machines).
+  - Change default for Alt-S in Read/View to just be forum directory.
+  - Change editor character counter after <F10> to allow only 9,973 characters in each message part.
+  - Mail subject corrected to allow single quotes.
+  - Several small changes to detect and respond to CompuServe error messages including too many users in forum.
+  - Drop back to DOS if /2/z commandline switches specified and nothing for auto 2 to do.
+  - Check for unbalanced [ in To:.  Change last char to ] if needed.
+  - Fix problem with Forum ! in forum entry announcements.  (There will still be a problem if Forum ! appears at the left margin.)
+  - Prevent Private status of last message Read or Viewed from being carried into W function.
+  - Fix overprinting problem when terminal print switch set.
+  - Fix routine to turn 16550 off on exit from ATO (if ATO turned it on).
+  - Fix some problems where invalid directories were causing untrapped errors.
+- 7.0a 06/??/94
+- 6.9a 09/07/92
+  - public release
+- 6.93 09/04/92
+  - fix lack of wait for entry to Mail when logon mail is used as first script command.
+  - change test for forum temporarily unavailable.
+- 6.92 07/04/92
+  - fix Mark to recognize (H)eld headers.
+  - suppress REA WAI start when leaving Basic Services.
+  - be more specific in checking to make sure that Mail is reached
+  - allow TO: to be used in the first line of the body of a Mail message and have ATO send the subject properly.  The user still must enter * in the To: field of the send box, but will then be able to stick multiple or long addresses in the body of the message.  (Check Help Mult in Mail for info on this process.)
+  - update some REA and SCA commands to new format (still can't use proper new command for QS because of need to get highest message # covered).
+  - fix F so it reads in # order when HMN is N.
+  - have 0 for HMN be treated as 0 rather than N.
+  - abort Mark when too many headers to process all of them (now 520)
+  - Alt-F in Read (or View) sends Form-Feed character to eject printer page
+  - `K>ill` function on forum menu has `D>ownload` option to remove pending Download function
+  - Adjust for new CIS looseness in handling INTERNET return addresses. "INTERNET:" will be accepted if that is exact beginning of From: line of incoming message.
+  - Fix addressing problem with Mail messages without names
+  - add Alt-S to save to arbitrary file (defaults to standard `*S` file, then holds whatever was used for last Alt-S in a given R or V operation).
+  - set Sysop command uploads so they work properly in forum which does not have private messages enabled.
+  - fix screen problem for sending `C>opy` and accessing PPN (done in 6.91j)
+  - make Read Wait (U function) less vulnerable to CIS errors.
+  - allow "Post action !" to be included in message uploads.
+  - require non-blank char following > for gateway addresses in Mail.
+  - fix multiple appearances of "capacity" line in incoming message display.
+  - change /F so that it will send FF to printer after each message if set.
+  - change all setup and autojoin routines so that Replies option is not changed.
+  - switch I with A and ? with E between forum menu and forum help screen.  Make U caption more descriptive.
+  - add checking for LIB:ALL in DOW script commands
+- 6.91 05/25/92
+  - REMOVED LINE NUMBERS in message editor.  Cursor line position is now shown before the colon in the lower right.  For example, 32:1985 means the cursor is on line 32 and the message has 1,985 characters.
+  - Outgoing message files open in one window (of a multi-tasking or task-switching program) will not be wiped out by start of autopass or entry to the forum.  (Open outgoing message files *will* be wiped out if another window does R, V, S, or P functions in the same forum.)
+  - corrections for script DOW checks for existing files
+  - Change DEL again to accomodate another change in new forum software.
+  - Add M to end of Sysop sequence to accomodate new forum software.
+  - Made wait for ^P in Sysop commands smarter.
+  - Added Hold command to Sysop set.  The actual Hold command (ON or OFF) must be entered in the field.
+  - change CIS commands to work under new (and hopefully old) forumware
+  - L (for Leave) becomes Compose
+  - Change becomes CHA (new forumware should accept Change but doesn't now)
+  - Different way of deleting messages (DEL and extra prompt <ugggh>)
+  - Abort sysop commands more cleanly when message not found
+  - SB becomes SN to gather section names
+  - Change hh:mm,dd-yy to hh:mm,MM-DD on autopass start screen
+  - Refresh $ in upper right on editor screen (if online)
+  - Increase array limits (won't help much)
+- 6.90 03/26/92
+  - add RUN verb to script processor: the last statement in a script may be a RUN statement; it results in executing the name of the specified script, e.g. RUN NEXTPASS.
+- 6.8c 03/18/92
+  - public release
+  - fix Alt-J so it joins forum if user is not already a member (prevents hang when initial is set)
+  - fix script goto so it is case insensitive
+  - fix script test to allow match of null strings
+  - try to prevent Enter choice from being recognized except when going to forum (fix problem with ZNT:NEW-1)
+  - allow auto passes which logon with scripts to proceed beyond first forum
+  - remove check for OK after reset string sent to modem
+  - change open routine to fix hidden system attributes on some files
+  - fix relationship between NUL and timeout counter
+  - fixed autosplit of Mailed messages from forum so later parts are Mailed.
+  - increased length of filename prompt after PgDn (when prompt appears)
+  - removed one comm change
+  - fix so leading blank in forum section setup field doesn't cause field to be ignored.
+  - trim leading blanks from items entered in host, terminal, Fkey setups. (Does not remove blanks from items in fields in old .DFN files though.)
+  - fix pickup of Fm: PPN for replies
+  - prevent control chars (less than ASCII 32, other than CR) from being inserted in message (beep when attempted from keyboard)
+  - suppress control chars (other than CR and TAB) when importing.
+  - convert Ascii 127-255 to @ (beep if from keyboard)
+  - display error message at end of import if any illegal characters (as defined above) were encountered in import
+  - allow host 9 to be used with /1 and /2 command-line switches
+  - expand options setting to set initial forum prompt to Forum, replies to N and Type waiting messages to N.
+  - make option setting able to start from libraries prompt.
+  - improve Tymnet logon (works at 2400, nothing works at 1200)
+  - slight changes to auto list menu (add J and S, change +)
+  - improve COM handling at 9600 bps
+  - correct use of /D to disable carrier detect logic
+  - fix J on (P)rivate message so deletion deletes the message being viewed rather than the parent of the message being viewed.
+  - fix DOW script command so it does a resend to create a prompt for any following MATCH or WAIT.  (Thus the 6.89 requirement to avoid those commands is removed.)
+  - fix gateway reset after logoff
+  - fix auto passes so no Go <page> issued between forums with same page
+- 6.89 12/05/91
+  - fix script DOW command so it will simply skip downloading a file when downloading the file would cause an overwrite of an existing file.  The fix requires that WAIT and MATCH *not* be used after a DOW.
+  - fix script DOW command so that it continues after a file not found message from CIS
+  - fix message Download function so that it traps message not found sent from CIS, locates the offending section of a stacked command line and sends the rest of the line to avoid missing messages.
+  - apply command stacking to output from marking H and J headers as well as Q
+  - set comm input to simpy ignore NULs (hex 00 characters) during text comm
+- 6.8b 10/25/91
+  - public release
+  - correct deadman routine not disconnecting after third timeout
+  - fix script prompts to work with new CIS library software
+  - display warning if part of incoming message too long for display in R or V
+  - combine RT commands to improve speed downloading messages with D.  Thanks to Walter Dnes for inspiring this change.  (Warning: this will cause the RT commands sent to CIS to look different.)
+  - correct auto-join to work properly anytime user enters forum in menu mode (Note: users should set DEFAULT profile for menu mode so auto-join is activated when entering new forums.)
+  - correct COM not echoing after alt-E (DOS shell) while in terminal mode
+  - correct error 13 during alt-G
+  - show warning if part of message not displayed
+  - correct synchronization problem with Q and ATO HMN beyond CIS HMN
+  - combine read thread lines to improve D function speed
+  - allow commas in forum name entry
+  - change PgDn check for "Disposition !" prompt to account for ^H as
+    the prompt character
+- 6.87 09/17/91
+  - correct using PPN from earlier messages for replies
+  - correct MATCH not clearing received text from previous MATCH
+  - correct error 9 at 7031: too many headers for QS/Mark
+- 6.86 09/07/91
+  - correct script UPL command leaving out "upl" part (oops)
+  - correct E (shell) waiting for COM data after disconnect
+- 6.85 09/05/91
+  - add command line /W switch to disable deadman timeout routines
+  - add more checking for /type: and /prot: in script UPL command
+- 6.84 08/28/91
+  - correct appending data to files after EOF (x'1A') control char
+  - correct script, including Email, uploads causing problems
+  - change PPN processor to treat <enter> like Paste, <spacebar> like old enter
+- 6.83 08/27/91
+  - correct truncated DFN file after alt-K/alt-O
+  - correct out of memory problem at disconnect (writing DFN file)
+- 6.82 08/18/91
+  - add ability to specify COM port address and IRQ instead of COMn name: the syntax is &Hxxxx/i where xxxx is the hex base port address, e.g. 03F8 for COM1, and i is the IRQ numbers, e.g. 4 for COM1; DO NOT USE this unless your modem uses an IRQ other than 3 or 4!
+  - work on hang after Email binary download
+- 6.8a 08/10/90
+  - public release
+  - correct Z message on forum config screen
+- 6.3a 03/28/90
+  - change editor reformat to check for ending ! and ?
+  - change PPN add message to include user name with ppn
+  - fix PPN "sorting by" message to not scroll screen
+  - correct reading messages position after "text not found"
+- 6.31 03/08/90
+  - fix L)eave with Email using /REC in section
+  - fix C)hange in PPN processor
+  - add Locate in reverse direction to Read; new subcommands:
+    - ^ (caret) to initiate search backwards
+    - F9 to find next previous occurance
+  - correct Back in Read messages when there is a message number prefix in the message text
+  - move terminal mode help screen (alt-A) to AUTOSIG.HLP
+  - add F10 as Quit to Read prompt
+  - fix 630 problem failing to create new DFN file if none exists
+  - improve display of messages uploaded to Email
+- 6.30 03/03/90
+  - add command line and PC Options /U to mean:
+    - off = prefix ATO commands with a ^U control character (default)
+    - on  = do not add a ^U prefix to ATO commands
+  - add more error checking for problems loading AUTOSIG.DFN when the is not enough memory
+- 6.29 02/27/90
+  - changes to PPN processor:
+    - the limit is now 2000 entries
+    - a temporary file is no longer used
+    - the external SORTF program is no longer required
+    - ATO now requires about 340k, less if the PPN processor is not used
+    - when Updating the PPN file from the message file, entries with the same PPN but different names will be added
+  - add new "Mail" checking for EasyPlex
+- 6.28 02/24/90
+  - send Attention: information for `>FAX`, etc.
+    - the Send window for FAX, MIC, Internet is now:
+      - To:  user's actual name
+      - Id:  user's PPN, or >FAX: or >INTERNET:, etc.
+  - fix problems with Alt-E shell to DOS
+- 6.27 02/18/90
+  - internal changes to reduce SHELL problems
+  - return to same directory after SHELL
+  - change Q to F10 for QS/Mark
+- 6.26 02/04/90
+  - JCM editor changes:
+    - Count was not being updated when lines were deleted (single or multiple)
+    - Cursor was not ending up in correct place when join was caused by backspace at beginning of line.
+    - Change Subject parser in Read routine so that it ignores the new # CIS has put in to indicate a reply exists.  This is particularly important in the X function in Read, though it helps get the correct Sb on Replies, etc.
+    - Limit the % displayed at upper right to 100%
+- 6.25 02/02/90
+  - add more memory error checking to PPN processor
+  - change 'go email' to 'go mail'
+- 6.24 01/14/90
+  - correct new line 25 key display in editor
+  - correct PPN processor trashing ATO after running out of memory
+- 6.23 01/12/90
+  - correct false R hint at forum function menu
+  - change primary menu to disallow selecting letter of undefined forums
+  - correct LOGON script command not working
+  - correct PPN processor adding new user with alt-I from Read
+  - change editor line 25 keys display
+- 6.22 01/07/90
+  - correct Leave problem with comm. routines.
+  - moved k)ill command to sub
+  - added IBMBBS to default forums for new DFN file
+  - correct PPN processor to allow adding users who were previously skipped (replied N to add prompt)
+  - remove $ command from Forum menu
+  - JCM changes in 6.22:
+    - Changed Alt-F so it will move cursor to first non-blank line following "paragraph" which was reformatted.  Also if Alt-F is hit on a blank line, the cursor simply moves down to the next non-blank line.  In both cases above, blank line includes lines which contain only an initial period.
+    - Changed Alt-F and Alt-J so that 2 blanks will be retained after a period which was at the end of a line before the reformat or join.
+    - Made <ctrl-backspace> the activation key to delete the whole word where the cursor in position.
+    - Made <ctrl-T> the activation key to delete from the cursor position to the next start-of-word.  If there are no start of words to the right of the cursor, it simply deletes to the end of the line.
+    - Cleaned up the display on line 24 and the send box title when Previewing a Reply.  They each now say that a reply is being edited.
+    - Squeezed space out of line 24 display on replies, also requiring modifying code which generates delete command to CIS.
+    - Changed Sb:  selection code so that a minus sign ends the backward reference section.  This should allow picking up the correct Sb: from string such as "#4517-6.21".
+- 6.21 12/31/89
+  - add clear screen to left/right for `R>ead` with V option
+  - correct Preview losing message number for REplies
+- 6.20 12/28/89
+  - compile with Basic Compiler Version 7
+  - refine scrolling in F3-Remind
+  - correct T command problem with highest message already read
+  - correct truncation of `>INTERNET` address by Send window
+- 6.19 12/24/89
+  - add check for no messages after T (read thread) function
+  - add noticeable "$" to offline message reading and replying screens when online
+- 6.18 12/22/89
+  - add /Z command line option to return to DOS after logoff
+  - add check for valid Forum Options d:\path; if it is not valid, you are put into the Forum Options menu and the Files d:\path is changed to `"*** INVALID ***"`
+  - add up-arrow and down-arrow scrolling responses to F3-Remind more prompt
+  - change editor normal cursor size to a thin line
+  - correct SEND autosplit of long messages if being sent Private
+  - add alt-N (display sections) choice to Forum Options Menu
+  - change default PPN file name to include ATO d:\path if no d:\path is supplied with the PPN file name
+  - add error checking for LOGON command; terminate script if the HOST or FORUM are not valid
+  - add "Have you left" prompt after "Do you want to stay connected?" prompt
+- 6.17 12/10/89
+  - correct path used for downloading Email binary messages
+  - change Email to SAVE the file if a binary download of a message fails
+  - add files check after changing options (missing hints)
+  - JCM corrections:
+    - join on 2nd last line or bs as beginning of last line now will perform their function (which may delete the last line).
+    - <enter> with insert off on last permissible line will trigger proper error message.
+    - Insert mode toggles no longer occasionally cause line number at right of current line to blank.
+    - allow To: to be empty for Email messages
+- 6.16 12/07/89
+  - Correct mouse with non-25-line screens
+  - Correct mouse with PPN processor
+  - change Email to allow replies to `>MCI:` and `>INTERNET:` addresses
+  - add command line option "/L" to supply the filename extension; the extension defaults to ATO. If you supply the /Lext parameter, you can not change the file extension via the Forum Options menu. This parameter is intended for use by groups of people who use the same copy of ATO on a system. The extension could be the user's initials, e.g. /LVDB. The extension must be 3 characters.
+  - Incorporated JCM (616) corrections:
+    - Fix problem where Ctrl-PgDn with message shorter than scren would move cursor to bottom line of message, but would also move entire message to bottom part of screen leaving an ugly border.  Now cursor simply moves to bottom line and leaves message where it is.
+    - Change ctrl-left to move cursor to next previous beginning of word (which will be beginning of current word if cursor is not already there).
+    - Change F6 so that the cursor will not move off last line of message. This prevents runaway deletion of lines from bottom of message.  (Any blank lines at the bottom of the message are never saved when the message is stored.  That has been true for quite a while.)
+    - Set F10 to "Send" message -- same as F4 for now, but moving toward freeing up F4.  This is to be consistent with other places where F10 is the "do it" key.  This leaves Alt-B as the only key to break the message.
+    - Similarly set Alt-F10 to say "Send and save copy in <forum>.FIL"
+    - Change send routine so a single leading slash on a line will never be sent.  (Double leading slashes will be left alone.) This prevents EDIT from taking the line as a command.  It prevents the user from entering an EDIT command as part of a message, but they shouldn't be doing that anyway.  I checked and LINEDIT apparently just ignores leading slashes, so I add the slash for both editors -- assuming that the LINEDIT users really want the slash to appear.
+    - Tried a new wording of message asking user whether to convert reply to new message.
+    - Fixed problem where user was dumped back to forum menu after sending a Reply which was converted to a message, thereby losing their place in the Read or View function.
+    - Fixed conversion function so user is taken to send box to change whatever information caused the need to convert from send to new message.
+    - Updated line 24 display to show the user that the reply really was converted to a message.
+    - Cleaned up import a little bit so return from unsuccessful import will give at least a message and allow abort with user being taken back to message display if abort is chosen.
+    - Implemented Ctrl-Backspace as delete whole word.  This should probably be substituted for Ctrl-T since ^T is not the WordStar implementation. At the moment, both of them have the same function.
+    - Add period at end of "Press ENTER to continue."
+- 6.15 11/23/89
+  - Correct cursor size for insert mode in Window Editor
+  - Improve logoff processing and disconnect detection
+- 6.14 09/18/89
+  - revise screen saving logic to reduce memory requirements
+  - change G)o-online for Email to wait for EasyPlex prompt
+  - change R)ead to redisplay message after alt-E shell to DOS
+  - correct check for message file, invalid R hint if <=23 bytes
+  - correct toggling of insert mode after PgDn in editor
+  - add GATE:forum syntax to "GO to page", e.g. PCM:UTILFORUM; this defeats the Y quick long feature
+- 6.13 08/31/89
+  - check for "(N or NEW):" prompt after Q when no new messages
+  - make CIS B protocol uploads less sensitive to timeouts
+  - remove `S>end` prompt after F4-Keep in Preview
+  - correct Send window from changing mode to S after ESCape used
+- 6.12 08/09/89
+  - remove "EMAIL waiting" notification message
+  - fix Import (F9) loop when invliad path entered
+  - change CIS commands to use new forum commands, e.g. REAd
+  - add alt-D at function menu to toggle SWD
+- 6.11 07/17/89 (not released)
+  - correct not deleting empty message files after AUTO runs
+  - improve alt-H; didn't always disconnect the modem
+  - correct Auto runs not starting if session spanned midnight
+- 6.10 05/28/89
+  - change default Leave section to blank from 0
+  - change Preview to ask `S>ave` `K>eep` etc.
+  - correct Read `D>elete` not being sent (filesize<20)
+  - correct "Unable to access disk", error 70 at 12020, if there is no bulletin file.
+  - correct alt-K to say "Press F10 when finished"
+  - correct display of AUTO names in upper case
+- 6.09 05/22/89
+  - correct some false "R" hints after AUTO
+  - clarify description of save modes in Send Window
+  - correct message editor line 24 To: and Fm: contents
+  - allow multiple match text for host strings and script MATCH verb; separate up to two strings by a | character, e.g. MATCH "OK|!" to wait for OK or ! to be received.
+  - correct AUTO compare of forum names; was case sensitive
+- 6.08 05/21/89
+  - correct bad file number error in 18202
+- 6.07 05/21/89
+  - correct bad file number error in 18200
+  - add DWED character counting changes from JCM
+- 6.06 05/20/89
+  - make gateway case insensitive
+  - add more error handling for invalid forum d:\path
+  - fuss with ROM 139 modem problem
+  - added command line /D option to tell ATO to ignore carrier detect and connect status. This may make use of hardwire connections easier.
+  - added script variables for processing options; all are prefixed with %SW and have a value of Y or N as follows: `%SWD is the connect status; Y if connected, N if not` and corresponding to command line options: `E, N, M, C, B, F, S, T, Q, P, I, J, O, U, V, Y, 4` For example, to tell ATO that it is connected even when ATO has not done the logging on, you would enter the script command:  SET %SWD Y
+  - changed default PPN file name back to "forum.PPN"
+  - correct file already open error in 6310 of ATOSUB
+  - correct PgUp/PgDn while online creating invalid log entries
+  - center K)ill prompt
+  - clarify editor F4 prompt and Send Window F10 description
+  - change Send Window ESCape to return with no changes rather than aborting entire message, add alt-N to nuke the message
+  - correct CIS Quick B uploads stalling after a NAK
+  - add alt-Y to toggle Y command line option at function menu
+  - correct PPN destroying message contents after PgUp or remind
+- 6.05 05/17/89
+  - changed ESC to mean abort, added F10 to mean exit for all uses of the Window Editor, e.g. Forum options, Host options
+  - changed F4 for replies to not present Send Window
+  - corrected getting 1-byte log file when logging is off
+  - added R)eply file to those that can be deleted by K)ill command
+  - highlight L)ist command if bulletin file is available
+  - changed the way that the PPN file is sorted; the external SORTF program is now required; it worked the best for speed and largest possible PPN file
+  - correct message editor line 24 information after changes made
+  - changed editor save prompt: `S>ave, A>lter mode, C>arbon copy, R>eturn to editing, K>eep a copy` where:
+    - `S>ave`    stores the message in forumL.ext for sending later
+    - `A>lter`   presents the Send Window for changes
+    - `C>arbon`  stores the message and presents the Send Window for entering To: for another recipient
+    - `R>eturn`  returns to editing
+    - `K>eep`    saves a copy of the message in forum.FIL
+  - internal changes:
+    - reduce M$() to 200 since it is no longer used by QS or PPN; the message limit thus was raised to 198 lines
+    - the PPN file limit is now 4000
+    - approximately 320K is recommended for running ATO
+- 6.04 05/11/89
+  - internal changes:
+    - move LoadCFG routine to SUB
+    - RTS: added ATOKILL and ATONAME routines
+    - QS: correct mark/unmark tag not being rewritten, add SORTF checks
+    - PPN: add SORTF checks
+    - SUB: correct create CFG sig count from 5 to 8
+- 6.03 05/03/89
+  - add command line /Y option to bypass normal logon messages and prompts
+  - don't clear screen when in non-menu (alt-V) mode
+  - removed limitation on maximum number of QS/Mark headers
+  - increased PPN file limit to 8000 entries
+- 6.02 03/25/89
+  - change opening of COM until actually going online
+  - try change for Hayes SM1200B internal modem UART problem
+  - improve CIS B-xfer beeper
+  - incorporate JCM602 changes:
+- 6.01 02/20/89
+  - restored information window to Send window
+  - special test version to isolate problems on MS DOS 2.11:
+    - added more tests for mouse existance
+- 6.00 02/19/89
+  - special test version to isolate problems on MS DOS 2.11:
+    - removed mouse support from Window Editor
+    - removed screen save/restore routine
+- 5.99 02/15/89
+  - correct alt-L (capture) adding default ATO d:\path to filename
+  - move "File CAPTURE ended" message to next to botto line
+  - correct display of "M" in QS/Mark
+  - correct screen scrolling up one after R)ead L)ocate prompt
+- 5.98 02/08/89
+  - added new Forum item for specifying the extension of ATO files; the default is .ATO
+  - correct Send putting PPN into Post command twice
+  - correct Send changing RE to L and omitting the section
+  - add F1 as Help key while in the Send window
+  - insure the message file is appended to while remaining in a forum
+  - allow leading spaces in the message editor
+  - correct flash of line 25 function keys after S)end
+  - correct mouse cursor position when in command mode (alt-V) and when at the R)ead prompt
+  - correct error 5 in ATOPPN at line 9147
+  - correct error 5 in line 26030 when using Ultravision
+  - correct automatic splitting of Private messages
+  - add color to "M" mark for QS/Mark
+- 5.97 02/06/89
+  - corrected use of PgUp in Send window; was returning to editor
+  - corrected not sending "OFF" when "Stay connected" set to "N"
+  - corrected not writing log (AUTOSIG.mth) entries (oops)
+- 5.96 02/05/89
+  - change Window Editor <enter> key to move to next line
+  - correct W not going into editor!
+  - correct ATOPPN error 5 at line 222
+- 5.95 02/04/89
+  - correct use of PPN processor in send window
+  - restored ESCape as exit key in window editor; <enter> moves the cursor to the next line
+  - add a new routine to display prompts and input a line, called the Line Editor. It's used when you are prompted for a file name, for example.
+    - enter accepts the line
+    - escape aborts the input
+    - left and right arrows move the cursor
+    - ctrl-end deletes from the cursor to the end of line
+    - ctrl-right positions to the next word
+    - home positions to column 1
+    - end positions after the last non-blank character
+  - changed L)ist bulletins command to display blank lines
+  - changed L)eave to ask for To, Subj, etc, before editing
+  - corrected problems with logon sitting at "!" or "OK" prompts
+  - changed editor import to allow supplying full filename on first prompt; now uses new Line Editor
+  - changed Auto time/date prompt to use new Line editor
+- 5.94 01/31/89
+  - add PPN field to message Save window
+  - decrease mouse sensitivity, other mouse support improvements
+     - added mouse to PPN processor
+     - added mouse to function menu: place cursor over command letter and click the left button to invoke that function
+- 5.93 01/23/89
+  - correct List bulletins missing at end of each screen
+  - correct sending of "OP;SM" when using Email
+  - allow use of Email send options in the message SECTION field; e.g. save code of /REC will result in a receipt being requested
+- 5.92 01/11/89
+  - changed Window Editor (Forum, PC and HOST open menus) for mouse:
+    - the ENTER key now exits WE in addition to the ESCape key
+    - the TAB key moves to the next line item
+    - the shift-TAB key move the cursor to the previous line item
+  - improved mouse operation:
+    - the mouse cursor is more visible on the Primary menu; move the cursor to the Host number, or the Forum letter and click the left (enter) key to perform the middle (bar) function with that Host and Forum.
+    - the left (enter) and right (escape) buttons are now available from most prompts, e.g. Function menu, PC Options menu
+  - correct superfluous "File CAPTURE ended" message from CAPTURE verb
+  - improved QS/Mark handling of "invalid" header files
+  - improved DesqView and Double DOS awareness
+- 5.91 01/03/89
+  - correct script DOW command when [ppn] is appended to file name
+- 5.90 12/28/88
+  - correct display of compressed message headers (/N) by moving the To: field
+  - revise the way message information is asked for in the message editor, i.e. to, subject, mode, and section information
+- 5.89 12/18/88
+  - increased QS header limit to about 400, PPN limit to about 600
+  - changed the way F-keys send text; the special control characters can now be included, e.g. ~OP;SM A;S}~RM
+- 5.88 12/12/88
+  - fix alt-D/alt-L which was broken in 587
+- 5.87 12/11/88
+  - slow down modem port I/O for slower modems; also removed transmit buffering which didn't work on all modems
+  - speed up terminal mode display
+  - correct setting monitor mode to BW80, now set to CO80
+  - correct SHELL (alt-E) changing monitor mode
+  - correct S)end stopping at (/EXIT to end)
+  - correct L)ist messages when no bulletin file
+  - correct S)end inserting one or two extra blank lines at end of message
+  - correct S)end not inserting addressee userid for private messages
+- 5.86 11/28/88
+  - correct alt-G not working
+  - correct Help, L (list bulletin), Mark not working: file not found
+  - correct CISB status line (25) display problem with DV
+  - correct R)ead L)ocate failing when text is in next message
+  - change logoff to not send hang-up commands to modem if no carrier
+  - correct wait after sending "SS sections"
+  - correct wait with sending Email using literal (`*name`) as addressee; remember: all literal names must be in your Email address book
+- 5.8A 11/25/88
+  - Officially released version 5.8a
+- 5.85 11/22/88
+  - corrected problem sending "OP;SM" (and possibly GO command) before forum prompt is received
+  - corrected wait after sending message with MAil or MU
+  - corrected ctrl-D not issuing "GO page"
+  - corrected wait at EDIT (/EXIT) prompt when sending messages
+  - revised use of QB files to reduce number of maximum files
+- 5.0 09/03/86

@@ -1,0 +1,55 @@
+# SORTF version history
+
+- 2.38 10/09/91
+  - improve output phase time
+- 2.37 09/20/91
+  - Improve speed for ascending sorts
+- 2.36 09/18/91
+  - Correct problem with files over 16k records.
+  - Add small (SORTFS.COM) version for keys of 12 bytes or less which allows sorting of twice as many records
+- 2.35 02/15/90
+  - Correct use of /K with record lengths over 255 bytes
+  - Allow records to be terminated by CR-LF, just CR, or just LF line feed.
+- 2.34 02/08/90
+  - Allow command line numbers to exceed 2 digits.
+  - Correct collation of multiple keys.
+- 2.33 03/16/89
+  - Expand record size limit from 1024 to 8192 bytes.
+- 2.32 02/18/89
+  - Correct problem LINKing with QB 4.5
+- 2.31 02/16/89
+  - Add /X option like /K to write file with keys only, and a cr/lf at the end of each record.
+- 2.30 05/23/88
+  - Change maximum record size from 255 to 1023
+  - Change default key length from 12 to 11
+- 2.29 03/05/88
+  - Release gotten memory
+  - Add SORTF entry point for CALL from Quick Basic
+- 2.27 02/01/88
+  - Fix divide overflow on large files; terminate with message "Maximum records exceeded"
+- 2.26 12/16/87
+  - Cosmetic changes
+- 2.25 09/19/87
+  - Correction for /L dropping last char of file and fouling records.
+- 2.24 09/15/87
+  - Add /Lnnn option for sorting fixed length records
+- 2.23 08/06/87
+  -  Add "-" option to sort individual fields in reverse order
+  - Add /K option to produce output file with keys only
+- 2.20 06/28/87
+  - Add /Q option to suppress informational messages
+  - Change to allow up to 16 key field specifications
+- 2.17 02/25/87
+  - Correct problem when maximum records exceeded
+  - Convert to COM program
+- 2.15 12/27/85
+  - Corrects problems with first record of file.
+  - Adds /C option to treat keys as case insensitive data
+  - The key length may be specified on the command line
+- 2.1 08/03/85
+  - Corrects a problem sorting files larger than 64K.
+- 2.0 07/11/85
+  - Corrects CR/LF problem.
+- 1.9 05/27/85
+  - Corrects CR/LF problem.
+- 1.43 06/06/84

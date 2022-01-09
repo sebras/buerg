@@ -1,0 +1,151 @@
+ARCF  Find Text in ARC Files                                Version 1.10
+____________________________                                Mar 10, 1992
+
+
+
+
+Purpose:  To search files in ARC archive files for text strings.
+
+
+Format:   ARCF  [d:][path]filename[.ARC]  [filespecs...]  "text"
+                [/B] [/C] [/F] [/Q] [/S] [/W]
+
+
+Usage:    The d:path\filename and "text" parameters are required.
+          The drive and path are optional. The 'filename' and
+          'filespec' parameters may contain the wildcard characters *
+          and ?.  All files matching the 'filespec' specification
+          within the 'filename' are processed.
+
+          If the 'filename' extension is omitted, the extension .ARC
+          is used.
+
+          The 'text' search criteria must begin and end with a
+          double quote character, e.g. ARCF TEST.ARC "SOMETHING".
+          You may include the ? character in the search text to
+          denote "any" character. Thus, "A?C" would produce a match
+          if "ABC" or "A2C" occurs in the files processed.
+
+          The optional switch (/x) characters must be the last
+          operands, e.g. ARCF TEST "april 1" /c/w.
+
+          Normally, you would only want to search "text" files for
+          strings.  Text files consist of ASCII record.  Each
+          record ends in a carriage control (CR) character.  The
+          maximum record length is 4096 bytes.  To search all
+          files, binary and text, use the /B option.  A maximum of
+          80 characters is display when text is found in a record.
+          All control characters are changed to spaces.  If /B is
+          used, any hi-ASCII (greater than 127) characters are
+          blanked out.
+
+
+          The system errorlevel is set to indicate the results:
+                0 - text was not found
+                1 - text was found
+                2 through 14 - an error occurred
+
+
+
+
+
+
+
+
+
+
+
+      ARCF (c) Copyright 1987-92 by Vernon D. Buerg. ALL RIGHTS RESERVED.
+
+
+ARCF  Find Text in ARC Files                                Version 1.10
+____________________________                                Mar 10, 1992
+
+
+                        Option Switches
+                        ---------------
+
+        /B - include Binary files, i.e. files with the extensions
+             of .EXE, .COM, .OBJ, .LIB and .BIN.
+             If omitted, only non-binary files are searched.
+
+        /C - case sensitive search; if omitted, the search for the
+             text is made regardless of the case, i.e. upper case
+             and lower case letters are treated the same.
+
+        /F - display the name of the file begin searched only if
+             the scan text is found within the file; if omitted,
+             the names of all files are displayed as they are
+             proccesed.
+
+        /G - supplies any encryption (garble) password, e.g.
+             /GPSWD would supply PSWD as the password.
+
+        /Q - suppress beeps and bells; if omitted, beeps are sent
+             with error messages.
+
+        /S - suppress displaying the names of the files being
+             processed; this includes suppressing the display
+             of the archive file name(s), too. When used with
+             /F, the only display is of the file name that
+             contains the search text.
+
+        /W - ignore white-space; if omitted, spaces and tabs are
+             significant.
+
+
+
+ARCF  Find Text in ARC Files                                Version 1.10
+____________________________                                Mar 10, 1992
+
+
+                        Version history
+                        ---------------
+
+        1.00 - 10/8/87 - First public release.
+        1.03 - 10/16/87
+          - Improve display when control characters are involved
+          - Allow use of ? as wildcard in search text
+        1.04 - 10/23/86 - Add more binary extensions.
+        1.05 - 11/09/87 - Correction for files without extensions
+        1.06 -  2/17/88 - Corrections for finding text at end of lines
+        1.07 - 10/05/90 - Correct find when first char is duplicated
+                        - Revise error level return codes
+        1.08 - 10/19/80 - Remove leading cr/lf displayed in found lines as
+                          spaces
+        1.10 -  3/10/92 - Cosmetic changes
+
+                        Restrictions
+                        ------------
+
+        Written for the IBM PC using DOS 2.0, or later,
+
+        ARCF is free, but it is a copyrighted work and may be distributed only
+        pursuant to this license.
+
+        Permission is hereby granted to reproduce and disseminate ARCF so long
+        as:
+
+           (1)  No remuneration of any kind is received in exchange; and
+
+           (2)  Distribution is without ANY modification to the contents of
+                ARCF.COM and all accompanying documentation and/or support
+                files, including the copyright notice and this license.
+
+        No copy of ARCF may be distributed without including a copy of this
+        license.
+
+        Any other use is prohibited without express, written permission in
+        advance.
+
+
+
+                        Vernon D. Buerg
+                        139 White Oak Circle
+                        Petaluma, CA  94952
+
+                        CompuServe: 70007,1212
+                        Data/BBS:   (707) 778-8944
+                        FAX:        (707) 769-5479
+
+

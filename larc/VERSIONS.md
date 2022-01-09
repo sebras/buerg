@@ -1,0 +1,21 @@
+# LARC version history
+
+- 2.6 05/23/90
+- 2.4 3/17/90
+  - Add /H option to process LHARC (.LZH) files
+- 2.3 9/05/89
+  - Changes to info screen.
+- 2.2 03/08/89
+  - corrects a problem deleting original ARC files
+- 2.1 02/24/89
+  - adds internal tables for specifying the various programs to be used. The defaults include ARCA, ARC, PAK, PKARC, PKPAK, and PKZIP.
+- 1.9 02/10/89
+- 1.8 11/02/88
+- 1.6 04/15/87
+  - adds more checks to insure that the temporary directory is empty. Also, you may now press ESCape while LARC is running to cancel it. A check was added to stop processing if an error occurred creating a new ARC file
+- 1.5 03/15/87
+  - corrects an overflow (error 6) problem, and adds another check to be sure that the temporary directory is different from the input and output directories. Remember, all files in the temporary directory are deleted.
+- 1.4 03/01/87
+- 1.3 02/28/87
+- 1.2 02/26/87
+- 1.1 02/21/87

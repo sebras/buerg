@@ -1,0 +1,27 @@
+# LUT version history
+
+- 1.93 05/27/85
+  - Performance improvements.
+- 1.92 04/12/85
+  - The output format has changed to include the volume
+  - name. Also, if any errors are encountered, the DOS
+  - ERRORLEVEL variable is set to a 1.
+- 1.91 02/09/85
+  - correct CHDIR problem
+- 1.9 11/09/84
+  - Assume LBR extension.
+  - Default to all LBR files if only a path is supplied
+- 1.83 09/25/84
+  - Sort directory by name.
+  - Check and display CRC values.
+  - Format LU86 format date/time.
+- 1.82 09/04/84
+  - remove CRC display, use `D_Pad`
+- 1.81 08/29/84
+  - added CP/M LU86 date/time formatting
+- 1.8 01/20/85
+- 1.7 08/08/84
+  - Ignore CRC bytes in directory.
+  - Use memory allocation functions.
+  - Checks for DOS 2.
+- 1.6 07/11/84

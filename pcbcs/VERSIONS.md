@@ -48,7 +48,7 @@
   - correct change of year problem
 - 1.15 12/17/88
   - improve recording of active (lost) time
-- 1.14 10/18/88
+- [1.14](1.14) 10/18/88
   - correct utilization plot
 - 1.13 09/21/88
   - correct missing crlf for heading after users report

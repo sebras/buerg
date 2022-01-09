@@ -1,6 +1,6 @@
 # SORTF version history
 
-- 2.38 10/09/91
+- [2.38](2.38) 10/09/91
   - improve output phase time
 - [2.37](2.37) 09/20/91
   - Improve speed for ascending sorts

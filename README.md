@@ -61,7 +61,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 
 | Program | Latest version | Date | Description |
 | --- | --- | --- | --- |
-| ARCA | 1.29 | 12/09/87 | Create or add files to an ARC archive file |
+| [ARCA](arca/VERSIONS.md) | 1.29 | 12/09/87 | Create or add files to an ARC archive file |
 | ARCE | 4.1a | 04/12/92 | Extract files from an ARC archive file |
 | ARCF | 1.10 | 03/10/92 | Find text strings inside ARC files |
 | ARCV | 1.22 | 04/13/91 | Display a list of files in an ARC archive |

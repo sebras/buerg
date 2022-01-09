@@ -47,7 +47,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 | Program | Latest version | Date | Description |
 | --- | --- | --- | --- |
 | [DELDUPE](deldupe/VERSIONS.md) | 2.3 | 03/01/89 | Delete duplicate file between subdirectories |
-| DRLIST | K | 03/06/93 | Special version of LIST for use with CTTY/ANSI |
+| [DRLIST](drlist/VERSIONS.md) | K | 03/06/93 | Special version of LIST for use with CTTY/ANSI |
 | FBR | 1.82 | 07/04/92 | File backup/restore utilities. Alternative to BACKUP and RESTORE commands |
 | LDIR | 4.4 | 03/25/91 | Display directories in selected file order. Alternative to the DIR command |
 | LIST | 9.6y1 | 06/20/05 | Full screen viewing of files, see LIST.DOC Alternative to the TYPE and MORE commands. Run ARCE MORELIST for rest of LIST files |

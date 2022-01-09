@@ -74,7 +74,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 | [LUU](luu/VERSIONS.md) | 2.13 | 04/28/86 | Add or replace members in an LU or LAR type library |
 | [LUX](lux/VERSIONS.md) | 1.2 | 11/12/84 | Execute a COM or EXE program directly from a LBR type file |
 | [QBARCV](qbarcv/VERSIONS.md) | 1.10 | 08/07/86 | Quick Basic subroutine to display ARC directory |
-| XONE | 2.3 | 10/12/87 | Make an ARC file from one or more ARC files |
+| [XONE](xone/VERSIONS.md) | 2.3 | 10/12/87 | Make an ARC file from one or more ARC files |
 | ZIPV | 1.08 | 04/19/89 | Display ZIP file directories, w/ASM |
 
 ### BASIC programming aids

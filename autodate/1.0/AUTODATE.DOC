@@ -1,0 +1,38 @@
+  AUTODATE
+  ========
+     The AUTODATE program maintains a date file which is used to supply
+     the date and time for the system after a System Restart is performed.
+     There are two files involved:
+           AUTODATE.DAT  - The Date file, required
+           AUTODATE.COM  - Assembled and linked, executable module
+
+     The date file is named AUTODATE.DAT and consists of two records, one
+     with the current date in the form MM-DD-YYYY, and the second with the
+     current time in the form HH:MM:SS. The program does not create the
+     date file, so use EDLIN (or similar program) to allocate it.
+
+     When the program is invoked, it obtains the current date and time
+     from DOS. If the date is 01-01-1980, a power-on is assumed and a new
+     date and time is read from the DAT file. Otherwise, the current DOS
+     values are used. To run the program after System Restart, place the
+     command AUTODATE into the AUTOEXEC.BAT file.
+
+     The user is prompted for the date and time, just as if the DATE and
+     TIME commands had been used. Pressing the ENTER key tells the program
+     to use the displayed value. An incorrect value (bad syntax, etc)
+     generates an error message and a new prompt. Control-break can be used
+     to exit the program. Supply the date/time values with leading digits.
+                  Enter new date: 11-02-1983
+                  Enter new time: 12:15:30
+
+     A useful feature of this program is its forgiving nature (simple minded).
+     Either the DATE and/or TIME may be supplied with only one digit. For
+     example,
+                 Enter new date:  11-02
+                 Enter new time:  12:20
+
+     and thereby cut down on key strokes a bit. Leading zeros must be entered.
+                                                =============================
+
+
+ Written by Vern Buerg for public domain use, October, 1983.

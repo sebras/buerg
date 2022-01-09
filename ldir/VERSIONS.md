@@ -1,6 +1,6 @@
 # LDIR version history
 
-- 4.6 02/03/00
+- [4.6](4.6) 02/03/00
   - Correct zero divide with large hard drives
 - 4.5 02/02/00
   - Correct display of year for y2k

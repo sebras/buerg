@@ -1,0 +1,363 @@
+LIST Version 9.6y/2.4y          WHAT'S NEW                        Feb 17, 2005
+
+        This file contains changes to information in the manual.
+
+        Contents:
+        ---------
+
+        1. Command Line Switches
+        2. New Operational Features
+        3. Long File Names
+        4. File Selection Menu
+        5. New Commands
+        6. Changed Commands
+        7. Extended text modes
+        8. DEBUG patch information
+
+
+
+                           Command Line Switches
+                           ---------------------
+
+      /?  displays LIST usage information
+
+      /B  tells LIST to use the BIOS for displaying data.
+
+      /D  forces display of the File Selection menu for the specified files,
+          e.g. *.TXT for only .TXT files; a filespec must be supplied.
+      /E  tells LIST to begin displaying the files at the end of each file
+          instead of at the beginning.
+      /K  disables the mouse.  Both the /M and /K mouse options are clonable.
+      /Q  toggles sounding of beeps and bells; same function as the alt-Q
+          command.
+      /V  causes a verify function to be performed after any Copy or Move
+          function
+
+      /4  places LIST into 43/50 display mode; this requires an EGA or VGA
+          display adapter.
+
+      /1  places LIST Enhanced into 132-column mode (DOS and Win9x only)
+      /C  for LIST Enhanced, lock columns on left side of display
+      /N  for LIST Enhanced, lock first file lines on top of display
+
+      /@filename specifies a file containing a list of names of files to
+          display; the @ (at symbol) can be used in the viewer to get a list
+          of selected files
+
+      /Ttext  searches all files immediately for the 'text' and is case
+          sensitive.  The /Ftext or /Ttext parameter must be the last on the
+          command line.  Both cannot be used at one time.
+
+      /Ftext  begins a text search through all selected files now invokes the
+          Find function which is NOT case sensitive.
+
+      /#nnnnnn  supplies the record number from which the display is to begin.
+
+      - The /L, /W, /M, /S, and /J command line switches now allow for
+        disabling the function (in case LIST was cloned with the option on).
+        To do this, add a minus sign, e.g.  /-W or /W- will set wrap off.  The
+        B, D, and Q switches are toggles.  That is, specifying them reverses
+        the default (or cloned setting).
+
+LIST Version 9.6y/2.4y          WHAT'S NEW                        Feb 17, 2005
+
+                        New Operational Features
+                        ------------------------
+
+      - the program files are LISTS.COM (small), LISTR.COM (regular),
+        LIST.COM, and LISTEDMB.COM (Enhanced for 400+mb files);
+
+|     - The TEMP environment variable tells LIST where to place temporary
+        files for the ViewArc and archive extraction functions, e.g.
+
+|               SET TEMP=C:\TEMP
+
+|       If the TEMP variable is not set, the current directory is used to
+        store temporary and extracted files.
+
+     -  All DEBUG offsets and information have been replaced by a new
+        program called LISTOPT which is used to set defaults and options.
+        LISTOPT is available to registered and licensed users only.
+
+     -  The unregistered version of LIST Plus does not support network drives.
+        This is due to companies using the shareware version on networks, and
+        not getting a license.
+
+        LISTOPT now supports entering registration information so that new
+        versions may be downloaded and registered by the user alone.
+
+      - The ? (question mark) Help command has been changed for LIST Enhanced
+        to view the online manual. This requires the LISTHELP.COM and LIST.HLP
+        files be in the same directory as the LIST.COM file.
+
+      - The maximum "logical" record size has been increased from 910 to 4096.
+
+      - A second Help screen is now available in the Plus version which shows
+        all of the Ctrl- and cursor key functions
+
+      - An improvement in speed is available when all filter options are set
+        off.  Use alt-Z to display the toggles on the bottom line.  An option
+        is off when its corresponding letter, e.g.  'J' for alt-J junk filter
+        or 'T' for the alt-T tab expansion filter, is in lower case.
+
+      - The Viewarc function now assumes that .EXE and .COM files are self-
+        extracting files and will actually execute them to extract the selected
+        file.  Not all self-extracting programs support this.  Otherwise, if a
+        file does not have the .ARC, .LZH, .ZIP, .PAK, or .SDN extension, the
+        file is assumed to be a .ARC file.
+
+      - The top status line while viewing a file has changed.  Until the last
+        record number is known, LIST now displays a percentage of the file read
+        so far.
+
+LIST Version 9.6y/2.4y          WHAT'S NEW                        Feb 17, 2005
+
+                        Long File Names
+                        ---------------
+
+      - Long file names are supported under Windows 95, 98, Me, 2000, and XP
+|       as much as Windows support DOS/command long file and path names, e.g.
+|       Windows XP only supports a maximum of 76 characters for the path\file
+
+      - A single long file name may be entered on the command line when
+|       using Windows 9x, Me, or 2000, or XP
+
+      - The alt-F (get new filename) command now accepts a long file name
+        including drive and path
+
+      - The 1-up File Selection Men display includes the first part of the
+        long file name - up to 95 characters.
+
+      - The long file name is preserved for move and copy operations. The
+        maximum length of a path name is 76 characters which means that
+        directories with very long path names may not be accessible.
+
+      - The @ command (available while viewing a file) shows a list of files
+        that have been viewed. The path and file name are short names.
+
+      - A new ~ (tilde) command under Windows 9x while viewing a file displays
+        the file's long file name and other information.
+
+      - Long file names may not be available on NTFS volumes
+
+LIST Version 9.6x/2.4x          WHAT'S NEW                       June 17, 20044
+
+                              File Selection Menu
+                              -------------------
+
+      - New commands are available from the File Selection (Alt-V) menu:
+
+              E    invokes the 'Edit' editor to let you edit the selected file;
+                   create a BATch file called EDIT.BAT which invokes the
+                   editor of your choice with the optional parameters it needs
+
+              I    invokes (executes) the selected program; replying ESCape to
+                   the "Options:" prompt cancels the command; at least one
+                   space is required: a null <enter> cancels the command.
+
+              *    refreshes the directory display
+
+          Alt-Z    toggles the status display on the bottom line from disk and
+                   file statistics line to a menu command help line
+
+          Ctl-S    executes the program associated with the selected file,
+                   e.g. Wordpad for .DOC, WinAmp for .MP3, ACDSee for .JPG
+
+          Alt-D    toggles whether or not directory entries are included
+                   when sorting the file selection menu; the default is
+                   to exclude them so that all directory entries show at
+                   the beginning of the list
+
+          Ctl-V    executes the program LXPIC.COM to view a graphic image file
+                   for the selected file
+
+      - Changes to other file selection menu (Alt-V) commands:
+
+        -  Q)uit returns you to the display of the last file you viewed
+           if no file has been displayed, Q exits to DOS.
+
+        -  the X command exits to DOS in the NEW (current) directory
+
+        -  ESCape exits to DOS in the ORIGINAL directory
+
+        -  Alt-X exits to DOS and shows the original screen
+
+        -  the 1-up display now includes the file attributes
+
+        -  Alt-C saves (clones) the settings
+
+        - the S)ort command now has a None (no sort) ordering option, and a
+          minus "-" prefix option for sorting in descending order; ESCape now
+          cancels the S)ort request. The descending sort option is clonable.
+
+        -  a \ may be used in place of the P)ath command to change directories
+
+      -  the F2 command to toggle the bottom line status display has been
+         changed to F3
+
+      -  you may press the shift key and a letter key to move the selection
+         to the first filename beginning with that letter, e.g. shift-C will
+         put the cursor on the first file name beginning with the letter 'c'
+
+      -  new alt-F7 and alt-F8 commands change the color of the bar for the
+         current file entry at the cursor position
+LIST Version 9.6x/2.4x          WHAT'S NEW                       June 17, 20044
+
+                                 New Commands
+                                 ------------
+
+      - A new Ctrl-G command in the viewer sets the length of fixed length
+        records using the length of the first record displayed. This
+        supplements Ctrl-B which is used to manually enter the length.
+
+      - A new Ctrl-L command toggles the display of page breaks
+
+      - Added video mode T for ATI Graphics Ultra Plus adapters
+
+      - The Ctrl-O (control printer output) command has been expanded to
+        offer more choices, i.e. portrait, landscape, condensed, and normal
+        print modes. Only the printers supporting the HP PCL (laserjet and
+        deskjet) printers are supported. For other printers, some patches
+        are available. LISTOPT will eventually allow for printer codes to
+        be supplied by the user.
+
+      - A new ctrl-Y command saves the current position as a bookmark, and
+        alt-Y repositions to the last bookmark. You may set up to 10 bookmarks.
+
+      - A new 1 command restarts displaying files with the first file.
+
+      - A new Ctrl-right command scrolls the screen right to the end of the
+        current line.
+
+      - A new O command toggles the date format from U.S. mm/dd/yy to
+        European format dd-mm-yy and is clonable.
+
+      - A new % (percent) command toggles whether LIST displays the file's last
+        line number or percentage of file read.
+
+|     - A new ctrl-Q command toggles display of UCS-2 text files, i.e. files
+|       that contain two unicode characaters to represent a single character
+
+LIST Version 9.6y/2.4y          WHAT'S NEW                        Feb 17, 2005
+
+      - The Rename command will change a directory or file name to a long
+        file name under Windows 9x. Only the first 55 characters are used.
+
+      - The registered and licensed versions of LIST Plus and LIST Enhanced
+        support access to network drives. This includes Novell, Lantastic,
+        and MS Clients such as Windows for Workgroups, Windows 95/98 and
+        Windows NT. To access MS Client drives, map the client drive
+        as a local drive either through the NET USE command, or through a
+        Windows application such as Explorer. LIST does not yet recognize
+        the syntax \\computer\resource in place of d:\path.
+
+      - To execute LIST from a server drive, the server version is required.
+
+LIST Version 9.6y/2.4y          WHAT'S NEW                        Feb 17, 2005
+
+                                Changed Commands
+                                ----------------
+
+      - The X command exits to DOS and clears the screen. In the Plus version,
+        you are now placed in the new (selected) directory.
+
+      - The Alt-D and Alt-O (write lines to a file) commands have been changed
+        to default to writing a found (highlighted line after Scan or Find)
+        line if no lines have been marked.
+
+      - All command which ask for a d:\path and/or a filename now check for
+        embedded blanks and non-valid characters.
+
+      - The ctrl-I command has been added to the Plus version.  It allows
+        setting the TAB interval to values other than the standard 8.  Ctrl-I
+        prompts you to enter the new interval, which can be from 1 to 99.
+
+      - The File Selection C)opy and M)ove commands check for sufficient space
+        on the target drive before copying the file.
+
+      - The Alt-E video mode switching command now recognizes VESA and will
+        offer a selection of VESA modes which the display adapter supports.
+        Only extended text modes are offered, e.g. 132 by 25.
+
+        When you use alt-E, you are presented with one of two bottom line
+        prompt messages:
+
+          Screen: 0=adapter:I 1=80x25 2=80x43 3=132x44 4=132x25 etc.
+
+        the choices for dimension depend on the video card. Use the 0
+        subcommand to cycle through the letter choices.
+
+          Vesa mode:  0=80x25   1=132x25   2=132x43   3=132x44
+
+        again, the choices for dimension depend on the text modes that the
+        video card supports
+
+        If you are getting the "Screen" prompt and want the "Vesa" prompt,
+        use the ctrl-J command to toggle the choice.
+
+        You may clone any of these settings using the alt-C command.
+
+        For text modes other than 80x25, and you are using Windows, be sure
+        that you are in full screen mode; use alt-Enter if necessary to
+        toggle full screen display.
+
+        You may also need to change the properties of the DOS box. Typically,
+        right clicking the top line of the DOS box will present a menu that you
+        can naviagate to change the dislay rows, columns, and font.
+
+
+      - The alt-F command now accepts a long file name, up to 70 characters
+
+      - The file copy function from the File Selection Menu has a new option.
+        In addition to the Y, N, S options, you may now specify the U option.
+        This results in copying only those files which do not exist in the
+        target directory. The check is for duplicate file names only and does
+        not check for duplicate files with different date/timestamps.
+
+LIST Version 9.6y/2.4y          WHAT'S NEW                        Feb 17, 2005
+
+          Extended Video Text Modes - Mode codes for the alt-E command:
+
+          Alt-E 0 Code  SVGA Manufacturer
+          ------------  ---------------------
+          I             Generic IBM VGA
+          A             Ahead EGA2001 and VGA
+          P             Paradise VGA
+          G             Genoa SuperVGA
+          U             Ultra Vision
+          O             Tseng 4000 and Orchid
+          V             Vega, Video7
+          T             ATI
+          K             Paradise VGA and ARK
+          D             Trident
+          M             Matrox
+
+LIST Version 9.6y/2.4y          WHAT'S NEW                        Feb 17, 2005
+
+
+       The default filter options are now:
+          alt-T   - expand TABs is ON
+          alt-J   - filter out control characters is ON
+
+        Item           Offset  Value    Description of contents
+        -------------- ------  -----    -----------------------
+        Special         0132    70      Top/bottom line colors
+        Normal          0134    07      Text colors
+        Bright          0136    09      Find/Scan line colors
+        Window 1 color  0138    07      Normal window text color
+        Window 2 color  0139    0F      Second window text color
+        Flag3           013A    09      Retrace off and junk filter on
+        Flag4           013B    08      Tabs on
+        Find row        013C    0800    Position of found line on screen, 8
+        Scroll incr     013E    0A00    Left/right scroll increment, 10
+        Scroll start    0140    0000    Starting scroll offset, 0
+        Tab value       0142    0800    Tab interval, 8
+        Tab mask        0144    F8FF    Tab bit mask
+        Loudness        0146    C8      Beep tone level
+        Key rate        0148    FF      Continuous scroll increment, 255
+        Overlap         0149    0000    PgUp/PgDn scroll overlap, 0
+        Wildcard esc    014B    26      Scan/Find wildcard ? escape character
+        Alt-V up        014C    0500    Alt-V display files per line, 5
+
+
+

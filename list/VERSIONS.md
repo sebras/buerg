@@ -1,6 +1,6 @@
 # LIST version history
 
-- 9.6y1 06/20/05
+- [9.6y1](9.6y1) 06/20/05
   - allow quotes in lfn (single arg) on command line
   - change CED default to off so can use ESCcape with Find/Scan
 - 9.6y 02/17/05

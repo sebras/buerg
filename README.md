@@ -63,7 +63,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 | --- | --- | --- | --- |
 | [ARCA](arca/VERSIONS.md) | 1.29 | 12/09/87 | Create or add files to an ARC archive file |
 | [ARCE](arce/VERSIONS.md) | 4.1a | 04/12/92 | Extract files from an ARC archive file |
-| ARCF | 1.10 | 03/10/92 | Find text strings inside ARC files |
+| [ARCF](arcf/VERSIONS.md) | 1.10 | 03/10/92 | Find text strings inside ARC files |
 | ARCV | 1.22 | 04/13/91 | Display a list of files in an ARC archive |
 | DUH | 1.5 | 05/02/89 | Delete files that already exist in archive files |
 | FV | 2.00 | 01/11/00 | Display directories of archive files including ARC, PAK, ZIP, LZH and self extracting files |

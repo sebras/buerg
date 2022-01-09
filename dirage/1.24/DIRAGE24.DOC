@@ -1,0 +1,133 @@
+DIRAGE                                                          Version 1.24
+------                                                          Sep 10, 1988
+
+
+
+
+        DIRAGE is a tool for PCBoard sysops for determining which files
+        have not been downloaded for a specified period of time. With
+        this knowledge, the sysop can delete old and unpopular files to
+        make room for new files.
+
+
+        DIRAGE requires two input files. The first is the PCBoard DIRnn
+        files, where nn is a number from 1 to 99. These are the listings
+        of files available for downloading. You will need to run DIRAGE
+        once for each conference since each will have its own subdirectory
+        of DIRnn files.
+
+
+        The second input file is a history file of download activity.
+        It is created by combining all DOWNLOAD.TXT files for the
+        longest period of time that you wish to analyze.  For example,
+        if you wish to purge files which have not been downloaded for
+        six months, copy all of the DOWNLOAD.TXT files for the past six
+        months to a single file.  You can call this new file whatever
+        you like.
+
+
+        DIRAGE creates one or two output files.  The first is a listing
+        of all DIRnn files, in alphabetical order, that have not been
+        downloaded for a specified number of days.  The second file is
+        optional and is called DELAGED.BAT. It is created only if the
+        /B parameter is supplied on the command line.  It is a batch
+        file which contains one line for each of the listed old files.
+        With it, you can delete the old files, move them to a safe
+        place, or whatever you like.  You will have to edit the batch
+        file to change drives, paths, and the DOS command.
+
+
+        DIRAGE is limited to a total of 3300 DIRnn entries. If you have
+        more files than that, you will have to split up your DIRnn files
+        and run DIRAGE for each set of them.
+
+
+        DIRAGE was written in Quick Basic Version 3 using some assembler
+        subroutines and an old ADVBAS library from Tom Hanlin; by
+        Vernon D. Buerg.
+
+|       9/10/88 - Version 2.4 corrects a problem with short file extensions.
+
+DIRAGE                                                          Version 1.24
+------                                                          Sep 10, 1988
+                        Example
+                        -------
+
+        - All of the DIRnn files were copied to F:\DIRAGE
+        - All of the DOWNLOAD.TXT files for the last six months
+          were copied to MBDL.TXT. If COPY hoses up, use the TABS
+          program with /D to get rid of the extra EOF and blank
+          characters. If you don't have DOWNLOAD.TXT file from PCBoard
+          version 12.1 or later, try using the program P2PDLTXT to
+          create them from CALLERS files.
+
+ ------------------------------------------------------------------------------
+
+    F:\DIRAGE> dirage23 /b
+
+        DIRAGE v1.23 (c) V. Buerg 8/15/88 --- PCBoard DIR Aging Analysis
+
+    Where are your DIRnn files? [c:\pcb\gen]? \dirage
+    Enter DOWNLOAD.TXT filename? mbdl.txt
+
+    \dirage\DIR11 1296 entries.
+    'mbdl.txt' has 4631 dl entries.
+
+    Enter output file name [SCRN:] ? age.120
+    How many days old before expired? 120
+
+    Checking ages ...
+
+    Another retention period? (Y or N)? n
+
+ ------------------------------------------------------------------------------
+
+DIRAGE                                                          Version 1.24
+------                                                          Sep 10, 1988
+                        Output
+                        ------
+
+Files which have not been downloaded for 120 days       08-16-1988 at 11:23:07
+
+DIR  Filename.Ext   #Bytes   #Dls   Last-DL   Created  Age
+===  ============  =======  =====  ========  ========  ===
+11   121V10.ARC      7,564      1  03-19-88  08-17-87  150
+1    2DIR.ARC        2,444      1  03-31-88  11-25-86  138
+20   3-DEMON.ARC     4,619      4  04-02-88  07-04-86  136
+17   3DDEMO.ARC      1,024      6  04-08-88  03-13-88  130
+21   87TC810.ARC    15,462      1  04-11-88  08-24-87  127
+20   A-10.ARC          256      7  04-03-88  03-18-88  135
+7    ACLS.ARC        5,087      1  04-05-88  04-04-88  133
+3    ADD-LF.BAS        179      0   *never   09-19-82 2158
+1    ADJRAM31.ARC    6,223      1  04-06-88  07-25-87  132
+20   ADVENTR.ARC     1,606      0   *never   05-26-85 1178
+20   ADVENTTC.ARC    9,490      4  04-11-88  02-28-88  127
+20   ADVENTUR.ARC    6,451      2  02-28-88  05-21-87  169
+20   ALIEN.ARC       2,903      4  03-24-88  08-26-85  145
+1    ALMCLK26.ARC      555      2  04-15-88  06-11-87  123
+3    ALTER.ARC         113      0   *never   04-30-86  839
+3    ALTER241.ARC      407      1  04-06-88  06-22-87  132
+
+
+ -----------------------------------------------------------------------------
+
+File DELAGED.BAT:
+
+MOVE c:\DIR11\121V10.ARC a:\
+MOVE c:\DIR1\2DIR.ARC a:\
+MOVE c:\DIR20\3-DEMON.ARC a:\
+MOVE c:\DIR17\3DDEMO.ARC a:\
+MOVE c:\DIR21\87TC810.ARC a:\
+MOVE c:\DIR20\A-10.ARC a:\
+MOVE c:\DIR7\ACLS.ARC a:\
+MOVE c:\DIR3\ADD-LF.BAS a:\
+MOVE c:\DIR1\ADJRAM31.ARC a:\
+MOVE c:\DIR20\ADVENTR.ARC a:\
+MOVE c:\DIR20\ADVENTTC.ARC a:\
+MOVE c:\DIR20\ADVENTUR.ARC a:\
+MOVE c:\DIR20\ALIEN.ARC a:\
+MOVE c:\DIR1\ALMCLK26.ARC a:\
+MOVE c:\DIR3\ALTER.ARC a:\
+MOVE c:\DIR3\ALTER241.ARC a:\
+
+

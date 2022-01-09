@@ -1,6 +1,6 @@
 # ARCF version history
 
-- 1.10 03/10/92
+- [1.10](1.10) 03/10/92
   - Cosmetic changes
 - [1.08](1.08) 10/19/80
   - Remove leading cr/lf displayed in found lines as spaces

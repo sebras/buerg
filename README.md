@@ -72,7 +72,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 | [LUE](lue/VERSIONS.md) | 2.2 | 04/28/86 | Extract one or more files (members) from an LBR type library |
 | [LUT](lut/VERSIONS.md) | 1.93 | 05/27/85 | Displays the directory of library (LBR) files |
 | [LUU](luu/VERSIONS.md) | 2.13 | 04/28/86 | Add or replace members in an LU or LAR type library |
-| LUX | 1.2 | 11/12/84 | Execute a COM or EXE program directly from a LBR type file |
+| [LUX](lux/VERSIONS.md) | 1.2 | 11/12/84 | Execute a COM or EXE program directly from a LBR type file |
 | QBARCV | 1.10 | 08/07/86 | Quick Basic subroutine to display ARC directory |
 | XONE | 2.3 | 10/12/87 | Make an ARC file from one or more ARC files |
 | ZIPV | 1.08 | 04/19/89 | Display ZIP file directories, w/ASM |

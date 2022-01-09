@@ -86,7 +86,7 @@
   - Increase array limits (won't help much)
 - 6.90 03/26/92
   - add RUN verb to script processor: the last statement in a script may be a RUN statement; it results in executing the name of the specified script, e.g. RUN NEXTPASS.
-- 6.8c 03/18/92
+- [6.8c](6.8c) 03/18/92
   - public release
   - fix Alt-J so it joins forum if user is not already a member (prevents hang when initial is set)
   - fix script goto so it is case insensitive
@@ -161,7 +161,7 @@
 - [6.8a](6.8a) 08/10/90
   - public release
   - correct Z message on forum config screen
-- 6.3a 03/28/90
+- [6.3a](6.3a) 03/28/90
   - change editor reformat to check for ending ! and ?
   - change PPN add message to include user name with ppn
   - fix PPN "sorting by" message to not scroll screen

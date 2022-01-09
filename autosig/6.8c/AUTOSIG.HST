@@ -1,0 +1,63 @@
+AUTOSIG Updates                                                    Version 6.8b
+---------------                                                October 25, 1991
+
+
+ 6.8c   - March 18, 1992
+ _______________________
+ - public release
+ - fix Alt-J so it joins forum if user is not already a member (prevents
+   hang when initial is set)
+ - fix script goto so it is case insensitive
+ - fix script test to allow match of null strings
+ - try to prevent Enter choice from being recognized except when going to
+   forum (fix problem with ZNT:NEW-1)
+ - allow auto passes which logon with scripts to proceed beyond first forum
+ - remove check for OK after reset string sent to modem
+ - change open routine to fix hidden system attributes on some files
+ - fix relationship between NUL and timeout counter
+ - fixed autosplit of Mailed messages from forum so later parts are Mailed.
+ - increased length of filename prompt after PgDn (when prompt appears)
+ - removed one comm change
+ - fix so leading blank in forum section setup field doesn't cause field to
+   be ignored.
+ - trim leading blanks from items entered in host, terminal, Fkey setups.
+   (Does not remove blanks from items in fields in old .DFN files though.)
+ - fix pickup of Fm: PPN for replies
+ - prevent control chars (less than ASCII 32, other than CR) from being inserted
+   in message (beep when attempted from keyboard)
+ - suppress control chars (other than CR and TAB) when importing.
+ - convert Ascii 127-255 to @ (beep if from keyboard)
+ - display error message at end of import if any illegal characters (as defined
+   above) were encountered in import
+ - allow host 9 to be used with /1 and /2 command-line switches
+ - expand options setting to set initial forum prompt to Forum, replies to N
+   and Type waiting messages to N.
+ - make option setting able to start from libraries prompt.
+ - improve Tymnet logon (works at 2400, nothing works at 1200)
+ - slight changes to auto list menu (add J and S, change +)
+ - improve COM handling at 9600 bps
+ - correct use of /D to disable carrier detect logic
+ - fix J on (P)rivate message so deletion deletes the message being viewed
+   rather than the parent of the message being viewed.
+ - fix DOW script command so it does a resend to create a prompt for any
+   following MATCH or WAIT.  (Thus the 6.89 requirement to avoid those
+   commands is removed.)
+ - fix gateway reset after logoff
+ - fix auto passes so no Go <page> issued between forums with same page
+
+ 6.89 - December 5, 1991
+ _______________________
+ - fix script DOW command so it will simply skip downloading a file when
+   downloading the file would cause an overwrite of an existing file.  The
+   fix requires that WAIT and MATCH *not* be used after a DOW.
+ - fix script DOW command so that it continues after a file not found
+   message from CIS
+ - fix message Download function so that it traps message not found sent from
+   CIS, locates the offending section of a stacked command line and sends the
+   rest of the line to avoid missing messages.
+ - apply command stacking to output from marking H and J headers as well as Q
+ - set comm input to simpy ignore NULs (hex 00 characters) during text comm
+
+ 6.8b - October 25, 1991
+ _______________________
+ - public release

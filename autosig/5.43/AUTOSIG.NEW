@@ -1,0 +1,661 @@
+
+AUTOSIG Release Guide                                           Version 5.43
+_____________________                                           Nov 19, 1987
+
+
+ Command line:
+ ------------
+
+        - added /N comand line switch to suppress prompt after disconnect
+        - added /J command line switch to set insert mode as editor default
+
+ Function Menu:
+ -------------
+
+        - added F3 (edit Forum) and F4 (edit Host) to main main; not
+          shown as choices yet.
+
+        - added refresh of HMN after aborting QS/Mark
+
+        - fixed problem losing R hint after invoking PPN processor.
+        - fixed QS/Mark to not reset HMN after ESCape used
+        - fixed B and alt-B functions not updating PC Options when toggled
+
+ AUTOmatic passes:
+ ----------------
+
+        - Fixed the problem where hitting <esc> to stay online after an
+          auto run left the user in a forum menu, but without hints as
+          to which options are available.
+
+ PC Options menu:
+ ---------------
+
+        - Added a switch PC.CFG to allow the user to specify whether
+          insert state should be on or off on entry to the message
+          editor.  (I arbitrarily assigned a command line switch, but I
+          don't really think it is needed as a command line switch so I
+          didn't implement any command line parsing to pick up that
+          switch.  That probably means the /J should be removed from the
+          config display.)
+
+        - fixed setting of colors in PC Options menu
+
+ HOST menu:
+ ---------
+
+        - Added "File transfer path" to Host items. If supplied,
+          all DOW (PgDn) commands use that subdirectory.
+          If omitted in the Host, the current directory is used.
+
+        - Added "Logon SCRipt name" to Host items. If supplied, the
+          named script (.SCR) file is executed after the CONNECT is
+          established. See the TYMNET.SCR and TELENET.SCR files for
+          examples.
+
+
+
+AUTOSIG Release Guide                                           Version 5.43
+_____________________                                           Nov 19, 1987
+
+ PPN processing:
+ ----------------
+
+        - changed checking and editing of PPN for use by Reply,
+          Write, etc. The limit is 24 characters for "To:", unless
+          a PPN is supplied. Then, the name part is limited to
+          22 characters.
+
+        - improved checks for out of memory; maximum entries now
+          about 900; at least 210K of memory is required for FULL operation
+
+        - fixed check for null To: after invoking ATOPPN;
+        - fixed ATOPPN problems pasting long names and with Email.
+
+
+ Terminal mode:
+ -------------
+        - added alt-G to Terminal Mode to gather SB section names;
+          it stores a forum's section names in the forum's part of
+          the DFN file.
+        - added alt-N to Terminal Mode to display SB section names.
+        - added alt-T to invoke SCRipt file (was alt-X)
+        - changed alt-X in terminal mode to exit to DOS with a y/n prompt
+        - fixed alt-B beeper toggle not updating PC Options
+
+ Script processor:
+ ----------------
+
+        - the new script processor is available in Terminal Mode.
+          Use the alt-T keys to invoke it. You supply the name of a
+          file which contains script commands. You may also enter just one
+          script command manually by using the alt-I keys.
+
+        - added AUTO1 and AUTO2 script commands; performs the 1 and 2 functions
+
+        - added DOW and UPL script commands. You must be at a DLn!
+          prompt in order for ATO to automatically transfer the named
+          file. The Host "File transfer path" is used , if supplied.
+
+        - added OFF and LOGOFF script commands. Performs the Z function.
+
+        - the %COM global variable may not yet be implemented in the
+          script processor.
+
+
+
+AUTOSIG Release Guide                                           Version 5.43
+_____________________                                           Nov 19, 1987
+
+ CIS 'B' file transfer:
+ ---------------------
+
+        - the new Quick B protocol is supported
+
+        - the operation of PgDn in Terminal has changed; when invoked
+          you are prompted for the file name. ATO then takes over and
+          issues the necessary commands to download the file into the
+          directory defined by you in the Forum options.
+
+        - the transfer rate message includes two value: one based on
+          the size of the file, and another based on the total number
+          of bytes received which includes protocol overhead data
+
+        - refinements to new "B" file transfer routine: smoother and
+          quicker statistics display; improved ESCape to abort;
+          improved time-out checking. CIS can still lose its mind,
+          but ATO gives you control to do what you can.
+
+
+
+AUTOSIG Release Guide                                           Version 5.43
+_____________________                                           Nov 19, 1987
+
+
+                        READ Command
+                        ------------
+
+        - Added X in Read (and View) to allow skip remainder of thread
+          function.  It simply looks at the subjects in the headers.
+          (This means that two or more consecutive threads with the same
+          Sb: will be skipped, but I don't see any way around it, nor do
+          I see it as a problem.)
+
+        - Added <ASCII 198>EOM<ASCII 181> as the end of message marker.
+          This will allow editing of messages files to be uploaded by
+          any text editor (even if it converts blank lines to null
+          lines) without causing problems in Preview or Send.  (If
+          anyone chooses to stick that string in a message, they deserve
+          what will happen to them.)
+
+        - Changed message display (in Read, View and Remind from the
+          message editor) so that the top line is displayed in inverse
+          if the message is (P).  Also the "prompt" line at the end of
+          the display in Read and View has "(P)" appearing after the
+          message number.
+
+          Related to above, inserted a confirmation of intent to leave a
+          (P) message on CIS after a reply has been sent and the user
+          has responded anything other than Y to the Delete? question.
+          (Anything other than Y to the Delete? prompt is interpreted as
+          don't delete.  However the default on the confirmation is for
+          the message to be left on CIS.  Thus two keystrokes other than
+          y or n -- say enters -- will leave the (P) message alone.)
+
+          Both of these changes are intended to make it easier for the
+          user to delete no longer needed (P)s.
+
+        - Changed message display function to prevent pressing the
+          wrong key during Remind (in Reply) from blowing the partially-
+          completed reply away.
+
+        - Slight fix to the implementation of send option Y (meaning
+          Mail Unformatted).  Also prevented the possibility of an Alter
+          of send mode from a mail option to normal SIG storage from
+          leaving the send command line without a needed section number.
+          The fix will require the user to enter a section number if
+          needed.
+
+        - improved R>ead:
+           - the entire message is now loaded before it is displayed;
+             this is much smoother when files are on a slow drive
+           - fixed problem entering subcommands on the first screen
+             of a multi-screen message
+           - fixed problem showing a blank screen as the last screen
+
+
+
+AUTOSIG Release Guide                                           Version 5.43
+_____________________                                           Nov 19, 1987
+
+
+      VIEW Command:
+      ------------
+
+        - Disallowed Save from being implemented in View.  (Previously
+          it caused an abort of the View function.)
+        - Also allowed Join in View (except in Email).
+
+      LOCATE subcommand:
+      -----------------
+
+        - Fixed problem where Locate would go to the message following
+          the one in which the desired phrase appeared under certain
+          conditions (like if the phrase appeared close to the end of
+          the message).
+
+      IMPORT function:
+      ---------------
+
+        - Allowed Import in Preview function (to allow files to be
+          imported during message modification).
+
+          Two comments about Import:
+
+          a.   The current implementation will quash any leading blanks
+               on lines in the imported file.  This could be prevented,
+               but might then lead to unwanted leading blanks caused by
+               word wrap.  How important a problem is this?
+
+          b.   A lot of PC files have 80-char lines.  When they are
+               imported, the word wrap causes some weird-looking results
+               which may not be easily repairable with reformatting.
+               The only way around this would be to remove the line
+               numbers displayed on the right side of the screen.
+
+          Alt-S in the editor still splits the line at the current
+          cursor position, but leaves the cursor where it was.
+          (<enter> with insert on does the same split, but moves the
+          cursor to the beginning of the new line.)
+
+
+
+AUTOSIG Release Guide                                           Version 5.43
+_____________________                                           Nov 19, 1987
+
+  Editor Changes:
+  --------------
+
+     -    Put in "real" word wrap.  When the user hits the end of the
+          line, the existing word is brought down to the next line --
+          while moving all text below down one line to make room.
+
+          Note that this feature is active regardless of the insert
+          state.  It should make it totally unnecessary to insert a
+          bunch of blank lines to have space to insert a new section of
+          the message.
+
+     -    Made several changes in insert mode:
+
+          a.   Made insert mode "sticky" so that it stays on when cursor
+               is moved.  It stays on until the message is exited or the
+               user pushes the insert key.
+
+          b.   When text is pushed off the end of the line, the line is
+               broken at a convenient point with the extra text pushed
+               down to the next line (which is created as a new line).
+
+          c.   When <enter> is pressed with insert on, the line is
+               broken at that point.  The rest of the line is pushed
+               down to a new line.  The cursor goes to the beginning of
+               that new line.  (I debated whether it should go there or
+               at the end of the previous line.  That's a design
+               question -- programming is easy either way.)
+
+               Alt-S always operates the same way as <enter> operates
+               with insert on (as described in the preceding paragraph).
+
+          d.   When tab is pressed with insert on, the text at and to
+               the right of the cursor is pushed to the next tab stop
+               (wrapping to the next line as necessary).
+
+     NOTE:     The actual word wrap which occurs with insert on is one-
+               character different than that which occurs with insert
+               off.  It was easier that way, but it can be fixed if you
+               think it matters (I obviously didn't.).
+
+     -    A line can be inserted at the top of the message by pressing
+          <enter> with insert mode on with the cursor at the beginning
+          of the first line.  (This can also be done by Alt-S regardless
+          of whether insert mode is on.)  This could be made a special
+          function, but at the moment, it is an automatic byproduct of
+          2c.
+
+
+
+AUTOSIG Release Guide                                           Version 5.43
+_____________________                                           Nov 19, 1987
+
+     -    Backspace in column 1 now causes the current line to be joined
+          to the previous line.  If the combined text of both lines will
+          not fit on the previous line, the overflow is retained on the
+          current line.
+
+          Alt-J has a similar function, but it causes the following line
+          to be joined to the current line.
+
+          In either case the cursor is left positioned at the first
+          character of the previous second line of the joined pair.
+          That way a split (<enter> in insert mode or Alt-S) can put
+          things back the way they were.
+
+     -    True character count has been implemented.  It counts all
+          characters on each line up to the last non blank character
+          plus 2 characters per line for CR/LF.  Since Don found that
+          the official word on acceptable length of SIG messages is 2000
+          characters (counted this way), the beeper is set to go off
+          when between 2001 and 2005 (inclusive) or the first time it
+          goes above 2000.  This is conservative, but the user can make
+          the decision since the actual character count is displayed
+          (but not labelled) in the lower right of the screen.
+
+     -    Some cursor movements have been changed.  Per a suggestion
+          from Don, ctrl-PgDn moves to the bottom line of the message
+          and ctrl-PgUp moves to top line of message.  Also up arrow
+          from top line on screen causes the message to scroll unless
+          the top line of the message is already on the screen.  In that
+          case, the cursor stays put and ATO beeps.  Similarly for down
+          cursor from bottom line of screen.
+
+     -    The Eplex Preview function now picks up the end of message
+          marker, addressee, and subject are picked up when the message
+          is read in.  They are then displayed in their proper place on
+          line 24 and written normally when the message is saved.  This
+          prevents the problem of the user accidentally overwriting that
+          stuff.
+
+     -    The Quit or Omit function is now protected.  When the user
+          presses F2, he is asked to enter Q for quit or R to return to
+          editing the message.  (I am not real comfortable with some of
+          the wording there.)  If Alt-F2 is pressed, that is considered
+          a quit/omit and verification combined.
+
+     -    Save is now slightly protected.  When the user presses F4, he
+          has the additional option R to return to editing the message.
+
+
+
+AUTOSIG Release Guide                                           Version 5.43
+_____________________                                           Nov 19, 1987
+
+     -    Line-oriented block operations have been implemented as
+          follows:
+
+          -    Alt-L marks a line as one boundary of the block.  Either
+               the top or bottom can be marked first.  (Actually the
+               first line marked is considered to be a block with only
+               one line in it.)  Hitting Alt-L with a block already
+               marked will enlarge the block if the cursor is outside
+               the block or cause a beep if the cursor is inside the
+               block.  (The only way to shrink the block is to unmark,
+               then mark again.  I had to do that since there is no easy
+               way to tell whether the user wants to shrink from top or
+               bottom.)
+
+          -    Alt-U unmarks any marked block.
+
+          -    Alt-D deletes a marked block.
+
+          -    Alt-C copies the marked block below the current cursor
+               position.
+
+          -    Alt-M moves the marked block to a new position below the
+               current cursor position.  This is essentially the copy
+               and delete operations combined.  (In fact it's programmed
+               that way.)
+
+     -    Alt-F will do minimal formatting of the remainder of the
+          current "paragraph."  (Paragraph is defined until a line is
+          found which starts with a blank or period.)  This will help
+          make messages more readable during editing.
+
+     -    If text is already present on a line, leading blanks can be
+          entered.  The insert toggle works normally -- i.e., if insert
+          is on, the exist text is pushed right, but if insert of off,
+          the first characters of existing text are overwritten
+          (replaced with blanks).
+
+
+
+AUTOSIG Release Guide                                           Version 5.43
+_____________________                                           Nov 19, 1987
+
+
+     -    Alter has been substantially revamped.  The user will only be
+          offered options which make sense.  This means that there are
+          fewer options in some cases.  Listing the situations by case:
+
+          -    In Email, the only things I could see that made sense
+               were change the To or Subj.
+
+          -    When Alter-ing a reply, the only things that I could see
+               that would do anything are to change the send mode or
+               convert the reply to a "new" message (as if it had been
+               written with W from the main menu or with U or J from
+               Read message).  Anything further that you want to do with
+               the converted reply then fall into conversion of a new
+               message.
+
+          -    Alteration of new messages now works (including section
+               change).  An additional option is the ability to change
+               the send mode.  This means you can change your mind about
+               whether a message will be sent privately or unformatted,
+               etc.  If you do certain things, you will be required to
+               specify a user ID for the recipient.  One example of this
+               is if the original message was to be public and addressed
+               without an ID in the To field.  If you change the send
+               mode to P, you will have to supply an ID.  If you change
+               back to public, the previously-supplied ID is discarded
+               -- although the To field is retained exactly as it was.
+
+          I think everything there should now work, and I hope the user
+          is protected against invalid operations.  (I know you people
+          never enter To fields without user ID's, but I had to protect
+          against others who might.)
+
+     -    The last item is not a change, but it was undocumented.  If
+          you are sending a message, but want to keep a copy, you should
+          press Alt-F4 instead of F4.  This will cause a copy of the
+          message to be written to a file named *.FIL (where * is the
+          SIG name) as well as the outgoing message file.  This will be
+          particularly useful in Email.  The Alt-F4 also works in
+          Preview.  (Of course if you do it both places, you get two
+          copies.)
+
+
+
+AUTOSIG Release Guide                                           Version 5.43
+_____________________                                           Nov 19, 1987
+
+     Given the existing structure, I believe that function keys F5
+     (insert line), F7 (top of message) and F8 (bottom of message) are
+     now superfluous so some of the new functions (or other ones) could
+     be assigned to them if desired.
+
+     Alt-key summary:
+
+     C         Copy marked block below current cursor position
+     D         Delete marked block
+     F         Reformat rest of "paragraph"
+     J         Join following line to current line
+     L         Mark beginning or ending line of block
+     M         Move marked block just below current cursor position
+     S         Split line before current cursor position
+     Alt-F2    Throw away current message WITHOUT verification
+     Alt-F4    "Send" current message and save in *.FIL
+
+
+          -    As mentioned briefly above, I have set the Eplex Preview
+               function up so that the end of message marker, addressee, and
+               subject are picked up when the message is read in, displayed
+               in their proper place on line 24, and written normally when
+               the message is saved.  This prevents the problem of the user
+               accidentally overwriting that stuff.
+
+
+
+AUTOSIG Release Guide                                           Version 5.43
+_____________________                                           Nov 19, 1987
+
+                        Message editor corrections
+                        --------------------------
+
+        - Fixed a slight bug which wouldn't allow lines to be inserted
+          using the F5 key in certain conditions.
+
+        - Fixed End in Read/View so it will go to last message even if
+          last message is very short.
+
+        - Fixed Back in Read/View so it will go back even if preceding
+          message is very short.
+
+        - Modified display so that Read/View or Remind will allow lines
+          longer than 80 chars to wrap and still be visible (except for
+          lines which wrap from line 24).
+
+        - Fixed a case where Join lines in the editor could cause an
+          infinite loop.
+
+        - Speeded up the reformat function in the editor (slightly --
+          it's still no speed demon) and hid the processing (no screen
+          update until it's finished).  Also made the cursor end up
+          either in column one of the line following the last line
+          reformatted or at end of last line reformatted if that is last
+          line of message.
+
+        - Changed import to editor to retain leading blanks on lines.
+          This will cause leading blanks to be left on wrapped lines in
+          some cases.
+
+        - As part of the import change, had to have editor ignore line
+          feed characters (ASCII 10) since they would otherwise have
+          created leading blanks on virtually all lines.
+
+        - Cleaned up cursor size when alt-F2 is pressed (so it won't
+          continue with the Read/View functions with the insert-size
+          cursor).
+
+        - Remove Top/Bottom of message functions from F7/F8.
+
+        - Move Alter (during Preview only) to F7.
+
+        - Add Help on F1.  The actual help page is still pretty rough.
+        - Add an ability to send messages MU (Eplex unformatted).
+
+        - Cleaned up some problems in character counting.
+        - Cleaned up a problem when using tab to push text over and it overflowed.
+        - Cleaned up a small problem which could cause an unintended leading
+          space on a line.
+        - Fixed the problem which prevented retrieval of PPNs in Eplex.
+        - Removed Remind from being displayed as a valid option during the Write
+           of a new message.
+        - Added ? as reponse to prompt for section numbers to give
+          list of section names; for Write (leave), Alter, etc.
+        - fixed Remind omitting last line
+
+
+AUTOSIG Release Guide                                           Version 5.43
+_____________________                                           Nov 19, 1987
+
+
+                        Asynch COM port usage
+                        ---------------------
+
+        - ATO can support COM1 through COM4. The implementation
+          of COM3 and COM4 is minimal and may not be usable in
+          your configuration.
+
+        - All communications routines are written in assembler.
+          The timing should be adequate for use on IBM PCs and
+          compatibles, including the PCjr and '386 computers.
+
+        - The BIOS comm version, ATOnnnB, may work on some
+          compatibles where the regular version does not due
+          to differences with the async ports.
+
+          The modem CD (carrier detect) and DTR (data terminal
+          ready) indicators must be on all the time. Depending
+          on the speed of the computer, the BIOS version may
+          or may not lose characters at higher baud rates. A
+          lost character is indicated by a less-than-or-equal
+          symbol. 300 bps should always work. 1200 bps should
+          be okay on AT level machines. 2400 bps is unlikely
+          unless some sort of buffering of communications I/O
+          is in effect.
+
+          The COMBIOS program can be used to add buffering of
+          the communications I/O. The version supplied with
+          ATO is written for the IBM PC, and the assembler
+          source is included.
+
+        - Use the /T command line option to force the use of
+          standard display I/O rather than direct display buffer
+          writing.
+
+
+
+AUTOSIG Release Guide                                           Version 5.43
+_____________________                                           Nov 19, 1987
+
+                        Miscellaneous changes
+                        ---------------------
+
+        - added /N comand line switch to suppress prompt after disconnect
+        - added /J command line switch to set insert mode as editor default
+        - added F3 (edit Forum) and F4 (edit Host) to main main
+        - added refresh of HMN after aborting QS/Mark
+        - Added X in Read (and View) to allow skip remainder of thread
+        - Added <ASCII 198>EOM<ASCII 181> as the end of message marker.
+        - Added a switch in PC Options for editor insert mode
+        - Added "File transfer path" to Host items
+        - Added "Logon SCRipt name" to Host items
+        - added alt-G to Terminal Mode to gather SB section names
+        - added alt-N to Terminal Mode to display SB section names
+        - added alt-T to invoke SCRipt file (was alt-X)
+        - added AUTO1 and AUTO2 script commands; performs the 1 and 2 functions
+        - added DOW and UPL script commands. You must be at a DLn! prompt
+        - added OFF and LOGOFF script commands. Performs the Z function.
+        - added more checks to forum name as valid file name
+        - added re-write of DFN at disconnect to update HMN
+        - added delays and comm buffer flushes around all SHELLs
+        - added [Hanging up] message whenver ATO issues hang up
+        - added another check for (UA RE T) from CIS while downloading
+        - added alt-L like alt-D in Terminal Mode
+        - added "[Sending Logoff]" message before issuing disconnect sequence
+        - addde check for * in forum names
+        - added more delay before sending modem and dialing commands
+        - added Help on F1.  The actual help page is still pretty rough.
+        - added an ability to send messages MU (Eplex unformatted).
+        - added ? as reponse to prompt for section numbers giving section names
+
+        - changed message display in Read, View and Remind
+        - changed checking and editing of PPN for use by Reply
+        - change ATOPPN to return special (blank) string if aborted
+        - changed alt-X in terminal mode to exit to DOS (with prompt)
+        - changed IF syntax for the script processor. See ATOSCR.DOC.
+        - changed formula and message for CISB transfer rate; now uses
+        - changed CISB transfer time/rate message; now in minutes
+        - convert to QB 3.00, no functional changes
+        - changed Tymnet logon sequence
+        - changed PgDn to be more automatic
+        - changed COM routines to detect and adjust for PC Jr
+        - changed I and Y to use 0 instead of HMN
+        - changed import to editor to retain leading blanks on lines.
+        - Several changes in editor insert mode
+        - Some editor cursor movements have been changed
+
+        - deleted extraneous display of all error messages.
+        - deleted all checks for EOT char which cause (false) disconnect
+        - deleted "Timer Stopped" message
+        - deleted "Timer started" message
+        - deleted ACLS code that maintains daily totals
+
+
+
+AUTOSIG Release Guide                                           Version 5.43
+_____________________                                           Nov 19, 1987
+
+                        Miscellaneous changes
+                        ---------------------
+
+        - fixed problem losing R hint after invoking PPN processor.
+        - fixed QS/Mark to not reset HMN after ESCape used
+        - fixed B and alt-B functions not updating PC Options when toggled
+        - fixed implementation of send option Y
+        - fixed multiple MA not sending /D and /EX
+        - fixed R>ead prompt for missing Re/Join/UA
+        - fixed A)gain subcmd; dropped a line each time used
+        - fixed problem entering subcommands on the first screen
+        - fixed problem showing a blank screen as the last screen
+        - Fixed problem where Locate would go to the message following
+        - Fixed the problem where hitting <esc> to stay online after an
+        - fixed setting of colors in PC Options menu
+        - fixed check for null To: after invoking ATOPPN;
+        - fixed ATOPPN problems pasting long names.
+        - fixed alt-B toggle not updating PC Options
+        - fixed checks for lost carrier
+        - fixed B-protocol response to ENQ.
+        - fixed Error 5 at 7330 when Marking QS headers that
+        - fixed problems entering PPN for Email messages
+        - fixed Telenet logon sequence
+        - fixed error 5 at 7310 in QS/Mark due to slash in subject
+        - fixed sending "OP;SM" before "Function:" received after
+        - fixed value of reverse video attribute for monochrome displays
+        - fixed failure to log each forum when using up/down arrows
+        - fixed End in Read/View so it will go to last message even if
+        - fixed Back in Read/View so it will go back even if preceding
+        - fixed a case where Join lines in the editor could cause an
+        - fixed the problem which prevented retrieval of PPNs in Eplex.
+        - fixed Remind omitting last line
+        - fixed editor not beeping for Email after 2000 characters
+
+        - improved checks for out of memory
+        - improved ESCape to abort for CIS B transfers
+        - improved time-out checking
+        - improved async comm I/O on PCjr, 286 and 386 clones.
+        - improved direct screen writing under Double DOS
+        - improved checking of QS/SF records (^U problems)
+        - improved performance under Double DOS
+        - improved hangup/disconnect for Tymnet/Telenet
+
+

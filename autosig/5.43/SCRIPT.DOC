@@ -1,0 +1,475 @@
+
+AUTOSIG Script Processing                                   Version 5.43
+-------------------------                                   Nov 19, 1987
+
+
+        ATO can  execute commands  from a  script file.   Scripts are  a
+        series of user  coded statements contained  within a file.   You
+        execute a script by issuing the alt-T command while in  Terminal
+        Mode.  Or, you may specify  a special logon script in  each Host
+        entry.
+
+
+        A script ends when the last statement has been processed, or you
+        press the ESCape key, or if an error is detected.
+
+
+        You may also enter one  script command at the terminal  by using
+        the alt-I keys.
+
+
+        Script statements have the following syntax:
+
+                verb  [operand1 operand2 ... operandn]
+
+        You must separate the verb  and operands by one or  more blanks.
+        The verbs are:
+
+        SEND, WAIT,  PAUSE, LABEL,  GOTO, IF,  SET, EXIT,  DISPLAY, BEEP
+        TRACE,  ACCEPT,  CLS,  *,  THEN,  ELSE, DOW, UPL, LOGOFF, AUTO1,
+        AUTO2
+
+
+        Operands consist  of one  or more  symbol names,  and/or literal
+        data.   Symbols  are  either  global  system  variables, or user
+        defined  variables.   The  names  may  be  of any length and may
+        contain any characters except a space or a single quote.  Global
+        names are listed later.  User names can be any name except  that
+        of a  global varable.   Literal data  is a  string of characters
+        enclosed within single quotes.  Quotes are note required  unless
+        the literal string contains the name of a symbol.
+
+
+        For example, HOST.NAME is a  global variable, XYZ may be  a user
+        variable, and 'hello' is literal data.
+
+
+        If the operand is [data], you may supply a list of symbol  names
+        and/or literal values.  They are combined into one value.
+
+
+        While scripts  are being  processed, COM  data may  be received.
+        The COM  data is  not processed  until a  READ or  WAIT verb  is
+        executed.  The last line of COM data is available in the  global
+        variable called %COM.
+
+
+
+
+
+
+AUTOSIG Script Processing                                   Version 5.43
+-------------------------                                   Nov 19, 1987
+
+                        Statement syntax
+                        ----------------
+
+  Verb:     * [comment]
+  Function: Provide user comments or remarks
+  Usage:    The statement is ignored.
+
+  Verb:     READ  [symbol]
+  Function: Get data from the COM port and place it into the COM buffer,
+            and into any supplied symbol name.
+
+  Verb:     SEND  [data]
+  Function: Write data to the COM port
+  Usage:    The data may be a list of symbol names and literal strings.
+            All data fields are combined into one string and sent to the
+            COM port. Control characters may be entered by using the carat
+            symbol (^) followed by a control character letter. For example,
+            a ^M will result in a carriage return (CR) being sent. A pause
+            may be embedded in any data string by entering a squiggle (~)
+            character.
+
+
+  Verb:     WAIT  [data]
+  Function: Suspend processing until the data is received from the COM
+            port.
+  Usage:    Checking is performed for lost carrier and the modem return
+            messages for NO CARRIER, etc. If a disconnect if detected,
+            the script is terminated.
+
+
+  Verb:     PAUSE [number]
+  Function: Suspend processing for 'number' of seconds.
+  Usage:    If the 'number' is omitted, a one second pause results.
+
+
+  Verb:     LABEL labelname
+  Function: Identify a statement for branching purposes.
+  Usage:    There is no checking for duplicate labels. The first occurence
+            of the label name is used by script verbs, e.g. GOTO.
+
+
+  Verb:     GOTO labelname
+  Function: Transfer script processing to the LABEL statement with the
+            identity of 'labelname'.
+
+
+  Verb:     SET symbol data
+  Function: Assign a value to a symbol.
+  Usage:    Unless noted below, values can not be assigned to global
+            symbols. User symbols become defined when they are referenced
+            by a SET statement. The 'data' may be a list of symbol names
+            and/or literal data. For example,
+                SET x 'hello'
+                SET y x
+                results in the symbol y having the value 'hello'.
+
+
+AUTOSIG Script Processing                                   Version 5.43
+-------------------------                                   Nov 19, 1987
+
+                        Statement syntax (cont')
+                        ----------------
+
+  Verb:     EXIT
+  Function: Terminate processing of the current script file.
+
+  Verb:     DISPLAY [data]
+  Function: Writes data to the current display monitor.
+  Usage:    The 'data' value may be a list of symbol names, and/or literal
+            strings.
+
+  Verb:     BEEP
+  Function: Sound the computer's bell.
+
+  Verb:     TRACE [ON|OFF]
+  Function: Enable or disable tracing of the script statements. If TRACE
+            is ON, all script statements are displayed before they  are
+            executed.
+
+  Verb:     ACCEPT symbol
+  Function: Read data from the console into a variable.
+  Usage:    If 'symbol' is not currently defined, it becomes defined.
+            Unless otherwise noted, global symbols may not be modified.
+
+  Verb:     CLS
+  Function: Clear the screen.
+
+
+  Verb:     IF var1 var2 [statement]
+  Function: Set the condition code based on contents of 'var1' and 'var2'
+  Usage:    The condition is set to TRUE if 'var2' occurs withing the
+            'var1' variable. The optional [statement] is executed when
+            the condition is true.
+
+
+  Verb:     THEN [statement]
+  Function: Process statements when the condition is true.
+
+  Verb:     ELSE [statement]
+  Function: Process statements when the condition is false.
+
+
+  Verb:     DOW filename
+  Function: Invokes CIS B protocol to download the specified file. The
+            file is placed in the drive\path defined by the Host entry.
+
+
+  Verb:     UPL filename
+  Function: Invokes CIS B protocol to upload the specified file. The file
+            must be in the drive\path defined by the Host entry.
+
+
+  Verb:     LOGOFF -or- OFF
+  Function: Performs the Z (logoff) function by sending an OFF to CIS
+            and then hanging up the phone.
+
+
+
+AUTOSIG Script Processing                                   Version 5.43
+-------------------------                                   Nov 19, 1987
+
+                        Statement syntax (cont')
+                        ----------------
+
+  Verb:     AUTO1
+  Function: Invokes the first AUTOmatic pass and then logs off.
+            This is the same as issuing the 1 command.
+
+
+  Verb:     AUTO2
+  Function: Invokes the second AUTOmatic pass and then logs off.
+            This is the same as issuing the 2 command.
+
+
+
+
+
+
+AUTOSIG Script Processing                               Version 5.43
+-------------------------                               Nov 19, 1987
+
+                        Summary of Verbs
+                        ----------------
+
+       * [comment]
+       ACCEPT symbol
+       AUTO1
+       AUTO2
+       BEEP
+       CLS
+       DISPLAY [data]
+       DOW filename
+       ELSE [statement]
+       EXIT
+       GOTO labelname
+       IF var1 var2 [statement]
+       LABEL labelname
+       LOGOFF
+       OFF
+       PAUSE [number]
+       READ  [symbol]
+       SEND  [data]
+       SET symbol data
+       THEN [statement]
+       TRACE [ON|OFF]
+       UPL filename
+       WAIT  [data]
+
+
+AUTOSIG Script Processing                                   Version 5.43
+-------------------------                                   Nov 19, 1987
+
+                        Examples
+                        --------
+
+  o  Demonstrate the use of IF, THEN, and ELSE
+
+          read
+        label again
+          if %COM 'Function:' then display 'not yet'
+           else display 'not yet'
+          goto again
+        label ready
+           beep
+           display 'What time is it?'
+           accept tod
+           exit
+
+        The 'IF' verb does not require a statement.  You can place
+    any valid statment after the  IF, and/or can use the  THEN and
+    ELSE verbs later.   The IF condition  remains valid until  the
+    next IF is executed.
+
+  o  Demonstrate the use of SEND, WAIT, and literal strings.
+
+        trace on
+        Send 'go ' ibmcom^M
+        Wait Function:
+        Send 'ust^M'
+       label loop
+        If 'Function:' Goto Ready
+        Read
+        Goto loop
+       label ready
+        display Ready to proceed...
+        beep
+
+  o Demonstrate use of global variables
+
+         * Use the current HOST and SIG selections to log on
+         send ATDT %HOSTPHONE ^M
+         wait CONNECT
+         pause 4
+         send '^C'
+         wait User ID:
+         display '{' %COM '}'
+         send %HOSTUSERID ^M
+         wait Password:
+         send %HOSTPASSWORD '^M'
+         wait OK
+         send 'GO ' %SIGPAGE
+         wait 'Function:'
+         set savecolor %PCNORMAL
+         set %PCNORMAL '15,2'
+         display 'The current high message number is:' %SIGHMN
+         set %PCNORMAL savecolor
+         beep
+         display 'Ready when you are ...'
+
+AUTOSIG Script Processing                                   Version 5.43
+-------------------------                                   Nov 19, 1987
+
+                        Examples (cont'd)
+                        --------
+
+  o  Logon via Tymnet
+
+        *
+        * wait for 300 baud terminal id request
+        pause 3
+        * use tty terminal id
+        send a
+        * wait for "please log in:" prompt
+        match in:
+        * make sure we have a user id
+        if %HOSTACCOUNT '' set %HOSTACCOUNT 'CIS02'
+        sendline %HOSTACCOUNT
+        * we made it!
+        *
+        display 'Logon to TYMNET successful'
+        beep
+        exit
+
+
+
+
+
+  o  Logon via Telenet
+
+        * wait for line to settle
+        pause 3
+        * send baud code or c/r depending on baud rate
+        if %HOSTBAUD '2400' Send '@~^M~~'
+        Else Send '^M^M'
+        * wait for "TERMINAL=" prompt
+        match 'TERMINAL='
+        send D1^M
+        * clear the COM buffer up to where we should be
+        match 'D1'
+        * wait for "@" net prompt
+        match @
+        send 'C 202202' ^M
+        * we made it!
+        *
+        display
+        display 'Logon to Telenet successful!'
+        beep
+        exit
+
+
+AUTOSIG Script Processing                                   Version 5.43
+-------------------------                                   Nov 19, 1987
+
+                        Examples (cont'd)
+                        --------
+
+  o  DATAPAC logon and reset of PAD parameters for binary transfers
+
+    *  Begin script.  Tell Datapac that this is 1200 baud  (note change the
+    *  ".." to a single period "." for 300 baud)
+
+    SEND '..^M'
+    *
+    *  Wait for DATAPAC acknowledgement before continuing
+       WAIT DATAPAC:
+       READ
+       PAUSE 2
+    *
+    *  Request a direct DATAPAC to CIS connection
+       SEND 'P 29400138^M'
+    *
+    *  Wait for CIS Host response
+       WAIT Name:
+       SEND 'CIS^M'
+    *
+    *  Wait for CIS User ID prompt
+       WAIT ID:
+       PAUSE 2
+    *
+    *  Enter DATAPAC command mode by sending ^P to DATAPAC and beginning the
+    *  PAD changes
+       SEND '^PPROF 1^M'
+       PAUSE 2
+    *
+    *  Check the parameters of PROF1
+       SEND 'PAR^M'
+       WAIT 126:016
+       PAUSE 2
+    *
+    *  Reset the PAD parameters
+       SEND 'SET?002:001,126:004,003:000,004:004,007:008,020:032,001:000^M'
+       WAIT 001:000
+       PAUSE 2
+    *
+    *  Double check that the PAD was correctly modified
+       SEND 'PAR^M'
+       WAIT 126:004
+       PAUSE 2
+    *
+    *  Exit DATAPAC command mode and re-enter CIS
+       SEND '^M'
+       PAUSE 2
+       SEND '^M'
+       BEEP
+       EXIT
+
+
+
+
+
+AUTOSIG Script Processing                                   Version 5.43
+-------------------------                                   Nov 19, 1987
+
+                        Global symbols
+                        --------------
+
+        Global symbols contain data from the HOST, FORUM, and PC OPTIONS
+        definitions.
+
+        The HOST menu symbols have a name of the form '%HOSTname'.
+
+        The FORUM menu symbols  have a name  of the form  '%SIGname'.
+
+        The PC Options symbols have a name of the form '%PCname'
+
+
+                        %HOST variables - from Host options menu
+
+        Symbol name Default value        Symbol name Default value
+        ----------- -------------------- ----------- --------------------
+        NAME        host's name          PATH        default ATO d:\path
+        PHONE       telephone number     COM         communications port
+        USERID      your user id         CONNECT     modem connect response
+        PASSWORD    your password        DISCON      modem disconnect response
+        ACCOUNT     Tymnet host          HANGUP      modem commands to hang up
+        CODE                             RESET       modem commands to reset
+        UPROMPT     Userid: prompt       RPROMPT1    CIS logon message 1
+        PPROMPT     Passsword: prompt    RPROMPT2    CIS logon message 2
+        BAUD        baud rate            BULL        bulletins file name
+        MDMCMDS     modem commands       ANSWER      response to CONNECT
+
+
+                        %SIG variables - from Forum Options menu
+
+        Symbol name Default value          Symbol name Default value
+        ----------- --------------------   ----------- --------------------
+        SIGNAME     forum name             LOG         logging option, y/n
+        PAGE        go page                STAY        stay connected option
+        HOST        host name              SENDP       send ^P option, y/n
+        DRIVE       default d:\path        SECS        section numbers list
+        HMN         high message number    PPN         PPN d:\path\filename
+        APPEND      append option, y/n
+
+
+
+AUTOSIG Script Processing                                   Version 5.43
+-------------------------                                   Nov 19, 1987
+
+                        Global symbols (cont'd)
+                        --------------
+
+
+                        %PC variables - from PC Options menu
+
+        Symbol name     Default value
+        -----------     ---------------------------------
+        NORMAL          Value of normal display color
+        HILITE          Value of hitlited display color
+        LINES           Number of printed ilnes per page
+        H               Retrace test option, Y or N
+        K               Email KEEP option, Y or N
+        M               Skip RM option, Y or N
+        C               Cls each msg option, Y or N
+        B               Disable keyboard option, Y or N
+        F               Printer formfeed option, Y or N
+        S               Sort QS headers option, Y or N
+        T               Slow screen option, Y or N
+        Q               Quiet alarms option, Y or N
+        P               Send logon ^P option, Y or N
+        PROMPT          Prompt character, e.g. ^G
+
+

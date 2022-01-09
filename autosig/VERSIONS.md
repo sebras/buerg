@@ -483,7 +483,7 @@
   - external scripts
   - more code in assembler
   - full support for the new, faster B protocol
-- 5.43 11/19/87
+- [5.43](5.43) 11/19/87
   - greatly enhanced message editor now has word wrap and several new formatting commands.
   - improved CIS B protocol file transfer includes support for new Quick B implementation.
   - new Script command processor allows automation of other tasks, automatic logon via non-CIS nodes, and unattended downloading of files.

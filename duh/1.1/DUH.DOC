@@ -1,0 +1,40 @@
+DUH Command                                                      Version 1.1
+-----------                                                     Oct 10, 1988
+
+Function:  DUH deletes files that also exist in ARC files.
+           It is a common practice to unARC files in the same
+           directory and end up with two copies of things. By
+           using DUH, you can get rid of the extracted files.
+
+
+Usage:     DUH  [d:\path\filespec]  [/O]  [/N]
+
+
+Remarks:   The program uses ARCV to get a directory listing of
+           all .ARC files in the current directory. It then
+           compares the file names and datestamps to the files
+           in the directory specified by d:\path\filespec. The
+           default is all files that are not .ARC files in the
+           current directory.
+
+           When the program finishes, you have a file called
+           DELINARC.BAT. It contains one ERASE command for each
+           duplicate file; followed by a 'del delinarc.bat'
+           command to get rid of the BAT file. You can edit the
+           BAT file to be more selective about the files that
+           are deleted. Then, run DELINARC to delete those files.
+
+           Specify /O to delete older files.
+
+           Specify /N to delete files of the same name regardless
+           of the date stamps.
+
+Notes:     DUH was written in Quick Basic 3 (I was in a hurry) and
+           should run on all MS DOS version 2, or later, systems.
+
+
+
+
+
+           DUH Copyright (c) Vernon D. Buerg 1988. ALL  RIGHTS RESERVED.
+

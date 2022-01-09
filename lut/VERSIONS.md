@@ -6,7 +6,7 @@
   - The output format has changed to include the volume
   - name. Also, if any errors are encountered, the DOS
   - ERRORLEVEL variable is set to a 1.
-- 1.91 02/09/85
+- [1.91](1.91) 02/09/85
   - correct CHDIR problem
 - 1.9 11/09/84
   - Assume LBR extension.

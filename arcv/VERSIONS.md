@@ -1,0 +1,46 @@
+# ARCV version history
+
+- 1.22 04/13/91
+  - add handling of ARC v7 information records
+- 1.21 03/06/89
+  - add /b option to suppress d:\path for BBS use
+- 1.20 02/10/89
+  - fix-up JMPs for assembly by MASM
+- 1.19 02/06/89
+  - add /z parameter for expansion of subdir files
+- 1.18 01/11/89
+  - add /p parameter to pause at screen full
+  - add entries for other styles, e.g. crushing
+- 1.17 01/27/87
+  - add DOS 3.x file sharing
+  - get size under 2k, improve speed
+- 1.16 12/31/86
+  - add entry for type 9 format, squashing
+- 1.15 06/14/86
+  - for DPATH, etc, use 'filename' if no files found
+- 1.14 05/21/86
+  - change for 'No files found' error on clones
+- 1.13 05/11/86
+  - expand search for header arcmark
+- 1.12 04/26/86
+  - correct sending totals for no files
+- 1.11 04/23/86
+  - correct stowage factor
+- 1.10 04/18/86
+  - correct divide overflow problem
+- 1.09 04/08/86
+  - check SF for funny archives
+- 1.08 03/28/86
+  - correct zero divide problem
+- 1.07 03/22/86
+  - change open for input only
+- 1.06 01/26/86
+  - correct total SF
+- 1.05 01/23/86
+  - supports ARC 5.0 new formats
+- 1.04 01/19/86
+  - make displays MS-DOS compatible
+- 1.03 01/10/86
+  - released for general use
+- 1.00 01/05/86
+  - initial program

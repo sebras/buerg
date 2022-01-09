@@ -26,7 +26,7 @@
 - 1.65 04/13/85
     - set ERRORLEVEL to 1 if any errors
     - use DOS functions for displaying messages to allow for redirection, etc.
-- 1.64 03/03/85
+- [1.64](1.64) 03/03/85
 - 1.6 01/23/84
     -  default to LU86 directory format
 - 1.5 12/21/84

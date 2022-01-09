@@ -1,0 +1,91 @@
+
+BBSEXTRA Utility                                                    Version 1.9
+----------------                                                   Sep  2, 1991
+
+Purpose:        BBSEXTRA compares the files listed in your PCBoard
+                directory listings (DIRnn files) to the files that
+                actually exist in your download paths.
+
+                BBSEXTRA produces reports of files that are missing,
+                extra, or duplicated.
+
+Syntax:         BBSEXTRA  [d:\path]  [/T]
+
+
+                where d:\path specifies the drive and path to be used
+                for temporary work files. The default is to place the
+                work files in the current directory. About 100 bytes
+                per file and DIR file entry is required; usually
+                several hundred K-bytes.
+
+                Specify /T to display the names of files in the DIRnn
+                listings and in disk subdirectories.
+
+Input:          Two control files are required:
+
+                1)  DRVDIRS
+
+                   This file contains a list of download paths. Be
+                   sure to include all of your upload directories
+                   and conference directories. For example:
+
+                        W:\UPLOADS\
+                        V:\ME\
+                        V:\M1\
+                        J:\L22\
+
+                2)  FILEDIRS
+
+                   This file contains a list of directory listing
+                   files. For example:
+
+                        c:\dir\dir29
+                        v:\pcb\main\dir30
+
+|                  Each entry in the directory listing file must contain
+|                  a valid file name starting in column 1. The file name
+|                  may be in the form 'ffffffff.ext' or 'ffffffff ext'.
+|                  The file name should be followed by a file size. The
+|                  output of the DOS DIR command is an acceptable format.
+
+Output:         These files are created:
+
+                MISSING         - a list of missing files; those
+                                  listed in DIRnn files, but not
+                                  found in any download path
+
+                EXTRA           - a list of files found in a download
+                                  path, but not listed in a DIRnn file.
+
+                DUPES           - a list of files of the same name
+                                  found in more than one download path
+
+                Four large temporary files (30-40 bytes per file entry)
+                are created.  Use a RAM disk if you can.
+
+Operation:      BBSEXTRA builds a list of all files contained in the
+                download paths and writes the list to a temporary
+                file called BBSEXTT1.}}}.  Then, all file names listed
+                in the DIRnn files are written to the temporary file
+                called BBSEXTT2.}}}.  The two temporary files are
+                sorted, and then compared for missing, extra, and
+                extra files.
+
+                The EXTRA files may be removed by passing the file to
+                a utility like PCOPY or PMOVE. For example:
+
+                        PCOPY @EXTRA C:\DELETED /X
+
+                to move all unlisted files to the C:\DELETED directory.
+                It's best to save any extra files, rather than simply
+                deleting them.
+
+Requirements:   BBSEXTRA needs the SORTF utility sort program.
+
+Notes:          Written using the MS BASIC Compiler PDS Version 7.1 and
+                one assembler subroutine.
+                For personal use only. May not be sold.
+
+                BBSEXTRA Copyright (c) Vernon D. Buerg 1989-1991
+
+

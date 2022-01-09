@@ -1,0 +1,40 @@
+
+
+
+
+
+
+          The other file in this ARC is a simple starting point to using ATO
+          within DESQview (either 2.00 or 2.01).  To use this setup file:
+
+          1.   Transfer it to the directory containing your ATO executable
+               program. 
+
+          2.   From within DV, open the Add Program (AP) window, specify O
+               (for Other), enter the path to your ATO program, and press
+               <enter>.
+
+          3.   You should be presented with a menu which includes (probably
+               as the only entry) the choice "CompuServe".  Move the cursor
+               down to it, press <space>, then <enter>.
+
+          4.   Press <enter> once more to indicate you are done adding new
+               programs.
+
+          5.   Now open the Change Program (CP) window to change the AT
+               window you just added.  
+               a.   You will probably need to change the program name (which
+                    I just left at ATO since I did not know which version
+                    might be desired).  
+               b.   I have the memory set at 300K.  Depending on version, you
+                    can probably get by with 240K or even less.  
+               c.   I also have the window set to open up full screen.  If
+                    you want it to only occupy part of the screen, use F1 to
+                    go to the advanced options screen and blank out the
+                    entries in the Starting Height and Starting Width boxes.
+
+          You should be ready to go now.
+
+          Thanks are due to Dave Hoagland for pointing out the easier way to
+          install a transferred .DVP file in DESQview.
+

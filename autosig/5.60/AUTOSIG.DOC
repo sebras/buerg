@@ -1,0 +1,4319 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                             A U T O S I G 
+
+                              Version 5.6 
+
+                      January, 1988 Manual Revision 
+
+                      A Communications Program for 
+                          Accessing CompuServe 
+
+
+
+
+
+
+
+
+
+
+
+
+
+             This manual describes the  installation,  features 
+             and functions of the AUTOSIG program. This program 
+             is  being  developed by a Project Group from the 
+             CompuServe IBMNET.  The group consists of, but is 
+             not restricted to: 
+
+                    Vernon Buerg        [70007,1212] 
+                    Jim McKeown         [74666,511] 
+                    Don Watkins         [76703,750] 
+
+
+   AUTOSIG Version 5.6, January, 1988 
+   (c) Copyright 1985-1988 by Vernon D. Buerg 
+
+            T A B L E   O F   C O N T E N T S
+
+__________________________________________________________________________
+
+
+      Preface  ......................................................... 1    
+
+ I.   Introduction  .................................................... 2    
+
+ II.  Example Sessions with AUTOSIG  ................................... 3    
+      A. Scanning the SIGs  ............................................ 3    
+      B. Using the SIG Data Libraries  ................................. 3    
+      C. Accessing Other Parts of Compuserve  .......................... 4    
+
+ III. System Requirements  ............................................. 5    
+      A. Hardware requirements  ........................................ 5    
+      B. Operating System  ............................................. 5    
+      C. Network Access  ............................................... 5    
+
+ IV.  Getting Started - Options  ....................................... 6    
+      A. Setting Options  .............................................. 6    
+      B. Installing the AUTOSIG Files  ................................. 7    
+      C. Setting Options on Compuserve  ................................ 8    
+         1. SIG Options  ............................................... 8    
+         2. Terminal Options  .......................................... 9    
+      C. Easyplex Settings  ............................................ 9    
+      D. On-Line Setting Recap  ........................................ 10   
+
+ V.   PC Settings and Options  ......................................... 11   
+      A. Modem Settings  ............................................... 11   
+      B. Setting Options Within AUTOSIG  ............................... 12   
+         Figure 1.  Primary Menu  ...................................... 12   
+      C. Primary Menu  ................................................. 13   
+         Figure 2. PC Options Menu  .................................... 15   
+      D. Specifying PC Options  ........................................ 16   
+      E. Issuing Options on the Command Line  .......................... 17   
+      F. Setting Up to Call CompuServe  ................................ 17   
+      G. Host Configuration Options  ................................... 18   
+         Figure 3.  Host Configuration Options Menu  ................... 18   
+      H. Setting Up for Your SIGs  ..................................... 22   
+         Figure 4. Forum Configuration Options Menu  ................... 22   
+
+ VI.  Going Online  .................................................... 25   
+      A. Forum Function Menu  .......................................... 25   
+         Figure 5. Example Forum Function Menu  ........................ 25   
+      B. Function Menu Commands  ....................................... 26   
+         (B) Beep on/off toggle  ....................................... 26   
+         (C) Change menus  ............................................. 26   
+         (1) AUTOmatic first pass  ..................................... 26   
+         (2) AUTOmatic second pass  .................................... 26   
+         (E) Shell to new copy of COMMAND  ............................. 26   
+         (G) Go online, terminal mode.  ................................ 26   
+         (K) Delete file  .............................................. 26   
+         (L) List bulletins  ........................................... 26   
+         (N) Update DFN file.  ......................................... 27   
+         (O) Change Forum Options  ..................................... 27   
+
+Contents 1                                            AUTOSIG Users Guide 
+            T A B L E   O F   C O N T E N T S
+
+__________________________________________________________________________
+
+         (P) Preview Leave/Reply file.  ................................ 27   
+         (S) Send new messages online.  ................................ 27   
+         (V) View SAVEd messages.  ..................................... 27   
+         (W) Write new messages offline  ............................... 28   
+         (X) Exit to system  ........................................... 28   
+         (Z) Send OFF and disconnect  .................................. 28   
+      C. Online Download Functions  .................................... 29   
+         (D) Download marked messages  ................................. 29   
+         (F) Read Forward  ............................................. 29   
+         (Q) Quick Scan  ............................................... 29   
+         (H) Scan Headers in message order  ............................ 29   
+         (J) Scan headers in thread order  ............................. 29   
+         (T) Read Thread  .............................................. 30   
+         (U) Download marked messages to you  .......................... 30   
+         (I) Download messages you sent  ............................... 30   
+         (Y) Download all messages to you  ............................. 30   
+      D. Intervening in an AUTOSIG session  ............................ 30   
+      E. Function Menu Special Keys  ................................... 31   
+      F. Offline Message Processing  ................................... 32   
+         (M) Scan and mark messages offline  ........................... 32   
+             Figure 6. Example (M)ark Screen  .......................... 32   
+         (D) Download marked messages  ................................. 34   
+         (R) Read and reply offline  ................................... 34   
+      G. AUTOSIG Working Files  ........................................ 37   
+      H. CIS High Message Number  ...................................... 38   
+
+ VII. Special Processing  .............................................. 39   
+      A. Multiple SIG Sessions  ........................................ 39   
+      B. AUTO - Automatically Access Several SIGs  ..................... 40   
+         Figure 7. AUTO Set-Up Menu  ................................... 42   
+         Figure 8. AUTO /1 and /2 Display  ............................. 42   
+
+ VIII.  EasyPlex (E-Mail) Operation  ................................... 43   
+      A. Setup and Operation  .......................................... 43   
+
+ IX.  ATO Terminal Mode  ............................................... 44   
+      A. Overview  ..................................................... 44   
+      B. Defining Function Keys  ....................................... 45   
+      C. Defining Function Keys  ....................................... 46   
+         Figure 9. Terminal Mode Function Keys  ........................ 46   
+         Figure 10. Terminal Mode Alt- Keys  ........................... 46   
+      D. Terminal Mode Special Keys  ................................... 47   
+      E. Protocol File Transfer  ....................................... 49   
+      F. Downloading with "B" protocol  ................................ 49   
+      G. Uploading with "B" protocol  .................................. 49   
+      H. Alt-L  Log to disk  ........................................... 50   
+      I. Alt-U  Upload from disk  ...................................... 50   
+
+ X.   Message Editor  .................................................. 51   
+      A. Description of use  ........................................... 51   
+      B. Editor Control Keys  .......................................... 52   
+      C. Editor Import Function  ....................................... 54   
+
+ AUTOSIG Users Guide                                          Contents 2 
+            T A B L E   O F   C O N T E N T S
+
+__________________________________________________________________________
+
+      D. Replying to messages  ......................................... 55   
+
+ XI.  Errors and Reporting Problems  ................................... 56   
+      A. Internal Errors  .............................................. 56   
+      B. Trouble Shooting  ............................................. 57   
+      C. Problem symptoms and solutions  ............................... 58   
+
+ X.   Acknowlegements  ................................................. 60   
+      A. Disclaimer  ................................................... 60   
+      B. Copying and sharing AUTOSIG  .................................. 61   
+
+ Appendices  ........................................................... 62   
+      A. Quick Reference Words  ........................................ 62   
+      B. Command Line Options  ......................................... 66   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contents 3                                            AUTOSIG Users Guide 
+     Preface 
+______________________________________________________________________________
+
+    AUTOSIG is a communications program written specifically for  CompuServe 
+    Special Interest Group use.  It provides an automatic way of  processing 
+    SIG messages  that is  quick and  economical.  Written  in BASIC,  it is 
+    provided as a compiled QuickBasic, executable (.EXE) program for the IBM 
+    PC. ATO is  fully compatible with  Compaq computers, the  Tandy 1000 and 
+    1200,  and  most  other  clones.   In  addition  to  its main purpose of 
+    offloading  messages,  it  is  a  terminal  program which can be used to 
+    access other areas  of CompuServe and  download from the  Data Libraries 
+    using the CompuServe Quick "B" protocol. 
+ 
+ 
+                A word or two about the Deeper Meanings of ATO. 
+                _______________________________________________ 
+ 
+    Ah ha,  my chance  for a  fireside chat.   Don't worry,  I'll try not to 
+    ramble for too long but ATO holds a very special place on my hard disk. 
+ 
+    ATO celebrates its 4 birthday and fifth public release which is  nothing 
+    short of  incredible when  you think  about the  features that have been 
+    carefully  crafted  since  it  started  out.   The amount of work by its 
+    contributors is nothing short of awe inspiring.  Why? 
+ 
+    ATO is to my  thinking a community hack  in the true sense  of the word, 
+    that is, lots of people contributing time and effort just for the  sheer 
+    joy of programming and throwing their modems on the line for testing. 
+ 
+    Why is this inspiring?   Since day one ATO  has been free with  the only 
+    motive of the authors is that you enjoy it. 
+ 
+    This version represent  some truly outstanding  work by Jim  McKeown.  A 
+    special thanks to him from  me for his work on  the editor as it is  far 
+    beyond what I was able to accomplish. 
+ 
+    Vern Buerg continues  to add, optimize  and amaze with  the most obvious 
+    additions of a script language and new, fast B protocol.  What's  hidden 
+    is his translation of  many of the routines  into assembler.  I know  of 
+    only a portion of the time he  spent working on them and that alone,  is 
+    impressive.  Certainly the total time  represents a large number of  all 
+    night  coding  and  debugging  sessions.   I  consider  it  a very large 
+    pleasure knowing  Vern.  He  is truly  an example  of what the computing 
+    fraternity is  all about  and is  so modest  and low  key I know this is 
+    embarrassing to him.  Be that  as it may I know  that I've got a lot  of 
+    his programs in my survival kit.  Sorry Vern, but at least take one bow. 
+ 
+    ATO makes no claims at to  being 1) the best all purpose  communications 
+    program in the world, 2) the most flexible or 3) the fastest.  No  doubt 
+    there  will  always  be  raging  debates  over the "best" communications 
+    program.  ATO makes no such claims.  ATO DOES represent a lot of work by 
+    a lot of people  that expect nothing in  return, beyond hoping that  you 
+    enjoy the fruit of their efforts.  Isn't that nice? 
+ 
+                                           Don Watkins [76703,750] 
+
+
+
+AUTOSIG Users Guide                                                   Page  1 
+I.   Introduction 
+______________________________________________________________________________
+
+    AUTOSIG, or ATO  for short, is  a communications program  that automates 
+    access to  Compuserve (CIS)  and specifically  to its  Forum (or Special 
+    Interest  Group,  or  SIG)   message  boards  and  to   electronic  mail 
+    (EasyPlex).  The program allows users to select which messages they want 
+    to read,  download them,  sign off  CIS, read  the messages  and compose 
+    replies or new messages using AUTOSIG's own text editor, then go  online 
+    again to  upload what  they have  written.  ATO  can also  be used as an 
+    ordinary terminal  program to  access any  page of  CIS or the Executive 
+    Option,  to  capture  text  files,  and  to download files from SIG Data 
+    Libraries or Access using  Compuserve's "B" protocol including  the new, 
+    fast, Quick B flavor. 
+ 
+    In designing AUTOSIG, the authors have set both flexibility and ease  of 
+    use  as  their  goals.   Therefore  the  program  is  menu  rather  than 
+    command-driven:  there  is  no  need  to  memorize AUTOSIG's options and 
+    commands.  We  have chosen  to offer  help in  this documentation rather 
+    than onscreen (excepting the new editor), so that explanations can be as 
+    long as they need to be.   ATO users who have questions not  answered in 
+    the  documentation  should  ask  them  in  the  IBM  Communications  SIG 
+    (IBMCOM),  where  the  authors  or  other  experienced users will try to 
+    answer them. 
+ 
+    Don't be daunted by the size of the manual.  Effectively this manual  is 
+    one for a  communications program, a  database, a macro  language and an 
+    editor.  Given  that it's  pretty small  so hang  in there.   There is a 
+    strong human tendency to avoid unpleasant, time consuming tasks, and for 
+    many of us, the reading of an entire manual is one of them.  Many  folks 
+    have asked the  question "I just  wanna do it!   Why not leave  the hard 
+    stuff  until  later?"   That's  just  what  we're  trying to do here and 
+    several "advanced topics" are in separate files.  We do encourage you to 
+    review these files to take full advantage of all of ATO's features.  For 
+    further information consult the following documentation files: 
+ 
+    ACLS.ARC   -   Contains both the ACLS accounting module and 
+                   documentation. 
+ 
+    ATOADV.ARC -   Contains documentation for using ATO's  script  language, 
+                   and  ATO's  "address  book"  processor. 
+ 
+    From time to time you may see terms used that don't make sense.   Here's 
+    a quick run down on some of them: 
+ 
+        PPN  -  Programmer  Project  Number; a user id 
+        ATO  -  Shorthand for AUTOSIG. 
+        SIG  -  Special Interest Group, or Forum 
+        CIS  -  CompuServe Information Services 
+        EMAIL - Electronic mail, or Easyplex 
+
+
+
+
+
+
+
+
+Page  2                                                   AUTOSIG Users Guide 
+II.  Example Sessions with AUTOSIG 
+______________________________________________________________________________
+
+
+    A. Scanning the SIGs 
+ 
+    You turn on AUTOSIG.  With the press of a single key AUTOSIG calls  CIS, 
+    goes to each SIG you normally visit, gathers a list of all the  messages 
+    that have  been posted  since your  last call  there; goes  to EasyPlex, 
+    finds out if you have EMail,  and if so downloads it; then  AUTOSIG logs 
+    off from CIS. You skim through the list of messages in each SIG, marking 
+    only those whose subjects interest you.  Then you press another key  and 
+    AUTOSIG calls  CIS again,  downloads the  messages you  have chosen, and 
+    logs off. 
+ 
+    At any  time you  choose you  can read  all the  messages that have been 
+    downloaded.  (This means that you can  access CIS at 1200 or 2400  Baud; 
+    since you  are not  reading the  messages online,  it doesn't matter how 
+    fast they scroll by).   If you wish to  answer one of them,  a keystroke 
+    puts you into  AUTOSIG's text editor  where you can  compose your reply, 
+    referring back  to the  original message  as often  as you wish.  Finish 
+    your writing, hit a couple of  keys, and your reply is stored  and ready 
+    for  transmission  to  CIS.  (The  procedure  is  the same for Easyplex; 
+    there's no second set of commands to learn in order to use EasyPlex.) 
+ 
+    If  you  want  to  keep  a  particular  message  in  a permanent file, a 
+    keystroke instructs AUTOSIG to save that message--and the permanent file 
+    can be called up at any  time within AUTOSIG, or read by  other programs 
+    such as LIST or a word processor. 
+ 
+    Finally,  if  you  have  written  any  messages  to be posted on the SIG 
+    message boards, one more keystroke makes AUTOSIG call CIS one more time, 
+    leave your messages, and log off. 
+ 
+
+    B. Using the SIG Data Libraries 
+ 
+    ATO uses the Compuserve "B" error checking protocol, which for CIS users 
+    is superior in speed and efficiency to the other main Compuserve option, 
+    XMODEM.  For text files which don't require error checking, AUTOSIG will 
+    capture them in a file for you. 
+ 
+    You start AUTOSIG and choose which  SIG you want to visit.  A  keystroke 
+    connects you  with CIS  and takes  you to  the SIG.  There you enter the 
+    normal Compuserve  commands to  find and  download the  DL file  of your 
+    choice.  If you  invoke the Compuserve  "B" option, a  status line shows 
+    how the download is progressing.   When AUTOSIG notifies you that  it is 
+    complete, you use the CIS command to log off. 
+ 
+    Advanced users may  use ATO's script  language to write  "auto download" 
+    scripts. 
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  3 
+II.  Example Sessions with AUTOSIG 
+______________________________________________________________________________
+
+
+    C. Accessing Other Parts of Compuserve 
+ 
+    AUTOSIG  can  be  used  as  a  simple  terminal;  you  can  use  it  for 
+    conferences,  CB  rap  sessions,  getting  stock  quotes, and just about 
+    anything else you can do on Compuserve.  You may do this manually or  by 
+    the use of scripts. 
+ 
+    If at  any point  you want  to check  the message  board at  one of your 
+    favorite SIGS, a keystroke will  shift AUTOSIG into its automatic  mode. 
+    Shifting  back  into  terminal  mode  is  just  as  easy. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  4                                                   AUTOSIG Users Guide 
+III. System Requirements 
+______________________________________________________________________________
+
+
+    A. Hardware requirements 
+ 
+    In general AUTOSIG requires the following equipment configuration: 
+ 
+    An IBM PC, XT, AT, PS/2 or close compatible.  ATO has been tested on the 
+    Compaq portable, the  Tandy 1xxx series  and the Leading  Edge, and runs 
+    fine.  Other  close compatibles  might work,  but be  sure to check your 
+    machine's users manual for various "switches" that might be necessary. 
+ 
+    ATO will run on a PCjr using the internal modem.  See the file ATOJR.TXT 
+    in the IBMJR Data Library  (currently DL7) for further information.   It 
+    works with few  flaws on most  external modems.  Message  downloading is 
+    not "buffered" so you'll drop some characters unless you've added DMA, a 
+    resident program to buffer asynchronous communications, or capture to  a 
+    RAM  disk.   The  CIS  Quick  B  protocol for file downloading will work 
+    without problems. 
+ 
+    At least 256k of  memory is required.  ATO  might run in less,  but with 
+    different memory requirements for the different versions of DOS and  the 
+    proliferation of various "terminate and stay resident" utilities 256k is 
+    probably a minimum level.  More memory is recommended, especially if you 
+    plan to run DOS commands from within ATO. 
+ 
+    A modem capable of autodialing is required.  If you're not using a Hayes 
+    AT-command  compatible  modem,  you'll  need  to  be  familiar with your 
+    modem's command codes in order to set it up properly. 
+ 
+
+    B. Operating System 
+ 
+    DOS  3.1  or  greater  is  recommended.   ATO  will  run fine on DOS 2.x 
+    systems,  but  you  may  experience  problems  with  the  "Shell to DOS" 
+    feature.  ATO is aware of Double DOS and DesqView environments. 
+ 
+
+    C. Network Access 
+ 
+    You must be calling in through a CIS direct node, Telenet, Tymnet or  be 
+    prepared to write your  own script to log  in.  With any luck,  and with 
+    the typical sharing by ATO users, you may find a script already  written 
+    for the network you use.  Browse DL1 of the IBMCOM forum with a  keyword 
+    of  SCRIPT  and  see  what's  available.   With ATO's script ability you 
+    should be able to logon via any network, but it might take some work  on 
+    your part.  Examples are provided in the Advanced Users Guide. 
+ 
+
+
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  5 
+IV.  Getting Started - Options 
+______________________________________________________________________________
+
+
+    A. Setting Options 
+ 
+    Before you  can use  AUTOSIG you  must adjust  some of  your settings on 
+    Compuserve,  customize  AUTOSIG  itself  for  your own use, and possibly 
+    change some switches on your  modem.  Only then will ATO  and Compuserve 
+    work smoothly together when you log in with AUTOSIG. 
+ 
+    Here's a check list to help keep  track of what you have done and  still 
+    need to do as you install AUTOSIG: 
+ 
+              _____  1. Install the ATO files on your disk 
+ 
+              ------ 2. Adjust your CONFIG.SYS file 
+ 
+              _____  3. Set your CIS Forum Options 
+ 
+              _____  4. Set your CIS Terminal Options 
+ 
+              _____  5. Set your modem's switches 
+ 
+              _____  6. Define your HOST entries 
+ 
+              _____  7. Define your FORUM entries 
+ 
+              _____  8. Define you PC Options entries 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  6                                                   AUTOSIG Users Guide 
+IV.  Getting Started - Options 
+______________________________________________________________________________
+
+
+    B. Installing the AUTOSIG Files 
+ 
+    The AUTOSIG program consists of the following supplied files: 
+ 
+              AUTOSIG.EXE       - compiled, executable program 
+ 
+              AUTOSIG.DOC       - this manual 
+ 
+    These are the names used for  the current version, the one named  on the 
+    title page.  The file names for other versions may differ. 
+ 
+    Installation is complete once the EXE file has been placed on your  disk 
+    and you  have adjusted  your boot  disk's CONFIG.SYS  file to  include a 
+    FILES=20 statement.  If you're not familiar with the CONFIG.SYS file  or 
+    if you have problems  adjusting its contents GO  IBMNEW and ask a  sysop 
+    for assistance. 
+ 
+    When you have  finished configuring AUTOSIG,  the program will  create a 
+    file called AUTOSIG.DFN to save  your settings.  The DFN file  should be 
+    on the same disk and in the same directory as AUTOSIG.EXE. 
+ 
+    (Old-time AUTOSIG  users: the  name of  the configuration  file has been 
+    changed from AUTOSIG.CFG to AUTOSIG.DFN because major changes have  been 
+    made to the structure of ATO. This version of AUTOSIG will not work with 
+    your old CFG file; be sure to set your ATO options and create a DFN file 
+    before running  it.  Other  features have  been changed  too; while  the 
+    update file will help,  and although we recognize  what a pain it  is to 
+    read manuals, we ask that you skim through as much of this as you can.) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  7 
+IV.  Getting Started - Options 
+______________________________________________________________________________
+
+ C. Setting Options on Compuserve 
+
+
+       1. SIG Options 
+ 
+    Before  running  AUTOSIG,  certain  options  must  be  in effect in each 
+    Compuserve SIG you  plan to visit.   Specifically, the prompt  character 
+    (PC) must  be set  to ^G  (Control-G--the bell,  or beep  or some  other 
+    prompt character that enables ATO  to detect that a certain  function or 
+    prompt is being sent). 
+ 
+    Using some program other  than AUTOSIG go to  each SIG, enter OP  at the 
+    top menu/Function: prompt, and set this option: 
+ 
+                PC ^G - (use Shift-6 for the ^ rather than the control key) 
+ 
+    Note:  you  may  use  other  prompt  characters,  but  you  will have to 
+    configure ATO  accordingly by  changing the  PC Options  or supplying  a 
+    start-up command switch.  These features are explained later. 
+ 
+                FO (Forum Mode) - Set this option to COMMAND 
+ 
+    Optional!  More  than likely  you use  the  LINEDIT option,  the  editor 
+    with the line numbers.  You may continue to use this editor with ATO, it 
+    will work fine. 
+ 
+    But you  may want  to change  your editor  to EDIT,  which is the editor 
+    without line numbers.   If you choose  this option your  message uploads 
+    will be faster!  However you might find that EDIT is a little harder  to 
+    use if you leave messages in "real time". 
+ 
+    To exit the OPtion area hit a carriage return to exit the area and  when 
+    prompted enter a P to make the changes permanent. 
+ 
+    You will not  hear the bell  while AUTOSIG is  running, but will  if you 
+    access the CIS  SIGs using other  communications programs.  If  you like 
+    you may  change the  prompt character  to something  else.  Personally I 
+    prefer ^A,  but that  is a  matter of  preference.  Most  communications 
+    program  have  a  "filter"  or  "strip  and  convert" option, so you may 
+    convert a "7" (BEL) to a "0" (NUL) when using such programs. 
+ 
+    You MUST make these changes in each SIG where you'll be using AUTOSIG! 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  8                                                   AUTOSIG Users Guide 
+IV.  Getting Started - Options 
+______________________________________________________________________________
+
+ C. Setting Options on Compuserve 
+
+
+       2. Terminal Options 
+ 
+    You must also make sure that Compuserve's settings for your terminal are 
+    set so that ATO will work properly. 
+ 
+    Actually, Compuserve maintains  three different configurations  for your 
+    user ID: at 300 baud, 1200 baud,  and 2400 baud.  You must log onto  CIS 
+    at each transmission speed to  change the settings for that  speed.  You 
+    will probably want to use AUTOSIG  at 300 baud for conferences, CB,  and 
+    other services that require you to stay online to use them, and at  your 
+    highest modem speed (usually 1200  or 2400, depending on your  hardware) 
+    when downloading or uploading messages or DL files. 
+ 
+ 
+    Go online with your communications program--not AUTOSIG--and from any  ! 
+    prompt, enter GO TERMINAL. 
+ 
+    1) Select menu item 5, "View or change .. parameters" 
+ 
+    2) Select menu item 10, "Inquire for Vidtex.." and set it to OFF. 
+ 
+    3) Hit a carriage return to exit 
+ 
+    4) Select menu item 6, "Setting your...Options" 
+ 
+    5) Select menu item 1, "You now receive" and set it to "Short Prompts". 
+ 
+    6) Select menu item 2, "Paged Display" to "Disabled". 
+ 
+    7) Hit a carriage return to exit. 
+ 
+    8) Select menu  item 2 "Setting...Terminal  Type" and set  it to Vidtex. 
+       This is  entirely optional  and will  not effect  the operation  of 
+       ATO. Setting your terminal type to Vidtex is purely cosmetic. 
+ 
+    9) Hit a carriage return to exit. 
+ 
+   10) When  exiting the  TERMINAL area  you will  be asked  if the changes 
+       should be effective for future sessions or for the session only. 
+       Select menu item 1, "Make all changes effective for future sessions. 
+
+    C. Easyplex Settings 
+ 
+    As long as you're on-line you  should set yourself up in Easyplex,  even 
+    if you don't  currently use it.   GO EASY to  get there and  select menu 
+    option  #5,  "Address  Book",  then  entry #5, "Enter/Change your NAME". 
+    That's it. 
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  9 
+IV.  Getting Started - Options 
+______________________________________________________________________________
+
+ C. Setting Options on Compuserve 
+
+
+    D. On-Line Setting Recap 
+ 
+    To summarize you must go on-line and: 
+ 
+        o - Set your SIG options for  the Prompt Character and set Use Menus 
+            to OFF. 
+ 
+        o - Set your global  TERMINAL parameters for non-paged display, 
+            enquire for Vidtex to OFF and set prompts to brief. 
+ 
+        o - Add your name to your Easyplex mail box. 
+ 
+    It's important  that each  of these  options be  set.  Otherwise AUTOSIG 
+    will not see what it expects to  see and cause problems, so it's a  good 
+    idea to spend some time to double check them.  The time you spend double 
+    checking will be more than paid back in your first AUTOSIG session. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  10                                                   AUTOSIG Users Guide 
+V.   PC Settings and Options 
+______________________________________________________________________________
+
+ A. Modem Settings 
+
+ 
+    As  mentioned  before,  ATO  comes  configured  for  use  with  a  Hayes 
+    AT-command compatible  modem, as  well as  the capability  to accept any 
+    modem commands.  Thus,  ATO is able  to support many  other modems.  The 
+    ATO crew has access to a limited  number of modem types, so any tips  or 
+    hints you have for using ATO on a certain modem would be very welcome. 
+ 
+    If you're using a non-Hayes  modem, study your manual very  carefully to 
+    determine  which  settings  correspond  to  the  ones specified here for 
+    Hayes-compatibles.  In general,  set your modem to return the true state 
+    of CD (carrier detect) and DTR (data terminal ready). 
+ 
+    On Hayes  modems, the  setting of  the DTR  (Data Terminal Ready) switch 
+    will determine  whether or  not the  modem is  disconnected when  ATO is 
+    exited.  With the switch ON (or UP), the modem is disconnected, which is 
+    normally what you will want. 
+ 
+    The  following  modem  switch  settings  (for  a  Hayes  SmartModem) are 
+    recommended: 
+ 
+      1 - UP        Modem disconnects when ATO is exited. 
+      2 - UP    V1  Modem sends result codes in English. 
+      3 - DOWN  Q0  Result codes are sent to the terminal. 
+      4 - UP    E1  Modem echoes characters while in command mode. 
+      5 - DOWN      Modem will not answer phone. 
+      6 - UP        Enables Carrier Detect sensing. 
+ 
+    These  settings  are  optional.   If  the  settings  on  your  modem are 
+    different go ahead and give it a try; chances are very good that it will 
+    work. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  11 
+V.   PC Settings and Options 
+______________________________________________________________________________
+
+ B. Setting Options Within AUTOSIG 
+
+ 
+    You start ATO by  executing it with a  DOS command.  At the  DOS prompt, 
+    enter the name of the AUTOSIG program: 
+ 
+                            A>autosig 
+ 
+    DOS  now  loads  the  program  and  begins its execution.  You should be 
+    presented  with  the  ATO  Primary  Menu  (Figure  1).   If  nothing  is 
+    displayed, your computer may not be  compatible with the way the IBM  PC 
+    manages the monitor display.  You should then press the F10 key to  tell 
+    ATO to terminate  and return to  the DOS. At  the DOS prompt,  enter the 
+    characters /T.  This tells ATO to  use a different method of writing  to 
+    your monitor. 
+ 
+                            A>autosig /T 
+ 
+
+       Figure 1.  Primary Menu 
+ 
+  ------------------------------------------------------------------------------ 
+ 
+  +===================+     +----------------+     +===========================+ 
+  |  Host Selection   |     | Item Selection |     |  Forum Selection List     | 
+  |-------------------|     +----------------+     |---------------------------| 
+  |  0) CIS300        |   cr  Select Marked        |  A) IbmCom    M) *none*   | 
+  |  1) CIS1200       |   Esc Reconfigure PC       |  B) Email     N) *none*   | 
+  |  2) CIS2400       |   F1  AUTOmatic pass 1     |  C) IbmSw     O) *none*   | 
+  |  3) Tymnet        |   F2  AUTOmatic pass 2     |  D) IbmHw     P) *none*   | 
+  |  4) CIS           |   F3  Edit FORUM options   |  E) IbmNew    Q) *none*   | 
+  |  5) CIS           |   F4  Edit HOST options    |  F) *none*    R) *none*   | 
+  |  6) CIS           |   F5  Add a new Forum      |  G) *none*    S) *none*   | 
+  |  7) CIS           |   F6  Delete a Forum       |  H) *none*    T) *none*   | 
+  |  8) CIS           |   F7  Modify AUTO list     |  I) *none*    U) *none*   | 
+  |  9) CIS           |   F8  Sort forums by name  |  J) *none*    V) *none*   | 
+  +-------------------+   F9  Run ACLS and exit    |  K) *none*    W) *none*   | 
+                          F10 Exit to DOS          |  L) *none*    X) *none*   | 
+                                                   +---------------------------+ 
+ 
+     up  prev host      ENTER select marked              PgUp  prev forum 
+     dn  next host      alt-N resets all HMNs to N       PgDn  next forum 
+ 
+  ------------------------------------------------------------------------------ 
+ 
+
+
+
+
+
+
+
+
+
+
+Page  12                                                   AUTOSIG Users Guide 
+V.   PC Settings and Options 
+______________________________________________________________________________
+
+ C. Primary Menu 
+
+ 
+    The  Primary  Menu  screen  contains  the  Host Selection menu, the Item 
+    Selection menu, and the Forum Selection List.  Refer to Figure 1. 
+ 
+    The Host Selection menu offers a choice of CompuServe services to call. 
+ 
+    The Forum Selection List offers a choice of Forums (SIGs) to access. 
+ 
+    The Item Selection menu selects the operation to perform. 
+ 
+ 
+    For the first use of ATO, you must: 
+ 
+        - edit the Host entries (press a number key) to supply your  userid, 
+          password, the CIS phone number, and other service items. 
+ 
+        - edit  the  Forum  entries  (press  a  letter key)  to identify the 
+          forum(s) that you wish to access. 
+ 
+        - edit the PC Options entries (press ESCape) to set colors,  printer 
+          lines, mouse, beeper, etc. 
+ 
+ 
+    You tell ATO  what to do  next by pressing  a key, or  by moving a mouse 
+    cursor to the appropriate field and clicking the left button: 
+ 
+        - Fn (function)  keys perform the  operations described in  the Item 
+          Selection menu 
+ 
+        -  <enter>  performs  the  operation  described  in whatever Item is 
+          highlighted with the Item Selection bar 
+ 
+        - TAB moves the Item Selection bar to the next item 
+ 
+        - shift-TAB moves the Item Selection bar to the previous item 
+ 
+        - alt-N resets all High Message Numbers to N<ew> 
+ 
+        - PgDn or PgUp  selects the next or  previous Forum in the  list and 
+          moves the "->" indicator 
+ 
+        - down or up arrow selects the next or previous Host in the list and 
+          moves the -> mark 
+ 
+        - a number selects a Host and bring up its menu 
+ 
+        - a letter from A to X selects a Forum and brings up its menu 
+ 
+        - the letter Z highlights all forums which have "work", i.e. files 
+ 
+        - ESCape selects the PC Options Menu for viewing and editing default 
+          options such as the screen colors -- more about this later 
+
+AUTOSIG Users Guide                                                   Page  13 
+V.   PC Settings and Options 
+______________________________________________________________________________
+
+ C. Primary Menu 
+
+ 
+ 
+    The Forum Selection List comes preset with several predefined,  standard 
+    forum entries.  None of  them is required, but  if you intend to  access 
+    Easyplex, you  must have  an entry  containing the  word "mail," such as 
+    EMAIL. 
+ 
+    Adding your favorite SIGs to the Forum Selection List, or deleting those 
+    already  there,  or  otherwise  changing  the presets, will be explained 
+    below. 
+ 
+    Pressing the  ESCape key,  or positioning  the Item  bar to "Reconfigure 
+    PC," brings up  the Edit PC  Options menu in  the middle of  the screen, 
+    overlaying the Item Selection menu.  Figure 2 shows a sample display  of 
+    the menu. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  14                                                   AUTOSIG Users Guide 
+V.   PC Settings and Options 
+______________________________________________________________________________
+
+ C. Primary Menu 
+
+
+       Figure 2. PC Options Menu 
+ 
+ 
+ 
+     Host Selection         Edit PC Options           Forum Selection List 
+                       +------------------------+ 
+     0) CIS300         | Normal color      7,0  |     A) IbmCom    M) *none* 
+     1) CIS1200        | Hilite color     15,0  |     B) Email     N) *none* 
+     2) CIS2400        | Printer lines     58   |     C) IbmSw     O) *none* 
+     3) Tymnet         | /H Skip retrace   N    |     D) *none*    P) *none* 
+     4) CIS            | /K Keep Email     N    |     E) *none*    Q) *none* 
+     5) CIS            | /M Skip RM        N    |     F) *none*    R) *none* 
+     6) CIS            | /C Cls each msg   N    |     G) *none*    S) *none* 
+     7) CIS            | /B Disable kybd   N    |     H) *none*    T) *none* 
+     8) CIS            | /F Printer FF     N    |     I) *none*    U) *none* 
+     9) CIS            | /S Sort QS hdrs   N    |     J) *none*    V) *none* 
+                       | /T Slow screen    N    |     K) *none*    W) *none* 
+                       | /Q Quiet beeper   N    |     L) *none*    X) *none* 
+                       | /P Logon ^P       N    | 
+    up  prev host      | /G Prompt char    ^G   |        PgDn  next forum 
+    dn  next host      | /I Allow mouse    Y    |        PgUp  prev forum 
+                       | /J Insert mode    N    | 
+                       +-[Press ESCape to exit]-+ 
+ 
+ 
+ 
+    These are advanced features that are normally not needed unless you have 
+    compatibility  problems  with  your  computer,  or  you  have ATO up and 
+    running and want to explore additional features.  You're probably  close 
+    to info overload as it is so  you can skip this discussion if you  wish. 
+    However, whenever you want to customize AUTOSIG's operation, this is one 
+    way to do it, so keep it in mind. 
+ 
+    Refer to Appendix B for a summary of command line switches. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  15 
+V.   PC Settings and Options 
+______________________________________________________________________________
+
+ C. Primary Menu 
+
+
+    D. Specifying PC Options 
+ 
+    "Normal Color f,b" -  This allows you to  set the colors to  be used for 
+        the "f" foreground  and "b" background  for  non-highlighted  areas. 
+        Refer to the BASIC manual COLOR command for a list of valid numbers. 
+        Note: 7,0 may provide a better display on a monochrome monitor. 
+ 
+    "Hilite Color f,b" - This setting allows you to set the color to be used 
+        for highlighted messages and fields.  Refer to the BASIC manual  for 
+        a list of valid codes. 15,0  may be better for monochrome.  The  new 
+        color settings  take effect  when you  exit the  PC Options menu and 
+        return to the Primary menu. 
+ 
+    "Printer lines" - indicates where AUTOSIG's print function will issue  a 
+        form feed. 
+ 
+    "/H Skip  Retrace" -  Disables testing  of the  monitor's retrace.  This 
+        results in faster displays, but may cause flicker on some  monitors. 
+        This options does not apply to the use of monochrome monitors. 
+ 
+    "/K Keep Email"  - Y tells  CIS to keep  (SAVE) Easyplex messages,  N to 
+        DELETE them. 
+ 
+    "/M Skip RM" - Used to suppress automatic [R]ead [M]arked function. 
+ 
+    "/C CLS each message" - Enter Y to clear the screen when it fills,  thus 
+        preventing scrolling.  Useful if  your color monitor flickers  while 
+        lines roll on and off the screen. 
+ 
+    "/B Disable kybd" - A Y locks the keyboard during auto functions.   This 
+        allows you to supply ATO  console input through a batch  file system 
+        or use a utility such as KEYFAKE or KEYIN to control ATO. 
+ 
+    "/F Printer FF"  - Use Y  to eliminate most  form feeds that  are issued 
+        when  you  P>rint  SIG  messages.   Your  messages  will  be printed 
+        continuously with form  feeds issued only  as the printer  nears the 
+        perforation or end of the page.  If you issue a LF or FF directly to 
+        your printer, ATO's line counter will get out of synch. 
+ 
+    "/S Sort QS hdrs" - Use Y  to instruct ATO to automatically sort the  QS 
+        headers whenever the M>ark command is used. 
+ 
+    "/T Slow screen" - Use Y to eliminate writing directly to the  monitor's 
+        video display  buffer.  If  you're using  a clone,  and your  screen 
+        blanks unexpectedly, try this switch. 
+ 
+        ATO is compatible with DesqView, Double DOS, and APX Core.  You need 
+        not use /T unless you have problems, i.e. blank or missing displays. 
+ 
+    "/Q Quiet beeper" - Use Y to suppress most of the beeps and bells. 
+ 
+
+Page  16                                                   AUTOSIG Users Guide 
+V.   PC Settings and Options 
+______________________________________________________________________________
+
+ C. Primary Menu 
+
+    "/P Logon ^P" - Enter a Y to  have ATO send a ^P to CIS when  logging on 
+        and  when  entering  a   forum.   This  bypasses  all   CIS  opening 
+        announcements, SIG messages,  and announcements of  waiting messages 
+        and Email.  (The AUTOSIG menus for individual SIGs have a ^P  option 
+        too, but  this is  overridden if  you set  /P to  Y in  the Edit  PC 
+        Options menu.)   Saves time,  but at  the risk  of missing something 
+        important. 
+ 
+    /G Prompt char - As already explained, the prompt character that AUTOSIG 
+        normally recognizes is ^G, a bell control character.  If you wish to 
+        respecify the prompt  character, enter the  new one here,  but do be 
+        sure to set your SIG options to reflect the change! 
+ 
+
+    E. Issuing Options on the Command Line 
+ 
+    The "slash" options described above  can be specified when you  load the 
+    AUTOSIG.EXE program by adding a space, "/", and a letter (upper or lower 
+    case) to specify the option: 
+ 
+        AUTOSIG /T /B /C 
+ 
+    In effect, this command sets the /T, /B, and /C options to Y, overriding 
+    whatever you have set within AUTOSIG using the Edit Options menu.  There 
+    are other option "switches".  They are described in Appendix B. 
+ 
+
+    F. Setting Up to Call CompuServe 
+ 
+    AUTOSIG will  automatically log  onto CIS,  but only  if it  has certain 
+    information which only  you can provide:  the CIS phone  number to dial, 
+    your userid, your password, and your BAUD rate.  To set these and  other 
+    options important for logging on,  select F3 Edit Host Options  from the 
+    Item Selection menu.  This will  call up the Host Configuration  Options 
+    menu (figure 3).   (The word "host"  refers to the  computer system that 
+    you want ATO to access via the telephone--in this case, CompuServe.) 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  17 
+V.   PC Settings and Options 
+______________________________________________________________________________
+
+ G. Host Configuration Options 
+
+
+       Figure 3.  Host Configuration Options Menu 
+ 
+ 
+ 
+  +=====================================================================+ 
+  |  Host Selection   |       Host Configuration Options                | 
+  |---------------------------------------------------------------------| 
+  |  0) CIS300        | Host name                CIS2400                | 
+  |  1) CIS1200       | CIS phone number         111-1111               | 
+  |->2) CIS2400       | Your userid              70000,0000             | 
+  |  3) Tymnet        | Your password            password               | 
+  |  4) CIS           | Tymnet address                                  | 
+  |  5) CIS           | Logon SCRipt file                               | 
+  |  6) CIS           | Userid: prompt           User ID:               | 
+  |  7) CIS           | Password: prompt         Password:              | 
+  |  8) CIS           | What BAUD rate           300                    | 
+  |  9) CIS           | Modem dial commands      ATM0V1DT               | 
+  +-------------------+ COMmunications port      COM1                   | 
+                      | Modem Connect text       CONNECT                | 
+                      | Modem Disconnect text    NO CARRIER             | 
+                      | Modem Hang-up command    ~+++~ATH               | 
+                      | Modem Reset command      ~+++~ATZ}              | 
+                      | Host 1st ready prompt    CompuServe             | 
+                      | Host 2nd ready message   Executive              | 
+                      | Bulletin file name                              | 
+                      | HOST connect response    ^C                     | 
+                      | File transfer d:\path                           | 
+                      +-------------------------------------------------+ 
+                        Use ESCape to Exit, PgDn/PgUp to edit next HOST 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  18                                                   AUTOSIG Users Guide 
+V.   PC Settings and Options 
+______________________________________________________________________________
+
+ G. Host Configuration Options 
+
+    Even if you never call any other service than CIS, it's often convenient 
+    to have several different host entries, as in the example: one for  each 
+    BAUD rate you expect  to use, and one  for each node (telephone  number) 
+    you may want to call. 
+ 
+    The first nine items are specific to you and your CompuServe account and 
+    must be set correctly before  you can use AUTOSIG.  The  remaining items 
+    are preset and should need no change unless you have a modem that is not 
+    Hayes-compatible,  or  unless  you  are  calling  some  other  host than 
+    CompuServe or  otherwise want  to change  information.  If  this is your 
+    first pass through the manual and you're ready to go check out the first 
+    nine items and then "HOST connect response" if you're using 2400 baud. 
+ 
+ 
+    "Host name" - identifies the system  that you are calling.  Enter a  one 
+        to 17 character  name of your  choice, including blanks,  commas, or 
+        any other characters.   The Host names  in the example  indicate the 
+        BAUD rate. 
+ 
+    "CIS phone number" - enter your  local CIS or net telephone number.   If 
+        you access  CIS through  TYMNET, prefix  the number  with a  T, e.g. 
+        T555-1212.  If you use TELENET, prefix the number with the letter G, 
+        e.g.  G555-1212.  If  the phone number  is too long  to fit in  this 
+        field, place the first part of  it at the end of the  Modem Commands 
+        field.  ATO sends both fields to the modem when dialing. 
+ 
+    "Your userid  " -  enter your  CIS numbers  separated by  a comma,  e.g. 
+        70000,000. 
+ 
+    "Your password  " -  enter your  CIS password.   (Special note: remember 
+        that your password  will now be  on your diskette  or hard disk  and 
+        remember to keep it  secure.  Though it may  be a hassle, do  change 
+        your password  on CIS  periodically and  go through  the routine  of 
+        changing it in  your configuration file;  it's worth the  extra time 
+        and trouble.) 
+ 
+    "Tymnet address " - if you are using Tymnet to access CIS, you may enter 
+        the host name here. If omitted, the default is CIS02. 
+ 
+    "Logon SCRipt file" -  Enter the name of  the external script file  that 
+        should be executed at logon.  The script file is not executed  until 
+        you  are  logged  on  to  CIS.  See  the  SCRIPT.ARC  file  for more 
+        information on scripts. 
+ 
+    "Userid prompt" - No need to  change this, unless CIS changes its  logon 
+        prompt (doubtful). 
+ 
+    "Password prompt" - See comment on "Userid prompt." 
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  19 
+V.   PC Settings and Options 
+______________________________________________________________________________
+
+ G. Host Configuration Options 
+
+ 
+    "What baud rate" - Enter the modem speed to be used, normally a value of 
+        300, 1200 or 2400.  Other speeds such as 450 baud may be  specified, 
+        but will work  only if your  CIS node supports  them.  ATO will  not 
+        change the baud rate while you  are connected.  You must log off  to 
+        change the baud rate. 
+ 
+    "Modem dial commands" - The default commands are for the Hayes modem and 
+        should  be  retained--unless,  of  course,  your modem is not Hayes- 
+        compatible, in which case enter the appropriate commands here.  This 
+        field may also be used to extend the telephone number.  The  default 
+        contains "M0"; if you want  to hear the handshaking between  ATO and 
+        CIS, delete these two characters. 
+ 
+    "COMmunications port"  - enter  either COM1:  or COM2:  to specify which 
+        Asynchronous Communications Adapter (port) is to be used.  The colon 
+        is optional.  COM3 and COM4 can be specified, but may not work. 
+ 
+    "Modem Connect text" - tells ATO what your modem sends when the phone is 
+        connected.  The default is "CONNECT".  Whatever you enter here  will 
+        appear on  the screen,  but ATO  ignores any  data after  the actual 
+        modem code, so  that your text  may also state  the baud rate,  e.g. 
+        "CONNECT 2400" or "CONNECT 1200," without affecting operations. 
+ 
+    "Modem Disconnect text" - tells ATO what your modem sends when the phone 
+        becomes disconnected.  The default is "NO CARRIER".  ATO also checks 
+        for "BUSY" and  "NO DIALTONE".  The  special character ~  (tilde, or 
+        squiggle) may be used to have ATO pause one second, a } (right curly 
+        brace) to send a carriage return,  and a ^ (caret, or the  shifted 6 
+        key) to indicate a control character such as ^D. 
+ 
+    "Modem  Hang-up  command"  -  tells  ATO  what  to  send to the modem to 
+        disconnect the phone.  The  default for a Hayes-compatible  modem is 
+        ATH. 
+ 
+    "Modem Reset command" - tells ATO what to send to the modem to reset it. 
+        The  default  for  a  Hayes-compatible  modem  is  "~+++~ATZ", which 
+        results in a one-second  pause, sending three plus  sign characters, 
+        another one second-pause, and then the command ATZ. 
+ 
+    "Host 1st ready prompt" - tells ATO  what the Host will send when it  is 
+        ready for your requests.  The default is "CompuServe". 
+ 
+    "Host  2nd  ready  message"  -  is  used  in addition to the first ready 
+        prompt.  ATO waits for either the 1st or the 2nd ready message. 
+ 
+    "Bulletin file name" -  If you want ATO  to save all CIS  logon messages 
+        until the first Forum command  is sent, enter a filename  here, such 
+        as AUTOSIG.BUL, for ATO to use.  Otherwise the bulletins will not be 
+        saved.  Include the drive and path with the filename if the file  is 
+        not to be kept in AUTOSIG's own disk or directory. 
+ 
+
+Page  20                                                   AUTOSIG Users Guide 
+V.   PC Settings and Options 
+______________________________________________________________________________
+
+ G. Host Configuration Options 
+
+    "HOST connect response" - This is  the code you send CompuServe to  tell 
+        it you're ready to  go.  Normally a ^C  is what you'll want  to use. 
+        In the case of 2400 baud MNP  nodes you'll want to use the tilde  to 
+        delay sending the ^C.  The following entry should be adequate: 
+ 
+          ~~~~~~~^C 
+ 
+        This allows 7 seconds for  MNP handshaking after the CONNECT message 
+        before the sending of the ^C. 
+ 
+    "File transfer  d:\path" -  If you  want file  downloads to go somewhere 
+        other than the  default drive or  sub-directory, enter the  path for 
+        downloads here.  The following would cause all downloads to go to  a 
+        sub-directory on drive C: called DOWNLOADS, 
+ 
+          C:\DOWNLOADS 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  21 
+V.   PC Settings and Options 
+______________________________________________________________________________
+
+ H. Setting Up for Your SIGs 
+
+ 
+    To add  a SIG  to the  Forum Selection  List, so  that you can access it 
+    automatically using AUTOSIG, choose Item F5, "Add a New Forum."  AUTOSIG 
+    will take you to the Forum Configuration Options menu (Figure 4) for the 
+    next unused letter in the list--in this example, D. 
+ 
+ 
+
+       Figure 4. Forum Configuration Options Menu 
+ 
+ 
+  +---------------------------------------------------------------------------+ 
+  |       Forum Configuration Options              |  Forum Selection List    | 
+  |------------------------------------------------+--------------------------| 
+  | SIG name,1-7 char  IbmCom                      |  A) IbmCom    M) *none*  | 
+  | GO to page         IBMCOM                      |  B) Email     N) *none*  | 
+  | Hostname override                              |  C) IbmSw     O) *none*  | 
+  | Files drive:\path                              |  D) *none*    P) *none*  | 
+  | Starting msg # or N N                          |  E) *none*    Q) *none*  | 
+  | Append msg file y/n N                          |  F) *none*    R) *none*  | 
+  | Log sessions    y/n Y                          |  G) *none*    S) *none*  | 
+  | Stay connected  y/n N                          |  H) *none*    T) *none*  | 
+  | Send forum ^P   y/n N                          |  I) *none*    U) *none*  | 
+  | Sections (# or ALL)                            |  J) *none*    V) *none*  | 
+  | PPN file name                                  |  K) *none*    V) *none*  | 
+  +------------------------------------------------|  L) *none*    X) *none*  | 
+    ESCape when finished                           +--------------------------+ 
+                                                        PgUp  prev forum 
+                                                        PgDn  next forum 
+ 
+    The menu provides a list of options for you to choose from.  Several  of 
+    them have already been filled in by copying from the previous SIG on the 
+    Selection  List,  in  this  case  A  (IbmCom).   Change  those  that are 
+    incorrect--for example,  the SIG  name and  "GO to  page"--or that don't 
+    reflect what you want AUTOSIG to do. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  22                                                   AUTOSIG Users Guide 
+V.   PC Settings and Options 
+______________________________________________________________________________
+
+ H. Setting Up for Your SIGs 
+
+ 
+    "SIG name"  - enter  a name  of up  to SEVEN  characters.  This  name is 
+        displayed on the Function Menu.   Since this name is used  to create 
+        files, be sure that it contains valid DOS filename characters.  That 
+        is, do not use * (asterisk), ?  (question mark), or .  (period).  If 
+        the name you give  is too long, ATO  will truncate it after  the 7th 
+        character. 
+ 
+    "GO to page" - enter the SIG "page number" or, if you prefer, the "quick 
+        reference word," e.g.  IBMCOM. 
+ 
+        Appendix A provides a list of forum names and their quick  reference 
+        words.  For the most current list, GO INDEX on CIS and capture it as 
+        an ASCII file. 
+ 
+    "Hostname override" - if access to a Forum can only be made through  one 
+        particular  Host,  then  supply  the  name  of  that Host here.  For 
+        example, a Host called "CONFERENCE" may be useful for defining a 300 
+        bps Host for CB or conferencing. 
+ 
+    "Files drive:\path"  - tells  ATO which  drive and  directory to use for 
+        access  to  its  files.   If  left  blank,  ATO will use the current 
+        directory on the current drive.  You may supply a drive and/or  path 
+        name--for example, C:\ATO. 
+ 
+    Exceptions: The AUTOSIG.DFN file and the log (AUTOSIG.mth) files,  which 
+    must be in  the same subdirectory  as AUTOSIG itself,  all files may  be 
+    accessed from the drive and path named here. 
+ 
+    "Starting msg # or N" - normally N is used so that all New messages  are 
+        processed.  But a  message number can  be substituted.  This  number 
+        replaces the CIS High Message Number (HMN) and is used by the QS, SF 
+        and RF SIG-commands for the Q,  H and F functions.  For example,  if 
+        you want  to review  all the  messages currently  available, you can 
+        reset this  option to  0.  If  you prefer  to have  the SIG software 
+        maintain your high message number simply type alt-N at the main  ATO 
+        menu. 
+ 
+    "Append message file" - Enter an N to erase the current message file and 
+        create a  new one  whenever messages  are downloaded.   Enter a Y to 
+        accumulate messages  in the  current message  file.  (An alternative 
+        way to accumulate messages  in a file is  to S>ave them as  you read 
+        them within AUTOSIG.)  If  you do enter "Y",  be sure to watch  free 
+        disk space  carefully, and  edit message  files with  your editor or 
+        word processor (or  erase them using  AUTOSIG's K>ill command)  when 
+        space gets short. 
+ 
+    "Log sessions" - Enter  a Y to record  on-line time in a  log file.  The 
+        log file name is AUTOSIG.mmm, where 'mmm' is an abbreviation for the 
+        current month.  Enter an N to disable logging. 
+ 
+    "Stay connected" -  Enter a Y  if you wish  to remain connected  after a 
+
+AUTOSIG Users Guide                                                   Page  23 
+V.   PC Settings and Options 
+______________________________________________________________________________
+
+ H. Setting Up for Your SIGs 
+
+        message upload/download session.  If  you want to visit  other areas 
+        of the SIG for downloading or whatever during the current call  this 
+        option should be set to Y.  Enter an N to disconnect from  CIS after 
+        exiting this particular SIG. (The "AUTO" option keeps you  connected 
+        until you have visited all the specified SIGs, regardless of how you 
+        have set this option.) 
+ 
+    "Send forum ^P"  - Enter a  Y to instruct  ATO to send  a ^P immediately 
+        after a GO  page command.  This  suppresses all CIS  messages before 
+        the Forum "Function:" prompt.   This mode is NOT  recommended simply 
+        for the reason that you may miss important information in the  brief 
+        bulletin. 
+ 
+    "Sections (# or  ALL)" - Leave  this blank if  you intend to  access all 
+        Forum subtopics, or if you prefer  to use the CIS OPtion command  to 
+        manage your subtopics.  Otherwise, enter a list of subtopic numbers. 
+        ATO will only access messages from those sections.  Refer to the CIS 
+        "SS" command for more information.  "PPN file name" - If you wish to 
+        use the AUTOSIG ppn (user id) directory facility enter the  filename 
+        that should be used to store user ids and names. 
+ 
+    When all  the Forum  Configuration Options  are set,  they are  saved by 
+    using the ESCAPE key, and the new forum is added to the Forum  Selection 
+    List. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  24                                                   AUTOSIG Users Guide 
+VI.  Going Online 
+______________________________________________________________________________
+
+ A. Forum Function Menu 
+
+ 
+    Okay, lots  of work  so far  and no  fun.  Now  that the  Host and Forum 
+    configurations are  complete and  correct let's  go online  and access a 
+    SIG. 
+ 
+    Select the Forum you want to visit from the Forum Selection List.   When 
+    you do so, you will see  the Forum Function Menu (figure 5).   This lays 
+    out all the things AUTOSIG can do for you, and the keystroke commands to 
+    give. 
+ 
+
+       Figure 5. Example Forum Function Menu 
+ 
+  Host: CIS2400                  Forum: IbmCom 
++-----------------------------------------------------------------------------+ 
+|     Online Download Functions       |     Offline Message Processing        | 
+|-------------------------------------|---------------------------------------| 
+|  F  Read Forward all messages       |  R  Read and reply offline            | 
+|  Q  Quick Scan message headers      |  D  Download marked messages          | 
+|  H  Scan headers in message order   |  M  scan and Mark msgs offline        | 
+|  J  Scan headers in thread order    |  P  Preview Leave/Reply file          | 
+|-------------------------------------|  S  Send new messages online          | 
+|  T  Read Thread all new messages    |  V  View SAVEd messages offline       | 
+|  U  Read CIS marked messages only   |  W  Write new messages offline        | 
+|  I  Read all messages from this ID  |---------------------------------------+ 
+|  Y  Read all messages to this ID    |  1  AUTO 1st pass   | $  Run ACLS     | 
+|-------------------------------------+  2  AUTO 2nd pass   | K  Delete files | 
+|  G  Go online, terminal mode        |  B  Beep ON/off     | C  Change menus | 
+|  O  Change forum Options            |  L  List bulletins  | PgDn next sig   | 
+|  E  Shell to new copy of COMMAND    |  N  Update DFN file | up/dn next host | 
+|  Z  Send OFF and disconnect         |  X  Exit to system  | ESC  PC options | 
++-------------------------------------+---------------------------------------+ 
+                                      _ 
+                               Select a function 
+ 
+ Memory: 33386             HMN: N              Date: 12-16-87   Time: 00:05:47a 
+_______________________________________________________________________________ 
+ 
+    The menu is  divided into several  different areas.  Across  the top you 
+    see a reminder of  what Forum you will  be accessing, and what  Host you 
+    will be dialing to access it.  You can change the Host from this menu by 
+    using the up and down arrow keys;  and if you've called up the menu  for 
+    the wrong  Forum, you  can find  the right  one using  the PgUp and PgDn 
+    keys.  (Or, if you prefer, hit C for Change Menus; this brings back  the 
+    main menu  from which  you can  select the  Host and  Forum in the usual 
+    way). 
+ 
+    AUTOSIG functions are grouped into  those you want it to  perform online 
+    with CIS, listed  on the left,  and those you  do before or  after a CIS 
+    access, listed on the right. 
+
+
+
+AUTOSIG Users Guide                                                   Page  25 
+VI.  Going Online 
+______________________________________________________________________________
+
+ B. Function Menu Commands 
+
+ 
+
+       (B) Beep on/off toggle 
+ 
+      This toggles the BEEP that ATO sends when a session sequence or  error 
+      has occurred.  The default is BEEP on. 
+ 
+
+       (C) Change menus 
+ 
+      Press C  to switch  to the  Main menu  This is,  among other things, a 
+      quick way to select another SIG. 
+ 
+
+       (1) AUTOmatic first pass 
+
+       (2) AUTOmatic second pass 
+ 
+      Invokes AUTO routines to access several SIGs automatically in one  CIS 
+      session--discussed in detail below. 
+ 
+
+       (E) Shell to new copy of COMMAND 
+ 
+      Invokes DOS so that you may run other programs or enter DOS  commands. 
+      ATO  remains  active  and  in  memory,  but the communications line is 
+      suspended.  To  return to  ATO, enter  the EXIT  command to DOS. Shell 
+      does not  work on  all systems.   You should  be using  PC DOS 3.0, or 
+      later,  and  have  at  least  224K  plus  the DOS program size of free 
+      memory. 
+ 
+
+       (G) Go online, terminal mode. 
+ 
+      Press G when you want to use AUTOSIG as a simple terminal program, for 
+      example when downloading from or uploading to a SIG DL. ATO will  dial 
+      CIS and log on,  and then leave you  to issue your own  commands.  See 
+      below  for  details  about  the  function-key  and  alt-key   commands 
+      available in  this mode.   To leave  terminal mode  and use  AUTOSIG's 
+      automatic functions, enter ctrl-D or ctrl-X. 
+ 
+
+       (K) Delete file 
+ 
+      Use this option to erase/delete the message (M), save (S) file, header 
+      (H) file and bulletin  file for the current  Forum.  You are asked  to 
+      confirm the request and may respond with an N if you change your mind. 
+ 
+
+       (L) List bulletins 
+ 
+      If you have  supplied a bulletin  file name in  the Host Configuration 
+
+Page  26                                                   AUTOSIG Users Guide 
+VI.  Going Online 
+______________________________________________________________________________
+
+ B. Function Menu Commands 
+
+      menu, press L to read any bulletins stored in it. 
+ 
+
+       (N) Update DFN file. 
+ 
+      This function  writes all  ATO information  to the  DFN file.  This is 
+      normally done when ATO is properly exited, but you can use it whenever 
+      you want to be sure, for  whatever reason, that the DFN file  has been 
+      updated. 
+ 
+
+       (O) Change Forum Options 
+ 
+      Press  O  to  switch  to  the  Forum Configuration menu, where you can 
+      change the settings  for the current  SIG (or, by  using the PgUp  and 
+      PgDn keys, for any other SIG). 
+ 
+
+       (P) Preview Leave/Reply file. 
+ 
+      Press  P  to  "preview"  the  replies  and  original messages you have 
+      already written, so that you can  revise or delete any of them  if you 
+      wish before leaving them in the SIG. ATO loads [SIGname]L.ATO file  in 
+      the message editor and presents the messages to you one by one.   When 
+      you  have  disposed  of   the  last  message,  AUTOSIG   rewrites  the 
+      [SIGname}L.ATO file to include your changes. 
+ 
+      You may use the preview  function to change addressee and  other vital 
+      data. 
+ 
+
+       (S) Send new messages online. 
+ 
+      Press S to send the original messages and replies in [SIGname]L.ATO to 
+      the SIG. 
+ 
+      Autosig provides insurance in case you have replied to a message  that 
+      has been deleted before  you got back online.   If CIS can't find  the 
+      original message, your  reply will be  left as if  it was an  original 
+      message to the same addressee and with the same subject. 
+ 
+
+       (V) View SAVEd messages. 
+ 
+      If you  have saved  individual messages  while reading  them using the 
+      S>ave command, you can view them from within AUTOSIG by pressing V. 
+ 
+      After you have used AUTOSIG to go online, you may find that each Forum 
+      menu  has  one  or  more  of  the  Offline  Message Processing options 
+      highlighted.  That indicates that there  is an ATO file which  you can 
+      read or otherwise process by pressing that letter. 
+ 
+
+AUTOSIG Users Guide                                                   Page  27 
+VI.  Going Online 
+______________________________________________________________________________
+
+ B. Function Menu Commands 
+
+      Also, at the bottom of the  menu a "suggestion" letter will appear  in 
+      the blank above "Select a function."  Normally, the letter is the  one 
+      you would  press anyway  to perform  the next  logical step in dealing 
+      with SIG messages; for instance,  if you've just finished using  the D 
+      command to download messages, the letter R (for Read) will not only be 
+      highlighted in the menu but will appear at the bottom, where it can be 
+      selected by hitting the enter key. 
+ 
+
+       (W) Write new messages offline 
+ 
+      Not only replies but original messages can be prepared offline.  Press 
+      W and you are placed in the Message Editor--discussed below--and asked 
+      to name the addressee and supply a subject description. 
+ 
+
+       (X) Exit to system 
+ 
+      When you have  finished an AUTOSIG  session, and when  you have logged 
+      off from CIS, press X to  leave AUTOSIG and return to the  DOS prompt. 
+      If you are still connected when you press X, you will see this message 
+      at the bottom of the screen: 
+ 
+         "Exiting to DOS without logging off. OK? (y/N)" 
+ 
+      Hit enter to  return to the  forum menu where  you can then  use the Z 
+      (send OFF and disconnect) command, or, if you really want to exit  ATO 
+      while connected reply with a 'Y'. 
+ 
+
+       (Z) Send OFF and disconnect 
+ 
+      This command allows you to send  the OFF command to CIS and  "hang up" 
+      the phone.  Use  this option if  you are finished  with a CIS  access, 
+      have the Forum Function menu on screen, and see the "PC is  connected" 
+      message at the  bottom of the  menu.  There is  a pause of  about four 
+      seconds after disconnection  so that you  may see any  final messages, 
+      such  as  your  connect  time,  followed  by  the  prompt "[Disconnect 
+      detected]".  Press ENTER to return to the Function Menu. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  28                                                   AUTOSIG Users Guide 
+VI.  Going Online 
+______________________________________________________________________________
+
+ C. Online Download Functions 
+
+ 
+      The  most  commonly  used  methods  for  reading  sequences of CIS SIG 
+      messages are available  on this menu.   Certain others, like  RI (Read 
+      Individual msg#) and RS (Read Search), are available only in  terminal 
+      mode. 
+ 
+
+       (D) Download marked messages 
+ 
+      When  you  have  completed  marking  the message headers, download the 
+      actual messages by pressing D. AUTOSIG  will transmit a RT # ONLY  (if 
+      the  headers  reflect  threads)  or  RI  #  (if  the  headers indicate 
+      individual messages).  The downloaded messages are captured in a  file 
+      named [SIGname]M.ATO--M for messages--that can be read and replied  to 
+      within AUTOSIG. 
+ 
+
+       (F) Read Forward 
+ 
+      Downloads all messages  in message number  order by using  the CIS SIG 
+      software RF (Read Forward)  command.  The messages are  read beginning 
+      with  the  High  Message  Number  specified in the Forum configuration 
+      option. 
+ 
+
+       (Q) Quick Scan 
+ 
+      Downloads  message  headers  using  the  CIS Quick Scan command.  Each 
+      message header  represents one  or several  messages in  a thread, and 
+      includes the  message number  (for the  first in  the current thread), 
+      subject, subtopic, and number of replies only. 
+ 
+      When all of the message  headers have been downloaded, ATO  returns to 
+      the Forum Function  Menu, where you  can use the  (M)ark function (see 
+      below) to select the messages you want to download and read. 
+ 
+ 
+
+       (H) Scan Headers in message order 
+ 
+      is similar  to Q,  except that  the message  headers are downloaded in 
+      message  number  order  using  CIS's  Scan  Forward  command, and each 
+      represents only one message each.  These headers include the From, To, 
+      and Date fields in addition to those that are included when you  quick 
+      scan. 
+ 
+
+       (J) Scan headers in thread order 
+ 
+      J is similar to H except  that headers are downloaded in thread  order 
+      rather than in numerical order. 
+ 
+
+AUTOSIG Users Guide                                                   Page  29 
+VI.  Going Online 
+______________________________________________________________________________
+
+ C. Online Download Functions 
+
+
+       (T) Read Thread 
+ 
+      Downloads all messages in thread order starting with the high  message 
+      number (or N) that you  supplied in the Forum Configuration  menu.  In 
+      effect, AUTOSIG issues an RTn (Read Thread) command. 
+ 
+
+       (U) Download marked messages to you 
+ 
+      is the equivalent of CIS's Read Marked from the Function: prompt.   It 
+      will read all new messages on the SIG that are addressed to you. 
+ 
+
+       (I) Download messages you sent 
+ 
+      Downloads messages  that you  have sent  by using  the RS command with 
+      your ppn. 
+ 
+
+       (Y) Download all messages to you 
+ 
+      Downloads all the messages addressed to your ppn that are still on the 
+      message  board,  using  the  Read  Search  command and specifying your 
+      userid in the "To:" field. 
+ 
+      U, I, and Y are useful for a quick check to see if a message you  left 
+      has  been  read  by  the  addressee  or  had any replies, or to delete 
+      messages to or  from you that  have served their  purpose and have  no 
+      general interest (or are  private and therefore inaccessible  to other 
+      SIG members).  They are otherwise not a very efficient way to use  the 
+      Forums or Autosig, so they are not prompted. 
+ 
+
+    D. Intervening in an AUTOSIG session 
+ 
+    During automatic operation, any  keyboard input (except ESCape)  is sent 
+    to CIS. Thus, if an error occurs, you can type in the correct command or 
+    response.  Often, when CIS responds to your typed command, AUTOSIG  will 
+    pick up its automatic routine and carry it through. 
+ 
+    If  you  wish  to  stop  automatic  processing,  for example if problems 
+    develop that don't stop AUTOSIG by themselves, hit the ESCape key  twice 
+    to enter Terminal Mode and regain control. 
+ 
+
+
+
+
+
+
+
+
+Page  30                                                   AUTOSIG Users Guide 
+VI.  Going Online 
+______________________________________________________________________________
+
+ E. Function Menu Special Keys 
+
+ 
+      In addition to the labelled  letter keys, these special keys  are also 
+      available from the Forum Function Menu: 
+ 
+     ESCape        You may  select the  PC Options  Menu, for  reconfiguring 
+                   your default options, by using the ESCape key. 
+ 
+ 
+     PgUp          Moves to the previous ATO Forum entry 
+     PgDn          Moves to the next ATO Forum entry 
+ 
+     left arrow    Moves to the previous ATO Forum entry 
+     right arrow   Moves to the next ATO Forum entry 
+ 
+ 
+     up arrow      Moves to the previous ATO Host entry 
+     down arrow    Moves to the next ATO Host entry 
+ 
+ 
+     alt-M         Invokes the PPN Address Book processor 
+     alt-N         Causes the HMN to be changed to N 
+     alt-W         Switches from 43 to 25 line display mode 
+ 
+ 
+     F1            Invokes the AUTO /1 set-up menu 
+     F2            Invokes the AUTO /2 set-up menu 
+ 
+     F3            Invokes the Forum options menu for editing Forum items 
+     F4            Invokes the Host options menu for editing Host items 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  31 
+VI.  Going Online 
+______________________________________________________________________________
+
+ F. Offline Message Processing 
+
+ 
+      The various menu items are discussed here in the sequence in which you 
+      are most likely to use them. 
+ 
+
+       (M) Scan and mark messages offline 
+ 
+      This step normally follows the downloading of message headers done  by 
+      the ATO Q scanning command.  Press M and AUTOSIG will list the headers 
+      one screen full at a time, as in Figure 6: 
+ 
+
+           Figure 6. Example (M)ark Screen 
+ 
+ 
+     Marking 'IbmHW' messages:  68 headers; HMN=104021       TOP   1-23 
+ 
+103900-  0:   AT-Compatible                S 7 / Compatibles (H) 
+103901-  0:   VGA MONITOR<>VCR             S 3 / Video/EGA (H) 
+103902-  0:   Laptop with bus??            S 6 / Laptops (H) 
+103903-  0:   HARD DISK DRIVES             S 1 / Disk/Disk Utils (H) 
+103904-  0:   HardCard + Power?            S 1 / Disk/Disk Utils (H) 
+103905-  4:   Miniscribe 6085??            S 1 / Disk/Disk Utils (H) 
+103906-  0:   3 1/2 in floppies            S 1 / Disk/Disk Utils (H) 
+103907-  4:   Epson LQ850 or ?             S 2 / Printers/Utils (H) 
+103908-  1:   DV/EMS                       S 4 / Misc. Hardware (H) 
+103910-  0:   Upgrade XT class machine     S 4 / Misc. Hardware (H) 
+103911-  0:   Laptop hard disk             S 6 / Laptops (H) 
+103913-  1:   EVA/480                      S 3 / Video/EGA (H) 
+103914-  0:   EVA/480                      S 3 / Video/EGA (H) 
+103915-  0:   MegaView Availability        S 3 / Video/EGA (H) 
+103916- 17:   T1100+ Travel                S 6 / Laptops (H) 
+103917-  1:   Compaq 386                   S 7 / Compatibles (H) 
+103918-  0:   Convertible                  S 1 / Disk/Disk Utils (H) 
+103921-  0:   AST286 and Brooklyn Brid     S 7 / Compatibles (H) 
+103923-  1:   EEMS memory                  S 4 / Misc. Hardware (H) 
+103924-  1:   102821 gone prematurely?     S 8 / Village Inn (H) 
+103925-  0:   3.5" disk problems           S 1 / Disk/Disk Utils (H) 
+103926-  0:   Motherboards                 S 7 / Compatibles (H) 
+103927-  0:   Tosh1000                     S 6 / Laptops (H) 
+ 
+      M>ark  Enter>unmark  ESCape>abort  Q>uit when finished  S>ort 
+ 
+  ------------------------------------------------------------------------------ 
+ 
+    Use the  up/down cursor  control keys  to select  messages to be marked. 
+    The PgDn key displays the  next screen full; PgUp displays  the previous 
+    screen full; 
+ 
+    HOME positions to the top line  on the current screen; END positions  to 
+    the last entry on the screen. 
+ 
+
+Page  32                                                   AUTOSIG Users Guide 
+VI.  Going Online 
+______________________________________________________________________________
+
+ F. Offline Message Processing 
+
+    Press M  to mark  a message  to be  downloaded.  Press  any other key to 
+    unmark a message so that it will not be downloaded. 
+ 
+    You may S>ort the  headers by section number  at any time while  you are 
+    marking  them.   Once  the  headers  have  sorted, they cannot be sorted 
+    again.    The   sort   effects   the   order   that   the   messages are 
+    downloaded. That  is,   unsorted  headers   result  in   messages  being 
+    downloaded in chronological order, while sorted headers produce messages 
+    in section number order. 
+ 
+    When the last screen-full of message headers is displayed, the top  line 
+    of the screen includes the word BOTTOM: 
+ 
+           Marking messages:  28 headers; HMN= 28580        BOTTOM   6-28 
+ 
+    The menu at the bottom of the  screen offers two ways to leave the  Mark 
+    function.  Press Q for Quit and  your markings will be recorded for  use 
+    when ATO  next accesses  the SIG.  The Esc  key aborts  the function and 
+    discards your marks.  Important tidbit here!  The Quit function  deletes 
+    the header file so all desired headers must be marked in one  "session". 
+    If you mark some, exit and then return for further marking the file will 
+    no longer exist. 
+ 
+    If you have elected to use the  H or J command the following display  is 
+    presented: 
+ 
+                   Msg# xxxxxx S3/Video/EGA (H) 
+                        19-Dec-87  23:52:29 
+                    Sb: VGA MONITOR<>VCR 
+                    Fm: Sam Jones 78226,8652 
+                    To: D. Knuth 78212,308 
+ 
+ 
+                    M>ark one, T>hread, Q>uit, or Enter for Next 
+ 
+    You  may  M>ark  the  message  to  download  the single message, use the 
+    T>hread command  to download  the entire  thread, Q  to quit  of hit the 
+    enter key to continue. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  33 
+VI.  Going Online 
+______________________________________________________________________________
+
+ F. Offline Message Processing 
+
+
+       (D) Download marked messages 
+ 
+      When  you  have  completed  marking  the message headers, download the 
+      actual messages by pressing D. AUTOSIG  will transmit a RT # ONLY  (if 
+      the  headers  reflect  threads)  or  RI  #  (if  the  headers indicate 
+      individual messages).  The downloaded messages are captured in a  file 
+      named [SIGname]M.ATO--M for messages--that can be read and replied  to 
+      within AUTOSIG. 
+ 
+
+       (R) Read and reply offline 
+ 
+      Press R and the messages in [SIGname]M.ATO will be displayed, one at a 
+      time, for you to  read and, if you  wish, to answer.  If  a message is 
+      too long to fit on a screen, a "more" prompt will appear in the  lower 
+      right hand side  of the screen.   Hitting the Return  key will display 
+      the rest of the message. 
+ 
+      Here is how to navigate through the sequence of messages: 
+ 
+          <enter> to display the next screen 
+          <PgDn>  to skip to the next message 
+          <PgUp>  to display the previous message 
+          <HOME>  to display the first message 
+          <END>   to display the last message 
+          <X>     to skip out of the current thread and go to the next 
+ 
+      The following option list is displayed at the end of each message: 
+ 
+    Msg: #1234 <Enter> Quit Bak/Top/End/Agn Loc/Nxt Ma Hdr/Pr/Sav Re/Ua/Join 
+  __________________________________________________________________________ 
+ 
+  Q>uit  terminates  the  (R)ead  function  and  returns  you  to  the Forum 
+         Function Menu. 
+ 
+  B>ack  displays  the  message  immediately  before  the  current  message. 
+         Multiple messages  can be  displayed by  issuing the  B>ack command 
+         several times. 
+ 
+  T>op   returns you to the top of the message file, displaying the  message 
+         in the file.  You may also use the HOME key for this purpose. 
+ 
+  E>nd   is the  opposite of  T>op, taking  you to  the last  message in the 
+         file.  You may also use the END key. 
+ 
+  A>gain redisplays the same message--useful when you are reading the second 
+         page of a long message and want to get back to page 1. 
+ 
+  L>ocate finds a string in the current message file.  The L>ocate  function 
+         searches  (forward  only)  throughout  the  whole  file, not simply 
+         within the particular message shown onscreen.  When asked to  enter 
+
+Page  34                                                   AUTOSIG Users Guide 
+VI.  Going Online 
+______________________________________________________________________________
+
+ F. Offline Message Processing 
+
+         the text string to  be located, you may  type up to 128  characters 
+         including blanks,  commas, or  any other  special characters.   The 
+         search   is   case-sensitive;   that   is,   you   must   match the 
+         capitalization of the text you are searching for. 
+ 
+  N>ext  repeats the L>ocate search until the end of the file is reached. 
+ 
+  M>ail  is like  the R>eply  command (see  below) except  that the reply is 
+         mailed to an EasyPlex user.  AUTOSIG issues a MA command instead of 
+         the S command. 
+ 
+  H>dr   causes a  printer formfeed  and prints  the current  message to the 
+         printer.  This is handy when you want a single message on  hardcopy 
+         as in comparison to the P>rint command. 
+ 
+  P>rint copies the current message to the printer.  A title line is printed 
+         at the top of  the first page, giving  the name of the  SIG and the 
+         current time  and date.   The system  printer, LPT1,  is used.  ATO 
+         will send a form feed when  it thinks that a printer page  is full. 
+         Use ATO's PC  Options menu to  specify how many  lines per page  to 
+         print. 
+ 
+  S>ave  appends  the  current  message  to  a file named [SIGname]S.ATO for 
+         archiving. 
+ 
+         There are three ways to reply to a message, indicated by the 
+         Re/Ua/Join series of commands: 
+ 
+  R>eply addresses your new message to the sender of the original, using the 
+         name  and  PPN  as  they  appear  there, and also uses the original 
+         message's subject description.  This continues the thread to  which 
+         the original message belongs. 
+ 
+  U>A    uses the ppn of  the sender of the  original message, but lets  you 
+         supply a new subject description.  This begins a new thread. 
+ 
+  J>oin  lets you  send a  message to  the addressee  of the  message you're 
+         reading; it  lets you  "join" the  conversation in  a different way 
+         than by replying.  Join lets you supply a new subject description. 
+ 
+        If you choose to reply using any of these options, you are placed in 
+        the Message Editor--discussed in detail later in this manual. 
+ 
+        Upon completing your reply, it is stored in the [SIGname]L.ATO  file 
+        to be  sent ("left")  when you  go online,  and the  next message is 
+        automatically presented for you to read. 
+ 
+  D>elete - If you are replying to a message addressed specifically to  you, 
+         you may have it  deleted at the same  time that AUTOSIG posts  your 
+         reply in the SIG, by pressing D while reading it. 
+ 
+ 
+
+AUTOSIG Users Guide                                                   Page  35 
+VI.  Going Online 
+______________________________________________________________________________
+
+ F. Offline Message Processing 
+
+    Not all  commands are  available for  every message.   For example,  the 
+    D>elete command  is offered  only for  messages you  wrote or  that were 
+    addressed to you.  Similarly, if  you're reading a S>ave file,  which is 
+    archival, rather than an active file, the various functions for replying 
+    are not available. 
+ 
+    A note not related to ATO  but on general SIG "procedure".  It's  a good 
+    idea to allow a message addressed to you so that others may benefit from 
+    it.  This is especially true if you've posted a question and delete  all 
+    replies.  Others will see that you  didn't get a reply and it  generally 
+    turns into a wheel spinning contest. 
+ 
+    It is consider good form to delete messages that wouldn't be of interest 
+    to others.  This would include simple 'thanks' type messages and private 
+    messages. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  36                                                   AUTOSIG Users Guide 
+VI.  Going Online 
+______________________________________________________________________________
+
+ G. AUTOSIG Working Files 
+
+ 
+    In addition to the AUTOSIG.DFN file, ATO creates quite a few files while 
+    it runs.   Each file  has a  name in  this format: [SIGname]X.ATO, where 
+    "SIGname" is the name you have given to a CompuServe forum in the  Forum 
+    Configuration menu  and X  is a  one-letter code  indicating the  file's 
+    function.  For example, file IBMCOML.ATO is a file of messages you  have 
+    written that are to be "left" in the IBMCOM Forum message board. 
+ 
+ 
+    H - message headers,   the result  of functions  Q and  H. Erased  after 
+        headers have been marked  and the corresponding messages  downloaded 
+        from CIS by AUTOSIG. 
+ 
+    M - downloaded messages, from functions F, T, D, U, I, A, and Y. 
+ 
+    L - messages  to be left  on CIS, from  function (W) or  from one of the 
+        reply options of functions (R or V). Erased after messages have been 
+        transmitted by AUTOSIG. 
+ 
+    S - an archival message file, from the S>ave option of function (R). 
+ 
+    R - a temporary file  created for downloading messages and  erased after 
+        those messages have been entered in the M file. 
+ 
+ 
+    If you use the archive command (alt-F4) in the editor to save a  message 
+    that you have  written, the file  created is named  "signame.FIL", where 
+    the "signame" is the current Forum name. 
+ 
+    These files are searched for on the current drive and in the current 
+    directory, unless you supply an optional DOS environment setting for 
+    the ATO variable. For example, to tell ATO to use the C drive and the 
+    path named ATO, you would supply the DOS command: 
+ 
+                SET ATO=C:\ATO 
+ 
+    before starting ATO. The bulletin file always uses the current drive and 
+    directory. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  37 
+VI.  Going Online 
+______________________________________________________________________________
+
+ H. CIS High Message Number 
+
+ 
+    The starting message # (or "HMN") field on the Forum Configuration  menu 
+    is automatically updated with the last message number scanned by AUTOSIG 
+    using the Q  or H command.   This prevents ATO  from repeating the  same 
+    headers the next time it is  used to scan.  It is necessary  because the 
+    CIS  scanning  commands  SF(N)  and  QS,  which AUTOSIG uses for its own 
+    functions, do not update the High Message # in the SIG. 
+ 
+    It may be that you find it  easier to have the SIG software manage  your 
+    high message number.   If so hit  Alt-N at the  main ATO menu  and ATO's 
+    internal high message number will be reset to N>ew. 
+ 
+    Although CompuServe assigns no message numbers to EasyPlex messages, ATO 
+    automatically numbers Email messages for reference purposes, and updates 
+    its  HMN  field  accordingly.   You  may  choose  any starting number by 
+    editing the forum options for your Email entry. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  38                                                   AUTOSIG Users Guide 
+VII. Special Processing 
+______________________________________________________________________________
+
+ A. Multiple SIG Sessions 
+
+ 
+    AUTOSIG offers two ways to access several SIGs during one logon.  To  do 
+    it  automatically,  see  the  section  on  "AUTO".  You can also use the 
+    O>ptions menu to instruct AUTOSIG to stay connected as you move from SIG 
+    to SIG. 
+ 
+    You may "run" functions on multiple SIG's with AUTOSIG, but it  requires 
+    that  you  set   the  "Stay  Connected"   option  in  the   initial  SIG 
+    configuration to "Y(es)".  The procedure for multiple SIG actions during 
+    one connect sessions are as follows: 
+ 
+        1) Select the first SIG you want to visit.  Make sure that the  stay 
+           connected option is set to yes. 
+ 
+        2) Select the function menu option to perform the task you want. 
+ 
+        3) After the call is placed and the RUN option is executed you  will 
+           be presented with  the main AUTOSIG  menu again.  The  message in 
+           the upper right hand of the screen should display the message "PC 
+           is connected".  You are still connected. 
+ 
+        4) Use the PgDn key (change to another SIG) to bring up the new  SIG 
+           configuration files on the disk. 
+ 
+        5) Select the letter for another SIG. 
+ 
+        6) After the new SIG is selected enter the option for that SIG (i.e. 
+           Q,F,H,T,S, etc.). 
+ 
+        7) Repeat this process for as many SIG's as you want to visit. 
+ 
+        8) Unless the last SIG you visit has the "Stay connected" option set 
+           to "N(o)" in the configuration, select the Z option from the main 
+           AUTOSIG menu to send CIS a OFF command to disconnect. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  39 
+VII. Special Processing 
+______________________________________________________________________________
+
+ B. AUTO - Automatically Access Several SIGs 
+
+ 
+    AUTO is a feature of ATO that enables an internally-generated batch file 
+    for AUTOSIG.  Menu-driven,  it permits specifying  a routine for  ATO to 
+    follow for online sessions.  The batch  file is stored in the DFN  file. 
+    Refer to Figure 7 for an example of the AUTO Build menu. 
+ 
+    There are three parts to AUTO: 
+ 
+        -  the AUTO list, which you create using the ATO menu editor 
+ 
+        -  the first AUTO pass, also referred  to as /1 or 1 or F1; in which 
+           ATO  automatically  accesses  CIS  to  download  Email  messages, 
+           messages headers, or message threads 
+ 
+        -  the second AUTO pass, also referred to as /2 or 2 or F2; in which 
+           ATO processes your  offline requests such  as sending replies  or 
+           download marked messages 
+ 
+    If you  have never  defined an  AUTO list,  you will  need to select the 
+    Modify AUTO  list item  from the  Primary menu.   You are then presented 
+    with an AUTO  list of forums  and commands.  Move  the cursor next  to a 
+    forum you  wish to  access automatically.   Enter the  letters for  each 
+    command  that  you  wish  to  perform,  e.g.   Q  to download Quick Scan 
+    headers.  You  may delete  a forum  from the  AUTO list  by entering all 
+    blanks after the  forum name.  Press  the ESCape when  you are finished, 
+    and you are returned to the  Primary menu.  Your AUTO list has  now been 
+    stored in the AUTOSIG.DFN file. 
+ 
+    AUTO can be enabled in many ways: by using " /1" as part of your command 
+    to load  AUTOSIG, e.g.,  "AUTOSIG /1".   (The space  before the slash is 
+    necessary.)  Use the " /1" extension only if a routine has already  been 
+    created.  Or you can  select the pass 1  (F1) or pass 2  (F2) items from 
+    the Primary  menu, or  use the  1 or  2 commands  from the main Function 
+    menu. 
+ 
+    Any routine created is saved  and becomes permanent until changed.   ATO 
+    can then be run normally  or with the " /1"  or " /2" switches, or  from 
+    the F1  or F2  keys at  the Primary  menu.  The  /1 and  /2 switches are 
+    different  from  the  F1  and   F2  keys.   The  switches  invoke   AUTO 
+    immediately. 
+ 
+    The F1 and F2 keys require that  you enter the time of day when  AUTO is 
+    to execute.  If you just press the <enter> key, AUTO begins immediately. 
+    Otherwise, you may enter the time  and/or day when AUTO is to  run.  The 
+    time must be supplied  in the format "hh:mm"  where "hh" is the  hour in 
+    military/24 hour format, and "mm"  is the minutes.  For example,  if you 
+    want AUTO pass 1 to begin at 4:35 pm, you would enter 16:35. 
+ 
+    If AUTO is to start on another  day, you supply the date after the  time 
+    in the format ",mm-dd" where the  coma is required between the time  and 
+    date, and "mm" is the current  month number (e.g. 9 for September),  and 
+    the "dd is the day of the month.  For example, to start AUTO at 4:35  pm 
+
+Page  40                                                   AUTOSIG Users Guide 
+VII. Special Processing 
+______________________________________________________________________________
+
+ B. AUTO - Automatically Access Several SIGs 
+
+    on September 9, enter "16:35,09-09" when asked "When?". 
+ 
+    AUTO will S>end or D>ownload messages automatically as well.  After  the 
+    first pass with AUTO, the "2" option can be used.  Selecting this causes 
+    AUTO to scan your disks to see if there are messages waiting to be  sent 
+    or downloaded.  If there are, ATO will go online again to perform  those 
+    functions.  If you have returned to DOS in the interim, the extension  " 
+    /2" will do the same thing. 
+ 
+    AUTO stays in this  mode until you return  to DOS. Because of  this, you 
+    can use  the (Q) option for  a quick  scan; use  " /2"  to download  the 
+    messages; R>ead them  offline; compose replies  offline; and then  use " 
+    /2" again to S>end replies. 
+ 
+    IMPORTANT: Whenever  you select  AUTO, whether  /1 or  /2, it checks all 
+    forums in the AUTO list which have  commands to see if there are any (D) 
+    or (S) files.  If a forum  has all blanks,  it is not  accessed, whether 
+    there are (D) or (S) files for it or not. 
+ 
+    If you'd prefer to use ATO without AUTO, it can still help.  You can use 
+    " /2"  anytime you  want to  go online  to download  messages you marked 
+    offline, or to send  new messages.  It's a  good way to see  how quickly 
+    AUTO works, and you won't be taken back online unless you have a live D> 
+    or (S) file.  In use, the main menu item of choice offline becomes "C". 
+ 
+    Also, your O>ption choice of "Y" or "N" for "Stay connected y/n" in your 
+    AUTOSIG.DFN file is overridden by AUTO, so there's no need to change  it 
+    from what you normally use 'manually.'  You can exit out of AUTO  at any 
+    time by  hitting <Esc>  <Esc>.  If  you do  it before  your modem  sends 
+    "CONNECT", AUTO will hang up and return you to the main menu; otherwise, 
+    from what you normally use 'manually.'  You can exit out of AUTO  at any 
+    ready for keyboard input. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  41 
+VII. Special Processing 
+______________________________________________________________________________
+
+ B. AUTO - Automatically Access Several SIGs 
+
+
+       Figure 7. AUTO Set-Up Menu 
+ 
+ 
+                                        | A CLM_____        | 
+         Command letter options         | B DDJ_____        | 
+    ---------------------------------   | C Email___f       | 
+     F  Read Forward all messages       | D HP______        | 
+     Q  Quick Scan message headers      | E IBMCOM__u       | 
+     H  Scan Forward message headers    | F IBMHW___u       | 
+     T  Read Thread all new messages    | G IbmNew__u       | 
+     U  Read CIS-marked messages only   | H IBMSW___u       | 
+     A  Read new messages to ALL        | I ProSIG__        | 
+     I  Read all messages from this ID  | J DDJFOR__        | 
+     Y  Read all messages to this ID    | K HamNet__u       | 
+    ---------------------------------   | L IBMjr___        | 
+     Next to the forum name, enter      | M Borland_        | 
+     the letter(s) for each function    | N MACDEV__        | 
+     to perform, up to five commands.   | O IPX_____        | 
+    ---------------------------------   | P CO300___        | 
+                                        | Q MSOFT___        | 
+      Press ESCape when finished        | R *none*__        | 
+                                        | S                 | 
+                                        | T                 | 
+ 
+ 
+  ------------------------------------------------------------------------------ 
+ 
+ 
+
+       Figure 8. AUTO /1 and /2 Display 
+ 
+ 
+        Building AUTO list             |  A                | 
+                                       |  B                | 
+   When? ENTER to run immediately,     |  C Email___f      | 
+      or  HH:MM,MM-DD [13:30,01-15]    |  D                | 
+      or ESCape to cancel.             |  E IBMCOM__t      | 
+                                       |  F IBMHW___q      | 
+                                       |  G IbmNew__q      | 
+                                       |  H IBMSW___uq     | 
+                                       |  I                | 
+                                       |  J                | 
+                                       |  K                | 
+                                       |  L                | 
+                                       |  M                | 
+
+
+
+
+
+
+
+Page  42                                                   AUTOSIG Users Guide 
+VIII.  EasyPlex (E-Mail) Operation 
+______________________________________________________________________________
+
+ A. Setup and Operation 
+
+ 
+    Although SIG and  Forum messages are  one way of  communicating when you 
+    know that  the addressee  will check  the forum,  AUTOSIG makes  sending 
+    messages via CIS's electronic  mail system ("EasyPlex") simple.   It's a 
+    good idea to use EasyPlex when you're not sure if the recipient is going 
+    to be on the SIG in time  to pick up the message before it  scrolls off. 
+    In AUTOSIG's  Email routine,  messages are  reformatted so  they can  be 
+    handled just like SIG messages.  You may also send EMAIL by composing  a 
+    reply to a forum message and then using the M or MA option. 
+ 
+    When you  use AUTOSIG  for the  first time,  or if  your main drive disk 
+    doesn't have  a .DFN  file created  by AUTOSIG,  the menu  will offer at 
+    least two  selections: IBMCOM  and EMAIL.   Instructions for  IBMCOM are 
+    elsewhere.  Select the menu letter for EMAIL (probably 'B'), then select 
+    the Edit HOST Options  item, F4. You are  presented with a Host  Options 
+    menu for editing.  Change  the CIS phone number  and enter your ID#  and 
+    password.  The 'Forum name' must  contain "MAIL", "Mail" or "mail";  the 
+    CIS page number must be "EASYPLEX" or "EASY" for this part of AUTOSIG to 
+    work correctly. 
+ 
+    Next, go online  normally and set  the options as  describted earlier in 
+    this manual.  The importance of the set up can't be stressed enough,  if 
+    they aren't properly set up ATO just won't work. 
+ 
+    With the correct parameters, EasyPlex will appear to be identical to the 
+    SIGs, with only a couple of exceptions: 
+ 
+        - The "To:" prompt will only accept a CIS ID number.  If you forget, 
+          AUTOSIG will remind you. 
+ 
+        - Some AUTOSIG menu options, because of the way EasyPlex works,  are 
+          not available.  <Q>uick scan  and <M>ark,  for example  don't work 
+          with EasyPlex. 
+ 
+        - Email messages are numbered  by ATO beginning with number  1.  You 
+          may  change  this  starting  number  by  selecting  the Edit Forum 
+          Options item from the Primary menu, and changing the High  Message 
+          Number (HMN) for your EMAIL forum. 
+ 
+    ATO may contain a SIG defined for Email, even if you never intend to use 
+    this feature.  The name of the 'SIG' can be changed, but it must contain 
+    "MAIL", "Mail", or "mail". 
+ 
+    If ATO freezes while using the Email function, it's probably because you 
+    haven't entered your name in the EasyPlex address book (see above). 
+ 
+    The prompt character is not used by ATO during Email operation. 
+ 
+    Binary  EMAIL  messages  are  automatically  downloaded  using the CIS B 
+    protocol.  The  resulting file  has a  name of  the form  "EMAILMSG.nnn" 
+    where 'nnn' is the message number assigned by ATO. 
+ 
+
+AUTOSIG Users Guide                                                   Page  43 
+IX.  ATO Terminal Mode 
+______________________________________________________________________________
+
+ A. Overview 
+
+ 
+    In addition  to automatic  access to  CompuServe, ATO  can be  used as a 
+    simple terminal program.  This enable you to 
+ 
+               - go to other CIS areas 
+               - upload or download files from DL data libraries 
+               - save CIS information in a disk file 
+               - use split screen in a COnference 
+ 
+    Terminal mode  in entered  by selecting  function option  (G).  You  are 
+    given  the   option  to   automatically  logon   to  CIS.   The  current 
+    configuration setting is  used for dialing  and page information.   When 
+    you enter the  SIG via the  "Go on-line" function  ATO sends the  string 
+    "OP;SED;SM N ;S" which will put you in non stop mode.  You may  manually 
+    send OP;SM A;S to put you back into stop between message mode. 
+ 
+    Terminal mode  is also  entered when  the "ESCape"  key is entered twice 
+    from  the  keyboard  while  ATO  is  online.  To exit terminal mode, and 
+    return to the Function Menu, enter a "ctrl-D" key combination.  You  are 
+    asked: 
+ 
+                  "Have you left forum-name? (y/N) 
+ 
+    If you went to another forum while in terminal mode, reply Y. Otherwise, 
+    press enter.  If you have set "Stay connected" in your forum options  to 
+    No, you are  asked: "Stay connected?   (Y/n)".  Reply Y  if you want  to 
+    stay connected and access more forums.  Otherwise, reply N and ATO  will 
+    log you off. You can avoid this prompt by using ctrl-X instead of ctrl-D 
+    to return to the main Forum function menu. 
+ 
+    If your terminal is defined as a Vidtex terminal, ATO recognizes most of 
+    the special escape sequences for clearing the screen and positioning the 
+    cursor.   Please  note  that  Vidtex  escape sequences are NOT processed 
+    until  you  enter  terminal  mode!    This  is  done  only  to   improve 
+    performance.  Once you  are on-line in  terminal mode all  Vidtex escape 
+    sequences will be executed. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  44                                                   AUTOSIG Users Guide 
+IX.  ATO Terminal Mode 
+______________________________________________________________________________
+
+ B. Defining Function Keys 
+
+ 
+    The keyboard keys F1 through F10 are available as Program Function Keys. 
+    Pressing one of these keys "sends"  a command that you have assigned  to 
+    the key.  Function key  definitions are saved in  the DFN file for  each 
+    SIG. You create (or modify)  these definitions by using the  "alt-K" key 
+    combination. 
+ 
+    Alt-K results in a  display of the current  key definitions.  This is  a 
+    small window in the upper right  corner of the display.  Use the  cursor 
+    positioning keys  and other  keyboard keys  to add  or modify data.  The 
+    Enter  key  moves  to  the  next  key definition line.  All function key 
+    strings  are  sent  automatically  when  pressed.   A carriage return is 
+    automatically appended  to the  text unless  it end  in a  left brace  { 
+    character. 
+ 
+    You do not need  to be online to  define these keys.  Select  G>o online 
+    for AUTOSIG's main menu, and you'll be prompted to determine if you want 
+    to go online.  Reply "N", and then hit the Alt-K key combination. 
+ 
+    Use the ESCape  key to end  the editing of  the key definitions,  and to 
+    return  to  Terminal  Mode.   The  first  six characters of each key are 
+    displayed, as a  reminder, on line  25 of the  display whenever Terminal 
+    Mode is entered.  You may remove the line 25 display by using the  alt-C 
+    keys. 
+ 
+    The function key text may contain these special characters: 
+ 
+        {  left brace, suppresses adding a carriage return to the text 
+        ~  tilde, causes a one second pause before processing the next 
+           character. The tilde is not transmitted. 
+        ^  caret, identifies the next character as a control character, 
+           for example:  ^C for control-C,  ^P for control-P,  etc. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  45 
+IX.  ATO Terminal Mode 
+______________________________________________________________________________
+
+ C. Defining Function Keys 
+
+
+       Figure 9. Terminal Mode Function Keys 
+ 
+  ------------------------------------------------------------------------------ 
+ 
+   === TERMINAL MODE ===                           === FUNCTION KEY MENU ==== 
+                                                 1 ^O 
+                                                 2 ^O~~skall 
+                                                 3 ust 
+                                                 4 op;sm a;s 
+                                                 5 rm 
+                                                 6 t 
+                                                 7 dl0 
+                                                 8 bro 
+                                                 9 sen job{ 
+                                                10 m 
+                                                   Press <ESCape> when finished 
+ 
+ 
+  1^O      2ust    3 ____  4op;sm  5rm     6t      7dl0    8bro    9dl1    0m 
+ 
+ 
+  ------------------------------------------------------------------------------ 
+ 
+ 
+
+       Figure 10. Terminal Mode Alt- Keys 
+ 
+                                               == Terminal Mode ALT- Keys === 
+   === TERMINAL MODE ===                        B - toggle Beeper 
+                                                C - Clear screen 
+   Do you want to auto-logon? (y/N)             D - open capture file 
+                                                E - SHELL to DOS 
+   Enter ctrl-D to exit, alt-A for keys         F - display Files on disk 
+                                                G - Gather section SB topics 
+                                                H - Hang up the phone 
+                                                I - execute Immediate command 
+                                                K - edit F- function keys 
+                                                M - maintain PPN file 
+                                                N - display section SB topics 
+                                                O - copy F-keys to all SIGs 
+                                                P - toggle Printer 
+                                                R - Reconfigure PC options 
+                                                S - Split the screen for CO 
+                                                T - execute SCRipt file 
+                                                U - Upload an ASCII file 
+                                                W - toggle 25/43 line display 
+                                                X - exit to DOS 
+ 
+
+
+
+
+Page  46                                                   AUTOSIG Users Guide 
+IX.  ATO Terminal Mode 
+______________________________________________________________________________
+
+ D. Terminal Mode Special Keys 
+
+    While in Terminal Mode, ATO assigns special functions to these keys: 
+ 
+    alt-A     displays a list of alt- keys that you may use 
+ 
+    alt-B     toggles the sending of beeps and bells 
+ 
+    alt-C     clears the  screen and removes  the line 25  display of the 
+              F-key definitions. Use  ctrl-HOME  to  restore  the display of 
+              the bottom line f-keys 
+ 
+    alt-D     initiates Downloading into a capture file; same as alt-L 
+ 
+    alt-E     invokes a DOS shell so that you may execute other programs 
+              without exiting ATO 
+ 
+    alt-F     displays the names of files on a selected drive 
+ 
+    alt-G     Gathers the forum section/topic names and saves them in the 
+              DFN file. You can display these with the alt-N command, or at 
+              the Leave/Reply prompt by entering a question mark (?). 
+ 
+    alt-H     sends modem commands to hang up and disconnect 
+ 
+    alt-I     lets you execute one script command immediately 
+ 
+    alt-K     displays the function keys and lets you to edit them 
+ 
+    alt-L     initiate downloading, save all received data in a capture file 
+ 
+    alt-M     invokes the ATO PPN Address Book processor 
+ 
+    alt-N     display section/topic names for this Forum 
+ 
+    alt-O     Copies the current  F- function key definitions to ALL your 
+              other forums 
+ 
+    alt-P     Toggle the system printer  on  or  off  to print received data 
+ 
+    alt-R     Invokes the PC Options menu so that you may change screen 
+              colors or other options 
+ 
+    alt-S     Splits the screen (for conferencing),  all keyboard  input  is 
+              taken from the bottom line and is  buffered  until a  carriage 
+              return is entered.  The buffered line is then sent to CIS. 
+ 
+    alt-T     execute SCRipt file 
+ 
+    alt-U     initiate an ASCII (paced) file upload 
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  47 
+IX.  ATO Terminal Mode 
+______________________________________________________________________________
+
+ D. Terminal Mode Special Keys 
+
+    alt-W     Toggles the screen width from 43 to 25 lines. Requires an EGA 
+              or VGA display and may only be effective  one.  Your  monitor 
+              must be in 43-line mode,  and you must start ATO with the /43 
+              option before using alt-W. 
+ 
+    alt-X     Immediately exits to DOS. The modem is NOT reset. 
+ 
+    ctl-HOME  Displays function key hints on the bottom line 
+ 
+    PgDn      Invokes an automatic download using CIS Quick B protocol 
+ 
+    PgUp      Invokes uploading of an ASCII file using prompts 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  48                                                   AUTOSIG Users Guide 
+IX.  ATO Terminal Mode 
+______________________________________________________________________________
+
+ D. Terminal Mode Special Keys 
+
+
+    E. Protocol File Transfer 
+ 
+    Files from the CIS data libraries (DLs) may be "downloaded" from CIS  to 
+    your system by using ATO in the Terminal Mode.  You tell CIS to download 
+    a file by using commands such as  READ, TYPE, or DOW when you are  given 
+    the DL: prompt by CIS, or from  the file prompt given at the file  level 
+    during the BRO command. 
+ 
+    To  enter  Terminal  Mode,  select  the  (G) Go Online function from the 
+    Function  Menu,  or  press  the  ESCape  key  while ATO is performing an 
+    automatic function such as T or simply change the forum option to  "stay 
+    connected". 
+ 
+    ATO uses CIS "Quick B" protocol  if you need to know.  Chances  are it's 
+    so automatic the point will be moot as we'll see. 
+ 
+
+    F. Downloading with "B" protocol 
+ 
+    If you use  the BRO command  just hit the  PgDn key and  everything from 
+    there  on  out  will  be  automatic.   The  filename as used by the Data 
+    Library will be  used on your  system and absent  an entry in  the "File 
+    transfer  d:\path"  field  in  the  HOST  configuration the file will be 
+    placed in the current drive or sub-directory. 
+ 
+    After that,  the transfer  is automatic.   You'll see  received block  # 
+    messages,  and  after  the  transfer  you'll  see  number  of characters 
+    transferred,  elapsed  time  and  characters  per second.  The NAK value 
+    represents  the  number  of  times   CIS  requested  that  a  block   be 
+    retransmitted.  The ENQ value should be zero.  If not, CIS has tried  to 
+    interrupt the file transfer and ATO may have trouble continuing. 
+ 
+    The top line of the display during CIS Quick B file transfers tells  you 
+    the  name  of  the  file  and  when  the  transfer  started.  If you are 
+    uploading a file, the file's size is also displayed. 
+ 
+    The bottom  line of  the display  is a  status line.   It tells  you the 
+    number of bytes of "File:" that have been transferred to or from a file, 
+    the  number  of  bytes  "Sent:"  and  "Rcvd:", and the number of "Naks:" 
+    negative response due to errors and re-transmissions.  The "File:" count 
+    is updated every 32 bytes for 300/1200 bps, and every 64 bytes for  2400 
+    bps operation. 
+ 
+
+    G. Uploading with "B" protocol 
+ 
+    Files  may  also  be  uploaded  (sent)  to  DL  databases  using the "B" 
+    protocol.   Use  the  UPL  command  and  follow the directions from CIS. 
+    Please  follow  file  name  conventions.   Basic programs saved as ASCII 
+    files should be uploaded with the extension, .BAS.  Text files may  have 
+    any three-letter extension.  Please refer  to the file DL.HLP in  DL1 of 
+
+AUTOSIG Users Guide                                                   Page  49 
+IX.  ATO Terminal Mode 
+______________________________________________________________________________
+
+ D. Terminal Mode Special Keys 
+
+    IBMNEW for further information on filename conventions. 
+ 
+
+    H. Alt-L  Log to disk 
+ 
+    The  "alt-L"  (or  alt-D)  key  combination  is  used to start (or stop) 
+    logging to disk.  Any data sent by CIS - messages, etc. - are written to 
+    a disk  file until  the "alt-L"  key combination  is used  again to stop 
+    logging.  The log file is also closed after exiting Terminal Mode. 
+ 
+    The letter C appears in the  lower right corner of the screen  to remind 
+    you that file capture is in progress. 
+ 
+    To "download" text files or Basic programs saved in ASCII format,  while 
+    you're BROwsing through the Data Library, select "R" (without <Enter> ); 
+    hit Alt-L; name the file as requested by ATO and then hit <Enter> twice. 
+    When the download is complete  (CIS sends 'Key <Enter> to  continue) hit 
+    Alt-L again to close the file on your PC, followed by <Enter>. 
+ 
+
+    I. Alt-U  Upload from disk 
+ 
+    The "alt-U"  key combination  initiates an  ASCII (not  protocol) upload 
+    operation.  You may supply  a prompt character for  ATO to wait for,  or 
+    you may let ATO upload the file without any delays.  You supply the name 
+    of a file to be transferred to CIS. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  50                                                   AUTOSIG Users Guide 
+X.   Message Editor 
+______________________________________________________________________________
+
+ A. Description of use 
+
+ 
+    The AUTOSIG editor is  a full screen editor  which makes use of  most of 
+    the  special  function  keys  on  the  PC  keyboard  as  well as ALT key 
+    combinations.  Generally speaking most of the commands and functions are 
+    intuitive if  you've used  a text  editor before.   Being a  full screen 
+    editor you can  move around the  screen using the  cursor keys and  make 
+    changes as  you wish.   Additionally you  can insert,  reformat, cut and 
+    paste, import and in general do anything you want. 
+ 
+    Those who have used previous versions  of ATO will note that the  editor 
+    will now allow you to enter a blank line.  As you may know a blank  line 
+    in the SED Sig EDitor is an indication that you want to end the session. 
+    Not  to  worry,  ATO  will  insert  the  necessary  formatting  codes to 
+    accommodate blank lines.  If you're using the SIG EDIT editor the  blank 
+    lines are sent.  In both cases you'll get the blank line in there. 
+ 
+    The screen consists of 25 rows by 80 columns.  The first 23 rows contain 
+    message lines.  Row  24 contains the  addressee and subject  information 
+    for  the  Leave  or  Reply  message.   Row  25  lists  the  function key 
+    definitions. 
+ 
+    You may hit the F1 function key for help in the editor. 
+ 
+    Each  message  line  is  numbered,  from  1  to 80, in column 78 of each 
+    display row.  You may position the cursor to any line on the display, or 
+    use the <Enter> key to position to the next line. 
+ 
+    The maximum number of lines you may enter is 96, but Forum messages  are 
+    limited to about  2000 characters, or  about 25 lines.   The editor will 
+    warn you of this when you reach the 20th character.  You should end  the 
+    message, and start a new one if necessary to continue.  The limit of  96 
+    lines is necessary for EasyPlex  messages which can be much  larger than 
+    Forum messages. 
+ 
+    The editor has full  wordwrap.  It will advance  to the next line  at an 
+    appropriate point.  In addition you can force a reformat of the the rest 
+    of a paragraph as you as you edit by using the alt-f function. 
+ 
+    The TAB key moves  the cursor to the  next TAB column.  The  TAB columns 
+    are 1, 9, 17,  25, etc.  The ctrl-left  key skips to the  previous word, 
+    the ctrl-right key skips to the next word. 
+ 
+    The INSERT function (F5) adds a blank line AFTER the current line. 
+ 
+    The DELETE function (F6) deletes the current line. 
+ 
+    Lines are added to the end when ENTER is used on the last line. 
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  51 
+X.   Message Editor 
+______________________________________________________________________________
+
+ B. Editor Control Keys 
+
+ 
+           Cursor keys     Move cursor in the arrow direction. 
+ 
+           [Ins]           Toggle between insert and typeover mode. 
+                           The letter "I" appears on line 25 to indicate 
+                           that the keyboard is in "insert" mode. 
+ 
+           [Del]           Delete character at current cursor 
+                           location. 
+ 
+           [Enter]         Move to new line, creating a new line if needed 
+                           [Enter] again moves the cursor to 
+                           next line. With Insert mode enabled split 
+                           the current line. 
+ 
+           [Home]          Move to start of line. 
+ 
+           [End]           Position to end of text on current line. 
+ 
+           [Ctrl][End]     Erase to end of current line. 
+ 
+           [PgUp]          Display prior 11 lines. 
+ 
+           [PgDn]          Display next 11 lines. 
+ 
+           [Ctrl][PgUp]    Position to first line of text. 
+ 
+           [Ctrl][PgDn]    Position to last line of text. 
+ 
+           [Ctrl][Home]    Position to first line of message. 
+ 
+           [Backspace]     At beginning of line will join to previous 
+                           line. 
+ 
+           Alt-F           Reformat rest of paragraph. 
+ 
+           Alt-J           Join following line to current line. 
+ 
+           Alt-S           Split line at current cursor position 
+ 
+           Alt-T           Transpose current/previous character. 
+ 
+           Alt-C           Copy block. 
+ 
+           Alt-D           Delete marked block. 
+ 
+           Alt-L           Mark line as top/bottom. 
+ 
+           Alt-M           Move block to current cursor position. 
+ 
+           Alt-U           Unmark marked block. 
+ 
+
+Page  52                                                   AUTOSIG Users Guide 
+X.   Message Editor 
+______________________________________________________________________________
+
+ B. Editor Control Keys 
+
+ 
+    While creating new messages (W), or  replying (R) to a message, line  25 
+    of the screen displays the function key assignments: 
+ 
+    1Help   2Quit   3Remind 4Send   5Insert 6Delete 7       8       9Import 
+    -       -       -       -       -       -       -       -       - 
+ 
+    ________________________________________________________________________ 
+ 
+    The purposes of the function keys are: 
+ 
+           F1  Help        Display editor help info. 
+ 
+           F2  Quit        Abort the current message and return to main menu. 
+               Omit        While P>reviewing, the message is deleted from the 
+                           Leave/Reply file. 
+ 
+           F3  Remind      Redisplays the message being replied to. 
+ 
+           F4  Save        Save current message (in sigL.ATO). 
+               Keep        While P>reviewing, the message is kept in the 
+                           Leave/Reply file (You will be requested to verify 
+                           this action to prevent inadvertant loss of 
+                           messages. (You may use Alt-F2 if you want to skip 
+                           the verification, but use Alt-F2 with care.) 
+ 
+           Alt-F4          Hitting Alt and F4 at the same time will save 
+                           a message you wrote to a file with the exten- 
+                           sion .FIL.  This is used for creating chrono- 
+                           logical files  of messages  you wrote,  which 
+                           may be useful in Email, where you cannot read 
+                           your messages online once they have been sent 
+                           After  saving  to  the  file,   this  command 
+                           performs the F4 function. 
+ 
+           F5  Insert      Insert a line after the current line. 
+ 
+           F6  Delete      Delete the current line. 
+ 
+           F9  Import      Read a file into the editor work area. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  53 
+X.   Message Editor 
+______________________________________________________________________________
+
+ C. Editor Import Function 
+
+ 
+    You press F9 to tell  ATO to import a file.   This allows you to read  a 
+    file into the editor  work area.  Thus, you  can insert data from  files 
+    directly into your messages. 
+ 
+    When you press F9, ATO asks you to where to find the file: 
+ 
+               Enter import d:\path [C:\ATO] 
+ 
+    You  may  press  enter  to  use  the  Forum options drive and path (e.g. 
+    C:\ATO), or you may type in a new drive and path. 
+ 
+    Next, ATO displays a list of files in that directory.  For example: 
+ 
+   ------------------------------------------------------------------------ 
+ 
+   AUTOSIG .DFN AUTOSIG .JUN ATODOC  .001 ATO   .EXE ACLS  .EXE PANELS  .2 
+   IBMCOMM .ATO IBMCOML .ATO IBMCOMS .ATO 
+ 
+    File to import: 
+ 
+   ------------------------------------------------------------------------ 
+ 
+    Enter the name of the file you wish to Import, or press Enter to  change 
+    to another directory.  If  ATO can not find  the file, you will  receive 
+    the message: 
+ 
+            filename not found. 
+            Key 'X' to abort; any other key to retry. 
+ 
+    Press X to  cancel the import  request, or press  Enter to re-enter  the 
+    drive and path names. 
+ 
+    When you import a file while  writing a message, that file becomes  part 
+    of the message you are writing, and it is displayed.  Because files with 
+    the extension  ".ATO" are  in the  precise format  of CIS messages, they 
+    cannot be imported, and an error message will be displayed. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  54                                                   AUTOSIG Users Guide 
+X.   Message Editor 
+______________________________________________________________________________
+
+ D. Replying to messages 
+
+ 
+    When you select F4 or Alt-F4, you are presented with the options: 
+ 
+    S>ave, P>rivate, U>nformatted, X>SPU, M>ail, Y>MU, R>eturn to editing 
+ 
+ 
+  "S" will  send the  message and  permit CIS  to reformat  it to the screen 
+      format set by anyone who reads it. 
+ 
+  "U" will send the message exactly  as written.  This is convenient if  you 
+      include tables in a message. 
+ 
+  "P" sends  the message  privately on  SIGs where  this option  is enabled. 
+      IMPORTANT:  AUTOSIG  does  not  trap  errors  if you attempt to send a 
+      (P)rivate message on a SIG where the Sysop does not allow this type of 
+      message.   Don't  use  this  option  unless  you're certain that it is 
+      permitted. 
+ 
+      At this writing, the IBM Forums allow private messages. 
+ 
+  "X" sends the message Privately, as is, and instructs CIS to not  reformat 
+      it. 
+ 
+  "M" sends the message as Easyplex (Email) by using the MA command 
+ 
+  "Y" is the same as M, but tells CIS not to reformat. 
+ 
+  "?" displays the forum's section names 
+ 
+    Other  options  may  be  displayed  at  this  point,  depending  on  CIS 
+    requirements and whether you are using W>rite, U>ser address, J>oin,  or 
+    R>eply.  These include  prompts for the  addressee's User ID  (PPN), and 
+    the Section  number.  Simply  follow the  prompts to  finish storing the 
+    message. 
+ 
+    There is one additional powerful  feature that's been added to  ATO that 
+    allows you  to recall  SIG sub-topic  names.  If  you've used  the Alt-G 
+    "gather" function in terminal mode you may simply enter a question  mark 
+    when prompted for the sub-topic  name and they will be  displayed.  This 
+    feature applies  when you  have used  the W  - Write  new message or the 
+    UA/Join command. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  55 
+XI.  Errors and Reporting Problems 
+______________________________________________________________________________
+
+ A. Internal Errors 
+
+ 
+    If an error occurs during execution,  a message is displayed on the  top 
+    line of the display, such as ERROR 52 in LINE 1020. 
+ 
+    The  message  contains  an  error  code  which is described in the BASIC 
+    manual, and the line number where the problem occurred. 
+ 
+    If you can't resolve the problem,  make a note of the error  message and 
+    give the information to one of the authors. 
+ 
+    After  the  error,  the  Function  Menu  is displayed.  Depending on the 
+    problem, you may decide to continue or terminate.  Any files created  by 
+    ATO are left on the current drive.  Thus, you may restart processing  at 
+    a later time. 
+ 
+    By far the most common problem is a lack of response by AUTOSIG when  it 
+    receives  the  SIG  "Function"  prompt.   Rather than giving the command 
+    based upon your menu selection it just sits there. 
+ 
+    The problem  is more  than likely  due to  an inconsistency  between the 
+    prompt character that's been defined in  the SIG OPtion area and the  ^G 
+    that ATO uses. 
+ 
+    If you are using a computer  that may not be IBM compatible,  the screen 
+    displays may be empty.  This is due to the way ATO places data  directly 
+    into the monitor's display buffer.  The /T command-line parameter can be 
+    used to force ATO to write to the display without using the IBM-specific 
+    display buffer addresses.  See page 7-8 for further information on  this 
+    parameter, and others that can help resolve compatibility problems. 
+ 
+    Remember  that  the  default  ATO  prompt  character  is a Ctrl-G (Bell) 
+    character.  This must be entered in the SIG OPtion area as ^G (the ^ key 
+    is the shifted 6 key).  The CIS OPtion program will not accept CTRL-G as 
+    a valid prompt character. 
+ 
+    Be sure to keep a backup  copy of your AUTOSIG.DFN file.  Many  problems 
+    can be solved by using a "good" DFN file, or by recreating it.   You can 
+    force ATO to update the DFN file by using the Alt-N command. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  56                                                   AUTOSIG Users Guide 
+XI.  Errors and Reporting Problems 
+______________________________________________________________________________
+
+ B. Trouble Shooting 
+
+ 
+    AUTOSIG traps  and recovers  from all  possible errors  that the authors 
+    have identified.  There are only two occasions when you're likely to see 
+    any indication of an error. 
+ 
+    The first  is if  you see  ASCII 243  on your  screen (the  mathematical 
+    symbol  for  "less  than  or  equal  to").   This indicates that ATO has 
+    trapped an error at the modem.   This is likely to happen once  or twice 
+    both logging on and  logging off, and is  not a problem.  If  it happens 
+    repeatedly elsewhere, check  your modem and  the wires connecting  it to 
+    the PC. 
+ 
+    The second is if you didn't let ATO run its full course and broke out of 
+    the program or  turned your computer  off before returning  to DOS. This 
+    will not harm your computer, but  it may leave some stray files  behind. 
+    No corrective action is needed, except to always try to let ATO run  its 
+    full course, from  DOS to execution  and back to  DOS. Since ATO  has so 
+    many files open  it's a good  idea to do  a CHKDSK to  identify any lost 
+    clusters.   This  action  will  probably  result  in  your "high message 
+    number" being  corrupted if  you usee  on of  the AUTOSIG functions that 
+    maintains and depends on that number. 
+ 
+    Other than these two problems, if  you see a message in the  upper right 
+    corner of your display indicating "Error nn at Line nnnnn", please leave 
+    a message  the IBM  Communications Forum  (IBMCOM).  One  of the authors 
+    will respond. 
+ 
+    If you're having problems with ATO's display, this is probably caused by 
+    incompatibility between your computer and some of the ATO code, which is 
+    IBM-PC specific.  Although  ATO runs fine  "as is" on  most compatibles, 
+    there are several "switches" that can get around compatibility problems. 
+    See the section on Switches. 
+ 
+    There are other problems that can arise when CompuServe is acting up and 
+    sends something ATO doesn't expect.   Again, most of these problems  are 
+    trapped and fixed automatically, but, given the large number of possible 
+    miscues that CIS can generate, not  all can be fixed.  Here are  some of 
+    the possible ones: 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  57 
+XI.  Errors and Reporting Problems 
+______________________________________________________________________________
+
+ C. Problem symptoms and solutions 
+
+  ATO FREEZES; NO ACTION AT ALL 
+ 
+    Make sure that you have set your SIG prompt character at ^G,  especially 
+    if this happens at the Function: prompt.  Otherwise: 
+ 
+    Wait a full minute.  The problem could be that CIS is busy.  If there is 
+    still no sign of activity, hit <ESCape> twice followed by CTRL-C.   This 
+    should put you  into direct contact  with CIS at  a menu that  gives you 
+    several options, including Logoff.  Select that one and try again later. 
+ 
+  MESSAGE SENT TO WRONG SIG 
+ 
+    This  can  happen  using  AUTO  on  a  very  noisy phone line.  What has 
+    happened is that CIS  sent a false signal  causing ATO to think  that it 
+    had  moved  on  to  another  SIG.  This  error  never  happens on a good 
+    connection.  There's no way ATO can fix it.  FEEDBACK to CIS might help. 
+ 
+  FILES BUSY (Code xxnn) ... 
+ 
+    This is a CIS message  that, unfortunately, gives you only  two choices: 
+    wait it out or pull the plug.  None of this is unique to ATO; you'd have 
+    the same problem if you logged  on manually.  If you choose to  pull the 
+    plug, hit <ESCape><ESC>, which will return you to the ATO menu with  the 
+    message that the "PC is CONNECTED".   Hit "Z".  This will send "OFF"  to 
+    CIS and disconnect the modem.  Once CIS recognizes your action, it  will 
+    log you off. 
+ 
+  {{ Characters 
+ 
+    This symbol is  encountered when there  is a lot  of noise on  the line. 
+    Your best bet  is to abort  ATO as quickly  as possible if  you see this 
+    symbol repeatedly. 
+ 
+  EASYPLEX problems 
+ 
+    You can name the EasyPlex "SIG"  whatever you like, as long as  the name 
+    contains "MAIL", "Mail" or "mail". 
+ 
+    Although ATO makes EasyPlex  look and act like  a SIG, when you  leave a 
+    message,  you  are  actually  doing  a  file  transfer,  rather  than  a 
+    line-by-line dump.  Your parity MUST be set at "zero" or "none".  To fix 
+    this, G TERMINAL and reset  parity.  CIS keeps different parameters  for 
+    you at 300 and  1200 baud, so make  sure that you're online  at the same 
+    baud  rate  at  which  you  normally  use ATO. The other likely EasyPlex 
+    problem is  if you  haven't inserted  your name  in the EasyPlex address 
+    file.  Check the EasyPlex section for more information. 
+ 
+  Message you sent arrives To: and From: YOU 
+ 
+    ATO tries in several different ways to recover from inability to send  a 
+    reply to a  message.  As a  last resort, ATO  will send your  message to 
+    you.  If it looks like you're talking to yourself, it simply means  that 
+
+Page  58                                                   AUTOSIG Users Guide 
+XI.  Errors and Reporting Problems 
+______________________________________________________________________________
+
+ C. Problem symptoms and solutions 
+
+    ATO and CIS couldn't find any other way to deliver the message. 
+ 
+ 
+  % NTWCPR - ... 
+  % NTWJRP - Job Rec.... 
+ 
+    ATO will wait  out most CIS  problems and resume  faultlessly.  However, 
+    there is one situation (a CIS  failure followed by a recovery) when  CIS 
+    asks you to send a CTRL-Q.  If  you do this manually at the CIS  prompt, 
+    ATO will  recover as  well.  If  you don't,  CIS will  disconnect you in 
+    about two minutes and ATO will return to the main menu. 
+ 
+  ATO fails sending a P)rivate message 
+ 
+    Some Sysops  have chosen  not to  permit (P)rivate  messages.  Since ATO 
+    cannot possibly keep  up to date  on what options  are available on  the 
+    various SIGs,  it's up  to you  to know  whether you  can send a private 
+    message on a given SIG. If in doubt, send it public (using 'S' or  'U'), 
+    check first with the Sysop, or  try it 'manually' before trying it  with 
+    ATO. 
+ 
+  ATO hangs up or aborts a file transfer 
+ 
+    File transfers  can fail  for any  number of  reasons, including so much 
+    line noise that CIS simply aborts.  By watching the NAK and ENQ  values, 
+    you  can  get  an  idea  of  how  smoothly a transfer is proceeding.  An 
+    excessively high NAK  value indicates that  the line connection  is poor 
+    and you  should probably  log off  and call  back.  It  may help  to try 
+    another phone number, or lower the baud rate.  In any event, report your 
+    problems to FEEDBACK and they may credit your account for the time lost. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  59 
+X.   Acknowlegements 
+______________________________________________________________________________
+
+ 
+    AUTOSIG was inspired by a program called SUPER.SIG in DL1 on the  TRS100 
+    SIG which was  written by Howard  Benner.  The first  version of AUTOSIG 
+    was written entirely by Vernon Buerg to save on his monthly bills. 
+ 
+    This first version  was further expanded  and modified by  Vernon Buerg, 
+    Frank Lipschutz and others as part of the what was then the INF  Project 
+    Group established by  Don Watkins, SYSOP  of IBMNET.  A  sister program, 
+    ACLS, was written by Tom Neff. 
+ 
+    Some  earlier  versions  of  Autosig  were  supplied  with  the  source, 
+    uncompiled Basic  code.  Because  of dozens  of features  that have been 
+    added,  the  bulk  of  which  are  in  assembler,  source  is  no longer 
+    available. 
+ 
+    A very  special thanks  to those  who helped  test the  numerous interim 
+    versions of ATO.  Space limits individual  thanks, but without  them ATO 
+    would not be where it is today. 
+ 
+    70130,177  N. Arley Dealey          74666,511  Jim McKeown 
+    70150,540  David Turcotte           75516,70   Paul Heymont 
+    70307,461  John Beaston             76347,2464 Leo Angevine 
+    70327,135  Steven Stern             76555,273  James Bach 
+    71355,470  Nelson Ford              76556,2536 Tom Neff 
+    71370,3353 Lefferts Graphics        76556,3643 Joan Friedman 
+    71600,300  John Francis             76703,1010 SysOp Conrad Kageyama 
+    72277,566  Lenny Abbey              76703,2002 SysOp Chris Dunford 
+    72406,1717 Denis DeLaRoca           76703,3100 Ray Reyes 
+    72617,132  Don Strenczewilk         76703,750  SysOp Don Watkins 
+    73307,110  Eric Rosenberg           74025,1005 David Klatzco 
+ 
+    We are  always open  to suggestions.   Feel free  to participate  in the 
+    future development and testing of AUTOSIG. 
+ 
+
+    A. Disclaimer 
+ 
+    IBM,  Tandy,  Microsoft,  QuickBasic, Double DOS, DesqView  and  Compaq 
+    are all registered trademarks.  If we missed any, our apologies. 
+ 
+    This program is, of course, offered  as is.  We can't guarantee it  will 
+    work on every permutation of  equipment.  We will make an  honest effort 
+    to correct and/or add any features that you ask for. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+Page  60                                                   AUTOSIG Users Guide 
+X.   Acknowlegements 
+______________________________________________________________________________
+
+
+    B. Copying and sharing AUTOSIG 
+ 
+    This  document  and  the  AUTOSIG.EXE  file  comprise  the  ATO  program 
+    ("software").  This software is  copyrighted material and is  subject to 
+    limitations  by  the  copyright  holder  ("author")  as  to  its use and 
+    distribution. 
+ 
+    You may use the  software; make copies of  the software; give copies  to 
+    anyone; and distribute it via electronic means.  There is no charge  for 
+    this software, but  you must include  a copy of  this document with  any 
+    copies that you make. 
+ 
+    You are  specifically prohibited  from charging  or requesting donations 
+    for  any  copies;  from  modifying  the  software; from distributing the 
+    software with commercial products without prior written permission;  and 
+    from distributing this  software, either alone  or with other  material, 
+    and charging any fee.  There are no exceptions. 
+ 
+    There is no warranty  of any kind given.   The author is not  liable for 
+    damages of any kind.  By using this free software, you agree to this. 
+ 
+    The software and documentation are: 
+ 
+                Copyright (C) 1985-1988 by Vernon D. Buerg 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  61 
+Appendices 
+______________________________________________________________________________
+
+ A. Quick Reference Words 
+
+ 
+    This is a fairly complete list of forums and their quick reference words 
+    as of January, 198*.  Please note that the list is growing very  quickly 
+    and for up to minute reference you may: 
+ 
+         1)  GO INDEX and search there, or 
+         2)  type FIND [subject] from your favorite !  prompt. 
+ 
+    Additionally you'll find that On-Line Today magazine usually contains an 
+    updated forum listing every other issue or so. 
+ 
+    In most cases only  the first six characters  of a quick reference  word 
+    are needed;  i.e.  DDJFOR  works the  same as  DDJFORUM. 
+ 
+                  ADCIS Forum                    ADCIS 
+                  AEJMC Forum                    AEJMC 
+                  AI EXPERT Forum                AIE-100 
+                  ALDUS Forum                    ALDUS 
+                  Adobe Forum                    ADOBE 
+                  Amiga Forum                    AMIGAFORUM 
+                  Apple Developers Forum         APPDEV 
+                  Apple II & III Forum           APPLE 
+                  Apple User Groups Forum        APPUG 
+                  Aquaria / Fish Forum           FISHNET 
+                  Ashton-Tate Forum              ASHFORUM 
+                  Astronomy Forum                ASTROFORUM 
+                  Atari 16-Bit Forum             ATARI16 
+                  Atari 8-Bit Forum              ATARI8 
+                  Atari Developers Forum         ATARIDEV 
+                  Auto Racing Forum              RACING 
+                  Autodesk Software Forum        AUTODESK 
+                  Aviation Forum (AVSIG)         AVSIG 
+ 
+                  Bacchus Wine Forum             WINEFORUM 
+                  Borland Applications Forum     BORAPP 
+                  Borland International          BORLAND 
+                  Borland Programming Forum A    BPROGA 
+                  Borland Programming Forum B    BPROGB 
+                  Broadcast Professionals Forum  BPFORUM 
+ 
+                  CB Interest Group              CBIG 
+                  CP/M (CPM) Users Group         CPMFORUM 
+                  Cadre Forum                    CADRE 
+                  Color Computer Forum           COCO 
+                  Comic Book Forum               COMIC 
+                  Commodore Arts and Games Forum CBMART 
+                  Commodore Communications Forum CBMCOM 
+                  Commodore Programming Forum    CBMPRG 
+                  Commodore Service Forum        CBMSER 
+                  Computer Club Forum            CLUB 
+                  Computer Consultant's Forum    CONSULT 
+                  Computer Language Magazine     CLM 
+
+Page  62                                                   AUTOSIG Users Guide 
+Appendices 
+______________________________________________________________________________
+
+ A. Quick Reference Words 
+
+                  Computer Training Forum        DPTRAIN 
+                  Consumer Electronics Forum     CEFORUM 
+                  Cooks Online Forum             COOKS 
+                  CrossTalk Forum                XTALK 
+ 
+                  DEC PC Forum                   DECPC 
+                  DEC Users Network              DECUNET 
+                  Digital Research Forum         DRFORUM 
+                  Disabilities Forum             DISABILITIES 
+                  Dr. Dobb's Journal Forum       DDJFORUM 
+ 
+                  EPIE Forum                     EPIEFORUM 
+                  Educational Research Forum     EDRESEARCH 
+                  Educators Forum                EDFORUM 
+                  Epson Forum                    EPSON 
+ 
+                  Family Computing Electronic Ed FAM 
+                  Family Computing Forum         FAMFORUM 
+                  Financial Forums               FINFORUM 
+                  Florida Forum                  FLORIDA 
+                  Foreign Language Forum         FLEFO 
+                  Forth Forum/Creative Solutions FORTH 
+                  Forums                         FORUMS 
+ 
+                  Gamers Forum                   GAMERS 
+                  Gaming Connection              GAMECO 
+                  Good Earth Forum               GOODEARTH 
+ 
+                  Hardware Forums                HARDWARE 
+                  Health Forum                   GOODHEALTH 
+                  Heath Users Group              HEATHUSERS 
+                  Hewlett Packard Forum          HP 
+ 
+                  IBM Communications Forum       IBMCOM 
+                  IBM Hardware Forum             IBMHW 
+                  IBM Junior Forum               IBMJR 
+                  IBM New Users Forum            IBMNEW 
+                  IBM Software Forum             IBMSW 
+                  IBM Users Network              IBMNET 
+                  Int'l Entrepreneurs' Network   USEN 
+                  Investors Forum                INVFORUM 
+ 
+                  Javelin User's Forum           JAVELIN 
+                  Journalism Forum               JFORUM 
+ 
+                  Kaypro Users Forum             KAYPRO 
+ 
+                  LDOS/TRSDOS6 Users Group       LDOS 
+                  LOGO Forum                     LOGOFORUM 
+                  Legal Forum                    LAWSIG 
+                  Literary Forum                 LITFORUM 
+                  Living Videotext Forum         LVTFORUM 
+
+AUTOSIG Users Guide                                                   Page  63 
+Appendices 
+______________________________________________________________________________
+
+ A. Quick Reference Words 
+
+                  Logical Systems Inc Forum      LDOS 
+                  Lotus Integrated Prod. Forum   LTS-1042 
+                  Lotus Stand-Alone Prod. Forum  LTS-1608 
+ 
+                  MAUG(tm)                       MAUG 
+                  MEDSIG                         MEDSIG 
+                  MIDI Forum                     MIDI 
+                  MUSUS Forum                    MUSUS 
+                  Macintosh Business Forum       MACBIZ 
+                  Macintosh Users Forum          MACUS 
+                  MicroPro Forum                 MICROPRO 
+                  Microsoft Forum                MSOFT 
+                  Military Veterans Services     VETERAN 
+                  Model Aviation Forum           MODELNET 
+                  Monogram Software              MONOGRAM 
+                  Multi-Player Games Forum       MPGAMES 
+                  Music Forum                    MUSICFORUM 
+ 
+                  NAIC Investor Education Forum  NAIC 
+                  National Issues Forum          ISSUESFORUM 
+                  Novell Forum ($)               NOVFORUM 
+ 
+                  OS9 Forum                      OS9 
+                  Outdoor Forum                  OUTDOORFORUM 
+ 
+                  PC Vendor Support Forum        PCVEN 
+                  PDP-11 Forum                   PDP11 
+                  PR and Marketing Forum         PRSIG 
+                  Pascal Forum                   MUSUS 
+                  Photography Forum              PHOTOFORUM 
+                  Pictures Support Forum         PICS 
+                  Programmers Forum              PROGFORUM 
+ 
+                  Religion Forum                 RELIGION 
+ 
+                  Safetynet Forum                SAFETY 
+                  Sailing Forum                  SAILING 
+                  Science Fiction Forum          SCI-FI 
+                  Science/Math Education Forum   SCIENCE 
+                  Scuba Forum                    DIVING 
+                  Software Forums                SOFTWARE 
+                  Software Publishing Forum      SPCFORUM 
+                  Space Education Forum          SPACEED 
+                  Space Forum                    SPACEFORUM 
+                  Sports Forum                   FANS 
+                  Students' Forum                STUFO 
+ 
+                  TANGENT Forum                  TANGENT 
+                  Tandy Model 100 Forum          M100SIG 
+                  Tandy Professional Forum       TRS80PRO 
+                  Telecommunications Forum       TELECOMM 
+                  Texas Instruments Forum        TIFORUM 
+
+Page  64                                                   AUTOSIG Users Guide 
+Appendices 
+______________________________________________________________________________
+
+ A. Quick Reference Words 
+
+                  Texas Instruments News         TINEWS 
+                  Travel SIG                     TRAVSIG 
+ 
+                  UNIX Forum                     PCS-41 
+ 
+                  VAX Forum                      VAXFORUM 
+ 
+                  Whole Earth Software Forum     WHOLEEARTH 
+                  WordPerfect Support Grp Forum  WPSG 
+                  Working-From-Home Forum        WORK 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG Users Guide                                                   Page  65 
+Appendices 
+______________________________________________________________________________
+
+ B. Command Line Options 
+
+ 
+    You may supply one  or more command line  options to change the  default 
+    operation of ATO. Each switch  must begin with the slash  "/" character. 
+    The letter may be in upper or lower case. For example, 
+ 
+                AUTOSIG /1/Q/F 
+ 
+ 
+    Here is a summary of the option switches and their effects: 
+ 
+   /B    tells ATO not to accept input from the keyboard during AUTO 
+   /C    causes the screen to be cleared before a message is displayed 
+   /F    disable sending a form feed to the printer when printing messages 
+   /H    indicates that your monitor  does not require retrace testing 
+   /I    tells ATO that a mouse is available for input in the Primary Menu 
+   /J    changes the messages editor's input mode to insert 
+   /K    sets the Email message disposition to Keep 
+   /M    tells ATO to send an RM (Read Marked) when appropriate 
+   /N    tells ATO not to prompt when you exit with ctrl-D 
+   /P    causes a ^P to be sent upon entry to a forum 
+   /Q    turns off the speaker for quiet opertion 
+   /S    forces a sort of the Quick Scan headers by the Mark function 
+   /T    tells ATO to use normal BIOS routines for displaying to the screen 
+   /V    tells ATO to print error messages; this is a debugging tool only 
+ 
+   /1    invokes the AUTO first pass immediately 
+   /2    invokes the AUTO second pass immediately 
+ 
+   /Xf   supplies the name of a script file 'f' to be execute as soon as the 
+         logon has completed,  e.g.  /XDL  would run the file called DL.SCR. 
+         This is handy for doing automatic file transfers. 
+ 
+   /Gx   supplies a new prompt character, where 'x' is a letter; for example 
+ 
+                AUTOSIG /GI 
+ 
+         results  in  ATO  using  the  control-H  character (backspace) as a 
+         prompt rather than the default control-G (BEL) character. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  66                                                   AUTOSIG Users Guide 
+ AUTOSIG Users Guide                                               Index-1
+__________________________________________________________________________
+
+
+
+  "B" protocol ................. 1, 2, 49
+  (B),Toggle beeper ............ 26
+  (C),Change menus ............. 26, 61
+  (D),Download messages ........ 29, 34, 41
+  (F),Read forward ............. 29
+  (G),Go online ................ 26, 44, 49
+  (H),Download headers ......... 26, 29, 32, 33
+  (I),Message you sent ......... 30
+  (M),Mark messages ............ 26, 32
+  (O),Change Forum options ..... 27, 39
+  (Q),Quick scan ............... 29, 41
+  (R),Read messages offline .... 34, 37, 53
+  (S),Send messages ............ 13, 26, 27, 41, 42
+  (T),Read thread .............. 30
+  (U),Read marked messages ..... 30
+  (V),View saved messages ...... 27
+  (W),Write new messages ....... 28, 37, 53
+  (Y),Download messages to you . 30
+  (Z),Logoff ................... 28
+  .mth,Monthly log files ....... 23
+  /1,Auto first pass ........... 31, 40, 41, 42, 66
+  /2,Auto second pass .......... 5, 31, 32, 40, 41, 42, 66
+  /B,Batch keyboard option ..... 15, 16, 17, 66
+  /C,Clear screen option ....... 15, 16, 17, 66
+  /F,Printer formfeed option ... 15, 16, 66
+  /G,Prompt character option ... 15, 17
+  /H,Monitor retrace option .... 15, 16, 66
+  /I,Mouse input option ........ 15, 66
+  /K,Email keep option ......... 15, 16, 66
+  /M,Skip RM option ............ 15, 16, 62, 66
+  /P,Logon ^P option ........... 15, 17, 66
+  /Q,Quiet beeper option ....... 15, 16, 66
+  /S,Sort QS headers option .... 15, 16, 66
+  /T,Display mode option ....... 12, 15, 16, 17, 56, 66
+  /V,Debug option .............. 66
+  A>gain ....................... 34
+  ADDRESS book ................. 31, 43, 47
+  Alt-A,Ask for alt- keys ...... 46, 47
+  Alt-B,Toggle beeper .......... 47
+  Alt-C,Clear screen ........... 45, 47, 52
+  Alt-D,Open/close capture file  47, 50, 52
+  Alt-E,Invoke DOS command ..... 47
+  Alt-F4,Archive message ....... 37, 53, 55
+  Alt-F,Display disk directory . 47, 51, 52
+  Alt-G,Gather section names ... 47, 55
+  Alt-H,Hang up ................ 47
+  Alt-I,Immediate script command 47
+  Alt-K,Redefine function keys . 45, 47
+  Alt-L,log to capture file .... 47, 50, 52
+  Alt-M,Invoke PPN processor ... 31, 47, 52
+
+Index-2                                               AUTOSIG Users Guide 
+__________________________________________________________________________
+
+
+
+  Alt-N,Show section names ..... 12, 13, 23, 31, 38, 47, 56
+  Alt-O,Copy function keys ..... 47
+  Alt-P,Toggle printer ......... 47
+  Alt-R,Redefine PC options .... 47
+  Alt-S,Split screen ........... 47, 52
+  Alt-T,Execute SCRipt file .... 47, 52
+  Alt-U,Upload ASCII file ...... 47, 50, 52
+  Alt-W,Toggle 45/25 lines ..... 31, 48
+  Alt-X,Exit to DOS ............ 48
+  Append ....................... 22, 23
+  AUTO ......................... 3, 12, 16, 24, 25, 26, 31, 40, 41, 42, 46
+                                 58, 62, 66
+  B>ack ........................ 34
+  Blank line ................... 51
+  Bulletin ..................... 18, 20, 24, 26, 37
+  Capture file,logging ......... 46, 47
+  Caret,^ characters ........... 20, 45
+  CIS phone number ............. 13, 18, 19, 43
+  COLOR ........................ 15, 16, 62
+  Command line,options ......... 15, 17, 66
+  COMmunications port .......... 18, 20
+  Configuration Options ........ 18, 22, 24
+  Ctl-HOME ..................... 48
+  D>elete ...................... 35, 36
+  DesqView ..................... 5, 16, 60
+  DFN,Definitions file ......... 7, 23, 25, 27, 37, 40, 41, 43, 45, 47, 54
+                                 56
+  Disconnect ................... 18, 20, 24, 25, 28, 39, 47, 58, 59
+  Download ..................... 1, 2, 3, 24, 25, 28, 29, 30, 33, 34, 40
+                                 41, 44, 48, 49, 50
+  Downloading .................. 5, 9, 24, 26, 32, 37, 47, 49
+  DTR .......................... 11
+  E>nd ......................... 34
+  EasyPlex ..................... 2, 3, 9, 10, 14, 16, 35, 38, 43, 51, 55
+                                 58
+  EDIT,Forum editor ............ 8, 51
+  Email ........................ 2, 3, 12, 14, 15, 16, 17, 22, 38, 40, 43
+                                 53, 55, 66
+  Environment .................. 37
+  Errors ....................... 49, 55, 57
+  ESCape,key ................... 13, 14, 15, 18, 22, 24, 30, 31, 40, 42, 44
+                                 45, 49
+  Files drive:\path ............ 22, 23
+  Filter ....................... 8
+  Forum Options,Menu ........... 6, 12, 25, 27, 31, 38, 44, 54
+  Forum Selection,List ......... 12, 13, 14, 15, 22, 25
+  Function menu ................ 23, 25, 28, 34, 39, 44
+  GO to,page ................... 8, 21, 22, 23, 34, 44
+  Hayes,modems ................. 5, 11, 19, 20
+  Host 1st,ready prompt ........ 18, 20
+
+ AUTOSIG Users Guide                                               Index-3
+__________________________________________________________________________
+
+
+
+  Host 2nd,ready message ....... 18
+  Host name .................... 18, 19
+  Host options,menu ............ 12, 17, 31, 43
+  Host Selection ............... 12, 13, 15, 18
+  Hostname override ............ 22, 23
+  Import,into editor ........... 51, 53, 54
+  Item Selection,menu .......... 12, 13, 14, 17
+  Join ......................... 34, 35, 52, 55
+  L>ocate ...................... 34, 35
+  LINEDIT,Line editor .......... 8
+  Log sessions ................. 22, 23
+  Logging ...................... 17, 23, 28, 50, 57
+  Logon ^P ..................... 15, 17
+  M>ail ........................ 35, 55
+  MA,Mail message .............. 5, 19, 34, 43, 60
+  Message Editor ............... 27, 28, 35
+  MNP .......................... 21
+  Modem commands ............... 11, 19, 47
+  Modem Connect,text ........... 18, 20
+  Modem dial,commands .......... 18, 20
+  Modem Disconnect,text ........ 18, 20
+  Modem Hang-up,command ........ 18
+  Modem Reset,command .......... 18, 20
+  Mouse,input device ........... 13, 15, 66
+  Multiple SIG,Sessions ........ 39
+  N>ext ........................ 35
+  NAK,Resend bad blocks ........ 49, 59
+  OP,Setting Forum OPtions ..... 5, 7, 8, 25, 30, 32, 33, 34, 35, 49, 50
+                                 52, 55, 56, 59, 60
+  P>rint ....................... 16, 35
+  Parameters ................... 9, 10, 43, 58
+  Parity ....................... 58
+  Password ..................... 13, 17, 18, 19, 43
+  PC Options,MENU .............. 6, 8, 13, 15, 16, 25, 31, 46, 47
+  PgDn ......................... 12, 13, 15, 18, 22, 25, 27, 31, 32, 39, 48
+                                 49
+  PgUp ......................... 12, 13, 15, 18, 22, 25, 27, 31, 32, 48
+  Preview,messages to send ..... 25, 27
+  Primary Menu ................. 12, 16, 40, 43, 66
+  Prompt char .................. 15, 17
+  Protocol ..................... 1, 2, 3, 5, 43, 48, 49, 50
+  Q>uit ........................ 32, 33, 34
+  Reconfigure PC ............... 12, 46
+  Reply ........................ 3, 25, 27, 28, 34, 35, 36, 37, 43, 44, 45
+                                 47, 51, 53, 58
+  Run .......................... 2, 5, 12, 25, 26, 39, 40, 42, 57, 66
+  S>ave ........................ 23, 27, 35, 36, 37, 55
+  S>ort ........................ 32, 33
+  Script ....................... 1, 2, 3, 5, 18, 19, 46, 47, 66
+  Sections ..................... 22, 24
+
+Index-4                                               AUTOSIG Users Guide 
+__________________________________________________________________________
+
+
+
+  SED,Sig EDitor ............... 51
+  Send forum ^P ................ 22, 24
+  Setting Your Terminal Type ... 9
+  SIG name ..................... 22, 23
+  Split,screen for CO .......... 44, 46, 52
+  Start-up ..................... 8
+  Starting msg # ............... 22, 23
+  Stay connected ............... 22, 23, 39, 41, 44
+  Switches ..................... 5, 6, 15, 17, 31, 40, 57, 66
+  T>op ......................... 34
+  Telenet ...................... 5, 19
+  Terminal Mode ................ 25, 26, 30, 44, 46, 47, 49, 50, 55
+  Terminal Parameters .......... 10
+  Terminal program ............. 26, 44
+  Tilde,~ pause character ...... 20, 21, 45
+  Trouble,Shooting ............. 19, 49
+  Tymnet ....................... 5, 12, 15, 18, 19
+  UA,Use addressee ............. 34, 35, 55
+  Upload ....................... 2, 24, 44, 46, 47, 50
+  Uploading .................... 9, 26, 48, 49
+  Userid ....................... 13, 17, 18, 19, 30
+  Vidtex ....................... 9, 10, 44
+  ZERO,parity .................. 49, 58
+  ^C,Interrupt CIS ............. 18, 21, 45
+  ^G,Default prompt character .. 8, 15, 17, 56, 58
+  ^P,Interrupt transmission .... 15, 17, 22, 24, 45, 66
+
+

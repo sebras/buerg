@@ -478,7 +478,7 @@
   - corrected ctrl-D not issuing "GO page"
   - corrected wait at EDIT (/EXIT) prompt when sending messages
   - revised use of QB files to reduce number of maximum files
-- 5.60 01/26/88
+- [5.60](5.60) 01/26/88
   - rewritten editor from the ground up
   - external scripts
   - more code in assembler

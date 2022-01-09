@@ -7,7 +7,7 @@
   - add /HS option
   - corrections for CALLER files over 640K in size
   - increase capacity: max downloads to 8000, max users to 4000
-- 1.37 01/23/91
+- [1.37](1.37) 01/23/91
   - correct handling of more than 9 nodes
 - [1.36](1.36) 01/03/91
   - add /U command line option, increase limits

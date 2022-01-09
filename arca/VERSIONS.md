@@ -1,6 +1,6 @@
 # ARCA version history
 
-- 1.29 12/09/87
+- [1.29](1.29) 12/09/87
   - add /M option to add modified files only
   - correction for zero-byte files, again
 - [1.28](1.28) 10/4/87

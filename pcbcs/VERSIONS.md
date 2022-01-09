@@ -1,0 +1,56 @@
+# PCBCS version history
+
+- 1.43 09/15/91
+- 1.41 05/19/91
+  - correct user report for single node systems
+- 1.40 05/16/91
+  - add /HS option
+  - corrections for CALLER files over 640K in size
+  - increase capacity: max downloads to 8000, max users to 4000
+- 1.37 01/23/91
+  - correct handling of more than 9 nodes
+- 1.36 01/03/91
+  - add /U command line option, increase limits
+- 1.35 09/24/90
+  - speed up processing of DL file names
+- 1.34 09/24/90
+  - account for logoffs through MARKMAIL door
+- 1.33 09/23/90
+  - correct for too many conferences
+- 1.32 08/09/90
+  - correct duplicate download entries
+- 1.31 06/08/90
+  - correct multinode report showing non-existant nodes
+- 1.30 05/14/90
+  - add kludge for PCBoard "change" in CALLER logoff records
+- 1.29 05/04/90
+  - add more statistics (reported when /T is used)
+- 1.28 04/28/90
+  - streamine message checking; minor changes for PCBoard 14.5
+- 1.27 03/18/90
+  - replace CSUB with BC7 functions
+- 1.26 03/18/90
+  - convert to BC7
+- 1.25 02/06/90
+  - correction for more than 9 bulletins in a conference
+- 1.24 12/12/89
+  - add baud rates over 19200
+- 1.23 07/18/89
+  - add /T for tracing unprocessed messages
+  - add elapsed time and 9600 usage to user activity report
+  - correct elapsed time measurements for spanning midnight
+  - remove check for elapsed time exceeding 120 minutes
+- 1.22 04/09/89
+  - add /C:n parameter
+- 1.21 01/16/89
+  - correct problem with more than 8 conferences
+- 1.20 01/02/89
+  - correct change of year problem
+- 1.15 12/17/88
+  - improve recording of active (lost) time
+- 1.14 10/18/88
+  - correct utilization plot
+- 1.13 09/21/88
+  - correct missing crlf for heading after users report
+  - correct missing aborted dl counts
+  - correct missing "Data Base Updated" counts

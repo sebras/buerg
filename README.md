@@ -43,3 +43,41 @@ me know where to get hold of it, thank you!
 
 Oh, and all utilities have been scanned with the
 period correct Thunderbyte Anti-Virus 8.11. :)
+
+| Program | Latest version | Date | Description |
+| --- | --- | --- | --- |
+
+### Archiving utilites
+
+| Program | Latest version | Date | Description |
+| --- | --- | --- | --- |
+
+### BASIC programming aids
+
+| Program | Latest version | Date | Description |
+| --- | --- | --- | --- |
+
+### Communications utilities
+
+| Program | Latest version | Date | Description |
+| --- | --- | --- | --- |
+
+### PC Board 14.5 utilities
+
+| Program | Latest version | Date | Description |
+| --- | --- | --- | --- |
+
+### Printer utilities
+
+| Program | Latest version | Date | Description |
+| --- | --- | --- | --- |
+
+### Amateur Radio
+
+| Program | Latest version | Date | Description |
+| --- | --- | --- | --- |
+
+### Miscellaneous
+
+| Program | Latest version | Date | Description |
+| --- | --- | --- | --- |

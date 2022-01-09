@@ -53,7 +53,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 | [LIST](list/VERSIONS.md) | 9.6y1 | 06/20/05 | Full screen viewing of files, see LIST.DOC Alternative to the TYPE and MORE commands. Run ARCE MORELIST for rest of LIST files |
 | [QDR](qdr/VERSIONS.md) | 4.0c | 07/11/91 | Quick Diskette Reformatter deletes all files. Clean off a disk for re-use |
 | [SORTF](sortf/VERSIONS.md) | 2.38 | 10/09/91 | Fast file sorter handles large files. Alternative to the SORT filter |
-| SQPC | 1.31 | 03/02/86 | Fast file squeezer. Creates a compressed copy of a file to save disk space |
+| [SQPC](sqpc/VERSIONS.md) | 1.31 | 03/02/86 | Fast file squeezer. Creates a compressed copy of a file to save disk space |
 | SWAPNAME | 1.2 | 02/20/86 | Switch names of two files, like CONFIG.xxx |
 | TABS | 2.1 | 10/14/86 | Replace spaces with TABs and vice versa, in ASCII text files |
 

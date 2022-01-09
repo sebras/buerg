@@ -111,7 +111,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 
 | Program | Latest version | Date | Description |
 | --- | --- | --- | --- |
-| [LJBOOK](ljbook/VERSIONS.md) | 3.70 | 02/02/00 | Print text file on HP LaserJet in booklet form |
+| [LJBOOK](ljbook/VERSIONS.md) | [3.70](ljbook/3.70) | 02/02/00 | Print text file on HP LaserJet in booklet form |
 | [LP-HP](lp-hp/VERSIONS.md) | 1.8 | 11/23/88 | Print files to HP LaserJet with headings, etc |
 | [E2O](e2o/VERSIONS.md) | 1.2 | ??/??/?? | Convert Epson print files to Oki files, w/ASM |
 | [LP-OKI](lp-oki/VERSIONS.md) | 1.4 | 08/14/85 | Print files on Okidata ML92, includes ASM |

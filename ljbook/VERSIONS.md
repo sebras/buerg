@@ -46,7 +46,7 @@
   - change symbol set for use with Laserjet series II
 - 2.10 04/04/88
   - incorporate RWS mods for BOLD18.USL downloadable font by R. W. Smetana
-- 2.00 02/10/88
+- [2.00](2.00) 02/10/88
   - make MS-MASM v5 compatible
 - [1.06](1.06) 02/05/88
   - correct tab spacing

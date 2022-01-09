@@ -129,7 +129,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 
 | Program | Latest version | Date | Description |
 | --- | --- | --- | --- |
-| AUTODATE | 1.1 | 04/28/84 | Simplifies setting date/time without clock, w/ASM |
+| [AUTODATE](autodate/VERSIONS.md) | 1.1 | 04/28/84 | Simplifies setting date/time without clock, w/ASM |
 | COLORS | 1.0 | 06/24/85 | Experimental program to change DOS colors, w/ASM |
 | JLH | 1.07 | 08/01/86 | JET's Little Helper (for Tall Tree's JET utility) |
 | LIST569C | 5.69c | 01/24/87 | Old version of LIST is smaller and simpler |

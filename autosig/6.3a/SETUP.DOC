@@ -1,0 +1,35 @@
+   AUTOSIG Setup Script                                       March 27, 1990
+
+
+   You can readily see that there are a number of parameters which must
+   be set in your CompuServe account before you and AUTOSIG can be a
+   productive team, together.  Without taking the time to learn all about
+   the automated world of script processing, you can go right ahead and
+   use one that we've provided for you to set parameters in your favorite
+   forums.  It's called SETUP.SCR, and is included with the program.
+
+   After setting your host options and defining your forums, run the
+   SETUP script on each of your forums in the following steps:
+
+   1.  Select the first forum from the Main Menu.
+
+   2.  Press "G" to go online.
+
+   3.  Once at the top of the forum, read the screens until you are asked
+       to "J"oin the forum.  Join, then enter your name and PPN.
+
+   4.  Once at the "Enter choice !" prompt, press Alt-T to run a script.
+       In the script name prompt block, type "setup".  Press return, and
+       watch the magic happen!
+
+   5.  At the "Forum !" prompt, press Alt-G.  This tells ATO to gather
+       the names of the message sections.  You can use this information
+       when you leave messages and need to know which section to use.
+
+   6.  At the "forum !" prompt again, press Ctrl-X.  This puts ATO back
+       at the Forum function menu.
+
+   7.  Select your next forum using the left or right arrow keys.
+
+   8.  Repeat steps 2 through 7 for each forum you wish to use.
+

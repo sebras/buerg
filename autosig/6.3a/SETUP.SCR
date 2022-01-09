@@ -1,0 +1,21 @@
+sendline op
+match !
+sendline pause
+match :
+sendline n
+match !
+sendline editor
+match :
+sendline edit
+match !
+sendline 2
+match :
+sendline command
+match !
+sendline pc
+match prompt:
+sendline ^G
+match !^G
+sendline
+match ?
+sendline p

@@ -1,7 +1,7 @@
 # QBX version history
 
 - 5.5 02/22/90
-- 5.00 02/22/90
+- [5.00](5.00) 02/22/90
   - add BC7 key words
   - put xrefs back into basic ram, bc7 won't free up memory
   - add 3 quick-sort routines

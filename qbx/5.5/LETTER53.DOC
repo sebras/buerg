@@ -1,0 +1,16 @@
+Dear Vernon,
+
+Here is my third cut at the BC7 version of QBX.  I have added the /K option
+to find the Keywords in use in a program.  QBX was already doing this, so I
+just had to add a l;ittle logic to track them.  I also added full DOS path
+support for the Source file location and full WILD CARD support in the name. 
+The program now loop thru all files that match the soure spec.  Also I added
+support for the INCLUDE environment variable to locate the include files.
+
+I though that yesterdays version was the last, but I had a few more ideas!
+
+Talk to you later,
+
+David
+
+

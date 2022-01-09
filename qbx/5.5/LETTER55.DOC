@@ -1,0 +1,16 @@
+Dear Vernon,
+
+Here is my fifth cut at the BC7 version of QBX.  Here I have added the /B
+switch.  This is for people who use the BASIC environment and have line
+numbers on all of their code.  It uses the BASIC line number, rather then
+statment number, for the cross reference and listing.
+
+I have also places UPC back in assembly code.  This is a new UPC routine.  I
+have to make it compatible with BC7's Far String type. It works the same but
+the addressing is different.
+
+Talk to you later,
+
+David
+
+

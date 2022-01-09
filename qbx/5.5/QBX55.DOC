@@ -1,0 +1,324 @@
+
+  QBX - Quick Basic Cross Referencer			  Version  5.00
+  (c) Copyright Vernon D. Buerg 1986-90 	       February 22,1990
+  ALL RIGHTS RESERVED.
+
+
+
+  Purpose
+  -------
+
+	Determines cross references to alphanumeric labels and symbols
+	within a BASIC source program.
+
+  Syntax
+  ------
+
+	QBX [filename[.BAS]]  [/D]	    [/Lnn]  [/Cnnn]  [/R]
+			      [/P]
+			      [/F[(filename)]]
+			      [/N]
+			      [/E]
+			      [/K]
+                              [/B]
+			      [/?]
+
+  Remarks
+  -------
+
+	You may specify any or all of the command line switches in an
+	environment variable calles QBXREF.  Simply set QBXREF=switches
+	and these will become your default switch settings.
+
+	If no filename is supplied, you are prompted to enter the
+	file name of the BASIC source file. The source file must
+	have been saved in ASCII (,A) format. The program may contain
+	any valid combination of numeric and alphameric labels. The
+	syntax is dictated by the Microsoft Basic Compiler manual
+	and the IBM BASIC, Version 3.1, manual.
+
+	The source file may contain TAB characters but their use
+	may cause the listing to be mis-aligned.
+
+	The output consists of a program listing and a cross-reference
+	listing. The destination for the listing may be specified in
+	the command as:
+
+		/D  display listings on the console display
+		/P  print the listings on the LPT1: printer
+		/F  write the listings to a file; may be supplied as (filename)
+		/N  suppress all listings
+
+	For example, /F(MYPROG.LST) sets a destination of a file with
+	the name MYPROG.LST. If no extension is supplied, .LST is used
+	for the program listing and .REF is used for the cross-reference
+	listing.
+
+	If no destination parameter is supplied, you will be asked to supply
+	it.
+
+	The number of lines per page may be suppied by the /L parameter,
+	for example /L66 sets a default of 66 lines per page.
+
+	The number of columns per line may be supplied by the /C parameter,
+	for example /C132 sets a default of 133 columns per line.
+
+	Actual file record (line) numbers may be used instead of statement
+	numbers by supplying the /R option.
+
+	If you are using the BC7 library functions and wish them to be
+	treated as normal reserved words, you may use the /E option.
+
+        If you need a list of the Basic Keywords being used in a program,
+	use the /K option and a file will be created with the list of words
+	found in the current program.  The file will be called 'filename.KWF'
+
+        If you have a Basic program that has line numbers on ALL of the lines,
+	you may use the /B switch to reference lines with their Basic line
+	number instead of their statement number.
+
+
+  Meta Commands
+  -------------
+
+	The source file may contain the meta commands described in
+	the Quick Basic (versions 1 or 2) or Basic 7 manuals. These meta
+	commands are currently recognized:
+
+		$INCLUDE  - cause QBX to include the named file with
+			    the current source program, and may be nested
+			    to approximately 15 levels;
+		$LINESIZE - sets the number of characters per page;
+		$PAGESIZE - sets the number of program lines per page;
+
+		$PAGE	  - forces a new listing page
+		$SKIP	  - inserts one blank line into the listing
+		$SKIP:n   - inserts "n" blank lines into the listing
+		$SUBTITLE - adds a subtitle to each listing page second line
+		$TITLE	  - adds a title to each listing page; if none
+			    are supplied, the title is "QBX"
+
+  Operation
+  ---------
+
+	There are two parts to the operation of QBX. The first phase
+	produces a program listing and builds the internal tables
+	representing the program's labels and symbols. The second
+	phase produces a label and a symbol cross reference.
+
+	The output from each phase may be directed to the screen,
+	a printer (LPT1), a file, or nowhere. You are prompted for
+	the destination.
+
+	The format of the listings is governed by two values: the
+	number of lines per page, and the number of columns per line.
+	You supply  both values. The defaults are 66 lines per page
+	and 80 columns. You may over-ride these values by using the
+	meta commands $PAGESIZE and $LINESIZE in the program. If the
+	console is used for output, the values are always set to 24
+	lines and 80 columns with an option at the end of each page
+	to pause or continue.
+
+	You must set your printer to the appropriate lines and columns
+	values before running QBX. It does not send any printer codes.
+
+	The internal tables contain the labels, symbols, and cross
+	reference information. The current limits are 2500 labels and
+	symbols, and approximately 16000 cross references (depends
+	upon the amount of memory available. There is also a limit
+	off 200 fields per statement. A field is a symbol, label,
+	delimiter, or operator. These values are summarized at the
+	end of program execution.
+
+	You may terminate processing by pressing the ESCape key.
+
+
+
+
+
+
+
+  Version history
+  ---------------
+
+	1.01-1.08, 1/17/86, the hack begins
+	1.09, 1/19/86
+	 - fix Error6 in line 3440
+	 - correct listing of long program lines
+	 - add missing 30 keywords (oops)
+
+	1.10, 1/19/86 - speed up analysis phase
+	1.11, 1/22/86 - correction for comments
+	1.12,1.13; 1/22/86 - revise symbol table lookup
+	1.14, 1/24/86 - implement meta commands
+	1.15, 1/27/86 - correct FIELD as labels
+	1.16,1.17, 1/28/86 - improve analysis routines
+
+	1.18, 2/1/86
+	 - externalize XREFS table to improve housekeeping time
+	 - requires LINK QBX+XREF; followed by EXEPATCH to set x1800 max paras
+	1.19, 2/3/86
+	 - optimize xref listing and external xref subroutines
+	1.20, 2/4/86
+	 - add external UPC subroutine
+	1.21-1.23, 2/7/86
+	 - add hash table for symbol look-up
+	 - use binary search for keyword look-up
+	1.24-1.26, 2/8/86
+	 - correct Error 6 at line 3900
+	1.27-1.28, 2/13/86
+	 - remove UPC due to fouling meta commands
+	 - clean up headings and titles
+
+	1.29, 3/9/86 - correct EXEPATCH problem
+	1.30, 3/11/86 - correct Print function
+	1.31, 4/02/86 - print after parsing record
+	1.32, 4/08.86 - correct label case, correct tabs
+	1.33, 4/22/86 - correct page title positioning
+	1.34, 6/23/86 - increase maximum FIELDS to 200
+
+	2.00, 7/18/86 - add QB 2.00 keywords
+
+	2.01, 9/27/86 - correct not finding labels with leading blanks
+
+	2.02, 11/12/86
+	  - Correct problem with $INCLUDE
+	  - Correct error 52 at 3350 if don't want xref output
+	  - expand label tables from 2000 to 2500
+	  - supply documentation
+
+	2.03, 11/17/86
+	  - correct handling of continued lines (using underscore) which
+	    are followed by comments
+	  - correct handling of $TITLE; default title is now program name
+	  - correct handling of lower case meta commands
+	  - show name(s) of included files during first phase
+
+
+
+
+
+  Version history (cont'd)
+  ---------------
+
+
+	2.05, 11/28/86
+	  - add command line options for destination, lines per page,
+	    and columns per line
+	  - improve detection of label versus symbol references for numbers
+	  - note assignment to symbols by an asterisk in cross reference
+
+	2.06, 12/06/86
+	  - fix incorrect statment numbers in xref after labels
+	  - remove duplicate references
+
+	2.07, 3/3/87 by David W. Campbell
+	  - acknowledge missing trailing double quotes
+	  - don't number blank or null lines
+	  - don't print page eject or blank line at top of first page
+	  - correct meta pagesize
+	  - correct default pagesize
+
+	2.07b, 3/4/87 by David W. Campbell
+	  - add distinction between dimensioned and undimensioned variables
+
+	3.00a, 6/21/87
+	  - added keywords for QB version 3
+	  - more work needs to be done.
+
+
+	4.00a, 4/03/88
+	  - add QB 4 keywords
+
+	4.00b, 4/03/88
+	  - expand maximum fields to 600
+	  - expand symbol table to include symbol type
+	  - expand xref table to include reference type
+
+	4.00c, 5/28/88
+	  - correct Goosen's problem with open (double quote) comments
+	  - change default filename for xref from .REF to .LST
+
+	4.00d-f, 7/15/88
+	  - increase capacity, allow up to 2500 symbols
+	  - add cross reference of SUBs and DEF FN routines
+	  - add /R option to use record (line) instead of statement numbers
+	  - correct missing numeric labels in label listing
+
+	4.00g, 10/09/88
+	  - correct overwrite of output file if /f(filename) is used
+	  - correct "ERROR: Include file 'filename' is missing" message
+
+	5.00, 02/22/90
+	  - add BC7 key words
+	  - put xrefs back into basic ram, bc7 won't free up memory
+	  - add 3 quick-sort routines
+	  - remove option base 1, caused a bug on first pass at line 4100
+	  - add /E option for BC7 extended functions to be key words
+	  - add /? option for help screen
+          - make UPC a Basic SUb program
+          - allow wild cards in file name
+	  - allow full path also
+	  - add support for INCLUDE environment variable
+	  - add /K option to print out Basic keywords found
+          - fix problem in line 1760 if NONE selected for output
+          - add /B switch for Basic programs with line numbers
+          - add QBXREF environment variable support for default switches
+          - fix problem in line 2190 if line started with a colon
+
+
+
+  Notes
+  -----
+
+	Copyright Vernon D. Buerg 1986-88.  All rights reserved.
+
+	QBX was written using the Microsoft Basic Compiler,
+	Version 7.00.  At least 128K of memory is required, but 192K or
+        more is recommended. The additional memory is used to increase the
+        limits of the numbers of labels, symbols and cross references that
+        QBX can process.
+
+
+	QBX is	supplied  for  personal,  private  use. Feel free to
+	distribute QBX given these restrictions:
+
+	  o  the program  shall be supplied in its original,  unmodified
+	     form, which includes this documentation;
+
+	  o  no fee is charged;
+
+	  o  "commmercial" use without a license is prohibited;
+
+	  o  the program may not be included -	or bundled - with  other
+	     goods or services.  Exceptions may be granted upon  written
+	     request only.  This also applies to clubs and distributors.
+
+
+	If you find QBX of value, your gift of $15, or any amount, would
+	be greatly appreciated.
+
+	Please direct your inquiries, complaints, suggestions, etc., to:
+
+			Vernon D. Buerg
+			139 White Oak Circle
+			Petaluma, CA  94952
+
+			Data:	     (707) 778-8944,  24 hour BBS
+			       -or-  (707) 778-8841
+			Compuserve:  70007,1212
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

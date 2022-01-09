@@ -67,7 +67,7 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 | [ARCV](arcv/VERSIONS.md) | 1.22 | 04/13/91 | Display a list of files in an ARC archive |
 | [DUH](duh/VERSIONS.md) | 1.5 | 05/02/89 | Delete files that already exist in archive files |
 | [FV](fv/VERSIONS.md) | 2.00 | 01/11/00 | Display directories of archive files including ARC, PAK, ZIP, LZH and self extracting files |
-| LARC | 2.6 | 05/23/90 | Create the Littlest ARChive file, w/BAS |
+| [LARC](larc/VERSIONS.md) | 2.6 | 05/23/90 | Create the Littlest ARChive file, w/BAS |
 | LUD | 1.06 | 07/08/85 | Delete one or more files from a library (LBR file) |
 | LUE | 2.2 | 04/28/86 | Extract one or more files (members) from an LBR type library |
 | LUT | 1.93 | 05/27/85 | Displays the directory of library (LBR) files |

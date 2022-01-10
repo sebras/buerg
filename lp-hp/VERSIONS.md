@@ -1,0 +1,21 @@
+# LP-HP version history
+
+- 1.8 11/13/88
+  - correct processing of control characters
+- 1.71 11/23/87
+  - added option for font selection
+  - changed margin to accept 1 digit
+- 1.7 10/05/87
+  - added options for orientation, margins, and tabs
+  - changed title format
+- 1.6l 06/19/86
+  - expand tabs and use HP LJ printer codes
+  - fine tune cpi and lpi
+  - use Int 17h for quicker printing
+- 1.5 06/13/86
+  - minimal changes for HP LaserJet
+- 1.4 08/14/85
+  - account for TABs and long lines
+  - remove Int 17h due to bad spoolers
+- 1.2 09/12/84
+- 1.1 04 27/84

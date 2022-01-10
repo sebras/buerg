@@ -1,0 +1,74 @@
+# LJBOOK version history
+
+- 3.70 02/02/00
+  - expand date in heading to four digits
+- 3.60 09/20/91
+  - correct A4 margins
+  - add /W command line option to enable line wrap
+- 3.50 04/25/91
+  - replace /B internal font with a much crisper one that includes the linedraw characters; font designed and supplied by George Havach
+- 3.40 04/18/91
+  - add /I hole punch margins  mods by Graham Ullrich
+- 3.30 01/21/91
+  - add /C continuous printing option, mods suggested by Rob Greenbank
+- 3.20 01/08/91
+  - remove setting of PC10 symbol set
+  - correct some margins
+- 3.10 12/20/90
+  - correct A4 margins
+  - add /N command line parameter to skip first prompt
+  - set PC10 symbol set
+- 3.00 12/10/90
+  - add duplex printing mods from Alain Caillard
+- 2.90 10/23/90
+  - mods from Robert W. King for DeskJet printing
+  - change internal font to print linedraw characters
+- 2.80 09/18/90
+  - enable linewrap; entire lines are printed
+  - add prompt after reporting number of pages to print
+- 2.70 06/30/90
+  - made BOLD18 font internal for use with /B option
+- 2.60 06/17/90
+  - add /R option to reset printer
+- 2.50 02/19/90
+  - suggested changes and corrections from David Bryant
+- 2.40 02/18/90
+  - fix linecount with long lines & reset prob.
+  - add /A option for printing on A4 size paper from changes by Paul Messchaert and Volker Blasius
+- 2.31 11/26/89
+  - control code corrections from Lee Buck
+- 2.30 07/01/89
+  - reset ljp when finished
+  - add DOS file sharing
+- 2.20-modified 10/28/88
+  - changed for A4 paper in UK by M. F. Winiberg
+- 2.20 10/28/88
+  - change symbol set for use with Laserjet series II
+- 2.10 04/04/88
+  - incorporate RWS mods for BOLD18.USL downloadable font by R. W. Smetana
+- 2.00 02/10/88
+  - make MS-MASM v5 compatible
+- 1.06 02/05/88
+  - correct tab spacing
+- 1.05 01/26/88
+  - add /2 option
+- 1.04 01/26/88
+  - add /T title option
+- 1.03 01/15/88
+  - process tabs
+- 1.02 01/14/88
+  - some suggestions from Guy Gallo
+  - print only one sheet if 1 or 2 pages
+  - leave empty pages blank
+- 1.01 11/22/87
+  - play with line length and margins
+- 1.0 10/05/87
+  - first public release
+- 0.99 08/10/87
+  - correction for files over 256 pages
+- 0.98 07/19/87
+  - correction for multiples of 4 pages
+- 0.97 07/05/87
+  - add option switches
+- 0.90 07/02/87
+  - first flyer

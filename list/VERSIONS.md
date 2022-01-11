@@ -941,7 +941,7 @@
 - 6.0a 08/31/86
 - 5.93 11/05/86
 - [5.91f](5.91f) 06/06/86
-- 5.91 05/19/86
+- [5.91](5.91) 05/19/86
   - correct testing and display of M monitor retrace option
 - 5.90 05/18/86
   - correct not displaying last record of file if file does not end in an LF

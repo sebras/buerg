@@ -151,7 +151,7 @@
 - 9.0f 12/11/93
   - Plus: correct Drive Not Available with upper case drive letter
   - Correct search using wildcard escape character
-- 9.0e 11/15/93
+- [9.0e](9.0e) 11/15/93
   - Plus: allow access to CD ROMs in shareware version
 - 9.0d 10/30/93
   - Experiment with cloning of STDIN for console input

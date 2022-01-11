@@ -1,0 +1,23 @@
+
+E2O Command
+-----------
+
+Purpose:   Convert a "print" file from IBM/Epson format to Oki format.
+
+Syntax:	   E2O  [d:][filename[.ext]]   [d:][filename[.ext]]
+
+Remarks:   The first filename specifies the "print" file to be
+	   converted. The second defines the new file. If either
+	   filename is omitted, you will be prompted for it.
+
+	   Control characters encountered in the input "print" file
+	   are converted from IBM-Matrix-Printer codes to OkiData codes.
+
+	   The ESC-8, ESC-9, DC1, and DC3 control codes are ignored.
+
+Notes:	   Written for the IBM PC using DOS 2.0 or later,
+	   by Vernon D. Buerg. For public domain or other use.
+
+	   Version 1.1 - September 9, 1984
+
+

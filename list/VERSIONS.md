@@ -986,7 +986,7 @@
 - 5.56 12/20/85
   - Adds alt-R to toggle a ruler on the top line.
   - Make LIST compatible with DESQview and TopView.
-- 5.52 07/15/85
+- [5.52](5.52) 07/15/85
   - Correct Print command problems
   - Adds alt-C to clone LIST.COM with new colors
   - The X command now clears the screen when exiting to DOS, while F10 leaves the last display on the screen.

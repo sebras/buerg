@@ -1,0 +1,120 @@
+LIST Version 9.6o	       VERSION HISTORY			   Aug 30, 2002
+
+  Note: references to long file names applies to Windows 9x, Windows Me
+	and Windows 2000 only. Windows NT is excluded. LFN may not be
+	available to LIST on NTFS volumes.
+
+
+  9.6o,  8/30/02 - Correct C)opy with new filename:
+		    e.g. copy x x.x
+		    e.g. copy x \pathname\filename.ext
+  9.6n,  5/12/02 - Expand maximum path\file name from 76 to 240 chars
+		   Note: Windows XP now limits DOS path\file to a maximum
+		   of 76 characters in the Command(DOS) window
+	 5/30/02 - Fuss with datestamps for DirectCD: Roxio/WIndows bug
+  9.6m,  3/30/02 - Enhanced: Add Ctrl-V command to File Selection Menu to
+		   invoke the program LXPIC.COM to view a graphic image file
+  9.6l,  1/10/02 - Special version: leaves lines marked after any operation
+  9.6k, 12/07/01 - Correct Copy to disallow copying a file to itself
+  9.6j, 11/29/01 - If PageBreak (Ctrl-L) is on, don't unmark lines
+  9.6h, 11/19/01 - Change the way page break (formfeed) is handled:
+		   the formfeed character is now displayed unless the
+		   'wstar' * filter is on; when ctrl-L is used a line of
+		   dashes is displayed after the formfeed to highlight
+		   it as a new 'page'
+  9.6g, 11/18/01 - Enhanced:Add alt-D command to File Selection Menu to toggle
+		   whether or not directory entries are included in sorting
+  9.6f,  8/11/01 - Include directory names in sorting of file names
+  9.6e	 6/18/01 - Change the way LIST exits: now INT21 instead of far ret
+  9.6d	 5/25/01 - Change C)opy prompt to include U)pdate choice
+  9.6c	 4/24/01 - correct use of /D when there are long file names matching
+		   the filespec; was broken by changing the command line
+		   handling to accept a single long file name
+  9.6b	 3/04/01 - (beta) Change Copy/Move to copy only files that do not
+		   exist in the target directory; reply U to the 'Replace
+		   existing file?' prompt
+  9.6a	 2/16/01 - Enhanced: Added Ctrl-S in File Selection Menu to execute the
+		   program associated with the file, e.g. invoke Word for
+		   a .DOC file
+		 - Correct display of directories with long file names
+  9.4g	12/27/00 - Correct handling of LFN by SendTo
+  9.4f	12/13/00 - Allow a single long file name on the command line
+  9.4e	12/09/00 - Allow long file name from alt-F prompt for file name
+  9.4d	12/08/00 - Correct file name in top line when viewing multiple files
+  9.4c	12/07/00 - Cosmetic changes
+  9.4a	 8/30/00 - Use long file name in top line titles
+  9.3b	 3/07/00 - Fixed create dir (N) and copy with rename using lfn
+  9.3a	 1/03/00 - Fixed lfn rename; sometimes failed in DOS
+  9.2b	 4/05/98 - Change Rename to use up to 55-characters for long file name
+  9.2a	 8/12/97 - Add Matrox code M for alt-e
+  9.20	 7/19/97 - Add lfn to subdir names in menu displays
+		 - Preserve lfn for copy and move operations
+  9.1f	 6/10/97 - Correct a-e for TD; add vesa toggle
+		 - Add ctrl-j to toggle VESA detection; default is off
+		 - add Trident code D, Ark code K to alt-e
+  9.1e	 4/15/97 - Remove check for FF (formfeed) from * filter
+	 5/07/97 - Fix running on server check
+  9.1d	 3/26/97 - Remove lfn display for NT 4.00
+  9.1c	 2/24/97 - Add tests for 132-col modes under NT; S3 still fails
+  9.1b	 2/06/97 - Add check for program on server
+  9.12	 1/09/97 - Add ~ (tilde) command to display long file info while
+		   viewing a file
+  9.11	12/13/96 - Add Win95 long file name to 1-up file selection display
+*****************> COPY, MOVE, DELETE, and RENAME do NOT use lfn yet!!!
+	 5/10/96 - Correct /B (bios) scrolling command line
+  9.1m	 8/07/95 - Plus: Restore file's line number for Ctrl-V window switch
+  1.9l	 7/25/95 - Enhanced: add Ctrl-G to get fixed length record size
+	 7/26/95 - Add registration menu to LISTOPT
+		 - Enhanced: correct EBCDIC with large files
+  1.9k	 5/26/95 - Plus: correct cloning of /K command line parameter
+  1.9j	 5/02/95 - Enhanced: correct alt-X when alt-E used with VESA modes
+  1.9i	 4/27/95 - Enhanced: expand @ list selection, add entries, scrolling
+  1.9h	 4/20/95 - Plus: correct File Selection Menu L)ist command with many files
+  1.9g	 4/11/95 - Correct a-W for small and regular version
+		 - Plus: add spinner to move and copy
+  1.9f	 4/10/95 - Correct memory corrupt with many LFs and J or T
+  1.9e	 4/07/95 - Enhanced: change ? (help) to display online Help file
+  1.9d	 3/16/95 - Cosmetic changes
+  1.9c	 1/31/95 - Plus: Correct using OPT file from 9.0
+
+* 9.1b	 1/27/95 - Public release
+	11/14/94 - Enhanced: fix EBCDIC converter with small files
+
+* 9.1a	10/06/94 - Public release
+
+  1.95	10/05/94 - Plus: change Ctrl-V to properly switch display windows;
+		   Ctrl-PgUp and Ctrl-PgDn no longer result in switching
+		   display windows; any file can be viewed in either window
+
+  1.94	10/05/94 - Change year in date displays to 4-digits
+		 - Plus: correct use of LISTOPT when mouse cloned on
+		 - Plus: change Ctrl-V to properly switch display windows
+	 9/29/94 - Enhanced: add /@ command line parameter to read list of
+		   file names
+	 9/28/94 - Enhanced: add @ command to display review list
+	 9/21/94 - Enhanced: limit c-B to minimum of 8-byte lrecl
+	 8/03/94 - Enhanced: dismiss VESA modes if no extended text modes
+
+  9.0k,  5/27/94 - Cosmetic changes only
+
+  9.0j,  5/05/94 - Plus: fiddle with mouse sensitivity; save and restore user
+		   mouse settings
+
+  9.0f, 12/11/93 - Plus: correct Drive Not Available with upper case drive letter
+		 - Correct search using wildcard escape character
+
+  9.0e, 11/15/93 - Plus: allow access to CD ROMs in shareware version
+
+  9.0d, 10/30/93 - Experiment with cloning of STDIN for console input
+		 - Fix T/J/w/* filters adding extra 3-chars to end of file
+
+  9.0c, 10/24/93 - Plus: correct check for networked drives; the shareware
+		   version does not support networked drives
+
+  9.0b,  8/23/93 - Plus: correct lost character before page break (ctrl-L)
+		 - Plus: correct hex display stripping hibit in hex part
+		 - Plus: correct free space value on drives over 640mb
+		 - Plus: correct incompatibility with older LISTOPT programs
+
+* 9.0a,  7/14/93 - Public release to registered users
+

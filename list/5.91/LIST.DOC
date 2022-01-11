@@ -1,0 +1,590 @@
+
+
+
+
+
+                        LIST Version 5.91
+                (c) Copyright Vernon D. Buerg 1986
+
+                           May 19, 1986
+
+
+
+                        Table of Contents
+                        -----------------
+
+                Description ....................... 1
+                Display format .................... 2
+                 Status line .......................2
+                 Command line ......................3
+                Keys and commands ................. 4
+                 Positioning to lines ............. 5
+                Cloning procedure ................. 6
+                 DEBUG Information ................ 6
+                 Screen attributes ................ 7
+                Searching for text................. 8
+                Filtering ......................... 9
+                Update history ................... 10
+                Restrictions ..................... 12
+
+
+                                                        LIST     Page 1
+
+ Command  LIST
+ -------------
+
+ Purpose:  To display the contents of an ASCII text file,  line by  line
+        with the aid of scrolling, positioning and filtering commands.
+
+ Format:   LIST  [d:][path]filename[.ext]
+
+ Remarks:  An ASCII file of any size may be listed.
+
+           The "filename" is optional.  If omitted, you are prompted  to
+        to enter  a filename.   You may  include drive,  path, and  wild
+        cards in the file name.   The first file which matches  the name
+        is displayed until an end-of-file character is encountered. Each
+        file which matches the "filename" may be displayed.
+
+           LIST was  designed to  display ASCII  files.  That  is, files
+        which  contain  text  and  not  binary  or  control codes.  Text
+        characters  usually  range  from a  value of 32 to 127.  To view
+        binary files (COM, EXE, etc), the alt-H hex dump display  option
+        is available.
+
+           Characters  below  32  (a  blank)  are  replaced with a funny
+        character to indicate that a non-displayable character has  been
+        encountered.  This character is an upside-down question mark.
+
+           Characters above 127 may be valid graphic characters, and may
+        be displayed if  the '8' command  is in effect.   To insure that
+        characters above ASCII value 127 are not displayed, use the  '7'
+        command.
+
+           The top line of the display gives the file name, current right
+        scroll offset, and the file's creation date and time. Optionally,
+        a ruler may be displayed on the top line by using the alt-R keys.
+
+           The  file  is  displayed  with  one  logical  record  on each
+        80-column display line.   A logical record  ends in a  linefeed.
+        The maximum logical record may  be 256 characters long.  If  the
+        record exceeds 80  characters, you may  view the portion  beyond
+        the 80 columns  by using the  scroll right command,  or by using
+        the Wrap feature.
+
+           The Wrap  command toggles  ON or  OFF the  wrapping of  lines
+        longer than 80 characters.  With Wrap on, lines are displayed in
+        their  entirety,  80  characters  per  display line.  The scroll
+        -left and -right functions are disabled when Wrap is ON.
+
+           The file may  be PRINTed as  it it displayed.   The P command
+        toggles  the  printer  on  or  off.   When  first entered, the P
+        command causes the current screen  to be printed.  As new  lines
+        are displayed, they too are printed.  Printing may be stopped by
+        entering another P command.  The PrtSc key may also be used, but
+        the title and prompt lines will be printed with the lines of the
+        file. Empty lines cause a line to be skipped on the printer. The
+        letter P is displayed in column 80 of the top line while printing.
+                                                        LIST     Page 2
+
+ Display format
+ --------------
+
+           The monitor display is defined in terms of lines and columns.
+        A typical monitor can display 25 lines of 80 columns each.  LIST
+        attempts to use the number of lines and columns for the monitor
+        mode in use.  For example, if the monitor is in 40 column mode,
+        LIST displays only 40 characters per line.
+
+           The top line of the display is called the Status line.  The
+        bottom line is called the Command line.  The remaining lines are
+        called the primary display window, and are usually lines 2
+        through 24.
+
+
+ Status line format
+ ------------------
+
+    The Status line has the following format:
+
+    LIST   lllll +sss mm/dd/yy hh:mm  bKMPSW  - filename
+
+    where,
+
+        'LIST'     is the name of this program
+
+        'lllllll'  is the line number of the first line in the
+                  display window (usually on line 2)
+
+        '+sss'     if displayed, this is the Scroll amount, in
+                  multiples of 20, corresponding to the number
+                  of columns that the display has been shifted
+                  to the right to view records longer than 80
+
+        'mm/dd/yy' is the file's creation date
+        'hh:mm'    is the file's creation time
+
+        'D'       indicates that the hex Dump display option is in use
+        'b'       indicates whether the 7-bit, 8-bit, or *-option is
+                  in use
+        'K'       indicates that the Keyboard flush option is in use
+        'M'       indicates that tests for monitor retrace are not made
+        'P'       indicates that Print is in use
+        'S'       indicates that the C (file sharing) is in use
+        'W'       indicates that the Wrap mode is in effect
+                                                        LIST     Page 3
+
+ Command line format
+ -------------------
+
+    The Command line has the following format:
+
+    command message ______ Keys: <> PgUp PgDn Q=next X=exit ?=Help
+
+    where,
+
+      'command' indicates the current process:
+
+          'Command'   you are being asked to enter a command
+                       enter the letter, or press the keys for
+                       the action to perform
+
+          'Reading '   the file data is being read
+          'Filter  '   the file data is being formatted for display
+          'Scanning'   the Scan/Find text is being searched for
+
+          'Scan   '   you are being asked to enter text to locate
+          'Find   '    in the file, up to 31 characters may be entered
+
+          '# lines?'   you are being asked to enter a 1 to 5 digit
+                       number that is the amount of lines to skip
+
+          'Line #? '   you are being asked to enter a 1 to 5 digit
+                       line number to which the display is to be
+                       positioned
+
+
+      'message' may be one of:
+
+          '*** Text not found ***'
+           the Scan/Text was not found in the file
+
+          '   *** Top of file ***'
+           the first line of the file is being displayed
+
+          '   *** End-of-file ***'
+           the last line of the file is being displayed
+                                                        LIST     Page 4
+
+ Key functions and Commands
+ --------------------------
+
+        On the COMMAND line, enter a letter or control key:
+
+        Letter(s)     Default   Function
+        ---------     -------   ------------------------
+        A                       find next occurance of 'text'
+        B                       skip to end of file (bottom)
+        C               off     toggles closing of (shared) files
+        D                       scroll down one page
+        F                       Find 'text' regardless of case
+        H or ?                  list commands (HELP)
+        K               off     toggle keyboard flush; if on, commands
+                                may be queued up by holding a key down
+        L                       scroll left 20 columns
+        M                       toggle test for display retrace, if on
+                                the display is faster but may flicker;
+                                not applicable to monochrome monitors
+        N                       down one (next) line
+        P               off     toggle printer on or off
+        Q                       display next matching file
+        R                       scroll right 20 columns
+        S                       Scan for exact text match, case dependent
+        T                       restart from first line (top)
+        U                       scroll up one page (23 lines)
+        W               off     toggle wrap of lines over 80 chars
+        X                       terminate, clear screen and exit to DOS
+
+        7               off     turn off high bit (non-graphics only)
+        8               on      leave high bit on (graphics)
+        *               off     toggles special * document filtering
+
+        +                       position a given number of lines forwards
+        -                       position a given number of lines backwards
+
+        \text                   Find 'text' regardless of case
+        /text                   Scan for exact text match
+
+
+    Control key      Function
+    -----------     -------------------------------------------
+     Enter           continue to next page
+     END             position to end of file (bottom)
+     ESCape          Display next matching file
+     HOME            restart from first line (top)
+     PgUp            scroll up one page, 23 lines
+     PgDn            scroll down one page, 23 lines
+
+     left arrow      scroll left 20 columns
+     right arrow     scroll right 20 columns
+     up arrow        up one (previous) line
+     down arrow      down one (next) line
+                                                        LIST     Page 5
+
+ Key functions and Commands (cont.)
+ --------------------------
+
+
+    Control key      Function
+    -----------     -------------------------------------------
+     F1              Help - display summary of commands
+     F3              Find next occurrance of text after Scan or Find
+     F10             Exit to DOS
+
+     F5              change background color for main body of display
+     F6              change foreground color for main body of display
+     F7              change background color for top and bottom lines
+     F8              change foreground color for top and bottom lines
+
+     ctl-HOME        positions to a specific line number
+     ctl-PgUp        restart from first line (TOP)
+     ctl-PgDn        skip to end of file (BOTTOM)
+     ctl-left-arrow  reset scroll to column 1
+
+     alt-C           clone LIST.COM, change colors or options
+                     permanently in program file
+     alt-H           toggles hex dump formatted display
+     alt-R           toggles display of a ruler on the top line
+     alt-S           toggles file Sharing option, when off
+                     files remain open until program termination
+
+
+ Positioning to Lines
+ --------------------
+
+           Each displayable line of the file is assigned a line number.
+        The first line is assigned line number 1.  The highest allowable
+        line number is 65535.  In order to determine the last line
+        number, the entire file must be read.  For this reason, the
+        first time that the END (bottom) command is issued, it will take
+        longer to process.
+
+           If the Wrap option is in effect, there is one line number
+        required for each 80 bytes of the file records.
+
+           If the hex dump option is in effect, there is one line number
+        required for each 16 bytes of the file.
+
+           You may position to a specific line number by using the
+        c-Home, control key and Home key.  When c-Home is entered, you
+        are prompted for the line number.  Enter the 1 to 5 digit line
+        number.  The display will now begin with that line number at the
+        top of the screen.
+
+           To position forward or backward, you may use the + (plus), or
+        - (minus) keys.  You are prompted to enter the number of lines
+        to be skipped.  The display resumes at the line number shown on
+        the top (status) line, plus or minus the number of lines that
+        you specified.
+                                                        LIST     Page 6
+
+ Cloning procedure
+ -----------------
+
+           The screen colors, the display retrace testing (M), the file
+        closing (C) and ruler (alt-R) options may be permanently set in
+        the program by using the alt-C cloning function.
+
+           For cloning to take effect, the program must be called
+        LIST.COM and it must be on the current drive and in the current
+|       directory. There are two versions of the LIST COM file. One is
+|       the normal program. The other, which contains an 'S' as the last
+|       letter of the file name, is a slightly smaller file that excludes
+|       the Help screen. You may use either COM file for cloning.
+
+           The clonable options (command toggles) are:
+
+             M     = Mono monitor, affects retrace testing,
+             alt-R = use ruler on top line,
+             C     = file(s) are shared,
+             alt-H = hex dump display, like the DEBUG format
+             W     = Wrap long lines
+|            8/7/* = display all 256 values, or 7-bit, or special cases
+             K     = flush Keyboard each time a command is read
+
+
+ DEBUG Information
+ -----------------
+
+           An alternative to cloning is to use DEBUG to make permanent
+        changes. Here is a list of key items and their addresses:
+
+           0126 - special lines 1 and 25 colors, default is 01 (blue)
+                  Refer to a technical reference guide for the
+                  attribute values for the colors that you want.
+           0128 - normal lines 2 thru 24 colors, default is 02 (green)
+           012A - bright color for Find/Scan, default is 0C (bright red)
+           012C - options; bits 0 through 6
+                   MRSD WHK.  M = mono, x'01'
+                              R = ruler, x'02'
+                              S = shared, x'04'
+                              D = hex display, x'08'
+                              W = wrap mode, x'10'
+                              H = hi-bit on, x'20'
+                              K = kybd flush, x'40'
+
+                  By specifying the bit value, the option is enabled.
+                  For example, to enable Shared and Retrace, specify
+                  a hex value of 05.
+
+           The letters and command keys may also be changed.  There are
+        two tables involved:  WHAT and WHERE.  The WHAT table contains a
+        list of one-byte keyboard codes.  The WHERE table contains a
+        list of two-byte addresses.  If you really want to change the
+        codes, here are the DEBUG addresses:
+
+           0358 - *WHAT* eye catcher
+           035E - list of one byte command letters and codes
+
+           0394 - *WHERE* eye catcher
+           039B - list of two byte addresses of processing routines
+
+        NOTE: These DEBUG addresses are version dependent.
+        ==================================================
+                                                        LIST     Page 7
+
+ Screen attributes
+ -----------------
+
+           The colors used for displaying the titles and main body of
+        text may be changed temporarily or permanently.  To make a
+        permanent change, the cloning command alt-C is used.  It
+        requires that the LIST.COM program file be on the current drive
+        and in the current directory.
+
+           There are three classes of attributes used.  One for normal
+        display lines - lines 2 to 24 - another for special lines -
+        lines 1 and 25, and a third for the Find/Scan color.  The border
+        is not changed.  The foreground color applies to the characters
+        displayed.
+
+        These color attributes may be changed by using these function keys:
+
+          For the main body of text:
+
+            F5 - background color
+            F6 - foreground color
+
+          For the top and bottom lines:
+
+            F7 - background color
+            F8 - foreground color
+
+
+        Once you have decided upon the colors, use the alt-C key
+        combination to change the LIST.COM program file.
+                                                        LIST     Page 8
+
+ Scanning for text
+ -----------------
+
+
+           You may use  Find (\)  to search for text  regardless  of the
+        case, or you may use Scan (/) to find an exact match.
+
+           To scan for a character string, type a slash (/) followed  by
+        one or more (up to 31)  characters.  The scan text, but not  the
+        slash,  is  displayed  on  the  command  line.  The scan is case
+        sensitive.  That is, lower case scan text will only match  lower
+        lower case file text.
+
+           While  the  program  is  searching  for  the text, the bottom
+        display line is changed to say "Scanning".
+
+           If the text is found, the line containing it is displayed  as
+        a high-intensity line (bright color).
+
+           If the text is NOT found, the bottom line (25) is changed  to
+        say '*** text not found ***', and the display remains unchanged.
+
+           To find the next occurrance of the same text,  use the A)gain
+        command, or press the F3 key.
+
+|          If the PCED keyboard enhancement program is installed, the
+|       up/down cursor keys may be used to recall and edit previously
+|       entered Scan/Find text.
+
+           In a shared file environment, if the file changes while being
+        listed, the file position may become invalid.  Use the HOME
+        command to insure proper file synchronization, or use the C
+        (shared) option.
+                                                        LIST     Page 9
+
+ Filtering
+ ---------
+
+           Filtering is the term used to describe the process that LIST
+        uses to format file data for displaying on a monitor. After data
+        is read from a file, it is filtered. The method of filtering
+        depends upon the options in effect.
+
+           For a typical ASCII text file, the filter removes carriage
+        return and line feed characters, and expands TAB characters.
+
+           The 7, 8, and * (asterisk) commands determine whether
+        characters above ASCII-127 are displayed.  If the hi-bit option
+        is off (7 command), the filter strips the high order bit from
+        each character.  If the hi-bit option is on (8 command), all
+        characters, including graphic characters above ASCII-127, are
+        displayed.
+
+|          The * (asterisk) command displays only ASCII characters
+|       below 128 (x'80'), but treats the special characters x'8A' and
+|       x'8D' as line-feed and carriage-return control characters.  Any
+|       other characters above 127 are ignored.
+
+           The Wrap option causes the filtering to insure that no line
+        exceeds the width of the monitor, e.g. 80 characters.
+
+           The hex dump option (alt-H) causes the filtering to reformat
+|       the file data into a DEBUG-like display format. The largest
+|       file that can be "dumped" is 1 million bytes.
+
+           Future versions of LIST will include filter options for:
+
+                o  token BASIC
+                o  sQueezed files
+                o  LBR library files
+                o  ARC archive files
+                o  specific word processor formats
+                o  user written, optionally installable filters
+
+        NOTE: The EOF control character is ignored in this version.
+        ===========================================================
+                                                        LIST     Page 10
+
+ Update history
+ --------------
+
+ Lines beginning with | denote changes to the latest version.
+
+        Version 4.1, April 27, 1984.
+        Version 4.15, June 2, 1984.
+        Version 4.2, July 14, 1984.
+        Version 5.0, August 10, 1984.
+        Version 5.1, August 27, 1984.
+        Version 5.2, September 29, 1984.
+        Version 5.4, March 22, 1984.
+        Version 5.48, May 27, 1985.
+        Version 5.49, May 31, 1985.
+        Version 5.52, July 15, 1985.
+        Version 5.56, December 20, 1985.
+        Version 5.64, January 6, 1986.
+        Version 5.65, January 16, 1986.
+        Version 5.67, February 11, 1986.
+        Version 5.68, February 27, 1986.
+        Version 5.69, April 14, 1986.
+
+        Version 5.70 through 5.82, April 16, 1986.
+            - Rewritten to allow implementation of new features.
+
+                                                        LIST     Page 11
+
+ Update history (cont'd)
+ --------------
+
+        Version 5.83, May 6, 1986.
+          SOL, version 1, adds:
+            - line numbering, changes use of +, -, and ctrl-HOME
+            - alt-H hex dump display
+            - allows cloning of Wrap, Hibit, alt-R ruler, Kybd flush
+            - adds indication of command toggles to top line
+            - corrects and improves Scan and Find
+
+        Version 5.84, May 8, 1986.
+            - add * command to toggle special document filter,
+              all characters above x'80', except 8A and 8D, are
+              suppressed
+            - correct hex dump display producing duplicate
+              last line
+            - add alt-D command (like alt-H) to toggle hex dump
+            - change status line H indicator to 7/8/*
+
+        Version 5.85, May 9, 1986.
+            - add alt-S (like C) to toggle Shared option
+            - correct Scan failure when using Shared option
+              with several files (widcard used)
+            - improve speed of hex dump display
+
+        Version 5.86, May 10, 1986
+            - correction to TOF and EOF status messages
+
+        Version 5.87, May 11, 1986
+            - correct loop displaying short files
+            - use hibit (7 or 8) to suppress control chars in hex dump
+              for Printing
+
+        Version 5.88, May 13, 1986
+            - correct Scan/Find not checking last character of records
+
+        Version 5.89, May 14, 1986
+            - correct Filter loop when last byte of file block is a CR
+            - correct Print ignoring blank lines
+
+        Version 5.90, May 18, 1986
+            - correct not displaying last record of file if file does
+              not end in an LF
+            - change hex dump to use 7/8/* options
+
+|       Version 5.91, May 19, 1986
+|           - correct testing and display of M monitor retrace option
+
+                                                        LIST     Page 12
+
+ Restrictions
+ ------------
+
+|       o  The program requires 60K bytes of memory. If more memory is
+           available, it is used to store more of the file in memory.
+
+        o  The line number is currently limited to 65535.
+
+        o  The file size is limited to 16 million bytes.
+
+        o  PC-DOS Version 2.0 or later is required.
+
+        o  ANSI.SYS is NOT required.
+
+
+        Written by Vernon Buerg for the  IBM PC using DOS 2.0 or
+        later, including DOS 3.1.
+
+        LIST is supplied for personal, private use. Feel free to
+        distribute LIST given these restrictions:
+
+          o  the program shall be supplied in its original,
+             unmodified form, which includes this documentation;
+
+          o  no fee is charged.
+
+          o  commmercial use is prohibited.
+
+          o  the program may not be included - or bundled - with
+             other goods or services. Exceptions may be granted
+             upon written request only.
+
+        If you are using LIST and find it of value, your gift in
+        any amount ($15 suggested) will be greatly appreciated.
+        Makes checks payable to Vernon D. Buerg. Thank you.
+
+        For use by corporations and other institutions, please
+        contact me at AAI Systems for a site licensing agreement.
+
+                Vernon D. Buerg
+                456 Lakeshire Drive
+                Daly City, CA 94015-4223
+
+                Data: (415) 994-2944 (VOR BBS)
+                Compuserve: 70007,1212
+
+

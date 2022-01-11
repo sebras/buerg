@@ -1,0 +1,10 @@
+LIST.COM is a public domain program that will list a text file one page
+at a time. Thus, no more <CTRL><S> and <CTRL><Q> as with the TYPE command!
+
+Because there is an online help screen to explain the functions of LIST,
+all you really need to know is how to start the program:
+
+     LIST filename.ext [for the file you want to view]
+
+If you forget to enter the filename and extension, you will be prompted
+to enter these.

@@ -925,7 +925,7 @@
   - Added F9 command to find previous occurance of text
   - Compensated for old Sigma EGA ROM (pre 1.06)
   - Changed alt-P to alt-L; preload option toggle
-- 6.0h 09/17/86
+- [6.0h](6.0h) 09/17/86
   - correct alt-F looping when invalid filespec entered
   - correct Wrap failing if W ON was cloned
   - more fussing with the EGA cursor, nothing can be done about colors/pallete resetting when changing modes

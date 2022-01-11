@@ -32,7 +32,7 @@
   - Correct viewing for fixed length record files
 - 9.6p 10/17/02
   - Change maxiumu record size from 2k to 4k
-- 9.6o 08/30/02
+- [9.6o](9.6o) 08/30/02
   - Correct C)opy with new filename: e.g. copy x x.x e.g. copy x \pathname\filename.ext
 - 9.6n 05/30/02
   - Expand maximum path\file name from 76 to 240 chars Note: Windows XP now limits DOS path\file to a maximum of 76 characters in the Command(DOS) window

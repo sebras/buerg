@@ -976,7 +976,7 @@
 - 5.67 02/11/86
   - Change X to clear screen and leave cursor at top of screen
   - Close files to allow shared use
-- 5.65 01/16/86
+- [5.65](5.65) 01/16/86
   - Corrections for consecutive line feeds without CRs
   - Corrections for Down at end of file
 - 5.64 01/06/86

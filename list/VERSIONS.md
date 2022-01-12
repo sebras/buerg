@@ -434,7 +434,7 @@
   - add command line /E parameter to begin display at eof
 - 7.5b 09/03/90
   - correct loop when empty directory
-- 7.5a 08/30/90
+- [7.5a](7.5a) 08/30/90
   - public release
 - 7.4e 08/28/90
   - correct mouse looping at top of file

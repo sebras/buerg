@@ -663,7 +663,7 @@
   - move code so offsets line up for DEBUG as described in the manual
   - correct cloning of second window color
   - add ctrl-J to redefine TAB interval
-- 7.0a 10/15/89
+- [7.0a](7.0a) 10/15/89
   - public release
 - 6.92 10/13/89
   - change a-v prompt line to add F1=Help

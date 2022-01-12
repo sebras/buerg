@@ -1,0 +1,120 @@
+LIST Version 7.3		WHAT'S NEW                              1/31/90
+
+|     - The new LIST environment variable tells LIST where to place temporary
+|	file for the ViewArc and archive extraction functions, e.g.
+|
+|		SET LIST=C:\TEMP
+
+|     - The new ctrl-Y command saves the current position as the bookmark,
+|	alt-Y repositions to the last bookmark.
+
+|     - The new /K command line switch disables the mouse.  Both the /M and /K
+|	mouse options are clonable.
+
+|     - The new Ctl-right and 1 commands restart displaying with the first file
+
+|     - A second Help screen is now available in the Plus version which shows
+|	all of the Ctrl- and cursor key functions
+
+	A great improvement in speed is available when all filter options are
+	set off.  Use alt-Z to display the toggles on the bottom line.	An
+	option is off when its corresponding letter, e.g.  'J' for alt-J junk
+	filter or 'T' for the alt-T tab expansion filter, is in lower case.
+
+	The X command exits to DOS and clears the screen.  In the Plus version,
+	you are now returned to the original directory.
+
+	The ctrl-I command has been added to the Plus version.	It allows
+	setting the TAB interval to values other than the standard 8.  Ctrl-I
+	prompts you to enter the new interval, which can be from 1 to 99.
+
+	The /Ftext command line parameter to begin a text search through all
+	selected files now invokes the Find function which is not case
+	sensitive.
+
+	In the File Selection (alt-V) menu:
+	 - the ESCape and Quit commands no longer exit, they return to
+	   the display of the last file you viewed.
+	 - the 1-up display now includes file attributes.
+
+	New file selection commands have been added:
+	 -  Alt-C to clone settings
+	 -  Alt-X to exit to DOS and show the original screen
+	 -  Q now returns to viewing the last file
+	 -  X exits to DOS in the original directory
+	 -  F10 exits to DOS
+
+      - Command line switches are now supported in all versions.
+
+      - The Viewarc function now assumes that .EXE and .COM files are LHARC
+	files.	Otherwise, if a file does not have the .ARC, .LZH, or .ZIP
+	extension, the file is assumed to be a .ARC file.
+
+      - The Help (F1) screen now only occupies the current window.
+
+      - The F2/F4 keys for setting the color of the found line now operate on
+	the Find line, i.e.  the line where found text is displayed.  The
+	entire found line is now highlighted, and the found text is shown in
+	reversed video.
+
+
+LIST Version 7.3		DEBUG OFFSETS				1/31/90
+
+
+	The distribution files have changed. They are now:
+
+	LIST.COM  - LIST Plus version with all of the commands
+	LISTR.COM - regular version
+	LISTS.COM - small version
+
+
+	The default filter options are now:
+	  alt-T   - expand TABs is ON
+	  alt-J   - filter out control characters is ON
+
+
+	Item	       Offset  Value	Description of contents
+	-------------- ------  -----	-----------------------
+	Special 	0132	70	Top/bottom line colors
+	Normal		0134	07	Text colors
+	Bright		0136	09	Find/Scan line colors
+	Window 1 color	0138	07	Normal window text color
+	Window 2 color	0139	0F	Second window text color
+	Flag3		013A	09	Retrace off and junk filter on
+	Flag4		013B	08	Tabs on
+	Find row	013C	0800	Position of found line on screen, 8
+	Scroll incr	013E	0A00	Left/right scroll increment, 10
+	Scroll start	0140	0000	Starting scroll offset, 0
+	Tab value	0142	0800	Tab interval, 8
+	Tab mask	0144	F8FF	Tab bit mask
+	Loudness	0146	C800	Beep tone level
+	Key rate	0148	FF	Continuous scroll increment, 255
+	Overlap 	0149	0000	PgUp/PgDn scroll overlap, 0
+	Wildcard esc	014B	26	Scan/Find wildcard ? escape character
+	Alt-V up	014C	0500	Alt-V display files per line, 5
+
+	LIST Plus only
+	--------------
+	Eye-catcher	014E	'COM:'
+	COM port	0152	F803	Default for COM1, use F802 for COM2
+	Sort offset	0154	00	Default sort key offset
+					 00 by filename
+					 08 by extension
+					 0C by datestamp
+					 10 by file size
+|	Modem init	0157	'AT'    30-byte modem initialization string
+
+	The following offsets change from version to version. Look for the
+	eye-catchers to be sure of the offset:
+
+	Key table	038F	'WHAT'  Eye catcher
+			0393	0026	Key command table
+	Routines	0498	'WHERE' Eye catcher
+			049D	xxxx	Command routines
+
+	Examples of using DEBUG can be found in the DIALER.PAT and
+	COLORS.PAT files. To use them, copy LIST.COM to the current
+	directory and issue the DEBUG command. For example:
+
+		DEBUG <DIALER.PAT
+

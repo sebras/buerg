@@ -573,7 +573,7 @@
   - correct alt-i with mouse
   - restore correct crt mode upon exit instead of BW80
   - correct READING loop in Q from a-v menu
-- 7.3d 02/02/90
+- [7.3d](7.3d) 02/02/90
   - fix path loop, add Edit option to a-v
 - 7.3a2 02/01/90
   - fix C continuous scroll not working

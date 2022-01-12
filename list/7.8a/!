@@ -1,0 +1,24 @@
+LIST Version 7.8a                   CONTENTS                     June 28, 1993
+
+LIST     COM      LIST Plus version, all commands and features
+LIST     DOC      Documentation file for LIST (may be PRINTed)
+LIST     HST      Version history, summary of changes to LIST
+LISTR    COM      LIST regular version (optional)
+LISTS    COM      Small version of COM file without help screen (optional)
+COLOR    PAT      Example DEBUG input to change colors
+DIALER   PAT      Example DEBUG input to change dialer COM port
+ARCE     COM      Archive file extract utility
+ARCE     DOC      Documentaion for ARCE
+FV       COM      Display archive file directory utility
+FV       DOC      Documentation for FV
+LICENSE           Licensing information and sample licensing agreement
+PROGRAMS          List of other programs
+WHATSNEW          What's new and changed in this version
+
+To unpack to a directory other than the current directory, use the syntax:
+
+LIST78A /e[d:][path]   (note: /e and target directory must be lower case)
+
+For instance, LIST78A /eb:\ will unpack the archive to drive B:
+Enter Y to continue, N to abort
+

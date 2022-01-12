@@ -168,7 +168,7 @@
 - 8.0a 07/07/93
   - Skipped version due to hacked versions
   - Correct /M and mouse support
-- 7.8a 06/28/93
+- [7.8a](7.8a) 06/28/93
   - Public release
 - 7.804 05/30/93
   - Plus: change c-L to start new line for page break

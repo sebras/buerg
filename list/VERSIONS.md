@@ -837,7 +837,7 @@
 - 6.32 01/28/88
   - allow Down to scroll beyond eof message
   - add alt-O like alt-D using same filename
-- 6.31 01/17/88
+- [6.31](6.31) 01/17/88
   - correct eof problem
   - correct missing line problem with up arrow
 - 6.30 01/14/88

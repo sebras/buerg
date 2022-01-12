@@ -939,7 +939,7 @@
   - improve readability of binary files in ASCII display mode by changing handling of EOF character; this also solves a problem with files whose last record does not contain a cr/lf. Remember, LIST expects "records" to have CR and/or LF.
 - 6.0f 08/31/86
 - 6.0a 08/31/86
-- 5.93 11/05/86
+- [5.93](5.93) 11/05/86
 - [5.91f](5.91f) 06/06/86
 - [5.91](5.91) 05/19/86
   - correct testing and display of M monitor retrace option

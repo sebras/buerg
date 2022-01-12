@@ -142,7 +142,7 @@
   - Enhanced: dismiss VESA modes if no extended text modes
 - 9.0k 05/27/94
   - Cosmetic changes only
-- 9.0h 02/23/94
+- [9.0h](9.0h) 02/23/94
   - Enhanced: add /C and /N
 - 9.0g 02/08/94
   - Enhanced: correct Scan/Find for control chars without CED option

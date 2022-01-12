@@ -1,0 +1,94 @@
+
+                           LIST                               Version 6.2A
+                                                              May 7,  1987
+                        What's New?
+                        -----------
+
+        To print the documentation, set your printer for six
+        lines per inch, and 10 characters per inch. Then, use
+        the DOS PRINT command. For example,
+
+                        PRINT LIST62A.DOC
+
+        The documentation file is marked with | before new and
+        changed lines. Here's a summary of changes since 6.1a:
+
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        Added alt-D to dump current display to a file
+        Added alt-M (mark) and alt-U (unmark), and alt-B (mark bottom)
+          to mark a line range for Printing or alt-D (dump to a file)
+
+        Changed alt-F to not exit if file not found, handy for review
+
+        Added ctrl-PgUp to display previous file (review, up to 20 files)
+        Changed ctrl-PgDn to display next file (same as Q)
+
+        Added ` (left quote) to initiate Find in reverse direction
+        Added ' (right quote) to initate Scan going backwards
+
+        Changed horizontal scroll increment to 10 from 20
+
+        Changed maximum logical record size from 1024 to 910 for ruler display
+
+        Changed alt-C cloning to use actual program name (if available)
+
+        Added DEBUG info for changing default starting column
+        Added DEBUG info for changing TAB value and mask fields
+
+        Stop processing after 65534 records
+        Improved detection of end of file for EOF message
+
+        Improved display when using F2/F4 to change Find colors
+        Improved beep sound when errors, make it shorter and softer
+        Improved treatment of CR-CR as CR-LF (when alt-J is off)
+
+        Changed Help (F1) to require pressing enter when finished
+        Corrected missing tab in Help screen before U entry
+
+        Changed "Scanning" to "Looking"
+        Changed Scan/Find to leave search text on bottom line of screen
+        Corrected Scan/Find failing with lines over 255 characters
+        Corrected line used for starting/resuming Find/Search
+        Corrected positioning after 'text not found'
+        Corrected Scan not locating text on first line
+        Corrected blank screen for Find of line 8 (found row)
+        Improved Scan (exact match) to be 25% faster
+
+        Changed alt-G (DOS shell) to preserve current drive and directory
+        Changed alt-G to Free all memory, except 66k
+        Corrected use of DOS colors with alt-G
+        Corrected alt-G for older DOS versions
+        Corrected 'Not enough memory' using alt-G with large files
+        Corrected Q/ESC exiting after alt-G when there are more files
+
+        Allow ESCape during Print (marked) to cancel printing
+        Allow null enter to cancel all input requests, including +,-,#
+
+        Changed Q to not exit if multiple files are being displayed
+        (Use X, alt-X, ESCape, or F10 instead when you wish to exit)
+
+        Corrected P not showing on status line when printing
+
+        Corrected alt-R missing ruler in second window
+        Improved ruler (alt-R) readability/usability
+
+        Corrected parm problem when invoking LIST from another program, DX160.
+
+        Corrected "ghost" lines using down at end of file
+        Corrected ctrl-HOME (#) failing to position to correct line
+        Corrected + (skip forward # lines) in second window
+        Corrected + (skip plus number of lines)
+
+        - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        All of the above are the result of suggestions and support from
+        users of LIST. If you find LIST of value, you are encouraged to
+        make a gift ($15 suggested) and become a LIST supporter.
+
+                        Vernon D. Buerg
+                        456 Lakeshire Drive
+                        Daly City, CA  94015
+                        (415) 994-2944, VOR BBS
+-
+

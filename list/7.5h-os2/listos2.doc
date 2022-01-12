@@ -1,0 +1,36 @@
+NOTES on LISTOS2 conversion; version 75h
+
+  -   Requires OS/2 version 1.2 or above to run.
+
+  -   Long filenames are not supported.
+
+  -   F10 in ALT-V File management function only exits to 
+      original directory.
+
+  -   The /S parameter is not necessary under OS/2.  For example you
+      can just type PSTAT | LIST
+
+  -   The ^F send formfeed command has been commented out because the
+      spooler also inserts formfeeds.
+
+  -   Mouse support is not active in a PM windowed session.
+
+  -   When mouse support is active in LIST, "Shelling" to other full 
+      screen applications that use the mouse may require that 
+      you CTRL-BREAK out of the second application.
+
+  -   Patching: offsets are different, relative offsets are same.
+        - COM device name has been moved next to "WHAT" eyecatcher.
+        - Cloneable area starts at about 4A16 Hex bytes into file.
+
+  -   Clone: You need to type in the new clone filename, as you
+      cannot overwrite an executing file under OS/2.
+
+  -   FV:  An equivalent OS/2 archive file viewer is not available.
+      However, if you only use ZIP files, put the following FV.CMD
+      in your path:
+
+PKUNZIP -v %1
+
+
+

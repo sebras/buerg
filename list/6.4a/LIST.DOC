@@ -1,0 +1,1694 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            LIST  Version 6.4a 
+
+                            September 21, 1988 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   (c) Copyright  Vernon D. Buerg 1983-88 
+                           All rights reserved 
+
+            T A B L E   O F   C O N T E N T S
+
+__________________________________________________________________________
+
+
+ Description of Use  ................................................... 1    
+      Introduction  .................................................... 1    
+      Command line format  ............................................. 1    
+      Installation  .................................................... 1    
+
+ How to use LIST  ...................................................... 2    
+
+ Commands and Keys  .................................................... 4    
+      Cursor keys  ..................................................... 4    
+      Letter keys  ..................................................... 4    
+      Control- keys  ................................................... 5    
+      F- function keys  ................................................ 5    
+      Alt- keys  ....................................................... 6    
+
+ Scrolling  ............................................................ 8    
+
+ Positioning to Lines  ................................................. 9    
+
+ Displaying multiple files  ............................................ 10   
+
+ Marking and Extracting Lines  ......................................... 11   
+
+ Display Format  ....................................................... 12   
+     Status Line Format  ............................................... 12   
+     Command Line Format  .............................................. 13   
+
+ Screen Colors  ........................................................ 14   
+
+ Scanning for text  .................................................... 15   
+
+ Filtering  ............................................................ 16   
+      Hi-bit Filter  ................................................... 16   
+      Star Filter  ..................................................... 16   
+      Junk Filter  ..................................................... 16   
+      Hex Format Filter  ............................................... 16   
+
+ DOS considerations  ................................................... 17   
+      File Sharing  .................................................... 17   
+      Invoking DOS Commands  ........................................... 17   
+      Screen Saving  ................................................... 17   
+
+ Cloning Procedure  .................................................... 18   
+
+ Modifying LIST  ....................................................... 19   
+      Locations of clonable values  .................................... 19   
+      Reassigning keys  ................................................ 20   
+      Routine ID values  ............................................... 21   
+
+ Restrictions  ......................................................... 23   
+
+
+
+
+
+
+
+
+
+Contents 1                                             LIST  User's Guide 
+Description of Use 
+______________________________________________________________________________
+
+
+    Introduction 
+ 
+            You use LIST to display files on your monitor, line by  line 
+        with the aid of scrolling, positioning and filtering commands. 
+ 
+
+    Command line format 
+ 
+        The command line format is: 
+ 
+ 
+        LIST [filespec...filespec] [/S][/J][/7][/8][/*][/W][/H][/L] 
+ 
+ 
+        where filespec is one or more names of files and the optional  / 
+        switches are: 
+ 
+                /S       indicates viewing a piped or redirected file 
+                /J       sets Junk filter on 
+                /7       sets 7-bit display 
+                /8       sets 8-bit display 
+                /*       sets star filter on 
+                /W       sets Wrap on 
+                /H       sets Hex dump mode 
+                /L       sets pre-Loading on 
+ 
+            The command line switch character is normally a slash,  "/", 
+        but LIST  will use  whatever character  that is  defined to  DOS 
+        as the command line switch character, e.g. a dash, "-". 
+ 
+
+    Installation 
+ 
+            There are two .COM files and this .DOC file on the disk that 
+        you received (or  in the .ARC  file that you  downloaded).  Copy 
+        the two .COM files to your working disk, and into the  directory 
+        that is most convenient.  The LIST.COM file is the full featured 
+        program, and  the LISTS.COM  file is  the small  version.  LISTS 
+        runs in much less memory (about 29K) but is limited to files  of 
+        about 50 thousand lines, or about 600 K bytes.  It also excludes 
+        the  screen  saving  feature  (see  Alt-X), and the shell to DOS 
+        command (see Alt-G), and the help screen. 
+ 
+            You may rename the program file to any convenient name, such 
+        as L.COM, READ.COM, or LIST.COM. 
+ 
+        To print the documentation, set  your printer for six lines  per 
+        inch,  and  10  characters  per  inch.   Then, use the DOS PRINT 
+        command.  For example, 
+ 
+                        PRINT LIST.DOC 
+ 
+        The documentation file is marked  with | before new and  changed 
+        lines. 
+ 
+
+
+
+
+
+LIST  User's Guide                                                    Page  1 
+How to use LIST 
+______________________________________________________________________________
+
+ 
+            Using LIST is fairly straightforward.  You type the  command 
+        LIST, at the  DOS prompt, followed  by the name(s)  of the files 
+        that  you  want  to  see.   For  example:  LIST CONFIG.SYS would 
+        display the file CONFIG.SYS. 
+ 
+            Once the file is displayed  on your screen, you may  use the 
+        cursor positioning keys to  move around and see  different parts 
+        of the file.  For example,  when LIST first starts, you  see the 
+        first 23 lines of the file.  To see the next 23 lines, or  page, 
+        press the PgDn key.   The PgUp key moves  you back one page  and 
+        shows you the  previous 23 lines.   The up-arrow and  down-arrow 
+        keys move it one line at  a time.  When you are finished,  press 
+        the ESCape key and you are returned to the DOS prompt. 
+ 
+            The "filename" is optional.  If omitted, you are prompted to 
+        enter a filename.  You may  include drive, path, and wild  cards 
+        in the  file name.   The first  file which  matches that name is 
+        displayed.  After  the file  is displayed,  the next  file which 
+        matches the "filename" may be displayed, too. 
+ 
+            You may also use LIST to display piped or redirected  files. 
+        If you are unfamiliar with these, you may skip to the next page. 
+ 
+            To display  a redirected  file, use  a <  (less than symbol) 
+        before the name of the file  that was redirected and add the  /S 
+        parameter to the LIST command.   For example, the output of  the 
+        DIR command can be written to  a file called XYZ, and then  LIST 
+        can be instructed to read that file. 
+ 
+                dir a: >xyz 
+                list <xyz /s 
+ 
+            To display a piped file,  omit the filename, but supply  the 
+        /S. 
+ 
+                dir a: | list /s 
+ 
+        Or, to LIST a file within an ARC archive: 
+ 
+                arc /p arcname.arc filename.ext | list /s 
+                                - or - 
+                arce arcname filename.ext /p | list /S 
+ 
+ 
+            Because files  contain different  kinds of  data, there  are 
+        several commands  to tell  LIST how  to display  the data.   The 
+        process that LIST uses to make the file data readable is  called 
+        filtering.  The filters in LIST can: 
+ 
+            o  replace non-text and control characters with blanks 
+            o  expand TAB characters 
+            o  display line drawing characters 
+            o  change 8-bit (W*) data to readable 7-bit text 
+            o  display the hexidecimal values for each character 
+            o  remove "junk", such as control codes and backspaces 
+ 
+            LIST was designed  to display ASCII  files.  That is,  files 
+        which  contain  text,  and  not  binary  or control codes.  Text 
+        characters usually  range from  a value  of 32  to 127.  To view 
+
+Page  2                                                    LIST  User's Guide 
+How to use LIST 
+______________________________________________________________________________
+
+        binary  files  (COM,  EXE,  etc),  the  alt-H (hex dump display) 
+        command is available. 
+ 
+ 
+            Characters  below  32  (a  blank)  are replaced with a funny 
+        character to indicate that a non-displayable character has  been 
+        encountered.  This  character is  an upside-down  question mark. 
+        Characters above 127 may be valid graphic characters, and may be 
+        displayed  if  the  '8'  command  is  in effect.  To insure that 
+        characters above ASCII value 127 are not displayed, use the  '7' 
+        command. 
+ 
+ 
+            The top  line of  the display  gives the  file name, current 
+        right  scroll  offset,  and  the  FILE's creation date and time. 
+        Optionally, a ruler  may be displayed  on the top  line by using 
+        the alt-R keys. 
+ 
+            The  file  is  displayed  with  one  logical  record on each 
+        display line: usually 80 characters.  A logical record ends in a 
+        linefeed and  may be  up to  910 characters  long.  If  a record 
+        exceeds 80 characters,  you may view  the portion beyond  the 80 
+        columns by using the scroll right command, or by using the  Wrap 
+        feature.  The Wrap (W) command toggles ON or OFF the wrapping of 
+        lines  longer  than  80  characters.   With  Wrap  on, lines are 
+        displayed in  their entirety,  80 characters  per display  line. 
+        The scroll left (arrow) and right (arrow) functions are disabled 
+        when Wrap is ON. 
+ 
+            The file may be PRINTed  as it it displayed.  The  P command 
+        toggles  the  printer  on  or  off.   When  first entered, the P 
+        command causes the current screen  to be printed.  As new  lines 
+        are displayed, they too are printed.  Printing may be stopped by 
+        entering another P command.  The PrtSc key may also be used, but 
+        the title and prompt lines will be printed with the lines of the 
+        file.  Empty lines  cause a line  to be skipped  on the printer. 
+        The  letter  P  is  displayed  on  the bottom command line while 
+        printing.   See  the  section  on  extracting  lines  for  other 
+        methods. 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LIST  User's Guide                                                    Page  3 
+Commands and Keys 
+______________________________________________________________________________
+
+
+    Cursor keys 
+ 
+        Cursor key    Function 
+        -----------   ----------------------------------------------- 
+        left arrow    scroll left 10 columns 
+        right arrow   scroll right 10 columns 
+        up arrow      up one (previous) line 
+        down arrow    down one (next) line 
+ 
+        Enter         continue to next page 
+        END           position to end of file (bottom) 
+        ESCape        Exit program unconditionally 
+        HOME          restart from first line (top) 
+        PgUp          scroll up one page, 23 lines 
+        PgDn          scroll down one page, 23 lines 
+ 
+
+    Letter keys 
+ 
+        Letter(s)     Default   Function 
+        ---------     -------   ---------------------------------------- 
+        A                       find next occurrence of 'text' (Again) 
+        B                       skip to end of file (Bottom) 
+        C               off     toggles Continuous scrolling 
+        D                       scroll Down one page 
+        F                       Find 'text' regardless of case 
+        G                       Get new filename/filespec (also alt-F) 
+        H or ?                  Help, show command list 
+        K               off     toggle Keyboard flush; if on, commands 
+                                may be queued up by holding a key down 
+        L                       scroll Left 10 columns 
+        M               on      toggle test for display retrace, if on 
+                                the display is faster but may flicker; 
+                                not applicable to monochrome monitors 
+        N                       down one (Next) line 
+        P               off     toggle Printer on or off 
+        Q                       Quit, display next file, or exit if only 
+                                one file is being viewed 
+        R                       scroll Right 10 columns 
+        S                       Scan for exact text match, case dependent 
+        T                       restart from first line (Top) 
+        U                       scroll Up one page (23 lines) 
+        W               off     toggle Wrap of lines over 80 chars 
+        X                       terminate, clear screen and eXit to DOS 
+        Z                       like ctl-PgUp, displays previous file 
+ 
+        7               off     turn off high bit (non-graphics only) 
+        8               on      leave high bit on (graphics) 
+        *               off     toggles special * document filtering 
+ 
+        +                       position a given number of lines forwards 
+        -                       position a given number of lines backwards 
+ 
+        \text                   Find any case 'text' going forwards 
+        /text                   Scan exact case 'text' going forwards 
+ 
+        ` or ^                  Find any case 'text' going backwards 
+        ' or v                  Find exact case 'text' going backwards 
+ 
+
+Page  4                                                    LIST  User's Guide 
+Commands and Keys 
+______________________________________________________________________________
+
+
+    Control- keys 
+ 
+        Control key     Function 
+        -----------     --------------------------------------------------- 
+ 
+        ctl-HOME        positions to a specific line number 
+ 
+        ctl-PgUp        display previous file (review) 
+        ctl-PgDn        display next file (or exit if only one file) 
+ 
+        ctl-left-arrow  reset horizontal scroll position to column 1 
+ 
+        ctl-A           scroll full left 
+        ctl-C           next page 
+        ctl-D           scroll right 
+        ctl-E           former line 
+        ctl-N           display next file 
+        ctl-R           former page 
+        ctl-S           scroll left 
+        ctl-U           display previous file 
+        ctl-W           former line 
+        ctl-X           next line 
+        ctl-Z           next line 
+ 
+
+    F- function keys 
+ 
+        Function key    Function 
+        ------------    --------------------------------------------------- 
+ 
+         F1             Help - display summary of commands 
+ 
+         F3             Find next occurrence of text after Scan or Find 
+ 
+         F9             Find previous occurrence of text after Scan or Find 
+ 
+         F10            Exit to DOS with clear screen and cursor last line 
+ 
+ 
+         F2             change background color for Find/Scan text 
+         F4             change foreground color for Find/Scan text 
+ 
+         F5             change background color for main body of display 
+         F6             change foreground color for main body of display 
+ 
+         F7             change background color for top and bottom lines 
+         F8             change foreground color for top and bottom lines 
+
+
+
+
+
+
+
+
+
+
+
+
+
+LIST  User's Guide                                                    Page  5 
+Commands and Keys 
+______________________________________________________________________________
+
+
+    Alt- keys 
+ 
+        The Alt- key commands are entered by pressing the Alt key at the 
+        same time as you press one of the following letter keys: 
+ 
+ 
+    alt- letter      Function 
+    -----------      --------------------------------------------------- 
+ 
+     alt-A           toggle on if you are using APXCOREA; off (default) 
+                     if using DesqView or DoubleDos 
+ 
+     alt-B           mark bottom line 
+ 
+     alt-C           clone LIST.COM, change colors or options permanently, 
+                     in a new copy of the LIST.COM program file 
+ 
+     alt-D           toggle dump mode: if no lines are marked, the current 
+                     screen only is written to the specified file; if lines 
+                     are marked, they are written to the dump file. 
+ 
+     alt-E           toggle 25/43 line display (does test for EGA). If the 
+                     actual EGA lines is not 25 or 43, don't use alt-E 
+ 
+     alt-F           prompt for new Filespec or filename to display 
+                     entering a leading asterisk (*) may be obscured 
+                     by some console enhancers or utilities, so enter 
+                     two asterisks, e.g. **.doc 
+     alt-G           Shell to DOS, invoke COMMAND.COM, requires 96k or more. 
+                     Use the DOS EXIT command to return to LIST. 
+ 
+     alt-H           toggles hex dump formatted display 
+ 
+     alt-J           toggle adding line feed to lone carriage returns 
+                     and remove backspaces, overlaying previous characters 
+ 
+     alt-L           toggles preloading of files; default is OFF 
+                     When the file is pre-loaded, the number of the 
+                     last line number becomes known. 
+ 
+     alt-M           mark top line; marked lines may be printed or written 
+                     to the alt-D dump file. 
+ 
+     alt-N           toggles screen saving feature; with screen saving 
+                     disabled, the minimum memory required is about 38k 
+ 
+     alt-O           like alt-D, writes marked lines to a file using the 
+                     filename from the previous alt-D command 
+ 
+     alt-R           toggles display of a ruler on the top line 
+ 
+     alt-S           toggles file Sharing option, when off 
+                     files remain open until program termination 
+ 
+     alt-T           toggles expansion of TAB control characters, the 
+                     tab columns are a multiple of 8, i.e. 1,9,17, etc. 
+                     The default is to expand TABs. See DEBUG section. 
+ 
+     alt-U           unmark lines; line marks are removed 
+
+Page  6                                                    LIST  User's Guide 
+Commands and Keys 
+______________________________________________________________________________
+
+ 
+     alt-W           toggles split screen; when ON, the top half of 
+                     the screen is frozen. Further scrolling occurs 
+                     only in the bottom half of the screen (window) 
+                     until the alt-W keys are used again. 
+ 
+     alt-Y           repositions the file to the last "active" line; 
+                     that is a line positioned to by Find/Scan, or 
+                     by alt-M/alt-B marking of lines. 
+ 
+     alt-X           exits to DOS and displays the original screen 
+                     (unless screen saving has been disabled) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LIST  User's Guide                                                    Page  7 
+Scrolling 
+______________________________________________________________________________
+
+ 
+            You view different parts of the file by scrolling.  That is, 
+        you use the cursor positioning keys up, down, left and right  to 
+        move the display one increment in that direction.  For  example, 
+        press the down  arrow key to  move the display  one line in  the 
+        file, i.e. display the next line in the file. 
+ 
+            The  PgDn  and  PgUp  cursor  keys  move the display on full 
+        screen in either direction. 
+ 
+ 
+            Rather than press the up  and down keys once for  each line, 
+        you  may  use  continuous  scrolling.   Use  the C key to toggle 
+        continuous  scrolling  on  or  off.   The  default is off.  When 
+        toggled on,  pressing the  up or  down arrow  keys results  in a 
+        moving display.  For example, when you press the down arrow, the 
+        next  line  of  the  file  is  displayed automatically every few 
+        moments.  It is  like holding down  the arrow key.   To stop the 
+        continuous scroll, press the space bar. 
+ 
+ 
+            The  speed  of  the  continuous  scroll  can  be adjusted by 
+        pressing the  + (plus)  or -  (minus) key  while the  display is 
+        moving.  The  plus key  makes the  display move  faster, and the 
+        minus key makes it move slower.  You can save the speed value by 
+        using the cloning command (see Alt-C). 
+ 
+ 
+        Summary of scrolling commands: 
+ 
+            right arrow - move display right 10 columns 
+            left arrow  - move display left 10 columns 
+            down arrow  - display next line of file 
+            up arrow    - display previous line of file 
+            PgUp key    - display previous "page", 23 (or 41) lines back 
+            PgDn key    - display next "page", 23 (or 41) lines ahead 
+ 
+            C key       - turns continuous scrolling on or off 
+            spacebar    - or any key, interrupts continuous scrolling 
+            + (plus)    - makes continuous scroll incrementally faster 
+            - (minus)   - makes continuous scroll slower 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  8                                                    LIST  User's Guide 
+Positioning to Lines 
+______________________________________________________________________________
+
+ 
+            Each displayable line of the file is assigned a line number. 
+        The first line is assigned line number 1.  The highest allowable 
+        line  number is 16 million.  In order to determine the last line 
+        number, the  entire file  must be  read.  For  this reason,  the 
+        first time that the END (bottom) command is issued, it will take 
+        longer to process.  This is  not necessary if the file  has been 
+        completely read (see the alt-L preloading option). 
+ 
+            If the Wrap  option is in  effect, there is  one line number 
+        required for  each 80  bytes of  the file's  records.  Thus, the 
+        line number does not represent the actual number of lines in the 
+        file. 
+ 
+            If  the  hex  dump  option  is  in effect, there is one line 
+        number required for each 16 bytes of the file.  For example,  an 
+        80-byte file will be displayed as 5 lines. 
+ 
+            You may  position to  a specific  line number  by using  the 
+        c-Home, Ctrl key  and Home key,  or the #  key.  When c-Home  is 
+        entered, you are prompted for the line number.  Enter the 1 to 5 
+        digit line number.   The display will  now begin with  that line 
+        number at the top of the screen. 
+ 
+            To position forward or backward,  you may use the +  (plus), 
+        or -  (minus) keys.   You are  prompted to  enter the  number of 
+        lines to  be skipped.   The display  resumes at  the line number 
+        shown on  the top  (status) line,  plus or  minus the  number of 
+        lines that you specified. 
+ 
+            When you  change a  filter option,  such as  Wrap, the  line 
+        numbering changes.  An attempt is  made to retain the same  file 
+        position, but the file may be repositioned at the top. 
+ 
+ 
+        Summary of positioning commands: 
+ 
+        ctrl-HOME, or #  - prompts for exact line number to display 
+        + (plus)         - prompts for the number of lines to skip 
+                           for positioning further ahead in the file 
+        - (minus)        - prompts for the number of lines to skip 
+                           for positioning to an earlier line 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LIST  User's Guide                                                    Page  9 
+Displaying multiple files 
+______________________________________________________________________________
+
+ 
+            You can display more than one file by supplying wildcards in 
+        the file name.  For example,  LIST *.DOC will display all  files 
+        with an extension of DOC. 
+ 
+            To  display  the  next  file,  you  use  the  Q or ctrl-PgDn 
+        command.  When the  last file has  been displayed, you  can exit 
+        LIST by using the X,  F10, ESCape, or alt-X commands,  depending 
+        on how you want the screen to look when LIST ends. 
+ 
+            To display the previous file, you use the ctrl-PgUp (control 
+        and PgUp keys together).  LIST can keep track of up to 20  files 
+        at one time.  The line number for each file is also remembered. 
+ 
+            Another way to LIST more than  one file is to use the  alt-F 
+        command.  Alt-F asks you for a new file name, and you may  enter 
+        a simple file name, or one that includes wild cards.  These  new 
+        file names are added to the table of filenames that LIST  keeps. 
+        Thus, you can use alt-F for several different filenames, and use 
+        the ctrl-PgDn and ctrl-PgUp commands to move among them. 
+ 
+ 
+        Summary of file review commands: 
+ 
+        ctrl-PgUp       - display previous file 
+        ctrl-PgDn       - display next file 
+ 
+        alt-F           - prompt for new filename or filespec to display 
+ 
+        ESCape          - exit to DOS 
+        Q               - display next file; if none, exit to DOS 
+                          leaving the last page on the screen 
+        X               - exit to DOS with a blank screen 
+        F10             - exit to DOS with a blank screen 
+        alt-X           - exit to DOS and display the screen that was 
+                          present when LIST was invoked 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  10                                                    LIST  User's Guide 
+Marking and Extracting Lines 
+______________________________________________________________________________
+
+ 
+            There are two ways that lines can be extracted from a file: 
+ 
+              o  with the P (print) command, and 
+              o  with the alt-D (dump data) command. 
+ 
+            The lines to  be extracted are  either the current  lines on 
+        the screen,  or lines  that you  have marked  with the alt-M and 
+        alt-B commands. 
+ 
+            To mark lines, you use  either the alt-M or alt-B  commands. 
+        The alt-M command  marks the top  line on the  screen, and alt-B 
+        marks the bottom line on the screen.  You can use either or both 
+        commands to mark the starting and ending lines (in the range  of 
+        lines  to  be  extracted).   The  marked  lines are displayed in 
+        reverse video. 
+ 
+            After  you  have  marked  a  range  of  lines, you use the P 
+        (print) command to print all  of the marked lines.  Or,  you can 
+        use the  alt-D (dump  data) command  to write  those lines  to a 
+        file.  The alt-D command asks you for a file name.  If the  file 
+        does not  exist, a  new one  is created.   If the  file  already 
+        exists, the extracted lines are added (appended) to the file. 
+ 
+            For example, you would like  to have LIST filter out  all of 
+        the junk in a file, and then write a new file.  To do this,  you 
+        might enter the following sequence of commands: 
+ 
+                list TESTDATA           ... display your TESTDATA file 
+                alt-J                   ... filters out the junk 
+                alt-M                   ... marks line 1 (top line) 
+                END                     ... positions to end of file 
+                alt-B                   ... marks the bottom line 
+                                                     (last line) 
+                alt-D                   ... dumps data to a file 
+                TESTDATE.NEW            ... you enter the new file name 
+                alt-X                   ... quit and return to DOS 
+ 
+ 
+            Once you have marked a range of lines, use of alt-M or alt-B 
+        does not reset the entire line range.  The first or last  marked 
+        line may  change, but  both do  not change.   Using alt-M  again 
+        expands or contracts the  range appropriately.  If the  new line 
+        for alt-M/alt-B is before the  top mark, the top mark  is moved. 
+        If the new  line is after  the bottom mark,  the bottom mark  is 
+        changed.  If the new line is within the currently marked  range, 
+        alt-M moves the top mark - contracts the range - and alt-B moves 
+        the bottom mark. 
+ 
+ 
+            Use  the  alt-U  command  to  unmark lines, especially after 
+        alt-D (dump) to be sure. 
+ 
+
+
+
+
+
+
+
+
+LIST  User's Guide                                                    Page  11 
+Display Format 
+______________________________________________________________________________
+
+ 
+            The  monitor  display  is  defined  in  terms  of  lines and 
+        columns.  A typical monitor can  display 25 lines of 80  columns 
+        each.  LIST attempts to use the number of lines and columns  for 
+        the monitor mode in use.  For  example, if the monitor is in  40 
+        column mode, LIST displays only 40 characters per line.  And, if 
+        the monitor is set  for other than 25  lines, such as 35  or 43, 
+        LIST uses that number of lines. 
+ 
+            If you use  the alt-E command  to change EGA  modes, the EGA 
+        palette,  cursor,  and  other  settings  are  set to DOS default 
+        values.  LIST does not preserve fonts or palettes. 
+ 
+            The top line of the display is called the Status line.   The 
+        bottom line is called the Command line.  The remaining lines are 
+        called the  primary display  window, and  are usually  lines two 
+        through 24. 
+ 
+
+   Status Line Format 
+ 
+        The Status line has the following format: 
+ 
+                LIST   lllll nnnnnnn +sss mm/dd/yy hh:mm  - filename 
+ 
+        where, 
+ 
+        'LIST'     is the name of this program 
+ 
+        'lllllll'  is the line number of the first line in the 
+                   display window (usually on line 2) 
+ 
+        'nnnnnnn'  is the line number of the last record, if known 
+ 
+        '+sss'     if displayed, this is the Scroll amount, in 
+                   multiples of 10, corresponding to the number 
+                   of columns that the display has been shifted 
+                   to the right to view records longer than 80 
+ 
+        'mm/dd/yy' is the file's creation date (not today's date) 
+        'hh:mm'    is the file's creation time (not today's time) 
+ 
+ 
+        Note:      The date and time  shown on the top line is  NOT  the 
+               current date.  It is the date and time  that the file was 
+               created. 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  12                                                    LIST  User's Guide 
+Display Format 
+______________________________________________________________________________
+
+
+   Command Line Format 
+ 
+        The Command line has the following format: 
+ 
+      command message _________ Toggles: hbkmpswtalj Keys: X=exit ?=Help 
+                                          ----------- 
+        where, 
+ 
+        'command' indicates the current process: 
+ 
+          'Command'   function prompt; you are being asked to enter 
+                       a command; enter the letter, or press the keys 
+                       for the action to be performed 
+ 
+          'Reading '   the file data is being read 
+          'Filter  '   the file data is being formatted for display 
+          'Looking '   the Scan/Find text is being searched for 
+ 
+          'Scan   '   you are being asked to enter text to locate 
+          'Find   '   in the file, up to 31 characters may be entered 
+ 
+          '# lines?'   you are being asked to enter a 1 to 5 digit 
+                       number that is the amount of lines to skip 
+ 
+          'Line #? '   you are being asked to enter a 1 to 5 digit 
+                       line number to which the display is to be 
+                       positioned 
+ 
+ 
+        'message' may be one of: 
+ 
+          '*** Text not found ***' 
+           the Scan/Text was not found in the file 
+ 
+          '   *** Top of file ***' 
+           the first line of the file is being displayed 
+ 
+          '   *** End-of-file ***' 
+           the last line of the file is being displayed 
+ 
+        Toggles: indicate status of toggles, lower case means OFF, upper 
+        case means the option is ON. 
+ 
+        'H'       indicates that the hex Dump display option is in use 
+        'b'       the 'b' is replaced by a 7, 8, or * depending 
+                  on which of those options is in effect 
+        'K'       indicates that the Keyboard flush option is in use 
+        'M'       indicates that tests for monitor retrace are not made 
+        'P'       indicates that Print is in use 
+        'C'       toggles continuous scrolling 
+ 
+        'W'       indicates that the Wrap mode is in effect 
+        'T'       indicates that TAB characters are expanded 
+        'A'       indicates APXCORE interface, 'a' for TV/DV/DD 
+        'L'       indicates that the pre-loading option is on 
+        'J'       indicates that line feeds are added to lone carriage 
+                  return control characters, and backspaces are handled 
+ 
+
+
+LIST  User's Guide                                                    Page  13 
+Screen Colors 
+______________________________________________________________________________
+
+ 
+            The screen's lines may be in any of three different colors: 
+ 
+                o  the 'special' color for the top status line and the 
+                   bottom command line 
+                o  the 'normal' color for the file's text windows 
+                o  the 'bright' color for lines with Find/Scan text, 
+                   and for the upside-down question mark in 7-bit mode 
+ 
+            There is  a pair  of function  keys assigned  to each color. 
+        You use these function keys at any time to change the background 
+        and  foreground  colors  temporarily,  or  use the alt-C cloning 
+        command to make the  colors permanent.  Alt-C requires  that the 
+        LIST.COM program file be on the current drive and in the current 
+        directory unless you are using DOS version 3.3  or  later.  With 
+        DOS 3.3, the program file may have  any name  and may  reside in 
+        any subdirectory. 
+ 
+           The border is not  changed.  The foreground color  applies to 
+        the color of the characters. 
+ 
+        The color attributes may be changed by using these function keys: 
+ 
+          For the main body of text: 
+ 
+                F5 - background color 
+                F6 - foreground color 
+ 
+          For the top and bottom lines: 
+ 
+                F7 - background color 
+                F8 - foreground color 
+ 
+          For the line with Find/Scan text: 
+ 
+                F2 - background color 
+                F4 - foreground 
+ 
+            Once you  have decided  upon the  colors, use  the alt-C key 
+        combination to change the LIST.COM program file. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  14                                                    LIST  User's Guide 
+Scanning for text 
+______________________________________________________________________________
+
+ 
+            You may use Find (\ or  F) to search for text regardless  of 
+        the case, or you may use Scan  (/ or S) to find an exact  match. 
+        The search begins  at the top  line displayed and  proceeds in a 
+        forward direction until the end of file.  You may start a search 
+        that goes backwards  rather than forwards  by using the  ` (left 
+        quote) key  instead of  Find (\),  or by  using '  (right quote) 
+        instead of Scan (/). 
+ 
+            To scan for a character string, type a slash (/) followed by 
+        one or more (up to 31)  characters.  The Scan text, but not  the 
+        slash,  is  displayed  on  the  command  line.  The Scan is case 
+        sensitive.  That is, lower case Scan text will only match  lower 
+        case file text. 
+ 
+            While  the  program  is  searching  for the text, the bottom 
+        display line  is changed  to say  "Scanning".  Pressing  ANY key 
+        while the search  is in progress  will terminate the  search and 
+        display the message 'Text not found' on the bottom line. 
+ 
+            If the text is found, the line containing it is displayed as 
+        a high-intensity line (bright color) in the middle of the screen 
+        depending on the value of the Find Row (see cloning section). 
+ 
+            If the text is NOT  found, the command line (25)  is changed 
+        to  say  '***  text  not  found  ***',  and  the display remains 
+        unchanged. 
+ 
+            To find the next occurrence of the same text, use the A)gain 
+        command, or press the F3 key.  To find the previous  occurrence, 
+        press the F9 key. 
+ 
+            If the PCED keyboard  enhancement program is installed,  the 
+        up/down cursor keys  may be used  to recall and  edit previously 
+        entered Scan/Find text. 
+ 
+            In  a  shared  file  environment,  if the file changes while 
+        being listed,  the file  position may  become invalid.   Use the 
+        HOME command to insure proper file synchronization,   or use the 
+        alt-S command again. 
+ 
+            If the display has been  scrolled right or left so  that the 
+        "found"  text  is  not  visible,  you  will  see  an upside-down 
+        question mark in the first column.  This is the same symbol that 
+        is  displayed  on  a  blank  line  while  changing the Find/Scan 
+        colors.  It  is there  so that  you can  tell that  the line  is 
+        marked. 
+ 
+        Summary of scanning commands: 
+ 
+                /       Scan for text with exact match 
+                v or '  Scan for text going backwards 
+ 
+                \       Find text with case insensitive search 
+                ^ or `  Find case insensitive text going backwards 
+ 
+                F3      Find next occurrence of text 
+                F9      Find previous occurrence of text 
+ 
+
+
+LIST  User's Guide                                                    Page  15 
+Filtering 
+______________________________________________________________________________
+
+ 
+            Filtering is the term used to describe the process that LIST 
+        uses to  format file  data for  displaying on  a monitor.  After 
+        data  is  read  from  a  file,  it  is  filtered.  The method of 
+        filtering depends upon the options in effect. 
+ 
+            For a typical ASCII  text file, the filter  removes carriage 
+        return and line feed characters, and expands TAB characters. 
+ 
+ 
+
+    Hi-bit Filter 
+ 
+            The  7,  8,  and  *  (asterisk)  commands  determine whether 
+        characters above ASCII-127 are displayed.  If the hi-bit  option 
+        is off (7  command), the filter  strips the high  order bit from 
+        each character.   If the  hi-bit option  is on  (8 command), all 
+        characters, including  graphic characters  above ASCII-127,  are 
+        displayed. 
+ 
+
+    Star Filter 
+ 
+            The  star  (*  or  asterisk)  command  displays  only  ASCII 
+        characters below 128 (x'80'), but treats the special  characters 
+        x'8A'  and  x'8D'  as  line-feed  and  carriage-return   control 
+        characters.   Any  other  characters  above  127  are treated as 
+        spaces, and control codes below ASCII-26 are replaced by blanks. 
+ 
+            The Wrap option causes the filtering to insure that no  line 
+        exceeds the width of the monitor, e.g. 80 characters. 
+ 
+
+    Junk Filter 
+ 
+            The alt-J  command toggles  the "junk"  filter which insures 
+        that carriage  returns in  the file  also result  in a new line. 
+        Also, backspace characters result in "backing up" the display by 
+        one position.  This  allows more readability  of files that  use 
+        backspacing to emphasize, or over-write, characters. 
+ 
+ 
+
+    Hex Format Filter 
+ 
+            The hex dump option (alt-H) causes the filtering to reformat 
+        the file  data into  a DEBUG-like  display format.   The largest 
+        file that can be displayed in Hex is 1 million bytes. 
+ 
+            An  attempt  is  made  to  retain  the  file  position  when 
+        switching from normal to hex-dump display, but due to  filtering 
+        changing record lengths,  the hex display  may begin before  the 
+        current record. 
+ 
+        NOTE:   The  EOF  control character is  ignored in this version. 
+ 
+
+
+
+
+
+Page  16                                                    LIST  User's Guide 
+DOS considerations 
+______________________________________________________________________________
+
+
+    File Sharing 
+ 
+            LIST uses  two techniques  for allowing  you to  share files 
+        with   other   processes,   such   as   programs   running under 
+        multi-tasking systems, in other windows, or on networks. 
+ 
+            The first technique is called "file closing" and is  enabled 
+        by the  alt-S commands.   This forces  LIST to  close the viewed 
+        file unless it needs to read from the file.  If enough memory is 
+        available, the entire file may be loaded once and thus leave the 
+        file free for exclusive access by other processes. 
+ 
+            The  second  technique  is  called  "file sharing".  It is a 
+        function of  DOS and  requires DOS  version 3.0  or later.  LIST 
+        opens the viewed  files with a  DENY NONE request.   This allows 
+        other processes to  read and write  to the file  if they do  not 
+        request exclusive use of the  file.  If a file is  not available 
+        to  LIST  because  it  is  locked  by  another process, you will 
+        receive the error message "File not found" or "Access  denied". 
+        There is  no command  to enable  or disable  this method of file 
+        sharing.  It is implicit with the use of DOS version 3. 
+ 
+
+    Invoking DOS Commands 
+ 
+            If the  "goto DOS"  option is  enabled, you  may invoke  DOS 
+        commands by using the alt-G command.  LIST reserves about 60k of 
+        memory  for   its  own   use.   This   increases  LIST's  memory 
+        requirements  to  approximately  96k  when  using  alt-G.    The 
+        remaining memory is available to the DOS commands. 
+ 
+ 
+            After you have finished  entering DOS commands, use  the DOS 
+        EXIT command to return to LIST. 
+ 
+            To disable the  "goto DOS" function,  you must use  DEBUG to 
+        alter the option  byte described in  the section about  cloning. 
+        With it disabled, LIST requires less memory, about 66K. 
+ 
+
+    Screen Saving 
+ 
+            If  the  screen  saving  option  is  enabled, LIST saves the 
+        contents of the current display screen when it starts.  You  can 
+        restore  the  original  screen  by  exiting  LIST with the alt-X 
+        command. 
+ 
+            Screen saving requires approximately 10k more memory.   This 
+        is sufficient to save 60 lines of 80 characters (EGA 8x6  mode). 
+        See the section about cloning for information about enabling and 
+        disabling the screen saving feature. 
+ 
+
+
+
+
+
+
+
+
+LIST  User's Guide                                                    Page  17 
+Cloning Procedure 
+______________________________________________________________________________
+
+ 
+            The screen colors, the display retrace testing (M), the file 
+        closing (C) and ruler (alt-R) options may be permanently set  in 
+        the program by using the alt-C cloning function. 
+ 
+            For  cloning  to  take  effect, the program should be called 
+        LIST.COM and on the current drive and in the current directory. 
+ 
+            There are two versions of the LIST program file.  One is the 
+        normal full program.  The  other, which  contains an  'S' as the 
+        last letter of  the file name,  is a slightly  smaller file that 
+        excludes  the  Help  screen.   You  may  use either COM file for 
+        cloning.  After cloning, you may continue viewing the file. 
+ 
+           The clonable options (command toggles) are: 
+ 
+             M      =  Mono monitor, affects retrace testing. If you see 
+                       "snow" on your color monitor, turn off this 
+                       option 
+ 
+             alt-S  =  file(s) are shared 
+             W      =  Wrap long lines 
+             8/7/*  =  display all 256 values, or 7-bit, or special case 
+             K      =  flush Keyboard each time a command is read 
+ 
+             alt-A  =  set on if using Apxcore, off if using Double Dos 
+                       or TopView, or DesqView 
+ 
+             alt-H  =  hex dump display, like the DEBUG format 
+ 
+             alt-J  =  toggle "junk" filter, add LF to CR, fix backspaces 
+ 
+             alt-L  =  set on to force preloading (reading) of the 
+                       entire file before any lines are displayed, 
+                       Default is OFF. 
+ 
+             alt-N  =  toggles screen saving (see alt-X) feature 
+ 
+             alt-R  =  toggle columnar ruler on top line 
+ 
+             alt-T  =  toggle expansion of TAB characters 
+ 
+ 
+        Note: Be  sure you  have no  other copies  of LIST.COM which are 
+        accessible (because of a filepath type of utility). 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  18                                                    LIST  User's Guide 
+Modifying LIST 
+______________________________________________________________________________
+
+ Locations of clonable values 
+
+ 
+           An alternative to cloning is  to use DEBUG to make  permanent 
+        changes.  Here is a list of key items and their addresses: 
+ 
+           0127 - special lines 1 and 25 colors, default is 01 (blue) 
+                  Refer to a technical reference guide for the 
+                  attribute values for the colors that you want. 
+           0129 - normal lines 2 thru 24 colors, default is 02 (green) 
+           012B - bright color for Find/Scan, default is 0F (bright white) 
+           012D - clonable options; 
+               MRSJ WHK*  M = mono, retrace testing if off, x'01' 
+                          R = ruler, x'02' 
+                          S = shared, x'04' 
+                          J = add LF to lone CR, process backspaces, 
+                              if on, x'08'; default is off 
+                          W = wrap mode, x'10' 
+                          H = hi-bit on, x'20' 
+                          K = kybd flush, x'40' 
+                          * = special document filtering, x'80' 
+           012E - more clonable options, not all are indicated: 
+               .PAT DGV.  P = Preload file if on, x'02', default is off 
+                          A = Apxcore if on, TV/DD/DV if off, x'04, 
+                              default is for Topview/Double DOS use 
+                          T = if on (default), expand TABs, x'08' 
+                          D = hex display mode if on, x'10' 
+                          G = if on, alt-G goto DOS is Disabled, x'20' 
+                          V = if on, screen save/restore is Disabled 
+                              and 9K less memory is used/required, x'40' 
+ 
+        By  specifying  the  bit  value,  the  option  is  enabled.  For 
+        example, to enable  Shared and Retrace,  specify a hex  value of 
+        the sum, or 01+04 = 05. 
+           012F - row less one at which found text is displayed,  1 byte 
+                  the default is 08 which displays found text on line  9 
+           0131 - scroll offset value,  default is 10 (x'0A'),  one byte 
+           0133 - scroll starting value, default is 0 (x'00'), one byte 
+           0135 - tab increment, must be power of 2, default is 8 
+           0137 - tab mask, subtract tab incr from FFFFh,default is FFF8 
+           0139 - beep tone, default is 512 (hex 0200) 
+ 
+            When  the  Find/Scan  command  is  used, the next line which 
+        contains that text is highlighted using the 'bright' color,  and 
+        is placed in  row 9 of  the screen.  You  can change the  row by 
+        altering the byte  at location 12F  which is normally  '08', one 
+        less than the row. 
+ 
+           0368 - WHAT eye-catcher 
+           036C - WHAT keys/function table (see below) 
+
+
+
+
+
+
+
+
+
+
+
+LIST  User's Guide                                                    Page  19 
+Modifying LIST 
+______________________________________________________________________________
+
+ Reassigning keys 
+
+ 
+        This information is offered to  those of you who wish  to modify 
+        LIST in special ways.  You  do not need this information  to use 
+        LIST. 
+ 
+        LIST performs a function for every character that can be entered 
+        at the command  line prompt.  There  are 128 regular  characters 
+        and  131  extended  characters.   The  regular  characters   are 
+        numbered from 0 to 127,  and they include the letters  A-Z, a-z, 
+        the numbers, and the rest  of the usual single characters  found 
+        on  your  keyboard.   The  extended characters represent special 
+        function  keys  and  combinations  of  keys,  such as F1, alt-X, 
+        ctrl-A, and the cursor positioning keys. 
+ 
+        The  WHAT  table in LIST has  a one  byte entry  for each of the 
+        characters.  This byte is a number from 0 to 57 that  represents 
+        the identification of a routine that performs a function. 
+ 
+        For example, 
+ 
+          - the ESCape key has a value  of 27 (hex 1B) and its value  in 
+            the WHAT table is 16 (10 hex).  Routine number 16 is  called 
+            "Done".  The "Done" routine exits to DOS. 
+ 
+          - the Q key has a value of 81 (51 hex) with a routine value of 
+            15  for  the  "Close"  routine.   The  "Close"  routine ends 
+            viewing of the  current file and  tries to display  the next 
+            file, i.e. wildcards used for the filename.  There is also a 
+            lower case letter q, so be sure to change both entries. 
+ 
+ 
+        To change the  function that a  command character performs,  you 
+        change the  value in  the WHAT  table for  the routine  that the 
+        character invokes. 
+ 
+        For example, to change the ESCape key to act like the Q key, you 
+        change the routine value for ESCape from 16 (10 hex) to a 15 (0F 
+        hex). 
+ 
+        To find  the location  of the  routine value  in the WHAT table, 
+        first determine the value of  the character, e.g.  ESCape is  27 
+        (1B hex), and then  add that to the  location of the WHAT  table 
+        (36C hex); or, 1B + 36C = 387 hex.  Finally, use DEBUG to change 
+        the byte at that location (387 hex) from a 10 hex to a 0F hex. 
+ 
+        For example, 
+ 
+          debug list64a.com             ; use appropriate file name 
+          -e 387 0f                     ; change ESC to routine 15 
+          -w                            ; old data is 10 
+          -q 
+ 
+
+
+
+
+
+
+
+Page  20                                                    LIST  User's Guide 
+Modifying LIST 
+______________________________________________________________________________
+
+ Routine ID values 
+
+ 
+    Value Key(s)    Title        Description of function performed 
+    ----- --------- ----------   ------------------------------------------ 
+      0             Beeper       Error, undefined command 
+      1   alt-A     AltA         Toggle APXCORE/DD/TV interface 
+      2   alt-E     AltE         Toggle EGA 43-line mode 
+      3   alt-F     AltF         Get new filespec 
+      4   alt-J     AltJ         Toggle Junk filter 
+      5   alt-L     AltL         Toggle pre-Load 
+      6   alt-T     AltT         Toggle TABs expansion 
+      7   alt-W     AltW         Toggle Window 
+      8   alt-X     AltX         Exit to DOS, restore screen 
+      9   U/up      Back         Position to previous line 
+     10   End       Bottom       Position to end of file 
+     11   F5        ChgBack      Change top/bottom line background color 
+     12   F6        ChgFore      Change top/bottom line foreground color 
+     13   c-home    CHome        Position to specified line number 
+     14   alt-C     Clone        Rewrite LIST.COM with new options 
+     15   Q         Close        Quit current file, display next file 
+     16   ESC F10   Done         Exit to DOS 
+     17   N down    Down1        Position to next line 
+     18   X         DoneX        Exit to DOS, clear screen 
+     19   alt-H     DumpHex      Toggle Hex display mode 
+     20   8         Eight        Leave hi-bit 
+     21   \         Find         Search for text, any case matches 
+     22   F2        FindBack     Change Find/Scan background color 
+     23   F4        FindFore     Change Find/Scan foreground color 
+     24   alt-M     Flash        Toggle monitor rescan testing 
+     25   K         Flush        Toggle keyboard flush (type ahead) 
+     26   alt-G     GotoDOS      Invoke DOS command (shell) 
+     27   L left    Left         Scroll left 10 columns 
+     28   -         MinusNum     Position back by number of lines 
+     29   enter     NxtPage      Display next page 
+     30   +         PlusNum      Position forward by number of lines 
+     31   P         Print        Print current screen or marked lines 
+     32   F1 H ?    Help         Display Help screen 
+     33   F3        ReScan       Search for next occurance of text 
+     34   R right   Right        Scroll display right 10 columns 
+     35   alt-R     Ruler        Display ruler marks on top line 
+     36   /         Scan         Search for text, same case 
+     37   F9        ScanBack     Search for previous occurance of text 
+     38   c-left    Scroll0      Reset scroll to column 1, full left 
+     39   F7        SetBack      Change normal line background color 
+     40   F8        SetFore      Change normal line foreground color 
+     41   7         Seven        Strip hi-bit 
+     42   C         Share        Toggle closing of files 
+     43   *         Star         Toggle special * filter 
+     44   Home      Top          Position to top of file 
+     45     up      Up1          Position back one line 
+     46   W         Wrapper      Toggle display of wide lines 
+     47   alt-D     WriteFile    Write marked lines to a file 
+     48   alt-M     MarkLines    Mark top line of display 
+     49   alt-U     UnmarkLines  Unmark lines 
+     50   alt-B     MarkBottom   Mark bottom line of display 
+
+
+
+
+
+LIST  User's Guide                                                    Page  21 
+Modifying LIST 
+______________________________________________________________________________
+
+ Routine ID values 
+
+    Value Key(s)    Title        Description of function performed 
+    ----- --------- ----------   ------------------------------------------ 
+     51   ctrl-pgup Review       Display previous file 
+     52   ^         RevFind      Like Find but initiates search backwards 
+     53   v         RevScan      Like Scan but initiates search backwards 
+     54   alt-N     AltN         Toggle screen saving (alt-X) function 
+     55   C         Smooth       Toggle continuous scrolling 
+     56   alt-Y     AltY         Bookmark, reposition to last "active" line 
+     57   alt-O     WriteFile    Write marked lines to previous alt-D file 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  22                                                    LIST  User's Guide 
+Restrictions 
+______________________________________________________________________________
+
+ 
+        Written by Vernon Buerg for the  IBM PC using DOS 2.0 or  later, 
+        through DOS 3.3.  For personal use only; may not be sold. 
+ 
+          o  The program requires about 48K of memory. If more memory is 
+             available, it is used to store more of the file in  memory. 
+             At least 80K is required to  use the DOS shell.  Add 9K  if 
+             the screen saving option is enabled (default). 
+ 
+          o  The line number is currently limited to 16 million lines. 
+ 
+          o  The  file  size  is  limited  to 16 million bytes for ASCII 
+             files, and to 4 million bytes for hex-dump files. 
+ 
+          o  PC DOS Version 2.0 or later is required. DOS version 3.0 or 
+             later is required for file sharing. 
+ 
+          o  ANSI.SYS is NOT required. 
+ 
+        APX Core, DesqView, TopView, Double DOS,  and IBM are  all copy- 
+        righted,  trademarked,  and all that. 
+ 
+        LIST  is  supplied  for  personal,  private  use.   Feel free to 
+        distribute LIST given these restrictions: 
+ 
+          o  the program  shall be supplied in its original,  unmodified 
+             form, which includes this documentation; 
+ 
+          o  no fee is charged; 
+ 
+          o  for-profit use without a license is prohibited; 
+ 
+          o  the program may not be included -  or bundled - with  other 
+             goods or services.  Exceptions may be granted upon  written 
+             request only. This applies to clubs and distributors, too. 
+ 
+ 
+        If you are  using LIST and  find it of  value, your gift  in any 
+        amount ($15 suggested) will be greatly appreciated.  Please make 
+        checks payable in U.S. dollars to Vernon D. Buerg.  Canadian and 
+        non-U.S. checks are not acceptable. 
+ 
+        For use by corporations  and other institutions, please  contact 
+        me for a licensing arrangement.  More information is supplied in 
+        the file LICENSE.  Customizing,  licensing  of  the  source, and 
+        other special  licensing are  available upon  request.  Purchase 
+        orders and invoicing are acceptable. 
+ 
+ 
+                Vernon D. Buerg 
+                139 White Oak Circle 
+                Petaluma, CA  94952 
+ 
+                Data:   (707) 778-8944    VOR 24-hour bulletin board 
+                - or -  (707) 778-8841    MB  24-hour bulletin board 
+                Compuserve: 70007,1212 
+
+
+
+
+
+LIST  User's Guide                                                    Page  23 
+Index-1                                                LIST  User's Guide 
+__________________________________________________________________________
+
+
+
+  /*,command line,star filter .. 1, 18
+  /7,command line,7-bit option . 1, 18
+  /8,command line,8-bit option . 1
+  /H,command line,hex option ... 1
+  /J,command line,junk filter .. 1
+  /L,command line,preload option 1
+  /S,command line,piping option  1, 2
+  /W,command line,wrap option .. 1
+  Alt- keys .................... 6
+  Alt-A,APXCORE option ......... 6, 18, 21
+  Alt-B,mark bottom line ....... 6, 7, 11, 21
+  Alt-C,clone new LIST.COM ..... 6, 8, 14, 18, 21
+  Alt-D,Write marked lines ..... 6, 11, 21, 22
+  Alt-E,toggle 25/43 lines ..... 6, 12, 21
+  Alt-F,enter new filename ..... 4, 6, 10, 21
+  Alt-G,go to DOS .............. 1, 6, 17, 19, 21
+  Alt-H,toggle hex display ..... 3, 6, 16, 18, 21
+  Alt-J,toggle junk filter ..... 6, 11, 16, 18, 21
+  Alt-L,toggle file preloading . 6, 9, 18, 21
+  Alt-M,mark top line .......... 6, 7, 11, 21
+  Alt-N,toggle screen saving ... 6, 18, 22
+  Alt-O,write marked lines ..... 6, 22
+  Alt-R,toggle ruler display ... 3, 6, 18, 21
+  Alt-S,toggle file sharing .... 6, 15, 17, 18
+  Alt-T,toggle TAB expansion ... 6, 18, 21
+  Alt-U,unmark lines ........... 6, 11, 21
+  Alt-W,freeze top window ...... 7, 21
+  Alt-X,exit to DOS ............ 1, 7, 10, 11, 17, 18, 20, 21, 22
+  Alt-Y,reposition to last line  7, 22
+  Cloning ...................... 8, 14, 15, 17, 18, 19
+  Colors ....................... 6, 14, 15, 18, 19
+  Command line format .......... 1, 13
+  Command line,option switches . 1, 3, 12, 13, 14, 15
+  Continuous,scrolling ......... 4, 8, 13, 22
+  Control- keys ................ 5
+  Cursor keys .................. 4, 15
+  DEBUG,changing options ....... 6, 16, 17, 18, 19, 20
+  Exit to DOS .................. 4, 5, 10, 21
+  F- function keys ............. 5
+  File Sharing ................. 17, 23
+  Find,text .................... 4, 5, 7, 13, 14, 15, 19, 20, 21, 22, 23
+  Hex dump,display mode ........ 1, 3, 6, 13, 16, 18
+  Hex Format Filter ............ 16
+  Hi-bit Filter ................ 16
+  Hi-bit,filter ................ 16, 19, 21
+  Installation ................. 1
+  Introduction ................. 1
+  Invoking DOS Commands ........ 17
+  Junk Filter .................. 16, 21
+  Junk,filter .................. 1, 2, 11, 16, 18, 21
+  Letter keys .................. 4
+  License,information .......... 23
+  LISTS.COM,small version ...... 1
+  Piped,piping files ........... 1, 2
+  Print,files or lines ......... 1, 11, 13, 21
+  Scan,for text ................ 4, 5, 7, 13, 14, 15, 19, 21, 22
+
+LIST  User's Guide                                                 Index-2
+__________________________________________________________________________
+
+
+
+  Screen saving,option ......... 6, 7, 17, 18, 22, 23
+  Shell,to DOS ................. 1, 6, 21, 23
+  Star Filter .................. 16
+  Star,filter .................. 1, 16, 21
+  Status Line Format ........... 12
+  Switches,command line ........ 1
+  TAB,control character ........ 2, 6, 13, 16, 18, 19
+
+

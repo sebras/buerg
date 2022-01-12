@@ -809,7 +809,7 @@
   - zero allocated memory to cure eof problem
   - add ^F to send printer formfeed
   - allow "?" wildcard in scan/find strings
-- 6.4a 09/21/88
+- [6.4a](6.4a) 09/21/88
   - correct PgDn skipping one line too many after up-arrow.
 - 6.38 09/14/88
   - improved detection of EOF for up arrow.

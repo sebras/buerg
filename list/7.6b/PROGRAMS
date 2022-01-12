@@ -1,0 +1,202 @@
+                              The Buerg Utilities
+
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  The  Buerg  Utilities  are  free  for  personal  use.   Corporations   and
+  institutions  must  obtain  a  license  for  their  use.   These  are  not
+  commercial programs.  They are  user-supported programs.  And, they  are a
+  copyrighted work  and may  be distributed  only pursuant  to this license.
+  Permission  is  hereby  granted  to  reproduce  and  disseminate the Buerg
+  Utilities so long as:
+
+        (1)  No remuneration of any kind is received in exchange; and
+        (2)  Distribution is without ANY modification to the contents
+             of all accompanying documentation and/or support files,
+             including the copyright notice and this license.
+
+  No copy of the Buerg Utilities may be distributed without including a copy
+  of this  license.  Any  other use  is prohibited  without express, written
+  permission in advance from:
+
+                Vernon D. Buerg
+                139 White Oak Circle
+                Petaluma, CA  94952
+
+                Compuserve:  70007,1212
+                    Forums:  IBMAPP, IBMCOM, IBMHW, IBMNEW, IBMPRO, IBMSYS
+                             and HAMNET
+
+                Data/BBS:    (707) 778-8944,
+                  -or-       (707) 778-8841, 24-hour bulletin board systems
+
+
+  The registered version of LIST Plus is $30.  You receive a disk with the
+  latest version, notification of updates, and a printed manual.
+
+  The commercial (retail) version of LIST Enhanced is $69 plus shipping and
+  may not be copied or distributed.
+
+  Copies of the "Buerg Utilities" disk set for personal use may be obtained
+  on 5.25"/1.2m or 3.5" 1.44mb diskettes by sending $60 plus shipping to:
+
+                Buerg Software
+                139 White Oak Circle
+                Petaluma, CA  94952
+
+  or, you may order by phone using a credit card by calling (707) 778-1811
+  between 10 am and 5 pm Pacific time.
+
+
+
+
+   Please send me the following:
+
+   ____ LIST Plus, Version 7, registration .................. x $30 ea. _______
+              (disk, manual, notification of major updates)
+
+   ____ LIST Enhanced, Version 1.8, commercial package ...... x $72 ea. _______
+              (dual media, 160-page manual in slipcase,
+               quick reference card)
+
+   ____ Complete Buerg Utilities ............................ x $60 ea. _______
+              (includes registered LIST Plus)
+              (1.2 mb or 1.44 mb disk only)                   Shipping    $3.00
+
+                                           California sales tax, 7.50%  _______
+
+                                                                 Total  _______
+
+
+             Choose one:   ____ 5.25", 360K        ____ 3.5" disk, 720K
+
+                           ____ 5.25", 1.2M        ____ 3.5" disk, 1.44M
+
+
+    Name: _____________________________________________________________________
+
+    Address: __________________________________________________________________
+
+             __________________________________________________________________
+
+    City: ______________________________________ State ________ Zip ___________
+
+
+    (  ) Check or Money Order payable to Buerg Software in U.S. funds.
+
+    (  ) VISA     (  ) Master Card
+
+    Card Number ______________________________________________Exp date ________
+
+    Signature _________________________________________________________________
+ -------------------------------[fold back here]-------------------------------
+                                    [tape]
+
+                                                                 -------
+                                                                | place |
+                                                                | stamp |
+                                                                | here  |
+                                                                 -------
+
+
+
+
+
+
+                Vernon D. Buerg
+                139 White Oak Circle
+                Petaluma, CA
+                94952
+
+                           The Buerg Utilities                          Page 1
+                     Copyright (c) Vernon D. Buerg 1991
+
+  Program   Vers.    Date      Description
+  -------   ----    --------   ------------------------------------------------
+  DELDUPE    2.3     3-01-89   Delete duplicate file between subdirectories
+  DRLIST     J       9-17-89   Special version of LIST for use with CTTY/ANSI
+  FBR        1.80    7-09-91   File backup/restore utilities.
+                               Alternative to BACKUP and RESTORE commands
+  LDIR       4.4     3-25-91   Display directories in selected file order.
+                               Alternative to the DIR command
+  LIST       7.6b    8-14-91   Full screen viewing of files, see LIST.DOC
+                               Alternative to the TYPE and MORE commands.
+  LISTOPT    1.11    5-12-91   LIST customization program for registered users.
+  QDR        4.0c    7-11-91   Quick Diskette Reformatter deletes all files.
+                               Clean off a disk for re-use.
+  SORTF      2.35    2-15-90   Fast file sorter handles large files.
+                               Alternative to the SORT filter.
+  SQPC       1.31    3-02-86   Fast file squeezer. Creates a compressed copy
+                               of a file to save disk space.
+  SWAPNAME   1.2     2-20-86   Switch names of two files, like CONFIG.xxx
+  TABS       2.1    10-14-86   Replace spaces with TABs and vice versa, in
+                               ASCII text files.
+
+Archiving utilities:
+  ARCA       1.29   12-09-87   Create or add files to an ARC archive file
+  ARCE       4.0g    4-13-91   Extract files from an ARC archive file
+  ARCF       1.08   10-19-90   Find text strings inside ARC files
+  ARCV       1.22    4-13-91   Display a list of files in an ARC archive
+  DUH        1.5     5-02-89   Delete files that already exist in archive files
+  FV         1.37    5-07-91   Display directories of archive files including
+                               ARC, PAK, ZIP, LZH and self extracting files
+  LARC       2.6     5-23-90   Create the Littlest ARChive file, w/BAS
+  LU-UTILS   1.x               Various LBR library file utilities
+  QBARCV     1.10              Quick Basic subroutine to display ARC directory
+  XONE       2.30   10-13-87   Make an ARC file from one or more ARC files
+  ZIPV       1.08    4-19-89   Display ZIP file directories, w/ASM
+
+BASIC programming aids:
+  CCIT       1.0     9-22-86   QB subroutine to calculate CCIT CRC for XMODEM
+                               includes assembler source
+  FC         1.2     8-18-85   Produce .MRG file of differences for BASIC files
+  QBX        4.00g  10-09-88   Quick Basic program lister, label/symbol
+                               cross referencer
+  RB         1.58    8-20-85   Convert token BASIC file to ASCII file
+  SQUISH     3.3     8-20-85   Compress and unnumber BASIC source programs
+
+Communications utilities:
+  ATO68A     6.8a    8-10-90   Automates access to CompuServe forums
+  ATODOC     6.8a    8-10-90   Documentation for AUTOSIG
+
+  CISMSG     2.7    12-21-88   Sort a file of captured CIS messages
+
+                           The Buerg Utilities                          Page 1
+                     Copyright (c) Vernon D. Buerg 1991
+
+  Program   Vers.    Date      Description
+  -------   ----    --------   ------------------------------------------------
+PC Board utilities:
+  BBSEXTRA   1.9     9-04-90   Determine missing and extra DIR files
+  DIRAGE     2.6     1-15-90   Determine age of files for purging
+  DIRSRT     1.1     9-19-88   Sort a PCBoard DIRectory file
+  P2PDLTXT   1.1     8-09-88   Create DOWNLOAD.TXT file from PCB CALLERS file
+  PCBCS      1.43    9-08-91   Analyzes and reports usage from PCB CALLERS file
+  SORTDL     1.1     8-09-88   Sort PCB DOWNLOAD.TXT files
+
+
+Printer utilities:
+  LJBOOK     3.5     4-25-91   Print text file on HP LaserJet in booklet form
+  LP-HP      1.8    11-23-88   Print files to HP LaserJet with headings, etc
+
+  E2O        1.0     5-14-86   Convert Epson print files to Oki files, w/ASM
+  LP-OKI     1.6     8-16-85   Print files on Okidata ML92, includes ASM
+  OKI        1.2     7-11-84   Okidata ML92 printer setup, includes ASM
+
+
+Amateur Radio:
+  SSLOG      1.1    11-19-87   Edit, dupe, score and print ARRL Sweepstakes
+                               logs, includes BASIC source
+  CQWW       1.06   11-19-87   Edit, dupe, score and print CQ WW DX logs,
+                               includes BASIC source
+  ORBIT13A   1.3a    3/24/90   Oscar 13 orbit predictor program, w/BAS
+
+
+Miscellaneous:
+  AUTODATE   1.1     4-28-84  Simplifies setting date/time without clock, w/ASM
+  COLORS     1.0     6-24-85  Experimental program to change DOS colors, w/ASM
+  JLH        1.07    8-01-86  JET's Little Helper (for Tall Tree's JET utility)
+  LIST569C   5.69c   1-24-87  Old version of LIST is smaller and simpler
+  LISTOS2    6.2a    4-23-88  Special version 6.2a of LIST for use with OS/2
+  LISTOSII   7.5i    6-02-91  Special version of LIST Plus v7.5 for OS/2 for
+                              licensed users only
+

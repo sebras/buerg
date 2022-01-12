@@ -278,7 +278,7 @@
   - Correct loop with up and left arrows (and mouse) when the directory is empty
   - Plus: correct viewing of ARJ files; change E to P
   - Plus: allow byte sizes up to 640 Gb  (was 640 Mb)
-- 7.5h 05/16/91
+- [7.5h](7.5h) 05/16/91
   - public release
 - 7.533 05/21/91
   - Plus: correct /B with 3-up file display

@@ -902,7 +902,7 @@
   - customized version for licensed copies
 - 6.2a 05/07/87
   - cosmetic changes for public release
-- 6.1a 01/23/87
+- [6.1a](6.1a) 01/23/87
   - Correct strange problems with /S option
   - Correct use of G (alt-F) with piping
   - Correct Help display when using split (alt-W) display

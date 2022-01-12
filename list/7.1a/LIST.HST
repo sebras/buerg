@@ -1,0 +1,304 @@
+LIST Version 7.1                                                       10/28/89
+
+        Corrections to version 7.0:
+        --------------------------
+
+|       7.15, 10/26/89 - correct new filter EOF problem
+|                      - correct Q from a-v menu when no files have been viewed
+|       7.14, 10/25/89 - improve speed if no options (alt-J,*,alt-H,etc) set,
+|                        and change filter defaults; this is a new
+|                        FAST FILTER option. It is skips all checks for control
+|                        characters. You will see control characters, such as
+|                        line feeds, displayed. The trade off is speed. Loading
+|                        and scanning is up to 4 times faster with the fast
+|                        filter setting.
+|       7.13, 10/23/89 - change Ctrl-I to be TAB interval command
+|                      - change Q in a-v to return to viewing of last file
+|                      - add Alt-X in a-v as exit with original screen
+|                      - correct c-end in a-v
+|                      - change F2/F4 to change found line attributes; the
+|                        last line is used to show the new colors if found
+|                        text is not displayed on the current screen
+|                      - allow cloning of second window color in normal version
+|                      - add LZH to ViewArc/a-i
+|       7.12, 10/22/89 - allow 11 character subdirectory names when viewing
+|                        with 5 up or less. 6-up truncates the last character
+|                        of full length subdirectory names
+|                      - change default a-v display to 5-up
+|                      - correct a-v sort by date/time
+|       7.11, 10/20/89 - allow d:\path command line syntax
+|                      - change a-v down arrow to wrap to first entry after
+|                        positioning to last entry (wraps around)
+|                      - add DEBUG field for setting other COM ports
+|       7.10, 10/15/89 - correct highlighting of found text
+|                      - correct some typos in the manual (.DOC file)
+|             10/16/89 - correct a-v selection of root directory
+|                      - correct inability to clone text colors in
+|                        small and regular versions
+|             10/18/89 - fix c-PgUp in regular and small versions
+|                      - move code so offsets line up for DEBUG as described
+|                        in the manual
+|                      - correct cloning of second window color
+|                      - add ctrl-J to redefine TAB interval
+
+LIST Version 7.0                                                       10/15/89
+
+
+                        Changes from 6.4a to 7.0a
+                        -------------------------
+
+|      7.0a  10/15/89 - public release
+       6.92, 10/13/89 - change a-v prompt line to add F1=Help
+                      - show line with found text in special color
+                      - correct a-v selection of subdir with extension
+       6.91  10/10/89 - correct scan backwards if beyond end of file
+                      - fix autoscroll after Scan/Find
+       6.90, 10/01/89 - correct return after ESCape to a-v y/n prompts
+                      - change ctrl-t to allow hanging up
+             10/03/89 - add ctrl-end to a-v to select last file
+       6.89, 9/28/89  - fix /S with PLUS version
+                      - correct inability to position to first file after
+                        changing 'up' value
+                      - refresh file menu after escape used for path command
+                      - add F1 help for a-v menu
+       6.88, 9/25/89  - revise Help screen
+                      - fix left and right in a-v menu (sort of)
+       6.87, 9/11/89  - echo a-v delete y/n response
+                      - correct arc extract of 8 char filenames
+             9/19/89  - fix alt-O if alt-d never used
+             9/20/89  - add ctrl-T to send text to modem (dial telephone)
+       6.86, 9/05/89  - correct pathname for a-v copy
+                      - change a-v escape to exit with current screen
+                      - increase Review file limit from 20 to 32
+                      - retain a-v position after all functions
+                      - allow a-v sort criteria to be cloned
+                      - change a-i to invoke archive extractor to view a file
+                        from a-v Viewarc
+       6.85, 8/29/89  - correct a-v escape usage
+                      - change Help to use current window only
+                      - add mouse support via /M command line option
+       6.84, 8/24/89  - allow a-v delete to remove empty directories
+                      - correct a-v overlaying first file (review table) entry
+                      - correct cloning of window colors
+                      - correct display and use of a-v menu with windows
+       6.83, 8/23/89  - added subdirs to a-v display and add subdir selection
+       6.82, 8/22/89  - changed a-v display order, columnar
+                      - changed a-v up/dn to scroll to next page when you
+                        move from the top or bottom entry
+       6.81, 8/19/89  - remove confirm prompt from Move
+                      - correct cloning of AVup
+                      - correct "New file" prompt for small version
+       6.80, 8/18/89  - fix incorrect column width for 2nd window if less than 40
+                      - correct tab expansion, lose first part of line
+                      - make a-v up clonable
+                      - add c-v to switch windows
+       6.79, 8/13/89  - align filename and extension in a-v display
+                      - delete FVFVFVFV.FV$ file when finished
+                      - correct a-v menu with split screen
+                      - add second text color for a-w
+       6.78, 8/08/89  - correct alt-W for new dual window scrolling
+                      - add alt-Z to show Keys: or Toggles: on line 25
+                      - fix Move error trying to delete file
+       6.77, 8/06/89  - add check for maximum files in alt-v, about 660
+                      - add delimiter after file info in alt-v
+                      - change line 1 info line for alt-v
+
+LIST Version 7.0                                                       10/15/89
+
+                        Changes from 6.4a to 7.0a (cont.)
+                        -------------------------
+
+
+       6.76, 8/03/89  - add 1 through 6 to change files displayed per line
+       6.75, 8/03/89  - add View command to show archive directory via FV
+       6.74, 7/30/89  - corrections to alt-v, clean-up small version
+                      - add sorting of alt-v filanames, add pgup and pgdn
+                      - change escape to return to alt-v if used it was used
+                      - handle deleting/moving file being listed
+       6.73, 7/27/89  - change alt-I back to original, change alt-V to files
+                        subsystem command
+       6.72, 7/23/89  - split out FILES subcommand
+       6.71, 7/21/89  - if no parameters are supplied, a directory of files
+                        is presented rather than a prompt for new file name
+       6.70, 7/20/89  - add menu to alt-v and alt-i for file manipulation
+       6.69, 7/20/89  - add Disk Full message to write_file
+       6.68, 7/18/89  - added alt-V command to display the directory of the
+                        active directory for use with alt-I to pick a file
+       6.67, 6/17/89  - move toggles display to Help screen
+                      - remove ENTER prompt from Help
+                      - correct line 1 display for alt-W
+       6.66, 6/17/89  - try optimizing getcursor routine for alt-W
+       6.65, 6/11/89  - correct not unmarking if last line was marked
+                      - correct non-display of marked blank lines
+       6.64, 5/12/89  - correct zero-byte file problem again
+                      - add alt-I/ctrl-I/I as alternative to alt-F
+       6.63, 5/03/89  - for find/scan, highlight found text only
+                      - automatically adjust scroll to display found text
+                      - correct insertion of blank line when cr/lf spans
+                        a i/o buffer boundary
+                      - change default overlap from 1 to 0 like it used to be
+                      - changed alt-T tabs expansion default back to ON
+       6.62, 5/02/89  - correct not unmarking after ^P or a-D if last line
+                        of file was marked
+                      - add up/down cursor position for alt-W split screen
+                        allowing vertical and horizontal splits:
+                        You can thus split the screen vertically by moving the
+                        cursor to the top line and then right to the spot you
+                        you want as a column for the middle boundary. Then,
+                        press enter. It helps if you change the text colors
+                        after a vertical split.
+                      - preserve writefile name across review, newfile, DOS
+       6.61, 4/17/89  - correct loop with 0-byte files
+                      - add ^L like F3
+       6.60, 4/05/89  - Add tests for printer ready
+                      - Add & as wildcard escape character for Find/Scan with
+                        wildcards; clonable. For example, F A&?B would look
+                        for A?B, while F A?B would look for A followed by any
+                        character, followed by B.
+
+LIST Version 7.0                                                       10/15/89
+
+                        Changes from 6.4a to 7.0a (cont.)
+                        -------------------------
+
+       6.59, 3/03/89  - Add ctrl-P to print entire file
+       6.58, 2/05/89  - test for invalid scan codes
+             2/08/89  - Correct for overflowing screen_save area wiith 108x60.
+                        Memory requirement is about 70K; with 86K, screen
+                        saving is available.
+             2/16/89  - Add clonable OVERLAP value for screen scroll amount
+                         DEBUG LIST.COM
+                         -E 13C nn           ; where nn is new overlap value
+                         -W                  ; default is 01
+                         -Q
+       6.57, 1/16/89  - correct display of scan text
+       6.56, 1/06/89  - corrections to FastScan: say "Scanning", don't exit
+                        default to tabs (alt-t) off for speed if fastscan
+                        change Q to sit if just one file
+       6.55, 1/05/89  - improve filtering speed if no 7/*/alt-J
+       6.54, 1/04/89  - improve scanning speed via FastScan routine
+       6.53,12/30/88  - added /F and alt-A file search option:
+                        this is a case sensitive scan driven from the command
+                        line, e.g. LIST *.TXT /fBBS would read all .TXT files
+                        until the string BBS was found. You resume the scan
+                        through all .TXT files with the alt-A command.
+       6.52,12/16/88  - remove alt-A and APX code
+       6.51,11/11/88  - remove zeroing of memory, correct EOF detection
+       6.50,11/02/88  - zero allocated memory to cure eof problem
+                      - add ^F to send printer formfeed
+                      - allow "?" wildcard in scan/find strings
+
+LIST Version 7.0                                                       10/15/89
+
+                           Changes from 6.3a to 6.4a
+                           -------------------------
+
+ 6.36, 9/03/88  - When scanning for text, the messages "text not found"
+                  used to blink. That was changed to allow hi-itensity
+                  colors in 63a. The blinking has been restored.
+
+                - When invoking LIST without a filename, the "New file:"
+                  prompt was invisible. That has been corrected.
+
+                - Corrected exiting cursor after alt-E.
+
+                - After toggling the 25/43(50) line mode with alt-E,
+                  a VGA was displaying line 25 a couple of lines
+                  above the bottom line. This has been fixed.
+
+                - The continuous scroll rate was too fast for some
+                  users. The default scroll rate is now the slowest
+                  possible. To increase the rate, press the minus (-)
+                  key twice to get the fastest rate, or press the plus
+                  key (and hold it down) until you get the faster rate
+                  that you want. You can then clone (alt-C) this rate
+                  for future use.
+
+                - When using P to print a screen, pressing any key
+                  wasn't stopping the printer like 62a was. This has
+                  been corrected.
+
+                - Corrected the inability to accept one digit line numbers.
+
+                - Changing or invoking a filter repositioned the display
+                  to line 1. This was done because the number of lines in
+                  the file may have changed and the position became
+                  invalid. The 7, 8, *, and alt-T (tab) filters now
+                  resume the display at the same line number. The alt-J
+                  and Wrap filters still restart the display at line 1.
+
+                - When using +, -, or ctrl-Home to position by line
+                  numbers, you can now supply a line number of up
+                  to 8 digits. Previously, only 6 digits were accepted.
+
+                - The problem of positioning to a line after the end of
+                  file has been fixed.
+
+ 6.37, 9/08/88  - Corrected alt-E setting an invalid video mode when
+                  returning to 25-line mode.
+
+                - Corrected alt-G failing with "Not enough memory".
+
+ 6.38, 9/14/88  - improved detection of EOF for up arrow.
+ 6.4a, 9/21/88  - correct PgDn skipping one line too many after up-arrow.
+
+LIST Version 7.0                                                       10/15/89
+
+                           Changes from 6.2a to 6.3a
+                           -------------------------
+
+
+       6.2a, 5/07/87 - cosmetic changes for public release
+       6.2b, 5/12/87 - customized version for licensed copies
+       6.2c, 5/19/87 - improve 'unload' for alt-J, */7/8, and W
+                     - change alt-C cloning to not exit
+                     - fix close to skip stdin/stdout (fixes funny fat msgs)
+       6.2d, 9/26/87 - fix line numbers for */7/8, W and alt-J
+       6.2e-l, 9/27/87 - expand line number capabilities from 64k to 16m <arg>
+       6.2m, 10/14/87 - allow multiple filespecs on command line
+       6.2n, 10/14/87 - allow switches on command line for W/8/7/*/J/H/L
+       6.2o, 10/21/87 - correct Q not quiting if single file
+                      - preserve position after W/8/7/*/J/H/L
+                      - correct problem with tab filter losing lines with wrap
+                      - add alt-N for cloning
+       6.2p, 10/24/87 - experiment to replace 16h calls with 21h/06h calls
+       6.2q, 10/25/87 - convert double words to 3-byte fields
+                      - modify allocation of screen save buffer; now requires
+                        available memory 52k when on, 42k when off!
+       6.2r, 10/27/87 - have review remember line number for ctrl-pgup/pgdn
+                      - add check for file deleted after alt-g
+       6.2s, 10/29/87 - change 'S' indicator to 'C'
+                      - correct 'review', eof loop on short screen, preload
+                      - add prompts for alt-F 'file not found' and Help
+       6.2t, 11/01/87 - fix alt-D; fix F9
+       6.2u, 11/02/87 - change method of allocating file blocks
+       6.2v, 11/03/87 - try to avoid reloading of command.com at exit
+                      - improve shrink/expand of marked line range
+                      - add continuous scrolling for up/down via 'kybd' switch
+       6.2w, 11/05/87 - correct line last number after Q in hex mode
+                      - change up/down to adjust scroll rate; add to cloning
+       6.2x, 11/12/87 - change 7; no longer replaces 7-bit char with ?-char
+                      - clear file name on top line when using piped files
+                      - increase incremental delay for continuous scroll
+                      - remove key-flush function; K is now continuous scroll
+                      - change memory allocation method
+       6.2y, 12/24/87 - restore K as key flush toggle (type-ahead/clear kybd)
+                      - change C to be continous scroll toggle
+                      - change line 25 toggle display of C (continuous)
+                        and for S (sharing)
+                      - add /L (preload) to command line options
+                      - correct P printing of blanks lines
+       6.2z, 12/31/87 - added alt-Y (or ctrl-P) book mark command to
+                        reposition to last active (found or marked) line
+                      - sped up default C (continuous scroll) value
+       6.30, 1/14/88  - shorten Buffer_Table to 16, lessen memory requirement
+                      - make use of +/- smoother for adjusting scroll rate
+       6.31, 1/17/88  - correct eof problem; sort of
+                      - correct missing line problem with up arrow
+       6.32, 1/28/88  - allow Down to scroll beyond eof message
+                      - add alt-O like alt-D using same filename
+       6.33, 7/14/88  - use DOS switch character
+                      - improve EGA 43-line detection for VGA use
+       6.34, 8/12/88  - improved detection of 132-character monitor mode
+       6.3a, 8/13/88  - version 6.3 released
+

@@ -1,0 +1,194 @@
+LIST Version 7.1                                                       10/28/89
+
+        The distribution files have changed. They are now:
+
+        LIST.COM  - LIST Plus version with all features
+        LISTR.COM - regular version
+        LISTS.COM - small version
+
+        The default filter options are now:
+
+        alt-T   - expand TABs
+        alt-J   - filter out control characters
+
+        A great improvement in speed is available when all filter
+        options are set off.  Use alt-Z to display the toggles on
+        the bottom line.  An option is off when its corresponding
+        letter, e.g. J for alt-J junk filter, is in lower case.
+
+
+        Corrections to version 7.0:
+        --------------------------
+
+|       7.15, 10/26/89 - correct new filter EOF problem
+|                      - correct Q from a-v menu when no files have been viewed
+|       7.14, 10/25/89 - improve speed if no options (alt-J,*,alt-H,etc) set,
+|                        and change filter defaults; this is a new
+|                        FAST FILTER option. It is skips all checks for control
+|                        characters. You will see control characters, such as
+|                        line feeds, displayed. The trade off is speed. Loading
+|                        and scanning is up to 4 times faster with the fast
+|                        filter setting.
+|       7.13, 10/23/89 - change Ctrl-I to be TAB interval command
+|                      - change Q in a-v to return to viewing of last file
+|                      - add Alt-X in a-v as exit with original screen
+|                      - correct c-end in a-v
+|                      - change F2/F4 to change found line attributes; the
+|                        last line is used to show the new colors if found
+|                        text is not displayed on the current screen
+|                      - allow cloning of second window color in normal version
+|                      - add LZH to ViewArc/a-i
+|       7.12, 10/22/89 - allow 11 character subdirectory names when viewing
+|                        with 5 up or less. 6-up truncates the last character
+|                        of full length subdirectory names
+|                      - change default a-v display to 5-up
+|                      - correct a-v sort by date/time
+|       7.11, 10/20/89 - allow d:\path command line syntax
+|                      - change a-v down arrow to wrap to first entry after
+|                        positioning to last entry (wraps around)
+|                      - add DEBUG field for setting other COM ports
+|       7.10, 10/15/89 - correct highlighting of found text
+|                      - correct some typos in the manual (.DOC file)
+|             10/16/89 - correct a-v selection of root directory
+|                      - correct inability to clone text colors in
+|                        small and regular versions
+|             10/18/89 - fix c-PgUp in regular and small versions
+|                      - move code so offsets line up for DEBUG as described
+|                        in the manual
+|                      - correct cloning of second window color
+|                      - add ctrl-J to redefine TAB interval
+
+LIST Version 7.1                                                       10/28/89
+
+        New commands: (** for LIST Plus only)
+        ------------
+
+        ctrl-F          sends a formfeed to the printer (LPT1), the printer
+                        must be online and ready
+
+|       ctrl-I  **      allows setting of TAB interval to other values; the
+|                       usual value is 8; you are prompted to enter the new
+|                       interval which can be from 1 to 99
+
+        ctrl-L          like F3, resumes a text Find/Scan
+
+        ctrl-P          prints the entire file without requiring any lines to
+                        be marked
+
+        ctrl-T  **      dials the phone number at the cursor, the phone
+                        number ends with the first space (or blank);
+                        return to LIST with <enter>, redial with <spacebar>,
+                        or hang up with <escape>
+
+        ctrl-V  **      toggles active window if two files are displayed
+
+        /Ftext          command line parameter to begin a text search through
+                        all selected files; the search is case sensitive
+
+        alt-A           resumes text search (Find or Scan) across all files
+
+        alt-I   **      inserts a new file by grabbing a file name from
+                        the current display screen, you position the cursor
+                        to the start of a file name
+
+                        if the inserted filename is from a Viewarc display,
+                        the file will be extracted from the archive and then
+                        displayed
+
+        alt-V   **      displays names of files in the current directory; you
+                        can then select one for viewing, deleting, etc.
+
+                        To select a file, use the arrow key, or tab, shift-tab,
+                        home, and end keys to place the cursor at a file name.
+                        Press the letter of the function you want.
+
+                        Subdirectories are shown with an up or down arrow
+                        next to them. The up arrow entry move you to the
+                        parent directory. The down arrow entries move you to
+                        the next lower subdirectory. When you exit LIST, you
+                        you be in the selected directory, not the original one.
+
+                        The Delete function will remove an empty directory.
+                        The ESCape ane Quit commands no longer exit, they
+                        return to the display of the last file viewed.
+
+|                       Additional FIle Selection commands:
+|                          Alt-C  =  clone settings
+|                          Alt-X  =  exit to DOS and restore screen
+|                            Q    =  now returns to viewing the last file
+
+
+        alt-Z           Toggles display on bottom line from "Keys:"
+                        to "Toggles:"
+
+LIST Version 7.1                                                       10/28/89
+
+        Expanded function:
+        -----------------
+        Find/Scan       wildcard character ? can be supplied as part of the
+                        search text; the & character can be used an an escape
+                        character to allow including ? as part of the search
+                        text. Also, if the found text is off-screen, the
+                        display is automatically scrolled left or right to
+                        bring the found text into view. Only the search text
+                        is highighted. The fastest scan is for case sensitive
+                        text without wildcards.
+
+        alt-O           the write file name is remembered across files
+        alt-D
+
+        alt-W           the screen may be split horizontally and vertically
+                        by moving the cursor to the desired screen position
+
+                        You may scroll either of the two windows. Move between
+                        the two windows with c-PgDn and c-PgUp.
+
+                        Use of alt-V file selection is not recommended at this
+                        with a vertical split.
+
+                        Use of the Help function will destroy the first window.
+                        It is best for now to get out of split screen, invoke
+                        Help, and then split the screen again.
+
+                        The second and subsequent windows are displayed in the
+                        window-text color. You set that with the usual F-keys
+                        when viewing in the second window. You can clone the
+                        second color, but do so in full (not split) screen
+                        mode.
+
+LIST Version 7.1                                                       10/28/89
+
+        DEBUG offsets:
+        -------------
+
+        Item           Offset  Value
+        -------------- ------  -----
+        Special         0127    70      Top/bottom line colors
+        Normal          0129    07      Text colors
+|       Bright          012B    09      Find/Scan line colors
+        Flag3           012D    09      Retrace off and junk filter on
+        Flag4           012E    08      Tabs on
+        Find row        012F    0800    Position of found line on screen, 8
+        Scroll incr     0131    0A00    Left/right scroll increment, 10
+        Scroll start    0133    0000    Starting scroll offset, 0
+        Tab value       0135    0800    Tab interval, 8
+        Tab mask        0137    F8FF    Tab bit mask
+        Loudness        0139    C800    Beep tone level
+        Key rate        013B    FF      Continuous scroll increment, 255
+        Overlap         013C    0000    PgUp/PgDn scroll overlap, 0
+        Wildcard esc    013E    26      Scan/Find wildcard ? escape character
+        Alt-V up        013F    0500    Alt-V display files per line, 5
+        Window 1 color  0141    07      Normal window text color
+        Window 2 color  0142    0F      Second window text color
+
+        Not clonable: (LIST Plus only)
+        --------------
+        Eye-catcher     0143    'COM:'
+        COM port        0147    F803    Default for COM1
+        Sort offset     0149    0000    Default sort key offset, by filename
+
+        Key table       03D7    'WHAT'  Eye catcher
+                        03DB    0026    Key command table
+        Routines        04E0    'WHERE' Eye catcher
+                        04E5    xxxx    Command routines
+

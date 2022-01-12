@@ -223,7 +223,7 @@
 - 7.605 09/22/91
   - Plus: change the way that the mouse works in the viewer
   - Plus: change the way up/down arrow work in file selection menu: up wraps to last entry, down scroll one page
-- 7.6b 09/13/91
+- [7.6b](7.6b) 09/13/91
   - public release
 - 7.603 08/30/91
   - Plus: add delay to sending chars for dialer

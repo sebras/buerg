@@ -234,7 +234,7 @@
   - Plus: correct I)nvoke not cancelling with null enter
   - Add option in LISTOPT panel 3 to send formfeed after ctrl-P
   - Plus: add modem initialization to dialer
-- 7.6a 08/13/91
+- [7.6a](7.6a) 08/13/91
   - Public release
 - 7.548 08/09/91
   - Plus: add . command to a-v to change to parent directory

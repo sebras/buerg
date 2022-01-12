@@ -328,7 +328,7 @@
   - Plus: correct alt-B if in bottom window
   - Plus: correct speed locate for sort orders not by filename
   - Correct command line color change after find/scan
-- 7.5g 03/11/91
+- [7.5g](7.5g) 03/11/91
   - released to registered and licensed users
 - 7.520 03/06/91
   - add /4 command line switch to enter in 43/50 line mode

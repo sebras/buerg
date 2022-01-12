@@ -432,7 +432,7 @@
 - 7.5c 09/12/90
   - correct loop in Find/Scan when using '&?' in search text
   - add command line /E parameter to begin display at eof
-- 7.5b 09/03/90
+- [7.5b](7.5b) 09/03/90
   - correct loop when empty directory
 - [7.5a](7.5a) 08/30/90
   - public release

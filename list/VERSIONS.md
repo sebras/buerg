@@ -912,13 +912,14 @@
   - Add option flag (use DEBUG) to disable screen saving and thus require about 10K less memory
   - Modify alt-J to remove backspaces and overlay previous character
   - Implement DOS 3.x file sharing, but DOS 2.0 still supported.
-- 6.0l 01/12/87
+- [6.0l](6.0l) 01/12/87
   - Correct strange problems with /S option.
   - Add alt-G command to shell to DOS, leaves max of 64K for DOS
   - Fix use of G (alt-F) with piping
 - [6.0j](6.0j) 10/13/86
   - Added alt-J to toggle the generation of line feeds (LF) for lone carriage returns (CR). Makes easier viewing of files which use backspace, or over printing, to emphasize a line.
   - Corrected the handling of ESCape during Scan/Find
+  - Beta test version distributed prematurely
 - 6.0i 09/28/86
   - Added alt-X to exit with original screen displayed
   - Added alt-A as A, and alt-L as L in "Options:" line display

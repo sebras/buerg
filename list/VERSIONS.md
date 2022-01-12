@@ -900,7 +900,7 @@
   - fix close to skip stdin/stdout (fixes funny fat msgs)
 - 6.2b 05/12/87
   - customized version for licensed copies
-- 6.2a 05/07/87
+- [6.2a](6.2a) 05/07/87
   - cosmetic changes for public release
 - [6.1a](6.1a) 01/23/87
   - Correct strange problems with /S option

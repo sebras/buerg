@@ -397,7 +397,7 @@
   - Herc: add L48KFNT environment name for Ramfont 90x43 font
   - Herc: restore user font/palette upon exit from small version
   - Herc: correct loop in a-e using Graphics Plus
-- 7.5f 10/26/90
+- [7.5f](7.5f) 10/26/90
   - released to registered users
   - correct a-v directory sort not in filename order
 - 7.511 10/20/90

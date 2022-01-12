@@ -418,7 +418,7 @@
   - help screen corrections
   - correct /F parameter
   - add /T parameter to search for case sensitive text
-- 7.5e 09/27/90
+- [7.5e](7.5e) 09/27/90
   - Plus: add Z command to toggle a-v menu line 25
   - Plus: improve dialing command, correct dialing message
   - change cursor positioning on help screens

@@ -1,0 +1,128 @@
+LIST Version 7.4a               VERSION HISTORY                         8/08/90
+
+  7.4a,  8/07/90 - correct search loop if enter commands too fast
+                 - correct highlighting of line before top line when text is not found
+
+  7.427, 7/31/90 - more corrections to new Find
+                 - change Alt-Y to recall bookmarks in LIFO order
+  7.426, 7/28/90 - correct Tab filter for tab at end of file
+                 - correct inability to interrupt Scan/Find
+  7.425, 7/27/90 - correct new Find not finding string at end of line
+  7.424, 7/25/90 - add 0Ch (formfeed) like line feed to filters
+                   Enhanced: add I(BM) screen mode to a-e
+  7.423, 7/18/90 - correct incorrect highlighting of found text with Find
+                 - correct alt-A switching to Find if Scan used
+  7.422, 7/01/90 - correct auto adjustment of a-v up for small windows
+         7/04/90 - revise Enhanced version Help screens (thanks, Paul)
+                 - Plus: expand a-y and c-y to hold ten bookmarks
+  7.421, 6/24/90 - minor Help screen changes
+                 - Plus: added "Reading directories ..." message
+         6/28/90 - Plus: clean up a-v displays with split screen
+  7.420, 6/22/90 - optimize allocation of internal tables to allowing viewing
+                   even when there's not enough memory; a-x and a-g are
+                   disabled first to try for enough memory; then, the
+                   maximum file size viewable is decreased until there is
+                   enough memory; approximately 1K is required for each 1mb
+                   of file size, the current limit is 16mb, but can be
+                   increased to 400mb or more; a DEBUG patch for the file
+                   size limit will be supplied later, or just included
+                   in the ADN setup program.
+  7.419, 6/21/90 - correct display of blank lines with fixed length recs
+                 - change ctrl-right to scroll full right
+                 - change a-g to clear screen
+  7.418, 6/14/90 - correct loop with zero byte files
+  7.417, 6/13/90 - correct fast filter for fixed length records which
+                   have no CR at the end
+  7.416, 6/12/90 - add second hex dump format for fixed length records
+                 - try to correct EOF problems with /R#
+  7.415, 6/09/90 - correct display of files sizes with 1-up
+  7.414, 6/06/90 - correct divide overflow on a-v menu
+                 - correct ruler display with split screen
+                 - add second ruler format for hex dump display
+  7.413, 6/05/90 - correct display of file sizes over 32mb
+                 - correct inputting of numbers over 64k
+  7.412, 6/03/90 - correct a-v delete/move failing because file was
+                   opened for share
+                 - correct setback attr changing bright color
+                 - replace a-v A and K with ^T and ^U
+                 - change tagging color to be reverse of normal color
+                 - correct EOF code, garbage character at offset '127' in file
+                 - change alt-D and alt-O to write the "found" line from
+                   Scan/Find when no lines are marked
+                 - correct reading keyboard while loading file
+                 - correct file size displays for sizes over 32mb, up to 999mb
+  7.411, 6/02/90 - fix "Access denied" message on non-EGA systems when
+                   supplying only d:\path (no filespec) on the command line
+                 - add switching of smode list via 0; from the a-e prompt,
+                   enter 0 to switch from A)head to P)aradise codes
+                 - correct loop using fixed length records, /Rnnnn
+                 - increase maximum logical record size from 910 to 2048
+                 - work on EOF garbage displays and hex dump extra last char
+
+  7.410, 6/01/90 - work on EOF garbage displays
+                 - the various flavors are:
+                        LS - small version, runs in 30k, no a-g, no a-x
+                        LR - regular version
+                        LP - plus version, has a-v file selection menu
+                        LE - enhanced version, has file tagging, expanded a-e
+                        LH - recognizes Hercules Incolor and Graphics Plus
+
+  7.49,  5/31/90 - add support for fixed length records (enhanced only)
+                     - the '/Rnnnnnn' command parameter specifies the record
+                       length as 'nnnnnn'
+                     - all filtering is turned off as a default
+                 - add '/#nnnnnn' command line parameter to begin viewing at
+                   record number 'nnnnnn' (plus and enhanced only)
+
+  7.48,  5/30/90 - add / from AV menu to toggle disk space message
+                 - tweak AltW routines; correct split screen problems
+                   when changing video modes
+                 - change printing to use LPT1
+                 - add / from AV menu to toggle disk space message
+                 - change printing to use LPT1 instead of stdout
+
+                 - add ENHANCED version with:
+                   - expanded AltE screen modes
+                   - display of EBCDIC files
+                   - file tagging in file selection menu
+                   - user definable printer codes
+                   - add moving to tagging operations
+
+  7.47,  5/10/90 - add support for video modes 22h, 23h, 24h (132 lines)
+                   If the screen becomes unreadable, e.g. the mode enters
+                   a graphics mode for your display adapter, press Alt-E
+                   and then a 1 to reset the display.
+  7.46,  5/09/90 - add user screen mode selection via alt-E
+                 - add support for UltraVision, VGA, other screen modes
+  7.45,  5/08/90 - speed up Find
+                 - correct search for & and ?
+                 - fixed tagged deleted deleting file at bar
+                 - fix alt-A always invoking Find
+                 - fix message, attempt to delete an open file says 'Disk full'
+                   instead of access denied
+                 - restore cursor shape after invoking a program
+                 - add filename to "Overwrite?" prompt
+                 - add copying of tagged files
+  7.44,  3/15/90 - add support for DV to return cycles waiting for console
+  7.43,  3/12/90 - add E command to toggle display EBCDIC files (enhanced only)
+                 - add A or E to end of toggles display for ASCII/EBCDIC
+  7.42,  3/02/90 - add Wrap to fast filter
+                 - change Wrap and alt-J and 7/8/* to stay near position
+                 - add F (filemask) command to a-v
+                 - add Tag, Untag, AllTag, KlearTag commands
+                 - change Delete to process tagged files
+  7.41,  2/23/90 - correct error handling in a-v after unknown key
+                 - set d:\path from LIST string for FE
+                 - add None sort option to a-v
+                 - check for existing file in a-v Move/Copy
+  7.40,  2/16/90 - correct file selection with 6-up display
+                 - use filename as secondary sort key
+
+  7.3e,  2/03/90 - fix invisible cursor with mouse after alt-g
+         2/04/90 - move editor name to clonable area
+                 - add I invoke program command to a-v menu
+         2/06/90 - retain FV display after a-i
+         2/08/90 - correct alt-i with mouse
+                 - restore correct crt mode upon exit instead of BW80
+         2/11/90 - correct READING loop in Q from a-v menu
+

@@ -1,0 +1,61 @@
+LIST Version 9.0h               VERSION HISTORY                    Feb 23, 1994
+
+  9.0h,  2/23/94   - Enhanced: add /C and /N
+  1.8l
+
+  9.0g,  2/08/94   - Enhanced: correct Scan/Find for control chars without CED option
+  1.8k   1/29/94   - Enhanced: correct a-p and a-d with fixed length records
+                     which end in cr-lf that were blanked out
+                   - Enhanced: for EBCDIC in hex mode, don't convert hex part
+  9.0f, 12/11/93   - Plus: correct Drive Not Available with upper case drive letter
+  1.8j             - Correct search using wildcard escape character
+  9.0e, 11/15/93   - Enhanced: allow 7 filter for fixed length records
+  1.8i             - Plus: allow access to CD ROMs in shareware version
+
+  9.0d, 10/30/93   - Experiment with cloning of STDIN for console input
+                   - Fix T/J/w/* filters adding extra 3-chars to end of file
+
+  9.0c, 10/24/93   - Plus: correct check for networked drives; the shareware
+                     version does not support networked drives
+
+  9.0b,  8/23/93   - Plus: correct lost character before page break (ctrl-L)
+                   - Plus: correct hex display stripping hibit in hex part
+                   - Plus: correct free space value on drives over 640mb
+                   - Plus: correct incompatibility with older LISTOPT programs
+
+  9.0a,  7/14/93   - Public release to registered users
+
+  8.0a,  7/07/93   - Skipped version due to hacked versions
+                   - Correct /M and mouse support
+
+  7.8a,  7/01/93   - Plus: correct c-L issuing Scan instead of page break
+
+  7.804, 5/30/93   - Plus: change c-L to start new line for page break
+                   - Changed CED option default to off
+  7.802, 4/27/93   - Add Ctrl-L to toggle showing of page break separator lines
+                   - Plus: add LISTOPT menu 3 item to specify the number
+                     of directory entries to scroll at end of screen;
+                     default is 23; DEBUG field is FSMscroll
+  7.801,   4/17/93 - Plus: correct fnf option, add spinner for read file progress
+
+  7.705,   3/26/93 - Plus: correct path used with /d
+
+  7.704,   3/14/93 - Plus: correct LISTOPT fnf/dir option
+           3/07/93 - Plus: make mouse sensitivity consistent
+                   - Plus: add % command to viewer to show percentage read
+                     instead of last line number
+          01/31/93 - correct fsm ghost file entry after right arrow
+
+  7.703,  11/23/92 - Plus: revise internal sort; add descend option as clonable
+          12/17/92 - Plus: correct cursor position after delete/move
+           1/31/93 - Plus: correct phantom file entry display after right arrow
+
+  7.702,  11/14/92 - Plus: add read-only option to LISTOPT version T
+
+  7.701,  10/21/92 - Plus: correct TAB in fs not working
+                   - Plus: treat TEMP like LIST environment variable
+          11/05/92 - Plus: correct F3 with empty directory
+          11/08/92 - Plus: add a-F7 and a-F8 to change FS bar colors
+
+  7.7a,   10/07/92 - Public release
+

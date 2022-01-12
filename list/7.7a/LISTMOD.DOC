@@ -1,0 +1,670 @@
+
+
+
+
+
+
+
+
+
+
+
+
+                                 LIST 
+
+
+                            CUSTOMIZATION GUIDE 
+
+
+                       A File Viewing and Browsing Utility 
+
+                       Version 7.7            October 1992 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        (c) Copyright  Vernon D. Buerg 1983-92.  All rights reserved 
+ 
+        LIST is a copyrighted program.  LIST is NOT public domain. 
+ 
+        LIST may copied for personal use only subject to the restrictions 
+        set forth in the last chapter. 
+
+            T A B L E   O F   C O N T E N T S
+
+__________________________________________________________________________
+
+
+Modifying LIST.COM  ................................................... 1    
+     Locations of option values  ...................................... 1    
+        LIST Plus only  ............................................... 3    
+     Reassigning keys  ................................................ 5    
+     Table of Routines  ............................................... 6    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contents 1                                             LIST  User's Guide 
+Modifying LIST.COM 
+______________________________________________________________________________
+
+ Locations of option values 
+
+ 
+    This information is offered to those of you who wish to modify  LIST 
+    in special ways.  You do not need this information to use LIST.   An 
+    alternative to cloning  is to use  DEBUG to make  permanent changes. 
+    Also, a special customization program called LISTOPT is available to 
+    registered and licensed users.  Subtract hex 100 if  you are using a 
+    a file editor instead of DEBUG. 
+ 
+    Here is a list of key items and their addresses: 
+ 
+    Item           Offset  Value    Description of contents 
+    -------------- ------  -----    ----------------------- 
+    Special         0132    70      Top/bottom line colors 
+        Special lines 1 and 25 colors, default is 70 (reverse). 
+        Refer to a technical reference guide for the 
+        attribute values for the colors that you want. 
+ 
+    Normal          0134    07      Text colors 
+    Bright          0136    09      Find/Scan line colors 
+ 
+    Window 1 color  0138    07      Primary window text color 
+    Window 2 color  0139    0F      Second window text color 
+ 
+    Flag3           013A    09      Retrace off and junk filter on 
+ 
+    By specifying the bit value, the option is enabled.  For example, to 
+    enable Shared and Retrace, specify a hex value of the sum, or  01+04 
+    = 05. 
+               MRSJ WHK*  M = mono, retrace testing if off, x'01' 
+                          R = ruler, x'02' 
+                          S = shared, x'04' 
+                          J = add LF to lone CR, process backspaces, 
+                              if on, x'08'; default is off 
+                          W = wrap mode, x'10' 
+                          H = hi-bit on, x'20' 
+                          K = kybd flush, x'40' 
+                          * = special document filtering, x'80' 
+ 
+    Flag4           013B    08      Tabs on 
+               .PAT DGV.  P = Preload file if on, x'02', default is off 
+                          A = Apxcore if on, TV/DD/DV if off, x'04, 
+                              default is for Topview/Double DOS use 
+                          T = if on (default), expand TABs, x'08' 
+                          D = hex display mode if on, x'10' 
+                          G = if on, Alt-G goto DOS is Disabled, x'20' 
+                          V = if on, screen save/restore is Disabled 
+                              and 9K less memory is used/required, x'40' 
+
+LIST  User's Guide                                                    Page  1 
+Modifying LIST.COM 
+______________________________________________________________________________
+
+ Locations of option values 
+
+ 
+    Find row        013C    0800    Position of found line on screen, 8 
+    Row less one at which found text is displayed,  1 byte the default 
+    is 08 which displays found text on line  9 
+ 
+    When the  Find/Scan command  is used,  the next  line which contains 
+    that text is highlighted using the 'bright' color, and is placed  in 
+    row 9 of the screen.  You can change the row by Altering the byte at 
+    location 13C which is normally '08', one less than the row. 
+ 
+    Scroll incr     013E    0A00    Left/right scroll increment, 10 
+    Scroll start    0140    0000    Starting scroll offset, 0 
+    Tab value       0142    0800    Tab interval, 8 
+    Tab mask        0144    F8FF    Tab bit mask 
+    Loudness        0146    C8      Beep tone level 
+    Key rate        0148    FF      Continuous scroll increment, 255 
+    Overlap         0149    0000    PgUp/PgDn scroll overlap, 0 
+    Wildcard esc    014B    26      Scan/Find wildcard ? escape character 
+    Alt-V up        014C    0500    Alt-V display files per line, 5 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  2                                                    LIST  User's Guide 
+Modifying LIST.COM 
+______________________________________________________________________________
+
+ Locations of option values 
+
+
+    LIST Plus only 
+    -------------- 
+    Eye-catcher     014E    'COM:' 
+    COM port        0152    F803    Default for COM1, use F802 for COM2 
+ 
+    Sort offset     0154    00      Default sort key offset 
+                                00 by filename 
+                                08 by extension 
+                                0C by datestamp 
+                                10 by file size 
+ 
+    Flag6           0156    00      Plus options 
+                                04  suppress "Are you sure?" prompts 
+                                10  send FF formfeed after ctrl-P 
+                                40  /Q option, suppress beeps 
+                                80  /V option, verify file copies 
+ 
+    Modem init      0157    'AT'    30-byte modem initialization string 
+    Editor name     0175    'Edit'  8-byte name of editor program 
+    Modem hang-up   017E    'ATZ'   9-byte modem disconnect command 
+    Temp var name   0187    LIST    4-character environment name for temps 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LIST  User's Guide                                                    Page  3 
+Modifying LIST.COM 
+______________________________________________________________________________
+
+ Locations of option values 
+
+    The following offsets change from version to version. Look for the 
+    eye-catchers to be sure of the offset: 
+ 
+    Key table       0473    'WHAT'  Eye catcher 
+                    0477    0026    Key command table 
+    Routines        057C    'WHERE' Eye catcher 
+                    0581    xxxx    Command routines 
+ 
+    Examples of using DEBUG can be found in the DIALER.PAT and 
+    COLORS.PAT files. To use them, copy LIST.COM to the current 
+    directory and issue the DEBUG command. For example: 
+ 
+            DEBUG <DIALER.PAT 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  4                                                    LIST  User's Guide 
+Modifying LIST.COM 
+______________________________________________________________________________
+
+ Reassigning keys 
+
+    LIST performs a function for every character that can be entered  at 
+    the command line prompt.  There  are 128 regular characters and  131 
+    extended characters.  The regular characters are numbered from 0  to 
+    127, and  they include  the letters  A-Z, a-z,  the numbers, and the 
+    rest of  the usual  single characters  found on  your keyboard.  The 
+    extended characters represent special function keys and combinations 
+    of keys, such as F1, Alt-X, Ctrl-A, and the cursor positioning keys. 
+ 
+    The  WHAT  table  in  LIST  has  a  one  byte  entry for each of the 
+    characters.  This byte is a number from 0 to 57 that represents  the 
+    identification of a routine that performs a function. 
+ 
+        For example, 
+ 
+          - the ESCape key has a value  of 27 (hex 1B) and its value  in 
+            the WHAT table is 16 (10 hex).  Routine number 16 is  called 
+            "Done".  The "Done" routine exits to DOS. 
+ 
+          - the Q key has a value of 81 (51 hex) with a routine value of 
+            15  for  the  "Close"  routine.   The  "Close"  routine ends 
+            viewing of the  current file and  tries to display  the next 
+            file, i.e. wildcards used for the filename.  There is also a 
+            lower case letter q, so be sure to change both entries. 
+ 
+    To change the function that a command character performs, you change 
+    the  value  in  the  WHAT  table  for the routine that the character 
+    invokes. 
+ 
+    For example, to  change the ESCape  key to act  like the Q  key, you 
+    change the routine  value for ESCape  from 16 (10  hex) to a  15 (0F 
+    hex). 
+ 
+    To find the location of the  routine value in the WHAT table,  first 
+    determine the value of the  character, e.g.  ESCape is 27  (1B hex), 
+    and then add that to the  location of the WHAT table (36C  hex); or, 
+    1B + 36C = 387 hex.  Finally,  use DEBUG to change the byte at  that 
+    location (387 hex) from a 10 hex to a 0F hex. 
+ 
+    For example, 
+ 
+          debug list.com                ; use appropriate file name 
+          -e 387 0f                     ; change ESC to routine 15 
+          -w                            ; old data is 10 
+          -q 
+
+
+
+
+LIST  User's Guide                                                    Page  5 
+Modifying LIST.COM 
+______________________________________________________________________________
+
+ Table of Routines 
+
+ 
+    Value Key(s)               Description of function performed 
+    ----- ---------            ------------------------------------------ 
+      0                        Error, undefined command 
+ 
+      2   Alt-E                Toggle EGA 43-line mode 
+ 
+      3   Alt-F, G             Get new filespec 
+ 
+      4   Alt-J                Toggle Junk filter 
+ 
+      5   Alt-L                Toggle pre-Load 
+ 
+      6   Alt-T                Toggle TABs expansion 
+ 
+      7   Alt-W                Toggle Split windows 
+ 
+      8   Alt-X                Exit to DOS, restore screen 
+ 
+      9   U/up                 Position to previous line 
+ 
+     10   END, B               Position to end of file 
+ 
+     11   F7                   Change top/bottom line background color 
+ 
+     12   F8                   Change top/bottom line foreground color 
+ 
+     13   Ctrl-HOME            Position to specified line number 
+ 
+     14   Alt-C                Rewrite LIST.COM with new options 
+ 
+     15   Q, Ctrl-PgDn         Quit current file, display next file 
+ 
+     16   ESC, F10             Exit to DOS 
+ 
+     17   N, down              Position to next line 
+ 
+     18   X                    Exit to DOS, clear screen 
+ 
+     19   Alt-H                Toggle Hex display mode 
+ 
+     20   8                    Leave hi-bit 
+ 
+     21   \, F                 Search for text, any case matches 
+ 
+     22   F2                   Change Find/Scan background color 
+
+
+Page  6                                                    LIST  User's Guide 
+Modifying LIST.COM 
+______________________________________________________________________________
+
+ Table of Routines 
+
+    Value Key(s)              Description of function performed 
+    ----- ---------           ------------------------------------------ 
+     23   F4                  Change Find/Scan foreground color 
+ 
+     24   Alt-M               Toggle monitor rescan testing 
+ 
+     25   K, Alt-K            Toggle keyboard flush (type ahead) 
+ 
+     26   Alt-G               Invoke DOS command (shell) 
+ 
+     27   L, left             Scroll left 10 columns 
+ 
+     28   -                   Position back by number of lines 
+ 
+     29   enter               Display next page 
+ 
+     30   +                   Position forward by number of lines 
+ 
+     31   P                   Print current screen or marked lines 
+ 
+     32   F1 H ?              Display Help screen 
+ 
+     33   F3, A               Search for next occurrence of text 
+ 
+     34   R right             Scroll display right 10 columns 
+ 
+     35   Alt-R               Display ruler marks on top line 
+ 
+     36   /, S                Search for text, same case 
+ 
+     37   F9                  Search for previous occurrence of text 
+ 
+     38   Ctrl-left           Reset scroll to column 1, full left 
+ 
+     39   F5                  Change normal line background color 
+ 
+     40   F6                  Change normal line foreground color 
+ 
+     41   7                   Strip hi-bit 
+ 
+     42   Alt-S               Toggle closing of files 
+ 
+     43   *                   Toggle special * filter 
+ 
+     44   Home, T             Position to top of file 
+
+
+
+LIST  User's Guide                                                    Page  7 
+Modifying LIST.COM 
+______________________________________________________________________________
+
+ Table of Routines 
+
+    Value Key(s)              Description of function performed 
+    ----- ---------           ------------------------------------------ 
+ 
+     45   B, up               Position back one line 
+ 
+     46   W                   Toggle display of wide lines 
+ 
+     47   Alt-D               Write marked lines, or found line, to a file 
+ 
+     48   Alt-M               Mark top line of display 
+ 
+     49   Alt-U               Unmark lines 
+ 
+     50   Alt-B               Mark bottom line of display 
+ 
+     51   Ctrl-pgup           Display previous file 
+ 
+     52   ^                   Like Find but initiates search backwards 
+ 
+     53   v                   Like Scan but initiates search backwards 
+ 
+     54   Alt-N               Toggle screen saving (Alt-X) function 
+ 
+     55   C                   Toggle continuous scrolling 
+ 
+     56   Alt-Y               Bookmark, reposition to last "active" line 
+ 
+     57   Alt-O               Write marked lines to previous Alt-D file 
+ 
+     58   Ctrl-F              Sends formfeed control character to printer 
+ 
+     59   Alt-A               Continues text search across files 
+ 
+     60   Ctrl-P              Print the entire file 
+ 
+     61   Alt-I               Grab a filespec from the display 
+ 
+     62   Alt-V               File selection menu 
+
+
+
+
+
+
+
+
+
+
+Page  8                                                    LIST  User's Guide 
+Modifying LIST.COM 
+______________________________________________________________________________
+
+ Table of Routines 
+
+    Value Key(s)              Description of function performed 
+    ----- ---------           ------------------------------------------ 
+ 
+     63   ESCape              Exit from Alt-V file menu 
+ 
+     64   Alt-Z               Toggle line 25 command line display format 
+ 
+     65   Ctrl-V              Switch display window 
+ 
+     66   Ctrl-T              Grab a telephone number and dial the modem 
+ 
+     67   Ctrl-H              Disconnect modem (hang up) 
+ 
+     68   Ctrl-I              Redefine Tab stop interval 
+ 
+     69   Ctrl-Y              Set new bookmark line number for recall 
+ 
+     70   1                   Restart displaying files with the first file 
+ 
+***  71   E                   ASCII or EBCDIC display mode 
+ 
+***  72   Ctrl-K              Toggle display of line numbers on each line 
+ 
+***  73   Ctrl-B              Set record size for fixed length records 
+ 
+     74   Ctrl-right          Scroll full right 
+ 
+     75   O                   Toggle date format, US or European 
+ 
+     76   Alt-Q               Toggle quiet mode 
+ 
+***  77   Shift-F5            Change line number foreground 
+ 
+***  78   Shift-F6            Change line number background 
+ 
+***  79   ctrl-O              Toggle normal and condensed laser printer mode 
+ 
+Note: *** indicates that the function is available in LIST Enhanced only 
+
+
+
+
+
+
+
+
+
+
+LIST  User's Guide                                                    Page  9 
+Index-1                                                LIST  User's Guide 
+__________________________________________________________________________
+
+
+
+  /Q,command line,quiet mode ... 3
+  /V,command line,verify mode .. 3
+  Alt-A,find text again ........ 8
+  Alt-B,mark bottom line ....... 8
+  Alt-C,clone new LIST.COM ..... 6
+  Alt-D,Write marked lines ..... 8
+  Alt-E,toggle 25/43 lines ..... 6
+  Alt-F,enter new filename ..... 6
+  Alt-G,go to DOS .............. 1, 7
+  Alt-H,toggle hex display ..... 6
+  Alt-I,insert filename ........ 8
+  Alt-J,toggle junk filter ..... 6
+  Alt-K,toggle key ahead ....... 7
+  Alt-L,toggle file preloading . 6
+  Alt-M,mark top line .......... 7, 8
+  Alt-N,toggle screen saving ... 8
+  Alt-O,write marked lines ..... 8
+  Alt-Q,toggle quiet mode ...... 9
+  Alt-R,toggle ruler display ... 7
+  Alt-S,toggle file sharing .... 7
+  Alt-T,toggle TAB expansion ... 6
+  Alt-U,unmark lines ........... 8
+  Alt-V,Change Directories ..... 2, 8, 9
+  Alt-W,freeze top window ...... 6
+  Alt-X,exit to DOS ............ 5, 6, 8
+  Alt-Y,reposition to last line  8
+  Alt-Z,Toggle command line .... 9
+  Bookmark,recall position ..... 8, 9
+  Cloning ...................... 1
+  Colors ....................... 1, 4
+  Command line,option switches . 5, 9
+  Continuous,scrolling ......... 2, 8
+  Ctrl-A,Full left scroll ...... 5
+  Ctrl-F,Send printer formfeed . 8
+  Ctrl-HOME,Position to a line . 6
+  Ctrl-H,Hang up phone ......... 9
+  Ctrl-I,Define TAB interval ... 9
+  Ctrl-left,Position to column 1 7
+  Ctrl-PgDn,Show next file ..... 6
+  Ctrl-PgUp,Show previous file . 8
+  Ctrl-P,Print entire file ..... 3, 8
+  Ctrl-right,Scroll full right . 9
+  Ctrl-T,Dial telephone ........ 9
+  Ctrl-V,Switch windows ........ 9
+
+LIST  User's Guide                                                 Index-2
+__________________________________________________________________________
+
+
+
+  Ctrl-Y,Set bookmark .......... 9
+  DEBUG,changing options ....... 1, 4, 5
+  Environment,DOS .............. 3
+  Exit to DOS .................. 6
+  F10,Exit to DOS .............. 6
+  F1,Display Help .............. 5, 7
+  F2,Find background color ..... 6
+  F3,Find next ................. 7
+  F4,Find foreground color ..... 7
+  F5,Text background color ..... 7, 9
+  F6,Text foreground color ..... 7, 9
+  F7,Status background color ... 6
+  F8,Status foreground color ... 6
+  F9,Find previous ............. 7
+  Filtering .................... 1
+  Find,text .................... 1, 2, 5, 6, 7, 8
+  Hi-bit,filter usage .......... 1, 6, 7
+  Junk,filter usage ............ 1, 6
+  LIST Enhanced ................ 9
+  LIST Plus only ............... 3
+  Print,files or lines ......... 7, 8
+  Scan,for text ................ 1, 2, 6, 7, 8
+  Screen saving,option ......... 8
+  Shell,to DOS ................. 7
+  TAB,control character ........ 2, 9
+  Wrap,filter .................. 1
+
+

@@ -199,7 +199,7 @@
   - Plus: treat TEMP like LIST environment variable
   - Plus: correct F3 with empty directory
   - Plus: add a-F7 and a-F8 to change FS bar colors
-- 7.7a 10/07/92
+- [7.7a](7.7a) 10/07/92
   - Public release
 - 7.613 09/22/92
   - Plus: prevent run-on of mark/unmark on slow systems

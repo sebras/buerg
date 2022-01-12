@@ -916,7 +916,7 @@
   - Correct strange problems with /S option.
   - Add alt-G command to shell to DOS, leaves max of 64K for DOS
   - Fix use of G (alt-F) with piping
-- 6.0j 10/13/86
+- [6.0j](6.0j) 10/13/86
   - Added alt-J to toggle the generation of line feeds (LF) for lone carriage returns (CR). Makes easier viewing of files which use backspace, or over printing, to emphasize a line.
   - Corrected the handling of ESCape during Scan/Find
 - 6.0i 09/28/86

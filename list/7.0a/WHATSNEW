@@ -1,0 +1,110 @@
+LIST Version 7.0                                                       10/15/89
+
+        New commands:
+        ------------
+
+        ctrl-F          sends a formfeed to the printer (LPT1), the printer
+                        must be online and ready
+
+        ctrl-L          like F3, resumes a text Find/Scan
+
+        ctrl-P          prints the entire file without requiring any lines to
+                        be marked
+
+        ctrl-T          dials the phone number at the cursor, the phone
+                        number ends with the first space (or blank);
+                        return to LIST with <enter>, redial with <spacebar>,
+                        or hang up with <escape>
+
+        ctrl-V          toggles active window if two files are displayed
+
+        /Ftext          command line parameter to begin a text search through
+                        all selected files; the search is case sensitive
+
+        alt-A           resumes text search (Find or Scan) across all files
+
+        alt-I           inserts a new file by grabbing a file name from
+                        the current display screen, you position the cursor
+                        to the start of a file name
+
+                        if the inserted filename is from a Viewarc display,
+                        the file will be extracted from the archive and then
+                        displayed
+
+        alt-V           displays names of files in the current directory; you
+                        can then select one for viewing, deleting, etc.
+
+                        To select a file, use the arrow key, or tab, shift-tab,
+                        home, and end keys to place the cursor at a file name.
+                        Press the letter of the function you want.
+
+                        Subdirectories are shown with an up or down arrow
+                        next to them. The up arrow entry move you to the
+                        parent directory. The down arrow entries move you to
+                        the next lower subdirectory. When you exit LIST, you
+                        you be in the selected directory, not the original one.
+
+                        The Delete function will remove an empty directory.
+                        The ESCape ane Quit commands no longer exit, they
+                        return to the display of the last file viewed.
+
+        alt-Z           Toggles display on bottom line from "Keys:"
+                        to "Toggles:"
+
+        Expanded function:
+        -----------------
+        Find/Scan       wildcard character ? can be supplied as part of the
+                        search text; the & character can be used an an escape
+                        character to allow including ? as part of the search
+                        text. Also, if the found text is off-screen, the
+                        display is automatically scrolled left or right to
+                        bring the found text into view. Only the search text
+                        is highighted.
+
+        alt-O           the write file name is remembered across files
+        alt-D
+
+        alt-W           the screen may be split horizontally and vertically
+                        by moving the cursor to the desired screen position
+
+                        You may scroll either of the two windows. Move between
+                        the two windows with c-PgDn and c-PgUp.
+
+                        Use of alt-V file selection is not recommended at this
+                        with a vertical split.
+
+                        Use of the Help function will destroy the first window.
+                        It is best for now to get out of split screen, invoke
+                        Help, and then split the screen again.
+
+                        The second and subsequent windows are displayed in the
+                        window-text color. You set that with the usual F-keys
+                        when viewing in the second window. You can clone the
+                        second color, but do so in full (not split) screen
+                        mode.
+
+LIST Version 7.0                                                       10/15/89
+
+        DEBUG offsets  (may not be current)
+        -------------
+
+        Item           Offset  Value
+        -------------- ------  -----
+        Special         0132    70
+        Normal          0134    07
+        Bright          0136    0F
+        Window 1 color  0138    07
+        Window 2 color  0139    0F
+        Flag3           013A    09      Retrace off and junk filter on
+        Flag4           013B    08      Tabs on
+        Find row        013C    0800
+        Scroll incr     013E    0A00
+        Scroll start    0140    0000
+        Tab value       0142    0800
+        Tab mask        0144    F8FF
+        Loudness        0146    C800
+        Key rate        0148    FF
+        Overlap         0149    0000
+        Wildcard esc    014B    26
+        Alt-V up        014C    0600
+

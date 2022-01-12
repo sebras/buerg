@@ -1,0 +1,160 @@
+LIST Version 7.5g               WHAT'S NEW                              3/11/91
+
+                           New Command Line Switches
+                           -------------------------
+
+|     - a new /? command line switch display LIST usage information
+
+      - a new /E command line switch tells LIST to begin displaying the files
+        at the end of each file instead of at the beginning.
+
+      - A new /Ttext command line parameter searches all files immediately
+        for the 'text' and is case sensitive.  The /Ftext or /Ttext parameter
+        must be the last on the command line.  Both cannot be used at one time.
+
+      - The /Ftext command line parameter to begin a text search through all
+        selected files now invokes the Find function which is NOT case
+        sensitive.
+
+      - A new /B command line switch tells LIST to use BIOS for displaying data
+
+|     - A new /D command line switch to force display of the File Selection
+|       menu for the specified files, e.g. *.TXT for only .TXT files
+
+      - A new /K command line switch disables the mouse.  Both the /M and /K
+        mouse options are clonable.
+
+|     - A new /Q command line option (and alt-Q command) to toggle sounding
+|       of beeps and bells.
+
+|     - A new /V command line switch which causes a verify function to be
+|       performed after any Copy or Move function
+
+      - A new /#nnnnnn command line switch instructs LIST to begin displaying
+        the file starting at line number 'nnnnnn'.
+
+|     - A new /4 command line switch may be used to place LIST into 43/50
+|       display mode; this requires an EGA or VGA display adapter.
+
+|     - The /L, /W, and /J command line switches now allow for disabling the
+|       function (in case LIST was cloned with the option on). To do this, add
+|       a minus sign, e.g. /W- will set wrap off.  The B, D, and Q switches
+|       are toggles. That is, specifying them reverses the default (or
+|       cloned setting .
+
+                        New Operational Features
+                        ------------------------
+
+      - the distribution files are LISTS.COM (small), LISTR.COM (regular), and
+        LIST.COM (plus)
+
+      - The new LIST environment variable tells LIST where to place temporary
+        files for the ViewArc and archive extraction functions, e.g.
+
+                SET LIST=C:\TEMP
+
+|    -  All DEBUG offsets and information have been replaced by a new
+|       program called LISTOPT which is used to set defaults and options.
+|       LISTOPT is available to registered and licensed users only.
+LIST Version 7.5g                 WHAT'S NEW                            3/11/91
+
+      - The maximum "logical" record size has been increased from 910 to 2048.
+
+      - A second Help screen is now available in the Plus version which shows
+        all of the Ctrl- and cursor key functions
+
+      - A great improvement in speed is available when all filter options are
+        set off.  Use alt-Z to display the toggles on the bottom line.  An
+        option is off when its corresponding letter, e.g.  'J' for alt-J junk
+        filter or 'T' for the alt-T tab expansion filter, is in lower case.
+
+|     - The Viewarc function now assumes that .EXE and .COM files are self-
+|       extracting files and will actually execute them to extract the
+|       selected file. Not all self-extracting programs support this.
+|       Otherwise, if a file does not have the .ARC, .LZH, .ZIP, .PAK,
+|       or .SDN extension, the file is assumed to be a .ARC file.
+
+|     - The top status line while viewing a file has changed. Until the last
+|       record number is known, LIST now displays a percentage of the file
+|       read so far.
+
+
+                              File Selection Menu
+                              -------------------
+
+      - New commands are available from the File Selection (Alt-V) menu:
+
+              E    invokes the 'Edit' editor to let you edit the selected file;
+                   create a BATch file called EDIT.BAT which invokes the
+                   editor of your choice with the optional parameters it needs
+
+              I    invokes (executes) the selected program
+
+          Alt-Z    toggles the status display on the bottom line from disk and
+                   file statistics line to a menu command help line
+
+      - Changes to other file selection menu (Alt-V) commands:
+
+         -  Q)uit returns you to the display of the last file you viewed
+            if no file has been displayed, Q exits to DOS.
+
+         -  X and F10 exit to DOS in the NEW directory
+
+         -  ESCape exits to DOS in the ORIGINAL directory
+
+         -  Alt-X exits to DOS and shows the original screen
+
+         -  the 1-up display now includes the file attributes
+
+         -  Alt-C saves (clones) the settings
+
+         -  the S)ort command now has a None (no sort) ordering option
+
+|        -  a \ may be used in place of the P)ath command to change directories
+
+|        -  you may press the shift key and a letter key to move the selection
+|           to the first filename beginning with that letter, e.g. shift-C will
+|           put the cursor on the first file name beginning with the letter 'c'
+LIST Version 7.5g               WHAT'S NEW                              3/11/91
+
+                                 New Commands
+                                 ------------
+
+      - A new ctrl-Y command saves the current position as a bookmark, and
+        alt-Y repositions to the last bookmark. You may set up to 10 bookmarks.
+
+      - A new 1 command restarts displaying files with the first file.
+
+      - A new Ctrl-right command scrolls the screen right to the end of the
+        current line.
+
+      - A new O command toggles the date format from U.S. mm/dd/yy to
+        European format dd-mm-yy.
+
+                                Changed Commands
+                                ----------------
+
+      - The X command exits to DOS and clears the screen. In the Plus version,
+        you are now placed in the new (selected) directory.
+
+      - The Alt-G command (shell to DOS) now clears the screen.
+
+      - The Alt-D and Alt-O (write lines to a file) commands have been changed
+        to default to writing a found (highlighted line after Scan or Find)
+        line if no lines have been marked.
+
+|     - All commands which ask for a d:\path and/or a filename now check for
+|       embedded blanks and non-valid characters.
+
+      - The ctrl-I command has been added to the Plus version.  It allows
+        setting the TAB interval to values other than the standard 8.  Ctrl-I
+        prompts you to enter the new interval, which can be from 1 to 99.
+
+|     - The ctrl-D dial command will initially place the cursor on a line
+|       with found text, i.e. you scan for a name and LIST find it. The found
+|       text is highlighted. When you issue ctrl-D, the cursor is placed there.
+|       LIST copies all numbers and valid telephone number characters, like
+|       dash and comma, up to the first non-numeric character as the phone
+|       number. Also, if the telephone number has more than 7 digits, LIST will
+|       prefix the number with a 1 unless the phone number starts with a 1.
+

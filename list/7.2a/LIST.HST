@@ -1,0 +1,54 @@
+LIST Version 7.2						11/26/89
+
+			Version History
+			---------------
+
+       7.0a, 10/15/89 - version 7 initial release
+       7.10, 10/15/89 - correct highlighting of found text
+	     10/16/89 - correct a-v selection of root directory
+		      - correct inability to clone text colors in normal version
+	     10/18/89 - fix c-PgUp in regular version
+		      - move code so offsets line up for DEBUG in manual
+		      - correct cloning of second window color
+		      - add ctrl-J to redefine TAB interval
+       7.11, 10/20/89 - allow d:\path command line syntax
+		      - change a-v down arrow to wrap to first entry after
+			last one
+       7.12, 10/21/89 - allow 11 character subdirectory names, 5 or less up
+		      - change default a-v display to 5-up
+		      - correct a-v sort by date/time
+       7.13, 10/23/89 - change Ctrl-I to be TAB interval command
+		      - change Q in a-v to return to viewing of last file
+		      - add Alt-X in a-v as exit with original screen
+		      - correct c-end in a-v
+		      - change F2/F4 to change found line attributes if present
+		      - allow cloning of second window color in normal version
+		      - add LZH to ViewArc/a-i
+       7.14, 10/25/89 - improve filter speed if no options (alt-J,*,etc) set
+		      - change filter defaults to none
+       7.15, 10/26/89 - correct new filter EOF problem
+		      - correct Q from a-v menu when no files have been viewed
+       7.1a, 10.28.89 - version 7.1 released
+       7.20, 11/11/89 - correct return to route if cmdline file not found
+		      - refresh a-v display after delete or move
+		      - correct a-v display of garbage if delete last file
+		      - restore command line switches in small version
+		      - add X command to a-v to exit in original subdir
+		      - make /M mouse option clonable
+		      - correct mouse horizontal sensitivity
+		      - change /F to use Find instead of Scan
+		      - change a-v Viewarc a-i to default to .ARC
+		      - change a-v Viewarc a-i to treat COM and EXE as LHARC
+		      - restrict Help display to current window dimensions
+		      - correct fast filter for lack of LF after CR
+		      - add F10 like ESC to exit from a-v menu
+       7.21, 11/22/89 - change old X to exit in original subdir for plus version
+		      - correct selection of subdirs with extensions
+		      - correct a-v Copy to allow copying with a different
+			filename to the same directory
+		      - add display of file attributes to 1-up
+       7.22, 11/24/89 - correct AltI not changing the drive
+		      - correct X command, Review_Table overlays AVorgdrive
+       7.2a, 11.26.89 - correction for files with CR but no LF
+		      - correct Ctrl-I with TAB interval of 0
+

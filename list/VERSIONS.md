@@ -606,7 +606,7 @@
   - fuss with mouse sensitivity and cursor lines
   - change alt-Y to recall bookmark line
   - add ctrl-Y to set bookmark line
-- 7.2a 11.26.89
+- [7.2a](7.2a) 11.26.89
   - correction for files with CR but no LF
   - correct Ctrl-I with TAB interval of 0
 - 7.22 11/24/89

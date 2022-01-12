@@ -445,7 +445,7 @@
   - don't clear screen for alt-G
   - change a-v Edit to exclude prompt for options and return
   - leave cursor visible when mouse is enabled
-- 7.4a 08/07/90
+- [7.4a](7.4a) 08/07/90
   - correct search loop if enter commands too fast
   - correct highlighting of line before top line when text is not found
 - 7.427 07/31/90

@@ -827,7 +827,7 @@
   - Changing or invoking a filter repositioned the display to line 1. This was done because the number of lines in the file may have changed and the position became invalid. The `7, 8, *`, and alt-T (tab) filters now resume the display at the same line number. The alt-J and Wrap filters still restart the display at line 1.
   - When using +, -, or ctrl-Home to position by line numbers, you can now supply a line number of up to 8 digits. Previously, only 6 digits were accepted.
   - The problem of positioning to a line after the end of file has been fixed.
-- 6.3a 08/13/88
+- [6.3a](6.3a) 08/13/88
   - version 6.3 releasedL
 - 6.34 08/12/88
   - improved detection of 132-character monitor mode

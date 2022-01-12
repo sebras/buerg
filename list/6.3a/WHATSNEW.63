@@ -1,0 +1,168 @@
+LIST                                                            Version 6.3a
+----                                                            Aug 13, 1988
+
+                        Summary of Updates
+                        ------------------
+
+|       - improved detection of 132-character monitor modes
+
+        - added alt-O to write to a file using the same filename
+          used in a previous alt-D command; omits the prompt
+
+        - added alt-Y (and ctrl-P) as a reposition command. It repositions
+          you to the last "active" line. That is a line positioned to by
+          find/scan, or by alt-M marking of the first line.
+
+        - changed alt-J, W, 8/7/* to reload the file so that the
+          line count would be reset to reflect changes in the number
+          of lines due to filtering.
+
+        - changed alt-C cloning to not exit; the LIST.COM file is
+          updated immediately, however.
+
+        - increased capacity from 16k to 16m lines; the listable file
+          size is now approximately 16 mb for text files, and 5 mb for
+          hex dumped. The small (S) version should run with about 29k
+          memory with a limit for 50k lines, or 600 kb file size in
+          hex mode.
+
+        - added some W* like command keys:
+
+                ^X   next line
+                ^E   former line
+                ^Z   next line
+                ^W   former line
+                ^C   next page
+                ^R   former page
+                ^D   scroll right
+                ^S   scroll left
+                ^A   scroll full left
+
+        - added Z command to be like cntrl-PgUp; show previous file
+        - added ^U to display the previous file, like cntrl-PgUp
+        - added ^N to display the next file, like cntrl-PgDn
+
+        - added alt-N to toggle (for cloning) the screen saving feature.
+          With screen saving disabled, the minimum memory required
+          becomes about 38k (or 29k with the small version).
+
+        - added ability to supply more than one filespec on the
+          command line; e.g. LIST *.DOC *.TXT *.ME
+LIST                                                            Version 6.3a
+----                                                            Aug 13, 1988
+
+
+        - added ability to supply over-riding switches on the
+          command line:
+
+                /W   turn on Wrap
+                /J   turn on Junk filter
+                /*   turn on star filter
+                /8   include 8th bit
+                /7   exclude 8th bit
+                /H   use Hex display mode
+                /L   pre-load file
+
+          for example,
+                        LIST *.* /W*J
+                        LIST *.* /W /* /j
+
+        - changed review (ctl-PgDn and ctrl-PgUp) to remember the last line
+          number for each file.
+
+        - added check for file deleted after alt-g (DOS shell)
+
+        - added "Press ENTER" prompt after alt-f and F1 (help)
+
+        - changed up/down to continually scroll; this can be enabled
+          by setting continuous scroll (C) on. You can adjust the scroll rate
+          by pressing to - key during scrolling to go slower, or + key to
+          go faster. The direction does not change until you hit some
+          other key, and then the new arrow key. You can make the current
+          speed permanent by cloning with alt-C.
+
+        - the continous scrolling rate is in 256 increments. when the
+          maximum rate is reached, it rolls over to the slowest rate.
+
+        - changed the 7 filter to show the 7-bit character regardless;
+          the upside-down question mark no longer replaces 7-bit control
+          characters; this improves display speed.
+
+        - correct use of /S to avoid strange DOS error messages;
+          if /S is supplied, it must be the last switch!
+
+        - corrected alt-M so that when a range is already marked,
+          using alt-M again expands or contracts the range appropriately.
+          If the new line for alt-M/alt-B is before the top mark, the
+          top mark is changed. If the new line is after the bottom mark,
+          the bottom mark is changed. If the new line is within the
+          currently marked range, alt-M changes the top mark and alt-B
+          changes the bottom mark.
+
+        - note about filenames: when using alt-f or answering the
+          "Enter filename" prompt when no filespecs are supplied on
+          the command line, be aware that CED will intercept certain
+          characters and words. For example, a leading * asterisk is
+          gobbled up by CED, so you must enter two of them. That is,
+          instead of *.*, use something like **.*.
+LIST                                                            Version 6.3a
+----                                                            Aug 13, 1988
+
+                        Version history
+                        ---------------
+
+       6.2a, 5/07/87 - cosmetic changes for public release
+       6.2b, 5/12/87 - customized version for licensed copies
+       6.2c, 5/19/87 - improve 'unload' for alt-J, */7/8, and W
+                     - change alt-C cloning to not exit
+                     - fix close to skip stdin/stdout (fixes funny fat msgs)
+       6.2d, 9/26/87 - fix line numbers for */7/8, W and alt-J
+       6.2e-l, 9/27/87 - expand line number capabilities from 64k to 16m <arg>
+       6.2m, 10/14/87 - allow multiple filespecs on command line
+       6.2n, 10/14/87 - allow switches on command line for W/8/7/*/J/H/L
+       6.2o, 10/21/87 - correct Q not quiting if single file
+                      - preserve position after W/8/7/*/J/H/L
+                      - correct problem with tab filter losing lines with wrap
+                      - add alt-N for cloning
+       6.2p, 10/24/87 - experiment to replace 16h calls with 21h/06h calls
+       6.2q, 10/25/87 - convert double words to 3-byte fields
+                      - modify allocation of screen save buffer; now requires
+                        available memory 52k when on, 42k when off!
+       6.2r, 10/27/87 - have review remember line nr
+                      - add check for file deleted after alt-g
+       6.2s, 10/29/87 - change 'S' indicator to 'C'
+                      - correct 'review', eof loop on short screen, preload
+                      - add prompts for alt-F 'file not found' and Help
+       6.2t, 11/01/87 - fix alt-D; fix F9
+       6.2u, 11/02/87 - change method of allocating file blocks
+       6.2v, 11/03/87 - try to avoid reloading of command.com at exit
+                      - improve shrink/expand of marked line range
+                      - add continuous scrolling for up/down via 'kybd' switch
+       6.2w, 11/05/87 - correct line last number after Q in hex mode
+                      - change up/down to adjust scroll rate; add to cloning
+       6.2x, 11/12/87 - change 7; no longer replaces 7-bit char with ?-char
+                      - clear file name on top line when using piped files
+                      - increase incremental delay for continuous scroll
+                      - remove key-flush function; K is now continuous scroll
+                      - change memory allocation method
+       6.2y, 12/24/87 - restore K as key flush toggle (type-ahead/clear kybd)
+                      - change C to be continous scroll toggle
+                      - change line 25 toggle display of C (continuous)
+                        and for S (sharing)
+                      - add /L (preload) to command line options
+                      - correct P printing of blanks lines
+       6.2z, 12/31/87 - added alt-Y (or ctrl-P) book mark command to
+                        reposition to last active (found or marked) line
+                      - sped up default C (continuous scroll) value
+       6.30, 1/14/88  - shorten Buffer_Table to 16, lessen memory requirement
+                      - make use of +/- smoother for adjusting scroll rate
+       6.31, 1/17/88  - correct eof problem; sort of
+                      - correct missing line problem with up arrow
+       6.32, 1/28/88  - allow Down to scroll beyond eof message
+                      - add alt-O like alt-D using same filename
+       6.33, 7/14/88  - use DOS switch character
+                      - improve EGA 43-line detection for VGA use
+|      6.34, 8/12/88  - improved detection of 132-character monitor mode
+|      6.3a, 8/13/88  - version 6.3 released
+
+

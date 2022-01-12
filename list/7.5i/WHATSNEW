@@ -1,0 +1,234 @@
+LIST Version 7.5i               WHAT'S NEW                              5/23/91
+
+                           New Command Line Switches
+                           -------------------------
+
+      /?  displays LIST usage information
+
+      /B  tells LIST to use the BIOS for displaying data.
+
+      /D  forces display of the File Selection menu for the specified files,
+          e.g. *.TXT for only .TXT files; a filespec must be supplied.
+
+      /E  tells LIST to begin displaying the files at the end of each file
+          instead of at the beginning.
+
+      /K  disables the mouse.  Both the /M and /K mouse options are clonable.
+
+      /Q  toggles sounding of beeps and bells; same function as the alt-Q
+          command.
+
+      /V  causes a verify function to be performed after any Copy or Move
+          function
+
+      /4  places LIST into 43/50 display mode; this requires an EGA or VGA
+          display adapter.
+
+      /Ttext  searches all files immediately for the 'text' and is case
+          sensitive.  The /Ftext or /Ttext parameter must be the last on the
+          command line.  Both cannot be used at one time.
+
+      /Ftext  begins a text search through all selected files now invokes the
+          Find function which is NOT case sensitive.
+
+      /#nnnnnn  supplies the record number from which the display is to begin.
+
+      - The /L, /W, /M, /S, and /J command line switches now allow for
+        disabling the function (in case LIST was cloned with the option on).
+        To do this, add a minus sign, e.g. /-W or /W- will set wrap off.
+        The B, D, and Q switches are toggles. That is, specifying them reverses
+        the default (or cloned setting).
+
+                        New Operational Features
+                        ------------------------
+
+      - the distribution files are LISTS.COM (small), LISTR.COM (regular), and
+        LIST.COM (plus).  Only LIST.COM is included in the archive file
+        available on bulletin boards and by online services.
+
+      - The LIST environment variable tells LIST where to place temporary
+        files for the ViewArc and archive extraction functions, e.g.
+
+                SET LIST=C:\TEMP
+
+     -  All DEBUG offsets and information have been replaced by a new
+        program called LISTOPT which is used to set defaults and options.
+        LISTOPT is available to registered and licensed users only. See
+        the file DEBUG.TXT for patching information.
+
+
+LIST Version 7.5i                 WHAT'S NEW                           5/23/91
+
+      - The maximum "logical" record size has been increased from 910 to 2048.
+
+      - A second Help screen is now available in the Plus version which shows
+        all of the Ctrl- and cursor key functions
+
+      - An improvement in speed is available when all filter options are
+        set off.  Use alt-Z to display the toggles on the bottom line.  An
+        option is off when its corresponding letter, e.g.  'J' for alt-J junk
+        filter or 'T' for the alt-T tab expansion filter, is in lower case.
+
+      - The Viewarc function now assumes that .EXE and .COM files are self-
+        extracting files and will actually execute them to extract the
+        selected file.  Not all self-extracting programs support this.
+        Otherwise, if a file does not have the .ARC, .LZH, .ZIP, .PAK,
+        or .SDN extension, the file is assumed to be a .ARC file.
+
+      - The top status line while viewing a file has changed. Until the last
+        record number is known, LIST now displays a percentage of the file
+        read so far.
+
+
+                              File Selection Menu
+                              -------------------
+
+      - New commands are available from the File Selection (Alt-V) menu:
+
+              E    invokes the 'Edit' editor to let you edit the selected file;
+                   create a BATch file called EDIT.BAT which invokes the
+                   editor of your choice with the optional parameters it needs
+
+|             I    invokes (executes) the selected program; replying with a
+|                  null (enter) to the "Options:" prompt cancels the command
+
+          Alt-Z    toggles the status display on the bottom line from disk and
+                   file statistics line to a menu command help line
+
+      - Changes to other file selection menu (Alt-V) commands:
+
+         -  Q)uit returns you to the display of the last file you viewed
+            if no file has been displayed, Q exits to DOS.
+
+         -  the X command exits to DOS in the NEW (current) directory
+
+         -  ESCape exits to DOS in the ORIGINAL directory
+
+         -  Alt-X exits to DOS and shows the original screen
+
+         -  the 1-up display now includes the file attributes
+
+         -  Alt-C saves (clones) the settings
+
+         -  the S)ort command now has a None (no sort) ordering option, and
+            a minus "-" prefix option for sorting in descending order; ESCape
+            now cancels the S)ort request.
+
+         -  a \ may be used in place of the P)ath command to change directories
+
+
+LIST Version 7.5i               WHAT'S NEW                             5/23/91
+
+                              File Selection Menu (cont'd)
+                              -------------------
+
+         -  the F2 command to toggle the bottom line status display has been
+            changed to F3
+
+         -  you may press the shift key and a letter key to move the selection
+            to the first filename beginning with that letter, e.g. shift-C will
+            put the cursor on the first file name beginning with the letter 'c'
+
+                                 New Commands
+                                 ------------
+
+      - A new ctrl-Y command saves the current position as a bookmark, and
+        alt-Y repositions to the last bookmark. You may set up to 10 bookmarks.
+
+      - A new 1 command restarts displaying files with the first file.
+
+      - A new Ctrl-right command scrolls the screen right to the end of the
+        current line.
+
+      - A new O command toggles the date format from U.S. mm/dd/yy to
+        European format dd-mm-yy and is clonable.
+
+                                Changed Commands
+                                ----------------
+
+      - The X command exits to DOS and clears the screen. In the Plus version,
+        you are now placed in the new (selected) directory.
+
+      - The Alt-D and Alt-O (write lines to a file) commands have been changed
+        to default to writing a found (highlighted line after Scan or Find)
+        line if no lines have been marked.
+
+      - All command which as for a d:\path and/or a filename now check for
+        embedded blanks and non-valid characters.
+
+      - The ctrl-I command has been added to the Plus version.  It allows
+        setting the TAB interval to values other than the standard 8.  Ctrl-I
+        prompts you to enter the new interval, which can be from 1 to 99.
+
+      - The ctrl-T dial command will initially place the cursor on a line
+        with found text, i.e. you scan for a name and LIST find it. The found
+        text is highlighted. When you issue ctrl-T, the cursor is placed there.
+        LIST copies all numbers and valid telephone number characters, like
+        dash and comma, up to the first non-numeric character as the phone
+        number. Sending of a '1' prefix has been removed. If the modem fails
+        to dial initially, press the <spacebar> to try a re-dial.
+
+      - The Ctrl-P command to print the entire file now sends a formfeed at the
+|       end of printing. C)opying to a printer device is not supported.
+
+      - The File Selection C)opy and M)ove commands check for sufficient space
+        on the target drive before copying the file.
+
+
+
+
+LIST Version 7.5i               DEBUG OFFSETS                          5/23/91
+
+
+        The default filter options are now:
+          alt-T   - expand TABs is ON
+          alt-J   - filter out control characters is ON
+
+        Item           Offset  Value    Description of contents
+        -------------- ------  -----    -----------------------
+        Special         0132    70      Top/bottom line colors
+        Normal          0134    07      Text colors
+        Bright          0136    09      Find/Scan line colors
+        Window 1 color  0138    07      Normal window text color
+        Window 2 color  0139    0F      Second window text color
+        Flag3           013A    09      Retrace off and junk filter on
+        Flag4           013B    08      Tabs on
+        Find row        013C    0800    Position of found line on screen, 8
+        Scroll incr     013E    0A00    Left/right scroll increment, 10
+        Scroll start    0140    0000    Starting scroll offset, 0
+        Tab value       0142    0800    Tab interval, 8
+        Tab mask        0144    F8FF    Tab bit mask
+        Loudness        0146    C8      Beep tone level
+        Key rate        0148    FF      Continuous scroll increment, 255
+        Overlap         0149    0000    PgUp/PgDn scroll overlap, 0
+        Wildcard esc    014B    26      Scan/Find wildcard ? escape character
+        Alt-V up        014C    0500    Alt-V display files per line, 5
+
+        LIST Plus only
+        --------------
+        Eye-catcher     014E    'COM:'
+        COM port        0152    F803    Default for COM1, use F802 for COM2
+        Sort offset     0154    00      Default sort key offset
+                                         00 by filename
+                                         08 by extension
+                                         0C by datestamp
+                                         10 by file size
+        Modem init      0157    'AT'    30-byte modem initialization string
+        Editor name     0175    'Edit'  8-byte name of editor program
+        Modem hang-up   017E    'ATZ'   9-byte modem disconnect command
+        Temp var name   0187    LIST    4-character environment name for temps
+
+        The following offsets change from version to version. Look for the
+        eye-catchers to be sure of the offset:
+
+        Key table       0468    'WHAT'  Eye catcher
+                        046C    0026    Key command table
+        Routines        0571    'WHERE' Eye catcher
+                        0576    xxxx    Command routines
+
+        Examples of using DEBUG can be found in the DIALER.PAT and
+        COLORS.PAT files. To use them, copy LIST.COM to the current
+        directory and issue the DEBUG command. For example:
+
+                DEBUG <DIALER.PAT
+

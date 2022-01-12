@@ -271,7 +271,7 @@
   - fix beeper lockout
   - Plus: if empty directory, disallow all commands except exits, Filemask, and Path.
   - Plus: change dialer to accept only space (32) through @ (40) and 0 thru 9
-- 7.5i 05/23/91
+- [7.5i](7.5i) 05/23/91
   - Regular: Correct memory allocation error with UV
 - 7.533 05/21/91
   - Plus: correct /B with 3-up file display

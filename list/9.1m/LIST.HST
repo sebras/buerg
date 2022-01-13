@@ -1,0 +1,58 @@
+LIST Version 9.1m               VERSION HISTORY                   Sept 1, 1995
+
+  9.1m   9/01/95 - Plus: Restore file's line number for Ctrl-V window switch
+  9.1l   7/25/95 - Enhanced: add Ctrl-G to get fixed length record size
+         7/26/95 - Add registration menu to LISTOPT
+                 - Enhanced: correct EBCDIC with large files
+  9.1k   5/26/95 - Plus: correct cloning of /K command line parameter
+  9.1j   5/02/95 - Enhanced: correct alt-X when alt-E used with VESA modes
+  9.1i   4/27/95 - Enhanced: expand @ list selection, add entries, scrolling
+  9.1h   4/20/95 - Plus: correct File Selection Menu L)ist command with many files
+  9.1g   4/11/95 - Correct a-W for small and regular version
+                 - Plus: add spinner to move and copy
+  9.1f   4/10/95 - Correct memory corrupt with many LFs and J or T
+  9.1e   4/07/95 - Enhanced: change ? (help) to display online Help file
+  9.1d   3/16/95 - Cosmetic changes
+  9.1c   1/31/95 - Plus: Correct using OPT file from 9.0
+
+* 9.1b   1/27/95 - Public release
+        11/14/94 - Enhanced: fix EBCDIC converter with small files
+
+* 9.1a  10/06/94 - Public release
+
+  9.15  10/05/94 - Plus: change Ctrl-V to properly switch display windows;
+                   Ctrl-PgUp and Ctrl-PgDn no longer result in switching
+                   display windows; any file can be viewed in either window
+
+  9.14  10/05/94 - Change year in date displays to 4-digits
+                 - Plus: correct use of LISTOPT when mouse cloned on
+                 - Plus: change Ctrl-V to properly switch display windows
+         9/29/94 - Enhanced: add /@ command line parameter to read list of
+                   file names
+         9/28/94 - Enhanced: add @ command to display review list
+         9/21/94 - Enhanced: limit c-B to minimum of 8-byte lrecl
+         8/03/94 - Enhanced: dismiss VESA modes if no extended text modes
+
+  9.0k,  5/27/94 - Cosmetic changes only
+
+  9.0j,  5/05/94 - Plus: fiddle with mouse sensitivity; save and restore user
+                   mouse settings
+
+  9.0f, 12/11/93 - Plus: correct Drive Not Available with upper case drive letter
+                 - Correct search using wildcard escape character
+
+  9.0e, 11/15/93 - Plus: allow access to CD ROMs in shareware version
+
+  9.0d, 10/30/93 - Experiment with cloning of STDIN for console input
+                 - Fix T/J/w/* filters adding extra 3-chars to end of file
+
+  9.0c, 10/24/93 - Plus: correct check for networked drives; the shareware
+                   version does not support networked drives
+
+  9.0b,  8/23/93 - Plus: correct lost character before page break (ctrl-L)
+                 - Plus: correct hex display stripping hibit in hex part
+                 - Plus: correct free space value on drives over 640mb
+                 - Plus: correct incompatibility with older LISTOPT programs
+
+* 9.0a,  7/14/93 - Public release to registered users
+

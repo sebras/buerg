@@ -125,7 +125,7 @@
   - Cosmetic changes
 - 9.1c 01/31/95
   - Plus: Correct using OPT file from 9.0
-- 9.1b 01/27/95
+- [9.1b](9.1b) 01/27/95
   - Public release
   - Enhanced: fix EBCDIC converter with small files
 - 9.1a 10/06/94

@@ -1,0 +1,163 @@
+							 LIST	  Page 1
+ Command  LIST
+ -------------
+
+ Purpose:  To display the contents of an ASCII text file,  line	by  line
+	   with	the aid	of scrolling and positioning commands.
+
+ Format:   LIST	 [d:][path]filename[.ext]
+
+ Remarks:  An ASCII file of any	size may be listed.
+
+	   The "filename" is optional.	If omitted, you	are prompted  to
+	to enter  a filename.	You may	 include drive,	 path, and  wild
+	cards in the file name.	  The first file which matches	the name
+|	is displayed until an end-of-file character is encountered. Each
+|	file which matches the "filename" is displayed.
+
+	   LIST	was  designed to  display ASCII	 files.	 That  is, files
+	which  contain	text  and  not	binary	or  control codes.  Text
+	characters usually range from a	value of 32 to 127.
+
+	   Characters  below  32  (a  blank)  are  replaced with a funny
+	character to indicate that a non-displayable character has  been
+	encountered.  This character is	an upside-down question	mark.
+
+	   Characters above 127	may be valid graphic characters, and may
+	be displayed if	 the '8' command  is in	effect.	  To insure that
+	characters above ASCII value 127 are not displayed, use	the  '7'
+	command.
+
+	   The	file  is  displayed  with  one	logical	 record	 on each
+	80-column display line.	  A logical record  ends in a  linefeed.
+	The maximum logical record may	be 255 characters long.	 If  the
+	record exceeds 80  characters, you may	view the portion  beyond
+	the 80 columns	by using the  scroll right command,  or	by using
+	the Wrap feature.
+
+	   The Wrap  command toggles  ON or  OFF the  wrapping of  lines
+	longer than 80 characters.  With Wrap on, lines	are displayed in
+	their  entirety,  80  characters  per  display line.  The scroll
+	-left and -right functions are disabled	when Wrap is ON.
+
+	   The file may	 be PRINTed as	it it displayed.   The P command
+	toggles	 the  printer  on  or  off.   When  first entered, the P
+	command	causes the current screen  to be printed.  As new  lines
+	are displayed, they too	are printed.  Printing may be stopped by
+	entering another P command.  The PrtSc key may also be used, but
+	the title and prompt lines will	be printed with	the lines of the
+	file.
+
+ Restrictions
+ ------------
+
+	   All positioning is relative to the current block in	storage.
+	The size of the	block depends on the amount of memory available,
+	and up to 64K-bytes is allocated to the	file buffer. The program
+	requires at least 4K bytes.
+
+	PC-DOS Version 2.0 or later is required.
+
+	ANSI.SYS is NOT	required.
+							 LIST	  Page 2
+ Key functions and Commands
+ --------------------------
+
+	On the COMMAND line, enter a letter or control key:
+
+	Letter(s)	Control	key	Function
+	-----------	------------	------------------------
+			Enter		continue to next page
+|	Q		ESCape		Display	next matching file
+|	X		F10		terminate and exit to DOS
+	T		HOME		restart	from first block (top)
+	B		END		skip to	end of file (bottom)
+|	D or +		PgDn		scroll down one	page
+|	U or -		PgUp		scroll up one page
+	H or ?		F1		list commands (HELP)
+	L		left arrow	scroll left 20 columns
+	R		right arrow	scroll right 20	columns
+			up arrow	up one (previous) line
+	N		down arrow	down one (next)	line
+
+|	W				toggle wrap of lines over 80 chars
+|	P				toggle printer on or off
+
+|	K				toggle keyboard	flush
+
+|	7				turn off high bit
+|	8				leave high bit on (default)
+
+
+|	\text				Find 'text' regardless of case
+|	/text				Scan for exact text match
+	A		F3		find next occurance of 'text'
+
+			ctl-HOME	restart	from CURRENT block
+			ctl-PgUp	restart	from first block (TOP)
+			ctl-PgDn	skip to	end of file (BOTTOM)
+			ctl-left-arrow	reset scroll to	column 1
+
+			F1		Help
+			F3		Find next
+			F10		Exit
+			alt-F		change Foreground color
+			alt-B		change Background color
+							 LIST	  Page 3
+
+ Scanning for text
+ -----------------
+
+|	   You may use	Find (\)  to search for	text  regardless  of the
+|	case, or you may use Scan (/) to find an exact match.
+
+	   To scan for a character string, type	a slash	(/) followed  by
+	one or more (up	to 32)	characters.  The scan text, but	not  the
+	slash,	is  displayed  on  the	command	 line.	The scan is case
+	sensitive.  That is, lower case	scan text will only match  lower
+	lower case file	text.
+
+|	   While  the  program	is  searching  for  the	text, the bottom
+|	display	line is	changed	to say "Scanning".
+
+	   If the text is found, the line containing it	is displayed  as
+	a high-intensity line.
+
+	   If the text is NOT found, the bottom	line (25) is changed  to
+	say '*** text not found ***', and the display remains unchanged.
+
+ Screen	attributes
+ -----------------
+
+	   There are three classes  of attributes used.	 One  for normal
+	display	lines  - lines	2 to  24 -  another for	 special lines -
+	lines 1	and 25,	and a third for	the Find/Scan color.
+
+	These attributes may be	changed	by using DEBUG:
+
+|	 at offset 194 = 09	;lines 1 & 25, hi-lighted or lt.blue
+|	 at offset 196 = 02	;normal	lines, green
+|	 at offset 198 = 0C	;attention when	text found, red
+
+	If these values	don't match, you have a different version.
+	----------------------------------------------------------
+
+
+
+	Written	by Vernon Buerg	for the	 IBM PC	using DOS 2.0 and  is
+	supplied for public domain  use. All rights reserved. Not for
+	sale or	hire.
+
+	Lines beginning	with | denote changes to the latest version.
+
+	Version	4.1, April 27, 1984.
+	Version	4.15, June 2, 1984.
+	Version	4.2, July 14, 1984.
+	Version	5.0, August 10,	1984.
+	Version	5.1, August 27,	1984.
+	Version	5.2, September 29, 1984.
+|	Version	5.4, March 22, 1984.
+
+n	5.0, August 10,	1984.
+	Version	5.1, August 27,	1984.
+	Version	5.2, September 29

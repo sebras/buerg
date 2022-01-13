@@ -1,0 +1,167 @@
+
+                                                        LIST  Version 6.2a
+                                                              May 14, 1987
+
+                        Addendum
+                        --------
+
+    1.  Reassigning keys
+
+        This information is offered to those of you who wish to
+        modify LIST in special ways.  You do not need this
+        information to use LIST.
+
+        LIST performs a function for every character that can be
+        entered at the command line prompt.  There are 128 regular
+        characters and 131 extended characters.  The regular characters
+        are numbered from 0 to 127, and they include the letters A-Z,
+        a-z, the numbers, and the rest of the usual single characters
+        found on your keyboard.  The extended characters represent
+        special function keys and combinations of keys, such as F1,
+        alt-X, ctrl-A, and the cursor positioning keys.
+
+        The WHAT table in LIST has a one byte entry for each of the
+        characters. This byte is a number from 0 to 53 that represents
+        the identification of a routine that performs a function.
+
+        For example,
+
+          - the ESCape key has a value of 27 (hex 1B) and its
+            value in the WHAT table is 16 (10 hex). Routine number 16
+            is called "Done".  The "Done" routine exits to DOS.
+
+          - the Q key has a value of 81 (51 hex) with a routine value
+            of 15 for the "Close" routine. The "Close" routine ends
+            viewing of the current file and tries to display the next
+            file, i.e. wildcards used for the filename. There is also
+            a lower case letter q, so be sure to change both entries.
+
+
+        To change the function that a command character performs, you
+        change the value in the WHAT table for the routine that the
+        character invokes.
+
+        For example, to change the ESCape key to act like the Q key,
+        you change the routine value for ESCape from 16 (10 hex) to
+        a 15 (0F hex).
+
+        To find the location of the routine value in the WHAT table,
+        first determine the value of the character, e.g. ESCape is
+        27 (1B hex), and then add that to the location of the WHAT
+        table (362 hex); or, 1B + 362 = 37D hex. Finally, use DEBUG
+        to change the byte at that location (37D hex) from a 10 hex
+        to a 0F hex.
+
+        For example,
+
+          debug list62a.com             ; use appropriate file name
+          -e 37d 0f                     ; change ESC to routine 15
+          -w
+          -q
+
+
+    The routine ids are:
+
+    Value Key(s)    Title        Description of function performed
+    ----- --------- ----------   ------------------------------------------
+      0             Beeper       Error, undefined command
+      1   alt-A     AltA         Toggle APXCORE/DD/TV interface
+      2   alt-E     AltE         Toggle EGA 43-line mode
+      3   alt-F     AltF         Get new filespec
+      4   alt-J     AltJ         Toggle Junk filter
+      5   alt-L     AltL         Toggle pre-Load
+      6   alt-T     AltT         Toggle TABs expansion
+      7   alt-W     AltW         Toggle Window
+      8   alt-X     AltX         Exit to DOS, restore screen
+      9   U/up      Back         Position to previous line
+     10   End       Bottom       Position to end of file
+     11   F5        ChgBack      Change top/bottom line background color
+     12   F6        ChgFore      Change top/bottom line foreground color
+     13   c-home    CHome        Position to specified line number
+     14   alt-C     Clone        Rewrite LIST.COM with new options
+     15   Q         Close        Quit current file, display next file
+     16   ESC F10   Done         Exit to DOS
+     17   N down    Down1        Position to next line
+     18   X         DoneX        Exit to DOS, clear screen
+     19   alt-H     DumpHex      Toggle Hex display mode
+     20   8         Eight        Leave hi-bit
+     21   \         Find         Search for text, any case matches
+     22   F2        FindBack     Change Find/Scan background color
+     23   F4        FindFore     Change Find/Scan foreground color
+     24   alt-M     Flash        Toggle monitor rescan testing
+     25   K         Flush        Toggle keyboard flush (type ahead)
+     26   alt-G     GotoDOS      Invoke DOS command (shell)
+     27   L left    Left         Scroll left 10 columns
+     28   -         MinusNum     Position back by number of lines
+     29   enter     NxtPage      Display next page
+     30   +         PlusNum      Position forward by number of lines
+     31   P         Print        Print current screen or marked lines
+     32   F1 H ?    Help         Display Help screen
+     33   F3        ReScan       Search for next occurrence of text
+     34   R right   Right        Scroll display right 10 columns
+     35   alt-R     Ruler        Display ruler marks on top line
+     36   /         Scan         Search for text, same case
+     37   F9        ScanBack     Search for previous occurrence of text
+     38   c-left    Scroll0      Reset scroll to column 1, full left
+     39   F7        SetBack      Change normal line background color
+     40   F8        SetFore      Change normal line foreground color
+     41   7         Seven        Strip hi-bit
+     42   C         Share        Toggle closing of files
+     43   *         Star         Toggle special * filter
+     44   Home      Top          Position to top of file
+     45     up      Up1          Position back one line
+     46   W         Wrapper      Toggle display of wide lines
+     47   alt-D     WriteFile    Write marked lines to a file
+     48   alt-M     MarkLines    Mark top line of display
+     49   alt-U     UnmarkLines  Unmark lines
+     50   alt-B     MarkBottom   Mark bottom line of display
+     51   ctrl-pgup Review       Display previous file
+     52   ^         RevFind      Like Find but initiates search backwards
+     53   v         RevScan      Like Scan but initiates search backwards
+
+
+
+    2.  Helpful locations for DEBUG:
+
+        035E    WHAT eye-catcher
+        0362    value of routine for character 0, nul (00 hex), Beeper
+        0372    value of routine for character 16, dle (10 hex), Beeper
+        0382    value of routine for character 32, space (20 hex), NxtPage
+         .
+         .
+         .
+        03D2    value of routine for character 112, p (70 hex), Print
+
+
+        Extended characters:
+
+        03E2    value of routine for character 0, undefined (00 hex), Beeper
+        03F2    value of routine for character 16, alt-Q (10 hex), Beeper
+        0402    value of routine for character 32, alt-D (20 hex), WriteFile
+         .
+         .
+         .
+        0462    value of routine for character 128, alt-F9 (80 hex), Beeper
+
+
+        You can determine the value of a character (or key sequence) by
+        referring to your BASIC manual (appendix G usually).
+
+
+    3.  Supplied files.
+
+        Sample files for modifying LIST are supplied. To apply a
+        modification, the DOS DEBUG program must be available in
+        the current PATH. Enter the name of the modification (.BAT)
+        file and DEBUG will be invoked to apply the modifications.
+
+             ESC2Q    BAT    Changes ESCape to act like Q
+             ESC2Q    DBG    Input to DEBUG
+
+             UNBEEP   BAT    Disables sounds and beeps
+             UNBEEP   DBG    Input to DEBUG
+
+             MARKMOD  DBG    Changes attribute used for marked lines
+             MARKMOD  BAT    Input to DEBUG
+
+

@@ -1,0 +1,7 @@
+A
+; Change ESC to act like Q in LIST 6.2A
+
+e 37d 0f
+w
+q
+

@@ -1,0 +1,12 @@
+A
+; LIST 6.2a
+; Change attribute used for displaying marked lines
+
+a 117f
+nop
+nop
+mov al,70       ; white on black (reversed video)
+
+w
+q
+

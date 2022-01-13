@@ -971,7 +971,7 @@
   - allows cloning of Wrap, Hibit, alt-R ruler, Kybd flush
   - adds indication of command toggles to top line
   - corrects and improves Scan and Find
-- 5.68 02/27/86
+- [5.68](5.68) 02/27/86
 - 5.69 04/14/86
 - 5.67 02/11/86
   - Change X to clear screen and leave cursor at top of screen

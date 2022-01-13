@@ -1,0 +1,19 @@
+LIST Plus and Windows 95                                            1 Sept 1995
+------------------------                                            -----------
+
+
+I. LIST and Windows 95 tip:
+
+ 1. Create a shortcut to LIST and put this shortcut into the directory
+    "\windows\send to".
+ 2. Set the properties of the shortcut so that it closes the DOS box on
+    exit.
+ 3. Now, in Explorer, right click the mouse on any file (or directory),
+    and click on the "Send to" entry.  A list of places to send the file
+    to appears, including LIST.  Select LIST and instantly a windows
+    appears, running LIST and showing the file.  On pressing ESC the
+    window vanishes.
+
+II. Enhanced video modes, e.g. 132 by 25, can be used with LIST under
+    Windows 95.
+

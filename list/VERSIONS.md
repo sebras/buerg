@@ -106,7 +106,7 @@
   - Enhanced: add Ctrl-G to get fixed length record size
   - Add registration menu to LISTOPT
   - Enhanced: correct EBCDIC with large files
-- 9.1k 05/26/95
+- [9.1k](9.1k) 05/26/95
   - Plus: correct cloning of /K command line parameter
 - 9.1j 05/02/95
   - Enhanced: correct alt-X when alt-E used with VESA modes

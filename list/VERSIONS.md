@@ -156,7 +156,7 @@
 - 9.0d 10/30/93
   - Experiment with cloning of STDIN for console input
   - Fix `T/J/w/*` filters adding extra 3-chars to end of file
-- 9.0c 10/24/93
+- [9.0c](9.0c) 10/24/93
   - Plus: correct check for networked drives; the shareware version does not support networked drives
 - 9.0b 08/23/93
   - Plus: correct lost character before page break (ctrl-L)

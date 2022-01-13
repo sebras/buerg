@@ -937,8 +937,14 @@
   - remove some tweaking of the cursor shape
   - default to retrace testing off (M on)
   - improve readability of binary files in ASCII display mode by changing handling of EOF character; this also solves a problem with files whose last record does not contain a cr/lf. Remember, LIST expects "records" to have CR and/or LF.
-- 6.0f 08/31/86
-- 6.0a 08/31/86
+- [6.0f](6.0f) 08/31/86
+  - correct problem with 8 command, always stripping hibit
+- 6.0a-6.0e 08/31/86
+  - corrections to last line number
+  - correct disappearing EGA/EGD cursor (?)
+  - correct test for TopView according to Hersey
+  - correct display after change to 43-line mode
+  - correct detection of EGA number of lines
 - [6.00](6.00) 05/27/85
 - [5.93](5.93) 11/05/86
 - [5.91f](5.91f) 06/06/86

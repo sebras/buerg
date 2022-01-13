@@ -1,0 +1,7 @@
+A
+; disable sounds and beeps in LIST 6.2A
+
+e 1a50 c3
+w
+q
+

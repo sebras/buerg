@@ -1,0 +1,359 @@
+
+
+
+
+
+                        LIST Version 5.68
+                (c) Copyright Vernon D. Buerg 1986
+
+
+
+
+
+                        Table of Contents
+                        -----------------
+
+                Description ....................... 1
+                Keys and commands ................. 2
+                Cloning procedure ................. 4
+                DEBUG Information ................. 4
+                Screen attributes ................. 5
+                Scanning for text ................. 6
+                Update history .................... 7
+                Restrictions ...................... 8
+
+
+                                                        LIST     Page 1
+
+ Command  LIST
+ -------------
+
+ Purpose:  To display the contents of an ASCII text file,  line by  line
+           with the aid of scrolling and positioning commands.
+
+ Format:   LIST  [d:][path]filename[.ext]
+
+ Remarks:  An ASCII file of any size may be listed.
+
+           The "filename" is optional.  If omitted, you are prompted  to
+        to enter  a filename.   You may  include drive,  path, and  wild
+        cards in the file name.   The first file which matches  the name
+        is displayed until an end-of-file character is encountered. Each
+        file which matches the "filename" may be displayed.
+
+           LIST was  designed to  display ASCII  files.  That  is, files
+        which  contain  text  and  not  binary  or  control codes.  Text
+        characters usually range from a value of 32 to 127.
+
+           Characters  below  32  (a  blank)  are  replaced with a funny
+        character to indicate that a non-displayable character has  been
+        encountered.  This character is an upside-down question mark.
+
+           Characters above 127 may be valid graphic characters, and may
+        be displayed if  the '8' command  is in effect.   To insure that
+        characters above ASCII value 127 are not displayed, use the  '7'
+        command.
+
+           The top line of the display gives the file name, current right
+        scroll offset, and the file's creation date and time. Optionally,
+        a ruler may be displayed on the top line by using the alt-R keys.
+
+           The  file  is  displayed  with  one  logical  record  on each
+        80-column display line.   A logical record  ends in a  linefeed.
+        The maximum logical record may  be 255 characters long.  If  the
+        record exceeds 80  characters, you may  view the portion  beyond
+        the 80 columns  by using the  scroll right command,  or by using
+        the Wrap feature.
+
+           The Wrap  command toggles  ON or  OFF the  wrapping of  lines
+        longer than 80 characters.  With Wrap on, lines are displayed in
+        their  entirety,  80  characters  per  display line.  The scroll
+        -left and -right functions are disabled when Wrap is ON.
+
+           The file may  be PRINTed as  it it displayed.   The P command
+        toggles  the  printer  on  or  off.   When  first entered, the P
+        command causes the current screen  to be printed.  As new  lines
+        are displayed, they too are printed.  Printing may be stopped by
+        entering another P command.  The PrtSc key may also be used, but
+        the title and prompt lines will be printed with the lines of the
+|       file. Empty lines cause a line to be skipped on the printer. The
+|       letter P is displayed in column 80 of the top line while printing.
+                                                        LIST     Page 2
+ Key functions and Commands
+ --------------------------
+
+        On the COMMAND line, enter a letter or control key:
+
+        Letter(s)     Default   Function
+        ---------     -------   ------------------------
+        A                       find next occurance of 'text'
+        B                       skip to end of file (bottom)
+|       C               off     toggles closing of (shared) files
+        D or +                  scroll down one page
+        F                       Find 'text' regardless of case
+        H or ?                  list commands (HELP)
+        K               off     toggle keyboard flush
+        L                       scroll left 20 columns
+|       M               on      toggle test for display retrace
+        N                       down one (next) line
+        P               off     toggle printer on or off
+        Q                       display next matching file
+        R                       scroll right 20 columns
+        S                       Scan for exact text match
+        T                       restart from first block (top)
+        U or -                  scroll up one page
+        W               off     toggle wrap of lines over 80 chars
+|       X                       terminate, clear screen and exit to DOS
+        7               off     turn off high bit (non-graphics only)
+        8               on      leave high bit on (graphics)
+
+        \text                   Find 'text' regardless of case
+        /text                   Scan for exact text match
+
+
+    Control key      Function
+    -----------     -------------------------------------------
+     Enter           continue to next page
+     END             position to end of block
+     ESCape          Display next matching file
+     HOME            restart from first block (top)
+     PgUp            scroll up one page
+     PgDn            scroll down one page
+
+     left arrow      scroll left 20 columns
+     right arrow     scroll right 20 columns
+     up arrow        up one (previous) line
+     down arrow      down one (next) line
+
+     ctl-HOME        restart from CURRENT (64k) block
+     ctl-PgUp        restart from first block (TOP)
+     ctl-PgDn        skip to end of file (BOTTOM)
+     ctl-left-arrow  reset scroll to column 1
+
+     F1              Help - display summary of commands
+     F3              Find next occurrance of text after Scan or Find
+     F10             Exit to DOS
+
+     F5              change background color for main body of display
+     F6              change foreground color for main body of display
+     F7              change background color for top and bottom lines
+     F8              change foreground color for top and bottom lines
+                                                        LIST     Page 4
+
+ Key functions and Commands (cont.)
+ --------------------------
+
+
+    Control key      Function
+    -----------     -------------------------------------------
+     alt-C           clone LIST.COM, change colors permanently in program file
+     alt-R           toggles display of a ruler on the top line
+
+
+
+ Cloning procedure
+ -----------------
+
+|          The screen colors, the display retrace testing (M), the file
+|       closing (C) and ruler (alt-R) options may be permanently set in
+|       the program by using the alt-C cloning function.
+
+|          For cloning to take effect, the program must be called
+|       LIST.COM and it must be on the current drive and in the current
+|       directory.
+
+
+ DEBUG Information
+ -----------------
+
+           An alternative to cloning is to use DEBUG to make permanent
+        changes. Here is a list of key items and their addresses:
+
+           0125 - special lines 1 and 25 colors, default is 01
+                  Refer to a technical reference guide for the
+                  attribute values for the colors that you want.
+           0127 - normal lines 2 thru 24 colors, default is 02
+           0129 - bright color for Find/Scan, default is 04
+           012B - options; bits 6, 7 and 8
+                   .... .SAR  S=shared, x'04'
+                              A=ruler, x'02
+                              R=retrace, x'01'
+                  By specifying the bit value, the option is enabled.
+                  For example, to enable Shared and Retrace, specify
+                  a hex value of 05.
+
+           The letters and command keys may also be changed.  There are
+        two tables involved:  WHAT and WHERE.  The WHAT table contains a
+        list of one-byte keyboard codes.  The WHERE table contains a
+        list of two-byte addresses.  If you really want to change the
+        codes, here are the DEBUG addresses:
+
+           034F - *WHAT* eye catcher
+           0355 - list of one byte command letters and codes
+
+           0387 - *WHERE* eye catcher
+           038E - list of two byte addresses of processing routines
+
+
+        NOTE: These DEBUG addresses are version dependent.
+
+                                                        LIST     Page 5
+
+ Screen attributes
+ -----------------
+
+           The colors used for displaying the titles and main body of
+        text may be changed temporarily or permanently.  To make a
+        permanent change, the cloning command alt-C is used.  It
+        requires that the LIST.COM program file be on the current drive
+        and in the current directory.
+
+           There are three classes of attributes used.  One for normal
+        display lines - lines 2 to 24 - another for special lines -
+        lines 1 and 25, and a third for the Find/Scan color.  The border
+        is not changed.  The foreground color applies to the characters
+        displayed.
+
+        These color attributes may be changed by using these function keys:
+
+          For the main body of text:
+
+            F5 - background color
+            F6 - foreground color
+
+          For the top and bottom lines:
+
+            F7 - background color
+            F8 - foreground color
+
+
+        Once you have decided upon the colors, use the alt-C key
+        combination to change the LIST.COM program file.
+
+                                                        LIST     Page 6
+
+ Scanning for text
+ -----------------
+
+
+           You may use  Find (\)  to search for text  regardless  of the
+        case, or you may use Scan (/) to find an exact match.
+
+           To scan for a character string, type a slash (/) followed  by
+|       one or more (up to 31)  characters.  The scan text, but not  the
+        slash,  is  displayed  on  the  command  line.  The scan is case
+        sensitive.  That is, lower case scan text will only match  lower
+        lower case file text.
+
+           While  the  program  is  searching  for  the text, the bottom
+        display line is changed to say "Scanning".
+
+           If the text is found, the line containing it is displayed  as
+        a high-intensity line (bright color).
+
+           If the text is NOT found, the bottom line (25) is changed  to
+        say '*** text not found ***', and the display remains unchanged.
+|       If the file exceeds 64k, it may be necessary to re-enter the
+|       scan text each 64k byte segment. This is a known problem that
+|       will be corrected in a future version.
+
+           To find the next occurrance of the same text,  use the A)gain
+        command, or press the F3 key.
+
+|          In a shared file environment, if the file changes while being
+|       listed, the file position may become invalid. Use the HOME command
+|       to insure proper file synchronization, or use the C (shared) option.
+
+                                                        LIST     Page 7
+
+Update history
+--------------
+
+        Lines beginning with | denote changes to the latest version.
+
+        Version 4.1, April 27, 1984.
+        Version 4.15, June 2, 1984.
+        Version 4.2, July 14, 1984.
+        Version 5.0, August 10, 1984.
+        Version 5.1, August 27, 1984.
+        Version 5.2, September 29, 1984.
+        Version 5.4, March 22, 1984.
+        Version 5.48, May 27, 1985.
+        Version 5.49, May 31, 1985.
+
+        Version 5.52, July 15, 1985.
+            Correct Print command problems
+            Adds alt-C to clone LIST.COM with new colors
+            The X command now clears the screen when exiting to DOS,
+            while F10 leaves the last display on the screen.
+
+        Version 5.56, December 20, 1985.
+            Adds alt-R to toggle a ruler on the top line.
+|           Make LIST compatible with DESQview.
+
+        Version 5.64, January 6, 1986.
+            Add suport for 40 (and other?) column displays
+            Add M command to toggle test for display retrace
+            Include LISTxxxS.COM without HELP as a smaller, <4k version
+
+        Version 5.65, January 16, 1986.
+            Corrections for consecutive line feeds without CRs
+            Corrections for Down at end of file
+
+        Version 5.67, February 11, 1986.
+            Special CRT request version, not released for general use.
+            Change X to clear screen and leave cursor at top of screen.
+            Close files to allow shared use.
+
+|       Version 5.68, February 27, 1986.
+|           Add C command to toggle closing of files for shared systems.
+|           Make (M) retrace, (C) shared and the ruler clonable options.
+|           Modify checks for DESQ because of APX Core incompatibilities.
+|           Display a P in line 1, column 80, while printing.
+                                                        LIST     Page 8
+
+ Restrictions
+ ------------
+
+           Some positioning is relative to the current block in storage.
+        The size of the block depends on the amount of memory available,
+        and up to 64K-bytes is allocated to the file buffer. The program
+        requires at least 6K bytes.
+
+        o  PC-DOS Version 2.0 or later is required.
+
+        o  ANSI.SYS is NOT required.
+
+
+        Written by Vernon Buerg for the  IBM PC using DOS 2.0 or
+        later, including DOS 3.1.
+
+        LIST is supplied for personal, private use. Feel free to
+        distribute LIST given these restrictions:
+
+          o  the program shall be supplied in its original,
+             unmodified form, which includes this documentation;
+
+          o  no fee is charged.
+
+          o  commmercial use is prohibited.
+
+          o  the program may not be included - or bundled - with
+             other goods or services. Exceptions may be granted
+             upon written request only.
+
+        If you are using LIST and find it of value, your gift in
+        any amount ($15 suggested) will be greatly appreciated.
+        Makes checks payable to Vernon D. Buerg.
+
+        For use by corporations and other institutions, please
+        contact AAI Systems for a site licensing agreement.
+
+                Vernon D. Buerg
+                AAI Systems, Inc.
+                456 Lakeshire Drive
+                Daly City, CA 94015
+                Data: (415) 994-2944 (RBBS)
+                Compuserve: 70007,1212
+
+

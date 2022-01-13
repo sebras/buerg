@@ -96,7 +96,7 @@
   - Add check for program on server
 - 9.22 01/09/97
   - Add ~ (tilde) command to display long file info while viewing a file
-- 9.2a 12/13/96
+- [9.2a](9.2a) 12/13/96
   - Add Win95 long file name to 1-up file selection display
   - COPY, MOVE, DELETE, and RENAME do NOT use lfn yet!!!
   - Correct /B (bios) scrolling command line

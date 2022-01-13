@@ -62,6 +62,7 @@
 - 9.6a 02/16/01
   - Enhanced: Added Ctrl-S in File Selection Menu to execute the program associated with the file, e.g. invoke Word for a .DOC file
   - Correct display of directories with long file names
+- [9.5c](9.5c) 12/07/00
 - 9.4g 12/27/00
   - Correct handling of LFN by SendTo
 - 9.4f 12/13/00

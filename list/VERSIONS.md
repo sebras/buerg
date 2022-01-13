@@ -990,7 +990,7 @@
   - Correct Print command problems
   - Adds alt-C to clone LIST.COM with new colors
   - The X command now clears the screen when exiting to DOS, while F10 leaves the last display on the screen.
-- 5.49 05/31/85
+- [5.49](5.49) 05/31/85
   - Corrects ctrl-PgDn, adds file date/time display
   - Wrap forces Left column and Top of file
 - 5.48 05/27/85

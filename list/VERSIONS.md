@@ -55,7 +55,7 @@
   - Change the way LIST exits: now INT21 instead of far ret
 - 9.6d 05/25/01
   - Change C)opy prompt to include U)pdate choice
-- 9.6c 04/24/01
+- [9.6c](9.6c) 04/24/01
   - correct use of /D when there are long file names matching the filespec; was broken by changing the command line handling to accept a single long file name
 - 9.6b 03/04/01
   - (beta) Change Copy/Move to copy only files that do not exist in the target directory; reply U to the 'Replace existing file?' prompt

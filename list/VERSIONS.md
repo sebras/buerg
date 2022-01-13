@@ -72,6 +72,8 @@
   - Correct file name in top line when viewing multiple files
 - 9.4c 12/07/00
   - Cosmetic changes
+- [9.4b](9.4b) 03/07/00
+  - Fixed create dir (N) and copy with rename using lfn
 - [9.4a](9.4a) 08/30/00
   - Use long file name in top line titles
 - 9.3b 03/07/00

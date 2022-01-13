@@ -76,7 +76,7 @@
   - Use long file name in top line titles
 - 9.3b 03/07/00
   - Fixed create dir (N) and copy with rename using lfn
-- 9.3a 08/12/97
+- [9.3a](9.3a) 08/12/97
   - Add Matrox code M for alt-e
 - 9.30 07/19/97
   - Add lfn to subdir names in menu displays

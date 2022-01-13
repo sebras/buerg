@@ -100,7 +100,7 @@
   - Add Win95 long file name to 1-up file selection display
   - COPY, MOVE, DELETE, and RENAME do NOT use lfn yet!!!
   - Correct /B (bios) scrolling command line
-- 9.1m 08/07/95
+- [9.1m](9.1m) 08/07/95
   - Plus: Restore file's line number for Ctrl-V window switch
 - 9.1l 07/26/95
   - Enhanced: add Ctrl-G to get fixed length record size

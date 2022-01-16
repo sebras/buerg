@@ -1,0 +1,125 @@
+..EDIT
+                                  ATO Editor Help
+ษออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออป
+บ Cursor Pad Keys:                       บ Other useful keys:                  บ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤืฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤถ
+บ <-,->,,         Left/right/up/down   บ <ctrl>-<End>:  Erase to end of line บ
+บ <Home>/<End>      Beginning/end of lineบ <ctrl>-<BkSp>: Delete current word  บ
+บ <PgUp>/<PgDn>     Half screen Up/Down  บ <ctrl>-<T>:    Delete to next word  บ
+บ <ctrl> <-/->      Previous/Next word   บ <Enter> with insert on: Split line  บ
+บ <ctrl-PgUp/PgDn>  Top/Bottom of msg    บ <BkSp> @ line beg: Join to prev lineบ
+ฬออออออออออออออออออออออออออออออออออออออออฮอออออออออออออออออออออออออออออออออออออน
+บ <Alt>-key Edits:                       บ <Alt>-key Block Edits:              บ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤืฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤถ
+บ B   Break/split msg into linked thread บ   C   Copy block                    บ
+บ F   reFormat rest of paragraph         บ   D   Delete marked block           บ
+บ J   Join following line to current lineบ   L   Mark line at top/bottom       บ
+บ R   Restore current line               บ   M   Move block                    บ
+บ S   Split current line at cursor       บ   U   Unmark block                  บ
+บ T   Transpose current/prev. character  บ                                     บ
+บ F2  Cancel current message NO CONFIRM  ฬอออออออออออออออออออออออออออออออออออออน
+บ F10 Msg done & save in <forumname>.FIL บ   E   Shell to DOS (EXIT returns)   บ
+ฬออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออน
+บ  Character count is given at lower right of screen.                          บ
+บ  Use <Alt>-S at beginning of first line to insert a line at top of message.  บ
+บ  Use F7 to change Subject, Addressee/PPN, Send mode, or Section #            บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+..READ
+                              ATO Read Command Help
+ษออออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออป
+บ Letter Commands:                       บ Cursor Pad Keys:                    บ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤืฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤถ
+บ A  Again--redisplay the current messageบ <Home>  Go to first message in file บ
+บ B  Back--go back one message           บ <End>   Go to last message in file  บ
+บ D  Delete message to/from you (D)      บ        Scroll message down one lineบ
+บ E  End--go to last message in file     บ        Scroll message up one line  บ
+บ F  Forward message (SysOp commands)    บ <PgDn>  Go to next message          บ
+บ H  Header--print message on new page   บ <PgUp>  Go back one message         บ
+บ J  Join thread as reply to parent msg  บ   <-    Go to previous forum        บ
+บ L  Locate a text string                บ   ->    Go to next forum            บ
+บ M  Mail a reply to this message (MA)   ฬอออออออออออออออออออออออออออออออออออออน
+บ N  Next--find next occurrence of stringบ Other Keys:                         บ
+บ P  Print message                       วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤถ
+บ Q  Quit--return to forum function menu บ <Alt>-E  Shell to DOS (EXIT returns)บ
+บ R  Reply to this message (RE)          บ <Alt>-I  Insert sender in PPN file  บ
+บ S  Save message in View file           บ <Alt>-W  Switch 25/43 line mode     บ
+บ T  Top--go to first message in file    บ <Esc>    Return to forum menu       บ
+บ U  Use sender as Addressee (UA)        บ  <F3>    Same as N                  บ
+บ X  Skip to next thread of messages     บ   /      Case-sensitive search      บ
+บ                                        บ   ^      Search backwards for text  บ
+บ                                        บ  <F9>    Locate next backwards      บ
+ศออออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออผ
+..MENU
+                         ATO Supplementary Forum Commands
+ษอออออออออออออออออออออออออออออออออออออออหออออออออออออออออออออออออออออออออออออออป
+บ F-Keys:                               บ Cursor Pad Keys:                     บ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤืฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤถ
+บ  F1  select AUTO first pass           บ         select previous Host        บ
+บ  F2  select AUTO second pass          บ         select next Host            บ
+บ  F3  edit Forum options               บ                                      บ
+บ  F4  edit Host options                บ  <PgUp>  select previous Forum       บ
+บ  F7  edit AUTO options                บ  <PgDn>  select next Forum           บ
+ฬอออออออออออออออออออออออออออออออออออออออสออออออออออออออออออออออออออออออออออออออน
+บ <Alt>-Keys:                                                                  บ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤถ
+บ  <Alt>-L  Display ATO bulletin file using LIST ( which must be in your PATH) บ
+บ  <Alt>-M  Invoke PPN processor                                               บ
+บ  <Alt>-N  Change HMN to N                                                    บ
+บ  <Alt>-V  Toggle menu/command mode                                           บ
+ฬออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออน
+บ Other Keys:                                                                  บ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤถ
+บ        E  Shell to DOS (EXIT returns)                                        บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+..SEND
+                              ATO Send Window Help
+ษอออออออออออออออออออออออออออออออออออออออหออออออออออออออออออออออออออออออออออออออป
+บ Message Header:                       บ Send Mode:                           บ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤืฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤถ
+บ  To:   Enter: addressee's name        บ  Enter one letter:                   บ
+บ               ATTN: info for FAX      บ    S> save with formatting           บ
+บ        <PgUp> for Name/User ID list   บ    U> save unformatted               บ
+บ                                       บ    P> Private message                บ
+บ  PPN:  Enter: addressee's ID (PPN)    บ    X> Private unformatted            บ
+บ               >FAX:number             บ    M> Mail message via EasyPlex      บ
+บ               >INTERNET:address       บ    Y> Mail message unformatted       บ
+บ        <PgUp> for Name/User ID list   บ                                      บ
+บ                                       บ  Sec: Enter Forum Section            บ
+บ  Subj: Enter subject                  บ       In MAIL Only: Enter /REC for a บ
+บ        Make blank to abort            บ         return receipt (costs extra) บ
+บ                                       บ      <PgDn> for section directory    บ
+ฬอออออออออออออออออออออออออออออออออออออออสออออออออออออออออออออออออออออออออออออออน
+บ Navigation and Editing:                                                      บ
+บฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤถ
+บ  <Tab>, <Return>     Next field                                              บ
+บ  <Ctrl>-<End>        Delete from cursor to end of field                      บ
+บ  <Esc>               Cancel changes made in send box                         บ
+บ  F10                 Go to edit message; use when all entries are correct    บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+..TERM
+                             ATO Terminal Mode Help
+ษออออออออออออออออออออออออออออออออออออออหอออออออออออออออออออออออออออออออออออออออป
+บ <Alt>-keys                           บ <Alt>-keys                            บ
+วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤืฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤถ
+บ  B  toggle Beeper and sounds on/off  บ  U  Upload an ASCII file              บ
+บ  C  Clear screen                     บ  W  toggle 25/43-line window display  บ
+บ  D  open/close capture file          บ  X  eXit to DOS; modem stays connectedบ
+บ  E  Shell to DOS (EXIT returns)      ฬอออออออออออออออออออออออออออออออออออออออน
+บ  F  display Files on disk            บ <Ctrl>-Keys                           บ
+บ  G  Gather section SB topics         วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤถ
+บ  H  Hang up the phone                บ PgUp  Binary upload to CompuServe Mailบ
+บ  I  execute Immediate script command บ Home  Restore bottom line display     บ
+บ  J  Join forum, set OPtions          บ  D    Return to ATO Menu              บ
+บ  K  Edit Function Keys               บ  X    Fast return to ATO Menu         บ
+บ  M  Invoke PPN/UserID processor      ฬอออออออออออออออออออออออออออออออออออออออน
+บ  N  Display section SB topics        บ Other Keys:                           บ
+บ  O  Copy Function Keys to all forums วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤถ
+บ  P  toggle Printer On/Off            บ  PgDn        Download a file          บ
+บ  Q  Save screen to SCREEN.ATO        บ  PgUp        Upload a file            บ
+บ  R  Reconfigure PC Options           บ             Review comm buffer       บ
+บ  S  Split screen for CB/COnference   บ             Edit last online command บ
+บ  T  execute a script file            บ                                       บ
+ฬออออออออออออออออออออออออออออออออออออออสอออออออออออออออออออออออออออออออออออออออน
+บ                    Press a key to return to terminal mode                    บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+

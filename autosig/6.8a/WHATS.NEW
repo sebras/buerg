@@ -1,0 +1,219 @@
+
+AUTOSIG                                                         Version 6.80
+_______                                                      August  3, 1991
+
+
+AUTOSIG - ATO - has undergone many changes since Version 6.3a was released in
+March of 1990.  Many of the changes are transparent to the user and reflect
+corrections to reported problems and improvements to overall function and
+performance.
+
+AUTOSIG consists of the following files:
+
+o  AUTOSIG.EXE         - main program
+o  AUTOSIG.DOC         - user's manual formatted for 60 lines per page
+o  AUTOSIG.HLP         - program help file
+o  WHATSNEW.68A        - this file identifying changes since version 6.3a
+o  ATO.ICO and ATO.PIF - for operation under MS Windows
+
+AUTOSIG requires about 350K to run, and 90K more than that if the PPN
+processor (Alt-M command) is used.
+
+This file summarizes the more important changes since Version 6.3a.  You
+should check AUTOSIG.DOC for more information.  You should also carefully
+review the new help screens for any new interesting functions.
+
+The most notable enhancements to AUTOSIG are:
+____________________________________________
+
+o  AUTOJOIN - ATO now detects that you have entered a new forum, and it will
+   sign you up as a new member.  To do this, a couple of things are required.
+   First, ATO now asks you for the name that you would like to use.  This
+   name is stored in the AUTOSIG.DFN definitions file.  You can change the
+   name by editing the DFN file and modifying the last record.  (To do this,
+   you must use an editor which can handle very long (512-byte) records or
+   lines.)  Second, your CIS profile must specify that you are in Menu (not
+   Command) mode for new forums.
+
+   In addition to AUTOJOIN, there is a new Alt-J command available in
+   terminal mode.  When invoked, it sets all of the forum OPtions that ATO
+   likes.  You can have this function performed as part of an AUTO pass by
+   inserting the + (plus) command code in your AUTO list.  Thus you can use
+   the AUTO + command to update your lists of forum section and library
+   section names.
+
+o  10xxxx USERIDS - Wherever ATO uses PPNs (user IDs), the 10xxxx series of
+   PPNs may now be used. This includes the PPN (address list) processor,
+   automatic pickup of return address when replying to message and use in
+   the Send box in the message editor.
+
+o  SCRIPT processor - Script handling has been overhauled. The capacity
+   has been increased to 500 statements of 126 bytes each. Several more verbs
+   have been improved to expand symbolic variables. The %PCDATE and %PCTIME
+   global variables have been added to return the current date and time.
+
+o  MESSAGE EDITOR - There are many, many improvements to the message editor.
+   Some of these are:
+     -  Alt-R restores the current line
+     -  Alt-E shells to DOS
+
+Other enhancements include:
+__________________________
+
+o  File sharing and locking has been implemented to improve data integrity
+   when running ATO on a network, or in a multitasking environment.
+
+o  The QS/Mark function now works entirely in memory. There is a limit of 500
+   quick scan headers.
+
+o  A "deadman switch" has been added to try to prevent remaining online doing
+   nothing. If CIS is idle for more than 60 seconds, ATO tries to wake CIS
+   up by sending a command (an XON).  After another minute, ATO sends the XON
+   followed by a carriage return (enter).  One minute later, ATO logs you
+   off.
+
+o  A communications scroll-back buffer can be used to review your online
+   session.  While in terminal mode, pressing the up arrow presents the
+   communications buffer.  You can use the up and down arrow keys, PgUp/PgDn,
+   and Home/End keys to position the display.  You may also save the buffer
+   contents to a file for later analysis.  (Note that strange-looking
+   characters will be in the buffer after a binary file transfer.  This is
+   normal.)
+
+o  Ctrl-PgUp can be used in terminal mode in Email to upload binary files.
+   You are prompted for the file name and the addressee ID.
+
+o  Alt-Q command in terminal mode saves the current screen display to a file
+   called SCREEN.ATO.  It appends data to the file if it already exists.
+
+o  More text search commands are available in the Read and View functions:
+   / for case sensitive, \ for case insensitive (same as L), F9 to search
+   backwards, and F3 to search forwards.
+
+o  In the Read function, the "Sav" caption at the bottom of the screen will
+   be shown in inverse when you have Saved the current message.  The
+   indicator will stay that way until you leave the current message.  ATO
+   will also refuse to do a second save and issue a short error message if
+   you hit S again while still viewing the same message.  If the message is a
+   multiple-screen message and the bottom prompt line is not visible, "Saved"
+   will be shown in inverse at the bottom left of the current screen.  Note
+   that all of this only applies until you move to a different message.
+
+o  Sysop commands FMA, FMB, CHA and DELETE can be set offline during message
+   Reading with ATO automatically executing them online later. Details on
+   these commands are available in a separate document.
+
+o  Handling of downloads (via PgDn at a disposition prompt) where the new
+   file has the same name as an existing file has been improved.  If the
+   requested file already exists in your download path, ATO will ask you
+   whether you want to over-write it.  If you are running from a script, ATO
+   will skip the file with the name conflict.
+
+o  Thread marking and thread skipping are now available when Marking H and J
+   full headers.
+
+o  Alt-L on the forum function menu invokes Vern Buerg's shareware LIST
+   program to view the bulletin file as an alternative to the L command.
+
+o  COM9 is another alternative "COMmunications port" name in the host menu to
+   allow for a different configuration used for COM3 with some hardware.
+
+o  The /5 command line switch puts ATO into 43/50 line EGA/VGA mode.
+
+o  When doing an autopass, Version 6.3a forced use of the "quick" CompuServe
+   logon.  Since that logon causes problems in some situations, autopass no
+   longer forces the quick logon.  You can select the quick logon by using
+   the /Y switch when loading ATO (unless you are using Telenet or Tymnet,
+   when quick logon will not work anyway).
+
+o  Alt-G in terminal mode will now pick up library names as well as section
+   names.  Alt-N in terminal mode will then alternately display section and
+   library names.
+
+o  R>eply has been removed from the Kill menu.  It was there, but
+   non-functional in Version 6.3a.  It is non-functional because that feature
+   made it too easy to lose a lot of work composing replies if you hit the
+   wrong key.  The same function can be achieved by selecting Preview and
+   selecting Cancel (F2) for each message.  If you are sure you want to dump
+   all messages, you can Preview and hit Alt-F2 repeatedly which will abort
+   each outgoing message without asking for confirmation.
+
+
+
+Message Editor - Changes in existing program functions:
+______________________________________________________
+
+o  In Version 6.3a, the J command from the Read function sent a message to
+   the addressee of the message being Read, but that message started a new
+   thread rather than joining the existing thread.  The J command has been
+   changed so that it checks the Sb: in the header to find the message # to
+   which the message being Read was a reply.  This is called the "parent"
+   message.  If it finds a parent message, the new message you create will be
+   sent as a reply to the parent message, meaning the new message will be in
+   the same place in the thread as the message being read.  This sounds more
+   complicated than it is so an example may help.  Assume that you are
+   Reading a message with the following header:
+
+   #: 61635 S1/Autosig (ATO) [C]
+       05-May-91  22:03:21
+   Sb: #61571-Multipart messages
+   Fm: SysOp Jim McKeown 76702,1102
+   To: Vern Buerg 70007,1212
+
+   If you hit J, you will be composing a message which will reply to
+   #61571 (which is the parent message to message #61635) and be
+   addressed to Vern Buerg 70007,1212.
+
+   If no backward reference message # is found in the header (say
+   the above header was just "Multipart messages", then ATO just
+   creates a new message addressed to Vern Buerg 70007,1212.
+
+o  In Version 6.3a a W (Write new message) operation where a public new
+   message was Broken into multiple parts (by using Alt-B in the editor) was
+   sent as a thread of messages with the second and later parts each being
+   posted as a reply to the previous part.  With the new version, multipart
+   new messages from W which are addressed to a specific non-sysop ID will be
+   sent as separate messages each addressed to that ID.  This change was made
+   to ensure that all parts of such messages will be more accessible to the
+   addressee.  Messages which do not contain an ID or where the ID is a sysop
+   ID will still be sent as a single thread.
+
+o  When you are editing a message whose send mode (accessible in the send box
+   using F7) is set for private posting on the forum (P or X), the second to
+   last line on your screen will be set to the inverse of your hilite color
+   selection.  This will make it easier to know whether you are sending a
+   message privately and avoid sending messages public when you wanted them
+   private.
+
+o  If you attempt to send a private message in a forum which does not allow
+   them, ATO will now send it to the intended recipient using CompuServe
+   Mail.
+
+o  When using Remind (F3) in the message editor, you can press A to go to the
+   top of the "remind" message.  This is similar to the same function in
+   Read.  (Home also works the same way in each case.)
+
+
+
+Fixes to problems with Version 6.3a
+___________________________________
+
+o  Start time now works properly with /1 and /2.
+
+o  The Skip RM setting will now skip the read of waiting messages on entering
+   a forum if Skip RM is set to Y
+
+o  Certain machines' problems with losing characters from CompuServe are now
+   fixed.
+
+o  Messages can now be uploaded successfully with LINEDIT selected as your
+   forum editor, though we still recommend you keep EDIT selected as your
+   forum editor since it is faster.
+
+o  Subjects are now picked up correctly from CompuServe Mail messages.
+
+o  If you run out of space in the editor, ATO should stop you and tell you
+   that you can't add any more lines.
+
+o  The F forum function will now continue properly even if an attempt is made
+   to use F in a forum which has no new messages to read.

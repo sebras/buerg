@@ -1,0 +1,56 @@
+AUTOSIG Updates                                                    Version 6.8b
+---------------                                                October 25, 1991
+
+
+ 6.8b - October 25, 1991
+  - correct deadman routine not disconnecting after third timeout
+  - fix script prompts to work with new CIS library software
+  - display warning if part of incoming message too long for display in R or V
+  - combine RT commands to improve speed downloading messages with D.  Thanks
+    to Walter Dnes for inspiring this change.  (Warning: this will cause the RT
+    commands sent to CIS to look different.)
+  - correct auto-join to work properly anytime user enters forum in menu mode
+    (Note: users should set DEFAULT profile for menu mode so auto-join is
+    activated when entering new forums.)
+  - correct COM not echoing after alt-E (DOS shell) while in terminal mode
+  - correct error 13 during alt-G
+  - show warning if part of message not displayed
+  - correct synchronization problem with Q and ATO HMN beyond CIS HMN
+  - combine read thread lines to improve D function speed
+  - allow commas in forum name entry
+  - change PgDn check for "Disposition !" prompt to account for ^H as
+    the prompt character
+
+ 6.87 - September 17, 1991
+  - correct using PPN from earlier messages for replies
+  - correct MATCH not clearing received text from previous MATCH
+  - correct error 9 at 7031: too many headers for QS/Mark
+
+ 6.86 - September 7, 1991
+  - correct script UPL command leaving out "upl" part (oops)
+  - correct E (shell) waiting for COM data after disconnect
+
+ 6.85 - September 5, 1991
+  - add command line /W switch to disable deadman timeout routines
+  - add more checking for /type: and /prot: in script UPL command
+
+ 6.84 - August 28, 1991
+  - correct appending data to files after EOF (x'1A') control char
+  - correct script, including Email, uploads causing problems
+  - change PPN processor to treat <enter> like Paste, <spacebar> like old enter
+
+ 6.83 - August 27, 1991
+  - correct truncated DFN file after alt-K/alt-O
+  - correct out of memory problem at disconnect (writing DFN file)
+
+ 6.82 - August 18, 1991
+  - add ability to specify COM port address and IRQ instead of COMn name:
+    the syntax is &Hxxxx/i where xxxx is the hex base port address, e.g.
+    03F8 for COM1, and i is the IRQ numbers, e.g. 4 for COM1;
+    DO NOT USE this unless your modem uses an IRQ other than 3 or 4!
+  - work on hang after Email binary download
+
+ 6.8a - August 10, 1991
+  - public release
+  - correct Z message on forum config screen
+

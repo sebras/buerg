@@ -123,7 +123,7 @@
   - fix message Download function so that it traps message not found sent from CIS, locates the offending section of a stacked command line and sends the rest of the line to avoid missing messages.
   - apply command stacking to output from marking H and J headers as well as Q
   - set comm input to simpy ignore NULs (hex 00 characters) during text comm
-- 6.8b 10/25/91
+- [6.8b](6.8b) 10/25/91
   - public release
   - correct deadman routine not disconnecting after third timeout
   - fix script prompts to work with new CIS library software

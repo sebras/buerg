@@ -38,7 +38,7 @@
   - correct total SF
 - 1.05 01/23/86
   - supports ARC 5.0 new formats
-- 1.04 01/19/86
+- [1.04](1.04) 01/19/86
   - make displays MS-DOS compatible
 - [1.03](1.03) 01/10/86
   - released for general use

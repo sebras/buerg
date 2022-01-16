@@ -1,0 +1,107 @@
+Command LIST
+----------------
+
+ Purpose:  To display the contents of an ASCII file, line by
+           line, with operator positioning commands.
+
+ Format:   LIST [d:][path]filename[.ext]
+
+ Remarks:  An ASCII file of any size may be listed.
+
+        On the COMMAND line, enter a letter or control key:-
+
+        Letter(s)       Control key     Function
+        -----------     ------------    ------------------------
+                        Enter           continue to next page
+        Q, X            ESCape          terminate and exit to DOS
+        T               HOME            restart from first block (top)
+        B               END             skip to end of file (bottom)
+        D               PgDn            scroll down one page
+        U               PgUp            scroll up one page
+        H or ?          F1              list commands (HELP)
+        L               left arrow      scroll left 20 columns
+        R               right arrow     scroll right 20 columns
+        P               up arrow        up one (previous) line
+        N               down arrow      down one (next) line
+
+        /text                           find 'text'
+        A               F3              find next occurance of 'text'
+
+                        ctl-HOME        restart from CURRENT block
+                        ctl-PgUp        restart from first block (TOP)
+                        ctl-PgDn        skip to end of file (BOTTOM)
+                        ctl-left-arrow  reset scroll to column 1
+
+                        F1              Help
+                        F3              Find next
+                        F10             Exit
+
+ Restrictions:
+        All positioning is relative to the current block in
+        storage. The size of the block depends on the amount of
+        memory available, up to 64K.
+
+        The maximum record length currently allowed is 255.
+
+        Logical records (ending in LF and/or CR) are placed
+        into the DOS screen buffer - mono or color display.
+
+        PC-DOS Version 2.0 or later is required.
+
+        ANSI.SYS is NOT required.
+
+ Scanning for text:
+        To scan for a character string, type a slash (/)
+        followed by one or more (up to 32) characters. The
+        scan text, but not the slash, is displayed on the
+        command line. Only the current block is scanned.
+
+        If the text is found, the line containing it is displayed
+        as a blinking line.
+
+        If the text is NOT found, an error message is displayed
+        and the display remains unchanged. To scan the next block,
+        "page" into it with PgDn or Down, and use F3 to re-scan.
+
+ Screen attributes:
+        There are three classes of attributes used. One for
+        normal display lines - lines 2 to 24, another for
+        special lines - lines 1 and 25, and a third for the
+        background color.
+
+        These attributes may be changed by using DEBUG:
+
+         at offset 11C = 09     ;special lines, hi-lighted or lt.blue
+         at offset 11D = 02     ;normal lines, green
+         at offset 11E = 07     ;background, black - foreground, white
+
+        If these values don't match, you have a different version.
+        ----------------------------------------------------------
+
+        Written by Vernon Buerg, April, 1984, for the IBM PC
+        using DOS 2.0 and is supplied for public domain use.
+        Not for sale or hire.
+
+        Version 1.4, April 27, 1984.
+
+SVSC Librarian comment:  This version strips the high bit from all
+  characters.  This provides a normal display of a WordStar file.  If
+  you desire to see extended ASCII characters in their true representation
+  then either:
+        Use DEBUG to NOP the bit mask with:   -E8d1 90 90
+  or
+        Comment out the And AL,07h after the GetR4 label in the source.
+
+
+  If you desire to show control characters such as form feeds then either:
+
+       Use DEBUG to make the JAE a JMP with: -E7fc EB
+  or
+
+       Comment out the CMP, JAE, ADD & JMP instructions following the
+       Dsp2: label.
+                                                hs
+
+
+prologues with this pair
+ (i

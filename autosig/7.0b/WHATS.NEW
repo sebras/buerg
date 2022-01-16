@@ -1,0 +1,145 @@
+
+AUTOSIG                                                         Version 7.0b
+_______                                                        June 18, 1995
+
+
+Version 7.0b of AUTOSIG - ATO - is mainly a maintenance release to add the
+mouse and BIOS writes which were omitted from 7.0a and take account of
+CompuServe changes.  As in the past, most changes are transparent to the user
+and reflect corrections to reported problems and improvements to overall
+function and performance.  This document is simply a listing of new features
+and important fixes.  Consult AUTOSIG.DOC (in ATODOC.EXE) for more information.
+
+AUTOSIG can be obtained by downloading the following files (with their contents
+listed after each):
+
+o  ATOSIG.EXE
+      AUTOSIG.EXE      - main program
+      AUTOSIG.HLP      - program help file
+      README           - brief conversion info
+o  ATODOC.EXE
+      AUTOSIG.DOC      - user's manual formatted for 57 lines per page
+      CSETUP.SCR       - general CIS option setting script
+      STARTUP.DOC      - quickstart guide
+o  ATOADV.EXE
+      AUTOADV.DOC      - advanced manual: scripts, ATOPPN, ACLS
+                         (addressbook info now in AUTOSIG.DOC)
+o  ATOADV.NEW          - update to script features in AUTOADV.DOC
+o  WHATS.NEW           - identifies changes since version 7.0a
+o  ATOICO.COM and ATO.PIF - for operation under MS Windows
+
+AUTOSIG requires about 450K to run.
+
+This file lists the more important changes since Version 7.0a.  You
+should check AUTOSIG.DOC for more information.  You should also carefully
+review the new help screens for any interesting new functions.
+
+Major changes and enhancements to AUTOSIG are:
+____________________________________________
+
+o  New send box for Mail forum to allow Normal text messages (sent without
+   B+ transfer) and Latin-1 messages (sent with B+ transfer).  Also Binary
+   and Text files can be Mailed.  Text file mailing is particularly useful
+   to send files to Internet addresses.  New send box also allows any Mail
+   subject to be used, even when sending files.
+
+o  A logoff script can be specified after a slash in the host setup
+   "LogOn/Off SCRipt file" field.  E.g., L1.SCR/O1.SCR means L1.SCR is
+   used for logon and O1.SCR is used for logoff.  This should help users
+   who need special action to logoff from supplemental networks.
+
+o  Mouse implemented as in 6.9a with one intended change: clicking on forum
+   goes to that forum (as if letter key pressed) instead of just selecting
+   that forum and requiring separate click or CR to go to forum.  Right
+   button works for <Esc> on main menu.  Mouse can be placed on left/right
+   arrows on forum menus to move to adjacent forums.
+
+o  /T commandline switch implemented for BIOS writes.
+
+o  Accept up to 14 characters of filename for <PgDn> at Disposition ! prompt.
+   This allows for CompuServe's new 8-character (plus extension) filenames.
+
+
+Minor changes and enhancements:
+___________________________________
+
+o  Adjust for new SprintNet logoff sequence.  (SprintNet no longer always
+   says 202 DISCONNECTED.)
+
+o  Change default hosts to run from 2400 to 28800 bps
+
+o  Adjust for space after > in Mail address.  First > in any address with
+   no PPN is assumed to be the delimiter.
+
+o  Allow Join in Mail.
+
+o  Make Mail not give error if user name not set in Mail addressbook.  It
+   will read incoming Mail fine, but outgoing Mail will hang because waiting
+   for sender name.
+
+o  Only search for "Date: " for start of CompuServe Mail (will help with
+   some of the screwy things CIS does to Mail header format).
+
+o  Save/restore foreground/background colors.
+
+o  Remove write to log for forums not visited in auto 1 pass.  (This was
+   slowing down the passes on machines with slow disks.)
+
+o  Set SEND OFF on forum entry to avoid problems with SENDs.
+
+o  Make PgUp/PgDn/Alt-N in PC Options box simply beep instead of exit.
+
+o  Trap error 24 on comm port reset or close, hopefully eliminating hangs
+   at that point, like when modem is turned off.
+
+o  Retain default forum mode settings
+
+o  Remove TIME command when logging off from forum if logoff script
+   specified.
+
+o  Change B+ transfer so abort requires 5 NAKs on same block instead of
+   10 NAKs over length of file.  Change wording in B+ routine: "Timeout"
+   to "Transmission delay" to be more descriptive.
+
+o  Trap comm port device timeout and give informative message.
+
+o  Allow program exit if modem off.
+
+o  Set time after logout before hangup to 20 seconds.
+
+o  Drop DTR when exiting terminal mode if not connected.
+
+o  Port reset when opening the comm port.
+
+o  Increase checksum speed (factor of five) for resume of B+ downloads
+   (will help resume larger files on slow machines).
+
+o  Change default for Alt-S in Read/View to just be forum directory.
+
+o  Change editor character counter after <F10> to allow only 9,973 characters
+   in each message part.
+
+Fixes to problems with Version 7.0a
+___________________________________
+
+o  Mail subject corrected to allow single quotes.
+
+o  Several small changes to detect and respond to CompuServe error messages
+   including too many users in forum.
+
+o  Drop back to DOS if /2/z commandline switches specified and nothing
+   for auto 2 to do.
+
+o  Check for unbalanced [ in To:.  Change last char to ] if needed.
+
+o  Fix problem with Forum ! in forum entry announcements.  (There will
+   still be a problem if Forum ! appears at the left margin.)
+
+o  Prevent Private status of last message Read or Viewed from being carried
+   into W function.
+
+o  Fix overprinting problem when terminal print switch set.
+
+o  Fix routine to turn 16550 off on exit from ATO (if ATO turned it on).
+
+o  Fix some problems where invalid directories were causing untrapped errors.

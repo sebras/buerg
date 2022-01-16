@@ -1,0 +1,109 @@
+AUTOSIG                                                         Version 7.0b
+_______                                                        June 18, 1995
+
+
+AUTOSIG - ATO - has undergone many changes since AUTOADV.DOC (contained in
+ATOADV.EXE) was completed in March, 1990.  Some of those changes affect
+the areas covered by AUTOADV.DOC.  This document provides an update to cover
+those changes.
+
+ATOPPN - ATO Address Book:
+   This function is now simply the ATO address book (because is allows)
+   storing addresses other than PPNs.  It is now documented in the main
+   ATO doc, AUTOSIG.DOC which is in ATODOC.EXE in library 1 of IBMCOM.
+
+
+ATOSCR - Script File Processing updates
+
+Changes in Version 7.0b
+___________________________________
+
+o  set UPLAGREE as new script command to require user to type AGREE
+   for upload.  UPL is now an *illegal* command and will simply be
+   ignored except in Mail.  It can be used in Mail since there is no
+   AGREE requirement there.
+
+**********************************************************************
+   NOTE THAT WHEN YOU USE THE UPLAGREE VERB YOU ARE AGREEING TO THE
+   CONDITIONS BELOW:
+**********************************************************************
+
+        Copyrighted information must not be placed on the
+        Service without the permission of the owner or
+        persons specifically authorized to grant this
+        permission.  You must either have the right to
+        use and distribute information of another, or
+        have created the Information and be the owner of
+        it to be assured that your upload does not
+        violate copyright and other applicable laws.  By
+        proceeding with an upload you represent and
+        agree that you are the owner of it, or are acting
+        with the specific permission of the owner or
+        other person authorized to grant these rights.
+
+
+            Do you Agree? (AGREE/<CR>)
+**********************************************************************
+**********************************************************************
+
+o  BPLUS script command tells ATO to accept a CIS B+ download.  The
+   script must already have instructed CIS to start the download.  Also
+   following script command should be a match to whatever CIS will use
+   as the next prompt following the download.
+
+o  Set up "super-literal" indicator for script line.  If a tag component
+   starts with ASCII 204 (Ì), the rest of the line will be taken as a literal
+   with no interpretation at all.
+
+o  fix to return to active script after logon script executes
+
+o  fix problem caused if DOW script command had "ile" in it.
+
+o  add tag to script RUN command to allow specification of starting
+   statement within script to be RUN.  Format is "Run <n>,<script>"
+   when <n> is the number of the first line in the script to be
+   executed.  "RUN <script>" is still valid and is equivalent to
+   "RUN 1,<script>".
+
+o  paired single quotes within script literals will be interpreted to mean
+   one single quote is desired in the resulting literal.
+
+Changes in Version 7.0a
+___________________________________
+o  Script handling has been overhauled. The capacity has been increased
+   to 500 statements of 126 bytes each. Several more verbs have been
+   improved to expand symbolic variables. The %PCDATE and %PCTIME global
+   variables have been added to return the current date and time.
+
+o  Change script processor to display current statement on last line
+
+o  UPL command accepts variable symbols for filename
+
+o  GOTO is now case insensitive
+
+o  IF now recognizes null strings.  Also the documentation of IF should say:
+   "The condition is set to TRUE if 'var2' occurs within the 'var1' variable,
+   as well as if they are exactly equal."
+
+o  No more than one MATCH command may be satisfied from any one line of
+   CIS output.
+
+o  DOW is not hung by "file not found" on CIS or by an attempted overwrite
+   on the PC disk.  The script processor just goes on to process the next
+   command.
+
+o  The RUN verb has been added to the script processor.  If the last statement
+   in a script is a RUN statement, it results in executing the name of the
+   specified script, e.g.  RUN NEXTPASS.
+
+o  Add checking for LIB:ALL in DOW script commands.
+
+o  Add WRITELINE script command, same as WRITE except write <CRLF> after
+   specified text.
+
+o  Fix %COM so it shows comm input line at time of script Match.
+
+o  Remove trailing space after forum name on logon script verb.
+
+o  Clear forum flag for script command exit verb, prevents getting
+   hung up somewhere when trying to execute the command in the exit tag.

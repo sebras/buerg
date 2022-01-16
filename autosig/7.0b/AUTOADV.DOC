@@ -1,0 +1,1821 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                             A U T O S I G
+
+                              Version 6.3
+
+                      March, 1990 Manual Revision
+
+                      A Communications Program for
+                          Accessing CompuServe
+
+
+
+
+
+
+
+
+
+
+
+
+
+             This manual describes the advanced functions for the
+             ATOPPN database processor, the ATO script language,
+             and ACLS Accounting Log Summary components of AUTOSIG.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             AUTOSIG Version 6.3 -  March, 1990
+             (c) Copyright 1985-90 by Vernon D. Buerg
+
+            T A B L E   O F   C O N T E N T S
+
+__________________________________________________________________________
+
+ Introduction  ......................................................... 1
+
+ I.   ATOPPN - ATO Address Book  ....................................... 2
+      ATOPPN Menu  ..................................................... 3
+      Address Book Commands  ........................................... 4
+        A  Add manual entry  ........................................... 4
+        B  Switch PPN database file  ................................... 4
+        C  Change current entry  ....................................... 4
+        D  Delete current entry  ....................................... 4
+        E  Erase PPN file  ............................................. 4
+        F  Find name or userid  ........................................ 4
+        M  Switch message file  ........................................ 5
+        L  sort by Last name  .......................................... 5
+        N  sort by Name  ............................................... 5
+        P  Put entry to TO: field  ..................................... 5
+        R  Repeat Find to next  ........................................ 5
+        S  Sort by userid/ppn  ......................................... 5
+        U  Update file from msgs  ...................................... 6
+        Q  Quit, return to ATO  ........................................ 6
+        ESC  Abort, return to ATO without updating  .................... 6
+
+ II.  ATOSCR - Script File Processing  ................................. 7
+      Statement syntax  ................................................ 8
+      Summary of Verbs  ................................................ 13
+      Examples  ........................................................ 14
+        Example 1.  .................................................... 14
+        Example 2.  .................................................... 14
+        Example 3.  .................................................... 15
+        Example 4.  .................................................... 15
+        Example 5.  .................................................... 16
+        Example 6.  .................................................... 16
+        Example 7.  .................................................... 17
+        Example 8.  .................................................... 18
+        Example 9.  .................................................... 19
+      Global symbols  .................................................. 20
+        %HOST variables  ............................................... 20
+        %SIG variables  ................................................ 20
+        %PC variables  ................................................. 21
+        %SW Command line variables  .................................... 21
+        Other global variables  ........................................ 22
+
+ III. ACLS - Accounting Log Summary  ................................... 23
+      Log Files  ....................................................... 23
+      Running ACLS  .................................................... 24
+      Figure 1.  ACLS Accounting Summary  .............................. 25
+      Figure 2.  RATES.ATO sample data  ................................ 25
+      Figure 3.  ACLS Rates and Definitions  ........................... 25
+      Figure 4.  ACLS Sample Output  ................................... 26
+
+  Appendices  .......................................................... 27
+      Disclaimer  ...................................................... 27
+      Copying and sharing AUTOSIG.  .................................... 27
+      Using Virtual Disks  ............................................. 28
+
+
+Contents 1                                    AUTOSIG Advanced Functions Guide
+Introduction
+______________________________________________________________________________
+
+
+    AUTOSIG  is  a  program  written  specifically  for  CompuServe  Special
+    Interest Group access.  It provides  an automatic way of processing  SIG
+    messages that is quick and economical.
+
+
+    AUTOSIG is a  FREE communications program  written with Quick  Basic and
+    assembly language.  It  is provided as  a executable (.EXE)  program for
+    the IBM PC. It is fully compatible with Compaq computers, the Tandy 1000
+    and 1200, and  most other clones.   In addition to  its main purpose  of
+    offloading  messages,  it  is  a  terminal  program which can be used to
+    access other areas  of CompuServe and  download from the  Data Libraries
+    using "B" protocol.
+
+
+    This manual discusses three advanced features of AUTOSIG:
+
+    1 - the PPN database processor for keeping an address book
+
+    2 - the script processor used to execute a stored series of ATO commands
+
+    3 - the ACLS accounting log summary report program
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  1                                                 AUTOSIG User's Manual
+I.   ATOPPN - ATO Address Book
+______________________________________________________________________________
+
+
+|   ATOPPN allows you to maintain your own local address book of up to  2000
+|   user names  and IDs.  Using ATOPPN  makes finding  people's names and ID
+|   numbers easy.  About  340K  of available  memory is required to  run ATO
+|   with the ATOPPN database.
+
+    ATOPPN is one of those features that's much easier to use than it is  to
+    explain, so  here's a  short summary  of functions.   After getting  the
+    "flavor" of ATOPPN your best bet is to go for it.
+
+    ATOPPN is  invoked by  using the  alt-M command  at the  Main Menu, at a
+    R>ead prompt, or at the To: prompt when W>riting messages.
+
+|   The name of  the ATOPPN  database  file  is  defined  in  the  ATO Forum
+|   Options menu.  The default is AUTOSIG.PPN.  You may  have more  than one
+|   ATOPPN databse file.
+
+    The display consists of a command menu and a list of user IDs and names.
+    You  may  enter  a  letter  to  invoke  a  function,  or  press a cursor
+    positioning key to scroll the display of user IDs and names.  The cursor
+    positioning keys are:
+
+             HOME       - position to the first PPN entry
+             END        - position to the last PPN entry
+             down arrow - position to the next entry
+             up arrow   - position to the previous entry
+             PgUp       - move back 20 entries
+             PgDn       - move ahead 20 entries
+
+
+    The "current" entry is shown in  two places: on the left side  above the
+    command menu, and  highighted in the  list of PPNs.   This is the  entry
+    that is the subject of any  Change or Delete commands, and of  the Paste
+    command.
+
+    You may  exit the  program by  using the  Q command  to save changes and
+    quit, or the ESCape command to not save any changes and abort.
+
+
+    The display  gives you  the name  of the  PPN file  and of  a file which
+    contains downloaded CompuServe  messages.  You may  change the PPN  file
+    name with the B command, or the message file name with the X command.
+
+
+    The PPN file contains ASCII records,  one for each user ID. Each  record
+    ends with a carriage return (CR) and line feed (LF).  The user ID begins
+    in column 1 and ends in column 10.  The name begins in column 12 and may
+|   be up to 24 characters long.  A user ID  must be of  the form  7xxx,xxxx
+|   where the x may be a number from 0 to 7.
+
+    The ATOPPN menu appears as follows:
+
+
+
+
+AUTOSIG User's Manual                                                 Page  2
+I.   ATOPPN - ATO Address Book
+______________________________________________________________________________
+
+
+ ATOPPN Menu
+
+
+
+     +--------------------------+            +--------------------------+
+     |   AUTOSIG PPN Database   |        0   |       AUTOSIG.PPN        |
++------------------------------------+ +--------------------------------------+
+|  A - Add a manual entry            | |                                      |
+|  B - switch PPN database file      | |                                      |
+|  C - Change current entry          | |                                      |
+|  D - Delete current entry          | |                                      |
+|  E - Erase PPN file                | |                                      |
+|  F - Find name or userid           | |                                      |
+|  M - switch Message file           | |                                      |
+|  L - sort by Last name             | |                                      |
+|  N - sort by Name                  | |                                      |
+|  P - Put entry in TO: field        | |                                      |
+|  R - Repeat Find to next           | |                                      |
+|  S - Sort by userid/ppn            | |                                      |
+|  U - Update file from msgs         | |                                      |
+|  Q - Quit, return to ATO           | |                                      |
++------------------------------------+ |                                      |
+   _   Select a letter                 |                                      |
+                                       |                                      |
+                                       |                                      |
+ Msg file: IBMCOMM.ATO                 |                                      |
+                                       |                                      |
+                                       +--------------------------------------+
+ Use ESCape to abort, no updates        Use cursor keys to scroll display   0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  3                                                 AUTOSIG User's Manual
+I.   ATOPPN - ATO Address Book
+______________________________________________________________________________
+
+ Address Book Commands
+
+
+   A  Add manual entry
+
+    You are asked to enter a new  user ID (PPN) and name.  The user  ID must
+    be  two  numbers  separated  by  a  comma.   The  name  may  be up to 24
+    characters long.  Follow the CIS convention.  The new entry is added  to
+    the end of the file.  For example, you could enter
+
+                        Their name first 70000,0000
+
+|   User IDs may also be added while  R)eading messages  with ATO.  When you
+|   use the Alt-I command to insert a PPN, that entry is added to the end of
+|   the ATOPPN database.  When ATOPPN is invoked,  you are  prompted whether
+|   or not you want to add the inserted user ID.
+
+
+   B  Switch PPN database file
+
+    You are asked to enter the name of the PPN file you want displayed.  You
+    may include a drive and/or path name.  For example, C:\ATO\IBMCOM.PPN is
+    acceptable.
+
+
+
+   C  Change current entry
+
+    You are prompted to supply  new name information for the  current entry.
+    You can not change the PPN number.
+
+
+
+   D  Delete current entry
+
+    The highlighted current  entry is deleted.   The next entry  becomes the
+    new current entry.
+
+
+
+   E  Erase PPN file
+
+    You are prompted to verify that you want to delete the PPN file, and may
+    reply with Y to delete the file, or N to keep the file.
+
+
+
+   F  Find name or userid
+
+    You are prompted for  a text string.  ATOPPN  searches the PPN file  for
+    that text.  The search is case insensitive.  If the text is found in  an
+    entry, that entry is made the current entry.
+
+
+
+AUTOSIG User's Manual                                                 Page  4
+I.   ATOPPN - ATO Address Book
+______________________________________________________________________________
+
+ Address Book Commands
+
+
+   M  Switch message file
+
+|   You are presented with a menu of forum names.  Type in the letter for
+|   the forum message file that you wish to use. Alternatively, you may type
+|   in a file name that  represents a file of  downloaded CIS messages.  You
+    may include  a drive and/or path name.   For example, C:\ATO\IBMCOMM.ATO
+    is acceptable.
+
+
+   L  sort by Last name
+
+    The PPN file is  sorted by ascending order  of user last names.   Middle
+    initials are ignored but title, like [SuperForum] may obscure the sort.
+
+
+
+   N  sort by Name
+
+    The PPN file  is sorted by  user name in  ascending order.  The  sort is
+    case insensitive.  That is, the  names "bill" and "BILL" are  treated as
+    the same name.
+
+
+
+   P  Put entry to TO: field
+
+    The user name and ID are returned to the calling program.  For  AUTOSIG,
+    this information  is copied  to the  "To:" field  in the message editor.
+    Otherwise,  the  information  is  displayed  on  the console.  For EMAIL
+    messages, only the ID (ppn) is copied.
+
+
+
+   R  Repeat Find to next
+
+    Used after  a successful  Find command,  the R  command searches for the
+    next occurrance of the text in the PPN file.
+
+
+
+   S  Sort by userid/ppn
+
+    The PPN file is sorted by user ID (PPN) in ascending order.
+
+
+
+
+
+
+
+
+
+Page  5                                                 AUTOSIG User's Manual
+I.   ATOPPN - ATO Address Book
+______________________________________________________________________________
+
+ Address Book Commands
+
+
+   U  Update file from msgs
+
+    ATOPPN scans the CIS message file for message headers.  It then extracts
+    the  user  names  and  IDs  from  the  "Fm:" line.  When a new userid is
+    encountered, you are given the prompt:
+
+           Add 7xxxx,xxxx new user
+           Y>es, n>o, s>top asking, q>quit?
+
+    Respond with a Y to add the new userid, an N to bypass , an S to add the
+    userid and stop asking each time a new userid is encountered, or with  a
+|   Q to stop processing the message file.  Duplicate  userids  are added if
+|   the name is different.
+
+
+
+   Q  Quit, return to ATO
+
+    You are returned to  ATO, and if any  changes were made the  PPN file is
+    re-written.
+
+
+   ESC  Abort, return to ATO without updating
+    You are  returned to  ATO and  no updates  are processed.   The PPN file
+    remains unchanged.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG User's Manual                                                 Page  6
+II.  ATOSCR - Script File Processing
+______________________________________________________________________________
+
+
+    ATO can execute commands  from a script file.   Scripts are a series  of
+    user coded statements contained within a file.  You execute a script  by
+    issuing the alt-T command while in Terminal Mode.  Or, you may specify a
+    special logon script in each Host entry.  Or, you may supply the name of
+    the script on the command line for starting ATO using the /X  parameter.
+    For example:
+
+                        AUTOSIG /Xdostuff.scr
+
+    A script ends when the last statement has been processed, you press  the
+|   ESCape key, or if an error is detected.  The current limit is  200 lines
+|   in a script file, and 150 different symbols.
+
+    You may also enter one script command at the terminal by using the alt-I
+    keys.
+
+
+    Script statements have the following syntax:
+
+                verb  [operand1 operand2 ... operandn]
+
+    You must  separate the  verb and  operands by  one or  more blanks.  For
+    example:
+
+                UPL funtim.arc /type:ascii/prot:b|c:\save\funtime.arc
+
+    Operands  consist  of  one  or  more  symbol names, and/or literal data.
+    Symbols are either global  system variables, or user  defined variables.
+    The names may be of any  length and may contain any characters  except a
+    space or a single quote.  Global names are listed below.  User names can
+    be any name except that of  a global varable.  Literal data is  a string
+    of characters enclosed  within single quotes.   Quotes are not  required
+    unless the literal string contains the  name of a symbol, a space,  or a
+    comma.
+
+    For  example,  %HOSTsymbol  is  a  global  variable,  %XZ  may be a user
+    variable, and 'hello there' is literal text data.
+
+
+    If the operand is [data], you  may supply a list of symbol  names and/or
+    literal values.  They are combined into one value.
+
+
+    While scripts are  being processed, COM  data may be  received.  The COM
+    data is not processed until a READ, WAIT of MATCH verb is executed.  The
+    last line of COM data is  available in the global variable called  %COM.
+
+
+
+
+
+
+
+
+Page  7                                                 AUTOSIG User's Manual
+II.  ATOSCR - Script File Processing
+______________________________________________________________________________
+
+ Statement syntax
+
+
+  Verb:     * [comment]
+  Function: Provide  user comments or remarks Usage: The statement is ignored.
+
+
+  Verb:     label: [statements]
+  Function: Name a statment for branching purposes.
+  Usage:    Performs the same function as the LABEL verb.
+
+
+  Verb:     ACCEPT symbol
+  Function: Read data from the console into a variable.
+  Usage:    If 'symbol' is not currently defined, it becomes defined.
+            Unless otherwise noted, global symbols may not be modified.
+
+
+  Verb:     BEEP
+  Function: Sound the computer's horn. The ATO beep toggle status is
+            not used.
+
+
+  Verb:     CAPTURE [OFF|ON|filename]
+  Function: Open or close a capture file.
+  Usage:    To open a capture file, specify a file name the first time.
+            After closing the capture file, you may re-open it with the
+            same file name by specifying ON. All received data, except for
+            protocol file transfer data, is written to the end of the capture
+            file. For example,
+
+                CAPTURE FORUM.LOG
+                ... do some stuff ...
+                CAPTURE OFF
+                ... do some more stuff ...
+                CAPTURE ON
+                ... writing to FORUM.LOG again ...
+
+
+  Verb:     CLOSE filenumber
+  Function: Disconnect access to the file associated with filenumber.
+
+
+  Verb:     CLS
+  Function: Clear the screen.
+
+
+  Verb:     DISPLAY [data]
+  Function: Writes data to the current display monitor.
+  Usage:    The 'data' value may be a list of symbol names, and/or literal
+            strings.
+
+
+
+
+AUTOSIG User's Manual                                                 Page  8
+II.  ATOSCR - Script File Processing
+______________________________________________________________________________
+
+ Statement syntax
+
+  Verb:     DOW filename
+  Function: Invokes CIS-QB protocol to download the specified file. The
+            file is placed in the drive\path defined by the Host entry.
+|           The [7xxxx,xxxx] user ID after the filename is optional.
+
+
+  Verb:     ELSE [statement]
+  Function: Process [statement] only when the IF condition is false.
+
+
+  Verb:     EXIT  [code]
+  Function: Terminate processing of the current script file, and
+            if supplied, perform the 'code' function. The code may be
+            any single character that is acceptable at the main ATO menu
+            prompt, such as Z to logoff, or 1 to run AUTO /1, etc.
+
+  Verb:     GOTO label
+  Function: Transfer script processing to the LABEL statement with the
+            identity of 'label'.
+
+
+  Verb:     IF var1 var2 [statement]
+  Function: Set the condition code based on contents of 'var1' and 'var2'
+  Usage:    The condition is set to TRUE if 'var2' occurs within the
+            'var1' variable, not if they are exactly equal. You can use the
+            global and local symbols as var1 and/or var2. For example, you
+            can use %COM to determine if some data occurs in the communications
+            buffer, e.g. IF %COM 'NO CARRIER' THEN DISPLAY 'Gone fishing!'.
+
+            The optional [statement] is executed when the condition is true.
+            Both 'var1' and 'var2' are required. The special %EOF variables
+            have either a null value or the value 'EOF'.
+
+
+  Verb:     LABEL labelname
+  Function: Identify a statement for branching purposes.
+  Usage:    There is no checking for duplicate labels. The first occurance
+            of the label name is used by script verbs, e.g. GOTO. Labels can
+            also be entered in the form "label:", where the colon after
+            the label name identifies the script statement for use by GOTO.
+            For example:
+
+                LABEL LOOP
+                Display "Hello"
+                   -or-
+                LOOP: Display "Hello"
+
+
+
+
+
+
+
+Page  9                                                 AUTOSIG User's Manual
+II.  ATOSCR - Script File Processing
+______________________________________________________________________________
+
+ Statement syntax
+
+  Verb:     LOGON
+  Function: If necessary, sends dialing commands to the modem, and
+            connects to the selected Host; it then issues a Go Page
+            to the selected Forum. If ATO is already online and in
+|           the selected Forum, no action is taken. If the Host or
+|           forum is not valid, the script is terminated.
+
+
+  Verb:     LOGOFF -or- OFF
+  Function: Performs the Z (logoff) function by sending an OFF to CIS
+            and then hanging up the phone.
+
+
+  Verb:     MATCH  data
+  Function: Causes processing to stop until the 'data' is received
+            from the communications line. The 'data' can be a simple
+            literal text string, or a combination of literal and
+            symbolic values. You can interrupt MATCH by pressing the
+            ESCape key. You can not include ^J or ^M in the MATCH text.
+            MATCH is different from WAIT in that the MATCH [data] is
+            expanded (resolved) for any user symbols.
+
+|           You may specify two search texts in the 'data' argument by
+|           separating them with a | symbol. For example, ABC|DEF will
+|           search for ABC or DEF.
+
+
+  Verb:     OPEN filename filenumber mode
+  Function: Initialize access to a file for READ and WRITE use. The
+            filename may include drive and space. The filenumber must
+            be value from 0 through 9, determined by you. The 'mode'
+            must be INPUT, OUTPUT or APPEND.
+
+
+  Verb:     PAUSE [number]
+  Function: Suspend processing for 'number' of seconds.
+  Usage:    If the 'number' is omitted, a one second pause results.
+
+
+  Verb:     READ  [filenumber] [symbol]
+                        -or-
+            READLINE  [filenumber] [symbol]
+  Function: Get data from the specified file and place it into the local
+            symbol. If [filenumber] is omitted, the communications buffer
+            is assumed. If [symbol] is omitted, %COM is assumed.
+
+
+
+
+
+
+
+
+AUTOSIG User's Manual                                                 Page  10
+II.  ATOSCR - Script File Processing
+______________________________________________________________________________
+
+ Statement syntax
+
+  Verb:     SEND  [data]
+  Function: Write data to the COM port
+  Usage:    The data may be a list of symbol names and literal strings.
+            All data fields are combined into one string and sent to the
+            COM port. Control characters may be entered by using the carat
+            symbol (^) followed by a control character letter. For example,
+            a ^M will result in a carriage return (CR) being sent. A pause
+            may be embedded in any data string by entering a squiggle (~)
+            character.
+
+  Verb:     SENDLINE [data]
+  Function: Write a line of data to the COM port.
+  Usage:    Similar to SEND except that a carriage return ^M is appended
+            to the [data].
+
+
+  Verb:     SET symbol data
+  Function: Assign a value to a symbol.
+  Usage:    Unless noted below, values can not be assigned to global
+            symbols. User symbols become defined when they are referenced
+            by a SET statement.  The 'data' may be a list of symbol names
+            and/or literal data. For example,
+                SET x 'hello'
+                SET y x
+            results in the symbol y having the value 'hello'.
+
+|           Some global symbols may also be changed with SET. For example,
+|               SET %SWD Y
+|           turns on the /D carrier detect over-ride option so that you
+|           may place ATO online even though ATO can't detect carrier.
+
+  Verb:     SHELL dos-command-text
+  Function: Invoke a DOS command or other program.
+
+
+  Verb:     SHOW [symbol]
+  Function: Display one or all defined symbols.
+  Example:  SHOW %SWD will result in a display of the %SWD value, Y or N.
+
+
+  Verb:     THEN [statement]
+  Function: Process [statement] only when the IF condition is true.
+
+
+  Verb:     TRACE [ON|OFF]
+  Function: Enable or disable tracing of the script statements. If TRACE
+            is ON, all script statements are displayed before they  are
+            executed.
+
+
+
+
+
+Page  11                                                 AUTOSIG User's Manual
+II.  ATOSCR - Script File Processing
+______________________________________________________________________________
+
+ Statement syntax
+
+  Verb:     UPL cisfilename[|yourfilename]
+  Function: Invokes CIS-QB protocol to upload the specified file. You may
+            include drive\path with the file name.  Since CIS allows only
+            six characters in the filename, you may supply both the CIS
+            file name and your computer's file name. Separate the CIS and
+            your filename with a | character, for example:
+
+            UPL MYPROG.ARC /prot:b/type:bin| C:\TESTBED\NEWVERSN.ARC
+
+            When you supply both names, using the | character, you must
+            also supply the /prot: and /type: parameters for CIS.  You can
+            take advantage of this syntax to upload ASCII files, since the
+            default type for uploads is BINary.
+
+
+  Verb:     WAIT  [text]
+  Function: Suspend processing until the data is received from the COM
+            communications line.
+  Usage:    Checking is performed for lost carrier and the modem return
+            messages for NO CARRIER, etc. If a disconnect if detected,
+            the script is terminated. Execution of the script resumes when
+            the [data] is received by the communications line. Unlike MATCH,
+            there is no expansion of symbols. The [text] is used as-is.
+
+
+
+  Verb:     WRITE [filenumber] [symbol]
+  Function: Place the data contained in the [symbol] local variable into
+            the file associated with [filenumber].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG User's Manual                                                 Page  12
+II.  ATOSCR - Script File Processing
+______________________________________________________________________________
+
+ Summary of Verbs
+
+
+
+        Notation:
+                [] brackets identify optional parameters
+                |  indicates an exclusive choice
+                data  means a string of literal and/or symbol values
+                text  means a string of literal values
+
+        ----------------------------------------------------------------
+
+        * [comment]                           SEND  [data]
+                                              SENDLINE [data]
+        label: [statements]                   SET symbol data
+                                              SHELL dos-command-text
+        ACCEPT symbol                         SHOW [symbol]
+
+        BEEP                                  THEN [statement]
+                                              TRACE [ON|OFF]
+        CAPTURE [ON|OFF|filename]
+        CLOSE filenumber                      UPL cisfilename[options|yourfilename]
+        CLS
+                                              WAIT  text
+        DISPLAY [data]                        WRITE filenumber symbol
+        DOW filename[ppn]
+
+        ELSE [statement]
+        EXIT [code]
+
+        GOTO labelname
+
+        IF var1 var2 [statement]
+
+        LABEL labelname
+        LOGOFF
+        LOGON [host forum]|[forum]
+
+        MATCH data
+
+        OFF
+        OPEN filename filenumber mode
+
+        PAUSE [number]
+
+        READ  [filenumber] [symbol]
+|       READLINE  [filenumber] [symbol]
+
+
+
+
+
+
+
+
+Page  13                                                 AUTOSIG User's Manual
+II.  ATOSCR - Script File Processing
+______________________________________________________________________________
+
+ Examples
+
+
+   Example 1.
+    Demonstrate the use of IF, THEN, and ELSE
+
+          sendline
+        label again
+          read
+          if %COM 'Function:' then goto ready
+           else display 'not yet'
+          goto again
+        label ready
+           beep
+           display 'What time is it?'
+           accept tod
+           exit
+
+    The 'IF' verb  does not require  a statement.  You  can place any  valid
+    statment after the  IF, and/or can  use the THEN  and ELSE verbs  later.
+    The IF condition remains valid until  the next IF is executed.  IF  does
+    require at least two parameters; the 'var1' and var2' values.
+
+
+   Example 2.
+    Demonstrate the use of SEND, WAIT, and literal strings.
+
+        trace on
+        Send 'go ' ibmcom^M
+        Wait Function:
+        Send 'ust^M'
+       label loop
+        If 'Function:' Goto Ready
+        Read
+        Goto loop
+       label ready
+        display 'Ready to proceed...'
+        beep
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG User's Manual                                                 Page  14
+II.  ATOSCR - Script File Processing
+______________________________________________________________________________
+
+ Examples
+
+
+   Example 3.
+    Demonstrate use of global variables
+
+         * Use the current HOST and SIG selections to log on
+         send ATDT %HOSTPHONE ^M
+         match CONNECT
+         pause 4
+         send '^C'
+         match User ID:
+         display '{' %COM '}'
+         send %HOSTUSERID ^M
+         if %hostuserid '\' then goto have.pswd
+          match Password:
+          send %HOSTPASSWORD '^M'
+        label have.pswd
+         match OK
+         send 'GO ' %SIGPAGE
+         match 'Function:'
+         set savecolor %PCNORMAL
+         set %PCNORMAL '15,2'
+         display 'The current high message number is:' %SIGHMN
+         set %PCNORMAL savecolor
+         beep
+         display 'Ready when you are ...'
+
+
+
+   Example 4.
+    Logon via Tymnet
+
+        * wait for 300 baud terminal id request
+        pause 3
+        * use tty terminal id
+        send a
+        * wait for "please log in:" prompt
+        match in:
+        * make sure we have a user id
+        if %HOSTACCOUNT '' set %HOSTACCOUNT 'CIS02'
+        sendline %HOSTACCOUNT
+        * we made it!
+        *
+        display 'Logon to TYMNET successful'
+        beep
+        * ATO continues the logon from the User ID: prompt
+        exit
+
+
+
+
+
+
+
+Page  15                                                 AUTOSIG User's Manual
+II.  ATOSCR - Script File Processing
+______________________________________________________________________________
+
+ Examples
+
+
+   Example 5.
+    Logon via Telenet
+
+        * wait for line to settle
+        pause 3
+        * send baud code or c/r depending on baud rate
+        if %HOSTBAUD '2400' Send '@~^M~~'
+        Else Send '^M^M'
+        * wait for "TERMINAL=" prompt
+        match 'TERMINAL='
+        send D1^M
+        * clear the COM buffer up to where we should be
+        match 'D1'
+        * wait for "@" net prompt
+        match @
+        send 'C 202202' ^M
+        * we made it!
+        *
+        display
+        display 'Logon to Telenet successful!'
+        beep
+        exit
+
+
+
+   Example 6.
+    Demonstrate use of Open, Write, Close
+
+        open bulletin.ato 5 input
+  loop: read 5 text
+        if %EOF5 EOF then goto done
+        display text
+        goto loop
+        label done
+        close 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG User's Manual                                                 Page  16
+II.  ATOSCR - Script File Processing
+______________________________________________________________________________
+
+ Examples
+
+
+   Example 7.
+    DATAPAC logon and reset of PAD parameters for binary transfers
+
+    *  Begin script.  Tell Datapac that this is 1200 baud  (note change the
+    *  ".." to a single period "." for 300 baud)
+    SEND '..^M'
+    *
+    *  Wait for DATAPAC acknowledgement before continuing
+       WAIT DATAPAC:
+       READ
+       PAUSE 2
+    *
+    *  Request a direct DATAPAC to CIS connection
+       SEND 'P 29400138^M'
+    *
+    *  Wait for CIS Host response
+       WAIT Name:
+       SEND 'CIS^M'
+    *
+    *  Wait for CIS User ID prompt
+       WAIT ID:
+       PAUSE 2
+    *
+    *  Enter DATAPAC command mode by sending ^P to DATAPAC and beginning the
+    *  PAD changes
+       SEND '^PPROF 1^M'
+       PAUSE 2
+    *
+    *  Check the parameters of PROF1
+       SEND 'PAR^M'
+       WAIT 126:016
+       PAUSE 2
+    *
+    *  Reset the PAD parameters
+       SEND 'SET?002:001,126:004,003:000,004:004,007:008,020:032,001:000^M'
+       WAIT 001:000
+       PAUSE 2
+    *
+    *  Double check that the PAD was correctly modified
+       SEND 'PAR^M'
+       WAIT 126:004
+       PAUSE 2
+    *
+    *  Exit DATAPAC command mode and re-enter CIS
+       SEND '^M'
+       PAUSE 2
+       SEND '^M'
+       BEEP
+       EXIT
+
+
+
+Page  17                                                 AUTOSIG User's Manual
+II.  ATOSCR - Script File Processing
+______________________________________________________________________________
+
+ Examples
+
+
+   Example 8.
+    Template for automatic ATO uploading
+
+   * Get to forum and DL
+
+     logon CIS2400 IBMCOM
+     send 'DL0'^M
+     match DL 0 !
+
+   * Upload the file
+
+     upl c:\test\upl.scr
+
+   * Upload the description
+
+     match Description
+     match ):
+     send 'Template for generating script files to automatically upload'^M
+     pause 2
+     send 'files using ATO.'^M
+     pause 2
+     send ^M
+
+   * Upload the keywords
+
+     match Keywords:
+     send 'ATO TESTING' ^M
+     match (Y or N)?
+     send Y^M
+
+     beep
+     display 'Upload is complete!'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG User's Manual                                                 Page  18
+II.  ATOSCR - Script File Processing
+______________________________________________________________________________
+
+ Examples
+
+
+   Example 9.
+    Script to set up a new forum for ATO
+
+    * at the forum "Enter choice !" prompt,
+    * use Alt-T to run the SETUP.SCR script
+
+    sendline op
+    match !
+    sendline pause
+    match :
+    sendline n
+    match !
+    sendline editor
+    match :
+    sendline edit
+    match !
+    sendline 2
+    match :
+    sendline command
+    match !
+    sendline pc
+    match prompt:
+    sendline ^G
+    match !^G
+    sendline
+    match ?
+    sendline p
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  19                                                 AUTOSIG User's Manual
+II.  ATOSCR - Script File Processing
+______________________________________________________________________________
+
+ Global symbols
+
+
+    Global  symbols  contain  data  from  the  HOST,  FORUM,  and PC OPTIONS
+    definitions.   The  HOST  and  FORUM  variables  are  read-only.  The PC
+    Options variables may be changed by the SET script command.
+
+    The HOST menu symbols have a name of the form '%HOSTname'.
+
+    The FORUM menu symbols have a name of the form '%SIGname'.
+
+    The PC Options symbols have a name of the form '%PCname'
+
+
+
+   %HOST variables
+        From Host options menu, read-only
+
+        Symbol name Default value        Symbol name Default value
+        ----------- -------------------- ----------- --------------------
+        NAME        host's name          PATH        default ATO d:\path
+        PHONE       telephone number     COM         communications port
+        USERID      your user id         CONNECT     modem connect response
+        PASSWORD    your password        DISCON      modem disconnect response
+        ACCOUNT     Tymnet host          HANGUP      modem commands to hang up
+        CODE                             RESET       modem commands to reset
+        UPROMPT     Userid: prompt       RPROMPT1    CIS logon message 1
+        PPROMPT     Passsword: prompt    RPROMPT2    CIS logon message 2
+        BAUD        baud rate            BULLETIN    bulletins file name
+        MDMCMDS     modem commands       ANSWER      response to CONNECT
+        PATH        file xfer d:\path
+
+
+
+
+   %SIG variables
+        From Forum Options menu, read-only.
+
+        Symbol name Default value          Symbol name Default value
+        ----------- --------------------   ----------- --------------------
+        NAME        forum name             LOG         logging option, y/n
+        PAGE        go page                STAY        stay connected option
+        HOST        host name              SENDP       send ^P option, y/n
+        DRIVE       default d:\path        SECS        section numbers list
+        HMN         high message number    PPN         PPN d:\path\filename
+        APPEND      append option, y/n
+
+
+
+
+
+
+
+
+
+AUTOSIG User's Manual                                                 Page  20
+II.  ATOSCR - Script File Processing
+______________________________________________________________________________
+
+ Global symbols
+
+
+   %PC variables
+        From PC Options menu, read or write allowed:
+
+        Symbol name     Default value
+        -----------     ---------------------------------
+        NORMAL          Value of normal display color
+        HILITE          Value of hitlited display color
+        LINES           Number of printed ilnes per page
+        H               Retrace test option, Y or N
+        K               Email KEEP option, Y or N
+        M               Skip RM option, Y or N
+        C               Cls each msg option, Y or N
+        B               Disable keyboard option, Y or N
+        F               Printer formfeed option, Y or N
+        S               Sort QS headers option, Y or N
+        T               Slow screen option, Y or N
+        Q               Quiet alarms option, Y or N
+        P               Send logon ^P option, Y or N
+|       U               Suppress sending ^U, Y or N
+        PROMPT          Prompt character, e.g. ^G
+        MOUSE           Allow mouse, Y or N
+        INSERT          Default editor insert mode, Y or N
+
+   %SW Command line variables
+
+|       Each command optional switch can be referenced or changed.
+|       The variable name is of the form:  %SWx
+|       represents the value of the /x switch, Y if on, N if off.
+
+    where 'x' is one of the following:
+        B            /B  suppress console input, Batch mode
+        C            /C  clear screen each message
+|       D            /D  connect status
+        E            /E  debug, print error messages
+        F            /F  Print TOF
+        I            /I  allow mouse as Input
+        J            /J  default editor to input status
+        M            /M  send RM if appropriate
+        N            /N  No prompt at disconnect
+        O            /O  use Old B protocol
+        P            /P  send ^P at logon
+        Q            /Q  Quiet (no beeps) operation
+        S            /S  have AUTO Sort QS headers prior to marking
+        T            /T  don't use direct screen writes
+        U            /U  suppress command ^U prefixing
+        V            /V  menu mode or command mode (terse)
+        Y            /Y  bypass logon messages, quick logon
+        4            /4  use 43-line mode if available
+        Z            /Z  exit to DOS after logoff
+
+
+
+Page  21                                                 AUTOSIG User's Manual
+II.  ATOSCR - Script File Processing
+______________________________________________________________________________
+
+ Global symbols
+
+
+   Other global variables
+        Symbol name     Default value
+        -----------     -----------------------------------------
+        %COM            current contents of communications buffer
+                        since the last READ, WAIT, or MATCH
+
+        %EOF1 thru %EOF9
+                        the current end-of-file status for OPENed
+                        files. If end-of-file has occurred, the
+                        %EOFn value is the character string EOF.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG User's Manual                                                 Page  22
+III. ACLS - Accounting Log Summary
+______________________________________________________________________________
+
+ Log Files
+
+
+    There is one other set of files created and maintained by AUTOSIG.  They
+    are the  AUTOSIG.mmm Log  files.  The  'mmm' is  an abbreviation for the
+    current  month.   The  Log  files  contain  a  record  of  your  time on
+    Compuserve.  There is one record in the file for every access to CIS  by
+    ATO. Each record contains the following:
+
+           Date,Baud,Time-on,Time-off,Elapsed-time,Sig-name[flag]
+
+
+    The file can be displayed with  the TYPE command, or other text  display
+    programs such as LIST.
+
+
+    The [flag] code indicates the condition in which you exited the SIG. "+"
+    means that the AUTO option was  in use; "*" indicates that you  selected
+    the "Stay Connected" option;  no flag means that  this was the only  SIG
+    accessed, or that this was the last  in a series.
+
+
+    A minus "-"  next to the  elapsed time field  means that you  uploaded a
+    file and you will receive a credit for the time used.
+
+
+    If you are  using the multiple  SIG feature (the  stay connected option)
+    there  is  a  possibility  that  the  SIG  name  for each session may be
+    incorrect  depending  on  what  functions  are performed.  Once you take
+    control of the program, the log file will charge all online time to  the
+    last SIG you accessed.
+
+
+    If you  like to  keep detailed  records of  SIG usage,  continue to keep
+    manual records even  if you don't  use the multiple  SIG feature.  There
+    will always  be minor  differences in  the AUTOSIG.log  and your  manual
+    records, so keep this in mind.   Also, remember that the log file  keeps
+    records of your time online to  the tenth of a minute, while  CIS rounds
+    each logon up to the next minute.  This is one reason why AUTOSIG's AUTO
+    and Stay Connected  options can be  much more economical,  since the CIS
+    rounding up doesn't take place until you log off.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  23                                                 AUTOSIG User's Manual
+III. ACLS - Accounting Log Summary
+______________________________________________________________________________
+
+ Running ACLS
+
+
+    There is a companion program to AUTOSIG called ACLS which can be used to
+    get a report of your CIS activity.  ACLS can be run alone or from within
+    ATO.  ACLS  offers  several  ways  of  reading summaries of your connect
+    charges.
+
+
+    In ATO, note  the dollar sign  "$" next to  "X" on the  main menu.  When
+    you've finished your sessions with AUTOSIG, you can enter "$" instead of
+    "X" to run the ACLS program rather than exit to DOS. You can also select
+    this  option  in  the  middle  of  an  AUTOSIG  session  to  get a quick
+    accounting, as ACLS  provides the option  of returning back  to AUTOSIG.
+    ACLS  assumes  that  the  ATO  program  file  is named "ATO.EXE" and not
+    "AUTOSIG.EXE". You can tell ACLS the actual program name by supplying a
+    SET parameter for the variable ATO-NAM. For example, if your ATO program
+    file is called ATOTEST.EXE, you would enter the DOS command:
+
+                    SET ATO-NAM=ATOTEST.EXE
+
+    before running  ATO or  ACLS.  The  ATO program  file should  be in  the
+    current directory, but, if  ACLS can not find  it, you will be  asked to
+    supply the drive, path, and file name for ATO.EXE.
+
+
+
+    ACLS  requires  a  file  called  RATES.ATO.   This  file  contains   the
+    information necessary to compute online charges based on the day of  the
+    week, time of day, and the  baud rate used.  A sample RATES.ATO  file is
+    provided.  Additionally,  the communications  surcharge, if  any, can be
+    supplied through the SET variable called ATO-CS, for example
+
+                    SET ATO-CS=0.25
+
+
+    When using ACLS remember that it calculates an approximate cost  usually
+    on the high side.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG User's Manual                                                 Page  24
+III. ACLS - Accounting Log Summary
+______________________________________________________________________________
+
+ Running ACLS
+
+
+ Figure 1.  ACLS Accounting Summary
+
+   ACLS Selection Menu
+
++-------------------------------------+--------------------------------------+
+|                                     |    Summary Report Option Keys        |
+|              A C L S                +--------------------------------------+
+|                                     |     M    Month to date               |
+|     A Usage Log Summary Utility     |     D    Today only                  |
+|            for AUTOSIG              |     O    Other month or file         |
+|                                     |                                      |
+|            Version 3.11             |     R    Rates and definitions       |
+|            March 22, 1990           |     A    Restart AUTOSIG             |
+|                                     |     X    Exit to system              |
++-------------------------------------+--------------------------------------+
+|              ATOCREW                |    Select one >_<                    |
++-------------------------------------+--------------------------------------+
+
+______________________________________________________________________________
+
+ Figure 2.  RATES.ATO sample data
+
+6
+6
+12.5
+12.5
+12.5
+12.5
+.25
+.25
+08:00:00
+18:00:00
+
+______________________________________________________________________________
+
+ Figure 3.  ACLS Rates and Definitions
+
+Here are the rates currently assumed:
+
+
+Service    300/450 baud        1200/2400 baud        Comm surcharge
+--------   ------------        --------------        --------------
+Standard      $6.00/hr           $12.50/hr            $0.25/hr
+Prime         $6.00/hr           $12.50/hr            $0.25/hr
+
+Prime service:    08:00:00 to 18:00:00, Monday thru Friday.
+
+Standard service: All other times.
+
+
+
+
+Page  25                                                 AUTOSIG User's Manual
+III. ACLS - Accounting Log Summary
+______________________________________________________________________________
+
+ Figure 4.  ACLS Sample Output
+
+
+ACLS v3.11                                                    01-26-1990  15:36
+
+                         AUTOSIG.JAN Since 01-01-1990
+
+       Rec   300 Std   300 Prm  1200 Std   1200 Prm 2400 Std  2400 Prm
+Forum  ord   min chg   min chg   min chg   min chg  min chg   min chg    Total
+------ ---  --------  --------  --------  --------  --------  -------   --------
+*other 147                                          45  10.0  24   5.0     15.00
+Email   82                                          49  10.0  35   7.0     17.00
+IbmSys 109                                          89  19.0 137  29.0     48.00
+IBMSys-  1                                                    -4  -1.0     -1.00
+IBMjr   63                                          17   4.0   5   1.0      5.00
+IbmCom 155                                         286  61.0 192  41.0    102.00
+IbmCom- 20                                         -46 -10.0              -10.00
+IbmHw   99                                          25   5.0  43   9.0     14.00
+IbmNew  97                                          19   4.0  19   4.0      8.00
+------ ---  --------  --------  --------  --------  --------  -------   --------
+
+Total  773                                         484 133.0 619  95.0    $198.00
+
+Press ESC to exit, or any other key to continue:
+
+
+
+        Notes:
+                  The *other values represent connect time that can not
+                  be attributed to a specific Forum due to the rounding
+                  up of connect time to whole minutes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AUTOSIG User's Manual                                                 Page  26
+ Appendices
+______________________________________________________________________________
+
+
+ Disclaimer
+
+    IBM,  Tandy,  Microsoft,  QuickBasic  and  Compaq  are  all   registered
+    trademarks.  If we missed any our apologies.
+
+    This program is, of course, offered  as is.  We can't guarentee it  will
+    work on every permutation of  equipment.  We will make an  honest effort
+    to correct and/or add any features that you ask for.
+
+
+
+
+
+ Copying and sharing AUTOSIG.
+
+        AUTOSIG is  a FREE  program available  to all  for the  downloading.
+        In general there are very few "rules" regarding it's distribution:
+
+         o  No fee may be charged over and beyond the normal fee for
+            materials.
+
+         o  AUTOSIG may not be distributed by commercial companies
+            engaged in the selling of public domain software.
+
+         o  AUTOSIG may not be used for commercial ventures.  If you're
+            a company and would like to use AUTOSIG please contact the
+            authors with your pitch (Easyplex preferred).
+
+         o  The program may not be distributed without this manual,
+            please!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page  27                                                 AUTOSIG User's Manual
+ Appendices
+______________________________________________________________________________
+
+ Using Virtual Disks
+
+
+    The following code can be used as an AUTOEXEC.BAT file for ATO.EXE  when
+    used in conjunction  with RAMDSK or  other programs that  use RAM and  a
+    phantom drive.  In this file, the assumptions are:
+
+           o Two floppy disk drives (A & B)
+           o AUTOSIG.EXE, AUTOSIG.DFN and AUTOSIG.MTH (.JAN, .FEB,
+             etc.) residenton drive A:
+           o RAMDSK is part of the CONFIG.SYS file and configured as
+             drive C:
+           o A resident clock.  If not, replace the REM at line 3 with
+             'Date'and insert a new line below it:  'Time'
+           o AUTOSIG.EXE has been renamed ATO.EXE
+
+    In the unlikely event  of a crash, your  .DFN file is preserved.   Go to
+    drive A: and  COPY DFN.BKP AUTOSIG.DFN.   Otherwise, this file  puts all
+    files into RAMDSK  and eliminates any  disk-spinning from log  on to log
+    off.
+
+      cls
+      echo off
+      REM insert screen blanking program here
+      copy AUTOSIG.DFN c:
+      erase DFN.bkp
+      ren AUTOSIG.DFN DFN.bkp
+      ren AUTOSIG.exe temp.exe
+      copy AUTOSIG.* c:
+      ren temp.exe AUTOSIG.exe
+      copy batch.ato c:
+      b:
+      copy *.ato c:
+      copy *.fil c:
+      a:
+      AUTOSIG /p c: /f
+      REM drive ("c:") above should be one letter higher than your highest
+      REM "/p" and "/f" are optional flags
+      b:
+      erase *.ato
+      c:
+      copy AUTOSIG.* a:
+      copy batch.ato a:
+      erase AUTOSIG.*
+      erase batch.ato
+      copy *.* b:
+      erase *.fil
+      erase *.ato
+      a:|cls
+
+
+
+
+
+
+AUTOSIG User's Manual                                                 Page  28
+Index-1                                  AUTOSIG Advanced Functions Guide
+__________________________________________________________________________
+
+
+
+  "$",ATO invoking ACLS ........ 24
+  %COM ......................... 7, 9, 10, 14, 15, 22
+  %EOF ......................... 9
+  %HOST variables .............. 20
+  %PC variables ................ 21
+  %SIG variables ............... 20
+  %SW Command line variables ... 21
+  /X,ATO command line option ... 7, 21
+  A  Add manual entry .......... 4
+  ACLS ......................... 24, 25, 26
+  ACLS Selection Menu .......... 25
+  Alt-I,insert PPN ............. 4, 7
+  Alt-M,invoke ATOPPN .......... 2
+  Alt-T,execute SCRipt ......... 7, 19
+  ATO-CS,SET variable .......... 24
+  ATO-NAM,SET variable ......... 24
+  ATOPPN ....................... 2, 3, 4, 6
+  ATOPPN Menu .................. 3
+  B  Switch PPN database file .. 4
+  C  Change current entry ...... 4
+  Copying and sharing AUTOSIG. . 27
+  D  Delete current entry ...... 4
+  DATAPAC,script ............... 17
+  Disclaimer ................... 27
+  E  Erase PPN file ............ 4
+  ESCape ....................... 2, 3, 7, 10
+  Execute a script ............. 7
+  F  Find name or userid ....... 4
+  Global,variables ............. 7, 8, 9, 11, 15, 20, 22
+  L  sort by Last name ......... 5
+  M  Switch message file ....... 5
+  N  sort by Name .............. 5
+  P  Put entry to TO: field .... 5
+  Q  Quit, return to ATO ....... 6
+  R  Repeat Find to next ....... 5
+  RATES.ATO,ACLS file .......... 24, 25
+  S  Sort by userid/ppn ........ 5
+  Set up,new ATO forums ........ 19
+  Sort by,for PPN order ........ 3, 5
+  Sort, %SWF option ............ 21
+  Telenet,script ............... 16
+  Tymnet,script ................ 15, 20
+  U  Update file from msgs ..... 6
+
+

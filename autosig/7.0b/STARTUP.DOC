@@ -1,0 +1,277 @@
+**************************************************************************
+*                                                                        *
+*                            AUTOSIG                                     *
+*                                                                        *
+*                          STARTUP.DOC                                   *
+*                                                                        *
+*                     Ray Bowler, 72733,1531                             *
+*                          June 15, 1994                                 *
+*                                                                        *
+**************************************************************************
+
+Please read this document through entirely before starting the
+procedure.  That way there will be fewer surprises along the way.
+
+This startup document is for those who desire to get started using AUTOSIG
+as rapidly as possible.  It will lead you through making your initial
+settings, making your CompuServe settings work with AUTOSIG, setting up a
+forum, doing what is required for automatic retrieval of message headers
+and messages.
+
+After using this guide, you still need to read the manual for the details
+and for some of the options (PC Options for instance) which make this
+package more usable to you.  There are many refinements which are not in
+this guide so you need to study the manual to get the most out of this
+software.  You will also need to read it to understand the terminology.
+
+For this setup to work correctly you must have in your current directory
+the following three files:
+
+       AUTOSIG.EXE  The AUTO program
+       AUTOSIG.HLP  The help file
+       CSETUP.SCR   This will automate a number of details of the
+                    initial setup of CIS to work with AUTO
+
+The following steps should be taken in order.  It shouldn't hurt to go
+through them several times if something goes wrong.  Help is generally
+available by pressing F1.  If these instructions don't work, please post
+questions in PCCOM sect. 1 (AUTOSIG).  Comments and suggestions for
+improvement will be appreciated.  Post them to Sysop in PCCOM section
+1 (AUTOSIG).
+
+--Start the program by typing AUTOSIG.
+***********************************************************************
+*         Enter name on initial execution                             *
+***********************************************************************
+
+--On the first execution only you will be asked for the name
+which you wish to use joining forums.  Type in the name you will
+be using in the forums.
+
+--The main menu screen will appear.
+***********************************************************************
+*     Select the host for your modem speed and set the phone, password*
+*     and other information for use with that setting                 *
+*     Be sure to check which Host you are using when you go online    *
+*     If you press the Up/Down arrows, you will change hosts.  If you *
+*     can't log in, this is one of the first things to check          *
+***********************************************************************
+--The Host Selection on the left depends on the speed of your
+     modem.  Select the correct one (for instance, CIS2400) using the
+     up/down arrows on your keyboard.
+     Press F4--Edit Host Options
+
+Page 2
+
+--Move between items using the tab keys or the arrow keys
+     Enter the phone number you will be dialing
+     Enter your userid (79999,999)
+     Enter your password
+     Change the Com port if you are not using COM1.  If you have odd COM
+     ports, check the ATO manual for settings
+     Enter a bulletin file name--like AUTOSIG.BUL (In your ATO directory)
+     Enter a path to a subdirectory where you wish downloaded
+     files to be placed(C:\DOWNLOAD\ for instance. Note second \).
+     If you know that your modem needs certain commands, enter
+     them under Modem dial commands
+     PRESS F10 when finished.
+
+************************************************************************
+*   Use the following procedure to add forums where you are already a  *
+*   member or which you know you will want to use.                     *
+*   Repeat for each forum being added.                                 *
+*                                                                      *
+*   This has already been done for the forums which are on your initial*
+*   menu.                                                              *
+************************************************************************
+
+--Press F5 to add a forum.
+     The AUTO forum name should be a seven letter name for the forum,
+            Geneol for instance
+     The GO word/page is the CIS go word
+            For the Geneology Forum for instance, it is Roots
+     F10 to exit
+************************************************************************
+*   Make adjustments to CIS and mail so that AUTO will work in the best*
+*   manner.                                                            *
+*   Be sure you have CSETUP.SCR in your directory .                    *
+*   In this and all other online procedures, if the instructions call  *
+*   for "Ctrl-D to Exit, Alt-A for Help" and it is not the display     *
+*   when AUTO pauses, press ESC twice to get the correct display       *
+************************************************************************
+
+--Select the Practice forum by pressing the letter beside "Practice"
+     From the Practice Message Processing Menu type "G".
+     You will be prompted "Do you want to auto-logon? Y/N"
+     Type "Y".
+
+     AUTO will start the automatic login, call CIS and go to the Practice
+     Forum.  If you fail to log on to CIS check your Host settings, speed,
+     com port, phone number, Userid and Password to be sure that they are
+     correct.  When you get to the Practice forum, one of three things
+     should happen--You should have:
+
+ 1.  "Ctrl-D to Exit, Alt-A for Help" after joining the forum if you were
+     never a member.  ("Joining the forum" will be a series of scrolling
+     screens, so wait until they stop)
+ 2.  "Forum !" after joining the forum if you are a member but in Menu mode
+ 3.  "Ctrl-D to Exit, Alt-A for Help" without joining the forum if you are
+     a member.
+
+    ** If it stops without a prompt, press ESC twice. **
+     Type Alt-T(the alt key and the letter T) at either prompt
+     You will see "Enter script file name [.SCR] "
+     Enter CSETUP --- This should take less than three minutes
+
+Page 3
+
+     After some scrolling, you will be asked for your name.  Enter your
+     name then press enter.  This name  will be in your Mail address
+     book.
+     **Even if the script looks like it is stopped or
+     in a loop** wait for a minute or two (by the clock)
+     before pressing ESC to abort.
+     The script will adjust some settings for you.
+     You will exit the program and stop at a prompt "Press Enter to
+     Continue"
+     Press enter and you return to the Message Processing Menu and
+     are disconnected from CIS.
+     Press "C" to return to the forum/host menu.
+
+************************************************************************
+*  These next steps join the actual forums which are set up in the     *
+*  forum list, make some adjustments in the forum and collect message  *
+*  sections and libraries.                                             *
+*                                                                      *
+*                    ***** WARNINGS*****                               *
+*                                                                      *
+*          1.  Always let AUTO return you to the AUTO Message          *
+*              Processing Menu at the end of each "Join".  Do not      *
+*              use a "GO" command in CIS to go to the next forum.  AUTO*
+*              will get confused.                                      *
+*                                                                      *
+*          2.  ****  Do this even for forums where you are already a   *
+*                    member.  If you don't do this. AUTO will not work *
+*                    correctly.  ****                                  *
+*                                                                      *
+*          3.  Skip the "Mail" forum.  It is not really a forum        *
+************************************************************************
+
+--Select the first forum on your list.
+     Again type "G" in the forum Message Processing Menu
+     At the prompt "Do you want to auto-logon? Y/N" answer "Y"
+     The program will log you on and enter the forum which you have
+     selected.
+     If you are not a member of the forum or if the options are
+     set to "Menu" mode, AUTO will automatically join and go to
+     the prompt at the end of the procedure, that is -- "Ctrl-D" or "Forum !"
+     The next instructions are for forums which you have joined and
+     are set for "Command" mode.  Otherwise go to the NEXT in the margin
+
+     First you see "Enter Ctrl-D to exit, Alt-A for Help"
+     If the program stops processing without this appearing, then
+     *** press ESC twice *** then "Enter Ctrl-D" should appear
+     Press Alt-J --This will join the forum (even if you are a member),
+     make adjustments to the forum options and gather message sections
+     and library names.
+     At this point the forum prompt "Forum !" appears
+NEXT
+     Press Ctrl-D
+     Enter "Y" to the question "Stay connected? (Y/n)"
+     The prompt is "Have you left the **** forum" -- answer "N"
+     *****Remember that you are still online and in the forum which you just
+          left--If this is a pay forum, it is costing you to stay on line --
+          so proceed with the next steps******
+     You are returned to the Message Processing Menu
+
+Page 4
+
+     Page Down to the next forum and press "G"
+     Repeat until all forums have been joined.**Remember to skip Mail**
+     On the last forum answer "N" to the "Stay connected?" question.
+     Look in the upper right hand corner and be sure that it says
+     "Offline".  If it doesn't, press "Z"
+     Press Enter at the "Press Enter to continue" prompt
+
+***************************************************************************
+*   Select message sections to be downloaded                              *
+*   Select the Quick headers in the AUTO List                             *
+*   Do a AUTOPASS 1 to down load headers                                  *
+***************************************************************************
+
+---Use pageup/dwn to move to the first forum
+     Press F3
+     Move the cursor to "Sections"
+     Press Alt-N
+     A list of message sections will appear
+     Enter the number of the sections you wish to use (or ALL for all)
+     Pgdn to next forum and repeat until all forums have been modified
+     Press F10
+     Press F7 to modify the AUTO List
+     Place an "F" after mail
+     Place a "Q" after all of the forums which you wish to access
+     If you do not want to access a forum, leave the list entry blank--
+     Press F10
+     At the main menu press F1 to gather all the thread headers from the
+     sections which you have marked.  This is AUTOPASS 1.  Waiting messages
+     addressed to you will be downloaded.
+
+*************************************************************************
+*        Read waiting messages, reply if desired, Preview before sending*
+*************************************************************************
+
+--Go to each forum in turn.
+     If "R" is highlighted you have messages.  Press "R" to read
+     the messages.  Enter will move to the next screen of the message
+     or to the next message.  Pageup/dn move to the previous
+     and next messages.
+     If you want to reply, press "R" and you are in the editor and can
+     write a reply which is addressed to the person who sent the message
+     in the thread which the message is in.
+     Press F10 to leave the editor and "S" to save the message for
+     posting.  Press "Q" when you have read all messages.  "P" is
+     highlighted if you have written messages so pressing "P" allows you
+     preview replies and modify or cancel them.
+     If you wish to compose a message press "W", enter the name and ID
+     of the person to whom the message is directed(to make it easy see
+     the address book in the manual), the subject, and the forum
+     then F10, compose the message and press F10 when done.  This can
+     also be previewed
+
+**************************************************************************
+*    Select threads to be downloaded and do AUTOPASS 2                   *
+**************************************************************************
+
+--"M" is highlighted and cursor is over an "M"
+     Press the ENTER key
+     There will be a list of message thread subjects and the number of
+     messages.
+
+Page 5
+
+     Move the cursor up and down (remember to go to the second page if
+     necessary)
+     Place an "M" beside the threads which you wish to download
+
+--When you are done with the last forum press a 2 or F2.  This is AUTOPASS 2
+     You will log on to each forum and Mail, the messages which you have
+     written will be sent, the threads and waiting messages will be downloaded.
+     At the "ENTER to continue" press ENTER
+     You are returned to the last forum
+     If "R" is highlighted you have messages to be read in this forum
+     Read and reply as you did above
+     Save messages by pressing "S" while reading the message
+     If your printer is on, a "P" will print the message
+     Write new messages as above
+     If you wait until you have processed messages from all forums, F2
+     will do an AUTOPASS 2 and post all messages which you have written
+     If you have composed messages, "S" should be highlighted for send
+     so pressing ENTER will go online and post the messages
+     if you wish to do so right now and not wait for an AUTOPASS.
+     When you have read all messages, if you wish to clear the file,
+     press "K" and "M".  Otherwise they are in the file until you do so
+     Move between forums using the Pageup/dwn keys and repeat this
+
+Now read the manual to learn the finer details.
+
+--Ray B.

@@ -1,6 +1,6 @@
 # AUTOSIG version history
 
-- 7.0b 06/25/95
+- [7.0b](7.0b) 06/25/95
   - New send box for Mail forum to allow Normal text messages (sent without B+ transfer) and Latin-1 messages (sent with B+ transfer).  Also Binary and Text files can be Mailed.  Text file mailing is particularly useful to send files to Internet addresses.  New send box also allows any Mail subject to be used, even when sending files.
   - A logoff script can be specified after a slash in the host setup "LogOn/Off SCRipt file" field.  E.g., L1.SCR/O1.SCR means L1.SCR is used for logon and O1.SCR is used for logoff.  This should help users who need special action to logoff from supplemental networks.
   - Mouse implemented as in 6.9a with one intended change: clicking on forum goes to that forum (as if letter key pressed) instead of just selecting that forum and requiring separate click or CR to go to forum.  Right button works for <Esc> on main menu.  Mouse can be placed on left/right arrows on forum menus to move to adjacent forums.

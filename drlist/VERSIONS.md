@@ -4,7 +4,7 @@
    - minor corrections and cosmetic changes
 - J 09/17/89
    - correct prompt for filename
-- I 06/17/89
+- [I](i) 06/17/89
    - correct console input problem using CTTY under OmniView
    - add file sharing (via SHARE) for DOS 3 and later
    - correct expansion of TABs in Help screen

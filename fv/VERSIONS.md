@@ -10,7 +10,7 @@
   - add madeby and sfx for ZIP 2.04g
 - 1.42 10/09/92
   - add /C comment option to ARJ
-- 1.41 10/09/92
+- [1.41](1.41) 10/09/92
   - add ARJ sfx
 - 1.40 3/10/92
   - add licensed version

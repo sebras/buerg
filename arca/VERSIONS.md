@@ -23,7 +23,7 @@
   - internal version
 - 1.19
   - internal version
-- 1.18 08/11/86
+- [1.18](1.18) 08/11/86
   - further speed tweaking in compression code; save a few more nanoseconds
 - 1.17a 08/10/86
   - bug fix for the case of "arca x d:*.*", where d is not the current drive

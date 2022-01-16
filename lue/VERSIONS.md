@@ -7,7 +7,7 @@
   - Accepts the strange SQ2 squeezed format
 - 2.02 05/21/85
   - Correct messages for file that can't be unsqueezed
-- 2.01 05/17/85
+- [2.01](2.01) 05/17/85
   - Expand (unsqueeze) SQ-squeezed files
 - 1.94 04/13/85
   - Sets the ERRORLEVEL variable to 1 if any errors.

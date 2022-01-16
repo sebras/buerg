@@ -1,0 +1,173 @@
+       WHAT IS AUTOSIG?
+
+           WHAT CAN IT DO FOR ME?
+
+               CAN I USE IT?
+
+                  WHERE CAN I FIND IT?
+
+                      HOW DO I INSTALL IT?
+
+                          WHO DEVELOPED IT?
+
+
+    ----------------
+    WHAT IS AUTOSIG?
+    ----------------
+
+    AUTOSIG is a free communications program which was specifically
+    designed to make it easy for you to use CompuServe, and particularly
+    its forums and your CompuServe Mail.  Forums (formerly Special
+    Interest Groups or SIGs) are electronic gatherings where people
+    can exchange information, ideas, and files of programs and data.
+
+
+    ----------------------
+    WHAT CAN IT DO FOR ME?
+    ----------------------
+
+    AUTOSIG (sometimes known as ATO for short) provides you with an
+    automatic way of processing forum and mail messages that is very
+    quick and extremely economical.  You can use AUTOSIG to upload
+    and download program and data files to CompuServe, and as a terminal
+    emulator for CompuServe's other services.
+
+    The key to the speed is AUTOSIG's "grouping" (or batching) of
+    messages in all of your forums (and your replies to them) for
+    transmission to and from CompuServe.  You spend all the time you
+    want thinking about what people have said to you, and about what
+    you want to say back.  When you are finished, AUTOSIG does the
+    rest quickly and efficiently!
+
+    The key to the economy is AUTOSIG's frugal use of online connection
+    time.  We've fine-tuned this science/art to the point where your
+    connection time to CompuServe will be the absolute minimum necessary
+    to get the job done.  You may find your bills drop by 90% of what
+    you pay if you use the system through the manual menus.  (Or you may
+    find that your bills don't drop at all, and that you get ten times
+    the productivity out of CompuServe!)
+
+
+    -------------
+    CAN I USE IT?
+    -------------
+
+    AUTOSIG has certain hardware and software requirements:
+
+       HARDWARE
+
+             o  an IBM PC or close compatible.
+             o  at least 400K, preferably 437K of available memory.
+             o  a hard disk is recommended for speed, but is not required.
+                -  a minimum of 350K of disk space is needed
+             o  a modem
+             o  display adapter and monitor
+                -  graphics are not required or used
+
+       SOFTWARE
+
+             o  DOS 3.0 or later is recommended.  DOS 2.x will work
+                but may cause problems.
+             o  will run in DESQview or Windows
+             o  also runs in OS/2
+
+       NETWORK ACCESS
+
+              o  CompuServe direct access, Telenet or Tymnet (built in)
+         or  o  you write your own script for other access methods. Full
+                script language is supported.
+
+    --------------------
+    WHERE CAN I FIND IT?
+    --------------------
+
+    All AUTOSIG files are self-extracting files located in the AutoSig
+    Library (Lib 1) of the IBM Communications forum (GO IBMCOM at any
+    ! prompt).  You'll need the first two files.  The other files are
+    optional.
+
+       ----------------
+       GETTING STARTED
+       ----------------
+
+       ATOSIG.EXE  - The executable program itself with help file.
+
+       ATODOC.EXE  - The user's manual, quick start guide, and general
+                     setup script.  Everything you want to know about
+                     the program.
+
+       ----------------
+       ADVANCED USES
+       ----------------
+
+       ACLS-X.EXE  - Program to find out how much you are spending
+                     while you are using AUTOSIG.
+
+       ATOBRO.EXE  - Program to create scripts for downloading files
+                     from the Libraries (Libs).
+
+       ATOADV.EXE  - Manual which documents AUTOSIG's script language
+                     and accounting add-on.
+
+       ----------------
+       WINDOWS USERS
+       ----------------
+
+       WATO*.*     - While ATO will work just fine in Windows as a DOS
+                     program, WinATO is a true Windows implementation
+                     that uses the ATO "engine" for communications but
+                     puts a true Windows interface on the offline side.
+                     WinATO was not developed by the ATO team, and
+                     unlike ATO, WinATO is shareware (if you like it and
+                     decide to use it, you are asked to register it).
+
+
+    --------------------
+    HOW DO I INSTALL IT?
+    --------------------
+
+    AUTOSIG is simple to install.  Follow these steps:
+
+             o  Download files ATOSIG.EXE and ATODOC.EXE.  A separate
+                subdirectory is strongly recommended.
+
+             o  At the DOS prompt in the subdirectory you've chosen,
+                type ATOSIG to extract the program.
+
+             o  Back at the DOS prompt again, type ATODOC to extract
+                the users manual.  (At this point, you may transfer the
+                original ATOSIG.EXE and ATODOC.EXE files to a floppy
+                to save them since they are not necessary for the
+                operation of AUTOSIG.)
+
+             o  Read STARTUP.DOC (which will have been created from
+                ATODOC.EXE) and follow the steps outlined there and
+                you're on your way!  You'll also want to check
+                AUTOSIG.DOC for more detailed information.  Both of
+                these files are text files you can load in your word
+                processor or copy to your printer, like:
+
+                    COPY AUTOSIG.DOC PRN
+
+    -----------------
+    WHO DEVELOPED IT?
+    -----------------
+
+    AUTOSIG was developed by a project group consisting of the following
+    people, all of whom are Sysops in the IBMCOM forum:
+
+           Vernon Buerg        [70007,1212]
+           Jim McKeown         [76702,1102]
+           Don Watkins         [76703,750]
+
+    AUTOSIG is also improved through YOUR support with your questions,
+    comments, and suggestions which you are encouraged to leave us in
+    Section 1 of the IBMCOM forum, and through its loyal, eager, and
+    hardy team of beta testers.
+
+
+
+
+               ------------------------------------------
+               WE HOPE TO SEE YOU AS AN ATO USER SOON !!!
+               ------------------------------------------

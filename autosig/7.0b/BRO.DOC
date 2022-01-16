@@ -1,0 +1,227 @@
+
+
+                     BRO - Browse library catalogs offline
+
+
+         Function:
+
+         BRO allows you to view forum library catalogs, either
+         complete library catalogs, "short" library catalogs or IBMNET
+         summary files, search for files of interest thru a variety of
+         means, and generate an Autosig script for fast downloading of
+         those files you've selected.
+
+
+         Input:
+
+         The library catalog file is created by capturing the output of
+         a CAT /DES command while online or by downloading a forum
+         prepared summary file. Three formats of catalog files are supported:
+
+         1) Those prepared with the CAT /DES command in "long" format
+         2) IBMNET format summary files such as COMSUM.ZIP, SYSSUM.ZIP, etc.
+         3) Those prepared with the CAT /DES command in "short" format
+
+         Output:
+
+         A file called "DL.SCR" is created if any entries are M)arked.
+         This file is in ATO script file format and may be invoked in
+         ATO to automatically download the files you've marked.
+
+
+         BRO data files:
+
+         Prior to starting BRO you should have a library catalog
+         available to you. BRO accepts catalogs in the formats noted above.
+         Other formats are not supported at this time.
+
+         Files are loaded by selecting menu entries 1 through 3 from
+         the main BRO screen.
+
+         1) Add to catalog from CAT/DES capture file. This
+         format is the "standard" library format used in all CIS forums.
+         Use this format if the format catalog is in the "long" format
+         (multi line descriptions).
+
+         Many forums provide this catalog in compressed form (i.e. IBMCOM.ZIP
+         in IBMCOM). If you're not sure be sure to ask the forum sysop.
+
+
+         2) Update catalog from IBMNET format summary files.  IBMNET
+         summary files are one line entries of library files and can
+         be found in library 0 of most IBMNET forums (all except
+         PCVEN* and SHARE).  The name of the summary file changes
+         depending on the forum but BRO /KEY=SUMMARY will always
+         display it.
+
+         5) Load catalog from LIB DIR /SHORT capture file. This
+         is the library "short" format (one line descriptions for each file)
+
+
+         If you're unsure of how to create a catalog there are a
+         number of methods available and most forums have prepared
+         catalogs in compressed format. However if you're interested
+         in the mechanics the command:
+
+         CAT /DES
+
+         from a library prompt will give you files in non-stop mode.
+
+         Prepared catalogs are available in most IBMNET forums in
+         library 0
+
+         Like the summary files the names of the files change but
+         they are the "quick reference word" names for each forum;
+         that is for IBMCOM the filename is IBMCOM.ARC.
+
+
+         Other BRO functions:
+
+
+         In addition to the catalog loading options you'll find the
+         following functions:
+
+                 --------------------------------------------
+
+                     (B)  Browse current ATO catalog
+                     (D)  Download selected files
+                     (S)  Sort catalog by forum, DL,
+                          filename
+                     (K)  Delete current ATO catalog
+
+                     (Q)  Quit, return to DOS
+
+                     ¯ ®  Select one
+
+                 --------------------------------------------
+
+
+         The first time you use BRO you'll need to add a catalog from
+         a library capture (discussed above) or from a summary file.
+
+         Browsing files:
+
+         When you select the B(rowse) function you'll receive a
+         display of the first file in the catalog. The format is as
+         follows:
+
+
+                                 A U T O S I G
+                             --------------------
+                             Browse Forum Catalog
+                  Forum: IBMNEW                       DL:  1
+
+         [76703,750]
+         LIB.HLP             [SEL] 31-Jul-88  30290              1371
+
+         Keywords:  LIB LIBRARY DATABASE PROGRAMS FILES DOWNLOAD HELP
+
+         Everything you need to know in order to download from the
+         Libraries.  Explains how to use the various protocols, the
+         various types of files (ARC, etc.), how to set your CIS
+         "defaults", how to find files of interest and some solutions
+         to common problems.  Please leave a message for the SysOps if
+         you have any problems.  To get this file just use the <R>ead
+         command and capture to disk, a protocol DOWnload is not
+         necessary.  [Rev. 5/88, previous count = 9947].
+
+      Enter  Home End  M)ark O)mit  C)omments  F)ind A)gain  Q)uit ?
+
+
+         In this example the file has been M)arked and the [SEL]
+         "flag" to the file of the filename indicates that it has been
+         selected for download.
+
+         BRO keys:
+
+         The up and down arrow keys move forward or backward one file
+         at a time.
+
+         The home key takes you to the top of the file.
+
+         The M key marks a file for downloading.
+
+         The O key unmarks a file that has been selecting for
+         downloading.
+
+         The C (comment) key is not implemented at this time.
+
+         The F (find) key allows you to search for a specific string.
+         Case is not significant.
+
+         The A (again) key allows you to repeat a find.
+
+         The Q (quit) key terminates the BRO session and returns you
+         to the main menu.
+
+         Generating a download script:
+
+         After marking files for download Q(uit) the current marking
+         session and return to the main menu and select the Download
+         Selected Files function. This will generate a script to
+         download the files. In addition to filenames and library
+         locations "GO" words for forums will be generated as well.
+         The script will be named DL.SCR.
+
+         Note: The Download function overwrites any previous DL.SCR
+         files!
+
+         At the time the DL.SCR file is created the [SEL] flag on any
+         selected file is changed to [DOW] (so you know that you've
+         downloaded it!).
+
+         Executing the script:
+
+         From Autosig on-line mode hit Alt-T and reply DL to the
+         script name prompt. DL.SCR will log you onto the first forum
+         in the DL.SCR script, select the first library, download the
+         file(s) and continue to other libraries and other forums. BRO
+         automatically inserts a logoff at the end of the script. If
+         you wish you may edit the script and pass off DL.SCR to an
+         ATO auto pass. Any text editor or word processor that will
+         produce standard ascii files will work just fine for
+         modifying the script.
+
+         Cautions:
+
+         The actual download syntax is:
+
+         DOW FILENAME.EXT[USER_ID]
+
+         Legal and other stuff:
+
+         This program is, of course, offered as is.  We can't
+         guarantee it will work on every permutation of equipment.  We
+         will make an honest effort to correct and/or add any features
+         that you ask for.  If you do have a problem please be sure
+         and let us know. Because of the large number of formats
+         supported in this version there will undoubtly be some
+         confusion so please don't hestiate to drop by IBMCOM and let
+         us know if you've run into a glitch.
+
+         Copying and sharing BRO:
+
+         This document and the BRO.EXE file comprise the BRO program
+         ("software").  This software is copyrighted material and is
+         subject to limitations by the copyright holders ("authors")
+         as to its use and distribution.
+
+         You may use the software; make copies of the software; give
+         copies to anyone; and distribute it via electronic means.
+         There is no charge for this software, but you must include a
+         copy of this document file with any copies that you make.
+
+         You are specifically prohibited from charging or requesting
+         donations for any copies; from modifying the software; from
+         distributing the software with commercial products without
+         prior written permission; and from distributing this
+         software, either alone or with other material, if any fee is
+         charged.  There are no exceptions without written permission.
+
+         There is no warranty of any kind given.  The author is not
+         liable for damages of any kind.  By using this free software,
+         you agree to this.
+
+         The software and documentation are:
+
+         Copyright (C) 1992 by Vernon D. Buerg and Don W. Watkins

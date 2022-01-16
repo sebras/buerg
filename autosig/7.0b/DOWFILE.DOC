@@ -1,0 +1,66 @@
+                   DOWFILE.BAT
+
+Dowfile.bat is a simple batch file that use command line parameters to 
+create an Autosig script file for downloading files from CIS/ZNT forum
+libraries.  The resulting script file (DOWFILE.SCR) can be used with
+AUTOSIG via the/X command line parameter, or with the Alt-T command 
+when AUTOSIG is in the Terminal mode.
+
+The simplest syntax of DOWFILE.BAT is: 
+ DOWFILE [/A] forum lib# filename [2nd-lib# 2nd-filename etc.] [/AP{1,2}]
+
+For example:
+  DOWFILE IBMCOM 3 COMM3.ARC 1 ACLS.ARC 1 ATODV.ARC 1 SETUP.ARC /AP1
+will log on to the IBMCOM forum, go to Data Library 3, download 
+"comm3.arc" (using the Compuserve Quick B protocol), switch to Library 1,
+download "acls.arc," etc., and then initiate Autopass 1.  Without the
+optional /AP{1,2} switch, Autosig will log you off after the last DL.
+
+Entering only "dowfile" or entering "dowfile ?" will show a help screen 
+reminder of the required syntax.
+
+The more complex syntax uses an F or G to signal that you wish to go to
+a new forum and download one or more files there.  This syntax is:
+ DOWFILE forum 1st-lib# 1st-filename [second-lib# second-filename] 
+ F forum2 nth-lib# nth-filename G forum3 n+1th-lib# n+1th-filename etc.
+ Thus  DOWFILE IBMCOM 3 COMM3.ARC F PCVENA 8 MX602P.EXE 8 MX602A.EXE
+ G ZNT:FREEUTIL 1 Vulcan.doc
+ will log on to the IBMCOM forum, go to Data Library 3, download
+ "comm3.arc," go to Lib 8 of PCVENA and download the files MX602P.EXE and
+ MX602A.EXE, go to the ZNT:FREEUTIL area and DL Vulcan.doc from Lib 1,
+ then log off.  All Dowfile DLs use the CIS Quick B protocol.
+
+The simple and complex syntaxes can be combined in any order, so long as the
+total number of characters in the command does not exceed 127. (DOS limit)
+To circumvent this limit and allow even more complex download lists, using
+the optional /A switch immediately after "dowfile" tells the dowfile.bat
+program that the download (and optional autopass) parameters that follow
+should be _appended_ to the existing dowfile.scr, rather than overwriting
+it.  If an appending dowfile command is to DL from the _same_ forum in
+which the previous dowfile command suspended operations, use the switch
+"/AS" rather than "/A."  
+
+NOTE 1: Only the _last_ dowfile command in a scripting series may end with
+ the /AP{1,2} switch, and each dowfile command _must_ begin with a forum
+ name unless the /AS switch is used.
+
+NOTE 2: The initial forum and those following an F switch must be specified
+ by the appropriate Autosig forum names (as shown on the top line of the
+ Forum Configuration Screen), while those following a G switch must be 
+ specified by the correct CIS/ZNT Goword. The purpose of the G switch is
+ to allow downloading from a forum not currently included in your active
+ definition file, but you must have already joined the forum, and your
+ forum options must be ATO-compatible; to use DOWFILE at all you also must
+  have chosen CIS B as your standard DL protocol.
+
+This batch file was uploaded 2/94 to fix a problem in getting more than one
+file at a time, and to allow downloads from more than one forum in a pass.
+  Thanks to Jim McKeown for help and suggestions.
+
+This has been a time-saver to me, and may be more convenient than 
+the BRO facility for quick downloads of known files.  I hope it's 
+useful to you.
+
+Dave Konkel, 72241,1603
+ modified from the original DOWFILE of Doug Williams [70511,71]
+ February 10, 1994

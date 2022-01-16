@@ -1,0 +1,232 @@
+*************************************************************************
+*  ATO script to set global CIS settings for use with AutoSig           *
+*                                                                       *
+*  Start AutoSig                                                        *
+*  Setup Host Configuration in AutoSig first                            *
+*  Select Practic Forum from the Main menu Forum Selection List        *
+*  From the forum's Message Processing Menu type G                      *
+*  AutoSig will prompt: "Do you want to auto-logon? (y/N)"              *
+*  Type Y                                                               *
+*  Autosig will log you on to the forum.                                *
+*  AutoSig will prompt: "===TERMINAL IS ONLINE==="                      *
+*  "Enter Ctrl-D to exit, Alt-A for Help."                              *
+*  Press Alt-T                                                          *
+*  AutoSig will prompt: "Enter script file name [.SCR] "                *
+*  Type CSETUP and press <Enter>                                        *
+*                                                                       *
+*  If Autosig fails to recognize you've reached the forum and "freezes" *
+*  at the Forum's "!" prompt press <Escape> twice to go immediately to  *
+*  Online mode and then press Alt-T and enter CSETUP as shown above.    *
+*                                                                       *
+*  The CSETUP script file will ask for a name for E-mail, start to set  *
+*  the global CIS settings and enter your name in your CIS mail address *
+*  book.                                                                *
+*                                                                       *
+*-----------------------------------------------------------------------*
+*  Written:     Steve Elliott 71062,2012        10/11/93                *
+*-----------------------------------------------------------------------*
+*  Changes:     Steve Elliott 71062,2012        05/07/94                *
+*               Removed automatic login to a forum, change directions   *
+*               at top of script.                                       *
+* --------------------------------------------------------------------- *
+*  More         Mike Tannenbaum 75110,2037      05/12/94                *
+*  Changes:     Changed directions. Changed session settings on the     *
+*               command line in Basic instead of in the Terminal area.  *
+*               Changed routine in Mail to SET MODE COMMAND Permanent   *
+*************************************************************************
+
+* Ask for the user's Mail Name ******************************************
+DISPLAY ''
+DISPLAY ' Enter your name for E-Mail:  (Press <enter> ONLY when complete.)'
+ACCEPT MNAME
+
+* Capture the setup process - for later user assistance on failures *****
+* Note capture is turned off for MAIL setup.                            *
+* Mail setup captures output on entry to MAIL and scans it to find out  *
+* what the current MAIL configuration is.  This method is used to work  *
+* around bugs in the ATO 6.9a script language.  A simpler method might  *
+* well work for more recent versions of ATO.                            *
+
+CAPTURE CSETUP.TXT
+
+* GO BASIC, Change current session settings *****************************
+* Set CLEAR screen NO, BRIEF prompt YES, PAGED display NO ***************
+Sendline GO BASIC
+Match !
+Sendline set clear no
+Match !
+Sendline set brief yes
+Match !
+Sendline set paged no
+Match !
+
+* GO TERMINAL area, Select 2 Change permanent settings ******************
+* Note, the following GO TERMINAL activates session settings set above **
+Sendline GO TERMINAL
+Match Enter choice!
+Sendline 2
+Match Enter choice!
+* Set LOGON/SERVICE OPTIONS *********************************************
+* CIS Mail Waiting:          NOTIFY ONLY
+* First Service at Logon:    MAIN
+* Personal menu established: NO
+* Forum default mode:        MENU
+Sendline 2
+Match Enter choice!
+Sendline 2
+Match leave unchanged!
+Sendline 2
+Match Enter choice!
+Sendline 1
+Match leave unchanged!
+Sendline 1
+Match Enter choice!
+Sendline 3
+Match Enter choice!
+Sendline 3
+Match Personal Menu?
+Sendline Y
+Match Enter choice!
+Sendline 6
+Match leave unchanged!
+Sendline 1
+Match Enter choice!
+Sendline ''
+Match Enter choice!
+
+* Set PERM DISPLAY OPTIONS **********************************************
+* PAGED display                 NO
+* BRIEF prompts                 YES
+* CLEAR screen between pages    NO
+* BLANK lines sent              YES
+* Line feeds sent               YES
+Sendline 3
+Match Enter choice!
+Sendline 1
+Match leave unchanged!
+Sendline 2
+Match Enter choice!
+Sendline 2
+Match leave unchanged!
+Sendline 1
+Match Last page!
+Sendline ''
+Match Enter choice!
+Sendline 3
+Match leave unchanged!
+Sendline 2
+Match Enter choice!
+Sendline 4
+Match leave unchanged!
+Sendline 1
+Match Enter choice!
+Sendline 5
+Match leave unchanged!
+Sendline 1
+Match Enter choice!
+Sendline ''
+Match Enter choice!
+
+* Select Terminal type/parameters, Other terminal type ******************
+Sendline 4
+Match Enter choice!
+Sendline 1
+Match leave unchanged!
+Sendline 8
+Match for more!|Last page!
+Sendline ''
+Match Enter choice!
+Sendline ''
+Match Enter choice!
+
+* MAKE SESSION SETTING PERMANENT ****************************************
+Sendline 6
+Match Enter choice!
+Sendline 1
+Match Last page!
+Sendline ''
+Match Enter choice!
+
+* Stop capturing to CSETUP.TXT for MAIL setup ***************************
+CAPTURE OFF
+
+* Prepare to capture mail opening screen ********************************
+OPEN MAIL1.TMP 1 OUTPUT
+CLOSE 1
+CAPTURE MAIL1.TMP
+
+* Enter user's E-Mail name in address book ******************************
+Sendline G MAIL
+Match !
+
+* Turn off capture to MAIL1.TMP, find out if New Account ****************
+CAPTURE OFF
+SET NEWACT '0'
+OPEN MAIL1.TMP 1 INPUT
+RLOOP:
+READLINE 1 INSTR
+IF INSTR 'your new electronic mail' THEN SET NEWACT '1'
+IF INSTR 'your new electronic mail' THEN GOTO LEXIT
+IF INSTR '!' THEN GOTO LEXIT
+IF %EOF1 EOF THEN GOTO LEXIT
+GOTO RLOOP
+LEXIT:
+CLOSE 1
+
+* Special handling for NEW account **************************************
+IF NEWACT '1' THEN Sendline NO
+IF NEWACT '1' THEN Match !
+
+* Select command mode and make Permanent*********************************
+Sendline set
+Match !
+Sendline mode
+Match !
+Sendline command
+Match !
+Sendline ''
+Match !
+Sendline y
+
+Match !
+Sendline ADDR
+Match !
+
+* Capture prompt response to MAIL2.TMP **********************************
+CAPTURE OFF
+OPEN MAIL2.TMP 1 OUTPUT
+CLOSE 1
+CAPTURE MAIL2.TMP
+Sendline NAME
+Match :
+CAPTURE OFF
+
+* See whether prompt repsonse is for Name only OR Name and address ******
+* AFLAG = 0, NAME ONLY
+* AFLAG = 1, NAME AND ADDRESS
+* AFLAG = 2, NEW MAIL USER
+
+OPEN MAIL2.TMP 1 INPUT
+READLINE 1 INSTR
+READLINE 1 INSTR
+CLOSE 1
+SET AFLAG '2'
+IF INSTR 'Your return address is:' THEN SET AFLAG '1'
+IF INSTR 'Typing' THEN SET AFLAG '0'
+
+* Match correct prompt **************************************************
+IF AFLAG '0' THEN Match New:
+IF AFLAG '1' THEN Match  (Y or N) !
+IF AFLAG '2' THEN Set AFLAG '0'
+
+IF AFLAG '1' THEN Sendline Y
+IF AFLAG '0' THEN Sendline MNAME
+IF AFLAG '0' THEN Match (Y or N) !
+IF AFLAG '0' THEN Sendline N
+
+MAILEND:
+Match Address!
+Sendline ''
+
+* Exit and Logoff *******************************************************
+EXIT Z

@@ -1,0 +1,171 @@
+       WHAT IS AUTOSIG?
+
+           WHAT CAN IT DO FOR ME?
+
+               CAN I USE IT?
+
+                  WHERE CAN I FIND IT?
+
+                      HOW DO I INSTALL IT?
+
+                          WHO DEVELOPED IT?
+
+
+    ----------------
+    WHAT IS AUTOSIG?
+    ----------------
+
+    AUTOSIG is a free communications program which was specifically
+    designed to make it easy for you to use CompuServe, and particularly
+    its forums and your CompuServe Mail.  Forums are electronic
+    gatherings where people of Special Interest Groups (SIGs) can
+    exchange information, ideas, and files of programs and data.
+
+
+    ----------------------
+    WHAT CAN IT DO FOR ME?
+    ----------------------
+
+    AUTOSIG (sometimes known as ATO for short) provides you with an
+    automatic way of processing forum and mail messages that is very
+    quick and extremely economical.  You can use AUTOSIG to upload
+    and download program and data files to CompuServe, and as a terminal
+    emulator for CompuServe's other services.
+
+    The key to the speed is AUTOSIG's "grouping" (or batching) of
+    messages in all of your forums (and your replies to them) for
+    transmission to and from CompuServe.  You spend all the time you
+    want thinking about what people have said to you, and about what
+    you want to say back.  When you are finished, AUTOSIG does the
+    rest quickly and efficiently!
+
+    The key to the economy is AUTOSIG's frugal use of online connection
+    time.  We've fine-tuned this science/art to the point where your
+    connection time to CompuServe will be the absolute minimum necessary
+    to get the job done.  You may find your bills drop by ten times what
+    you pay if you use the system through the manual menus.  (Or you may
+    find that your bills don't drop at all, and that you get ten times
+    the productivity out of CompuServe!)
+
+
+    -------------
+    CAN I USE IT?
+    -------------
+
+    AUTOSIG has certain hardware, software, and network requirements.
+    These are outlined in detail in the file ATO63A.REQ, but here's a
+    summary of them.
+
+       HARDWARE
+
+             o  an IBM PC, XT, AT, PS/2 (not the 50Z) or close compatible.
+             o  at least 256K and more often 320K of available memory.
+             o  a hard disk is recommended for speed, but is not required.
+                -  a minimum of 250K of disk space is needed
+             o  a Hayes command set compatible modem
+                -  autodial-capable
+             o  optional mouse (MS and Logitech compatible are supported)
+             o  display adapter and monitor
+                -  graphics are not required or used
+
+       SOFTWARE
+
+             o  DOS 3.0 or later is recommended.  DOS 2.x will work
+                but may cause problems.
+             o  DESQview and Double DOS environments are supported.
+
+       NETWORK ACCESS
+
+             o  CompuServe direct access, Telenet or Tymnet (built in)
+         or  o  you write your own script for all others. Full script
+                language is supported.
+
+    --------------------
+    WHERE CAN I FIND IT?
+    --------------------
+
+    All AUTOSIG files are located in AutoSig Library (Lib 1) of the IBM
+    Communications forum (GO IBMCOM at any ! prompt).  Here's what you'll
+    need:
+
+       ----------------
+       BEFORE YOU START
+       ----------------
+
+       ATO68A.REQ  - A complete description of the hardware and software
+                     requirements.  Download and read this before going
+                     further.  (An ASCII file.)
+
+       ----------------
+       GETTING STARTED
+       ----------------
+
+       ATO68A.EXE  - The executable program itself and a script (an
+                     automation tool) for setting your forum parameters
+                     to get started.  (A self-extracting archive.)
+
+       ATODOC.EXE  - The user's manual.  Everything you want to know
+                     about the program.  (A self-extracting archive.)
+
+       ----------------
+       ADVANCED USES
+       ----------------
+
+       ACL313.EXE - A program which allows you to find out how much
+                    you are spending while you are using AUTOSIG.
+
+       ATOBRO.EXE - A program which allows you to create scripts for
+                    downloading files from the Libraries (Libs).
+                    (A Self extracting archive).
+
+
+       ATOADV.EXE - A manual which documents AUTOSIG's advanced functions.
+                    (A self-extracting archive.)
+
+       DLSCAN.ARC - A program which builds a catalog of files in the
+                    CompuServe Libraries of your choice, and
+                    automatically downloads the ones you pick (through Autosig)
+
+
+    --------------------
+    HOW DO I INSTALL IT?
+    --------------------
+
+    AUTOSIG is simple to install.  Follow these steps:
+
+             o  Download files ATO68A.EXE and ATODOC.EXE.  A separate
+                subdirectory is strongly recommended.
+
+             o  At the DOS prompt in the subdirectory you've chosen,
+                type ATO68 to extract the program.
+
+             o  Back at the DOS prompt again, type ATODOC to extract
+                the users manual.
+
+             o  Read the first portion of the users manual (you'll
+                find it in file AUTOSIG.DOC from the extraction),
+                follow the steps outlined there and your on your way!
+
+
+    -----------------
+    WHO DEVELOPED IT?
+    -----------------
+
+    AUTOSIG was developed by a project group consisting of the following
+    people, all of whom are Sysops in the IBMCOM forum:
+
+           Vernon Buerg        [70007,1212]
+           Jim McKeown         [76702,1102]
+           Don Watkins         [76703,750]
+
+    AUTOSIG is also improved through YOUR support with your questions,
+    comments, and suggestions which you are encouraged to leave us in
+    Section 1 of the IBMCOM forum, and through its loyal, eager, and
+    hardy team of beta testers.
+
+
+
+
+               ------------------------------------------
+               WE HOPE TO SEE YOU AS AN ATO USER SOON !!!
+               ------------------------------------------

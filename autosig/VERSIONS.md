@@ -158,7 +158,7 @@
 - 6.82 08/18/91
   - add ability to specify COM port address and IRQ instead of COMn name: the syntax is &Hxxxx/i where xxxx is the hex base port address, e.g. 03F8 for COM1, and i is the IRQ numbers, e.g. 4 for COM1; DO NOT USE this unless your modem uses an IRQ other than 3 or 4!
   - work on hang after Email binary download
-- 6.8a 08/10/90
+- [6.8a](6.8a) 08/10/90
   - public release
   - correct Z message on forum config screen
 - 6.3a 03/28/90

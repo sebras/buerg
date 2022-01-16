@@ -1,0 +1,112 @@
+
+          * * *   System requirements for AUTOSIG Version 6.8A  * * *
+
+        AUTOSIG (ATO) is the original PC program written for the PC and
+        Compuserve.  It not only automates forums functions, including
+        the automation of downloading files, it also has the ability to
+        run scripts.  Scripts make ATO useful in all CompuServe areas.
+
+        ATO is free.  There are no charges or other restrictive
+        requirements (though we do ask that you enjoy it!).  All you
+        need to do is download the files, make several adjustments in
+        your forum options, and you're ready to enjoy the benefits of
+        CompuServe without the price of on-line interactive sessions.
+        Autosig makes the best of both worlds:  the benefits of
+        multiuser mainframes and the benefits of a personal computer.
+
+
+                     * * *   HARDWARE REQUIREMENTS   * * *
+
+        In general AUTOSIG (ATO) version 6.8A requires the following
+        equipment configuration:
+
+         o  an IBM PC, XT, AT, PS/2 or close compatible.
+         o  at least 320K of available memory.
+         o  a hard disk is recommended, but not required.
+         o  a Hayes command set compatible modem
+         o  any display adapter and monitor
+
+   -    ATO has been tested on the Compaq portable, Tandy machines,
+        Toshiba laptops, the Leading Edge, the Compaq high-end machines,
+        the AST Premium line, and a number of compatibles too numerous
+        to mention.  All close compatibles will probably work, but be
+        sure to check the user's manual for various "switches" that
+        might be necessary.
+
+        ATO is network, e.g. LANTASTIC, compatible, although it does not
+        allow the sharing of its files.
+
+        About 320k of *free* memory is required.  More than 320k is
+        definitely better. The total amount of
+        memory is somewhat dependent upon how many forums you use, the
+        number of message headers you want to mark, and some other
+        factors.
+
+   -    ATO requires at least 250K of disk space for its files. More
+        disk space is needed to hold message files and other files that
+        are to be downloaded.  A hard disk is not required, but it is
+        highly recommended.
+
+   -    A modem capable of autodialing is required.  If you're not
+        using a Hayes command set compatible modem, you'll need to be
+        familar with your modem's command codes in order to set it up.
+
+        There is built-in support for accessing CompuServe through a
+        direct node and through Telenet and Tymnet.  Using ATO's script
+        language, you will be able to log on through virtually any
+        network, but it may require work on your part in determining
+        the correct sequence of prompts and responses.
+
+   -    ATO supports MS and Logitech compatible mouse input devices.
+
+   -    ATO supports MDA, Hercules, CGA, EGA, and VGA displays. 25, 43,
+        and 50-line displays are supported for those display adapters
+        that offer such modes. Graphics is not used or required.
+
+
+                     * * *   SOFTWARE REQUIREMENTS   * * *
+
+        In general, ATO requires the following software configuration:
+
+         o  IBM PC DOS or MS DOS version 3.0 or later
+         o  no ill-behaved resident (TSR) programs
+         o  the AUTOSIG.EXE program
+
+        DOS 3.0 or greater is recommended.  ATO will run fine on DOS 2.x
+        systems, but you may experience problems with the "Shell to DOS
+        feature" of ATO.  This is an incompatibility with the compiler
+        used to create the ATO executable program file and DOS 2.x.
+
+        ATO is DesqView and DoubleDOS aware.  It is also compatible with
+        many popular resident programs, but you may have certain memory
+        resident utilities installed that can cause problems.
+
+        ATO is compatible with RAM disks (like VDISK), disk caching
+        programs (like VCACHE), keyboard enhancers (like PCED), screen
+        enhancers (like Ultra Vision), print spoolers (like LTORQ and
+        PCACHE).
+
+        If you have a problem, PLEASE let us know in section 1 of
+        IBMCOM.  We can usually work it out but, if not, we need to know
+        of possible incompatibilities.  ATO is a group effort and we
+        appreciate and encourage hearing about your problems, solutions
+        and suggestions.
+
+
+                          * * *   FILES NEEDED   * * *
+
+        All AUTOSIG files are located in Library 1 (Autosig) of the IBM
+        Communications forum (GO IBMCOM).
+
+        At minimum, you'll want to get ATO68A.EXE, which contains the
+        executable file and the help file, and ATODOC.EXE which contains
+        the documentation file.  These will get you going.  Both are
+        self-extracting archives.  When you run them, they tell you what
+        to do to install the files.
+
+        Otherwise ATO is "modular" in design, so you don't have to
+        download what you don't want or need.  However, you may find
+        that other programs, such as ACLS, ATOBRO, ATOADV, SETUP, and
+        DLSCAN, will greatly enhance your use of ATO.  Please note that
+        the latter files are entirely optional!
+

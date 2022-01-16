@@ -1,0 +1,65 @@
+ Name:         LIST, display contents of an ASCII file.
+
+ Syntax:       LIST  <[d:][path]filename[.ext]>
+
+ Input:
+	An ASCII file of any size may be listed, HOWEVER only the
+	first 79 bytes of each record is displayed.
+
+	At any time during the display:
+
+	- Esc	>	>	>  terminate
+
+	- #     (a number)	>  jump a % into a file
+                                >  0=Home  5=50% into the file
+
+	- P     (or p)	>       >  toggle printing
+
+	- Home	>	>	>  re-start from beginning
+	- End	>	>	>  go to the end of the file
+
+	- U     (or u)	>       >  back up two pages
+	- D     (or d)	>       >  advance two pages
+
+	- -     >       >       >  back up 1/2 page
+	- +	>	>	>  advance 1/2 page
+
+	- Up	>	>	>  back up one line
+	- Dn	>	>	>  advance one line
+
+	- PgUp  >       >       >  display previous frame
+	- PgDn (or any other key)  continue to next page
+
+	- Scroll Lock	>       >  toggle scrolling
+                                   Up, Dn changes direction
+                                   # (0-9) changes speed
+
+ Output:
+
+Logicaì  recordó  (endinç iî LÆ and/oò CR© arå  placeä  intï  thå 
+screeî  buffer®   Á "<¢ oî columî 8° oæ thå screeî signifieó  thå 
+wholå  linå waó writteî tï thå screen®  Á "+¢ oî columî 8° oæ thå 
+screeî  signifieó  thaô therå waó morå datá oî thå linå  thaô  ió 
+neveò printed.
+
+Thå  higè  biô  oæ eacè bytå ió strippeä off®   Thió  allowó  thå 
+listinç  oæ  fileó  formatteä witè á  worä  processinç  programs®  
+However¬   fileó  witè  graphicó  characteró  iî  theí  arå  alsï 
+stripped.
+
+
+
+.paŠ
+                          Credits
+
+Writteî  foò thå IBÍ PÃ bù Vernoî Buerg¬  Novembeò 1983¬  anä  ió 
+supplieä foò publiã domaiî use® Noô foò salå oò hire.
+
+Modifieä bù Johî Verhagen¬ Februarù 1984®  Addeä commandó #¬ End¬ 
+-¬  U¬  Up¬  Dn¬  Scrolì Lock®  Modifieä alì bacë uğ commandó (-¬ 
+Home¬  PgUp©  tï  accesó thå entirå filå insteaä oæ jusô  tï  thå 
+beginninç  oæ  thå currenô 32Ë blocë iî memory®   Modifieä thå  Ä 
+commanä  tï  advancå  twï pageó insteaä oæ  actinç  likå  á  PgDî 
+command.  Changed command H to +.
+
+

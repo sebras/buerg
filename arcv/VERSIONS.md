@@ -16,7 +16,7 @@
   - get size under 2k, improve speed
 - 1.16 12/31/86
   - add entry for type 9 format, squashing
-- 1.15 06/14/86
+- [1.15](1.15) 06/14/86
   - for DPATH, etc, use 'filename' if no files found
 - 1.14 05/21/86
   - change for 'No files found' error on clones

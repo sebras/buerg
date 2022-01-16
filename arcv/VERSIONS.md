@@ -22,7 +22,7 @@
   - change for 'No files found' error on clones
 - 1.13 05/11/86
   - expand search for header arcmark
-- 1.12 04/26/86
+- [1.12](1.12) 04/26/86
   - correct sending totals for no files
 - 1.11 04/23/86
   - correct stowage factor

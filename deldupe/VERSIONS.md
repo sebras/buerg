@@ -5,5 +5,21 @@
   - making /N with /T more informative
 - 2.2 07/21/87
   - added /N to delete files of same name
+- [2.1](2.1) 05/30/87
+  - added /P (pause when screen fills) option
+- 2.0 05/27/87
+  - defaulted master directory to current directory
+- 1.7 05/26/87
+  - added error checking for both directory names
+- 1.6 05/23/87
+  - added display of file dates, times and sizes
+- 1.5 05/22/87
+  - cosmetic changes
+- 1.4 05/18/87
+  - added /V (verify delete) option
+- 1.3 03/12/87
+  - added /S (delete similar) option
+- 1.2 03/11/87
+  - cosmetic changes
 - 1.1 03/07/87
   - initial version

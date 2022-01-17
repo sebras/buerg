@@ -25,3 +25,4 @@
   - Use memory allocation functions.
   - Checks for DOS 2.
 - 1.6 07/11/84
+- 1.00 04/21/84

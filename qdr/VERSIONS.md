@@ -32,7 +32,7 @@
   - correct initialization of fat (not marking bad clusters) when using /f
 - 2.6 11/09/86
 - 2.5 11/02/86
-- 2.2 10/21/86
+- [2.2](2.2) 10/21/86
 - [2.0](2.0) 10/17/86
 - 1.0 02/28/86
   - initial release

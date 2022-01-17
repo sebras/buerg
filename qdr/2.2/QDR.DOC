@@ -1,0 +1,67 @@
+
+ Command QDR						Version 2.2
+ -----------						Oct 21, 1986
+
+
+ Purpose
+ -------
+	Re-format a floppy disk quickly, optionally with a new
+	volume label, deleting all files and sub-directories.
+
+ Format
+ ------
+		QDR [d:][label]  [/F][/1][/3][/4][/8] [/N]
+
+ Remarks
+ -------
+	The d:	parameter supplies the drive letter, A to K.  If no
+	drive letter is supplied, A is used.  A fixed disk can not be
+	re-formatted.
+
+	You may supply a volume label (up to 11 characters) immediately
+	following the drive letter.  For example:
+
+		QDR b:scratch
+
+	The /N option suppresses the "press ENTER to continue" prompt.
+	Otherwise, press the enter key to reformat the disk, or the
+	ESCape key to cancel.
+
+	Use the /F option to force a full format of all tracks.  The /1,
+	/3, /4, and /8 options apply to a full format.
+
+	Bad clusters remain marked as bad unless a full format is used,
+	then clusters are marked as unusable if they can not be formatted.
+
+	The DOS error level is set to 0 for successful completion, or to
+	1 if any errors occur.
+
+
+ Formatting
+ ----------
+	To perform a full format of a disk sectors, use the /F options.
+	It is recommended that you use DOS FORMAT since QDR is not much
+	faster when doing a full format. Both mark bad clusters.
+
+	You may suppy /1 to force SSSD format, /4 for DSQD (1.2mb), or
+	/3 for DSQD (720kb), or /8 for eight-sectors (SSSD or DSDD).
+
+	Unless /F is used, the diskette must have been previously
+	formatted.  The allowable diskette formats are:  DSQD (1.2mb or
+	720kb), SSSD/8, SSSD/9, DSDD/8, and DSDD/9.  When information is
+	available for other drive types, they will be added to the data
+	in the internal device table.  Your system hardware and software
+	must support the device type.
+
+
+ Restrictions
+ ------------
+	(c) Copyright Vernon D. Buerg 1986. All rights reserved.
+
+	May be copied and distributed in its original form only.  For
+	private, personal use.	Not for sale or hire.  Use this program
+	at your own risk.  No warranty is given and no liability is
+	assumed.
+
+
+

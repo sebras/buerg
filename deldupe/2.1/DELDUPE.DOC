@@ -1,0 +1,93 @@
+
+DELDUPE 2.1, Copyright (c) Vernon D. Buerg 1987. ALL RIGHTS RESERVED.
+
+
+
+Purpose:
+	Delete duplicate or older files in one directory that already
+	exist in another disk directory.
+
+Syntax:
+	DELDUPE directory-to-delete [master-directory] [/O] [/T] [/S] [/V] [/P]
+
+	The 'directory-to-delete' specifies the drive and path name
+	of the 'old' directory containing old or duplicate files.
+
+	The 'master-directory' specifies the drive and path name
+	of the 'new' directory containing current or original files.
+|	If omitted, the current drive and directory is used.
+
+	If files in the 'old' directory are the same date/time, or older,
+	than files of the same name in the 'new' directory, they are
+	deleted.
+
+	Specify /O to delete older files of same name but of different size.
+	If omitted, only files with the same name, datestamp, and size will
+	be deleted.
+
+	Specify /S to delete similar files. A similar file has the same
+	date but the time and/or size is different.
+
+	Specify /T to display filenames only, but do not delete them. Use
+	this option to determine which files are duplicates or older copies.
+
+	Specify /V to confirm deletion of each eligible file.
+
+|	Specify /P to pause when the screen fills. You may enter a ^C (break)
+|	at this point but the current directory will not be properly restored.
+
+Examples:
+	- Delete duplicate files in 'C:\TEMP' which already exist
+	  in the root directory of drive B:
+
+	  deldupe c:\temp b:
+
+	- Display the names of duplicate or older files in the directory
+	  called \PROJECTS which already exist in the directory \TEST
+
+	  deldupe \projects \test /o/t
+
+History:
+	Written for the IBM PC using PC DOS version 2.0 or later.
+
+	Version 1.1, 3/07/87 - initial version
+	Version 1.2, 3/11/87 - cosmetic changes
+	Version 1.3, 3/12/87 - added /S (delete similar) option
+	Version 1.4, 5/18/87 - added /V (verify delete) option
+	Version 1.5, 5/22/87 - cosmetic changes
+	Version 1.6, 5/23/87 - added display of file dates, times and sizes
+	Version 1.7, 5/26/87 - added error checking for both directory names
+	Version 2.0, 5/27/87 - defaulted master directory to current directory
+|	Version 2.1, 5/30/87 - added /P (pause when screen fills) option
+
+License:
+
+	DELDUPE is free, but it is a copyrighted work and may be distributed
+	only pursuant to this license.
+
+	Permission is hereby granted to reproduce and disseminate DELDUPE so
+	long as:
+
+	   (1)	No remuneration of any kind is received in exchange; and
+
+	   (2)	Distribution is without ANY modification to the contents
+		of DELDUPE.COM, DELDUPE.ASM and all accompanying
+		documentation and/or support files, including the
+		copyright notice and this license.
+
+	No copy of DELDUPE may be distributed without including a copy
+	of this license.
+
+	Any other use is prohibited without express, written permission in
+	advance.
+
+		Vernon D. Buerg
+		456 Lakeshire Drive
+		Daly City, CA  94015-4223
+
+		CompuServe: 70007,1212
+		Data/BBS:   415-994-2944
+		Fidonet:    125/4
+
+
+

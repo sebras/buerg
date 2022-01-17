@@ -1,3 +1,3 @@
 # EDIT-DTA version history
 
-- 1.3 04/14/85
+- [1.3](1.3) 04/14/85

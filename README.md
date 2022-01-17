@@ -135,4 +135,4 @@ period correct Thunderbyte Anti-Virus 8.11. :)
 | LIST569C | 5.69c | 01/24/87 | Old version of LIST is smaller and simpler |
 | LISTOS2 | 6.2a | 04/23/88 | Special version 6.2a of LIST for use with OS/2 |
 | LISTOSII | 7.5i2 | 06/09/93 | Special version of LIST Plus v7.5 for OS/2 for registered and licensed users only |
-| EDIT-DTA | 1.3 | 04/14/85 | Add, delete or change PC-FILE database records |
+| [EDIT-DTA](edit-dta/VERSIONS.md) | [1.3](edit-dta/1.3) | 04/14/85 | Add, delete or change PC-FILE database records |

@@ -1,0 +1,184 @@
+
+ARCE Command
+------------
+
+Purpose:  To extract files from an ARC archive file.
+
+Format:   ARCE	[d:][path]filename.ext	[filespecs...] [d:outpath] [/R]
+
+Remarks:  The drive and path names are optional. If omitted, the
+	current drive and path name is used.
+
+	The filename must be supplied. The extension defaults
+	to ARC. All files matching the supplied filename are
+	processed. The ARC filename may contain the * and ?
+	wildcard characters.
+
+	If no filespecs are supplied, all files are extracted.
+	Otherwise, only those ARC members which match one of the
+	up to 16 filespecs are extracted.
+
+	The extracted files may be placed on another drive, and/or
+	in another subdirectory by following the optional filespecs
+	with a drive designator and/or path name.
+
+	If the file being extracted already exists, you are asked
+	whether or not you want to over-write it. You may use the
+	/R option to bypass this prompt.
+
+
+ Examples:
+ --------
+
+	o  Extract all file from TEST.ARC onto the current drive:
+
+	      ARCE TEST
+
+	o  Extract only file with an extension of .ASM from the
+	   archive SOURCE.ARC on drive B and in subdirectory SAVE:
+
+	      ARCE B:\SAVE\SOURCE *.ASM
+
+	o  Extract all files from all ARC files in the subdirectory
+	   called TEST on drive C:
+
+	      ARCE C:\TEST\*
+
+	o  Extract all files from PROGA.ARC and place the files in
+	   subdirectory OLD on drive B:
+
+	      ARCE PROGA.ARC B:\OLD
+
+	o  Extract all files with an extension of .COM and .EXE from
+	   the archive PROGS.ARC in directory NEW\WORK on drive B,
+	   and place the them in subdirectory SAVE\TEST on drive A;
+	   replace existing file:
+
+	      ARCE B:\NEW\WORK\PROGS *.COM *.EXE A:\SAVE\TEST /R
+
+
+ Error Messages:
+ --------------
+
+	'filename - premature EOF reading '
+	 Data is missing from the archive file.
+	 The program is terminated.
+
+
+	'filename - unable to set file datestamp'
+	 The file datestamp is set to the current date and time,
+	 and the next archive member is processed.
+
+
+	'filename - WARNING: file CRC does not match!'
+	 The extracted member is left on the output disk,
+	 and the next archive member is processed. The file
+	 is probably invalid but is left on the disk for
+	 your examination.
+
+
+	'Invalid filespec(s)'
+	 The filespec syntax is incorrect. The filename part may
+	 be from 1 to eight characters, and may include the ? or *
+	 wildcard characters. The extension may be none to three
+	 characters, and may include wildcards.
+	 There is a maximum of 16 filespecs allowed.
+	 The program terminates.
+
+
+	'filename - file already exists. Overwrite it? (y/N) '
+	 The member being extracted already exists. If you are
+	 using a data path utility, the file may not actually be
+	 in the subdirectory be used for output. Respond with the
+	 letter Y to over-write the existing file, or respond with
+	 the letter N to skip this member and continue to the next.
+
+
+	'Abort: Stack overflow'
+	 The member being extracted has invalid data. The program
+	 is terminated.
+
+
+	'filename - invalid decode tree count'
+	 The member being extracted has invalid data. The program
+	 is terminated.
+
+
+	'filename - new archive format 7 not yet supported'
+	 Format 7 is a special file compression method used
+	 internally by SEA, the authors of ARC. Processing
+	 continues with the next archive member.
+
+
+	'Unable to open archive > arcname'
+	 The specified ARC archive file was not found, or was
+	 inaccesible. The program terminates.
+
+
+	'CREATE failed > filename'
+	 There was insufficient directory space, or a failure
+	 accessing the output disk. The program terminates.
+
+
+	'Invalid archive format!'
+	 The archive file data is invalid. The program terminates.
+
+
+	'Incorrect DOS version'
+	 Version 2.0 or later of PC DOS must be used. The program
+	 terminates
+
+
+	'Not enough memory.'
+	 A minimum of 112k bytes of memory is required. The program
+	 terminates.
+
+
+	'I/O error reading from arcname'
+	 An incorrectable error occurred attempting to read data
+	 from the archive file. The program terminates.
+
+
+	'I/O error writing or disk full > filename'
+	 There was not enough disk space to write the complete
+	 archive member. The partially extracted file is scratched
+	 and the program terminates.
+
+
+	'No matching file(s) found'
+	 No archive files were found that matched the supplied
+	 filename specifications. The program terminates.
+
+
+ Version history:
+ ---------------
+
+	1.12 - 1/13/86, initial release
+	1.13 - 1/14/86, correct 'Not enough memory' checking
+	1.14 - 1/19/86, make displays MS-DOS compatible
+	1.15 - 1/24/86, add error messages for new ARC 5.0 formats
+	1.16 - 2/24/86, adds adaptive LZW decompression for code 8
+	1.17 - 3/02/86, adds file selection operands
+	1.18 - 3/04/86, optimizes performance
+			adds stack checking for munged LZ files
+	1.19 - 3/15/86, modifies CRC computation for more speed
+	1.20 - 3/16/85, minor changes
+	1.21 - 3/24/86, adds wildcards for ARC file name
+	1.22 - 3/25/86, improves UnCrunch performance
+	1.23 - 3/28/86, corrects problem with 0-byte files
+			adds outspec operand
+	1.24 - 4/01/86, increases stack size for 'crunched' files
+
+
+ Notice:
+ ------
+	By Vernon D. Buerg, Wayne Chin, and A. Kumar; for the IBM PC
+	using DOS 2.0 or later. All rights reserved.
+
+		Vernon D. Buerg
+		456 Lakeshire Drive
+		Daly City, CA  94015
+		CompuServe: 70007,1212
+		Data/RBBS:  415-994-2944
+
+

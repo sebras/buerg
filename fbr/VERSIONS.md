@@ -16,7 +16,7 @@
   - *version 1.7 is not compatible with earlier versions*
 - 1.63 03/20/88
   - FR: correct problem restoring from multiple disks
-- 1.62 11/11/87
+- [1.62](1.62) 11/11/87
   - FR: correct drive letter in mount message
   - FR: correct problem using 'd:\path' in command not using correct fbr filename
 - [1.61](1.61) 08/04/87

@@ -41,7 +41,7 @@
   - make integrity checking more robust
 - 2.11 01/24/87
   - some cosmetics, wrong banner version and date
-- 2.10 01/6/87 
+- [2.10](2.10) 01/6/87 
   - correct use out output file specification
 - 2.09 01/05/87
   - correct closing of output if /P used; require return (enter key) for over-write prompt

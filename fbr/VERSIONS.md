@@ -27,7 +27,7 @@
 - 1.60 08/01/87
   - FB: add display of file count, total bytes, and count of disks required
   - FB: improve file selection routines
-- 1.58 07/30/87
+- [1.58](1.58) 07/30/87
   - FB: improve performance writing to target drive
 - 1.55 04/07/87
   - correct problem with cross-linked clusters using /D

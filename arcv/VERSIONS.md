@@ -40,7 +40,7 @@
   - supports ARC 5.0 new formats
 - 1.04 01/19/86
   - make displays MS-DOS compatible
-- 1.03 01/10/86
+- [1.03](1.03) 01/10/86
   - released for general use
 - 1.00 01/05/86
   - initial program

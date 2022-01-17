@@ -29,7 +29,7 @@
   - add PAK 2.5 sfx and LHA 2.05 sfx formats
 - 1.33 09/03/90
   - display path names separately from file names
-- 1.32 08/30/90
+- [1.32](1.32) 08/30/90
   - improve wide display of long file names
 - [1.31](1.31) 07/18/90
   - change processing of ZIP extra comments field

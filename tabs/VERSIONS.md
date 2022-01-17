@@ -5,7 +5,7 @@
   - EOF mods
 - 2.1 10/14/86
   - ignore EOF (1Ah) in input files.
-- 2.0 03/05/86
+- [2.0](2.0) 03/05/86
   - Add EOF to end of file for programs that need it.
   - Improve performance about 10%.
 - [1.9](1.9) 06/05/85

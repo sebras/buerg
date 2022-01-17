@@ -478,4 +478,15 @@
   - corrected ctrl-D not issuing "GO page"
   - corrected wait at EDIT (/EXIT) prompt when sending messages
   - revised use of QB files to reduce number of maximum files
+- 5.60 01/26/88
+  - rewritten editor from the ground up
+  - external scripts
+  - more code in assembler
+  - full support for the new, faster B protocol
+- 5.43 11/19/87
+  - greatly enhanced message editor now has word wrap and several new formatting commands.
+  - improved CIS B protocol file transfer includes support for new Quick B implementation.
+  - new Script command processor allows automation of other tasks, automatic logon via non-CIS nodes, and unattended downloading of files.
+- 5.26 04/26/87
 - 5.0 09/03/86
+- [1.0](1.0) 03/03/84

@@ -1,0 +1,261 @@
+                        A U T O S I G
+
+Introduction.
+=============
+
+     AUTOSIG is a program written specifically for CompuServe SIG use.
+     It provides an automatic way of processing SIG messages which is
+     quick and economic.
+
+     AUTOSIG is a special communications program written in BASIC for
+     the IBM PC. Although its main purpose is to offload messages, it
+     can be used as a simple terminal program.
+
+     AUTOSIG was derived from a program called SUPER.SIG in XA2 on the
+     TRS100 SIG which was written by Howard Benner[70235,1337]. This
+     version was slopped together by Vernon Buerg[74375,500] because
+     my CIS bill is ridiculous.
+
+Installation.
+=============
+
+     Before running AUTOSIG, certain SIG options must be in effect. The
+     program depends upon certain sequences of events and control char-
+     acters. Specifically, the prompt character (PC) must be set to ^G.
+     Additionally, enter OP at the Function: prompt and set these options:
+
+        BR    - Brief mode
+        NS    - no stopping between messages
+        PC ^G - set prompt  to G^
+        TWM   - type waiting messages
+        MWM   - mark waiting messages
+        RNT   - RN command types all messages
+        P     - make options permanent
+
+     The prompt character is ^G, the bell. You will not hear the bell while
+     AUTOSIG is running, but will during other sessions. You may change PC
+     during non-AUTOSIG sessions, or you may change AUTOSIG to look for a
+     different prompting character by changing the assignment of BEL at
+     line 240. Be careful in your choice.
+
+
+
+
+
+
+
+
+
+
+Operation.
+==========
+
+    Invoke AUTOSIG through BASICA with the following command:
+
+        BASICA /F:4/C:4096
+
+    For 1200 baud it is recommended that you compile the program with
+    the following commands:
+
+        BASCOM AUTOSIG/E/X/C:4096;
+        LINK AUTOSIG;
+        AUTOSIG
+
+    Upon program start-up, a menu is presented. For the first use,
+    select option (7) to reconfigure the program for your use.
+
+        (0) - RUN
+        (1) - Compose offline
+        (2) - Scan and mark offline
+        (3) - Read messages online
+        (4) - Read and reply offline
+        (5) - Send replies online
+        (6) - Send originals online
+        (7) - Re-configure
+        (8) - Go online
+        (9) - Return to BASIC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Configuration.
+==============
+
+     The file AUTOSIG.CFG is created during the first run, or is
+     updated by later runs. Answer each question appropriately.
+     If no change is required, press ENTER. If no more questions
+     are to be answered, press ESCAPE. The information is required
+     for performing dialing and logging on.
+
+     "GO to page (PCS131)"
+       - enter the CIS page number to go to
+         after an automatic logon
+     "CIS phone # (555-1212)"
+       - enter your local CIS or net telephone number.
+     "What baud rate (300)"
+       - enter 300 or 1200, the comm parameters are set to
+         COM1:baud,7,E,1,DS
+     "Your userid (70000,000)
+       - enter your CIS numbers separated by a comma
+     "Your password (suppressed)"
+       - enter your CIS password, it is never displayed.
+     "Default disk (B)"
+       - select an appropriate drive letter, three files are created,
+         AUTOSIGA.TMP, AUTOSIGB.TMP, and AUTOSIGC. They are not deleted,
+         so that they may be reused at any time.
+     "Starting msg # or N (N)"
+       - normally N is used so that all new messages are processed, but
+         a message number can be substituted.
+     "Modem dial commands (AT DT,)"
+       - enter an appropriate command sequence for your modem.
+
+
+    Defaults, or previous settings, are shown within parenthesis. The
+    configuration process can be terminated by using the ESCAPE key.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(0) RUN.
+========
+
+    This is the main function of AUTOSIG. This option performs these steps:
+
+    Automatic Logon (8)
+      - dials the CIS phone numbe,
+      - supplies your userid and password to gain access,
+      - instructs CIS to go to a specific page
+
+    Downloading of message headers and marked messages
+      - in the SIG, issues RM to save waiting messages, messages
+      - issues SF;N to list all new message headers,
+      - logs off
+
+    Offline scanning and marking of message headers (2)
+
+    Downloading of selected messages (3)
+      - automatic logon,
+      - issues RI for each message selected,
+      - logs off
+
+    Offline reading and replying to messages (4)
+
+    Uploading of original messages and replies (5)(6)
+      - automatic logon,
+      - issues RE and supplies message replies,
+      - issue L and supplies new message text,
+      - logs off
+
+    Note. The automatic sequence can be terminated when online
+    by using the ENTER key. Thus, if problems develope, you can
+    gain manual control.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(1) Compose Offline.
+====================
+
+    Messages can be prepared offline. The format and prompting is similiar
+    to those of the Leave command. Once composed, the messages can be sent
+    automatically by selecting option (6).
+
+(2) Scan and mark offline.
+==========================
+
+    The CIS message headers are listed one by one. You may Mark any that
+    you wish to read later. For each message that is marked, an RI command
+    is generated.
+
+(3) Read messages online.
+=========================
+
+    The RI commands generated by option (2) are passed to CIS, and the text
+    of the selected messages is saved for viewing in option (4).
+
+(4) Read and reply offline.
+===========================
+
+    The selected messages, from (3), are displayed or printed. You are
+    asked to Continue, Reply, or Delete after each one. If you choose
+    to reply, option (1) - compose offline - is invoked. Upon completing
+    your reply, the next message is presented. The program generates
+    RE commands followed by your text.
+
+(5) Send replies to messages.
+=============================
+
+    The replies prepared above are sent automatically to CIS using the.
+    REply command.
+
+(6) Send originals online.
+==========================
+
+    Original messages that you composed are sent automatically to CIS
+    using the Leave command.
+
+(7) Re-configure.
+=================
+
+    Invokes the configuration routine so that you may change the CIS page,
+    telephone, etc.
+
+(8) Go online.
+==============
+
+    This option operates as a simple terminal program. You may choose
+    to automatically dial and logon, but then the reset is up to you.
+    To terminate the online mode, enter ctrl-D.
+
+(9) Return to BASICA.
+=====================
+
+    Terminates AUTOSIG and returns to BASICA, or DOS if the compiled
+    version is used.
+
+END.
+

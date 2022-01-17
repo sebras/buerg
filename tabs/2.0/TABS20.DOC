@@ -1,0 +1,88 @@
+
+TABS Command
+-----------------
+
+Purpose:   Replace blanks with TAB character(s); or expand TABs.
+
+Format:    TABS  [d:][\path]infile [d:][\path]    [/D]
+                                   [d:][outfile]
+
+Remarks:   Any TAB characters found are first expanded. If TABS
+        appear within quoted strings - out of context - they will
+        not be expanded. Trailing blanks are deleted.
+
+        The /D option may be used to remove TABs from a file,
+
+        The input file name must be supplied. It may include a
+        drive and/or path name. If the output file name is
+        omitted, the input file name, current drive, and current
+        directory are used.
+
+        Each filename may contain drive and path specifications.
+        Wildcards are allowed with the input filename only. All
+        files matching the input specification are processed.
+        The output file may be a drive and path, or a drive and
+        filename, but not path and filename.
+
+        If any errors are encountered, the ERRORLEVEL variable is
+        set to a 1 (one).
+
+        The maximum logical record size is 255, see MAXREC equate.
+        Defacto tab columns are 9,17,25,...
+
+        Written by Vernon Buerg for the IBM PC using DOS 2.
+        For public domain use. Not for sale or hire.
+
+Examples:
+
+ o  Invoke without parameters to display usage information:
+
+        A>TABS
+          TABS - Version 2.0 - V.Buerg
+          Usage:  TABS  infile  outfile  [/D]
+           o  infile and outfile may include drive and path names
+           o  use ending /D to expand tabs to spaces.
+           o  March 5, 1986; public domain.
+        A>
+
+ o  Put tabs in all files with an extension of DOC from drive A in
+    the subdirectory named SOURCE, to directory TEST on drive B:
+
+        A>TABS A:\SOURCE\*.DOC B:\TEST
+
+ o  Copy file MEMO.TXT as MEMO2.TXT and put in tabs:
+
+        A>TABS MEMO.TXT MEMO2.TXT
+
+ o  Remove tabs from file TEST.ASM on drive C and place the new file
+    on drive B:
+
+        A>TABS C:TEST.ASM B: /D
+
+
+Notes:  Version 1.6 - June 17, 1984
+         o  includes a correction for the use of wildcards
+            to name the output file the same as the input file if
+            only a drive was supplied for the output file name.
+
+        Version 1.7 - March 2, 1985
+         o  processes all input files which match the input file
+            specification
+         o  treats the EOF character as end of file, thus embedded
+            EOF characters will result in a truncated file
+
+        Version 1.8 - April 13, 1985
+         o  The input file specification is now required,
+         o  The output file specification may include a path OR
+            a file name, but not both.
+         o  Set DOS ERRORLEVEL to 1 if any errors.
+
+        Version 1.9 - June 5, 1985
+         o  The output file specification is required unless the
+            input file specification has a drive. This prevents
+            over-writing the input file.
+
+|       Version 2.0 - March 5, 1986
+|        o  Add EOF to end of file for programs that need it.
+|        o  Improve performance about 10%.
+

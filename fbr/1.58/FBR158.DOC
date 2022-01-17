@@ -1,0 +1,684 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                         FBR - File Backup / Restore
+                                 Version  1.58
+                                 July 30, 1987
+
+                     (c) Copyright Vernon D. Buerg 1986,1987
+                                ALL RIGHTS RESERVED
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FBR - File Backup / Restore
+
+
+
+
+
+
+
+
+
+                                Notice
+                                ------
+
+        This is a development test release of FBR. Use these
+        programs at your own risk.  Although they have  been
+        extensively tested,  I take no responsiblity for any
+        losses.
+
+
+
+                             NOT PUBLIC DOMAIN
+                             -----------------
+
+        This document and the FBR programs are the personal property
+        of:
+
+                        Vernon D. Buerg
+                        456 Lakeshire Drive
+                        Daly City, CA 94015
+
+                        VOR BBS: 415-994-2944
+                        Compuserve: 70007,1212
+
+        FBR is distributed by me for your personal use. You may not
+        charge for distributing FBR. Commercial use of FBR is
+        prohibited.  Corporations and institutions may not use FBR
+        without first obtaining written permission. Sorry about that,
+        but if anyone is going to make a buck from this, it should be me.
+
+
+        Please let me know of any problems, criticisms, or suggestions.
+        Thank you.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FBR - File Backup/Restore                                            Contents
+
+
+
+
+
+
+
+                                Table of Contents
+                                -----------------
+
+                Introduction ............................... 1
+
+                FB - File backup ........................... 2
+
+                  Backup examples .......................... 3
+
+                FR - File restore .......................... 4
+
+                  Restore examples ......................... 5
+
+                FS - File status ........................... 6
+
+                Operational notes .......................... 7
+
+                Version history ............................ 8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FBR - File Backup / Restore                                             Page 1
+
+
+
+
+                            Introduction
+                            ------------
+
+        FBR is a system of three small programs which perform the
+        backing up and restoring of files.  They are similar to the
+        DOS BACKUP/RESTORE utilities except that FBR can currently
+        only process one directory at a time.  It does, however, back
+        up all files in a directory, filling as many backup disks as
+        necessary.  The FBR backup and restore programs can select
+        files based upon 30 file specifications.
+
+
+
+                             Programs
+                             --------
+
+        The FBR system consists of these files:
+
+            FB.COM   -  used to back up files
+            FR.COM   -  used to restore FBR files
+            FS.COM   -  to report on contents of FBR files
+            FBR.DOC  -  this document
+
+        It is recommended that the FR.COM program be copied to the
+        first diskette of each backup. This will insure that the
+        restore program is the correct one for restoring the files.
+        The file name may include a version number, e.g. FB158.COM
+        instead of FB.COM for the backup program.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FBR - File Backup / Restore                                             Page 2
+
+
+                        Backup - FB Command
+                        -------------------
+
+        To back up files in a directory, use the FB.COM program.
+
+
+    FB  [d:][\path][filespec] [filespec...] [/D] [/M] [/2] [/C] [/V] [t:]
+
+
+        If no command line parameters are supplied, FB backs up all the
+        files in the current directory to the disk in drive A.
+
+        If the first d:  (drive) operand is supplied, it specifies the
+        drive, and/or path, and/or a file specification for the files to
+        be backed up.  Only files matching the 'filespec' are processed.
+
+        More than one 'filespec' may be supplied.  Separate each file
+        specification by a blank or a comma.
+
+        The IBMDOS.COM, IBMBIO.COM, MSDOS.SYS, and IO.SYS files are
+        ignored.
+
+        The last 't:' operand specifies the target drive, and it must be
+        the LAST operand.
+
+        The /D operand specifies that all files on the target disk be
+        deleted before files are backed up to it.
+
+        The /M operand specifies that only modified files are to be
+        backed up, i.e.  archive bit not set.
+
+        The /2 operand specifies that the target drive is to alternate
+        from either B to A, or from A to B.  This allows backups to
+        continue while changing floppy diskettes.
+
+        The /C operand specifies that the archive bit for each file
+        copied should be reset.
+
+        The /V operand specifies that the DOS verify function should be
+        used.  This results in slower I/O but perhaps more peace of
+        mind.
+
+        As each file is processed, a message is displayed telling you
+        the name of the file that has been copied.  You may abort the
+        back-up by pressing ESCape or control-C.
+
+        When a backup drive fills, you are asked to ready another
+        diskette and to press any key.  To cancel the backup at this
+        point, press the ESCape key.  The state of the copied files is
+        unpredictable if you cancel the back up.
+
+
+
+
+
+
+FBR - File Backup / Restore                                             Page 3
+
+
+
+        Backup Examples:
+        ---------------
+
+        o  If the current drive is C: and the current directory
+           is \ME, then to backup all of the C:\ME files
+           onto two alternating drives, issue the following:
+
+                FB /2    -or-  FB C:\ME\*.* /2  B:
+
+        o  To backup only files with an extension of COM or EXE:
+
+                FB *.COM *.EXE
+
+        o  Backup two files from a directory on drive D, and delete
+           any files already on the backup diskette:
+
+                FB d:\subdir\file1.ext file2.ext b: /D
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FBR - File Backup / Restore                                             Page 4
+
+
+                            Restore - FR Command
+                            --------------------
+
+        To restore files backed up by FB, use the FR.COM program.
+
+    FR  [d:][\path]  [filespec...]  [/2][/R][/U][/V]
+
+        The 'd:' operand specifies the drive which contains the FBR
+        files from FB.  If omitted, drive A is used.
+
+        The \path operand identifies the FBR file to use for the
+        restore.  If omitted, the first FBR file found is used.
+
+        Up to 30 "filespec" parameters may be supplied.  Only those
+        files which match one of the "filespecs" are restored.
+
+        The '/2' operand specifies that two drives are to be used for
+        restoring files.  The request for readying drives alternates
+        from B to A, or from A to B.
+
+        The '/V' option specifies that the system verify option is to be
+        set on.  Otherwise, verify is set off to improve speed.
+
+        The '/R' option specifies that any existing copies of the files
+        be over-written.  If omitted, you will be asked whether or not
+        an existing file may be replaced.  This is the fastest method
+        of restoring files.
+
+        The '/U' option specifies that only new files from the backup
+        set be restored.  A new file is one that does not already exist
+        in the target directory, or one that has a later file date and
+        time.
+
+        If you mount the wrong FBR disk, the program aborts.  This will
+        be corrected in a later version.
+
+        As each file is restored, a message is displayed telling you the
+        name of the file.  As a backup disk becomes completely read, you
+        are asked to ready another.  You may press the ESCape or
+        control-C at any time to cancel the restore operation.  All
+        files except the last one are valid.
+
+        If the target disk runs out of space, the restore stops and the
+        last file may be unusable.
+
+        Each restored file has the same or later date, and the same file
+        attribute as the original (backup copy) of the file.  Existing
+        files are over-written if the /R option is used, or if the
+        backup copy of the file is newer and the /U option is used.
+
+
+
+
+
+
+
+
+FBR - File Backup / Restore                                             Page 5
+
+
+        FR Examples:
+        -----------
+
+        o  To restore the files from an FBR disk(s) in
+           drive B, use the following:
+
+                FR B:
+
+
+        o  Restore the subdirectory TEST which has an FBR file
+           name of @TEST@@@.#01
+
+                FR a:\test
+
+
+        o  To restore only files with an extension of COM or EXE:
+|          that are newer:
+
+|               FR *.COM *.EXE /U
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FBR - File Backup / Restore                                             Page 6
+
+                            Status - FS Command
+                            -------------------
+
+        To determine the names of files backed up into FBR file(s), and
+        on which diskette they reside, use the FS.COM program.
+
+                FS  [d:][pathname]  [/N]
+
+        The single operand 'd:' specifies the drive which contains the
+        FBR file(s).  If omitted, drive A is assumed.
+
+        If no 'pathname' is supplied, the directories for all FBR files
+        on the disk are displayed.  Otherwise, only those FBR files
+        which match the pathname are shown.
+
+        It is not necessary to use the first disk of FBR files for FS to
+        display file status information.  The LAST diskette contains the
+        most accurate data regarding which diskettes that files are on.
+        If the 'Position' is given as '?', the diskette numbers are
+        estimates.
+
+        For each file backed up by FB, one line of information is
+        displayed.  This includes the file name, create date, file size,
+        file attributes, and the diskette number.  The files are
+        displayed in alphabetical order unless the /N option is used,
+        then the files are listed in the physical order in which they
+        were backed up.
+
+        If a file starts on one disk and ends on another, two volume
+        numbers are displayed, e.g.  01 02.
+
+        When the screen fills, the message "more..." is displayed.  You
+        may enter ESCape or control-C, or the letter N to abort and
+        return to DOS.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FBR - File Backup / Restore                                             Page 7
+
+                              Operational Notes
+                              -----------------
+
+        The FB backup program creates one file on each disk that it
+        uses.
+
+        The filename is of the form '@ppppppp.#nn',
+
+             where 'nn' is a sequential volume number beginning with 01;
+             and 'ppppppp' is the name of the origin directory. For root
+             directories, the name also contains the drive letter.
+             For example, '@ROOTC@@.#01' is the first backup file for
+             the root directory of the disk from drive C.
+
+        FB may not scratch the target disk.  It will use whatever space
+        is available for making its backup copies and ask for another
+        disk as needed.  Because the FBR filenames are taken from the
+        the origin directory name, more than directory may be backed up
+        onto one diskette.
+
+        FB requires about 64K of memory but will use all available
+        memory if it needs to for storing directory information.
+
+        FR restores files to the current drive and subdirectory.  This
+        is intentional as it yields more flexibility.
+
+        I've noticed that FBR is about twice as fast as BACKUP, and that
+        the /2 option for using two drives is very helpful.  The amount
+        of disk space is about the same.
+
+        The FBR files may reside on any type of disk supported by the
+        operating system.  That is, a floppy diskette may be backed up
+        to a fixed disk, if so desired.
+
+        Since the FBR files are unique on any disk (or subdirectory)
+        there is no reason why they can not be sQueezed or ARCed for
+        transporting to other systems.  For example, an entire floppy
+        disk of files will most likely produce one FBR file that can be
+        compressed and then transmitted.
+
+
+                             More?
+                             -----
+
+        FBR was written to satisfy my personal method of backup.  I'm
+        sure there are much better methods and programs, but FBR is
+        cheap (free), and it's easy for me to use.  I don't use it for
+        all my backup procedures, but it has saved me more than once.
+
+        Future enhancements will allow processing all subdirectories in
+        the current directory, formatting of the target disks, and the
+        ability to add files to an existing FBR file.
+
+        If you like FBR, let me know.  Otherwise I'll get bored with it
+        and forget all about it.
+
+
+
+FBR - File Backup / Restore                                             Page 8
+
+                             Version History
+                             ---------------
+
+        1.0 - October 28, 1985
+        1.1 - October 30, 1985
+                - added /C and /V options to FB
+                - subdirectory and IBMxxx.COM entries are excluded
+                  from the FBR files to save some space
+                - fixed the ESCape (or ctrl-C) response to abort FB
+                - changed FS to show two disk numbers for files which
+                  span volumes
+        1.2 - October 31, 1985
+        1.3 - November 12, 1985
+                - the table at the beginning of each FBR file now contains
+                  the actual diskette number for each file, this makes
+                  this version incompatibile with previous versions, so
+                  it's a good idea to place FR.COM on each FBR disk.
+                - FS now lists the file alphabetically, and if the last
+                  disk is used, the diskette numbers are accurate; otherwise
+                  the diskette number is calculated and may not be correct.
+                - the FBR file name was changed to allow multiple directories
+                  to be backed up onto one disk; this also provides more
+                  information about what the FBR file contains.
+                - the ESCape key can be used at any time during FB to abort
+                  the backup.
+        1.4 - December 7, 1985
+                - FB may selectively back up files
+                - FR may selectively restore files
+                - FS processes all FBR files on the specified drive
+                - the ESCape and control-C keys may be used at any
+                  time to abort an FBR program; control-break is not
+                  accepted
+        1.45 - January 25, 1986
+                - correct path syntax for FR
+
+        1.47 - February 2, 1986
+                - corrections to FR for multiple volumes
+
+        1.49 - February 16, 1986
+                - corrections to FR for large files spanning two disks
+                - add path operand to FS
+                - remove BIOS specific display routines from FS
+
+        1.50 - March 13, 1986
+                - corrections to FR for selective file restore
+                - add display options to FS
+
+        1.53 - May 21, 1986
+                - add /D option to FB to delete files on target disks
+                - exclude MSDOS.SYS and IO.SYS
+                - change FB to process files in ascending size order
+
+
+
+
+
+
+
+FBR - File Backup / Restore                                             Page 9
+
+
+                             Version History (cont'd)
+                             ---------------
+
+
+        1.54 - June 14, 1986
+                - add /V, /R and /U options to FR
+                - display file names 5-up in FR
+                - make FB smaller
+
+        1.55 - April 7, 1987
+                - correct problem with cross-linked clusters using /D
+                - correct problems supplying filespecs to FB
+
+        1.58 - July 30, 1987
+                - improve performance writing to target drive
+
+
+
+
+

@@ -58,8 +58,32 @@
   - fine tuning of I/O buffering
 - 1.24d 04/01/86
 - 1.24 04/01/86
-- 1.22d 03/25/86
+  - increases stack size for 'crunched' files
+- 1.23 03/28/86
+  - corrects problem with 0-byte files
+  - adds outspec operand
+- 1.22 03/25/86
+- 1.22 03/25/86
+  - improves UnCrunch performance
+- 1.21 03/24/86
+  - adds wildcards for ARC file name
+- 1.20 03/16/85
+  - minor changes
+- 1.19 03/15/86
+  - modifies CRC computation for more speed
 - 1.1h 03/11/86
-- 1.1 01/13/86
+- 1.18 03/04/86
+  - optimizes performance
+  - adds stack checking for munged LZ files
+- 1.17 03/02/86
+  - adds file selection operands
+- 1.16 02/24/86
+  - adds adaptive LZW decompression for code 8
+- 1.15 01/24/86
+  - add error messages for new ARC 5.0 formats
+- 1.14 01/19/86
+  - make displays MS-DOS compatible
+- 1.13 01/14/86
+  - correct 'Not enough memory' checking
+- [1.12](1.12) 01/13/86
   - initial release
-

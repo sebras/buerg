@@ -74,7 +74,7 @@
   - correct label case, correct tabs
 - 1.31 04/02/86
   - print after parsing record
-- 1.30 03/11/86
+- [1.30](1.30) 03/11/86
   - correct Print function
 - 1.29 03/09/86
   - correct EXEPATCH problem

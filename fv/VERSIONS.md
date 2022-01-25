@@ -36,7 +36,7 @@
   - add 'filespecs' file selection criteria
 - 1.30 07/16/90
   - correct wide listing /W option
-- 1.29 06/29/90
+- [1.29](1.29) 06/29/90
   - add /C option to display ZIP file comments
   - changed lf-lf output to cr-lf-cr-lf; removed nulls
 - [1.28](1.28) 03/25/90

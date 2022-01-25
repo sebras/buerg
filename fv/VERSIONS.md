@@ -8,7 +8,7 @@
   - correct loop with ARC-like files
 - 1.43 2/14/93
   - add madeby and sfx for ZIP 2.04g
-- 1.42 10/09/92
+- [1.42](1.42) 10/09/92
   - add /C comment option to ARJ
 - [1.41](1.41) 10/09/92
   - add ARJ sfx

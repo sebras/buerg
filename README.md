@@ -13,7 +13,9 @@ The company
 has been archived by archive.org
 
 Besides being active on Compuserve
-as [CIS:70007,1212](70007.1212@compuserve.com)
+as [CIS:70007,1212](70007.1212@compuserve.com),
+(admin for the [IBM Users Network](https://archive.org/details/compuservefromto00bowe_0/page/230/mode/2up?q="Vern+Buerg")
+and HamNet forums, call letters [N6MG](https://archive.org/details/compuservefromto00bowe_0/page/230/mode/2up?q=%22Vern+Buerg%22))
 and developing [AUTOSIG](autosig/VERSIONS.md),
 Buerg also ran
 [VOR BBS](http://bbslist.textfiles.com/707/707.txt)

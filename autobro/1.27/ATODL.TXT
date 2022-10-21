@@ -1,0 +1,47 @@
+
+                    ATODL: AutoSig Data Library Utility
+
+ATODL generates download scripts for AutoSig.  Unlike other script
+generators, uses ATO's configuration file for information about hosts,
+forums, and sections.
+
+Currently, ATODL only creates download scripts.  Future versions may have
+other capabilities.
+
+Syntax:
+          ATODL [<filename>]
+     
+     where <filename> is the name of a script file.  If no extension is
+     provided, .SCR is used.  If <filename> is omitted, ATODL writes output
+     to ATODL.SCR.
+
+Instructions:
+-------------
+
+ATODL prompts for a host name, then a forum name, then a library number,
+then a file name.
+
+This process repeats, allowing you to download files from multiple
+libraries within multiple forums.  A typical session would look like:
+
+<host>
+     <forum>
+          <lib>
+               <file>
+               <file>
+               <file>
+          <lib>
+               <file>
+               <file>
+     <forum>
+          <lib>
+               <file>
+               <file>
+     <forum>
+          <lib>
+               <file>
+
+Back out at each level by pressing ENTER; ATODL will return to the previous
+level.
+
+Execute the script by typing ATO /Xatodl.

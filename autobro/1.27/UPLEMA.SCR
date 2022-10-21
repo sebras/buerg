@@ -1,0 +1,12 @@
+display 'What file do you want to upload?'
+accept flnm
+display 'Enter PPN to send ' flnm ' to:'
+accept uid
+upl flnm
+match 'ID):'
+sendline uid
+Match 'Subject:'
+sendline flnm
+match '(Y or N)!'
+sendline Y
+match 'Mail!'

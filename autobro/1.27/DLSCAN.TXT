@@ -1,0 +1,792 @@
+
+
+
+                       DLScan - CIS Data Library Scanner
+
+
+
+  INTRODUCTION
+
+  DLSCAN is    a  simple  program  written  in  Turbo  Pascal  5.0  that,  in
+  conjunction   with AutoSig,  allows for the creation of catalog files which
+  contain descriptions  of specified files found in the CompuServe (CIS) data
+  libraries. DLScan can optionally also create a directory listing of files.
+
+  DLScan   will create  a script  file (DLSCAN.SCR  by default) that can then
+  be given  to   AutoSig for  processing. AutoSig will use the script file to
+  dial and connect to CompuServe (if necessary), "Go" to the specified forum,
+  enter the  specified libraries and download the descriptions (or optionally
+  a listing)  of the  requested file(s). This process will continue until the
+  script file has been completely processed.
+
+
+  DOCUMENT ORGANIZATION
+
+  This document  is organized  as a  tutorial. Headings have been included so
+  that the document can also be used somewhat as a reference manual.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          1
+
+
+
+
+
+
+
+
+
+  Table of Contents
+
+  Introduction...............................................1
+
+  Document Organization......................................1
+
+  Configuration..............................................3
+
+  Starting DLScan............................................3
+
+  Creating the Forum Library List............................4
+
+  Passing DLScan scripts to AutoSig..........................4
+
+  Forum Library Display Example..............................5
+
+  Forum (D)escriptions Scanning..............................6
+
+  Forum (L)isting Scanning...................................9
+
+  Downloading files.........................................11
+
+  Version History...........................................11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          2
+
+
+
+
+
+
+
+
+  CONFIGURATION
+
+  Before starting  DLScan, you  must  make  certain  that  your  AutoSig  and
+  CompuServe options  are setup  correctly. Make  sure that  you  follow  the
+  instructions under  the "Forum Options", and "Terminal Options" sections in
+  the AutoSig manual.
+
+  In particular,  make sure  that your  CIS "Display  Options" (under the "Go
+  Terminal" forum) are set to all "Yes" except for "Paged Display" which must
+  be set to "No".
+
+  To test  to make  sure that your options are set properly, and also to test
+  the functions of DLScan, use the Practice forum since it's free of charges.
+
+
+  STARTING DLSCAN
+
+  To start  DLScan, just type "DLScan" at the DOS command prompt (without the
+  " marks).  If this  is the first time DLScan has been run, you will see the
+  following:
+
+  +-------------------------------------------------------------------------+
+  |Select Forum (file(s) will be <forum>.CAT or <forum>.LST):               |
+  |                                                                         |
+  |                                                                         |
+  |                                                                         |
+                                       .
+                                       .
+                                       .
+  |                                                                         |
+  |                                                                         |
+  |                                                                         |
+  |CompuServe Data Library Scanner -- Version 3.0                           |
+  +-------------------------------------------------------------------------+
+
+  You should  now enter  the Forum  name that you wish to have searched, e.g.
+  IBMCOM.
+
+  Note: it  is very important that the <forum name> that you enter correspond
+  with the  name that  is associated  with the "SIG name, 1-7 char" prompt in
+  the "Forum Configuration Options" menu (F3 in the main menu of AutoSig).
+
+  +-------------------------------------------------------------------------+
+  |Select Forum (file(s) will be <forum>.CAT or <forum>.LST): IBMCOM        |
+  |                                                                         |
+  |                                                                         |
+  |                                                                         |
+                                       .
+                                       .
+                                       .
+  |                                                                         |
+  |                                                                         |
+  |                                                                         |
+
+
+
+
+                                          3
+
+
+
+
+
+
+
+
+  |CompuServe Data Library Scanner -- Version 3.0                           |
+  +-------------------------------------------------------------------------+
+
+
+  CREATING THE FORUM LIBRARY LIST
+
+  Once you have selected the forum, if this is the first time that DLScan has
+  been run, you will see the following screen.
+
+  +-------------------------------------------------------------------------+
+  |No data library file - do you wish to create one?                        |
+  |                                                                         |
+  |                                                                         |
+  |                                                                         |
+                                       .
+                                       .
+                                       .
+  |                                                                         |
+  |                                                                         |
+  |                                                                         |
+  |CompuServe Data Library Scanner -- Version 3.0                           |
+  +-------------------------------------------------------------------------+
+
+  By replying  "Y" to  this question,  DLScan will  create a script that will
+  download the Forum's libraries into a <forumname>.DL file; in this example,
+  IBMCOM.DL.
+
+  At this  point, in  order to  get a  feel for  using  DLScan  scripts  with
+  AutoSig, terminate DLScan and try to download the IBMCOM Forum library list
+  into the  IBMCOM.DL file.  In order  to terminate DLScan, just reply "N" to
+  the questions as shown in the example that follows:
+
+  +-------------------------------------------------------------------------+
+  |                         Get (D)escriptions, (L)isting or (N)ext Forum? N|
+  |                                                                         |
+  |                         Do you wish to scan another Forum? N            |
+  |                                                                         |
+  |                         DLSCAN.SCR has been created.                    |
+                                       .
+                                       .
+                                       .
+  |                                                                         |
+  |                                                                         |
+  |                                                                         |
+  |CompuServe Data Library Scanner -- Version 3.0                           |
+  +-------------------------------------------------------------------------+
+
+  Note: by  replying "N"  to the  first question, neither a (D)escriptions or
+  (L)isting download  script will  be created. The "N" to the second question
+  indicates that  since no  other  Forums  are  to  be  scanned,  DLScan  can
+  terminate.
+
+
+  PASSING DLSCAN SCRIPTS TO AUTOSIG
+
+
+
+                                          4
+
+
+
+
+
+
+
+
+  In the  previous section,  a DLSCAN.SCR  file was  created that  will allow
+  AutoSig to download a Forum Library list into an IBMCOM.DL file.
+
+  AutoSig can  be told  to perform the commands in the DLSCAN.SCR file by one
+  of the following commands:
+
+       *    at the  DOS command  prompt, you  can  enter  "autosig  /Xdlscan"
+            (without the " marks).
+
+       *    while in  AutoSig, regardless  of whether  you  are  logged  onto
+            CompuServe or  not, if  you hold  down the  "Alt"  key  and  then
+            simultaneously press  the "T"  key, you  will be asked to provide
+            the script file name. At this point, just enter "DLSCAN" followed
+            by the "enter" key.
+
+  Once either  of the  above has been done, AutoSig will begin processing the
+  DLScan script  file and,  for this  example, a  Forum library  list will be
+  downloaded into  the IBMCOM.DL  file. When  AutoSig is  done processing the
+  DLScan script file, it will logoff CompuServe and hang up the phone.
+
+
+  FORUM LIBRARY DISPLAY EXAMPLE
+
+  Now that  the IBMCOM.DL  file has  been created,  start DLScan again. Since
+  DLScan has already been run, the following will be displayed.
+
+  +-------------------------------------------------------------------------+
+  |<Control-Brk to Break>                                                   |
+  |Do you wish to Append to the existing script file?                       |
+  |                                                                         |
+  |                                                                         |
+                                       .
+                                       .
+                                       .
+  |                                                                         |
+  |                                                                         |
+  |                                                                         |
+  |CompuServe Data Library Scanner -- Version 3.0                           |
+  +-------------------------------------------------------------------------+
+
+  If you  reply "Y"  to this question, the previous script file will be kept,
+  and the  current DLScan  session script  will be  appended to  it. You will
+  probably wish to enter "N" in most cases.
+
+  When asked  for the  forum name, enter "IBMCOM" for this example. Since the
+  Forum library  list has  now been  downloaded, the following screen will be
+  displayed.
+
+  +-------------------------------------------------------------------------+
+  |Libraries Available:      Get (D)escriptions, (L)isting or (N)ext Forum? |
+  |0 New Uploads [C]                                                        |
+  |1 Autosig (ATO) [C]                                                      |
+  |2 Comm Utilities [C]                                                     |
+  |3 Comm Programs [C]                                                      |
+
+
+
+                                          5
+
+
+
+
+
+
+
+
+  |4 Bulletin Boards [C]                                                    |
+  |5 Ask the Sysops [C]                                                     |
+  |6 Hot Topics [C]                                                         |
+  |7 Modems/Comm Hdw [C]                                                    |
+  |8 Bul Brd Notices [C]                                                    |
+  |9 Script/Nav Pgms [C]                                                    |
+  |10 Protocols [C]                                                         |
+  |11 Local Area Nets [C]                                                   |
+  |                                                                         |
+  |                                                                         |
+  |                                                                         |
+  |                                                                         |
+  |CompuServe Data Library Scanner -- Version 3.0                           |
+  +-------------------------------------------------------------------------+
+
+
+  FORUM (D)ESCRIPTIONS SCANNING
+
+  If  you   wish  to   download  library  file  descriptions,  type  "D"  for
+  (D)escriptions. DLScan  will then  ask whether  you wish  to  collect  file
+  descriptions for a specific (F)ile, or (K)eyword.
+
+  When you have selected either (F)ile or (K)eyword, DLScan will then ask for
+  further "filtering".  For example, if you wish to search for files uploaded
+  only by  a specific person, let's say [71410,3417], when DLScan prompts you
+  for the  [CIS user  id] just  enter "[71410,3417]"  (without the  " marks).
+  Also, if the file or keyword that you wish to search for is, let's say, 360
+  days old,  when DLScan  prompts you for the "Age", enter the number of days
+  old the file is.
+
+  You can  use both filters in combination to narrow the search even further.
+  Note that  not all  search permutations of filters, filenames, and keywords
+  are supported by DLScan. The following is an example:
+
+  +-------------------------------------------------------------------------+
+  |Libraries Available:    [Gathering File Descriptions]                    |
+  |0 New Uploads [C]       Which DL number? 1                               |
+  |1 Autosig (ATO) [C]                                                      |
+  |2 Comm Utilities [C]    Search by (F)ile, (K)eyword, or (N)one? F        |
+  |3 Comm Programs [C]        Filename (<enter> for all): dlscan*.*         |
+  |4 Bulletin Boards [C]      [CIS User Id] (<enter> for all): [71410,3417] |
+  |5 Ask the Sysops [C]       Age (<enter> for all): 360                    |
+  |6 Hot Topics [C]                                                         |
+  |7 Modems/Comm Hdw [C]   Search by (F)ile, (K)eyword, or (N)one? K        |
+  |8 Bul Brd Notices [C]      Keyword: dlscan                               |
+  |9 Script/Nav Pgms [C]      [CIS User Id] (<enter> for all):              |
+  |10 Protocols [C]           Age (<enter> for all): 360                    |
+  |11 Local Area Nets [C]                                                   |
+  |                                                                         |
+  |                                                                         |
+  |                                                                         |
+  |CompuServe Data Library Scanner -- Version 3.0                           |
+  +-------------------------------------------------------------------------+
+
+
+
+
+                                          6
+
+
+
+
+
+
+
+
+  At this point, terminate DLScan and pass the DLScan.SCR script file to
+  AutoSig (see sections "Creating the Forum Library List" and "Passing DLScan
+  scripts to AutoSig" for more information).
+
+  Note: at  the present  time, there is a bug in the CompuServe SCAn command.
+  If you wish to gather a file description for a keyword, and wish to use the
+  CompuServe id  filter, DLScan  will attempt  to do  this by  using the SCAn
+  command. However,  at the  present time  a file description with the proper
+  keyword, regardless of who uploaded the file, will be gathered.
+
+  A file  description file,  in this  example IBMCOM.CAT, will be created and
+  will contain the following information:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          7
+
+
+
+
+
+
+
+
+  LIB 1 !SCA dlscan*.*[71410,3417]/DES/AGE:360
+
+  [71410,3417]
+
+  DLSCAN.ARC/binary         04-Apr-89 16810              710   05-Nov-89
+      Title   : ATO utility to create catalog fils of Lib descrips
+      Keywords: DL SCANNER ATO BRO BROWSE AUTOSIG DLSCAN
+
+      DLSCAN, in conjunction with AutoSig, allows for the creation of catalog
+      files which contain descriptions of specified files found in the CIS
+      data libraries. Use ATOBRO, found  in DL 1 of the IBMCOM forum to
+      select which file to download. This version, 1.2, adds two new
+      features: the "/Age" keyword scan option, and support for AutoSig 5.6
+      and 5.8 with or without the ";oldf" user id option. Uploaded by author.
+
+  LIB 1 !SCA *.*/KEY:dlscan/AGE:360/DES
+
+  [71410,3417]
+
+  DLSCAN.ARC/binary         04-Apr-89 16810              710   05-Nov-89
+      Title   : ATO utility to create catalog fils of Lib descrips
+      Keywords: DL SCANNER ATO BRO BROWSE AUTOSIG DLSCAN
+
+      DLSCAN, in conjunction with AutoSig, allows for the creation of catalog
+      files which contain descriptions of specified files found in the CIS
+      data libraries. Use ATOBRO, found  in DL 1 of the IBMCOM forum to
+      select which file to download. This version, 1.2, adds two new
+      features: the "/Age" keyword scan option, and support for AutoSig 5.6
+      and 5.8 with or without the ";oldf" user id option. Uploaded by author.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          8
+
+
+
+
+
+
+
+
+
+
+  FORUM (L)ISTING SCANNING
+
+  If you wish to download library file listings instead of file descriptions,
+  type "L"  for (L)istings.  DLScan will then ask whether you wish to collect
+  file listings for a specific (F)ile, or (K)eyword.
+
+  The rules  explaining how to answer the prompts are explained in the "Forum
+  (D)escription Scanning" section; please see this section for more help.
+
+  You can  use both filters in combination to narrow the search even further.
+  Note that  not all  search permutations of filters, filenames, and keywords
+  are supported by DLScan. The following is an example:
+
+  +-------------------------------------------------------------------------+
+  |Libraries Available:    [Gathering File Listings]                        |
+  |0 New Uploads [C]       Which DL number? 1                               |
+  |1 Autosig (ATO) [C]                                                      |
+  |2 Comm Utilities [C]    Search by (F)ile, (K)eyword, or (N)one? F        |
+  |3 Comm Programs [C]        Filename (<enter> for all): *.txt             |
+  |4 Bulletin Boards [C]      [CIS User Id] (<enter> for all): [76703,4363] |
+  |5 Ask the Sysops [C]       Age (<enter> for all):                        |
+  |6 Hot Topics [C]                                                         |
+  |7 Modems/Comm Hdw [C]   Search by (F)ile, (K)eyword, or (N)one? K        |
+  |8 Bul Brd Notices [C]      Keyword: command                              |
+  |9 Script/Nav Pgms [C]      [CIS User Id] (<enter> for all):              |
+  |10 Protocols [C]           Age (<enter> for all):                        |
+  |11 Local Area Nets [C]                                                   |
+  |                                                                         |
+  |                                                                         |
+  |                                                                         |
+  |CompuServe Data Library Scanner -- Version 3.0                           |
+  +-------------------------------------------------------------------------+
+
+  At this point, terminate DLScan and pass the DLScan.SCR script file to
+  AutoSig (see sections "Creating the Forum Library List" and "Passing DLScan
+  scripts to AutoSig" for more information).
+
+  Note:  the   same  CompuServe  SCAn  command  bug  described  in  the  file
+  description section  also affects  the gathering  of file  listings. A file
+  listing with the proper keyword regardless of who uploaded the file will be
+  gathered.
+
+  A file listing file, in this example IBMCOM.CAT, will be created and will
+  contain the following information:
+
+
+
+
+
+
+
+
+
+
+
+                                          9
+
+
+
+
+
+
+
+
+
+  LIB 1 !SCA /SHORT *.*/KEY:autosig
+
+
+
+  ATO63A.EXE/B  120K 28-Mar-90 AUTOSIG Version 6.3a CIS communications
+  program
+  ATO63A.HST/A   24K 28-Mar-90 AUTOSIG Version 6.3a version history
+  ATO63A.REQ/A    6K 28-Mar-90 AUTOSIG Version 6.3a system requirements
+  ATOADV.EXE/B   19K 28-Mar-90 AUTOSIG Version 6.3a Advanced Users Manual
+  ATODOC.EXE/B   72K 28-Mar-90 AUTOSIG Version 6.3a Users Guide
+  AUTOSG.ARC/B    3K 31-Oct-86 Doc file for the first version of AUTOSIG
+  WHATIS.ATO/A    6K 05-Apr-90 Introduction to AUTOSIG
+  ATO.PIF/B       1K 21-Jun-90 PIF file for Autosig
+  AUTOSI.ICO/B    1K 20-Jun-90 Windows 3.0 icon for Autosig
+  DOWFIL.BAT/A    1K 06-Jun-89 Download scripts
+  ATOREF.ARC/B   14K 11-May-89 print image of quick reference card for ATO
+  GNEWS.SCR/B     1K 28-Oct-89 ATO script file to download ENS folders
+  NUFILE.SCR/B    1K 07-Oct-89 ATO script to check forums for new uploads
+  DLSCAN.ARC/B   22K 08-Nov-89 DLSCAN; ATO data library scanner
+  ATOPCM.TXT/A    2K 14-Jun-89 How to setup ATO for gateway services
+  ATOPAT.ARC/B    5K 29-May-89 workaround for ATO owners of ROM 139 Hayes
+  modems
+  BKMARK.ARC/B    2K 27-May-89 ATO bookmark utility
+  OLT37C.ARC/B    1K 16-Jul-89 ATO script-access new upload section of What's
+  New
+  SETERM.ARC/B    1K 17-Jul-89 ATO script to set options in Terminal area
+  THRD22.EXE/B   39K 19-Sep-89 ATO addon sorts message files into thread
+  order
+  VERBS.ARC/B     3K 17-Dec-89 ATO script verbs
+  WOTSNU.ARC/B    1K 18-Jul-89 ATO script for capturing What's New
+  SETPLE.ARC/B    1K 25-Nov-89 ATO setup script
+  ATOBRO.ARC/B   49K 29-Mar-89 Autosig LIBrary BROwse utility
+  SETUP.ARC/B     1K 07-Dec-88 Autosig script to set forum options
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          10
+
+
+
+
+
+
+
+
+
+
+  DOWNLOADING FILES
+
+  Once a  <forumname>.CAT  file  has  been  built,  use BRO.EXE, found  in DL
+  1 of the IBMCOM forum as AUTOBRO.ARC, to select which file to download (see
+  BRO.DOC for more information).
+
+  BRO can only make use of the <forumname>.CAT files; i.e. it cannot make use
+  of the  <forumname>.LST files. The *.LST files are only useful for your own
+  information.
+
+  At the  present time,  BRO is only able to generate scripts for downloading
+  files; it  does not  have the  ability to  create scripts  to  gather  file
+  descriptions, or  listings. However,  BRO does  have the  ability to use as
+  input, files  created by  DLScan, or  catalog files  that can be downloaded
+  from CompuServe Forum libraries.
+
+
+  VERSION HISTORY
+
+  1.1 - fixes three known problems:
+
+       1)   When "Appending"  to a  file, the new script commands are entered
+            after   the existing   "Logoff"  script  command. This causes the
+            newly appended commands to be ignored.
+
+       2)   When entering   a  "null"   forum  name,    an  I/O  error  3  is
+            displayed.
+
+       3)   When a  "Logon <forumname>"  AutoSig script  command is executed,
+            if   AutoSig is  already in the specified forum at the  time, the
+            "Logon" is  ignored; however, a "OP;SM N;S" CIS command string is
+            still issued.
+
+  1.2 - adds two new features:
+
+       1)   adds the "/Age" option for keyword scans.
+
+       2)    support  for Autosig  5.6 and 5.8 with or without ";oldf" is now
+            available.
+
+  2.0 - adds the following features:
+
+       1)   /Age and [CIS User ID] options for file and keyword scans.
+
+       2)   directory function  (listing of  files by CIS User ID) put into a
+            file with a ".LST" ext.
+
+       3)   removes script  generation  for  versions  of  AutoSig  prior  to
+            version 5.8.
+
+  3.0 - adds the following feature:
+
+
+
+
+                                          11
+
+
+
+
+
+
+
+
+       1)   Adds support  for the "/Short" option on SCAn. This will create a
+            .LST file  that has  a list  of files along with a one line title
+            description.
+
+
+
+  This program was originally released to the Public Domain on 10/11/88
+
+  Neil Iwamoto
+  CompuServe ID: 71410,3417
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          12
+
+
+
+
+

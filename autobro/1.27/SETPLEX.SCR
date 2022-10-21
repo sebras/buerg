@@ -1,0 +1,14 @@
+sendline set
+match !
+sendline 1
+match !
+sendline 2
+match !
+sendline 3
+match !
+sendline 3
+match !
+sendline  
+match !
+sendline y
+

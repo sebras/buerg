@@ -37,7 +37,7 @@
   - Fix overprinting problem when terminal print switch set.
   - Fix routine to turn 16550 off on exit from ATO (if ATO turned it on).
   - Fix some problems where invalid directories were causing untrapped errors.
-- 7.0a 06/??/94
+- [7.0a](7.0a) 06/??/94
 - [6.9a](6.9a) 09/07/92
   - public release
 - 6.93 09/04/92

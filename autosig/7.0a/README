@@ -1,0 +1,75 @@
+This file is intended to inform you about differences between the
+documentation and the operation of the AUTOSIG.EXE file contained
+in this package.  It also gives some very brief instructions
+which will help current ATO version 6.9a users make the minor
+modifications necessary to set the new version up for their use. 
+It does not provide a full listing of changes or enhancements in
+the program.  I will be uploading a WHATS.NEW which will list the
+changes, but you'll need to refer to the full new documentation
+to get explanations.  You can see reference to most of the
+enhancements by examining the help screens.
+
+
+Differences of this AUTOSIG.EXE from the documentation:
+
+Due to ISSUES forum message numbers hitting 7 digits (which the
+Mark function of version 6.9a will not handle), we were forced to
+release this interim version with two features which are in 6.9a,
+but not implemented here yet.  We are still working on these
+items and intend to release a version with these items as soon as
+possible.  The omitted items are mouse availability and /T to get
+BIOS writes.
+
+
+Conversion from version 6.9a to 7.0a:
+
+1.   Make a backup of AUTOSIG.DFN and keep a separate copy of
+     AUTOSIG.EXE and AUTOSIG.HLP somewhere (possibly just renamed
+     or on a floppy).  Install AUTOSIG.EXE and AUTOSIG.HLP in the
+     same directory as your previous AUTOSIG.EXE.  (Note the .HLP
+     file must be in that same directory as the program file.)
+
+2.   Make sure you have at least 400K of free RAM before loading
+     the new version.  437K or more is better yet.  (Sorry about
+     the increased memory usage, but you do get to use more of
+     your RAM.)
+
+3.   Make your comm port specification in the host setup (reached
+     by F4 from a menu) the same as the port number which you use
+     for other programs.  E.g., if you specified COM7 for version
+     6.9a, use COM3 for this version.
+
+4.   If your version 6.9a comm port specification includes IRQ
+     and base port information, you will need to change the
+     format of that specification.  You will need to specify the
+     comm port number in addition to the other information.  The
+     full form of the specification ATO will accept is
+     COMx/y/&Hzzzz, where x is the port number, y is the IRQ and
+     zzzz is the address in hex. If you enter the base address,
+     you must specify the IRQ, even if the IRQ is standard.  The
+     IRQ may be entered without the base address.
+
+5.   If your version 6.9a baud rate is specified as 1920, use
+     19200 in the (renamed) "Comm speed" field.  That field now
+     takes the actual comm speed instead of the first 4 digits as
+     6.9a did.  14400 should still *not* be used.
+
+6.   If you have /H or /S set to Y in your PC Options (reached by
+     <Esc> from a menu), they have different meanings related to
+     new functions.  You should set them to N to get ATO
+     operation as you had it in version 6.9a.
+
+Those changes should allow you to switch to version 7.0a fairly
+painlessly.  There will be some new appearances.  Most will be
+fairly obvious, but one in particular could make you think
+something is wrong:
+
+CMail messages are now uploaded so you will see a different
+appearance as your messages are sent, but the operation of those
+messages will be the same.  For now, avoid use of single quotes
+in CMail message subjects.
+
+Good luck and let us know of any questions or problems.  The new
+doc file should be available shortly, but I hope this will let
+you continue using ATO in the interim.
+

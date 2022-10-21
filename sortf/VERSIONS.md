@@ -46,7 +46,7 @@
   - Corrects problems with first record of file.
   - Adds /C option to treat keys as case insensitive data
   - The key length may be specified on the command line
-- 2.1 08/03/85
+- [2.1](2.1) 08/03/85
   - Corrects a problem sorting files larger than 64K.
 - 2.0 07/11/85
   - Corrects CR/LF problem.

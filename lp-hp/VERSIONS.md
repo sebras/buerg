@@ -1,6 +1,6 @@
 # LP-HP version history
 
-- 1.8 11/13/88
+- [1.8](1.8) 11/13/88
   - correct processing of control characters
 - 1.71 11/23/87
   - added option for font selection

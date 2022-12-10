@@ -1,0 +1,108 @@
+LP Command                                                      Version 1.8
+----------                                                     Nov 13, 1988
+
+Purpose:  To print an  ASCII  file on an HP LaserJet printer formatted
+          with a title at the top of each page including the file
+          name, creation time and date, and page number.  The file
+          may be printed in either portrait or landscape mode, and
+          options are available for selecting lines per inch, character
+          pitch, margins, tab expansion, and font.
+
+Syntax:   LP  [d][path]filename[.ext]   [/6][/8]
+                                        [/L1][/L2][/L3]
+                                        [/10][/12][/17]
+|                                       [/OP][/OL]
+|                                       [/Mn]
+|                                       [/T4][/T8]
+|                                       [/Fn]
+
+Options:
+          [/6][/8] - Select 6 or 8 lines per inch.
+             Default is 6.  Resulting text page length depends on selected
+             orientation.  Portrait (Landscape) mode at 6 lines per inch prints
+             60 (42) lines per page, 8 lines per inch prints 80 (56) lines per
+             page.
+
+          [/L1][/L2][/L3] - Printer port select.  Default is L1 (LPT1).
+
+          [/10][/12][/17] - Character pitch select.  Default is 10.
+             Resulting characters per line, including margins, is dependent on
+             the selected orientation.  The appropriate font must be available
+             for the mode selected or the printer will substitute the closest
+             available.
+
+                            Characters per Line
+                   cpi     Portrait     Landscape
+                   ---     --------     ---------
+                    10       80           106
+                    12       96           127
+                    17      132           176
+
+        [/OP][/OL] - Selects portrait (OP) or landscape (OL) orientation.
+                     Default is portrait.
+
+        [/Mn] - Sets left margin at column n.  Default is column 0
+             (first column).  Column numbering starts at 0, the maximum margin
+             is 34.  Margin columns are set per the current fixed pitch
+             selected (default is 10 cpi) even if a proportional font is
+             selected for the text body.  Setting margins which cause excessive
+             line wrapping may produce unpredictable results.
+
+        [/T4][/T8] - Selects number of columns for tab expansion.
+                     Default is 8.
+
+        [/Fn] - Selects the font ID for the text body.  Default is none,
+             and the fixed pitch font specified by the pitch option will be
+             used.  Valid values are 0 to 32767.  A font
+             (downloaded,resident,or cartridge) must be identified with a valid
+             ID and specified as permanent prior to printing.  If the font
+             specified is not defined, the current font will be used.
+
+LP Command                                                      Version 1.8
+----------                                                     Nov 13, 1988
+
+Remarks:
+        If the input filename is omitted, you will be prompted to supply
+        one.
+
+        Each page is numbered and contains a title consisting of the
+        file name, creation time and date.  If 12 pt Helv is available
+        it will be used for the title line, otherwise the current
+        default font will be used.  If bold is available, it will be
+        used on the title line.
+
+        Consult the HP manual for information on specifying fonts with
+        font ID numbers.  Only fonts identified as permanent will be
+        accessable by the program.  Use of a proportional font for the
+        text body does NOT change the character per line limit set with
+        the pitch select option.
+
+        This program contains control codes compatable with the HP
+        LaserJet series of printers.  If desired the source can be
+        changed to support other printers.
+
+        If a print spooler is used, DO NOT use LP while using the DOS
+        PRINT command.
+
+Notes:
+        Original program written by Vernon Buerg for the IBM PC using
+        DOS 2.0 or later.  Version 1.7 additions by William B.  Franks.
+        Free for personal use.  Not for sale or hire.
+
+          Version 1.1, April 27, 1984.
+          Version 1.2, Sept 12, 1984.
+          Version 1.4, Aug 14, 1985.
+              Because some print spoolers do not handle Int 17h
+              this version uses function 21 to write to the printer.
+              It is slower than 1.2.
+          Version 1.6l, June 19, 1986.
+              Modified for use with HP LaserJet printer
+          Version 1.7, October 5, 1987.
+              Added options for orientation, margins, and tabs.
+              Changed title format.
+          Version 1.71, Nov 23, 1987.
+              Added option for font selection.
+              Changed margin to accept 1 digit.
+          Version 1.8, Nov 13, 1988
+              Correct processing of control characters
+

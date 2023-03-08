@@ -17,6 +17,6 @@
 - 1.7 03/02/85
   - processes all input files which match the input file specification
   - treats the EOF character as end of file, thus embedded EOF characters will result in a truncated file
-- 1.6 06/17/84
+- [1.6](1.6) 06/17/84
   - includes a correction for the use of wildcards to name the output file the same as the input file if only a drive was supplied for the output file name.
 - [1.2](1.2) 04/27/84

@@ -1,6 +1,6 @@
 # QBX version history
 
-- 5.5 02/22/90
+- [5.5](5.5) 02/22/90
 - [5.00](5.00) 02/22/90
   - add BC7 key words
   - put xrefs back into basic ram, bc7 won't free up memory
@@ -45,7 +45,7 @@
    - don't print page eject or blank line at top of first page
    - correct meta pagesize
    - correct default pagesize
-- 2.06 12/06/86
+- [2.06](2.06) 12/06/86
    - fix incorrect statment numbers in xref after labels
    - remove duplicate references
 - 2.05 11/28/86

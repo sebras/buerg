@@ -27,6 +27,10 @@ Vernon
 [away](https://www.legacy.com/us/obituaries/pressdemocrat/name/vernon-buerg-obituary?id=15488919)
 in 2009.
 
+If you have found software which is missing or missing versions,
+or perhaps want to part with a registered version of the Buerg Utilities on CD,
+please register a github issue or contact me at <sebras@gmail.com>.
+
 ## The Buerg Utilities
 
 <img align="right" width="200" height="217" src="imgs/butils.jpg">

@@ -63,8 +63,7 @@
   - corrects problem with 0-byte files
   - adds outspec operand
 - [1.22d](1.22d) 03/25/86
-- [1.22](1.22d) 03/25/86
-- 1.22 03/25/86
+- [1.22](1.22) 03/25/86
   - improves UnCrunch performance
 - 1.21 03/24/86
   - adds wildcards for ARC file name

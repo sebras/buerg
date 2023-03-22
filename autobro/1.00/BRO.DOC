@@ -1,0 +1,46 @@
+ Name:
+       BRO, version 1, Vernon Buerg, Copyright 1988.
+
+ Function:
+       Create an ATO script file to download files selected
+       from a forum DL catalog file listing.
+
+ Syntax:
+       BRO [forum.dl]
+
+       where "forum" is the exact forum name, 1 to 7 characters
+       this must be the Compuserve 'quick reference word' for the forum.
+             "dl" is a number from 0 to 17
+       if omitted, the user is prompted for the forum name, etc.
+
+
+ Input:
+       The DL catalog file is created by capturing the output of
+       a CAT /DES command while online.
+
+       To create a catalog paging should be disabled either via
+       options in the GO TERMINAL section or by typing SET PAGE OFF
+       at the data library prompt.
+
+       A capture file should be opened and then the command CAT /DES
+       can be used to generate a non-stop listing of files and descriptions.
+       The one line summary file format is not supported at this time.
+
+ Output:
+       A file called "DL.SCR" is created if any entries are M)arked.
+       The user may then invoke ATO with the following:
+               ATO /XDL
+       to automatically log on and download those files.
+
+       The script file can also be invoked if ATO is on-line via the
+       Atl-T key and replying DL.
+
+  Cautions:
+       DL.SCR is NOT overwritten by your next session. You must delete
+       the DL.SCR file prior to running your next script generating
+       session!!
+
+       The scripts will get confused if there is more than one file
+       with the same filename. This condition is not common but can
+       happen.
+

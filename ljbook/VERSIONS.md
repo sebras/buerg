@@ -30,7 +30,7 @@
   - made BOLD18 font internal for use with /B option
 - 2.60 06/17/90
   - add /R option to reset printer
-- 2.50 02/19/90
+- [2.50](2.50) 02/19/90
   - suggested changes and corrections from David Bryant
 - 2.40 02/18/90
   - fix linecount with long lines & reset prob.

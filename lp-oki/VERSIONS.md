@@ -1,5 +1,6 @@
 # LP-OKI version history
 
+- 1.6 08/16/85
 - [1.4](1.4) 08/14/85
   - account for TABs and long lines
   - remove Int 17h due to bad spoolers
